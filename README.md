@@ -9,7 +9,7 @@ We are a group of 10 people who are taking CMPE 352 course in the Spring term of
 * [Mehmet Batuhan Çelik](https://github.com/mbatuhancelik)
 * [Hasan Can Erol](https://github.com/hasancan-code)
 * [Onur Kömürcü](https://github.com/onurkmr)
-* [Ahmet Yiğit Özdoğan](https://github.com/ahmet633)
+* [Ahmet Yiğit Özdoğan (Communicator)](https://github.com/ahmet633)
 * [Ecenur Sezer](https://github.com/codingAku)
 * [Muhammed Enes Sürmeli](https://github.com/surmelienes1)
 * [Bahrican Yeşil](https://github.com/bahricanyesil)
