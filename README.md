@@ -1,4 +1,4 @@
-# Welcome to project repository of Group #2 for CMPE 352
+# Welcome to project repository of Group#2 for CMPE 352
 
 We are a group of 10 people who are taking CMPE 352 course in the Spring term of 2022. Please visit our [Wiki](https://github.com/bounswe/bounswe2022group2/wiki) page to reach out our meeting notes, personal wiki pages of our members and other important informations about our group.
 
