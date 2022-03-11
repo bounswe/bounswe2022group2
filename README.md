@@ -14,6 +14,19 @@ We are a group of 10 people who are taking CMPE 352 course in the Spring term of
 * [Muhammed Enes Sürmeli](https://github.com/surmelienes1)
 * [Bahrican Yeşil](https://github.com/bahricanyesil)
 
+# ❓ What should our members do?
+
+* ### Attending weekly meetings 
+    Weekly meetings are hold on Thursdays at 19:00 according to decision we took in [Meeting #1](https://github.com/bounswe/bounswe2022group2/wiki/Meeting-%231-(04.03.2022)).
+    
+* ### Learning weekly tasks
+    Weekly tasks are being assigned in our meetings. These tasks can be checked from our meeting notes or our Discord channel if needed.
+    
+* ### Creating issues for tasks
+    Every member should create corresponding issues for their given tasks. If a task is required to have more than 1 people to work in, then a "super" issue should be created and a checklist should be added in it for tracking the progress. Then, a reviewer should review and close the issue when the task is completed.
+    
+* ### Adding weekly efforts to personal wiki pages
+     At the end of every week, every member should add their weekly efforts to their personal wiki pages.    
 
 
 
