@@ -37,7 +37,7 @@ body:
   - type: checkboxes
     id: responsibles-checkboxes
     attributes:
-      label: Responsibles
+      label: Responsible People
       description: "Please use the checkbox below to track the responsible people, their sub-issues (if any) and their progress statuses. You can remove the people who will not perform any action for this issue after the issue is created."
       options:
         - label: Bahrican Yesil
