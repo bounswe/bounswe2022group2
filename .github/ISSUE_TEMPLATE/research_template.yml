@@ -30,7 +30,7 @@ body:
     id: researcher-checkboxes
     attributes:
       label: Researchers
-      description: "Please use the checkbox below to track the researchers and their progress statuses. You can review the people who will not perform any research."
+      description: "Please use the checkbox below to track the researchers and their progress statuses. You can remove the people who will not perform any research."
       options:
         - label: Bahrican Yesil
         - label: Egemen Atik
