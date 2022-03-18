@@ -1,6 +1,6 @@
 name: Research Template
 description: This template is created to specifically use for research issues.
-labels: status-new,priority-medium,type-research
+labels: status-new,priority-medium,type-research,type-documentation
 body:
   - type: markdown
     attributes:
