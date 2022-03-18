@@ -76,7 +76,7 @@ body:
     id: todo-checkboxes
     attributes:
       label: Final To-Dos
-      description: "Please check the steps mentioned below after you did. You can remove the ones that will not be performed for this issue."
+      description: "Please check the steps mentioned below after you finished the issue task. You can remove the ones that will not be performed for this issue."
       options:
         - label: Collected the results of the researches via the mentioned channel.
         - label: Summarized the research results and created a separate wiki page for it.
