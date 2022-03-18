@@ -1,0 +1,111 @@
+name: Group Issue Template
+description: This template is created to specifically use for the issues whose actions that are performed by more than 2 or more people.
+labels: status-new,priority-medium
+body:
+  - type: markdown
+    attributes:
+      value: |
+          🚀 Thank you for using the issue template! Please don't forget to use it for the issues that you will create in the future too.
+          
+          ---
+          
+          Before opening an issue, please be sure that no one opened the same issue to avoid duplicates.     
+  - type: textarea
+    id: issue-description
+    attributes:
+      placeholder: "I will be creating some issue templates to ensure unity among the team members and not miss some important steps that will make the issue description clearer. We have discussed this in our second and third meetings and decided that it will be helpful for the issue creators to directly fill the required sections without thinking about 'what is required'."
+      label: Issue Description
+      description: "Please describe the issue with 2-3 clear sentences. What is this issue for, what's the aim of it? What you will do for this issue?"
+    validations:
+      required: true
+  - type: textarea
+    id: step-details
+    attributes:
+      value: | 
+              Steps that will be performed:
+              1. ...
+              2. ...
+              3. ...
+      label: Step Details
+      description: "This is an optional field. What will be the steps/actions you will perform?"
+  - type: textarea
+    id: final-actions
+    attributes:
+      placeholder: "After I created the templates, I will both share them under this issue as comments and send them to our TA (Egemen İşgüder) to add them to the GitHub settings."
+      label: Final Actions
+      description: "Describe the final actions that will be taken after the task of the issue is done and issue is ready to close."
+  - type: checkboxes
+    id: responsibles-checkboxes
+    attributes:
+      label: Responsibles
+      description: "Please use the checkbox below to track the responsible people, their sub-issues (if any) and their progress statuses. You can remove the people who will not perform any action for this issue after the issue is created."
+      options:
+        - label: Bahrican Yesil
+        - label: Egemen Atik
+        - label: Altay Acar
+        - label: Ezgi Aysel Batı
+        - label: Muhammed Enes Sürmeli
+        - label: Onur Kömürcü
+        - label: Mehmet Batuhan Çelik
+        - label: Hasan Can Erol
+        - label: Ahmet Yiğit Özdoğan
+        - label: Ecenur Sezer
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline of the Issue
+      description: "Please provide a deadline for the issue."
+      placeholder: "19.03.2022 - Saturday - 23:59"
+    validations:
+      required: true
+  - type: dropdown
+    id: reviewer
+    attributes:
+      label: Reviewer
+      description: "Who will review this issue? Please select the reviewer from the list below."
+      options:
+        - Bahrican Yesil
+        - Egemen Atik
+        - Altay Acar
+        - Ezgi Aysel Batı
+        - Muhammed Enes Sürmeli
+        - Onur Kömürcü
+        - Mehmet Batuhan Çelik
+        - Hasan Can Erol
+        - Ahmet Yiğit Özdoğan
+        - Ecenur Sezer
+  - type: input
+    id: review-deadline
+    attributes:
+      label: Deadline for the Review
+      description: "Please provide a deadline for the review process."
+      placeholder: "19.03.2022 - Saturday - 23:59"
+  - type: checkboxes
+    id: todo-checkboxes
+    attributes:
+      label: Final To-Dos
+      description: "Please check the steps mentioned below after you finished the issue task. You can remove the ones that will not be performed for this issue."
+      options:
+        - label: Every responsible shared an info about the sections/parts s/he will perform.
+        - label: Every responsible mentioned the sub-issue contains the details of his/her work, if a sub-issue is created.
+        - label: Every responsible mentioned this issue in the description of his/her sub-issue, if a sub-issue is created.
+  - type: markdown
+    attributes:
+      value: |
+        --- 
+        
+        ⚠️ Do Not Forget These While Managing the Issue! ⚠️
+        
+        * The title and the description of the issue should be clear and long enough to be descriptive.
+        * Please try to no assign the issue more than 2 people unless there is an exceptional situation.
+        * You should add the progress changes, updates, etc. to the issue as comments.
+        * You should track the suggestions, comments under the issue and respond to them if necessary.
+        * Every issue should be labeled. You should select suitable labels before creating the issue. The 'status-new' and 'priority-medium' labels are added as default. You can also change/remove them if you need.
+        * The person who will close an issue should put a final comment before closing it.
+        * All progress indicator labels (such as status-in progress) should be removed (or be replaced with completed indicator labels) before closing an issue.
+        * Dependent issues should be linked by writing #{issue_number}. With the help of this notation, issues will have reference info under themselves to the other related ones.
+        * If you don't use some form fields, do not forget to delete them after the issue is created.
+
+        ---
+        
+        Hoping you read the above items and didn't miss any of them. Thank you!
