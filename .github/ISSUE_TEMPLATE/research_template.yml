@@ -1,0 +1,104 @@
+name: Research Template
+description: This template is created to specifically use for research issues.
+labels: status-new,priority-medium,type-research
+body:
+  - type: markdown
+    attributes:
+      value: |
+          🚀 Thank you for using the issue template! Please don't forget to use it for the issues that you will create in the future too.
+          
+          ---
+          
+          Before opening an issue, please be sure that no one opened the same issue to avoid duplicates.     
+  - type: textarea
+    id: issue-description
+    attributes:
+      placeholder: "Annotations are commonly used to provide information about a resource or to link resources together. A remark or tag on a single web page or image, or a blog entry on a news piece can be considered as examples about this topic. Annotations will be a pivoting part of this project and they will comply with the W3C Web Annotation Data Model and follow W3C standards. Thus, an initial research on this very topic will be done. Everyone in the group will do research on the topic and the findings will be gathered and summarized by me @xltvy."
+      label: Issue Description
+      description: "Please describe the issue with 2-3 clear sentences. What will be the research about, what's the research topic?"
+    validations:
+      required: true
+  - type: textarea
+    id: result-collection
+    attributes:
+      value: "Results of each individual research are collected on our Discord channel. After each initial research is done and the findings are gathered on our Discord channel, I will summarize them and create a separate wiki page for the research results."
+      label: Method to Gather Information
+      description: "How and where will be the results of the research are gathered together? After the research is done, where will it be summarized?"
+    validations:
+      required: true
+  - type: checkboxes
+    id: researcher-checkboxes
+    attributes:
+      label: Researchers
+      description: "Please use the checkbox below to track the researchers and their progress statuses. You can review the people who will not perform any research."
+      options:
+        - label: Bahrican Yesil
+        - label: Egemen Atik
+        - label: Altay Acar
+        - label: Ezgi Aysel Batı
+        - label: Muhammed Enes Sürmeli
+        - label: Onur Kömürcü
+        - label: Mehmet Batuhan Çelik
+        - label: Hasan Can Erol
+        - label: Ahmet Yiğit Özdoğan
+        - label: Ecenur Sezer
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline of the Issue
+      description: "Please provide a deadline for the issue."
+      placeholder: "19.03.2022 - Saturday - 23:59"
+    validations:
+      required: true
+  - type: dropdown
+    id: reviewer
+    attributes:
+      label: Reviewer
+      description: "Who will review this issue? Please select the reviewer from the list below."
+      options:
+        - Bahrican Yesil
+        - Egemen Atik
+        - Altay Acar
+        - Ezgi Aysel Batı
+        - Muhammed Enes Sürmeli
+        - Onur Kömürcü
+        - Mehmet Batuhan Çelik
+        - Hasan Can Erol
+        - Ahmet Yiğit Özdoğan
+        - Ecenur Sezer
+  - type: input
+    id: review-deadline
+    attributes:
+      label: Deadline for the Review
+      description: "Please provide a deadline for the review process."
+      placeholder: "19.03.2022 - Saturday - 23:59"
+  - type: checkboxes
+    id: todo-checkboxes
+    attributes:
+      label: Final To-Dos
+      description: "Please check the steps mentioned below after you did. You can remove the ones that will not be performed for this issue."
+      options:
+        - label: Collected the results of the researches via the mentioned channel.
+        - label: Summarized the research results and created a separate wiki page for it.
+        - label: Added and linked the newly created wiki page under the "research" title of the sidebar.
+        - label: Added and linked the newly created wiki page under the "research" title of the main wiki page.
+  - type: markdown
+    attributes:
+      value: |
+        --- 
+        
+        ⚠️ Do Not Forget These While Managing the Issue! ⚠️
+        
+        * The title and the description of the issue should be clear and long enough to be descriptive.
+        * Please try to no assign the issue more than 2 people unless there is an exceptional situation.
+        * You should add the progress changes, updates, etc. to the issue as comments.
+        * You should track the suggestions, comments under the issue and respond to them if necessary.
+        * Every issue should be labeled. You should select suitable labels before creating the issue. The 'status-new' and 'priority-medium' labels are added as default. You can also change/remove them if you need.
+        * The person who will close an issue should put a final comment before closing it.
+        * All progress indicator labels (such as status-in progress) should be removed (or be replaced with completed indicator labels) before closing an issue.
+        * Dependent issues should be linked by writing #{issue_number}. With the help of this notation, issues will have reference info under themselves to the other related ones.
+        * If you don't use some form fields, do not forget to delete them after the issue is created.
+
+        ---
+        
+        Hoping you read the above items and didn't miss any of them. Thank you!
