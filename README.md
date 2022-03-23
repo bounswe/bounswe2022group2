@@ -18,7 +18,7 @@ We are a group of 10 people who are taking CMPE 352 course in the Spring term of
 
 * ### Attending weekly meetings 
     Weekly meetings are hold on Thursdays at 20:00 according to decision we took in [Meeting #1](https://github.com/bounswe/bounswe2022group2/wiki/Meeting-%231-(04.03.2022)).  
-    UPDATE: We decided to hold our weekly meetings on Wednesdays at 20:30 in the [Meeting #3](https://github.com/bounswe/bounswe2022group2/wiki/Meeting-%233-(17.03.2022)).
+    UPDATE: We decided to hold our weekly meetings on Wednesdays at 20:30 in the [Meeting #3](https://github.com/bounswe/bounswe2022group2/wiki/Meeting-%233-(17.03.2022)).   
     UPDATE 2: We decided to hold our weekly meetings on Thursdays at 20:00 in the PS on 23.03.2022.
     
 * ### Learning weekly tasks
