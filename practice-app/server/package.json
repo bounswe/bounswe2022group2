@@ -21,5 +21,8 @@
     "url": "https://github.com/bounswe/bounswe2022group2/issues"
   },
   "homepage": "https://github.com/bounswe/bounswe2022group2#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
