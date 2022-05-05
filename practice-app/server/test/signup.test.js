@@ -4,28 +4,27 @@ import request from 'supertest';
 import { User } from '../src/models/index.js';
 import app from './../src/app.js';
 
-const id1 = mongoose.Types.ObjectId();
-const id2 = mongoose.Types.ObjectId();
+const ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
+const emailList = ["hasan@gmail.com", "ahmet@gmail.com", "example@gmail.com"];
 const users = [
   {
-    _id: id1,
-    email: "hasan@gmail.com",
+    _id: ids[0],
+    email: emailList[0],
     password: "user1pass",
     name: "hasan",
   },
   {
-    _id: id2,
-    email: "ahmet@gmail.com",
+    _id: ids[1],
+    email: emailList[1],
     password: "user2pass",
     name: "ahmet",
   },
 ];
 
 const addDummyUsers = (dummyDone) => {
-  User.deleteMany({}).then(() => {
+  User.deleteMany({ email: { $in: emailList } }).then(() => {
     const firstUser = new User(users[0]).save();
     const secondUser = new User(users[1]).save();
-
     return Promise.all([firstUser, secondUser])
   }).then(() => dummyDone());
 };
@@ -59,7 +58,7 @@ describe('POST /user/signup', () => {
   });
 
   it('should sign up a user', (done) => {
-    const email = "example@gmail.com";
+    const email = emailList[2];
     const password = "examplepassword123";
     const name = "example name";
 
@@ -84,3 +83,5 @@ describe('POST /user/signup', () => {
       });
   });
 });
+
+afterEach(() => User.deleteMany({ email: { $in: emailList } }));
