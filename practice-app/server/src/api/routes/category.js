@@ -1,9 +1,8 @@
 import { Router } from 'express';
-import { createCategory } from '../controllers/category/index.js';
+import { createCategoryEndpoint } from '../controllers/category/index.js';
 
 const router = Router();
 
-// Auth
-router.post('', createCategory);
+router.post('', createCategoryEndpoint);
 
 export default router

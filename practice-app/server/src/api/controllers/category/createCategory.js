@@ -25,44 +25,49 @@ async function getTitle(category) {
     }
 }
 
-async function getDescription(title){
+async function getDescription(title) {
     try {
         const res = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`);
-        let {extract} = res.data;
+        let { extract } = res.data;
         return extract;
     } catch (error) {
         return error;
     }
 }
 
-export default async (req, res) => {
-    console.log(req.body)
-    const { error } = validateCategory(req.body);
+async function createCategory(title) {
+
+    const { error } = validateCategory({ "title": title });
     if (error) {
-      return res.status(400).json({ "resultMessage": error.details[0].message });
+        throw new Error(error.details[0].message);
     }
+    title = await getTitle(title);
+    const existsingCategory = await Category.find({ title: title })
+        .catch((err) => {
+            return err;
+        });
 
-    const title = await getTitle(req.body.title);
+    if (existsingCategory.length > 0)
+        return ({
+            "resultMessage": "Category already exists.",
+            category: existsingCategory
+        });
 
-    const existsingCategory = await Category.find({ title: req.body.title })
-      .catch((err) => {
-        return res.status(500).json({ "resultMessage": err.message });
-      });
-
-    if (existsingCategory.length > 0) return res.status(409).json(existsingCategory);
-      
     const description = await getDescription(title);
 
     let category = new Category({
-      title: title,
-      description: description,
+        title: title,
+        description: description,
     });
-  
+
     category = await category.save().catch((err) => {
-      return res.status(500).json({ "resultMessage": err.message });
+        return err;
     });
-  
-    return res.status(200).json({
-      resultMessage: "User is successfully signed up.", category: category.toJSON()
-    });
-  };
+
+
+    return {
+        resultMessage: "Category successfully created.", category: category.toJSON()
+    };
+}
+
+export {createCategory}; 
