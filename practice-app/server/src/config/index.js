@@ -5,6 +5,7 @@ config();
 
 const { DB_URI, PORT, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION } = process.env
 
+console.log(DB_URI);
 export const port = PORT || 3000;
 export const dbUri = DB_URI;
 export const awsAccessKey = AWS_ACCESS_KEY_ID;
