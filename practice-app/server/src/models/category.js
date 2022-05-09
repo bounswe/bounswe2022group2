@@ -3,7 +3,13 @@ const { Schema, model } = mongoose;
 
 // We can add additional fields if we enlarge the features of the app.
 const categorySchema = new Schema({
-  name: { type: String, required: true },
+    title: {
+        type: String,
+        minlength: [5, 'Please provide a longer name'],
+        required: true,
+    },
+    description: String,
+    lectures: [mongoose.ObjectId]
 },
   {
     timestamps: true,
