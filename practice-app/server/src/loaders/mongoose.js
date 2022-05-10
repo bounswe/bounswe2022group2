@@ -3,6 +3,7 @@ import { dbUri } from '../config/index.js';
 
 
 export default async () => {
+  console.log("database url: ", dbUri)
   await mongoose.connect(dbUri,
     {
       useNewUrlParser: true,
