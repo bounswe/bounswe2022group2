@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-const categorySchema = new mongoose.Schema({
+// We can add additional fields if we enlarge the features of the app.
+const categorySchema = new Schema({
     title: {
         type: String,
         minlength: [5, 'Please provide a longer name'],
