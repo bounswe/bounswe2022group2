@@ -8,8 +8,20 @@ const categorySchema = new mongoose.Schema({
         required: true,
     },
     description: String,
-    lectures: [mongoose.ObjectId]
+    lectures: [mongoose.ObjectId],
+    // transform:  ( (doc, ret, options) => {
+    //       ret.id = ret._id;
+    //       return ret;
+    //     }),
+    // virtuals: true,
+      versionKey: false
 });
 
+categorySchema.options.toJSON = {
+    transform: function(doc, ret, options) {
+        ret.id = ret._id;
+        return ret;
+    }
+};
 const Category = model('Category', categorySchema);
 export default Category;
