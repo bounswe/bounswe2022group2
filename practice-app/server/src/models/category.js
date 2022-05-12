@@ -20,8 +20,11 @@ const categorySchema = new Schema({
 
 categorySchema.options.toJSON = {
     transform: function(doc, ret, options) {
-        ret.id = ret._id;
-        return ret;
+        return {"id" : ret._id, 
+                "title": ret.title, 
+                "description" : ret.description,
+                "lectures" : ret.lectures
+            }
     }
 };
 const Category = model('Category', categorySchema);
