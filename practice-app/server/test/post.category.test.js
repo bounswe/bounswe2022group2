@@ -19,10 +19,8 @@ describe('POST /api/category', () => {
     sinon.restore();
   });
   it('should add category when the title is valid', (done) => {
-
-    var spy = sinon.spy();
     sinon.stub(axios, "get")
-      .onFirstCall().returns({
+      .onFirstCall().resolves({
         "data": {
           "query": {
             "search": [
@@ -33,7 +31,7 @@ describe('POST /api/category', () => {
           }
         }
       })
-      .onSecondCall().returns(
+      .onSecondCall().resolves(
         {
           "data": {
             "extract": mockCategory.description
@@ -60,8 +58,8 @@ describe('POST /api/category', () => {
         title: mockCategory.title
       })
       .expect((res) => {
-        expect(res.status == 200);
-        expect(res.body.resultMessage == "Category successfully created.");
+        expect(res.status).toBe(200);
+        expect(res.body.resultMessage).toMatch(/successfully created/);
         expect(res.body.category.description == mockCategory.description);
       })
       .end(done);
@@ -95,8 +93,8 @@ describe('POST /api/category', () => {
         title: mockCategory.title
       })
       .expect((res) => {
-        expect(res.status == 409);
-        expect(res.body.resultMessage == "Category already exists.");
+        expect(res.status).toBe(409);
+        expect(res.body.resultMessage).toMatch(/already exists/);
         expect(res.body.category.description == mockCategory.description);
       })
       .end(done);
@@ -109,8 +107,19 @@ describe('POST /api/category', () => {
         title: "a"
       })
       .expect((res) => {
-        expect(res.status == 400);
-        expect(res.body.resultMessage.match(/characters/));
+        expect(res.status).toBe(400);
+        expect(res.body.resultMessage).toMatch(/characters/);
+      })
+      .end(done);
+  });
+  it('should return 400 and error message when title does not exists', (done) => {
+    request(app)
+      .post(categoryUrl)
+      .send({
+      })
+      .expect((res) => {
+        expect(res.status).toBe(400);
+        expect(res.body.resultMessage).toMatch(/required/);
       })
       .end(done);
   });
