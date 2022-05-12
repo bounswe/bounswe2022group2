@@ -13,7 +13,6 @@ const mockCategory = {
 describe('POST /api/category', () => {
 
   const categoryUrl = "/category";
-  var sandbox;
 
   afterEach(function () {
     sinon.restore();
