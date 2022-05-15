@@ -1,19 +1,17 @@
 import { User } from '../../../models/index.js';
 import { Lesson } from '../../../models/index.js';
-import mongoose from 'mongoose';
+import { validateDropLesson } from '../../validators/user.validator.js';
 
 export default async (req, res) => {
 
+  const { error } = validateDropLesson(req.body);
+
+  if (error) {
+    return res.status(400).json({ "resultMessage": error.details[0].message });
+  }
+
   const userId = req.body.user_id;
   const lessonId = req.body.lesson_id;
-
-  if(!userId || !lessonId){
-    return res.status(400).json({ "resultMessage": "Please provide all necessary fields: user_id and lesson_id." });
-  }
-
-  if(!mongoose.isValidObjectId(userId) || !mongoose.isValidObjectId(lessonId)){
-    return res.status(400).json({"resultMessage": "Please provide valid ids for user and lesson"});
-  }
 
   const lesson = await Lesson.findById(lessonId)
   .catch(err => {
