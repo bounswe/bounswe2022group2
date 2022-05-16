@@ -1,6 +1,9 @@
 # frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend for practice app developed by bounswe2022group2.
+
+
+Following resources should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
