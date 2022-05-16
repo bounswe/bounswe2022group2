@@ -7,10 +7,12 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
+    "naive-ui": "^2.28.4",
     "vite": "^2.9.5"
   }
 }
