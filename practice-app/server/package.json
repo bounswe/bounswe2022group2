@@ -33,8 +33,9 @@
     "express": "^4.18.1",
     "helmet": "^5.0.2",
     "joi": "^17.6.0",
+    "joi-oid": "^1.1.2",
     "mocha": "^10.0.0",
-    "mongoose": "^6.3.2",
+    "mongoose": "^6.3.3",
     "morgan": "^1.10.0",
     "supertest": "^6.2.3",
     "underscore": "^1.13.3"
