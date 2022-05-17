@@ -9,7 +9,10 @@ export default async (req, res) => {
         return res.status(status).json({"resultMessage": resultMessage, "category": category});
     }catch(err) {
         let status = 500;
-        if(err.message == "\"title\" length must be at least 5 characters long")
+        if(
+            err.message == "\"title\" length must be at least 5 characters long" ||
+            err.message == "\"title\" is required"
+        )
             status = 400;
     
         return res.status(status).json({ "resultMessage": err.message });

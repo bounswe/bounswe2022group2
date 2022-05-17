@@ -68,15 +68,19 @@ describe('POST /user/signup', () => {
       .expect((res) => {
         expect(res.headers['x-auth']).not.toBeNull();
         expect(res.body.user).not.toBeNull();
+        expect(res.body.user).not.toBeUndefined();
         const user = res.body.user;
         expect(user.id).not.toBeNull();
+        expect(user.id).not.toBeUndefined();
         expect(user.email).toBe(email);
         expect(user.name).toBe(name);
+        expect(res.status).toBe(200);
       })
       .end(async (err) => {
         if (err) return done(err);
         await User.findOne({ email }).then((user) => {
           expect(user).not.toBeNull();
+          expect(user).not.toBeUndefined();
           expect(user.password).not.toBe(password);
           done();
         });
