@@ -41,6 +41,7 @@
     "underscore": "^1.13.3"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
     "sinon": "^14.0.0"
   }
 }
