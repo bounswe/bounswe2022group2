@@ -45,4 +45,20 @@ it(`should return ratings between ${interval.min} and ${interval.max}`, (done) =
         })
         .end(done);
 });
+it(`should return 400 Bad Request when min or max interval is missing`, (done) => {
+    sinon.stub(Rating, "find")
+        .onFirstCall().resolves(
+            []
+        );
+    
+    request(app)
+        .get(ratingUrl)
+        .send({min:interval.min})
+        .expect((res) => {
+            expect(res.status).toBe(400);
+            expect(res.body.resultMessage).toMatch(/required/);
+    
+        })
+        .end(done);
+});
 });
