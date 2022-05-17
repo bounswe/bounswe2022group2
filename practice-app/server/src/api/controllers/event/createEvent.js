@@ -48,6 +48,10 @@ async function createEvent(title, date, location, host_id, lesson_id) {
         throw new Error(error.details[0].message);
     }
 
+    if (Date.parse(date) < Date.now()) {
+        throw new Error("Date cannot be below the current period.");
+    }
+
     var lesson_flag = mongoose.Types.ObjectId.isValid(lesson_id);
 
     if (!lesson_flag) {
