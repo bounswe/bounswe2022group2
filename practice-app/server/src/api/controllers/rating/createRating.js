@@ -12,7 +12,7 @@ async function createRating(req) {
     }
     var lessonFlag = mongoose.Types.ObjectId.isValid(req.lessonID);
     if(!lessonFlag){
-        throw new Error('Lesson does not exist.');
+        throw new Error('Such an ID cannot exist.');
     }
     var lessonID = mongoose.Types.ObjectId(req.lessonID);
     const existingLesson = await Lesson.findById(req.lessonID)
