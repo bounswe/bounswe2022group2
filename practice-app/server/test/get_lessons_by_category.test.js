@@ -38,11 +38,11 @@ const addDummyData = async () => {
   await setLessons();
 };
 
-beforeEach(addDummyData);
 
 describe('GET /lesson/byCategory', () => {
   const byCategoryUrl = '/lesson/byCategory';
-
+  beforeEach(addDummyData);
+  
   it('should return validation error if the query parameter is not valid', (done) => {
     request(app)
       .get(byCategoryUrl)
