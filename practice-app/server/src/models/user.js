@@ -16,6 +16,9 @@ const userSchema = new Schema({
   name: {
     type: String, required: true
   },
+  enrolledLessons: [{
+    type: mongoose.Schema.Types.ObjectId, ref: "Lesson"
+  }],
 },
   {
     timestamps: true,

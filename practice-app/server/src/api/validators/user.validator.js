@@ -16,3 +16,11 @@ export function validateLogin(body) {
   });
   return schema.validate(body);
 }
+
+export function validateDropLesson(body){
+  const schema = Joi.object({
+    user_id: Joi.string().hex().length(24).required(), //same thing as Joi.objectId(), since there is no such function I use this way instead
+    lesson_id: Joi.string().hex().length(24).required()
+  });
+  return schema.validate(body);
+}
