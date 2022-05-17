@@ -3,6 +3,7 @@ import { validateEvent } from '../../validators/event.validator.js';
 import axios from 'axios';
 import { apiKeyGeo } from '../../../config/index.js';
 import mongoose from 'mongoose';
+import Lesson from '../../../models/lesson.js';
 
 async function getCoordinates(address) {
 
@@ -45,6 +46,20 @@ async function createEvent(title, date, location, host_id, lesson_id) {
 
     if (error) {
         throw new Error(error.details[0].message);
+    }
+
+    var lesson_flag = mongoose.Types.ObjectId.isValid(lesson_id);
+
+    if (!lesson_flag) {
+        throw new Error("Invalid lesson ID");
+    }
+
+    const host_lesson = await Lesson.findById(lesson_id).catch((err) => {
+        throw new Error("Lesson does not exist.");
+    });
+
+    if (!host_lesson) {
+        throw new Error("Lesson does not exist.");
     }
 
     try {

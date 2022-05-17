@@ -16,6 +16,8 @@ export default async (req, res) => {
             status = 400;
         if(err.message == "Invalid address")
             status = 400;
+        if (err.message == "Lesson does not exist.")
+            status = 404;
         if(err.message == "Cannot generate request for now")
             status = 503;
         return res.status(status).json({ "resultMessage": err.message });
