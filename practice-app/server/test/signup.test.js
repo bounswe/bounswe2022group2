@@ -29,10 +29,10 @@ const addDummyUsers = (dummyDone) => {
   }).then(() => dummyDone());
 };
 
-beforeEach(addDummyUsers);
 
 describe('POST /user/signup', () => {
   const signupUrl = '/user/signup';
+  beforeEach(addDummyUsers);
 
   it('should return validation errors if the request body is not valid', (done) => {
     request(app)
