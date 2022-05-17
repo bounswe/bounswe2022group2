@@ -19,7 +19,6 @@ async function createRating(req) {
     .catch((err) => {
         return new Error('Lesson does not exist.');;
     });
-    console.log(existingLesson);
     const existingRating = await Rating.find({ lessonID: lessonID })
     .catch((err) => {
         return new Error(err.message);;
