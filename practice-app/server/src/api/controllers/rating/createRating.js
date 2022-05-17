@@ -37,12 +37,8 @@ async function createRating(req) {
         rating: req.rating,
     });
     if (existingRating.length > 0){
-            console.log(req.rating);
-            console.log(existingRating[0].rating);
             var newRating = Number(req.rating)+ Number(existingRating[0].rating);
             existingRating[0].rating = newRating;
-            console.log(newRating);
-            console.log(existingRating[0].rating);
             rating = existingRating[0];
     }
     rating = await rating.save().catch((err) => {
