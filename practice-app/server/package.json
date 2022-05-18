@@ -4,8 +4,8 @@
   "description": "This is the server side of the practice app project of the bounswe2022 group 2.",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "test": "mocha"
+    "start": "NODE_ENV=dev node src/app.js",
+    "test": "NODE_ENV=test mocha"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "helmet": "^5.0.2",
     "joi": "^17.6.0",
     "mocha": "^10.0.0",
+    "mongodb-memory-server-core": "^8.5.2",
     "mongoose": "^6.3.3",
     "morgan": "^1.10.0",
     "supertest": "^6.2.3",
