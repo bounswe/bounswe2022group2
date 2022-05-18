@@ -24,3 +24,22 @@ export function validateDropLesson(body){
   });
   return schema.validate(body);
 }
+<<<<<<< Updated upstream
+=======
+
+export function validateAttendEvent(body){
+  const schema = Joi.object({
+    user_id: Joi.string().hex().length(24).required(),
+    event_id: Joi.string().hex().length(24).required()
+  });
+  return schema.validate(body);
+}
+
+export function validateEnrollLesson(body){
+  const schema = Joi.object({
+    user_id: Joi.string().hex().length(24).required(),
+    lesson_id: Joi.string().hex().length(24).required()
+  });
+  return schema.validate(body);
+}
+>>>>>>> Stashed changes
