@@ -4,7 +4,6 @@ export default async (req, res) => {
     try {
         const {resultMessage, event} = await createEvent(req.body.title, req.body.date, req.body.location, req.body.host_id, req.body.lesson_id);
         let status = 200;
-        console.log(resultMessage);
         return res.status(status).json({"resultMessage": resultMessage, "event": event});
     }catch(err) {
         let status = 500;

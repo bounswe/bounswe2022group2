@@ -16,7 +16,7 @@ async function getCoordinates(address) {
         key: apiKeyGeo
     };
 
-    Object.keys(params).forEach(function (url_key) { url += "&" + url_key + "=" + params[url_key]; });
+    Object.keys(params).forEach(function (url_key) { url += url_key + "=" + params[url_key] + "&"; });
 
     const http_res = await axios.get(url);
 
@@ -59,7 +59,7 @@ async function createEvent(title, date, location, host_id, lesson_id) {
     }
 
     const host_lesson = await Lesson.findById(lesson_id).catch((err) => {
-        throw new Error("Lesson does not exist.");
+        throw new Error("Server error");
     });
 
     if (!host_lesson) {
