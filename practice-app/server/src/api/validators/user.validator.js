@@ -24,8 +24,6 @@ export function validateDropLesson(body){
   });
   return schema.validate(body);
 }
-<<<<<<< Updated upstream
-=======
 
 export function validateAttendEvent(body){
   const schema = Joi.object({
@@ -42,4 +40,3 @@ export function validateEnrollLesson(body){
   });
   return schema.validate(body);
 }
->>>>>>> Stashed changes
