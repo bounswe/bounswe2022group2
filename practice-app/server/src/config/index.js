@@ -2,7 +2,7 @@ import { config } from 'dotenv';
 config();
 
 //NOTE: If you are running the project in an instance, you should store these secret keys in its configuration settings.
-const { DB_URI, API_KEY_GEO, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, NODE_ENV } = process.env
+const { DB_URI, API_KEY_GEO, PORT, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, NODE_ENV } = process.env
 
 export const port = PORT || 3000;
 export const dbUri = DB_URI;
