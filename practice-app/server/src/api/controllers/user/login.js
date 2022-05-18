@@ -17,11 +17,11 @@ export default async (req,res) => {
     if (!emailCheck) 
         return res.status(404).json({"resultMessage": "There is no user with the given email."});
 
-    let user1 = await User.find({ email: email }).select('+password')
+    let user = await User.findOne({ email: email }).select('+password')
         .catch((err) => {
         return res.status(500).json({ "resultMessage": err.message });
     });
-    let user = user1[0];
+    
     const incomingPassword = req.body.password;
     const databasePassword = user.password;
     const passwordCheck = bcrypt.compareSync(incomingPassword, databasePassword);
