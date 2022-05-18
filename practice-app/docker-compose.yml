@@ -1,0 +1,25 @@
+version: '3.9'
+volumes:
+  data:
+services:
+  mongodb:
+    image: mongo:latest
+    hostname: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data/db
+  server:
+    hostname: backend
+    build: 
+      context: ./server
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+  frontend:
+    hostname: frontend
+    build: 
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"
