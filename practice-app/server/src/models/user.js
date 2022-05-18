@@ -16,6 +16,12 @@ const userSchema = new Schema({
   name: {
     type: String, required: true
   },
+  enrolledLessons: [{
+    type: mongoose.Schema.Types.ObjectId, ref: "Lesson"
+  }],
+  attendedEvents: [{
+    type: mongoose.Schema.Types.ObjectId, ref: "Event"
+  }],
 },
   {
     timestamps: true,
