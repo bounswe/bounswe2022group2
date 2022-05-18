@@ -1,10 +1,10 @@
 import { User } from '../../../models/index.js';
 import { Event } from '../../../models/index.js';
-import { validateEvent } from '../../validators/event.validator.js';
+import { validateGetEvent } from '../../validators/event.validator.js';
 
 export default async (req, res) => {
 
-  const { error } = validateEvent(req.body);
+  const { error } = validateGetEvent(req.body);
 
   if (error) {
     return res.status(400).json({ "resultMessage": error.details[0].message });
