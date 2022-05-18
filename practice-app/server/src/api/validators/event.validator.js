@@ -10,3 +10,10 @@ export function validateEvent(body) {
   });
   return schema.validate(body);
 }
+
+export function validateGetEvent(body){
+    const schema = Joi.object({
+      event_id: Joi.string().hex().length(24).required()
+    });
+    return schema.validate(body);
+}
