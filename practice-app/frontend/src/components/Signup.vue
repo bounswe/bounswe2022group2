@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import { useRoute } from 'vue-router';
 
 
 export default {
@@ -43,24 +42,28 @@ export default {
   methods: {
     async signup() {
       const { email, password, name } = this;
-      const res = await fetch(
-        "http://localhost:3000/user/signup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            email, password, name
-          })
+      try {
+        const res = await fetch(
+          "http://localhost:3000/user/signup",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              email, password, name
+            })
+          }
+        );
+        const data = await res.json();
+        if (res.status == 200) {
+          this.$emit("authenticated", true);
+          this.$router.replace({ name: "Categories" });
+        } else {
+          alert(data.resultMessage);
         }
-      );
-      const data = await res.json();
-      if (res.status == 200) {
-        this.$emit("authenticated", true);
-        this.$router.replace({ name: "Categories" });
-      } else {
-        alert(data.resultMessage);
+      } catch (err) {
+        alert(err);
       }
     },
     login() {
