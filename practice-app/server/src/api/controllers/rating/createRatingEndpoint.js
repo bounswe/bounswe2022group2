@@ -9,8 +9,8 @@ export default async (req, res) => {
             return res.status(status).json({"resultMessage": resultMessage, "rating": rating});
         }catch(err) {
         let status = 500;
-        if(err.message == "Such an ID cannot exist.")
-            status = 400;
+        if(err.message == "Lesson does not exist.")
+            status = 404;
         return res.status(status).json({ "resultMessage": err.message });
     }
 };
