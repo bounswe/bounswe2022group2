@@ -31,6 +31,11 @@ const lessons = [
     name: "Lesson3",
     category_id: category._id
   }
+  {
+    _id: lesson_ids[3],
+    name: "Lesson3",
+    category_id: category._id
+  }
 ];
 
 const users = [
@@ -58,6 +63,7 @@ const setLessons = async () => {
   await new Lesson(lessons[0]).save();
   await new Lesson(lessons[1]).save();
   await new Lesson(lessons[2]).save();
+  await new Lesson(lessons[3]).save();
 }
 
 const setUsers = async () => {
@@ -173,7 +179,7 @@ const addDummyData = async () => {
         .end(done);
     });
     
-    it('should return the user with the given user_id with remaining enrolledLessons list and removed lesson with the given lesson_id', (done) => {
+    it('should return the user with the given user_id with updated enrolledLessons list and added lesson with the given lesson_id', (done) => {
   
       request(app)
         .post(enrollUrl)
