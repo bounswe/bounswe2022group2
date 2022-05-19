@@ -44,7 +44,7 @@ export default {
       const { email, password, name } = this;
       try {
         const res = await fetch(
-          "http://localhost:3000/user/signup",
+          import.meta.env.VITE_API_URL + "/user/signup",
           {
             method: "POST",
             headers: {
