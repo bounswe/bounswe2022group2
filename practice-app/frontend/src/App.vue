@@ -1,13 +1,18 @@
 <template>
   <n-config-provider :theme="darkTheme">
     <n-global-style />
-    <div class="topnav">
-      <router-link to="/">mock1</router-link>
-      <router-link to="/b">mock2</router-link>
-    </div>
-
-      <router-view />
-
+    <n-message-provider>
+      <n-notification-provider>
+        <n-dialog-provider>
+          <div class="topnav">
+            <router-link to="/">mock1</router-link>
+            <router-link to="/b">mock2</router-link>
+            <router-link to="/rating">Ratings</router-link> 
+          </div>
+          <router-view />
+        </n-dialog-provider>
+      </n-notification-provider>
+    </n-message-provider>
   </n-config-provider>
 </template>
 
@@ -15,7 +20,7 @@
 <script>
 
 import { defineComponent } from 'vue'
-import { NConfigProvider, NGlobalStyle, darkTheme } from 'naive-ui'
+import { NConfigProvider, NGlobalStyle, darkTheme, NMessageProvider, NDialogProvider, NNotificationProvider } from 'naive-ui'
 import { RouterView, RouterLink } from 'vue-router'
 
 
@@ -25,7 +30,10 @@ export default defineComponent({
     NConfigProvider,
     NGlobalStyle,
     RouterLink,
-    RouterView
+    RouterView,
+    NMessageProvider,
+    NDialogProvider,
+    NNotificationProvider
   },
   setup() {
     return {
