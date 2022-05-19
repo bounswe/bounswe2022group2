@@ -8,7 +8,8 @@ const categoryId = mongoose.Types.ObjectId();
 const ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const category = {
   _id: categoryId,
-  name: "Sport"
+  title: "Sport",
+  description: "mockDescription"
 }
 
 const lessons = [
@@ -42,7 +43,7 @@ const addDummyData = async () => {
 describe('GET /lesson/byCategory', () => {
   const byCategoryUrl = '/lesson/byCategory';
   beforeEach(addDummyData);
-  
+
   it('should return validation error if the query parameter is not valid', (done) => {
     request(app)
       .get(byCategoryUrl)
