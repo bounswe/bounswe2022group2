@@ -1,6 +1,6 @@
 import Category from '../../../models/category.js';
 import { Lesson } from '../../../models/index.js';
-
+import { User } from '../../../models/index.js';
 
 async function createLesson(name, category_name, user_id) {
   if(name===undefined || category_name===undefined || user_id ===undefined){
