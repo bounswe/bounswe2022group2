@@ -5,7 +5,7 @@ export default async (req, res) => {
   try {
       const {resultMessage, lesson} = await createLesson(req.body.title, req.body.category);
       let status = 200;
-      if(resultMessage == "Category does not exist.")
+      if(resultMessage == "Lesson could not be created.")
           status = 409;
       if(resultMessage == "Missing parameter")
           status = 400;

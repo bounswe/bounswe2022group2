@@ -2,8 +2,8 @@ import Category from '../../../models/category.js';
 import { Lesson } from '../../../models/index.js';
 
 
-async function createLesson(name, category_name) {
-  if(name===undefined || category_name===undefined){
+async function createLesson(name, category_name, user_id) {
+  if(name===undefined || category_name===undefined || user_id ===undefined){
     return {
       resultMessage: "Missing parameter"
     }
@@ -13,12 +13,18 @@ async function createLesson(name, category_name) {
           return err;
       });
 
-  if (category)
+  const lecturer = await User.findOne({ _id: user_id})
+      .catch((err) => {
+          return err;
+      });
+
+  if (category && lecturer)
       {
         
           let lesson = new Lesson({
             name: name,
-            category_id: category.id
+            category_id: category.id,
+            lecturer: lecturer._id
           });
         
           lesson = await lesson.save().catch((err) => {
@@ -31,7 +37,7 @@ async function createLesson(name, category_name) {
           };
       }
   else {
-    throw new Error("Category does not exist.");
+    throw new Error("Lesson could not be created.");
   }
   
 }
