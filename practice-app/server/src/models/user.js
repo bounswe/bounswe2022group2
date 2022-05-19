@@ -19,6 +19,9 @@ const userSchema = new Schema({
   enrolledLessons: [{
     type: mongoose.Schema.Types.ObjectId, ref: "Lesson"
   }],
+  attendedEvents: [{
+    type: mongoose.Schema.Types.ObjectId, ref: "Event"
+  }],
 },
   {
     timestamps: true,
