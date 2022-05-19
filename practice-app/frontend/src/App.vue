@@ -5,10 +5,9 @@
       <n-notification-provider>
         <n-dialog-provider>
           <div class="topnav">
-            <router-link to="/">Home</router-link>
-            <router-link to="/category">Categories</router-link>
+            <router-link v-if="authenticated" to="/category">Categories</router-link>
           </div>
-          <router-view />
+          <router-view @authenticated="setAuthenticated" />
         </n-dialog-provider>
       </n-notification-provider>
     </n-message-provider>
@@ -18,13 +17,24 @@
 
 <script>
 
+import { darkTheme, NConfigProvider, NDialogProvider, NGlobalStyle, NMessageProvider, NNotificationProvider } from 'naive-ui'
 import { defineComponent } from 'vue'
-import { NConfigProvider, NGlobalStyle, darkTheme, NMessageProvider, NDialogProvider, NNotificationProvider } from 'naive-ui'
-import { RouterView, RouterLink } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 
 
 
 export default defineComponent({
+  name: 'App',
+  data() {
+    return {
+      authenticated: false
+    }
+  },
+  methods: {
+    setAuthenticated(status) {
+      this.authenticated = status;
+    },
+  },
   components: {
     NConfigProvider,
     NGlobalStyle,
