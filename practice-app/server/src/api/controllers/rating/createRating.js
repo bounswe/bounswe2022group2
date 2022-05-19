@@ -12,10 +12,20 @@ async function createRating(req) {
     }
     var lessonFlag = mongoose.Types.ObjectId.isValid(req.lessonID);
     if(!lessonFlag){
-        throw new Error('Such an ID cannot exist.');
+        var existingLesson = await Lesson.findOne({name: req.lessonID})
+        .catch((err) => {
+            return new Error('Lesson does not exist.');;
+        });
+        if(!existingLesson){
+
+         throw new Error('Lesson does not exist.');
+
+        }else{
+            req.lessonID = existingLesson._id;
+        }
     }
     var lessonID = mongoose.Types.ObjectId(req.lessonID);
-    const existingLesson = await Lesson.findById(req.lessonID)
+    existingLesson = await Lesson.findById(req.lessonID)
     .catch((err) => {
         return new Error('Lesson does not exist.');;
     });
@@ -34,6 +44,7 @@ async function createRating(req) {
         let rating = new Rating({
         lessonID: lessonID,
         rating: req.rating,
+        name: existingLesson.name
     });
     if (existingRating.length > 0){
             var newRating = Number(req.rating)+ Number(existingRating[0].rating);
