@@ -15,7 +15,7 @@ export default async (req,res) => {
 
     if(!lesson) return res.status(404).json({"resultMessage": "Lesson with the given id does not exist"});
 
-    const events = await Event.find({ related_lesson: lessonId })
+    const events = await Event.find({ lesson_id: lessonId })
     .catch((err) => {
       return res.status(500).json({ "resultMessage": err.message });
     });
