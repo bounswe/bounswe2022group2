@@ -6,11 +6,7 @@ import { Rating } from '../src/models/index.js';
 import { Lesson } from '../src/models/index.js';
 
 const mockRating = {
-  "lessonID": "62815d7535b0cdc89d74ab1a",
-  "rating": "2.5"
-}
-const mockHexRating = {
-  "lessonID": "62815d7535b0cdc89d74ab1r",
+  "lessonID": "ilginç",
   "rating": "2.5"
 }
 const trueRating = {
@@ -69,24 +65,24 @@ describe('POST/rating', () => {
 
 
       
-      it('should return 400 and error message when an ID is not a valid Mongoose Object ID', (done) => {
-        sinon.stub(Rating, "findById")
-        .onFirstCall().resolves(
-        new Error()
-      );
-      request(app)
-      .post(ratingUrl)
-      .send({
-        lessonID: mockHexRating.lessonID,
-        rating: mockHexRating.rating
-      })
-      .expect((res) => {
-        expect(res.status).toBe(400);
-        expect(res.body.resultMessage).toMatch(/cannot exist./);
+    //   it('should return 400 and error message when an ID is not a valid Mongoose Object ID', (done) => {
+    //     sinon.stub(Rating, "findById")
+    //     .onFirstCall().resolves(
+    //     new Error()
+    //   );
+    //   request(app)
+    //   .post(ratingUrl)
+    //   .send({
+    //     lessonID: mockHexRating.lessonID,
+    //     rating: mockHexRating.rating
+    //   })
+    //   .expect((res) => {
+    //     expect(res.status).toBe(400);
+    //     expect(res.body.resultMessage).toMatch(/cannot exist./);
         
-      })
-      .end(done);
-    });
+    //   })
+    //   .end(done);
+    // });
       it('should return 404 and error message when Lesson does not exist', (done) => {
         sinon.stub(Rating, "findById")
         .onFirstCall().resolves(

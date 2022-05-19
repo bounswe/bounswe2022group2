@@ -14,14 +14,9 @@ export default async (req, res) => {
         return res.status(500).json({ "resultMessage": err.message });
     });
     ratings.forEach(async element => {
-        console.log(element);
-        console.log(element.lessonID);
-        console.log(element.lessonID.toString());
         const lesson = await Lesson.findById(element.lessonID.toString());
         element.name = lesson.name;
     });
     return res.status(200).json(ratings);
-    
+
 };
-
-

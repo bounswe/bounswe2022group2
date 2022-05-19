@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 // We can add additional fields if we enlarge the features of the app.
@@ -12,7 +12,6 @@ const ratingSchema = new Schema({
       versionKey: false
 });
 
-
 ratingSchema.options.toJSON = {
     transform: function(doc, ret, options) {
         return {"id" : ret._id, 
@@ -22,6 +21,6 @@ ratingSchema.options.toJSON = {
             }
     }
 };
-const Rating = model('Rating', ratingSchema);
+const Rating = model("Rating", ratingSchema);
 
 export default Rating;
