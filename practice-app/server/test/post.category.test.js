@@ -22,6 +22,9 @@ describe('POST /api/category', () => {
       .onFirstCall().resolves({
         "data": {
           "query": {
+            "searchinfo": {
+              "totalhits": 1564
+            },
             "search": [
               {
                 "title": mockCategory.title
@@ -71,6 +74,9 @@ describe('POST /api/category', () => {
       .onFirstCall().returns({
         "data": {
           "query": {
+            "searchinfo": {
+              "totalhits": 1564
+            },
             "search": [
               {
                 "title": mockCategory.title
@@ -98,7 +104,34 @@ describe('POST /api/category', () => {
       })
       .end(done);
   });
+  it('should return 202 and a suggestion when wikipedia suggest a title instead', (done) => {
 
+    var spy = sinon.spy();
+    const suggestion = "nodejs"
+    sinon.stub(axios, "get")
+      .onFirstCall().returns({
+        "data": {
+          "query": {
+            "searchinfo": {
+              "totalhits": 1564,
+              "suggestion": suggestion
+            },
+            "search": []
+          }
+        }
+      });
+    request(app)
+      .post(categoryUrl)
+      .send({
+        title: "noodjs"
+      })
+      .expect((res) => {
+        expect(res.status).toBe(202);
+        expect(res.body.resultMessage).toMatch(/mean/);
+        expect(res.body.suggestion).toMatch(suggestion);
+      })
+      .end(done);
+  });
   it('should return 400 and error message when title is too short', (done) => {
     request(app)
       .post(categoryUrl)
