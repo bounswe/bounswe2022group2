@@ -25,7 +25,8 @@ const mockRatings = [
 
 
 describe('GET /rating', () => {
-  const ratingUrl = '/rating';
+  const ratingUrl = `/rating?min=${interval.min}&max=${interval.max}`;
+  const dummyRatingUrl = `/rating?min=${interval.min}`;
   afterEach(function () {
     sinon.restore();
 });
@@ -37,7 +38,6 @@ it(`should return ratings between ${interval.min} and ${interval.max}`, (done) =
     
     request(app)
         .get(ratingUrl)
-        .send({min:interval.min, max:interval.max})
         .expect((res) => {
             expect(res.status).toBe(200);
             expect(res.body).toEqual(mockRatings);
@@ -52,8 +52,7 @@ it(`should return 400 Bad Request when min or max interval is missing`, (done) =
         );
     
     request(app)
-        .get(ratingUrl)
-        .send({min:interval.min})
+        .get(dummyRatingUrl)
         .expect((res) => {
             expect(res.status).toBe(400);
             expect(res.body.resultMessage).toMatch(/required/);

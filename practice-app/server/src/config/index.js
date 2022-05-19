@@ -11,4 +11,5 @@ export const awsAccessKey = AWS_ACCESS_KEY_ID;
 export const awsSecretAccessKey = AWS_SECRET_ACCESS_KEY;
 export const awsRegion = AWS_REGION;
 export const env = NODE_ENV;
+
 export const prefix = '';

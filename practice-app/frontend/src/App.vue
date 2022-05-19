@@ -1,31 +1,49 @@
 <template>
   <n-config-provider :theme="darkTheme">
     <n-global-style />
-    <div class="topnav">
-      <router-link to="/">mock1</router-link>
-      <router-link to="/b">mock2</router-link>
-    </div>
-
-      <router-view />
-
+    <n-message-provider>
+      <n-notification-provider>
+        <n-dialog-provider>
+          <div class="topnav">
+            <router-link v-if="authenticated" to="/category">Categories</router-link>
+            <router-link v-if="authenticated" to="/rating">Ratings</router-link>
+          </div>
+          <router-view @authenticated="setAuthenticated" />
+        </n-dialog-provider>
+      </n-notification-provider>
+    </n-message-provider>
   </n-config-provider>
 </template>
 
 
 <script>
 
+import { darkTheme, NConfigProvider, NDialogProvider, NGlobalStyle, NMessageProvider, NNotificationProvider } from 'naive-ui'
 import { defineComponent } from 'vue'
-import { NConfigProvider, NGlobalStyle, darkTheme } from 'naive-ui'
-import { RouterView, RouterLink } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 
 
 
 export default defineComponent({
+  name: 'App',
+  data() {
+    return {
+      authenticated: false
+    }
+  },
+  methods: {
+    setAuthenticated(status) {
+      this.authenticated = status;
+    },
+  },
   components: {
     NConfigProvider,
     NGlobalStyle,
     RouterLink,
-    RouterView
+    RouterView,
+    NMessageProvider,
+    NDialogProvider,
+    NNotificationProvider
   },
   setup() {
     return {
