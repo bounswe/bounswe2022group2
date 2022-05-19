@@ -18,17 +18,17 @@ export default async (req, res) => {
       return res.status(500).json({ "resultMessage": err.message });
     });
   
-    if(!lesson) return res.status(400).json({"resultMessage": "The lesson with the given id could not be found"});
+    if(!lesson) return res.status(404).json({"resultMessage": "The lesson with the given id could not be found"});
     
     let user = await User.findById(userId)
     .catch(err => {
       return res.status(500).json({"resultMessage": err.message});
     });
   
-    if(!user) return res.status(400).json({"resultMessage": "The user with the given id could not be found"});
+    if(!user) return res.status(404).json({"resultMessage": "The user with the given id could not be found"});
 
     if(user.enrolledLessons.includes(lessonId)){
-      return res.status(400).json({"resultMessage": "User has already taken this lesson"});
+      return res.status(404).json({"resultMessage": "User has already taken this lesson"});
     }
 
     user = await User.findByIdAndUpdate(userId, {$push: {enrolledLessons: lessonId}}, {new:true})
