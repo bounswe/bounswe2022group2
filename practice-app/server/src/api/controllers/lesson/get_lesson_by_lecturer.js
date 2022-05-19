@@ -10,8 +10,12 @@ export default async (req, res) => {
 
   const lecturer = await User.findOne({ _id: lecturerId})
   .catch((err) => {
-      return res.status(404).json({ "resultMessage": err.message });;
+      return res.status(500).json({ "resultMessage": err.message });
   });
+
+  if(!lecturer){
+    return res.status(404).json({"resultMessage": "Lecturer with the given id could not be found."});
+  }
 
   const lessons = await Lesson.find({ lecturer: lecturerId })
     .catch((err) => {
