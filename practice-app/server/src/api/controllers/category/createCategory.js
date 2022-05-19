@@ -17,11 +17,12 @@ async function getTitle(category) {
     url = url + "?origin=*";
     Object.keys(params).forEach(function (key) { url += "&" + key + "=" + params[key]; });
     const res = await axios.get(url);
-    if(res.data.query.searchinfo.suggestion){
-        throw new Error ("Suggestion: " + res.data.query.searchinfo.suggestion);
-    }else if (res.data.query.search.length > 0) {
+    if (res.data.query.search.length > 0) {
         return res.data.query.search[0].title;
-    }else {
+    }
+    else if (res.data.query.searchinfo.suggestion) {
+        throw new Error("Suggestion: " + res.data.query.searchinfo.suggestion);
+    } else {
         throw new Error("Cannot found category in Wikipedia.")
     }
 }
@@ -71,4 +72,4 @@ async function createCategory(title) {
     };
 }
 
-export {createCategory}; 
+export { createCategory }; 
