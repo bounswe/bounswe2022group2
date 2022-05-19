@@ -2,10 +2,12 @@ import * as VueRouter from 'vue-router'
 
 import a from './components/a.vue'
 import b from './components/b.vue'
+import Category from './components/Category.vue';
 
 const routes = [
     { path: '/', component: a },
     { path: '/b', component: b },
+    { path: '/category', component: Category }
 ];
 
 const router = VueRouter.createRouter({
