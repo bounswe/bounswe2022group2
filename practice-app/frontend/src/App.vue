@@ -7,6 +7,7 @@
           <div class="topnav">
             <router-link to="/">Home</router-link>
             <router-link to="/category">Categories</router-link>
+            <router-link to="/rating">Ratings</router-link> 
           </div>
           <router-view />
         </n-dialog-provider>

@@ -9,6 +9,7 @@ const routes = [
     { path: '/rating', component: Rating },
     { path: '/', component: a },
     { path: '/b', component: b },
+    { path: '/rating', component: Rating },
     { path: '/category', component: Category }
 ];
 
