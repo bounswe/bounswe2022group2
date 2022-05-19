@@ -1,26 +1,21 @@
-import { User } from '../../../models/index.js';
-import { Event } from '../../../models/index.js';
-import { validateGetEvent } from '../../validators/event.validator.js';
+import mongoose from 'mongoose';
+import { Event} from '../../../models/index.js';
 
-export default async (req, res) => {
+export default async (req,res) => {
+    const eventId = req.query.event_id;
+    if(!eventId || !mongoose.isValidObjectId(req.query.event_id)) {
+        return res.status(400).json({ "resultMessage": "Please provide a valid event id." });
+    }
 
-  const { error } = validateGetEvent(req.body);
+    const event = await Event.findById(eventId)
+    .catch(err => {
+        return res.status(500).json({"resultMessage": err.message});
+    });
 
-  if (error) {
-    return res.status(400).json({ "resultMessage": error.details[0].message });
-  }
+    if(!event) return res.status(404).json({"resultMessage": "Event with the given event id does not exist"});
 
-  const eventId = req.body.event_id;
-
-  const event = await Event.findById(eventId)
-  .catch(err => {
-    return res.status(500).json({ "resultMessage": err.message });
-  });
-
-  if(!event) return res.status(404).json({"resultMessage": "The event with the given id could not be found"});
-
-  return res.status(200).json({
-    resultMessage: "Event is successfully fetched.", event: event
-  });
-
-}
+    return res.status(200).json({
+        resultMessage: "Event is successfully fetched.",
+        event: event,
+    });
+} 
