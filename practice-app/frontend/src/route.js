@@ -3,11 +3,14 @@ import * as VueRouter from 'vue-router'
 import a from './components/a.vue'
 import b from './components/b.vue'
 import Rating from './components/Rating.vue'
+import Category from './components/Category.vue';
 
 const routes = [
+    { path: '/rating', component: Rating },
     { path: '/', component: a },
     { path: '/b', component: b },
     { path: '/rating', component: Rating },
+    { path: '/category', component: Category }
 ];
 
 const router = VueRouter.createRouter({

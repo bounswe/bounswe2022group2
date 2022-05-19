@@ -5,8 +5,8 @@
       <n-notification-provider>
         <n-dialog-provider>
           <div class="topnav">
-            <router-link to="/">mock1</router-link>
-            <router-link to="/b">mock2</router-link>
+            <router-link to="/">Home</router-link>
+            <router-link to="/category">Categories</router-link>
             <router-link to="/rating">Ratings</router-link> 
           </div>
           <router-view />
