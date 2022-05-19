@@ -64,7 +64,7 @@ export default {
       }
     },
     login() {
-      this.$router.replace({ name: "Login" });
+      this.$router.push({ name: "Login" });
     },
   },
 };
