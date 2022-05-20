@@ -8,6 +8,7 @@ import Event from './components/Event.vue';
 import Attend from './components/Attend.vue';
 import AttendedEvents from './components/AttendedEvents.vue';
 import EnrolledLessons from "./components/EnrolledLessons.vue";
+import LessonEvents from './components/LessonEvents.vue';
 
 
 const routes = [
@@ -22,6 +23,7 @@ const routes = [
     { path: '/attend', component: Attend, name: "Attend" },
     { path: '/attended-events', component: AttendedEvents, name: "AttendedEvents" },
     { path: '/enrolled-lessons', component: EnrolledLessons, name: "EnrolledLessons"},
+    { path: '/lesson-events', component: LessonEvents, name: "LessonEvents"},
 ];
 
 const router = VueRouter.createRouter({
