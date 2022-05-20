@@ -10,6 +10,7 @@
             <router-link v-if="authenticated" to="/create-event">Create Event</router-link>
             <router-link v-if="authenticated" to="/attend">Attend Event</router-link>
             <router-link v-if="authenticated" to="/attended-events">Attended Events</router-link>
+            <router-link v-if="authenticated" to="/get-event-details">Get Event Details</router-link>
             <router-link v-if="authenticated" to="/enrolled-lessons">Enrolled Lessons</router-link>
             <router-link v-if="authenticated" to="/search-lesson">Search Lesson</router-link>
             <router-link v-if="authenticated" to="/lesson-events">Lesson Events</router-link>

@@ -10,6 +10,7 @@ import AttendedEvents from './components/AttendedEvents.vue';
 import EnrolledLessons from "./components/EnrolledLessons.vue";
 import SearchLesson from './components/SearchLesson.vue';
 import LessonEvents from './components/LessonEvents.vue';
+import GetEventDetails from './components/GetEventDetails.vue';
 
 
 const routes = [
@@ -21,6 +22,7 @@ const routes = [
     { path: '/create-event', component: Event, name: "CreateEvent" },
     { path: '/attend', component: Attend, name: "Attend" },
     { path: '/attended-events', component: AttendedEvents, name: "AttendedEvents" },
+    { path: '/get-event-details', component: GetEventDetails, name: "GetEventDetails"},
     { path: '/enrolled-lessons', component: EnrolledLessons, name: "EnrolledLessons"},
     { path: '/search-lesson', component: SearchLesson, name: "SearchLesson"},
     { path: '/lesson-events', component: LessonEvents, name: "LessonEvents"},

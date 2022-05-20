@@ -7,15 +7,16 @@ export default async (req,res) => {
         return res.status(400).json({ "resultMessage": "Please provide a valid event id." });
     }
 
-    const event = await Event.findById(eventId)
+    const event = await Event.find({ _id: eventId })
     .catch(err => {
         return res.status(500).json({"resultMessage": err.message});
     });
-
-    if(!event) return res.status(404).json({"resultMessage": "Event with the given event id does not exist"});
-
+    
+    if (event.length != 0)
     return res.status(200).json({
-        resultMessage: "Event is successfully fetched.",
-        event: event,
+      resultMessage: "Event is successfully fetched.",
+      event: event,
     });
+  
+  return res.status(404).json({ "resultMessage": "Event with the given event id does not exist."});
 } 
