@@ -6,7 +6,6 @@ import Rating from './components/Rating.vue';
 import Signup from './components/Signup.vue';
 import Lesson from './components/Lesson.vue';
 
-
 const routes = [
     { path: '/', component: Signup, name: "Signup", props: true, },
     { path: '/category', component: Category, name: "Categories", props: true, },
