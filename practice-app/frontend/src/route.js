@@ -5,6 +5,7 @@ import Login from './components/Login.vue';
 import Rating from './components/Rating.vue';
 import Signup from './components/Signup.vue';
 import Event from './components/Event.vue';
+import Attend from './components/Attend.vue';
 import EnrolledLessons from "./components/EnrolledLessons.vue";
 
 
@@ -17,6 +18,7 @@ const routes = [
     { path: '/login', component: Login, name: "Login" },
     { path: '/rating', component: Rating },
     { path: '/create-event', component: Event, name: "CreateEvent" },
+    { path: '/attend', component: Attend, name: "Attend" },
     { path: '/enrolled-lessons', component: EnrolledLessons, name: "EnrolledLessons"},
 ];
 
