@@ -5,6 +5,7 @@ import { dropLesson } from "../controllers/user/index.js";
 import { enrollLesson } from "../controllers/user/index.js";
 import { attendEvent } from "../controllers/user/index.js";
 import { getAttendedEvents } from '../controllers/user/index.js';
+import { getEnrolledLessons } from '../controllers/user/index.js';
 
 
 const router = Router();
