@@ -4,6 +4,7 @@ import CategoryLessons from './components/CategoryLessons.vue';
 import Login from './components/Login.vue';
 import Rating from './components/Rating.vue';
 import Signup from './components/Signup.vue';
+import Lesson from './components/Lesson.vue';
 
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
     },
     { path: '/login', component: Login, name: "Login" },
     { path: '/rating', component: Rating },
+    { path: '/lesson', component: Lesson, name: "Lesson" },
 ];
 
 const router = VueRouter.createRouter({
