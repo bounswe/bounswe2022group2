@@ -5,6 +5,7 @@ import { dropLesson } from "../controllers/user/index.js";
 import { enrollLesson } from "../controllers/user/index.js";
 import { attendEvent } from "../controllers/user/index.js";
 import { getAttendedEvents } from '../controllers/user/index.js';
+import { getEnrolledLessons } from '../controllers/user/index.js';
 
 
 const router = Router();
@@ -16,6 +17,7 @@ router.post("/enrolled/drop", dropLesson);
 router.post("/enroll", enrollLesson);
 router.post("/attend", attendEvent);
 router.get('/attendedEvents', getAttendedEvents);
+router.get('/enrolled', getEnrolledLessons);
 
 
 export default router

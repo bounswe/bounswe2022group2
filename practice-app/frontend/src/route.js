@@ -4,6 +4,8 @@ import CategoryLessons from './components/CategoryLessons.vue';
 import Login from './components/Login.vue';
 import Rating from './components/Rating.vue';
 import Signup from './components/Signup.vue';
+import Event from './components/Event.vue';
+import EnrolledLessons from "./components/EnrolledLessons.vue";
 
 
 const routes = [
@@ -14,6 +16,8 @@ const routes = [
     },
     { path: '/login', component: Login, name: "Login" },
     { path: '/rating', component: Rating },
+    { path: '/create-event', component: Event, name: "CreateEvent" },
+    { path: '/enrolled-lessons', component: EnrolledLessons, name: "EnrolledLessons"},
 ];
 
 const router = VueRouter.createRouter({
