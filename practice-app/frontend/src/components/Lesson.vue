@@ -42,7 +42,7 @@ export default {
       console.log(lecturer_id);
       try {
         const res = await fetch(
-          import.meta.env.VITE_API_URL + "/lesson/",
+          import.meta.env.VITE_API_URL + "/lesson",
           {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -52,7 +52,6 @@ export default {
         const data = await res.json();
         if (res.status == 200) {
           this.$emit("lessonCreated", true);
-         // this.$router.replace({ name: "Categories" });
         } else {
           alert(data.resultMessage);
         }
