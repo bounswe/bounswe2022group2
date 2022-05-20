@@ -1,5 +1,5 @@
 import { expect } from 'expect';
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 import request from 'supertest';
 import { Category, User, Lesson, Event } from '../src/models/index.js';
 import app from './../src/app.js';
