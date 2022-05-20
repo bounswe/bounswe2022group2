@@ -13,13 +13,11 @@
               <th>Lecturer Id</th>
             </tr>
           </template>
-          <n-list-item v-for="lesson in lessons">
-            <tr v-for="(lesson, i) in lessons" :key="lesson.id">
-              <td>{{ i + 1 }}</td>
-              <td>{{ lesson.id }}</td>
-              <td>{{ lesson.name }}</td>
-              <td>{{ lesson.lecturer }}</td>
-            </tr>
+          <n-list-item v-for="(lesson, i) in lessons">
+            <td>{{ i + 1 }}</td>
+            <td>{{ lesson.id }}</td>
+            <td>{{ lesson.name }}</td>
+            <td>{{ lesson.lecturer }}</td>
           </n-list-item>
         </n-list>
       </div>
