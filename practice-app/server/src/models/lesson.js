@@ -5,6 +5,7 @@ const { Schema, model } = mongoose;
 const lessonSchema = new Schema({
   name: { type: String, required: true },
   category_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
+  lecturer: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
 },
   {
     timestamps: true,
