@@ -44,7 +44,7 @@ export default {
           date: "",
           location: "",
           lesson_id: "",
-          host_id: localStorage.getItem('userId'),
+          host_id: localStorage.getItem('user_id'),
         };
   },
   methods: {
