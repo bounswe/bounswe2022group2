@@ -1,5 +1,5 @@
 import { expect } from 'expect';
-import mongoose from 'mongoose';
+import mongoose, { mongo } from 'mongoose';
 import request from 'supertest';
 import { Category, User, Lesson, Event } from '../src/models/index.js';
 import app from './../src/app.js';
@@ -7,6 +7,7 @@ import app from './../src/app.js';
 const categoryId = mongoose.Types.ObjectId();
 const lesson_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const user_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
+const lecturer_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const event_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const dates = [new Date(2022,4,23), new Date(2022,5,19), new Date(2022,10,29)];
 const invalid_id = mongoose.Types.ObjectId();
@@ -21,12 +22,14 @@ const lessons = [
   {
     _id: lesson_ids[0],
     name: "Lesson1",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturer_ids[0]
   },
   {
     _id: lesson_ids[1],
     name: "Lesson2",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturer_ids[1]
   },
 ];
 
