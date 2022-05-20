@@ -8,8 +8,9 @@
               Lessons of the {{ selectedCate.title }} Category</h1>
             <tr>
               <th>Item Index</th>
-              <th>Id</th>
-              <th>Name</th>
+              <th>Lesson Id</th>
+              <th>Lesson Name</th>
+              <th>Lecturer Id</th>
             </tr>
           </template>
           <n-list-item v-for="lesson in lessons">
@@ -17,6 +18,7 @@
               <td>{{ i + 1 }}</td>
               <td>{{ lesson.id }}</td>
               <td>{{ lesson.name }}</td>
+              <td>{{ lesson.lecturer }}</td>
             </tr>
           </n-list-item>
         </n-list>
@@ -35,6 +37,7 @@ export default {
           "id": "id",
           "category_id": "id",
           "name": "name",
+          "lecturer": "lecturer_id",
         }
       ],
       selectedCate: {
