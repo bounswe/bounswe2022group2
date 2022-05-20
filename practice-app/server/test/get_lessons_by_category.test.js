@@ -4,7 +4,8 @@ import request from 'supertest';
 import { Category, Lesson } from '../src/models/index.js';
 import app from './../src/app.js';
 
-const categoryId = mongoose.Types.ObjectId();
+const categoryId = mongoose.Types.ObjectId(); 
+const user_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const category = {
   _id: categoryId,
@@ -12,16 +13,35 @@ const category = {
   description: "mockDescription"
 }
 
+const lecturers = [
+  {
+    _id: user_ids[0],
+    email: "user1@gmail.com",
+    password: "password1",
+    name: "username1",
+    enrolledLessons: []
+  },
+  {
+    _id: user_ids[1],
+    email: "user2@gmail.com",
+    password: "password2",
+    name: "username2",
+    enrolledLessons: []
+  }
+];
+
 const lessons = [
   {
     _id: ids[0],
     name: "Tennis",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturers[0]._id,
   },
   {
     _id: ids[1],
     name: "Volleyball",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturers[1]._id,
   },
 ];
 

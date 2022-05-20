@@ -7,6 +7,7 @@ import app from './../src/app.js';
 const categoryId = mongoose.Types.ObjectId();
 const lesson_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const user_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
+const lecturer_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 const invalid_ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
 
 const category = {
@@ -19,17 +20,20 @@ const lessons = [
   {
     _id: lesson_ids[0],
     name: "Lesson1",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturer_ids[0]
   },
   {
     _id: lesson_ids[1],
     name: "Lesson2",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturer_ids[0]
   },
   {
     _id: lesson_ids[2],
     name: "Lesson3",
-    category_id: category._id
+    category_id: category._id,
+    lecturer: lecturer_ids[1]
   }
 ];
 
@@ -39,14 +43,16 @@ const users = [
         email: "user1@gmail.com",
         password: "password1",
         name: "username1",
-        enrolledLessons: [lesson_ids[0],lesson_ids[1],lesson_ids[2]]
+        enrolledLessons: [lesson_ids[0],lesson_ids[1],lesson_ids[2]],
+        attendedEvents: []
     },
     {
         _id: user_ids[1],
         email: "user2@gmail.com",
         password: "password2",
         name: "username2",
-        enrolledLessons: [lesson_ids[1],lesson_ids[2]]
+        enrolledLessons: [lesson_ids[1],lesson_ids[2]],
+        attendedEvents: []
     }
 ]
 

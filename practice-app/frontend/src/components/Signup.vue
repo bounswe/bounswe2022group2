@@ -28,6 +28,7 @@
 <script>
 
 
+var url = import.meta.env.VITE_API_URL + '/user/signup';
 export default {
   watch: {
   },
@@ -44,7 +45,7 @@ export default {
       const { email, password, name } = this;
       try {
         const res = await fetch(
-          "http://localhost:3000/user/signup",
+          url,
           {
             method: "POST",
             headers: {
@@ -58,6 +59,8 @@ export default {
         const data = await res.json();
         if (res.status == 200) {
           this.$emit("authenticated", true);
+          localStorage.setItem('user_id', data.user.id);
+          localStorage.setItem('authenticated', true);
           this.$router.replace({ name: "Categories" });
         } else {
           alert(data.resultMessage);
@@ -70,6 +73,9 @@ export default {
       this.$router.push({ name: "Login" });
     },
   },
+  created() {
+    this.$emit("authenticated", false);
+  }
 };
 </script>
 

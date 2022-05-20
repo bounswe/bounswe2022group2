@@ -6,6 +6,7 @@ import Rating from './components/Rating.vue';
 import Signup from './components/Signup.vue';
 import Event from './components/Event.vue';
 import AttendedEvents from './components/AttendedEvents.vue';
+import EnrolledLessons from "./components/EnrolledLessons.vue";
 
 
 const routes = [
@@ -18,6 +19,7 @@ const routes = [
     { path: '/rating', component: Rating },
     { path: '/create-event', component: Event, name: "CreateEvent" },
     { path: '/attended-events', component: AttendedEvents, name: "AttendedEvents" },
+    { path: '/enrolled-lessons', component: EnrolledLessons, name: "EnrolledLessons"},
 ];
 
 const router = VueRouter.createRouter({
