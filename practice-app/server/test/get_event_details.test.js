@@ -85,7 +85,7 @@ describe('GET /event/details', () => {
       .expect((res) => {
         expect(res.body.event).not.toBeNull();
         expect(res.body.event).not.toBeUndefined();
-        const firstEvent = res.body.event;
+        const firstEvent = res.body.event[0];
         expect(firstEvent).not.toBeNull();
         expect(firstEvent).not.toBeUndefined();
         expect(firstEvent.title).not.toBeNull();
@@ -110,7 +110,7 @@ describe('GET /event/details', () => {
       .expect((res) => {
         expect(res.body.event).not.toBeNull();
         expect(res.body.event).not.toBeUndefined();
-        const firstEvent = res.body.event;
+        const firstEvent = res.body.event[0];
         expect(firstEvent).not.toBeNull();
         expect(firstEvent).not.toBeUndefined();
         expect(firstEvent.title).not.toBeNull();
