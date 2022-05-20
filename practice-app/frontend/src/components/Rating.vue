@@ -21,11 +21,13 @@
                 </n-space>
             </n-list-item>
         </n-list>
-        Welcome to rating area. 
+        Welcome to rating area.
         You can filter ratings by entering minimum and maximum rating values.
-        To rate a lesson, please enter the name and the rating of the class. When rated successfully, the page will reload with a pop up message.
+        To rate a lesson, please enter the name and the rating of the class. When rated successfully, the page will
+        reload with a pop up message.
         <div class="di">
-            You can see the new rating if you filter again. Please clear the input area after every filtering and rating.
+            You can see the new rating if you filter again. Please clear the input area after every filtering and
+            rating.
         </div>
     </div>
 </template>
@@ -34,11 +36,10 @@
 
 
 <script>
-import { defineComponent } from 'vue'
 import axios from 'axios';
-import { NButton, NList, NListItem, NThing, NTag, NInput, useMessage } from 'naive-ui'
+import { NButton, NInput, NList, NListItem, NTag, NThing, useMessage } from 'naive-ui';
+import { defineComponent } from 'vue';
 var url = import.meta.env.VITE_API_URL + '/rating';
-console.log(url);
 export default defineComponent({
     data() {
         return {
@@ -48,9 +49,6 @@ export default defineComponent({
     },
     methods: {
         async handleInputChange(v) {
-            console.log("v");
-            console.log(this.name);
-
             axios.get(url, {
                 params: {
                     min: v[0],
@@ -59,7 +57,6 @@ export default defineComponent({
             })
                 .then(data => {
                     this.ratings = data.data
-                    console.log(data);
                 });
         },
 
@@ -73,7 +70,6 @@ export default defineComponent({
                 .then(res => {
                     if (res.resultMessage.match(/successfully created/)) {
                         this.showPopUp();
-                        setTimeout(() => { console.log("World!"); }, 5000);
                         this.$router.go();
                     }
                     else {
@@ -92,9 +88,7 @@ export default defineComponent({
             }
         }
     },
-    async created() {
-        console.log(url)
-    },
+    async created() { },
     components: {
         NButton, NList, NListItem, NThing, NTag, NInput
     }
