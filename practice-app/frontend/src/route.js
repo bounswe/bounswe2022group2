@@ -8,20 +8,20 @@ import Event from './components/Event.vue';
 import Attend from './components/Attend.vue';
 import AttendedEvents from './components/AttendedEvents.vue';
 import EnrolledLessons from "./components/EnrolledLessons.vue";
+import SearchLesson from './components/SearchLesson.vue';
 
 
 const routes = [
     { path: '/', component: Signup, name: "Signup", props: true, },
     { path: '/category', component: Category, name: "Categories", props: true, },
-    {
-        path: '/categoryLessons', component: CategoryLessons, name: "CategoryLessons", props: true,
-    },
+    { path: '/categoryLessons', component: CategoryLessons, name: "CategoryLessons", props: true, },
     { path: '/login', component: Login, name: "Login" },
     { path: '/rating', component: Rating },
     { path: '/create-event', component: Event, name: "CreateEvent" },
     { path: '/attend', component: Attend, name: "Attend" },
     { path: '/attended-events', component: AttendedEvents, name: "AttendedEvents" },
     { path: '/enrolled-lessons', component: EnrolledLessons, name: "EnrolledLessons"},
+    { path: '/search-lesson', component: SearchLesson, name: "SearchLesson"},
 ];
 
 const router = VueRouter.createRouter({
