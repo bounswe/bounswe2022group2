@@ -1,5 +1,5 @@
 <template>
-    <div style="margin: 25px 50px 75px 100px">
+    <div style="margin: 25px 50px 75px 50px">
         <n-list bordered>
             <template #header>
                 <h1>Lesson Events</h1>
