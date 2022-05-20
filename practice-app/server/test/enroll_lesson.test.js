@@ -1,7 +1,7 @@
 import { expect } from 'expect';
 import mongoose from 'mongoose';
 import request from 'supertest';
-import { Category, User, Lesson } from '../src/models/index.js';
+import { Category, Lesson, User } from '../src/models/index.js';
 import app from './../src/app.js';
 
 const categoryId = mongoose.Types.ObjectId();
@@ -30,7 +30,7 @@ const lessons = [
     _id: lesson_ids[2],
     name: "Lesson3",
     category_id: category._id
-  }
+  },
   {
     _id: lesson_ids[3],
     name: "Lesson3",
