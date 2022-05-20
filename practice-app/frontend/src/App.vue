@@ -9,6 +9,7 @@
             <router-link v-if="authenticated" to="/rating">Ratings</router-link>
             <router-link v-if="authenticated" to="/create-event">Create Event</router-link>
             <router-link v-if="authenticated" to="/attend">Attend Event</router-link>
+            <router-link v-if="authenticated" to="/attended-events">Attended Events</router-link>
             <router-link v-if="authenticated" to="/enrolled-lessons">Enrolled Lessons</router-link>
           </div>
           <router-view @authenticated="setAuthenticated" />
@@ -20,13 +21,9 @@
 
 
 <script>
-
 import { darkTheme, NConfigProvider, NDialogProvider, NGlobalStyle, NMessageProvider, NNotificationProvider } from 'naive-ui'
 import { defineComponent } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-
-
-
 export default defineComponent({
   name: 'App',
   data() {
@@ -65,7 +62,6 @@ export default defineComponent({
   background-color: #333;
   overflow: hidden;
 }
-
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
