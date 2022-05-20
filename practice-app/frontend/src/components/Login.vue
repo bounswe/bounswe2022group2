@@ -53,6 +53,7 @@ export default {
         const data = await res.json();
         if (res.status == 200) {
           this.$emit("authenticated", true);
+          localStorage.setItem('user_id', data.user.id);
           this.$router.replace({ name: "Categories" });
         } else {
           alert(data.resultMessage);
