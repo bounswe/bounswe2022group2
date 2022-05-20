@@ -7,17 +7,12 @@ import { Category, Lesson, User } from '../src/models/index.js';
 const categoryId = mongoose.Types.ObjectId();
 const lessonId = mongoose.Types.ObjectId();
 const userId = mongoose.Types.ObjectId();
+const lecturerId = mongoose.Types.ObjectId();
 
 const test_category = {
     _id: categoryId,
     title: "Test Category",
     description: "Test Description",
-}
-
-const test_lesson = {
-    _id: lessonId,
-    name: "Test Lesson",
-    category_id: test_category._id
 }
 
 const test_user = {
@@ -27,6 +22,22 @@ const test_user = {
     email: "testuser@test.com",
     enrolledLessons: [],
     attendedEvents: []
+}
+
+const test_lecturer = {
+    _id: lecturerId,
+    name: "Test Lecturer",
+    password: "testpass",
+    email: "testlecturer@test.com",
+    enrolledLessons: [],
+    attendedEvents: []
+}
+
+const test_lesson = {
+    _id: lessonId,
+    name: "Test Lesson",
+    category_id: test_category._id,
+    lecturer: lecturerId,
 }
 
 const test_event = {
@@ -42,12 +53,13 @@ const setCategory = async () => {
     await new Category(test_category).save();
 }
 
-const setLesson = async () => {
-    await new Lesson(test_lesson).save();
-}
-
 const setUser = async () => {
     await new User(test_user).save();
+    await new User(test_lecturer).save();
+}
+
+const setLesson = async () => {
+    await new Lesson(test_lesson).save();
 }
 
 const addDummyData = async () => {
@@ -206,4 +218,5 @@ afterEach(async () => {
     await Category.findByIdAndDelete(test_category._id);
     await Lesson.findByIdAndDelete(test_lesson._id);
     await User.findByIdAndDelete(test_user._id);
+    await User.findByIdAndDelete(test_lecturer._id);
 });
