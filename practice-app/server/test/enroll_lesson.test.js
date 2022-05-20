@@ -30,7 +30,7 @@ const lessons = [
     _id: lesson_ids[2],
     name: "Lesson3",
     category_id: category._id
-  }
+  },
   {
     _id: lesson_ids[3],
     name: "Lesson3",
