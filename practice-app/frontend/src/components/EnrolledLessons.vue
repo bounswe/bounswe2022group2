@@ -16,15 +16,11 @@
                         {{ lesson.name }}
                     </n-tag>
                 </template>
-                <n-tag type="success" size="large" round>
-                    Lesson id: {{ lesson.id }}
-                </n-tag>
-                    <n-tag type="success" size="large" round>
-                    Category id: {{ lesson.category_id }}
-                </n-tag>
-                <n-tag type="success" size="large" round>
-                    Lecturer id: {{ lesson.lecturer }}
-                </n-tag>
+                <n-thing>
+                    <b>Lesson id: </b>{{ lesson.id }}<br>
+                    <b>Category id: </b>{{ lesson.category_id }}<br>
+                    <b>Lecturer id: </b>{{ lesson.lecturer }}<br>
+                </n-thing>
             </n-list-item>
         </n-list>
     </div>
