@@ -27,7 +27,7 @@ export default async (req,res) => {
     const passwordCheck = bcrypt.compareSync(incomingPassword, databasePassword);
 
     if (!passwordCheck) 
-        return res.status(404).json({"resultMessage": "Wrong password."});
+        return res.status(409).json({"resultMessage": "Wrong password."});
 
     return res.status(200).json({
         resultMessage: "Successfully logged in.",

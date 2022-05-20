@@ -21,7 +21,7 @@
                 </n-space>
             </n-list-item>
         </n-list>
-        Welcome to rating area. 
+        Welcome to rating area.
         You can filter ratings by entering minimum and maximum rating values.
         To rate a lesson, please enter the name and the rating of the class.
     </div>
@@ -31,11 +31,10 @@
 
 
 <script>
-import { defineComponent } from 'vue'
 import axios from 'axios';
-import { NButton, NList, NListItem, NThing, NTag, NInput, useMessage } from 'naive-ui'
+import { NButton, NInput, NList, NListItem, NTag, NThing, useMessage } from 'naive-ui';
+import { defineComponent } from 'vue';
 var url = import.meta.env.VITE_API_URL + '/rating';
-console.log(url);
 var rating = [];
 var filter = [];
 export default defineComponent({
@@ -47,7 +46,6 @@ export default defineComponent({
     },
     methods: {
         async handleInputChange() {
-
             axios.get(url, {
                 params: {
                     min: filter[0],
@@ -56,7 +54,6 @@ export default defineComponent({
             })
                 .then(data => {
                     this.ratings = data.data
-                    console.log(data);
                 });
         },
         storeRValue(v){
@@ -100,9 +97,7 @@ export default defineComponent({
             }
         }
     },
-    async created() {
-        console.log(url)
-    },
+    async created() { },
     components: {
         NButton, NList, NListItem, NThing, NTag, NInput
     }
