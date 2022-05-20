@@ -52,7 +52,7 @@ export default {
         const { title, description, date, location, lesson_id, host_id } = this;
         try {
         const res = await fetch(
-            "http://localhost:3000/event/createEvent",
+            import.meta.env.VITE_API_URL + "/event/createEvent",
             {
             method: "POST",
             headers: {
