@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { getLessonsByCategory, createLessonEndpoint } from '../controllers/lesson/index.js';
-import { getLessonsByCategory } from '../controllers/lesson/index.js';
 import { getLessonsByName } from '../controllers/lesson/index.js';
 import { getLessonEvents } from '../controllers/lesson/index.js';
 import { getLessonByLecturer } from '../controllers/lesson/index.js';
