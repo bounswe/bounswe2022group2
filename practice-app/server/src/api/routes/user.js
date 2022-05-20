@@ -17,6 +17,7 @@ router.post("/enrolled/drop", dropLesson);
 router.post("/enroll", enrollLesson);
 router.post("/attend", attendEvent);
 router.get('/attendedEvents', getAttendedEvents);
+router.get('/enrolled', getEnrolledLessons);
 
 
 export default router
