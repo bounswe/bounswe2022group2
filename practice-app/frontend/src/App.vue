@@ -50,7 +50,11 @@ export default defineComponent({
     return {
       darkTheme
     }
-  }
+  },
+  created() {
+    localStorage.setItem('authenticated', false);
+    this.authenticated = localStorage.getItem('authenticated');
+  },
 })
 </script>
 

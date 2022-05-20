@@ -1,14 +1,18 @@
 import * as VueRouter from 'vue-router';
-
-import Rating from './components/Rating.vue'
 import Category from './components/Category.vue';
+import CategoryLessons from './components/CategoryLessons.vue';
 import Login from './components/Login.vue';
+import Rating from './components/Rating.vue';
 import Signup from './components/Signup.vue';
 import Event from './components/Event.vue';
 
+
 const routes = [
-    { path: '/', component: Signup, name: "Signup" },
-    { path: '/category', component: Category, name: "Categories" },
+    { path: '/', component: Signup, name: "Signup", props: true, },
+    { path: '/category', component: Category, name: "Categories", props: true, },
+    {
+        path: '/categoryLessons', component: CategoryLessons, name: "CategoryLessons", props: true,
+    },
     { path: '/login', component: Login, name: "Login" },
     { path: '/rating', component: Rating },
     { path: '/create-event', component: Event, name: "CreateEvent" },

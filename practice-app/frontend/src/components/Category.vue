@@ -21,6 +21,8 @@
                     </n-tag>
                 </template>
                 <n-thing :description="category.description" />
+                <br>
+                <n-button round="" @click.prevent="fetchLessons(category.id)">See all lessons</n-button>
             </n-list-item>
         </n-list>
     </div>
@@ -30,21 +32,24 @@
 
 
 <script>
-import { defineComponent } from 'vue'
-import { NButton, NList, NListItem, NThing, NTag, NInput, NSpace, useMessage } from 'naive-ui'
+import { NButton, NInput, NList, NListItem, NSpace, NTag, NThing, useMessage } from 'naive-ui';
+import { defineComponent } from 'vue';
 
 var url = import.meta.env.VITE_API_URL + '/category';
+var lessonUrl = import.meta.env.VITE_API_URL + '/lesson/byCategory';
 export default defineComponent({
     data() {
         return {
             "categories": [
                 {
                     "title": "mock1",
-                    "description": "desc1"
+                    "description": "desc1",
+                    "id": "id1",
                 },
                 {
                     "title": "mock2",
-                    "description": "desc2"
+                    "description": "desc2",
+                    "id": "id2",
                 }
             ],
             suggested: false,
@@ -52,11 +57,34 @@ export default defineComponent({
         }
     },
     methods: {
+        async fetchLessons(categoryId) {
+            try {
+                const res = await fetch(
+                    lessonUrl + `?category_id=${categoryId}`,
+                    {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                    }
+                );
+                const data = await res.json();
+                if (res.status == 200) {
+                    const params = { lessons: data['lessons'] };
+                    localStorage.setItem('lessonsByCategory', JSON.stringify(data['lessons']));
+                    localStorage.setItem('lessonsSelectedCategory', JSON.stringify(this.categories.find((c) => c.id == categoryId)));
+                    this.$router.push({ name: "CategoryLessons", params: params });
+                } else {
+                    alert(data.resultMessage);
+                }
+            } catch (err) {
+                alert(err);
+            }
+        },
         async updateCategories() {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     this.categories = data
                 });
         },
@@ -68,7 +96,6 @@ export default defineComponent({
                 body: JSON.stringify(data)
             }).then(response => response.json())
                 .then(res => {
-                    console.log(res)
                     if (res.resultMessage.match(/successfully created/)) {
                         this.updateCategories();
                     }
@@ -98,7 +125,6 @@ export default defineComponent({
         };
     },
     async created() {
-        console.log(url)
         this.updateCategories()
     },
     components: {
