@@ -7,6 +7,7 @@
           <div class="topnav">
             <router-link v-if="authenticated" to="/category">Categories</router-link>
             <router-link v-if="authenticated" to="/rating">Ratings</router-link>
+            <router-link v-if="authenticated" to="/create-event">Create Event</router-link>
           </div>
           <router-view @authenticated="setAuthenticated" />
         </n-dialog-provider>
