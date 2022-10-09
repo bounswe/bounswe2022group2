@@ -50,6 +50,8 @@ body:
         - label: Hasan Can Erol
         - label: Ahmet Yiğit Özdoğan
         - label: Ecenur Sezer
+        - label: Koray Tekin
+        - label: Mehmet Gökay Yıldız
   - type: input
     id: deadline
     attributes:
@@ -74,6 +76,8 @@ body:
         - Hasan Can Erol
         - Ahmet Yiğit Özdoğan
         - Ecenur Sezer
+        - Koray Tekin 
+        - Mehmet Gökay Yıldız
   - type: input
     id: review-deadline
     attributes:
