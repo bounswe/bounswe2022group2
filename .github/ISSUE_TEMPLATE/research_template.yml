@@ -1,6 +1,7 @@
 name: Research Template
 description: This template is created to specifically use for research issues.
-labels: status-new,priority-medium,type-research,type-documentation
+assignees: ['bahricanyesil']
+labels: [status-new,priority-medium,type-research,type-documentation]
 body:
   - type: markdown
     attributes:
@@ -40,7 +41,8 @@ body:
         - label: Onur Kömürcü
         - label: Mehmet Batuhan Çelik
         - label: Hasan Can Erol
-        - label: Ahmet Yiğit Özdoğan
+        - label: Koray Tekin
+        - label: Mehmet Gökay Yıldız
         - label: Ecenur Sezer
   - type: input
     id: deadline

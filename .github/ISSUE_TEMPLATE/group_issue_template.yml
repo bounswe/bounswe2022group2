@@ -1,6 +1,7 @@
 name: Group Issue Template
 description: This template is created to specifically use for the issues whose actions that are performed by more than 2 or more people.
-labels: status-new,priority-medium
+assignees: ['bahricanyesil']
+labels: [status-new,priority-medium]
 body:
   - type: markdown
     attributes:
@@ -48,7 +49,6 @@ body:
         - label: Onur Kömürcü
         - label: Mehmet Batuhan Çelik
         - label: Hasan Can Erol
-        - label: Ahmet Yiğit Özdoğan
         - label: Ecenur Sezer
         - label: Koray Tekin
         - label: Mehmet Gökay Yıldız
