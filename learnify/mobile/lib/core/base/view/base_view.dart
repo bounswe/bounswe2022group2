@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../constants/main_type_definitions.dart';
+import '../../extensions/context/context_extensions.dart';
+import '../../widgets/app-bar/default_app_bar.dart';
 import '../../widgets/buttons/custom_gesture_detector.dart';
 import '../../widgets/scroll/base_single_child_scroll_view.dart';
 import '../view-model/base_view_model.dart';
@@ -11,9 +14,8 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
   const BaseView({
     required this.mobileBuilder,
     this.customDispose,
-    // TODO: Fix
-    // this.customInitState,
-    // this.appBar,
+    this.customInitState,
+    this.appBar,
     this.resizeToAvoidBottomInset = true,
     this.safeArea = true,
     this.scrollable = false,
@@ -24,18 +26,16 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
   }) : super(key: key);
 
   /// Function to build the body for mobile.
-  /// * If desktop/tablet builders are not provided, this will be used.
   final WidgetBuilder mobileBuilder;
 
   /// Custom dispose method to call on dispose.
   final VoidCallback? customDispose;
 
-  // TODO: Fix
-  // /// Custom init state method to call on init state.
-  // final ViewModelInitCallback? customInitState;
+  /// Custom init state method to call on init state.
+  final ViewModelInitCallback? customInitState;
 
-  // /// Custom app bar.
-  // final AppBarBuilder? appBar;
+  /// Custom app bar.
+  final AppBarBuilder? appBar;
 
   /// Determines whether to resize to avoid bottom inset in [Scaffold].
   final bool resizeToAvoidBottomInset;
@@ -93,18 +93,15 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
         child: widget.hasScaffold
             ? Scaffold(
                 resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
-                // TODO: Fix
-                // appBar: _appBar,
+                appBar: _appBar,
                 drawer: widget.drawer,
                 body: body,
               )
             : body);
   }
 
-  // TODO: Fix
-  // DefaultAppBar? get _appBar => widget.appBar == null
-  //     ? null
-  //     : widget.appBar!(context).copyWithSize(context.responsiveSize * 14);
+  DefaultAppBar? get _appBar =>
+      widget.appBar?.call(context).copyWithSize(context.responsiveSize * 14);
 
   Widget get _child => widget.scrollable
       ? LayoutBuilder(

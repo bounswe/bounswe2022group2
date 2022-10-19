@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../extensions/context/context_extensions.dart';
+
 /// Default App Bar extends [AppBar]
 /// with its required functions.
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -85,11 +87,10 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget _safeAreaChild(BuildContext context, bool absorb) => Container(
         color: Colors.black,
         alignment: Alignment.center,
-        // TODO: Fix
-        // padding: padding ??
-        //     EdgeInsets.symmetric(
-        //         vertical: context.responsiveSize * 3,
-        //         horizontal: context.responsiveSize * 8),
+        padding: padding ??
+            EdgeInsets.symmetric(
+                vertical: context.responsiveSize * 3,
+                horizontal: context.responsiveSize * 8),
         child: absorb
             ? ImageFiltered(
                 imageFilter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
