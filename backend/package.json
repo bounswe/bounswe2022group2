@@ -1,0 +1,48 @@
+{
+  "name": "bounswe2022group2-backend",
+  "version": "1.0.0",
+  "description": "API of the project of the bounswe2022Group2.",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=dev node app.js",
+    "test": "NODE_ENV=test mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bounswe/bounswe2022group2.git"
+  },
+  "keywords": [
+    "bounswe2022group2",
+    "backend"
+  ],
+  "author": "bounswe2022group2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bounswe/bounswe2022group2/issues"
+  },
+  "homepage": "https://github.com/bounswe/bounswe2022group2#readme",
+  "type": "module",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "expect": "^28.0.2",
+    "express": "^4.18.1",
+    "helmet": "^5.0.2",
+    "joi": "^17.6.0",
+    "local-storage": "^2.0.0",
+    "mocha": "^10.0.0",
+    "mongodb-memory-server-core": "^8.5.2",
+    "mongoose": "^6.3.3",
+    "morgan": "^1.10.0",
+    "supertest": "^6.2.3",
+    "underscore": "^1.13.3"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "sinon": "^14.0.0"
+  }
+}
