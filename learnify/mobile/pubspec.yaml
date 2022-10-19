@@ -20,6 +20,8 @@ dependencies:
   # Model
   equatable: ^2.0.5
 
+  async: ^2.9.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
