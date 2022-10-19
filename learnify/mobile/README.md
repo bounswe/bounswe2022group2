@@ -1,6 +1,6 @@
-# LearnOn
+# Learnify
 
-Mobile/Android version of our app, LearnOn, which is an online learning platform.
+Mobile/Android version of our app, Learnify, which is an online learning platform.
 
 ## Getting Started
 
