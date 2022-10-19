@@ -17,6 +17,9 @@ dependencies:
   # State Management
   provider: ^6.0.1
 
+  # Model
+  equatable: ^2.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
