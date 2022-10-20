@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:async/async.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../product/constants/navigation_constants.dart';
@@ -8,10 +11,33 @@ class SignupViewModel extends BaseViewModel {
   // TODO: Fix
   // late final IAuthService _authService;
 
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+  late TextEditingController _usernameController;
+
+  TextEditingController get emailController => _emailController;
+  TextEditingController get passwordController => _passwordController;
+  TextEditingController get usernameController => _usernameController;
+
   bool _readAgreed = false;
 
   @override
   void initViewModel() {}
+
+  @override
+  void initView() {
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    _usernameController = TextEditingController();
+  }
+
+  @override
+  void disposeView() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _usernameController.dispose();
+    super.disposeView();
+  }
 
   /// Signup callback.
   Future<String?> signup() async {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../constants/enums/view_states.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../extensions/context/context_extensions.dart';
+import '../../helpers/selector_helper.dart';
 import '../../widgets/app-bar/default_app_bar.dart';
 import '../../widgets/buttons/custom_gesture_detector.dart';
 import '../../widgets/scroll/base_single_child_scroll_view.dart';
@@ -70,7 +72,6 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
 
   @override
   void dispose() {
-    model.disposeView();
     if (widget.customDispose != null) widget.customDispose!();
     model.customDispose();
     super.dispose();
@@ -118,5 +119,47 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
         ),
       );
 
-  Widget get _selectable => widget.builder(context);
+  Widget get _selectable => InitializedChild<T>(
+      builder: widget.builder, customInitState: widget.customInitState);
+}
+
+/// Initialized child widget.
+class InitializedChild<T extends BaseViewModel> extends StatefulWidget {
+  /// Default constructor.
+  const InitializedChild(
+      {required this.builder, this.customInitState, Key? key})
+      : super(key: key);
+
+  /// Function to build the body.
+  final WidgetBuilder builder;
+
+  /// Custom init state method to call on init state.
+  final ViewModelInitCallback? customInitState;
+
+  @override
+  State<InitializedChild<T>> createState() => _InitializedChildState<T>();
+}
+
+class _InitializedChildState<T extends BaseViewModel>
+    extends State<InitializedChild<T>> {
+  late bool _initialized = widget.customInitState == null;
+  late bool _calledInit = widget.customInitState == null;
+
+  @override
+  Widget build(BuildContext context) {
+    final ViewStates viewState = SelectorHelper<ViewStates, T>()
+        .listenValue((T model) => model.state, context);
+    if (!_calledInit && !_initialized) _initializeCustom();
+    if (viewState == ViewStates.uninitialized || !_initialized) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    return widget.builder(context);
+  }
+
+  void _initializeCustom() {
+    _calledInit = true;
+    widget.customInitState!(context).then((_) {
+      if (mounted) setState(() => _initialized = true);
+    });
+  }
 }

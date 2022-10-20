@@ -14,14 +14,15 @@ class NavigationRoute {
     switch (args.name) {
       case NavigationConstants.signup:
         return normalNavigate(const SignupScreen());
+      case NavigationConstants.login:
+        return normalNavigate(
+            const Scaffold(body: Center(child: Text('LOGIN'))));
       // TODO: Fix
       // case NavigationConstants.home:
       //   return normalNavigate(const HomeScreen());
       default:
-        // TODO: Fix
-        return normalNavigate(const Scaffold(
-          body: Center(child: Text('LOGIN')),
-        ));
+        return normalNavigate(const SignupScreen());
+      // TODO: Fix
       // return normalNavigate(const LoginScreen());
     }
   }
