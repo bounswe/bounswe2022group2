@@ -12,7 +12,7 @@ import '../view-model/base_view_model.dart';
 class BaseView<T extends BaseViewModel> extends StatefulWidget {
   /// Default constructor for [BaseView].
   const BaseView({
-    required this.mobileBuilder,
+    required this.builder,
     this.customDispose,
     this.customInitState,
     this.appBar,
@@ -25,8 +25,8 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  /// Function to build the body for mobile.
-  final WidgetBuilder mobileBuilder;
+  /// Function to build the body.
+  final WidgetBuilder builder;
 
   /// Custom dispose method to call on dispose.
   final VoidCallback? customDispose;
@@ -118,5 +118,5 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
         ),
       );
 
-  Widget get _selectable => Container();
+  Widget get _selectable => widget.builder(context);
 }

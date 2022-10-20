@@ -14,7 +14,7 @@ class NavigationManager implements INavigationManager {
 
   @override
   Future<void> navigateToPage({
-    String path = '/',
+    required String path,
     Map<String, dynamic> data = const <String, dynamic>{},
   }) async {
     await navigatorKey.currentState?.pushNamed(path, arguments: data);
