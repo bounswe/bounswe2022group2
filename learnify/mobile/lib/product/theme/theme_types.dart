@@ -1,5 +1,5 @@
 /// App Theme options.
-enum AppThemes {
+enum ThemeTypes {
   /// Refers to the dark mode.
   dark,
 
