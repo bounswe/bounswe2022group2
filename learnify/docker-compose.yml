@@ -19,9 +19,11 @@ services:
     ports:
       - "3000:3000"
     volumes:
-    - ./backend:/app
+    - ./backend:/appp
     networks:
       - mongo_net
+    depends_on:
+      - mongodb
 
 networks:
   mongo_net:
