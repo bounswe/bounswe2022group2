@@ -14,7 +14,7 @@ class MultiLineText extends StatelessWidget {
     this.text, {
     this.style,
     this.textAlign,
-    this.maxLines = 2,
+    this.maxLines = 4,
     this.color,
     this.translated = true,
     this.hyphenate = false,

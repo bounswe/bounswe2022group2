@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../decorations/input_decorations.dart';
+import '../../extensions/context/theme_extensions.dart';
 import 'text_form_field_wrapper.dart';
 
 /// Base [TextFormField] wrapped with [BaseTextFormFieldWrapper].
@@ -187,9 +189,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           showCursor: widget.showCursor,
           textInputAction: widget.textInputAction,
           autofocus: widget.autofocus ?? false,
-          // style: widget.styleType == null
-          //     ? context.largeBody.merge(widget.style)
-          //     : widget.styleType.baseStyle(context)?.merge(widget.style),
+          style: widget.style == null
+              ? context.bodyLarge.merge(widget.style)
+              : widget.style?.merge(widget.style),
           validator: _localValidator,
           enableInteractiveSelection: widget.enableInteractiveSelection,
           onChanged: (String val) {
@@ -200,7 +202,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           },
           autofillHints: widget.autofillHints,
           keyboardType: widget.textInputType,
-          // decoration: widget.decoration ?? _deco(context),
+          decoration: widget.decoration ?? _deco(context),
           maxLines: widget.maxLines,
           onFieldSubmitted: widget.onFieldSubmitted,
           focusNode: widget.focusNode,
@@ -216,24 +218,24 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         preFieldWidget: widget.preFieldWidget,
       );
 
-  // InputDecoration _deco(BuildContext context) => InputDeco(context).loginDeco(
-  //       hintText: widget.hintText,
-  //       suffix: widget.suffix,
-  //       prefixIcon: widget.prefixIcon,
-  //       prefixWidget: widget.prefixWidget,
-  //       labelText: widget.labelText,
-  //       padding: widget.padding,
-  //       color: widget.backgroundColor,
-  //       styleType: widget.styleType,
-  //       hintStyle: widget.hintStyle,
-  //       disabledBorder: widget.disabledBorder,
-  //       enabledBorder: widget.enabledBorder,
-  //       errorBorder: widget.errorBorder,
-  //       focusedBorder: widget.focusedBorder,
-  //       focusedErrorBorder: widget.focusedErrorBorder,
-  //       border: widget.border,
-  //       translateHint: widget.translateHint,
-  //     );
+  InputDecoration _deco(BuildContext context) => InputDeco(context).loginDeco(
+        hintText: widget.hintText,
+        suffix: widget.suffix,
+        prefixIcon: widget.prefixIcon,
+        prefixWidget: widget.prefixWidget,
+        labelText: widget.labelText,
+        padding: widget.padding,
+        color: widget.backgroundColor,
+        style: widget.style,
+        hintStyle: widget.hintStyle,
+        disabledBorder: widget.disabledBorder,
+        enabledBorder: widget.enabledBorder,
+        errorBorder: widget.errorBorder,
+        focusedBorder: widget.focusedBorder,
+        focusedErrorBorder: widget.focusedErrorBorder,
+        border: widget.border,
+        translateHint: widget.translateHint,
+      );
 
   String? _localValidator(String? text) {
     if (widget.validator != null) {

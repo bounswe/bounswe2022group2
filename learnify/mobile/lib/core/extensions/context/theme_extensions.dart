@@ -11,6 +11,9 @@ extension ColorExtensions on BuildContext {
   Color get errorColor => _theme.errorColor;
   Color get primary => _theme.colorScheme.primary;
   Color get secondary => _theme.colorScheme.secondary;
+  Color get primaryLight => _theme.primaryColorLight;
+  Color get primaryDark => _theme.primaryColorDark;
+  Color get textColor => _textTheme.bodyMedium?.color ?? Colors.white;
 
   TextStyle get labelSmall => _textTheme.labelSmall ?? _defaultStyle;
   TextStyle get labelMedium => _textTheme.labelMedium ?? _defaultStyle;
