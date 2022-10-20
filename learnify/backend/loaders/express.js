@@ -4,8 +4,8 @@ import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import routes from './../api/routes/index.js';
-import { prefix } from './../config/index.js';
+import routes from '../api/routes/index.js';
+import { prefix } from '../config/index.js';
 
 export default (app) => {
   process.on('uncaughtException', async (error) => {
