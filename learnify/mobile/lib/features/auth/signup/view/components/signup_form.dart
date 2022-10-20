@@ -11,11 +11,11 @@ class _SignupForm extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          // Flexible(child: _usernameField(model.emailController)),
+          Flexible(child: _usernameField(model.usernameController)),
           Flexible(child: _emailField(model.emailController)),
-          // Flexible(
-          //   child: _passwordField(model.passwordController),
-          // ),
+          Flexible(
+            child: _passwordField(model.passwordController),
+          ),
         ],
       ),
     );
@@ -25,10 +25,34 @@ class _SignupForm extends StatelessWidget {
         controller: controller,
         hintText: TextKeys.emailHint,
         labelText: TextKeys.emailLabel,
-        prefixIcon: Icons.person_outline,
+        prefixIcon: Icons.email_outlined,
         validator: Validators.email,
         textInputAction: TextInputAction.next,
         autofillHints: const <String>[AutofillHints.email],
         textInputType: TextInputType.emailAddress,
+      );
+
+  Widget _usernameField(TextEditingController controller) =>
+      CustomTextFormField(
+        controller: controller,
+        hintText: TextKeys.usernameHint,
+        labelText: TextKeys.usernameLabel,
+        prefixIcon: Icons.person_outline,
+        validator: Validators.username,
+        textInputAction: TextInputAction.next,
+        autofillHints: const <String>[AutofillHints.username],
+        textInputType: TextInputType.name,
+      );
+
+  Widget _passwordField(TextEditingController controller) =>
+      ObscuredTextFormField(
+        controller: controller,
+        hintText: TextKeys.passwordHint,
+        labelText: TextKeys.passwordLabel,
+        prefixIcon: Icons.password_outlined,
+        textInputAction: TextInputAction.next,
+        // TODO: Fix
+        // onFieldSubmitted: (_) => requestFocus(),
+        validator: Validators.password,
       );
 }

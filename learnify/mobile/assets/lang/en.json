@@ -1,5 +1,9 @@
 {
   "signup": "signup",
   "email_hint": "Enter Your Email",
-  "email_label": "Email"
+  "email_label": "Email",
+  "username_hint": "Enter a Unique Username",
+  "username_label": "Username",
+  "password_hint": "Enter a Password",
+  "password_label": "Password"
 }
