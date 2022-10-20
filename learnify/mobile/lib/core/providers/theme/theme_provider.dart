@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../product/theme/dark_theme.dart';
+import '../../../product/theme/light_theme.dart';
 import '../../constants/enums/app_themes.dart';
 
 /// Provider of theme, manages theme actions.
-class ThemeProvider extends ChangeNotifier {
+class ThemeProvider extends ChangeNotifier with LightAppTheme, DarkAppTheme {
   ThemeData? _theme;
   AppThemes _themeEnum = AppThemes.light;
 
@@ -14,7 +16,7 @@ class ThemeProvider extends ChangeNotifier {
   ThemeData get currentTheme {
     // TODO: Fix
     // if (_theme == null) _getStoredTheme();
-    return _theme ?? ThemeData.dark();
+    return _theme ?? DarkAppTheme.darkTheme;
   }
 
   // TODO: Fix
@@ -27,16 +29,10 @@ class ThemeProvider extends ChangeNotifier {
   // }
 
   void _assignTheme(AppThemes themeEnum) {
-    // TODO: Fix
-    // if (themeEnum == AppThemes.dark) {
-    //   _theme = DarkTheme().createTheme;
-    // } else if (themeEnum == AppThemes.light) {
-    //   _theme = LightTheme().createTheme;
-    // }
     if (themeEnum == AppThemes.dark) {
-      _theme = ThemeData.dark();
+      _theme = DarkAppTheme.darkTheme;
     } else if (themeEnum == AppThemes.light) {
-      _theme = ThemeData.light();
+      _theme = LightAppTheme.lightTheme;
     }
   }
 
