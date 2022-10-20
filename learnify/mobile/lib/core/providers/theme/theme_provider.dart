@@ -14,11 +14,17 @@ class ThemeProvider extends ChangeNotifier {
   ThemeData get currentTheme {
     // TODO: Fix
     // if (_theme == null) _getStoredTheme();
-    return _theme!;
+    return _theme ?? ThemeData.dark();
   }
 
   // TODO: Fix
-  // void _getStoredTheme() { }
+  // void _getStoredTheme() {
+  //   final AppThemes? storedTheme = SettingsLocalManager.instance
+  //       .get(SettingsOptions.theme)
+  //       ?.toEnum<AppThemes>(AppThemes.values);
+  //   if (storedTheme != null) _themeEnum = storedTheme;
+  //   _assignTheme(_themeEnum);
+  // }
 
   void _assignTheme(AppThemes themeEnum) {
     // TODO: Fix
@@ -27,6 +33,11 @@ class ThemeProvider extends ChangeNotifier {
     // } else if (themeEnum == AppThemes.light) {
     //   _theme = LightTheme().createTheme;
     // }
+    if (themeEnum == AppThemes.dark) {
+      _theme = ThemeData.dark();
+    } else if (themeEnum == AppThemes.light) {
+      _theme = ThemeData.light();
+    }
   }
 
   /// Sets the current theme to the given one.
