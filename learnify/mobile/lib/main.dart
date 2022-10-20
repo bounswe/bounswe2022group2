@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 
 import 'core/managers/navigation/navigation_manager.dart';
 import 'core/managers/navigation/navigation_route.dart';
+import 'core/providers/language/language_provider.dart';
 import 'core/providers/provider_list.dart';
+import 'core/providers/theme/theme_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +28,12 @@ class InitialAppState extends State<InitialApp> {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: NavigationRoute.instance.generateRoute,
           navigatorKey: NavigationManager.instance.navigatorKey,
+          theme: context.watch<ThemeProvider>().currentTheme,
+          localizationsDelegates: LanguageProvider.delegates,
+          supportedLocales: LanguageProvider.supportedLocales,
+          locale: context.watch<LanguageProvider>().appLocal,
+          localeListResolutionCallback: (List<Locale>? locales, _) =>
+              context.read<LanguageProvider>().localeCallback(locales),
         ),
       );
 }

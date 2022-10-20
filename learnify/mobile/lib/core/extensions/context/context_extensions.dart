@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../../providers/language/app_localizations.dart';
+
 /// Extensions for responsive ui designs with context.
 extension ResponsivenessExtensions on BuildContext {
   MediaQueryData get _mediaQuery => MediaQuery.of(this);
@@ -71,4 +73,7 @@ extension ResponsivenessExtensions on BuildContext {
 
   /// Maximum possible width for the screen.
   double get maxPossibleWidth => _mediaQuery.size.width;
+
+  /// Returns the translated text for given key.
+  String tr(String key) => AppLocalizations.of(this)?.translate(key) ?? key;
 }
