@@ -28,4 +28,7 @@ class NavigationManager implements INavigationManager {
     await navigatorKey.currentState
         ?.pushNamedAndRemoveUntil(path, removeAllOldRoutes, arguments: data);
   }
+
+  @override
+  void pop() => navigatorKey.currentState?.pop();
 }

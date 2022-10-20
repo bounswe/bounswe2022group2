@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
+import '../text/multiline_text.dart';
 
 /// Base [TextFormField] wrapper to manage the size values in one place.
 class BaseTextFormFieldWrapper extends StatelessWidget {
@@ -55,7 +56,7 @@ class BaseTextFormFieldWrapper extends StatelessWidget {
               ),
               if (error != null)
                 CustomFieldError(
-                  error: error,
+                  error: error!,
                   errorSizeFactor: errorSizeFactor,
                   errorStyle: errorStyle,
                   hasPreWidget: preFieldWidget != null,
@@ -76,7 +77,7 @@ class BaseTextFormFieldWrapper extends StatelessWidget {
               formField,
               if (error != null)
                 CustomFieldError(
-                  error: error,
+                  error: error!,
                   errorSizeFactor: errorSizeFactor,
                   errorStyle: errorStyle,
                   hasPreWidget: preFieldWidget != null,
@@ -90,9 +91,9 @@ class BaseTextFormFieldWrapper extends StatelessWidget {
 class CustomFieldError extends StatelessWidget {
   /// Default constructor.
   const CustomFieldError({
+    required this.error,
     this.hasPreWidget = false,
     this.errorSizeFactor,
-    this.error,
     this.errorStyle,
     Key? key,
   }) : super(key: key);
@@ -104,7 +105,7 @@ class CustomFieldError extends StatelessWidget {
   final double? errorSizeFactor;
 
   /// Error text
-  final String? error;
+  final String error;
 
   /// Error style.
   final TextStyle? errorStyle;
@@ -115,29 +116,28 @@ class CustomFieldError extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: hasPreWidget ? 0 : context.width * 1.2,
-          vertical: context.height * .4),
+          vertical: sizeFactor / 5.6),
       child: Row(
         mainAxisAlignment:
             hasPreWidget ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: <Widget>[
-          Icon(Icons.warning_amber_outlined, color: context.errorColor),
-          context.sizedW(context.width * 1.3),
-          // Flexible(
-          //   child: NotFittedText(
-          //     error!,
-          //     translated: false,
-          //     textStyleType: TextStyleTypes.mediumLabel,
-          //     color: context.errorColor,
-          //     textAlign: TextAlign.start,
-          //     maxLines: 3,
-          //     style: errorStyle ??
-          //         TextStyle(
-          //           fontSize: errorSizeFactor == null
-          //               ? null
-          //               : context.responsiveSize * (errorSizeFactor! / 1.12),
-          //         ),
-          //   ),
-          // ),
+          Icon(Icons.warning_amber_outlined, size: sizeFactor),
+          context.sizedW(sizeFactor * (1.8 / 2.8)),
+          Flexible(
+            child: MultiLineText(
+              error,
+              translated: false,
+              color: context.errorColor,
+              textAlign: TextAlign.start,
+              maxLines: 3,
+              style: errorStyle ?? context.labelMedium
+                ..copyWith(
+                  fontSize: errorSizeFactor == null
+                      ? null
+                      : context.responsiveSize * (errorSizeFactor! / 1.12),
+                ),
+            ),
+          ),
         ],
       ),
     );

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../extensions/context/context_extensions.dart';
 import '../extensions/context/theme_extensions.dart';
-import '../widgets/buttons/base_icon_button.dart';
 import '../widgets/base-icon/base_icon.dart';
+import '../widgets/buttons/base_icon_button.dart';
 
 /// [InputDeco] class collects all input decorations in one file.
 class InputDeco {
