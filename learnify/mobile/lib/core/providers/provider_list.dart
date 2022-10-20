@@ -1,6 +1,8 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
+import '../managers/navigation/navigation_manager.dart';
+
 /// Provides the list of providers will be used across the app.
 class ProviderList {
   /// Singleton instance of [ProviderList].
@@ -18,5 +20,7 @@ class ProviderList {
       <SingleChildWidget>[];
 
   static final List<SingleChildWidget> _functionalProviders =
-      <SingleChildWidget>[];
+      <SingleChildWidget>[
+    Provider<NavigationManager>.value(value: NavigationManager.instance)
+  ];
 }

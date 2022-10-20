@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/enums/view_states.dart';
 import '../../helpers/completer_helper.dart';
+import '../../managers/navigation/navigation_manager.dart';
 
 /// Base view model class to create customized view models extending this.
 abstract class BaseViewModel extends ChangeNotifier {
@@ -19,8 +20,7 @@ abstract class BaseViewModel extends ChangeNotifier {
   ViewStates get state => _viewState;
 
   /// Singleton navigation manager to use across the view models.
-  // TODO: Fix
-  // final NavigationManager navigationManager = NavigationManager.instance;
+  final NavigationManager navigationManager = NavigationManager.instance;
 
   /// Custom init method to call before the initialization process is completed.
   FutureOr<void> initViewModel();
