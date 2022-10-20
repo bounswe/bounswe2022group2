@@ -1,3 +1,5 @@
 {
-  "signup": "signup"
+  "signup": "signup",
+  "email_hint": "Enter Your Email",
+  "email_label": "Email"
 }

@@ -12,7 +12,7 @@ class _SignupForm extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           // Flexible(child: _usernameField(model.emailController)),
-          // Flexible(child: _emailField(model.emailController)),
+          Flexible(child: _emailField(model.emailController)),
           // Flexible(
           //   child: _passwordField(model.passwordController),
           // ),
@@ -20,4 +20,15 @@ class _SignupForm extends StatelessWidget {
       ),
     );
   }
+
+  Widget _emailField(TextEditingController controller) => CustomTextFormField(
+        controller: controller,
+        hintText: TextKeys.emailHint,
+        labelText: TextKeys.emailLabel,
+        prefixIcon: Icons.person_outline,
+        validator: Validators.email,
+        textInputAction: TextInputAction.next,
+        autofillHints: const <String>[AutofillHints.email],
+        textInputType: TextInputType.emailAddress,
+      );
 }
