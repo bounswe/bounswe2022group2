@@ -19,6 +19,9 @@ class SignupViewModel extends BaseViewModel {
   TextEditingController get passwordController => _passwordController;
   TextEditingController get usernameController => _usernameController;
 
+  late GlobalKey<FormState> _formKey;
+  GlobalKey<FormState> get formKey => _formKey;
+
   bool _readAgreed = false;
 
   @override
@@ -29,6 +32,7 @@ class SignupViewModel extends BaseViewModel {
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _usernameController = TextEditingController();
+    _formKey = GlobalKey<FormState>();
   }
 
   @override
