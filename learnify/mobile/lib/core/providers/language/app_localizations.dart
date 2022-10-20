@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class AppLocalizations {
@@ -38,10 +41,16 @@ class AppLocalizations {
     return const Locale('en', 'US');
   }
 
-  final Map<String, String> _localizedValues = <String, String>{};
+  Map<String, String> _localizedValues = <String, String>{};
 
-  // TODO: Fix
-  Future<void> load() async {}
+  Future<void> load() async {
+    final String jsonStringValues =
+        await rootBundle.loadString('assets/lang/${_locale.languageCode}.json');
+    final Map<String, String> mappedJson =
+        Map.castFrom(await json.decode(jsonStringValues));
+    _localizedValues = mappedJson.map((String key, String value) =>
+        MapEntry<String, String>(key, value.toString()));
+  }
 
   String translate(String key) => _localizedValues[key] ?? 'Not Found';
 }
