@@ -7,19 +7,19 @@ const { hash } = bcrypt;
 export default async (req, res) => {
   const { error } = validateSignup(req.body);
   if (error) {
-    
+    console.log(error);
     return res.status(400).json({ "resultMessage": error.details[0].message });
   }
   
-  console.log(error);
   const exists = await User.exists({ email: req.body.email })
     .catch((err) => {
+      console.log("Could not fetch users from mongoDB")
       return res.status(500).json({ "resultMessage": err.message });
     });
   
   console.log(exists)
   if (exists) {
-    console.log("pog")
+    console.log("User with existing email tried to signup")
     return res.status(409).json({ "resultMessage": "There already exists a user with the given email." });
   }
 
@@ -31,7 +31,7 @@ export default async (req, res) => {
     username: req.body.username,
   });
   user = await user.save().catch((err) =>{
-    console.log("Could not save user")
+    console.log("Could not save user to DB")
     return res.status(500).json({ "resultMessage": err.message });
   });
 
