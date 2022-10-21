@@ -13,7 +13,8 @@ We uses Node.js and Express.js for our API.
 ## Docker Installation
 
 You can just run `docker-compose up` to get the DB and the API running.
-If you changed the code, you need to run `docker-compose up -- build` to change the code in the image. 
+If you changed the code, you need to run `docker-compose up --build` to change the code in the image. 
+
 ## Requirements
 
 For development, you will need Node.js and MongoDB. In addition, you shall set your .env file.
