@@ -1,0 +1,1 @@
+export { default as verifyEmail } from './user/verifyEmail.js';
