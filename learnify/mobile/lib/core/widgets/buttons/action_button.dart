@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../product/language/language_keys.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../decorations/button_styles.dart';
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
+import '../dialog/dialog_builder.dart';
 import '../text/base_text.dart';
 
 /// Custom action button specific to text widgets.
@@ -180,9 +182,8 @@ class ActionButtonState extends State<ActionButton> {
     if (widget.onPressedError != null) {
       final String? error = await widget.onPressedError!();
       if (error != null && mounted) {
-        // TODO: Fix
-        // unawaited(DialogBuilder(context).textDialog(error.toString(),
-        //     translated: false, title: TextKeys.errorTitle));
+        unawaited(DialogBuilder(context)
+            .textDialog(error.toString(), TextKeys.errorTitle));
       }
     } else if (widget.onPressed != null) {
       await widget.onPressed!();

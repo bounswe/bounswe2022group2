@@ -37,10 +37,9 @@ class SizedCustomCheckbox extends StatelessWidget {
   final GlobalKey<CustomCheckboxState>? checkboxKey;
 
   @override
-  Widget build(BuildContext context) => Container(
-        margin: EdgeInsets.only(right: context.responsiveSize * 1.2),
+  Widget build(BuildContext context) => SizedBox(
         height: height ?? context.height * 5,
-        width: width ?? context.height * 6,
+        width: width ?? context.height * 4,
         child: CustomCheckbox(
           checkboxKey: checkboxKey,
           initialValue: initialValue,
@@ -88,7 +87,7 @@ class CustomCheckboxState extends State<CustomCheckbox> {
 
   @override
   Widget build(BuildContext context) => Transform.scale(
-        scale: widget.scale ?? context.responsiveSize * .18,
+        scale: widget.scale ?? context.responsiveSize * .24,
         child: Checkbox(
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           value: _value,

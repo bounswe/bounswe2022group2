@@ -5,6 +5,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/selector_helper.dart';
+import '../../../../core/helpers/url_launcher_helper.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../core/widgets/checkbox/custom_checkbox_tile.dart';
@@ -12,6 +13,7 @@ import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text-field/obscured_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../product/constants/icon_keys.dart';
+import '../../../../product/constants/link_keys.dart';
 import '../../../../product/language/language_keys.dart';
 import '../view-model/signup_view_model.dart';
 
@@ -46,6 +48,11 @@ class SignupScreen extends BaseView<SignupViewModel> {
     return CustomCheckboxTile(
       onTap: model.setAcceptedAgreement,
       text: TextKeys.termsAgreementText,
+      replaceValues: <ReplaceValue>[
+        _replaceValue(
+            context, TextKeys.generalTerms, LinkKeys.termsAndConditions),
+        _replaceValue(context, TextKeys.privacyPolicy, LinkKeys.privacyPolicy),
+      ],
       initialValue: model.acceptedAgreement,
       color: context.textColor,
       sizedCheckbox: true,
@@ -64,5 +71,13 @@ class SignupScreen extends BaseView<SignupViewModel> {
           isActive: canSignup,
           onPressedError: () async => null,
         ),
+      );
+
+  static ReplaceValue _replaceValue(
+          BuildContext context, String text, String url) =>
+      ReplaceValue(
+        text,
+        color: context.primary,
+        onClick: () async => UrlLauncherHelper.launch(url),
       );
 }
