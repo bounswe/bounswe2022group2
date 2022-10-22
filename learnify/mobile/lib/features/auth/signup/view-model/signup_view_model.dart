@@ -68,7 +68,12 @@ class SignupViewModel extends BaseViewModel {
   }
 
   Future<String?> _signupRequest() async {
-    // TODO: Fix
+    final bool isValid = formKey.currentState?.validate() ?? false;
+    debugPrint(isValid.toString());
+    if (isValid) {
+      await Future.delayed(const Duration(seconds: 2));
+      // TODO: Sign up request
+    }
     return null;
 
     // final IResponseModel<MessageResponse> res =

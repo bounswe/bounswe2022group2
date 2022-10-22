@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../extensions/context/context_extensions.dart';
+import '../../extensions/context/theme_extensions.dart';
 import '../indicators/custom_loading_indicator.dart';
 import '../text/multiline_text.dart';
 
@@ -29,15 +30,13 @@ class DialogBuilder {
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          content: SizedBox(
-            height: context.height * 40,
-            width: context.width * 60,
-            child: Column(
-              children: <Widget>[
-                MultiLineText(title),
-                MultiLineText(text, translated: translate),
-              ],
-            ),
+          title: MultiLineText(title,
+              style: context.displaySmall, textAlign: TextAlign.center),
+          content: ConstrainedBox(
+            constraints: BoxConstraints.loose(
+                Size(context.width * 60, context.height * 70)),
+            child: MultiLineText(text,
+                translated: translate, textAlign: TextAlign.center),
           ),
         ),
       );

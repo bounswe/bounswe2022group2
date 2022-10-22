@@ -80,20 +80,9 @@ class SignupScreen extends BaseView<SignupViewModel> {
               vertical: context.responsiveSize * 1.4),
           capitalizeAll: true,
           isActive: canSignup,
-          onPressedError: () async => _signupAction(context),
+          onPressedError: context.read<SignupViewModel>().signup,
         ),
       );
-
-  static Future<String?> _signupAction(BuildContext context) async {
-    final SignupViewModel model = context.read<SignupViewModel>();
-    final bool isValid = model.formKey.currentState?.validate() ?? false;
-    debugPrint(isValid.toString());
-    if (isValid) {
-      await Future.delayed(const Duration(seconds: 2));
-      // TODO: Sign up request
-    }
-    return null;
-  }
 
   static ReplaceValue _replaceValue(
           BuildContext context, String text, String url) =>
