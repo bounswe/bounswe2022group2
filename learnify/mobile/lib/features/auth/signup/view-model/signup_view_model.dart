@@ -22,7 +22,10 @@ class SignupViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
-  bool _readAgreed = false;
+  bool _acceptedAgreed = false;
+
+  bool _canSignup = false;
+  bool get canSignup => _canSignup && _acceptedAgreed;
 
   @override
   void initViewModel() {}
@@ -33,6 +36,9 @@ class SignupViewModel extends BaseViewModel {
     _passwordController = TextEditingController();
     _usernameController = TextEditingController();
     _formKey = GlobalKey<FormState>();
+    _emailController.addListener(_controllerListener);
+    _passwordController.addListener(_controllerListener);
+    _usernameController.addListener(_controllerListener);
   }
 
   @override
@@ -42,6 +48,11 @@ class SignupViewModel extends BaseViewModel {
     _usernameController.dispose();
     super.disposeView();
   }
+
+  void _controllerListener() =>
+      _canSignup = _passwordController.text.isNotEmpty &&
+          _emailController.text.isNotEmpty &&
+          _usernameController.text.isNotEmpty;
 
   /// Signup callback.
   Future<String?> signup() async {
@@ -73,9 +84,9 @@ class SignupViewModel extends BaseViewModel {
     return null;
   }
 
-  void readAgreeChange(bool val) {
-    if (_readAgreed == val) return;
-    _readAgreed = val;
+  void setAcceptedAgree(bool val) {
+    if (_acceptedAgreed == val) return;
+    _acceptedAgreed = val;
     notifyListeners();
   }
 }

@@ -157,7 +157,7 @@ class ActionButtonState extends State<ActionButton> {
             color:
                 widget.isActive ? context.textColor : context.inactiveTextColor,
             translated: widget.translated,
-            style: widget.textStyle,
+            style: widget.textStyle ?? context.titleSmall,
             capitalizeAll: widget.capitalizeAll,
           );
 
