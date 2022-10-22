@@ -14,7 +14,7 @@ const userSchema = new Schema({
     type: String, required: true, select: false
   },
   username: {
-    type: String, required: true, select: false
+    type: String, required: true, select: false, unique: true
   },
   is_verified: {
     type: Boolean, required: true, default: false
