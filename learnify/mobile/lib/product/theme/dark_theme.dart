@@ -12,7 +12,7 @@ mixin DarkAppTheme {
   static ThemeData get darkTheme => ThemeData.dark().copyWith(
         primaryColor: orange,
         brightness: Brightness.dark,
-        inputDecorationTheme: GeneralTheme.inputDeco(),
+        inputDecorationTheme: GeneralTheme.inputDeco(focusColor: orange),
         buttonTheme: GeneralTheme.buttonTheme(orange),
         textButtonTheme: GeneralTheme.textButtonTheme(orange),
         dividerTheme: GeneralTheme.dividerTheme(orange),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
+import '../base-icon/base_icon.dart';
 import '../text/multiline_text.dart';
 
 /// Base [TextFormField] wrapper to manage the size values in one place.
@@ -112,17 +113,18 @@ class CustomFieldError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double sizeFactor = errorSizeFactor ?? 2.8;
+    final double sizeFactor = context.responsiveSize * (errorSizeFactor ?? 3.8);
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: hasPreWidget ? 0 : context.width * 1.2,
-          vertical: sizeFactor / 5.6),
+          horizontal: hasPreWidget ? 0 : context.width * 2,
+          vertical: sizeFactor / 3),
       child: Row(
         mainAxisAlignment:
             hasPreWidget ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: <Widget>[
-          Icon(Icons.warning_amber_outlined, size: sizeFactor),
-          context.sizedW(sizeFactor * (1.8 / 2.8)),
+          BaseIcon(context, Icons.warning_amber_outlined,
+              size: sizeFactor, color: context.errorColor),
+          context.sizedW(sizeFactor * (1.2 / 7)),
           Flexible(
             child: MultiLineText(
               error,

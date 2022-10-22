@@ -13,9 +13,9 @@ class LinkKeys {
 
   /// Privacy policy screen url.
   static const String privacyPolicy =
-      'https://github.com/bounswe/bounswe2022group2';
+      'https://github.com/bounswe/bounswe2022group2/wiki';
 
   /// Terms and conditions screen url.
   static const String termsAndConditions =
-      'https://github.com/bounswe/bounswe2022group2';
+      'https://github.com/bounswe/bounswe2022group2/wiki';
 }

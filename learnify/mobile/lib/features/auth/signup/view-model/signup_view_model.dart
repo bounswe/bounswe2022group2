@@ -50,10 +50,14 @@ class SignupViewModel extends BaseViewModel {
     super.disposeView();
   }
 
-  void _controllerListener() =>
-      _canSignup = _passwordController.text.isNotEmpty &&
-          _emailController.text.isNotEmpty &&
-          _usernameController.text.isNotEmpty;
+  void _controllerListener() {
+    final bool newCanSignup = _passwordController.text.isNotEmpty &&
+        _emailController.text.isNotEmpty &&
+        _usernameController.text.isNotEmpty;
+    if (_canSignup == newCanSignup) return;
+    _canSignup = newCanSignup;
+    notifyListeners();
+  }
 
   /// Signup callback.
   Future<String?> signup() async {

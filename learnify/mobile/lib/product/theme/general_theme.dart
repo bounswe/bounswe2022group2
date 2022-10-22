@@ -39,11 +39,12 @@ mixin GeneralTheme {
     Color? fillColor,
     Color? errorColor,
     Color? focusColor,
+    Color? activeColor,
   }) =>
       InputDecorationTheme(
         fillColor: fillColor,
         disabledBorder: _border(inactiveColor),
-        enabledBorder: _border(inactiveColor),
+        enabledBorder: _border(activeColor),
         errorBorder: _border(errorColor),
         focusedBorder: _border(focusColor, width: 1.1),
         focusedErrorBorder: _border(errorColor, width: 1.1),

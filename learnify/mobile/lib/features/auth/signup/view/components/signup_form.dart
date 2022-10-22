@@ -53,8 +53,6 @@ class _SignupForm extends StatelessWidget {
         labelText: TextKeys.passwordLabel,
         prefixIcon: Icons.password_outlined,
         textInputAction: TextInputAction.next,
-        // TODO: Fix
-        // onFieldSubmitted: (_) => requestFocus(),
         validator: Validators.password,
       );
 }

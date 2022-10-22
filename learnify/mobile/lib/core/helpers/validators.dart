@@ -63,12 +63,11 @@ class Validators {
   static String? password(String? password) {
     String? errorMessage = lengthCheck(password, 8);
     if (errorMessage != null) return errorMessage;
-    //'    $errorMessage';
-    final String? validationError =
-        _runValidations(password, <ValidatorCallback>[
+    final String? validationError = _runValidations(
+        password, <ValidatorCallback>[
       _spaceCheck,
-      // _upperCaseCheck,
-      // _lowerCaseCheck,
+      _upperCaseCheck,
+      _lowerCaseCheck,
       _numberCheck
     ]);
     return errorMessage ??= validationError;
