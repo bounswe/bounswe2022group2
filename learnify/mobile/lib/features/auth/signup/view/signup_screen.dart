@@ -7,6 +7,7 @@ import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/selector_helper.dart';
 import '../../../../core/helpers/url_launcher_helper.dart';
 import '../../../../core/helpers/validators.dart';
+import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../core/widgets/checkbox/custom_checkbox_tile.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
@@ -14,6 +15,7 @@ import '../../../../core/widgets/text-field/obscured_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../product/constants/icon_keys.dart';
 import '../../../../product/constants/link_keys.dart';
+import '../../../../product/constants/navigation_constants.dart';
 import '../../../../product/language/language_keys.dart';
 import '../view-model/signup_view_model.dart';
 
@@ -37,8 +39,10 @@ class SignupScreen extends BaseView<SignupViewModel> {
             const _SignupForm(),
             context.sizedH(.8),
             _checkboxTile(context),
-            context.sizedH(2.6),
+            context.sizedH(2.2),
             _signupButton,
+            context.sizedH(1.8),
+            _alreadyHaveAccount(context),
           ],
         ),
       );
@@ -97,5 +101,18 @@ class SignupScreen extends BaseView<SignupViewModel> {
         text,
         color: context.primary,
         onClick: () async => UrlLauncherHelper.launch(url),
+      );
+
+  static Widget _alreadyHaveAccount(BuildContext context) => BaseText(
+        TextKeys.alreadyHaveAccount,
+        style: context.bodySmall,
+        replaceValues: <ReplaceValue>[
+          ReplaceValue(
+            TextKeys.login,
+            onClick: () async => NavigationManager.instance
+                .navigateToPage(path: NavigationConstants.login),
+            color: context.primary,
+          )
+        ],
       );
 }

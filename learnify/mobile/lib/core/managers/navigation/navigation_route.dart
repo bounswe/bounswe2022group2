@@ -17,13 +17,8 @@ class NavigationRoute {
       case NavigationConstants.login:
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
-      // TODO: Fix
-      // case NavigationConstants.home:
-      //   return normalNavigate(const HomeScreen());
       default:
         return normalNavigate(const SignupScreen());
-      // TODO: Fix
-      // return normalNavigate(const LoginScreen());
     }
   }
 

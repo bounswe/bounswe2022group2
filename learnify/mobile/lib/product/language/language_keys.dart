@@ -12,4 +12,6 @@ class TextKeys {
   static const String termsAgreementText = 'terms_agreement_text';
   static const String generalTerms = 'general_terms';
   static const String privacyPolicy = 'privacy_policy';
+  static const String alreadyHaveAccount = 'already_have_account';
+  static const String login = 'login';
 }

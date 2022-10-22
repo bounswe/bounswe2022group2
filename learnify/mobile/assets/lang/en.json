@@ -11,5 +11,7 @@
   "error_title": "An Error Occurred!",
   "terms_agreement_text": "I have read and agree to the {0} and {1}",
   "general_terms": "General Terms",
-  "privacy_policy": "Privacy Policy"
+  "privacy_policy": "Privacy Policy",
+  "already_have_account": "Already have an account?  {0}",
+  "login": "Log In"
 }
