@@ -68,7 +68,7 @@ class BaseTextFormFieldWrapper extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: context.height * .7),
           constraints: constraints ??
               BoxConstraints.loose(
-                Size(context.width * 75, context.height * 30),
+                Size(context.width * 76, context.height * 30),
               ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

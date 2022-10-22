@@ -5,5 +5,7 @@
   "username_hint": "Enter a Unique Username",
   "username_label": "Username",
   "password_hint": "Enter a Password",
-  "password_label": "Password"
+  "password_label": "Password",
+  "signup_to": "Sign Up to",
+  "learnify": "Learnify"
 }

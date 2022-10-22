@@ -48,10 +48,10 @@ class InputDeco {
         errorStyle: const TextStyle(height: 0, color: Colors.transparent),
         prefixIcon: prefixWidget ?? _getPrefixIcon(prefixIcon),
         prefixIconConstraints:
-            BoxConstraints.loose(Size.fromHeight(context.responsiveSize * 8)),
+            BoxConstraints.loose(Size.fromHeight(context.responsiveSize * 9)),
         suffixIcon: suffix ?? _getSuffixIcon(suffixIcon, suffixCallback),
         suffixIconConstraints:
-            BoxConstraints.loose(Size.fromHeight(context.responsiveSize * 8)),
+            BoxConstraints.loose(Size.fromHeight(context.responsiveSize * 9)),
         filled: true,
         fillColor: color,
         isDense: true,
@@ -73,10 +73,10 @@ class InputDeco {
           context,
           prefixIcon,
           color: context.textColor.withOpacity(.9),
-          size: context.responsiveSize * 5,
+          size: context.responsiveSize * 6,
           padding: EdgeInsets.only(
-            left: context.responsiveSize * 6,
-            right: context.responsiveSize * 4,
+            left: context.responsiveSize * 5,
+            right: context.responsiveSize * 3,
           ),
         );
 
@@ -88,6 +88,6 @@ class InputDeco {
               icon: suffixIcon,
               onPressed: suffixCallback ?? () {},
               padding:
-                  EdgeInsets.symmetric(horizontal: context.responsiveSize * 3),
+                  EdgeInsets.symmetric(horizontal: context.responsiveSize * 5),
             );
 }

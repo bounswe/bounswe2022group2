@@ -13,8 +13,8 @@ class LanguageProvider extends ChangeNotifier {
 
   /// Supported [Locale]s in the app.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('tr', 'TR'),
     Locale('en', 'US'),
+    Locale('tr', 'TR'),
   ];
 
   /// Current app locale for the current language.

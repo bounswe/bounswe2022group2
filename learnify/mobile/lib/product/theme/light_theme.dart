@@ -7,6 +7,7 @@ mixin LightAppTheme {
   static const Color cream = Color(0xffFFF7E9);
   static const Color lightBlue = Color(0xff5F9DF7);
   static const Color darkBlue = Color(0xff1746A2);
+  static const Color textColor = Colors.white;
 
   static ThemeData get lightTheme => ThemeData.light().copyWith(
         primaryColor: orange,
@@ -16,6 +17,7 @@ mixin LightAppTheme {
         textButtonTheme: GeneralTheme.textButtonTheme(orange),
         dividerTheme: GeneralTheme.dividerTheme(orange),
         progressIndicatorTheme: GeneralTheme.progressIndicatorTheme(orange),
+        textTheme: GeneralTheme.textTheme(textColor),
         cardColor: orange,
         cardTheme: CardTheme(shape: Border.all(color: lightBlue), elevation: 3),
         switchTheme: GeneralTheme.switchThemeData(orange),

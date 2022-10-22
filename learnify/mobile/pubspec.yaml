@@ -19,6 +19,9 @@ dependencies:
   # State Management
   provider: ^6.0.4
 
+  # UI
+  google_fonts: ^3.0.1
+
   # Model
   equatable: ^2.0.5
   collection: ^1.16.0
@@ -37,3 +40,4 @@ flutter:
 
   assets:
     - assets/lang/
+    - assets/images/

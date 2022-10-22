@@ -6,4 +6,6 @@ class TextKeys {
   static const String usernameLabel = 'username_label';
   static const String passwordHint = 'password_hint';
   static const String passwordLabel = 'password_label';
+  static const String signupTo = 'signup_to';
+  static const String learnify = 'learnify';
 }

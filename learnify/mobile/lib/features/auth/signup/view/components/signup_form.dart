@@ -12,7 +12,9 @@ class _SignupForm extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Flexible(child: _usernameField(model.usernameController)),
+          context.sizedH(.5),
           Flexible(child: _emailField(model.emailController)),
+          context.sizedH(.5),
           Flexible(
             child: _passwordField(model.passwordController),
           ),

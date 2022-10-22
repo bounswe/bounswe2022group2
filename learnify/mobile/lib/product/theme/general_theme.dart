@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 mixin GeneralTheme {
   static ScrollbarThemeData scrollBarThemeData(Color? color) =>
@@ -65,6 +66,25 @@ mixin GeneralTheme {
           textStyle: all<TextStyle?>(TextStyle(color: color)),
         ),
       );
+
+  static TextTheme textTheme(Color? color) {
+    final Color? largeColor = color;
+    final Color? smallColor = color?.withOpacity(.8);
+    return TextTheme(
+      displayLarge: GoogleFonts.raleway(color: largeColor, fontSize: 30),
+      displayMedium: GoogleFonts.raleway(color: largeColor, fontSize: 26),
+      displaySmall: GoogleFonts.raleway(color: largeColor, fontSize: 22),
+      titleLarge: GoogleFonts.raleway(color: largeColor, fontSize: 18),
+      titleMedium: GoogleFonts.openSans(color: largeColor, fontSize: 17),
+      titleSmall: GoogleFonts.openSans(color: largeColor, fontSize: 16),
+      bodyLarge: GoogleFonts.openSans(color: largeColor, fontSize: 15),
+      bodyMedium: GoogleFonts.openSans(color: largeColor, fontSize: 14),
+      bodySmall: GoogleFonts.openSans(color: smallColor, fontSize: 13),
+      labelLarge: GoogleFonts.openSans(color: smallColor, fontSize: 12),
+      labelMedium: GoogleFonts.openSans(color: smallColor, fontSize: 11),
+      labelSmall: GoogleFonts.openSans(color: smallColor, fontSize: 10),
+    );
+  }
 
   /// Returns the corresponding all material state property for given value.
   static MaterialStateProperty<T> all<T>(T value) =>
