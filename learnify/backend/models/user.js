@@ -19,6 +19,9 @@ const userSchema = new Schema({
   is_verified: {
     type: Boolean, required: true, default: false
   },
+  code: {
+    type: String, required: true
+  },
 },
   {
     timestamps: true,
