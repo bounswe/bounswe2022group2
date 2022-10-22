@@ -9,4 +9,7 @@ class TextKeys {
   static const String signupTo = 'signup_to';
   static const String learnify = 'learnify';
   static const String errorTitle = 'error_title';
+  static const String termsAgreementText = 'terms_agreement_text';
+  static const String generalTerms = 'general_terms';
+  static const String privacyPolicy = 'privacy_policy';
 }

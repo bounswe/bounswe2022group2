@@ -22,10 +22,11 @@ class SignupViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
-  bool _acceptedAgreed = false;
+  bool _acceptedAgreement = false;
+  bool get acceptedAgreement => _acceptedAgreement;
 
   bool _canSignup = false;
-  bool get canSignup => _canSignup && _acceptedAgreed;
+  bool get canSignup => _canSignup && _acceptedAgreement;
 
   @override
   void initViewModel() {}
@@ -84,9 +85,9 @@ class SignupViewModel extends BaseViewModel {
     return null;
   }
 
-  void setAcceptedAgree(bool val) {
-    if (_acceptedAgreed == val) return;
-    _acceptedAgreed = val;
+  void setAcceptedAgreement(bool val) {
+    if (_acceptedAgreement == val) return;
+    _acceptedAgreement = val;
     notifyListeners();
   }
 }

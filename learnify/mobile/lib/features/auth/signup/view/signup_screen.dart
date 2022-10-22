@@ -7,6 +7,7 @@ import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/selector_helper.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
+import '../../../../core/widgets/checkbox/custom_checkbox_tile.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text-field/obscured_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
@@ -30,6 +31,7 @@ class SignupScreen extends BaseView<SignupViewModel> {
             _title(context, TextKeys.learnify, color: context.primary),
             context.sizedH(2),
             const _SignupForm(),
+            _checkboxTile(context),
             context.sizedH(2.2),
             _signupButton,
           ],
@@ -38,6 +40,17 @@ class SignupScreen extends BaseView<SignupViewModel> {
 
   static Widget _title(BuildContext context, String key, {Color? color}) =>
       BaseText(key, style: context.displayLarge, color: color);
+
+  static Widget _checkboxTile(BuildContext context) {
+    final SignupViewModel model = context.read<SignupViewModel>();
+    return CustomCheckboxTile(
+      onTap: model.setAcceptedAgreement,
+      text: TextKeys.termsAgreementText,
+      initialValue: model.acceptedAgreement,
+      color: context.textColor,
+      sizedCheckbox: true,
+    );
+  }
 
   static Widget get _signupButton =>
       SelectorHelper<bool, SignupViewModel>().builder(

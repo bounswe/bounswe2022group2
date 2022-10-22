@@ -15,3 +15,6 @@ typedef AppBarBuilder = DefaultAppBar Function(BuildContext context);
 
 /// FutureOr<String?> function definition, displays error.
 typedef ErrorHelper = FutureOr<String?> Function();
+
+/// Callback of the checkbox.
+typedef CheckboxCallback = void Function(bool value);

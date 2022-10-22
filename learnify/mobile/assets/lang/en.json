@@ -8,5 +8,8 @@
   "password_label": "Password",
   "signup_to": "Sign Up to",
   "learnify": "Learnify",
-  "error_title": "An Error Occurred!"
+  "error_title": "An Error Occurred!",
+  "terms_agreement_text": "I have read and agree to the {0} and {1}",
+  "general_terms": "General Terms",
+  "privacy_policy": "Privacy Policy"
 }
