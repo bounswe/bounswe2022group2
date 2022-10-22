@@ -1,5 +1,5 @@
 {
-  "signup": "signup",
+  "signup": "Sign Up",
   "email_hint": "Enter Your Email",
   "email_label": "Email",
   "username_hint": "Enter a Unique Username",
@@ -7,5 +7,6 @@
   "password_hint": "Enter a Password",
   "password_label": "Password",
   "signup_to": "Sign Up to",
-  "learnify": "Learnify"
+  "learnify": "Learnify",
+  "error_title": "An Error Occurred!"
 }

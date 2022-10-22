@@ -8,4 +8,5 @@ class TextKeys {
   static const String passwordLabel = 'password_label';
   static const String signupTo = 'signup_to';
   static const String learnify = 'learnify';
+  static const String errorTitle = 'error_title';
 }

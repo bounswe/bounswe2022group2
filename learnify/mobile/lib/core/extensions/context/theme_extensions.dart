@@ -14,6 +14,8 @@ extension ColorExtensions on BuildContext {
   Color get primaryLight => _theme.primaryColorLight;
   Color get primaryDark => _theme.primaryColorDark;
   Color get textColor => _textTheme.bodyMedium?.color ?? Colors.white;
+  Color get inactiveTextColor =>
+      _textTheme.labelSmall?.color ?? Colors.white.withOpacity(.8);
 
   TextStyle get labelSmall => _textTheme.labelSmall ?? _defaultStyle;
   TextStyle get labelMedium => _textTheme.labelMedium ?? _defaultStyle;
