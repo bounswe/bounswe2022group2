@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../extensions/context/context_extensions.dart';
+import '../indicators/custom_loading_indicator.dart';
 import '../text/multiline_text.dart';
 
 /// Builds various dialogs with different methods.
 class DialogBuilder {
   /// Builds various dialogs with different methods.
-  /// * e.g. [showLoadingDialog], [showResultDialog]
+  /// * e.g. [showLoadingDialog], [textDialog]
   const DialogBuilder(this.context);
 
   /// Context to show dialogs.
@@ -18,7 +19,7 @@ class DialogBuilder {
         barrierDismissible: false,
         builder: (BuildContext context) => WillPopScope(
           onWillPop: () async => false,
-          child: const AlertDialog(content: CircularProgressIndicator()),
+          child: AlertDialog(content: CustomLoadingIndicator(context)),
         ),
       );
 

@@ -8,6 +8,7 @@ import '../../decorations/button_styles.dart';
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
 import '../dialog/dialog_builder.dart';
+import '../indicators/custom_loading_indicator.dart';
 import '../text/base_text.dart';
 
 /// Custom action button specific to text widgets.
@@ -150,7 +151,7 @@ class ActionButtonState extends State<ActionButton> {
       );
 
   Widget get _buttonChild => _isLoading
-      ? const CircularProgressIndicator()
+      ? CustomLoadingIndicator(context)
       : widget.textWidget ??
           BaseText(
             widget.clickedText == null
@@ -163,9 +164,8 @@ class ActionButtonState extends State<ActionButton> {
             capitalizeAll: widget.capitalizeAll,
           );
 
-  double get _buttonWidth => _isLoading
-      ? _loadingSize * (widget.icon == null ? 2.4 : 3.4)
-      : _defaultWidth;
+  double get _buttonWidth =>
+      _isLoading ? _loadingSize * (widget.icon == null ? 3 : 4) : _defaultWidth;
 
   double get _buttonHeight =>
       widget.height ??

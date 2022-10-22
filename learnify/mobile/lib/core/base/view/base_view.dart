@@ -7,6 +7,7 @@ import '../../extensions/context/context_extensions.dart';
 import '../../helpers/selector_helper.dart';
 import '../../widgets/app-bar/default_app_bar.dart';
 import '../../widgets/buttons/custom_gesture_detector.dart';
+import '../../widgets/indicators/custom_loading_indicator.dart';
 import '../../widgets/scroll/base_single_child_scroll_view.dart';
 import '../view-model/base_view_model.dart';
 
@@ -151,7 +152,7 @@ class _InitializedChildState<T extends BaseViewModel>
         .listenValue((T model) => model.state, context);
     if (!_calledInit && !_initialized) _initializeCustom();
     if (viewState == ViewStates.uninitialized || !_initialized) {
-      return const Center(child: CircularProgressIndicator());
+      return CustomLoadingIndicator(context);
     }
     return widget.builder(context);
   }
