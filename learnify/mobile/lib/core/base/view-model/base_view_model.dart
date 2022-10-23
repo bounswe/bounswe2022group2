@@ -62,11 +62,13 @@ abstract class BaseViewModel extends ChangeNotifier {
 
   /// Custom dispose method of the view model.
   void customDispose() {
-    Future<void>.delayed(Duration.zero, () async {
-      if (!completer.isCompleted) await completer.future;
-      await operation?.cancel();
-      await disposeViewModel();
-    });
+    unawaited(_disposeOperation());
+  }
+
+  Future<void> _disposeOperation() async {
+    if (!completer.isCompleted) await completer.future;
+    await operation?.cancel();
+    await disposeViewModel();
   }
 
   /// Reloads the state.
