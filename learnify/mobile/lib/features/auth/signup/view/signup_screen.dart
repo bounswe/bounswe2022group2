@@ -17,6 +17,7 @@ import '../../../../product/constants/icon_keys.dart';
 import '../../../../product/constants/link_keys.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../../product/language/language_keys.dart';
+import '../constants/widget_keys.dart';
 import '../view-model/signup_view_model.dart';
 
 part './components/signup_form.dart';
@@ -25,26 +26,24 @@ class SignupScreen extends BaseView<SignupViewModel> {
   const SignupScreen({Key? key})
       : super(builder: _builder, scrollable: true, key: key);
 
-  static Widget _builder(BuildContext context) => Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(IconKeys.logo,
-                width: context.width * 33, color: context.primary),
-            context.sizedH(2),
-            _title(context, TextKeys.signupTo),
-            context.sizedH(.2),
-            _title(context, TextKeys.learnify, color: context.primary),
-            context.sizedH(2),
-            const _SignupForm(),
-            context.sizedH(.8),
-            _checkboxTile(context),
-            context.sizedH(2.2),
-            _signupButton,
-            context.sizedH(1.8),
-            _alreadyHaveAccount(context),
-          ],
-        ),
+  static Widget _builder(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Image.asset(IconKeys.logo,
+              width: context.width * 33, color: context.primary),
+          context.sizedH(2),
+          _title(context, TextKeys.signupTo),
+          context.sizedH(.2),
+          _title(context, TextKeys.learnify, color: context.primary),
+          context.sizedH(2),
+          const _SignupForm(),
+          context.sizedH(.8),
+          _checkboxTile(context),
+          context.sizedH(2.2),
+          _signupButton,
+          context.sizedH(1.8),
+          _alreadyHaveAccount(context),
+        ],
       );
 
   static Widget _title(BuildContext context, String key, {Color? color}) =>
@@ -55,6 +54,7 @@ class SignupScreen extends BaseView<SignupViewModel> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: context.responsiveSize * 14),
       child: CustomCheckboxTile(
+        key: SignupKeys.privacyCheckbox,
         onTap: model.setAcceptedAgreement,
         text: TextKeys.termsAgreementText,
         replaceValues: <ReplaceValue>[
@@ -74,6 +74,7 @@ class SignupScreen extends BaseView<SignupViewModel> {
       SelectorHelper<bool, SignupViewModel>().builder(
         (_, SignupViewModel model) => model.canSignup,
         (BuildContext context, bool canSignup, _) => ActionButton(
+          key: SignupKeys.actionButton,
           text: TextKeys.signup,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,

@@ -120,8 +120,10 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
         ),
       );
 
-  Widget get _selectable => InitializedChild<T>(
-      builder: widget.builder, customInitState: widget.customInitState);
+  Widget get _selectable => widget.customInitState == null
+      ? widget.builder(context)
+      : InitializedChild<T>(
+          builder: widget.builder, customInitState: widget.customInitState);
 }
 
 /// Initialized child widget.
@@ -163,4 +165,96 @@ class _InitializedChildState<T extends BaseViewModel>
       if (mounted) setState(() => _initialized = true);
     });
   }
+}
+
+/// Base view class to create customized view models using this.
+class BaseStatelessView<T extends BaseViewModel> extends StatefulWidget {
+  /// Default constructor for [BaseView].
+  const BaseStatelessView({
+    required this.builder,
+    this.customDispose,
+    this.customInitState,
+    this.appBar,
+    this.resizeToAvoidBottomInset = true,
+    this.safeArea = true,
+    this.scrollable = false,
+    this.drawer,
+    this.hasScaffold = true,
+    this.centered = true,
+    Key? key,
+  }) : super(key: key);
+
+  /// Function to build the body.
+  final WidgetBuilder builder;
+
+  /// Custom dispose method to call on dispose.
+  final VoidCallback? customDispose;
+
+  /// Custom init state method to call on init state.
+  final ViewModelInitCallback? customInitState;
+
+  /// Custom app bar.
+  final AppBarBuilder? appBar;
+
+  /// Determines whether to resize to avoid bottom inset in [Scaffold].
+  final bool resizeToAvoidBottomInset;
+
+  /// Determines whether to wrap with [SafeArea].
+  final bool safeArea;
+
+  /// Determines whether the screen is scrollable.
+  final bool scrollable;
+
+  /// Custom drawer.
+  final Widget? drawer;
+
+  /// Whether the widget should be wrapped with Scaffold.
+  final bool hasScaffold;
+
+  /// Determines whether the widget is centered.
+  final bool centered;
+
+  @override
+  State<BaseStatelessView<T>> createState() => _BaseStatelessViewState<T>();
+}
+
+class _BaseStatelessViewState<T extends BaseViewModel>
+    extends State<BaseStatelessView<T>> {
+  @override
+  Widget build(BuildContext context) {
+    final Widget centeredWidget =
+        widget.centered ? Center(child: _child) : _child;
+    final Widget body =
+        widget.safeArea ? SafeArea(child: centeredWidget) : centeredWidget;
+    return CustomGestureDetector(
+        child: widget.hasScaffold
+            ? Scaffold(
+                resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
+                appBar: _appBar,
+                drawer: widget.drawer,
+                body: body,
+              )
+            : body);
+  }
+
+  DefaultAppBar? get _appBar =>
+      widget.appBar?.call(context).copyWithSize(context.responsiveSize * 14);
+
+  Widget get _child => widget.scrollable
+      ? LayoutBuilder(
+          builder: (_, BoxConstraints constraints) =>
+              _scrollableWidget(constraints),
+        )
+      : _selectable;
+
+  Widget _scrollableWidget(BoxConstraints constraints) =>
+      BaseSingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: constraints.maxHeight),
+          child: _selectable,
+        ),
+      );
+
+  Widget get _selectable => InitializedChild<T>(
+      builder: widget.builder, customInitState: widget.customInitState);
 }

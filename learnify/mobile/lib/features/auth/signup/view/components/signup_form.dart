@@ -24,6 +24,7 @@ class _SignupForm extends StatelessWidget {
   }
 
   Widget _emailField(TextEditingController controller) => CustomTextFormField(
+        key: SignupKeys.emailField,
         controller: controller,
         hintText: TextKeys.emailHint,
         labelText: TextKeys.emailLabel,
@@ -36,6 +37,7 @@ class _SignupForm extends StatelessWidget {
 
   Widget _usernameField(TextEditingController controller) =>
       CustomTextFormField(
+        key: SignupKeys.usernameField,
         controller: controller,
         hintText: TextKeys.usernameHint,
         labelText: TextKeys.usernameLabel,
@@ -48,6 +50,7 @@ class _SignupForm extends StatelessWidget {
 
   Widget _passwordField(TextEditingController controller) =>
       ObscuredTextFormField(
+        key: SignupKeys.passwordField,
         controller: controller,
         hintText: TextKeys.passwordHint,
         labelText: TextKeys.passwordLabel,
