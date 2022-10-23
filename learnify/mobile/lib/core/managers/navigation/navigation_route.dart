@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../features/auth/signup/view/signup_screen.dart';
+import '../../../product/constants/navigation_constants.dart';
+
 class NavigationRoute {
   factory NavigationRoute() => _instance;
   NavigationRoute._init();
@@ -9,15 +12,13 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     final Map<String, dynamic> arguments = getArguments(args);
     switch (args.name) {
-      // TODO: Fix
-      // case NavigationConstants.login:
-      //   return normalNavigate(const LoginScreen());
-      // case NavigationConstants.home:
-      //   return normalNavigate(const HomeScreen());
+      case NavigationConstants.signup:
+        return normalNavigate(const SignupScreen());
+      case NavigationConstants.login:
+        return normalNavigate(
+            const Scaffold(body: Center(child: Text('LOGIN'))));
       default:
-        // TODO: Fix
-        return normalNavigate(Container());
-      // return normalNavigate(const LoginScreen());
+        return normalNavigate(const SignupScreen());
     }
   }
 

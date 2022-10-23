@@ -1,7 +1,10 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
+import '../../features/auth/signup/view-model/signup_view_model.dart';
 import '../managers/navigation/navigation_manager.dart';
+import 'language/language_provider.dart';
+import 'theme/theme_provider.dart';
 
 /// Provides the list of providers will be used across the app.
 class ProviderList {
@@ -17,10 +20,21 @@ class ProviderList {
   ];
 
   static final List<SingleChildWidget> _viewModelProviders =
-      <SingleChildWidget>[];
+      <SingleChildWidget>[
+    ChangeNotifierProvider<SignupViewModel>(
+      lazy: true,
+      create: (_) => SignupViewModel(),
+    ),
+  ];
 
   static final List<SingleChildWidget> _functionalProviders =
       <SingleChildWidget>[
+    ChangeNotifierProvider<ThemeProvider>(
+      create: (_) => ThemeProvider(),
+    ),
+    ChangeNotifierProvider<LanguageProvider>(
+      create: (_) => LanguageProvider(),
+    ),
     Provider<NavigationManager>.value(value: NavigationManager.instance)
   ];
 }
