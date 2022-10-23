@@ -1,0 +1,39 @@
+body{
+    background: #bdc3c7; 
+    background: -webkit-linear-gradient(to right, #595ef5, #ffffff);  
+    background: linear-gradient(to right, #3c96ef, #d8dbdd); 
+}
+
+.form{
+    background-color: white;
+    border-radius: 5px;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    /* height: 600px; */
+}
+
+.form-body{
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.navigate{
+    margin: 0 10px 0 10px;
+}
+
+.form-body > *{
+    padding: 5px;
+}
+
+.form__label{
+    width: 40%;
+}
+
+.form_input{
+    width: 60%;
+}
+
+.footer{
+    text-align: center;
+}
