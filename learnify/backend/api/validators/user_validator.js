@@ -8,3 +8,11 @@ export function validateSignup(body) {
   });
   return schema.validate(body);
 }
+
+export function validateVerifyEmail(body) {
+  const schema = Joi.object({
+    email: Joi.string().email().min(3).required(),
+    code: Joi.string().min(3).max(20).required(),
+  });
+  return schema.validate(body);
+}
