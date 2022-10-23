@@ -14,4 +14,6 @@ class TextKeys {
   static const String privacyPolicy = 'privacy_policy';
   static const String alreadyHaveAccount = 'already_have_account';
   static const String login = 'login';
+  static const String forgetPassword = 'forget_password?';
+  static const String verifyEmail = 'verify_email';
 }
