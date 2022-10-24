@@ -2,6 +2,27 @@ body{
     background: #FFF7E9;
 }
 
+.signup-page-logo{
+    align-self: flex-start;
+    padding: 6%;
+}
+
+.signup-page-illustration{
+    align-self: center;
+    overflow: hidden;
+}
+
+.illustration-text{
+    padding-top: 6%;
+    color: #1746A2;
+    font-size: x-large;
+    font-weight: 300;
+}
+
+.bold-text{
+    font-weight: 600;
+}
+
 .form{
     background-color: #1746A2;
     border-radius: 5px;
@@ -53,6 +74,8 @@ body{
 }
 
 .leftPart{
+    display: flex;
+    flex-direction: column;
     width: 60%;
     background-color: #FFF7E9;
 }
