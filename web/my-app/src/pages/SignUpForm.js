@@ -1,7 +1,6 @@
 import React, {useState,setState} from 'react';
 import './style.css'
 function SignUpForm() {
-    
     const [userName, setUserName] = useState(null);
     const [email, setEmail] = useState(null);
     const [password,setPassword] = useState(null);
