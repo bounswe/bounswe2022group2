@@ -10,6 +10,7 @@ import 'package:dio/src/adapters/io_adapter.dart'
 import '../../base/model/base_model.dart';
 import '../../constants/enums/request_types.dart';
 import '../../constants/network_constants.dart';
+import 'custom_interceptors.dart';
 import 'helpers/network_parsers.dart';
 import 'l_network_manager.dart';
 import 'models/_response_model.dart';
@@ -36,12 +37,7 @@ class NetworkManager extends INetworkManager
       receiveTimeout: 6000,
     );
 
-    // TODO: Fix
-    // AuthenticationService(
-    //   networkManager: this,
-    //   authLocalManager: AuthLocalManager(),
-    // );
-    // interceptors.add(CustomInterceptors());
+    interceptors.add(CustomInterceptors());
     httpClientAdapter = adapter.createAdapter();
   }
 
@@ -72,6 +68,7 @@ class NetworkManager extends INetworkManager
         ..method = type.name
         ..extra ??= <String, dynamic>{}
         ..headers ??= <String, dynamic>{};
+      customOptions.extra!.addAll(_setExtra<R>(requireAuth));
       final Response<dynamic> response = await request(
         path,
         data: body?.toJson,
@@ -149,4 +146,11 @@ class NetworkManager extends INetworkManager
           isAuthentication: dioError?.response?.statusCode == 403,
         ),
       );
+
+  Map<String, dynamic> _setExtra<R extends BaseModel<R>>(bool requireAuth) {
+    final Map<String, dynamic> map = <String, dynamic>{};
+    if (requireAuth) map.putIfAbsent("require_auth", () => "yes");
+    if (interceptors.length > 1) interceptors.removeLast();
+    return map;
+  }
 }

@@ -29,6 +29,9 @@ dependencies:
   equatable: ^2.0.5
   collection: ^1.16.0
 
+  # Local Storage
+  shared_preferences: ^2.0.15
+
   async: ^2.9.0
   url_launcher: ^6.1.6
 
