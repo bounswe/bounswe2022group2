@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/selector_helper.dart';
 import '../../../../core/helpers/validators.dart';
+import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../product/constants/icon_keys.dart';
+import '../../../../product/constants/navigation_constants.dart';
 import '../../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/forget_password_view_model.dart';
@@ -29,6 +32,8 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
           const _EmailForm(),
           context.sizedH(2),
           _verifyButton,
+          context.sizedH(2),
+          _backToLogin(context),
         ],
       );
 
@@ -49,4 +54,18 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
                 onPressedError:
                     context.read<ForgetPasswordViewModel>().forgetPassword,
               ));
+
+  static Widget _backToLogin(BuildContext context) => BaseText(
+        //TODO fix inactive
+        TextKeys.backToLogin,
+        style: context.bodySmall,
+        replaceValues: <ReplaceValue>[
+          ReplaceValue(
+            TextKeys.login,
+            onClick: () async => NavigationManager.instance
+                .navigateToPage(path: NavigationConstants.login),
+            color: context.primary,
+          )
+        ],
+      );
 }

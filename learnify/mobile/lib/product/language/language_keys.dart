@@ -16,4 +16,5 @@ class TextKeys {
   static const String login = 'login';
   static const String forgetPassword = 'forget_password';
   static const String verifyEmail = 'verify_email';
+  static const String backToLogin = 'back_to_login';
 }
