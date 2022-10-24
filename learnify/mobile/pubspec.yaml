@@ -1,0 +1,44 @@
+name: learnify
+description: Online Learning Platform
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.5
+
+  # State Management
+  provider: ^6.0.4
+
+  # UI
+  google_fonts: ^3.0.1
+
+  # Model
+  equatable: ^2.0.5
+  collection: ^1.16.0
+
+  async: ^2.9.0
+  url_launcher: ^6.1.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.1
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/lang/
+    - assets/images/
