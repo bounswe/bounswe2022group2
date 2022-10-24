@@ -7,7 +7,17 @@ body{
     padding: 6%;
 }
 
+.signin-page-logo{
+    align-self: flex-start;
+    padding: 6%;
+}
+
 .signup-page-illustration{
+    align-self: center;
+    overflow: hidden;
+}
+
+.signin-page-illustration{
     align-self: center;
     overflow: hidden;
 }
@@ -66,6 +76,21 @@ body{
     padding-left: 40px;
     text-align: left;
 }
+
+.signin-button{
+    padding-top: 20px;
+    padding-left: 40px;
+    text-align: left;
+}
+
+
+.additional-Nav-Text {
+    color: #f45004;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1.5px solid #f45004;
+    padding-bottom: 5px;
+  }
 
 .pageLayout{
     height: 100vh;
