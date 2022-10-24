@@ -13,8 +13,8 @@ import '../../constants/network_constants.dart';
 import 'custom_interceptors.dart';
 import 'helpers/network_parsers.dart';
 import 'l_network_manager.dart';
-import 'models/_response_model.dart';
 import 'models/error_model.dart';
+import 'models/l_response_model.dart';
 import 'models/response_model.dart';
 
 /// Implementation of the network manager.
@@ -127,7 +127,8 @@ class NetworkManager extends INetworkManager
     try {
       if (error.response?.data is Map<String, dynamic>) {
         final Map<String, dynamic> resMap = error.response?.data;
-        errorMessage = resMap['message'] ?? error.response?.data.toString();
+        errorMessage =
+            resMap['resultMessage'] ?? error.response?.data.toString();
       }
     } on Exception catch (_) {
       errorMessage = error.toString();

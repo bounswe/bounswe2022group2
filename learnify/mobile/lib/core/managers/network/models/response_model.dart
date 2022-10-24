@@ -1,5 +1,5 @@
-import '_response_model.dart';
 import 'l_error_model.dart';
+import 'l_response_model.dart';
 
 /// Creates a response model by implementing the base.
 class ResponseModel<T> implements IResponseModel<T> {

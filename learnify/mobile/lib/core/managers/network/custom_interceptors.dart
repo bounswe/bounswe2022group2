@@ -42,7 +42,7 @@ class CustomInterceptors extends Interceptor {
     final Map<String, dynamic> resBody =
         response?.data is Map ? response?.data : <String, dynamic>{};
     final String message =
-        resBody['message'] is String ? resBody['message'] : '';
+        resBody['resultMessage'] is String ? resBody['resultMessage'] : '';
     final int? statusCode = response?.statusCode;
     return (statusCode == 401 ||
             statusCode == 403 ||

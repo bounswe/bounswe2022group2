@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 import '../../base/model/base_model.dart';
 import '../../constants/enums/request_types.dart';
-import 'models/_response_model.dart';
+import 'models/l_response_model.dart';
 
 /// Defines the base network manager functionalities.
 abstract class INetworkManager {
