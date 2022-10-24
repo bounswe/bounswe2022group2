@@ -1,3 +1,4 @@
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
@@ -36,5 +37,19 @@ class ForgetPasswordViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-//navigate to send verification code async func
+  Future<String?> forgetPassword() async {
+    await operation?.cancel();
+    operation =
+        CancelableOperation<String?>.fromFuture(_forgetPasswordRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _forgetPasswordRequest() async {
+    final bool isValid = formKey.currentState?.validate() ?? false;
+    if (isValid) {
+      return null;
+    }
+    return 'NOT VALID';
+  }
 }

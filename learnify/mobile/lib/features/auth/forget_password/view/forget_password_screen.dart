@@ -8,19 +8,25 @@ import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
+import '../../../../product/constants/icon_keys.dart';
 import '../../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/forget_password_view_model.dart';
 
-class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
-  const ForgetPasswordScreen({Key? key}) : super(builder: _builder, key: key);
+part './components/email_form.dart';
 
+class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
+  const ForgetPasswordScreen({Key? key})
+      : super(builder: _builder, scrollable: true, key: key);
   static Widget _builder(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          Image.asset(IconKeys.logo,
+              width: context.width * 33, color: context.primary),
+          context.sizedH(4),
           _title(context, TextKeys.forgetPassword),
-          context.sizedH(2),
-          _emailField(context.read<ForgetPasswordViewModel>().emailController),
+          context.sizedH(4),
+          const _EmailForm(),
           context.sizedH(2),
           _verifyButton,
         ],
@@ -28,19 +34,6 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
 
   static Widget _title(BuildContext context, String key, {Color? color}) =>
       BaseText(key, style: context.displayLarge, color: color);
-
-  static Widget _emailField(TextEditingController controller) =>
-      CustomTextFormField(
-        key: ForgetPasswordKeys.emailField,
-        controller: controller,
-        hintText: TextKeys.emailHint,
-        labelText: TextKeys.emailLabel,
-        prefixIcon: Icons.email_outlined,
-        validator: Validators.email,
-        textInputAction: TextInputAction.next,
-        autofillHints: const <String>[AutofillHints.email],
-        textInputType: TextInputType.emailAddress,
-      );
 
   static Widget get _verifyButton =>
       SelectorHelper<bool, ForgetPasswordViewModel>().builder(
@@ -53,7 +46,7 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
                     vertical: context.responsiveSize * 1.4),
                 capitalizeAll: true,
                 isActive: canVerify,
-                //onPressedError:
-                // navigate to send verification if input is valid
+                onPressedError:
+                    context.read<ForgetPasswordViewModel>().forgetPassword,
               ));
 }
