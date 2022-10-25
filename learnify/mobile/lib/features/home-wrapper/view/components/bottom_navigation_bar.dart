@@ -1,13 +1,13 @@
-part of '../home_screen.dart';
+part of '../home_wrapper_screen.dart';
 
 class _BottomNavigationBar extends StatelessWidget {
   const _BottomNavigationBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final HomeViewModel homeModel = context.read<HomeViewModel>();
-    final int index = SelectorHelper<int, HomeViewModel>()
-        .listenValue((HomeViewModel model) => model.bottomNavBarIndex, context);
+    final HomeWrapperViewModel homeModel = context.read<HomeWrapperViewModel>();
+    final int index = SelectorHelper<int, HomeWrapperViewModel>().listenValue(
+        (HomeWrapperViewModel model) => model.bottomNavBarIndex, context);
     return CurvedNavigationBar(
       key: homeModel.bottomNavigationKey,
       items: List<Widget>.generate(
@@ -62,13 +62,13 @@ class _BottomNavItemState extends State<_BottomNavItem> {
     super.didUpdateWidget(oldWidget);
     if (widget.selectedIndex != oldWidget.selectedIndex) {
       if (_isSelected) {
-        Future<void>.delayed(const Duration(milliseconds: 500), () {
-          if (!mounted) return;
-          setState(() => _localColor = _activeColor);
-        });
+        _localColor = _activeColor;
       } else if (oldWidget.selectedIndex == widget.index && mounted) {
-        setState(() => _localColor = _inactiveColor);
+        _localColor = _inactiveColor;
+      } else {
+        return;
       }
+      if (mounted) setState(() {});
     }
   }
 

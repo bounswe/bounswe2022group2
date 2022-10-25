@@ -2,6 +2,7 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 import '../../features/auth/signup/view-model/signup_view_model.dart';
+import '../../features/home-wrapper/view-model/home_wrapper_view_model.dart';
 import '../../features/home/view-model/home_view_model.dart';
 import '../managers/navigation/navigation_manager.dart';
 import 'language/language_provider.dart';
@@ -25,6 +26,10 @@ class ProviderList {
     ChangeNotifierProvider<SignupViewModel>(
       lazy: true,
       create: (_) => SignupViewModel(),
+    ),
+    ChangeNotifierProvider<HomeWrapperViewModel>(
+      lazy: true,
+      create: (_) => HomeWrapperViewModel(),
     ),
     ChangeNotifierProvider<HomeViewModel>(
       lazy: true,

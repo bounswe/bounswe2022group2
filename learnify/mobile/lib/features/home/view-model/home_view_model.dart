@@ -1,27 +1,12 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/material.dart';
-
 import '../../../../core/base/view-model/base_view_model.dart';
-import '../service/l_home_service.dart';
 
 /// View model to manage the data on home screen.
 class HomeViewModel extends BaseViewModel {
-  late final IHomeService _homeService;
-
-  int _bottomNavBarIndex = 0;
-
-  /// Bottom nav bar index.
-  int get bottomNavBarIndex => _bottomNavBarIndex;
-  late GlobalKey<CurvedNavigationBarState> _bottomNavigationKey;
-  GlobalKey<CurvedNavigationBarState> get bottomNavigationKey =>
-      _bottomNavigationKey;
-
   @override
   void initViewModel() {}
 
   @override
   void initView() {
-    _bottomNavigationKey = GlobalKey<CurvedNavigationBarState>();
     _setDefault();
   }
 
@@ -31,13 +16,5 @@ class HomeViewModel extends BaseViewModel {
     super.disposeView();
   }
 
-  void setBottomNavIndex(int newIndex) {
-    if (_bottomNavBarIndex == newIndex) return;
-    _bottomNavBarIndex = newIndex;
-    notifyListeners();
-  }
-
-  void _setDefault() {
-    _bottomNavBarIndex = 0;
-  }
+  void _setDefault() {}
 }
