@@ -4,10 +4,13 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../../core/managers/network/models/l_response_model.dart';
+import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
+import '../model/signup_request_model.dart';
 
 /// View model to manage the data on signup screen.
 class SignupViewModel extends BaseViewModel {
@@ -80,13 +83,13 @@ class SignupViewModel extends BaseViewModel {
   Future<String?> _signupRequest() async {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid && _acceptedAgreement) {
-      // final SignupRequest requestModel = SignupRequest(
-      //     email: _emailController.text,
-      //     password: _passwordController.text,
-      //     username: _usernameController.text);
-      // final IResponseModel<MessageResponse> res =
-      //     await _authService.signup(requestModel);
-      // if (res.hasError) return res.error?.errorMessage;
+      final SignupRequest requestModel = SignupRequest(
+          email: _emailController.text,
+          password: _passwordController.text,
+          username: _usernameController.text);
+      final IResponseModel<MessageResponse> res =
+          await _authService.signup(requestModel);
+      if (res.hasError) return res.error?.errorMessage;
       await navigationManager.navigateToPageClear(
           path: NavigationConstants.home);
       return null;
