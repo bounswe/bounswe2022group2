@@ -11,7 +11,7 @@ class _ProfileForm extends StatelessWidget {
       children: <Widget>[
         if (model.email.isNotEmpty)
           Flexible(child: BaseText(model.email, translated: false)),
-        context.sizedH(1.4),
+        context.sizedH(1.8),
         Form(
           key: model.formKey,
           child: Flexible(child: _usernameField(model.usernameController)),

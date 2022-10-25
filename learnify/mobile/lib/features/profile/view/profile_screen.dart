@@ -31,15 +31,15 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         );
 
   static Widget _builder(BuildContext context) => Padding(
-        padding: EdgeInsets.symmetric(vertical: context.height * 2),
+        padding: EdgeInsets.symmetric(vertical: context.height * 3),
         child: Column(
           children: <Widget>[
             _profilePhoto,
             context.sizedH(1),
             _pickImageRow(context),
-            context.sizedH(2),
+            context.sizedH(2.4),
             const _ProfileForm(),
-            context.sizedH(1.5),
+            context.sizedH(2.2),
             _totalCountRow(context),
           ],
         ),
