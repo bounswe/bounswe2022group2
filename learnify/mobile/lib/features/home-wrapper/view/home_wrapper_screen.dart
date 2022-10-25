@@ -56,15 +56,29 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
             child: Image.asset(IconKeys.logo),
           ),
           const Spacer(),
-          BaseIconButton(
-            onPressed: () {},
-            icon: Icons.notifications_none_outlined,
-            padding: EdgeInsets.all(context.responsiveSize * .9),
-            color: context.lightActiveColor,
+          SelectorHelper<int, HomeWrapperViewModel>().builder(
+            (_, HomeWrapperViewModel model) => model.bottomNavBarIndex,
+            (BuildContext context, int index, __) => BaseIconButton(
+              onPressed: () {},
+              icon: _appBarIcon(index),
+              padding: EdgeInsets.all(context.responsiveSize * .9),
+              color: context.lightActiveColor,
+            ),
           ),
         ],
         padding: EdgeInsets.symmetric(
             horizontal: context.responsiveSize * 3,
             vertical: context.responsiveSize * 2.5),
       );
+
+  static IconData _appBarIcon(int index) {
+    switch (index) {
+      case 0:
+        return Icons.notifications_none_outlined;
+      case 3:
+        return Icons.settings_outlined;
+      default:
+        return Icons.filter_alt_outlined;
+    }
+  }
 }
