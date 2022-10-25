@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'core/managers/local/local_manager.dart';
 import 'core/managers/navigation/navigation_manager.dart';
 import 'core/managers/navigation/navigation_route.dart';
 import 'core/providers/language/language_provider.dart';
 import 'core/providers/provider_list.dart';
 import 'core/providers/theme/theme_provider.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await LocalManager().initPreferences();
   runApp(const InitialApp());
 }
 

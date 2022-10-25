@@ -73,16 +73,19 @@ class SignupScreen extends BaseView<SignupViewModel> {
   static Widget get _signupButton =>
       SelectorHelper<bool, SignupViewModel>().builder(
         (_, SignupViewModel model) => model.canSignup,
-        (BuildContext context, bool canSignup, _) => ActionButton(
-          key: SignupKeys.actionButton,
-          text: TextKeys.signup,
-          padding: EdgeInsets.symmetric(
-              horizontal: context.responsiveSize * 2.8,
-              vertical: context.responsiveSize * 1.4),
-          capitalizeAll: true,
-          isActive: canSignup,
-          onPressedError: context.read<SignupViewModel>().signup,
-        ),
+        (BuildContext context, bool canSignup, _) {
+          final SignupViewModel model = context.read<SignupViewModel>();
+          return ActionButton(
+            key: model.actionButtonKey,
+            text: TextKeys.signup,
+            padding: EdgeInsets.symmetric(
+                horizontal: context.responsiveSize * 2.8,
+                vertical: context.responsiveSize * 1.4),
+            capitalizeAll: true,
+            isActive: canSignup,
+            onPressedError: model.signup,
+          );
+        },
       );
 
   static ReplaceValue _replaceValue(
