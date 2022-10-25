@@ -7,7 +7,7 @@ body{
     padding: 6%;
 }
 
-.signin-page-logo{
+.login-page-logo{
     align-self: flex-start;
     padding: 6%;
 }
@@ -17,7 +17,7 @@ body{
     overflow: hidden;
 }
 
-.signin-page-illustration{
+.login-page-illustration{
     align-self: center;
     overflow: hidden;
 }
@@ -58,6 +58,7 @@ body{
     padding-left: 8px;
     font-weight: bold;
     width: 40%;
+    text-align: left
 }
 
 .form__input{
@@ -77,11 +78,13 @@ body{
     text-align: left;
 }
 
-.signin-button{
-    padding-top: 20px;
-    padding-left: 40px;
-    text-align: left;
+.login-button{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
 }
+
 
 
 .additional-Nav-Text {
@@ -138,6 +141,10 @@ body{
 
 .space-8{
     padding: 8px;
+}
+
+.space-50{
+    padding: 50px
 }
 
 .registerKVKK {
