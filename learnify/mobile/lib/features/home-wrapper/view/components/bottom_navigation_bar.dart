@@ -17,7 +17,7 @@ class _BottomNavigationBar extends StatelessWidget {
       onTap: homeModel.setBottomNavIndex,
       buttonBackgroundColor: context.primary,
       backgroundColor: context.primary,
-      color: context.textColor,
+      color: context.lightActiveColor,
       height: min(context.responsiveSize * 18, 75),
     );
   }
@@ -45,16 +45,15 @@ class _BottomNavItemState extends State<_BottomNavItem> {
     super.initState();
     _themeData =
         Provider.of<ThemeProvider>(context, listen: false).currentTheme;
-    _localColor = _isSelected
-        ? _themeData.textTheme.bodySmall?.color
-        : _themeData.primaryColorDark;
+    _localColor =
+        _isSelected ? LightAppTheme.lightActiveColor : _themeData.primaryColor;
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _activeColor = context.textColor;
-    _inactiveColor = context.primaryDark;
+    _activeColor = context.lightActiveColor;
+    _inactiveColor = context.primary;
   }
 
   @override

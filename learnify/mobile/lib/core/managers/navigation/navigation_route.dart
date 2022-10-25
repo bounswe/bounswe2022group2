@@ -15,7 +15,7 @@ class NavigationRoute {
     switch (args.name) {
       case NavigationConstants.signup:
         // TODO: Fix
-        return normalNavigate(const HomeWrapper());
+        return normalNavigate(HomeWrapper());
       case NavigationConstants.login:
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
@@ -30,7 +30,7 @@ class NavigationRoute {
         ));
       default:
         // TODO: Fix
-        return normalNavigate(const HomeWrapper());
+        return normalNavigate(HomeWrapper());
     }
   }
 

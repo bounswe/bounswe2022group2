@@ -64,7 +64,7 @@ class SignupScreen extends BaseView<SignupViewModel> {
               context, TextKeys.privacyPolicy, LinkKeys.privacyPolicy),
         ],
         initialValue: model.acceptedAgreement,
-        color: context.textColor,
+        color: context.activeColor,
         sizedCheckbox: true,
       ),
     );

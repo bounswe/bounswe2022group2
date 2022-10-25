@@ -101,16 +101,13 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
         child: widget.hasScaffold
             ? Scaffold(
                 resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
-                appBar: _appBar,
+                appBar: widget.appBar?.call(context),
                 drawer: widget.drawer,
                 body: body,
                 bottomNavigationBar: widget.bottomNavigationBar,
               )
             : body);
   }
-
-  DefaultAppBar? get _appBar =>
-      widget.appBar?.call(context).copyWithSize(context.responsiveSize * 14);
 
   Widget get _child => widget.scrollable
       ? LayoutBuilder(
