@@ -17,5 +17,7 @@
   "home": "Home",
   "search": "Search",
   "courses": "Courses",
-  "profile": "Profile"
+  "profile": "Profile",
+  "take_photo": "Camera",
+  "choose_from_gallery": "Gallery"
 }

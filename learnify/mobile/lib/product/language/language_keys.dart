@@ -18,4 +18,6 @@ class TextKeys {
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
+  static const String takePhoto = 'take_photo';
+  static const String chooseFromGallery = 'choose_from_gallery';
 }

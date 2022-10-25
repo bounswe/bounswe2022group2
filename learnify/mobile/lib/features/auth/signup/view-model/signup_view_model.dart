@@ -8,6 +8,7 @@ import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../../../product/constants/storage_keys.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
 import '../model/signup_request_model.dart';
@@ -90,6 +91,10 @@ class SignupViewModel extends BaseViewModel {
       final IResponseModel<MessageResponse> res =
           await _authService.signup(requestModel);
       if (res.hasError) return res.error?.errorMessage;
+      // TODO: Fix
+      await localManager.setString(StorageKeys.email, _emailController.text);
+      await localManager.setString(
+          StorageKeys.username, _usernameController.text);
       await navigationManager.navigateToPageClear(
           path: NavigationConstants.home);
     }
