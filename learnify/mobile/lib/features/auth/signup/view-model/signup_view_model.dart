@@ -4,12 +4,17 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../../core/managers/network/models/l_response_model.dart';
+import '../../../../core/managers/network/models/message_response.dart';
+import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../service/auth_service.dart';
+import '../../service/l_auth_service.dart';
+import '../model/signup_request_model.dart';
 
 /// View model to manage the data on signup screen.
 class SignupViewModel extends BaseViewModel {
-  // TODO: Fix
-  // late final IAuthService _authService;
+  late final IAuthService _authService;
 
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
@@ -22,6 +27,9 @@ class SignupViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
+  late GlobalKey<ActionButtonState> _actionButtonKey;
+  GlobalKey<ActionButtonState> get actionButtonKey => _actionButtonKey;
+
   bool _acceptedAgreement = false;
   bool get acceptedAgreement => _acceptedAgreement;
 
@@ -29,7 +37,9 @@ class SignupViewModel extends BaseViewModel {
   bool get canSignup => _canSignup && _acceptedAgreement;
 
   @override
-  void initViewModel() {}
+  void initViewModel() {
+    _authService = AuthService.instance;
+  }
 
   @override
   void initView() {
@@ -37,6 +47,7 @@ class SignupViewModel extends BaseViewModel {
     _passwordController = TextEditingController();
     _usernameController = TextEditingController();
     _formKey = GlobalKey<FormState>();
+    _actionButtonKey = GlobalKey<ActionButtonState>();
     _emailController.addListener(_controllerListener);
     _passwordController.addListener(_controllerListener);
     _usernameController.addListener(_controllerListener);
@@ -70,16 +81,18 @@ class SignupViewModel extends BaseViewModel {
   Future<String?> _signupRequest() async {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid && _acceptedAgreement) {
-      // TODO: Sign up request
+      final SignupRequest requestModel = SignupRequest(
+          email: _emailController.text,
+          password: _passwordController.text,
+          username: _usernameController.text);
+      final IResponseModel<MessageResponse> res =
+          await _authService.signup(requestModel);
+      if (res.hasError) return res.error?.errorMessage;
+      await navigationManager.navigateToPageClear(
+          path: NavigationConstants.home);
       return null;
     }
-    return 'NOT VALID';
-
-    // final IResponseModel<MessageResponse> res =
-    //     await _authService.signup(_requestModel);
-    // if (res.hasError) return res.error?.errorMessage;
-    // await navigationManager.setNewRoutePath(const ScreenConfig.emailSent());
-    // return null;
+    return 'Please enter valid information and accept the agreements';
   }
 
   /// Callback for have account text press.
@@ -92,6 +105,9 @@ class SignupViewModel extends BaseViewModel {
     await navigationManager.navigateToPage(path: NavigationConstants.login);
     return null;
   }
+
+  /// Callback for have account text press.
+  void onPasswordSubmit(_) => _actionButtonKey.currentState?.localOnPressed();
 
   void setAcceptedAgreement(bool val) {
     if (_acceptedAgreement == val) return;

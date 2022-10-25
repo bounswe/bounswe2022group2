@@ -25,9 +25,14 @@ class CustomInterceptors extends Interceptor {
   @override
   Future<void> onResponse(
       Response<dynamic> response, ResponseInterceptorHandler handler) async {
-    final Map<String, dynamic> map =
-        jsonDecode(response.data) ?? <String, dynamic>{};
-    if (map['token'] != null) await _storeToken(map['token']);
+    try {
+      final Map<String, dynamic> map = response.data is Map
+          ? response.data
+          : jsonDecode(response.data) ?? <String, dynamic>{};
+      if (map['token'] != null) await _storeToken(map['token']);
+    } on Exception catch (e) {
+      log(e.toString());
+    }
     return super.onResponse(response, handler);
   }
 

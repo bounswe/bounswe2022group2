@@ -15,9 +15,7 @@ class _SignupForm extends StatelessWidget {
           context.sizedH(.5),
           Flexible(child: _emailField(model.emailController)),
           context.sizedH(.5),
-          Flexible(
-            child: _passwordField(model.passwordController),
-          ),
+          Flexible(child: _passwordField(context, model.passwordController)),
         ],
       ),
     );
@@ -48,7 +46,8 @@ class _SignupForm extends StatelessWidget {
         textInputType: TextInputType.name,
       );
 
-  Widget _passwordField(TextEditingController controller) =>
+  Widget _passwordField(
+          BuildContext context, TextEditingController controller) =>
       ObscuredTextFormField(
         key: SignupKeys.passwordField,
         controller: controller,
@@ -57,5 +56,6 @@ class _SignupForm extends StatelessWidget {
         prefixIcon: Icons.password_outlined,
         textInputAction: TextInputAction.next,
         validator: Validators.password,
+        onFieldSubmitted: context.read<SignupViewModel>().onPasswordSubmit,
       );
 }
