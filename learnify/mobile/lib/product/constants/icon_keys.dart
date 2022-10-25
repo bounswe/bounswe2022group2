@@ -9,5 +9,7 @@ class IconKeys {
   /// Static instance getter of [IconKeys].
   static IconKeys get instance => _instance;
 
-  static const String logo = 'assets/images/logo.png';
+  static const String logo = 'assets/images/logo-dblue.png';
+  static const String learnIllustration =
+      'assets/images/learn-illustration.png';
 }

@@ -97,7 +97,7 @@ class CustomCheckboxState extends State<CustomCheckbox> {
                   horizontal: _visualDensity, vertical: _visualDensity)
               : VisualDensity.standard,
           fillColor: GeneralTheme.all(context.primary),
-          side: BorderSide(color: context.textColor, width: 1.5),
+          side: BorderSide(color: context.activeColor, width: 1.5),
         ),
       );
 

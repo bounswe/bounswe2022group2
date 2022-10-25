@@ -17,4 +17,8 @@ class TextKeys {
   static const String forgetPassword = 'forget_password';
   static const String verifyEmail = 'verify_email';
   static const String backToLogin = 'back_to_login';
+  static const String home = 'home';
+  static const String profile = 'profile';
+  static const String search = 'search';
+  static const String courses = 'courses';
 }

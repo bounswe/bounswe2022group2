@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../extensions/context/context_extensions.dart';
@@ -20,7 +19,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actionsList = const <Widget>[],
     this.titleIcon,
     this.titleText,
-    this.showBack,
+    this.showBack = false,
     this.textStyle,
     this.icon,
     this.absorb = false,
@@ -44,7 +43,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;
 
   /// Indicates whether to show a return back icon at top left.
-  final bool? showBack;
+  final bool showBack;
 
   /// Style of the title text.
   final TextStyle? textStyle;
@@ -88,7 +87,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       );
 
   Widget _safeAreaChild(BuildContext context, bool absorb) => Container(
-        color: Colors.black,
+        color: context.primary,
         alignment: Alignment.center,
         padding: padding ??
             EdgeInsets.symmetric(
@@ -104,11 +103,11 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget _appBarRow(BuildContext context) => Row(
         children: <Widget>[
-          if (showBack ?? !kIsWeb) _backButton(context),
+          if (showBack) _backButton(context),
           if (icon != null)
             icon!(context)
           else if (titleIcon != null)
-            BaseIcon(context, titleIcon!, color: context.textColor),
+            BaseIcon(context, titleIcon!, color: context.lightActiveColor),
           context.sizedW(2),
           if (titleText != null) Expanded(child: _titleTextWidget(context)),
           ...actionsList,

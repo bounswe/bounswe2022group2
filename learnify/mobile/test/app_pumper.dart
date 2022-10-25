@@ -1,4 +1,6 @@
-part of 'main_tester.dart';
+import 'package:flutter/material.dart';
+import 'package:learnify/core/providers/provider_list.dart';
+import 'package:provider/provider.dart';
 
 Widget appWidget(Widget widget) => MediaQuery(
       data: const MediaQueryData(),

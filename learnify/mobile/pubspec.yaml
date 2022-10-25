@@ -19,12 +19,19 @@ dependencies:
   # State Management
   provider: ^6.0.4
 
+  # Network
+  dio: ^4.0.6
+
   # UI
   google_fonts: ^3.0.1
+  curved_navigation_bar: ^1.0.3
 
   # Model
   equatable: ^2.0.5
   collection: ^1.16.0
+
+  # Local Storage
+  shared_preferences: ^2.0.15
 
   async: ^2.9.0
   url_launcher: ^6.1.6
@@ -32,6 +39,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  http_mock_adapter: ^0.3.3
 
   flutter_lints: ^2.0.1
 

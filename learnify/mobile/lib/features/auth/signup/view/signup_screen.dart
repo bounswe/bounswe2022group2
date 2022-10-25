@@ -29,13 +29,12 @@ class SignupScreen extends BaseView<SignupViewModel> {
   static Widget _builder(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset(IconKeys.logo,
-              width: context.width * 33, color: context.primary),
-          context.sizedH(2),
+          Image.asset(IconKeys.learnIllustration, width: context.width * 45),
+          context.sizedH(1),
           _title(context, TextKeys.signupTo),
-          context.sizedH(.2),
-          _title(context, TextKeys.learnify, color: context.primary),
-          context.sizedH(2),
+          context.sizedH(1),
+          Image.asset(IconKeys.logo, width: context.width * 50),
+          context.sizedH(2.6),
           const _SignupForm(),
           context.sizedH(.8),
           _checkboxTile(context),
@@ -64,7 +63,7 @@ class SignupScreen extends BaseView<SignupViewModel> {
               context, TextKeys.privacyPolicy, LinkKeys.privacyPolicy),
         ],
         initialValue: model.acceptedAgreement,
-        color: context.textColor,
+        color: context.activeColor,
         sizedCheckbox: true,
       ),
     );
@@ -73,16 +72,19 @@ class SignupScreen extends BaseView<SignupViewModel> {
   static Widget get _signupButton =>
       SelectorHelper<bool, SignupViewModel>().builder(
         (_, SignupViewModel model) => model.canSignup,
-        (BuildContext context, bool canSignup, _) => ActionButton(
-          key: SignupKeys.actionButton,
-          text: TextKeys.signup,
-          padding: EdgeInsets.symmetric(
-              horizontal: context.responsiveSize * 2.8,
-              vertical: context.responsiveSize * 1.4),
-          capitalizeAll: true,
-          isActive: canSignup,
-          onPressedError: context.read<SignupViewModel>().signup,
-        ),
+        (BuildContext context, bool canSignup, _) {
+          final SignupViewModel model = context.read<SignupViewModel>();
+          return ActionButton(
+            key: model.actionButtonKey,
+            text: TextKeys.signup,
+            padding: EdgeInsets.symmetric(
+                horizontal: context.responsiveSize * 2.8,
+                vertical: context.responsiveSize * 1.4),
+            capitalizeAll: true,
+            isActive: canSignup,
+            onPressedError: model.signup,
+          );
+        },
       );
 
   static ReplaceValue _replaceValue(

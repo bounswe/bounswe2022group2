@@ -3,6 +3,11 @@ import 'package:provider/single_child_widget.dart';
 
 import '../../features/auth/forget_password/view-model/forget_password_view_model.dart';
 import '../../features/auth/signup/view-model/signup_view_model.dart';
+import '../../features/courses/view-model/courses_view_model.dart';
+import '../../features/home-wrapper/view-model/home_wrapper_view_model.dart';
+import '../../features/home/view-model/home_view_model.dart';
+import '../../features/profile/view-model/profile_view_model.dart';
+import '../../features/search/view-model/search_view_model.dart';
 import '../managers/navigation/navigation_manager.dart';
 import 'language/language_provider.dart';
 import 'theme/theme_provider.dart';
@@ -25,6 +30,26 @@ class ProviderList {
     ChangeNotifierProvider<SignupViewModel>(
       lazy: true,
       create: (_) => SignupViewModel(),
+    ),
+    ChangeNotifierProvider<HomeWrapperViewModel>(
+      lazy: true,
+      create: (_) => HomeWrapperViewModel(),
+    ),
+    ChangeNotifierProvider<HomeViewModel>(
+      lazy: true,
+      create: (_) => HomeViewModel(),
+    ),
+    ChangeNotifierProvider<SearchViewModel>(
+      lazy: true,
+      create: (_) => SearchViewModel(),
+    ),
+    ChangeNotifierProvider<CoursesViewModel>(
+      lazy: true,
+      create: (_) => CoursesViewModel(),
+    ),
+    ChangeNotifierProvider<ProfileViewModel>(
+      lazy: true,
+      create: (_) => ProfileViewModel(),
     ),
     ChangeNotifierProvider<ForgetPasswordViewModel>(
       lazy: true,

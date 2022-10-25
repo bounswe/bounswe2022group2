@@ -23,6 +23,7 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
     this.safeArea = true,
     this.scrollable = false,
     this.drawer,
+    this.bottomNavigationBar,
     this.hasScaffold = true,
     this.centered = true,
     Key? key,
@@ -52,6 +53,9 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
   /// Custom drawer.
   final Widget? drawer;
 
+  /// Custom bottomNavigationBar.
+  final Widget? bottomNavigationBar;
+
   /// Whether the widget should be wrapped with Scaffold.
   final bool hasScaffold;
 
@@ -74,7 +78,9 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
   @override
   void dispose() {
     if (widget.customDispose != null) widget.customDispose!();
-    model.customDispose();
+    model
+      ..disposeView()
+      ..customDispose();
     super.dispose();
   }
 
@@ -95,15 +101,13 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
         child: widget.hasScaffold
             ? Scaffold(
                 resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
-                appBar: _appBar,
+                appBar: widget.appBar?.call(context),
                 drawer: widget.drawer,
                 body: body,
+                bottomNavigationBar: widget.bottomNavigationBar,
               )
             : body);
   }
-
-  DefaultAppBar? get _appBar =>
-      widget.appBar?.call(context).copyWithSize(context.responsiveSize * 14);
 
   Widget get _child => widget.scrollable
       ? LayoutBuilder(

@@ -145,7 +145,7 @@ class ActionButtonState extends State<ActionButton> {
       ButtonStyles(context).elevated(
         backgroundColor: widget.isActive
             ? (widget.backgroundColor ?? context.primary)
-            : context.textColor.withAlpha(20),
+            : context.activeColor.withAlpha(20),
         padding: padding ?? widget.padding,
         borderRadius: widget.borderRadius,
       );
@@ -157,8 +157,9 @@ class ActionButtonState extends State<ActionButton> {
             widget.clickedText == null
                 ? widget.text!
                 : (_clicked ? widget.clickedText! : widget.text!),
-            color:
-                widget.isActive ? context.textColor : context.inactiveTextColor,
+            color: widget.isActive
+                ? context.activeColor
+                : context.inactiveTextColor,
             translated: widget.translated,
             style: widget.textStyle ?? context.titleSmall,
             capitalizeAll: widget.capitalizeAll,

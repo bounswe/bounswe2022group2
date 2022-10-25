@@ -72,7 +72,7 @@ class InputDeco {
       : BaseIcon(
           context,
           prefixIcon,
-          color: context.textColor.withOpacity(.9),
+          color: context.activeColor.withOpacity(.9),
           size: context.responsiveSize * 6,
           padding: EdgeInsets.only(
             left: context.responsiveSize * 5,

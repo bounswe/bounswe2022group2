@@ -19,7 +19,7 @@ class BaseIcon extends FittedBox {
           child: Padding(
             padding: padding ?? EdgeInsets.zero,
             child:
-                Icon(iconData, size: size, color: color ?? context.textColor),
+                Icon(iconData, size: size, color: color ?? context.activeColor),
           ),
           key: key,
         );
