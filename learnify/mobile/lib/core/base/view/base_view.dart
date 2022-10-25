@@ -74,10 +74,9 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
   @override
   void dispose() {
     if (widget.customDispose != null) widget.customDispose!();
-    model.disposeView();
-    Future<void>.delayed(Duration.zero, () async {
-      await model.customDispose();
-    });
+    model
+      ..disposeView()
+      ..customDispose();
     super.dispose();
   }
 
