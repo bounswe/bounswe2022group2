@@ -20,4 +20,7 @@ class TextKeys {
   static const String courses = 'courses';
   static const String takePhoto = 'take_photo';
   static const String chooseFromGallery = 'choose_from_gallery';
+  static const String friends = 'friends';
+  static const String enrolled = 'enrolled';
+  static const String contributed = 'contributed';
 }

@@ -19,5 +19,8 @@
   "courses": "Courses",
   "profile": "Profile",
   "take_photo": "Camera",
-  "choose_from_gallery": "Gallery"
+  "choose_from_gallery": "Gallery",
+  "friends": "Friends",
+  "enrolled": "Enrolled",
+  "contributed": "Contributed"
 }

@@ -14,6 +14,8 @@ import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
+import '../../../product/theme/dark_theme.dart';
+import '../../../product/theme/light_theme.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/profile_view_model.dart';
 
@@ -37,6 +39,8 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             _pickImageRow(context),
             context.sizedH(2),
             const _ProfileForm(),
+            context.sizedH(1.5),
+            _totalCountRow(context),
           ],
         ),
       );
@@ -52,7 +56,11 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
               : (const AssetImage(IconKeys.userProfile)
                   as ImageProvider<Object>);
           return CircleAvatar(
-              foregroundImage: imageProvider, radius: context.width * 12);
+            foregroundImage: imageProvider,
+            radius: context.width * 12,
+            foregroundColor: LightAppTheme.lightBlue,
+            backgroundColor: LightAppTheme.lightBlue,
+          );
         },
       );
 
@@ -69,6 +77,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           ],
         ),
       );
+
   static Widget _pickerRow(
       BuildContext context, IconData icon, String textKey, bool isGallery) {
     final BaseIcon iconWidget =
@@ -91,8 +100,54 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
     );
   }
 
-  static Widget _verticalDivider(BuildContext context) => VerticalDivider(
-        color: context.primary,
+  static Widget _totalCountRow(BuildContext context) => Padding(
+        padding: EdgeInsets.symmetric(horizontal: context.responsiveSize * 10),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: Container(
+            color: LightAppTheme.lightBlue.withOpacity(.8),
+            padding: EdgeInsets.all(context.responsiveSize * 2.3),
+            child: IntrinsicHeight(
+              child: Row(
+                children: <Widget>[
+                  Expanded(child: _countColumn(context, 14, TextKeys.friends)),
+                  _verticalDivider(context,
+                      color: DarkAppTheme.lightActiveColor),
+                  Expanded(child: _countColumn(context, 4, TextKeys.enrolled)),
+                  _verticalDivider(context,
+                      color: DarkAppTheme.lightActiveColor),
+                  Expanded(
+                      child: _countColumn(context, 3, TextKeys.contributed)),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+
+  static Widget _countColumn(
+          BuildContext context, int countNumber, String titleKey) =>
+      Column(
+        children: <Widget>[
+          BaseText(
+            countNumber.toString(),
+            style: context.bodyLarge,
+            color: context.activeColor,
+            fontWeight: FontWeight.bold,
+            translated: false,
+          ),
+          context.sizedH(.5),
+          BaseText(
+            titleKey,
+            style: context.bodyMedium,
+            color: context.activeColor.withOpacity(.8),
+          ),
+        ],
+      );
+
+  static Widget _verticalDivider(BuildContext context, {Color? color}) =>
+      VerticalDivider(
+        color: color ?? context.primary,
         thickness: 1,
         width: 1,
         indent: 1,
