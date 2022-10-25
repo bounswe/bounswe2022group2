@@ -63,11 +63,16 @@ class BaseIconButton extends StatelessWidget {
                   ? null
                   : context.responsiveSize * sizeFactor!,
             ),
-            splashRadius: splashRadius ?? context.responsiveSize * 4,
+            splashRadius: splashRadius ??
+                (context.responsiveSize *
+                    (sizeFactor == null ? 5.8 : sizeFactor! * 1.3)),
             padding: padding ?? EdgeInsets.zero,
-            highlightColor: highlightColor ?? context.primaryLight,
+            highlightColor:
+                (highlightColor ?? context.activeColor).withOpacity(.6),
             constraints: const BoxConstraints(),
-            iconSize: context.responsiveSize * (sizeFactor ?? 5.5),
+            iconSize: sizeFactor == null
+                ? null
+                : (context.responsiveSize * sizeFactor!),
             onPressed: onPressed == null
                 ? null
                 : () {

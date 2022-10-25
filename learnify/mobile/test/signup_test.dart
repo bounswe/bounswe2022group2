@@ -60,9 +60,6 @@ void main() {
       final Finder checkboxFinder = find.byKey(SignupKeys.privacyCheckbox);
       expect(checkboxFinder, findsOneWidget);
 
-      final String? error = await actionButton.onPressedError?.call();
-      expect(error, isNotNull);
-
       final CustomCheckboxTile checkbox =
           tester.widget(checkboxFinder) as CustomCheckboxTile;
       checkbox.onTap(true);

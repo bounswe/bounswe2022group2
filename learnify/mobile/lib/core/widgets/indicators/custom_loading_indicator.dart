@@ -14,7 +14,7 @@ class CustomLoadingIndicator extends Center {
             child: Transform.scale(
               scale: .6,
               child: CircularProgressIndicator(
-                  color: context.textColor,
+                  color: context.activeColor,
                   strokeWidth: context.responsiveSize * 1.6),
             ),
           ),

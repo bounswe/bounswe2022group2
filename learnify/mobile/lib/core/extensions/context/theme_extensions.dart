@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../product/theme/light_theme.dart';
 import '../../providers/theme/theme_provider.dart';
 
 /// Extensions for theme related data with context.
@@ -16,6 +17,10 @@ extension ColorExtensions on BuildContext {
   Color get textColor => _textTheme.bodyMedium?.color ?? Colors.white;
   Color get inactiveTextColor =>
       _textTheme.labelSmall?.color ?? Colors.white.withOpacity(.8);
+  Color get lightActiveColor => LightAppTheme.lightActiveColor;
+  Color get darkActiveColor => LightAppTheme.darkActiveColor;
+  Color get activeColor =>
+      watch<ThemeProvider>().isDark ? lightActiveColor : darkActiveColor;
 
   TextStyle get labelSmall => _textTheme.labelSmall ?? _defaultStyle;
   TextStyle get labelMedium => _textTheme.labelMedium ?? _defaultStyle;
