@@ -9,7 +9,9 @@ const transporter = nodemailer.createTransport({
       pass: mail_pass
     }
   });
+
 export default async (user) => {
+  await transporter.verify().then(console.log).catch((err) => {throw err});
     const token = jwt.sign(
         { user_id: user._id, email: user.email },
         jwt_key,
