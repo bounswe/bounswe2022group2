@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 import 'navigation_manager.dart';
 
@@ -14,8 +14,7 @@ class NavigationRoute {
     final Map<String, dynamic> arguments = getArguments(args);
     switch (args.name) {
       case NavigationConstants.signup:
-        // TODO: Fix
-        return normalNavigate(HomeWrapper());
+        return normalNavigate(const SignupScreen());
       case NavigationConstants.login:
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
@@ -29,8 +28,7 @@ class NavigationRoute {
           ),
         ));
       default:
-        // TODO: Fix
-        return normalNavigate(HomeWrapper());
+        return normalNavigate(const SignupScreen());
     }
   }
 

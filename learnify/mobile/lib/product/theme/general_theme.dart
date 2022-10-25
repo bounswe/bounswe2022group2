@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'light_theme.dart';
+
 mixin GeneralTheme {
   static ScrollbarThemeData scrollBarThemeData(Color? color) =>
       ScrollbarThemeData(
@@ -16,15 +18,15 @@ mixin GeneralTheme {
   static TabBarTheme tabBarTheme(Color? borderColor) => TabBarTheme(
         indicator: BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: borderColor ?? Colors.white),
+            bottom: BorderSide(color: borderColor ?? LightAppTheme.orange),
           ),
         ),
       );
 
   static SwitchThemeData switchThemeData(Color? color) => SwitchThemeData(
         thumbColor: all(color),
-        overlayColor: all(color ?? Colors.white),
-        trackColor: all(color ?? Colors.white),
+        overlayColor: all(color ?? LightAppTheme.orange),
+        trackColor: all(color ?? LightAppTheme.orange),
         splashRadius: 0,
       );
 
@@ -55,7 +57,8 @@ mixin GeneralTheme {
   static OutlineInputBorder _border(Color? color, {double? width}) =>
       OutlineInputBorder(
         borderRadius: const BorderRadius.all(Radius.circular(23)),
-        borderSide: BorderSide(color: color ?? Colors.black, width: width ?? 1),
+        borderSide:
+            BorderSide(color: color ?? LightAppTheme.orange, width: width ?? 1),
       );
 
   static ButtonThemeData buttonTheme(Color? inactiveColor) =>

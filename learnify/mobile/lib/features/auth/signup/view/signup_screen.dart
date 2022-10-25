@@ -29,13 +29,12 @@ class SignupScreen extends BaseView<SignupViewModel> {
   static Widget _builder(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset(IconKeys.logo,
-              width: context.width * 33, color: context.primary),
-          context.sizedH(2),
+          Image.asset(IconKeys.learnIllustration, width: context.width * 45),
+          context.sizedH(1),
           _title(context, TextKeys.signupTo),
-          context.sizedH(.2),
-          _title(context, TextKeys.learnify, color: context.primary),
-          context.sizedH(2),
+          context.sizedH(1),
+          Image.asset(IconKeys.logo, width: context.width * 50),
+          context.sizedH(2.6),
           const _SignupForm(),
           context.sizedH(.8),
           _checkboxTile(context),

@@ -9,12 +9,17 @@ mixin LightAppTheme {
   static const Color darkBlue = Color(0xff1746A2);
   static const Color darkActiveColor = Colors.black87;
   static const Color lightActiveColor = Colors.white;
+  static final Color? errorColor = Colors.red[600];
 
   static ThemeData get lightTheme => ThemeData.light().copyWith(
         primaryColor: orange,
         brightness: Brightness.dark,
         scaffoldBackgroundColor: Colors.grey[100],
-        inputDecorationTheme: GeneralTheme.inputDeco(),
+        inputDecorationTheme: GeneralTheme.inputDeco(
+            activeColor: darkActiveColor,
+            errorColor: errorColor,
+            focusColor: orange,
+            inactiveColor: lightActiveColor),
         buttonTheme: GeneralTheme.buttonTheme(orange),
         textButtonTheme: GeneralTheme.textButtonTheme(orange),
         dividerTheme: GeneralTheme.dividerTheme(orange),

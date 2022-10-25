@@ -8,12 +8,17 @@ mixin DarkAppTheme {
   static const Color lightBlue = Color(0xff5F9DF7);
   static const Color darkBlue = Color(0xff1746A2);
   static const Color darkActiveColor = Colors.black87;
-  static const Color lightActiveColor = Colors.white;
+  static const Color lightActiveColor = Colors.white70;
+  static final Color? errorColor = Colors.red[600];
 
   static ThemeData get darkTheme => ThemeData.dark().copyWith(
         primaryColor: orange,
         brightness: Brightness.dark,
-        inputDecorationTheme: GeneralTheme.inputDeco(focusColor: orange),
+        inputDecorationTheme: GeneralTheme.inputDeco(
+            activeColor: lightActiveColor,
+            errorColor: errorColor,
+            focusColor: orange,
+            inactiveColor: darkActiveColor),
         buttonTheme: GeneralTheme.buttonTheme(orange),
         textButtonTheme: GeneralTheme.textButtonTheme(orange),
         dividerTheme: GeneralTheme.dividerTheme(orange),

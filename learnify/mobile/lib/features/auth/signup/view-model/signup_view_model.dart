@@ -92,9 +92,8 @@ class SignupViewModel extends BaseViewModel {
       if (res.hasError) return res.error?.errorMessage;
       await navigationManager.navigateToPageClear(
           path: NavigationConstants.home);
-      return null;
     }
-    return 'Please enter valid information and accept the agreements';
+    return null;
   }
 
   /// Callback for have account text press.
