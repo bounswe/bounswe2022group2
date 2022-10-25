@@ -23,6 +23,7 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
     this.safeArea = true,
     this.scrollable = false,
     this.drawer,
+    this.bottomNavigationBar,
     this.hasScaffold = true,
     this.centered = true,
     Key? key,
@@ -51,6 +52,9 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
 
   /// Custom drawer.
   final Widget? drawer;
+
+  /// Custom bottomNavigationBar.
+  final Widget? bottomNavigationBar;
 
   /// Whether the widget should be wrapped with Scaffold.
   final bool hasScaffold;
@@ -100,6 +104,7 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
                 appBar: _appBar,
                 drawer: widget.drawer,
                 body: body,
+                bottomNavigationBar: widget.bottomNavigationBar,
               )
             : body);
   }
