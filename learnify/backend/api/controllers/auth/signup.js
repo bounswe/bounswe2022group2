@@ -11,16 +11,25 @@ export default async (req, res) => {
     return res.status(400).json({ "resultMessage": error.details[0].message });
   }
   
-  const exists = await User.exists({ email: req.body.email })
+  const exists_email = await User.exists({ email: req.body.email })
     .catch((err) => {
       console.log("Could not fetch users from mongoDB")
       return res.status(500).json({ "resultMessage": err.message });
     });
   
-  console.log(exists)
-  if (exists) {
+  if (exists_email) {
     console.log("User with existing email tried to signup")
     return res.status(409).json({ "resultMessage": "There already exists a user with the given email." });
+  }
+  const exists_username = await User.exists({ username: req.body.username })
+  .catch((err) => {
+    console.log("Could not fetch users from mongoDB")
+    return res.status(500).json({ "resultMessage": err.message });
+  });
+
+  if (exists_username) {
+  console.log("User with existing username tried to signup")
+  return res.status(409).json({ "resultMessage": "There already exists a user with the given username." });
   }
 
   const hashed = await hash(req.body.password, 10);
