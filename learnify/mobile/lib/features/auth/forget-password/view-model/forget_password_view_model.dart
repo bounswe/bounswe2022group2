@@ -52,7 +52,7 @@ class ForgetPasswordViewModel extends BaseViewModel {
     if (isValid) {
       return null;
     }
-    return 'NOT VALID';
+    return null;
   }
 
   void _setDefault() {

@@ -25,9 +25,9 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.asset(IconKeys.logo, width: context.width * 55),
-          context.sizedH(4),
+          context.sizedH(8),
           _title(context, TextKeys.forgetPassword),
-          context.sizedH(4),
+          context.sizedH(1),
           _description(context, TextKeys.forgetDesc),
           context.sizedH(2),
           const _EmailForm(),
@@ -43,13 +43,14 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
 
   static Widget _description(BuildContext context, String key,
           {Color? color}) =>
-      BaseText(key, style: context.displayMedium, color: color);
+      Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.width * 10),
+          child: BaseText(key, style: context.displayMedium, color: color));
 
   static Widget get _verifyButton =>
       SelectorHelper<bool, ForgetPasswordViewModel>().builder(
           (_, ForgetPasswordViewModel model) => model.canVerify,
           (BuildContext context, bool canVerify, _) => ActionButton(
-                key: ForgetPasswordKeys.actionButton,
                 text: TextKeys.verifyEmail,
                 padding: EdgeInsets.symmetric(
                     horizontal: context.responsiveSize * 2.8,
@@ -61,7 +62,6 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
               ));
 
   static Widget _backToLogin(BuildContext context) => BaseText(
-        //TODO fix inactive
         TextKeys.backToLogin,
         style: context.bodySmall,
         replaceValues: <ReplaceValue>[
