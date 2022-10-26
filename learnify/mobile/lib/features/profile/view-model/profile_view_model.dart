@@ -31,14 +31,13 @@ class ProfileViewModel extends BaseViewModel {
 
   @override
   void initView() {
-    // TODO: Fix
     _formKey = GlobalKey<FormState>();
     // TODO: Fix
     _email = localManager.getString(StorageKeys.email) ?? _email;
     _initialUsername = localManager.getString(StorageKeys.username);
+    _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _usernameController = TextEditingController(text: _initialUsername);
     _usernameController.addListener(_controllerListener);
-    _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _setDefault();
   }
 

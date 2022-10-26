@@ -14,9 +14,7 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     final Map<String, dynamic> arguments = getArguments(args);
     switch (args.name) {
-      // TODO: Fix
       case NavigationConstants.signup:
-        return normalNavigate(const HomeWrapper());
         return normalNavigate(const SignupScreen());
       case NavigationConstants.login:
         return normalNavigate(
@@ -26,7 +24,6 @@ class NavigationRoute {
       case NavigationConstants.profile:
         return normalNavigate(const ProfileScreen());
       default:
-        return normalNavigate(const HomeWrapper());
         return normalNavigate(const SignupScreen());
     }
   }
