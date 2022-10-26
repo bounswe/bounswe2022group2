@@ -7,14 +7,14 @@ import 'package:learnify/core/widgets/text-field/obscured_text_form_field.dart';
 import 'package:learnify/features/auth/signup/constants/widget_keys.dart';
 import 'package:learnify/features/auth/signup/view/signup_screen.dart';
 
-import 'app_pumper.dart';
+import 'test_helpers.dart';
 
 void main() {
   testWidgets(
     "Test signup when invalid email/username/password is provided.",
     (WidgetTester tester) async {
       const SignupScreen signupScreen = SignupScreen();
-      await tester.pumpWidget(appWidget(signupScreen));
+      await tester.pumpWidget(TestHelpers.appWidget(signupScreen));
 
       final Finder buttonFinder = find.byType(ActionButton);
       expect(buttonFinder, findsOneWidget);

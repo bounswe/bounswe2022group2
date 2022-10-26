@@ -6,15 +6,14 @@ import 'package:learnify/features/home-wrapper/view/home_wrapper_screen.dart';
 import 'package:learnify/features/profile/constants/widget_keys.dart';
 import 'package:learnify/features/profile/view/profile_screen.dart';
 
-import 'app_pumper.dart';
-import 'descendant_finder.dart';
+import 'test_helpers.dart';
 
 void main() {
   testWidgets(
     "Tests profile screen when an invalid username is entered.",
     (WidgetTester tester) async {
       final HomeWrapper homeWrapper = HomeWrapper(initialIndex: 3);
-      await tester.pumpWidget(appWidget(homeWrapper));
+      await tester.pumpWidget(TestHelpers.appWidget(homeWrapper));
 
       final Finder profileFinder = find.descendant(
           of: find.byWidget(homeWrapper), matching: find.byType(ProfileScreen));
@@ -22,11 +21,13 @@ void main() {
           tester.widget(profileFinder) as ProfileScreen;
       expect(profileFinder, findsOneWidget);
 
-      final Finder buttonFinder = descendantFinder(profileScreen, ActionButton);
+      final Finder buttonFinder =
+          TestHelpers.descendantFinder(profileScreen, ActionButton);
       expect(buttonFinder, findsOneWidget);
       ActionButton actionButton = tester.widget(buttonFinder) as ActionButton;
 
-      final Finder formFinder = descendantFinder(profileScreen, Form);
+      final Finder formFinder =
+          TestHelpers.descendantFinder(profileScreen, Form);
       expect(formFinder, findsOneWidget);
       final Form form = tester.widget(formFinder) as Form;
 
@@ -34,8 +35,8 @@ void main() {
       expect(actionButton.isActive, false);
       expect(formKey?.currentState?.validate(), false);
 
-      final Finder usernameFinder =
-          descendantFinderByKey(profileScreen, ProfileKeys.usernameField);
+      final Finder usernameFinder = TestHelpers.descendantFinderByKey(
+          profileScreen, ProfileKeys.usernameField);
       expect(usernameFinder, findsOneWidget);
       final CustomTextFormField usernameField =
           tester.widget(usernameFinder) as CustomTextFormField;
