@@ -8,7 +8,7 @@ class _BottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeWrapperViewModel homeModel = context.read<HomeWrapperViewModel>();
     if (initialIndex != null) {
-      homeModel.setBottomNavIndex(initialIndex!, notify: false);
+      homeModel.setBottomNavIndex(initialIndex!, notify: false, initial: true);
     }
     final int index = SelectorHelper<int, HomeWrapperViewModel>().listenValue(
         (HomeWrapperViewModel model) => model.bottomNavBarIndex, context);
@@ -18,6 +18,7 @@ class _BottomNavigationBar extends StatelessWidget {
         HomeScreenConstants.bottomNavBarTexts.length,
         (int i) => _BottomNavItem(index: i, selectedIndex: index),
       ),
+      index: initialIndex ?? index,
       onTap: homeModel.setBottomNavIndex,
       buttonBackgroundColor: context.primary,
       backgroundColor: context.primary,
