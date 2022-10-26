@@ -75,7 +75,6 @@ class SignupScreen extends BaseView<SignupViewModel> {
         (BuildContext context, bool canSignup, _) {
           final SignupViewModel model = context.read<SignupViewModel>();
           return ActionButton(
-            key: model.actionButtonKey,
             text: TextKeys.signup,
             padding: EdgeInsets.symmetric(
                 horizontal: context.responsiveSize * 2.8,
