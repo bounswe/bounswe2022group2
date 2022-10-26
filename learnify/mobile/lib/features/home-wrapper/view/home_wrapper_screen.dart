@@ -49,10 +49,10 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
       });
 
   static DefaultAppBar _appBarBuilder(BuildContext context) => DefaultAppBar(
-        size: context.height * 7,
+        size: context.height * 6,
         actionsList: <Widget>[
           Padding(
-            padding: EdgeInsets.all(context.responsiveSize),
+            padding: EdgeInsets.all(context.responsiveSize * .6),
             child: Image.asset(IconKeys.logo),
           ),
           const Spacer(),
