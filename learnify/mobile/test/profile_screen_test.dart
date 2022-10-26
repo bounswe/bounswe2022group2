@@ -4,8 +4,10 @@ import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/text-field/custom_text_form_field.dart';
 import 'package:learnify/features/home-wrapper/view/home_wrapper_screen.dart';
 import 'package:learnify/features/profile/constants/widget_keys.dart';
+import 'package:learnify/features/profile/view/profile_screen.dart';
 
 import 'app_pumper.dart';
+import 'descendant_finder.dart';
 
 void main() {
   testWidgets(
@@ -14,11 +16,17 @@ void main() {
       final HomeWrapper homeWrapper = HomeWrapper(initialIndex: 3);
       await tester.pumpWidget(appWidget(homeWrapper));
 
-      final Finder buttonFinder = find.byType(ActionButton);
+      final Finder profileFinder = find.descendant(
+          of: find.byWidget(homeWrapper), matching: find.byType(ProfileScreen));
+      final ProfileScreen profileScreen =
+          tester.widget(profileFinder) as ProfileScreen;
+      expect(profileFinder, findsOneWidget);
+
+      final Finder buttonFinder = descendantFinder(profileScreen, ActionButton);
       expect(buttonFinder, findsOneWidget);
       ActionButton actionButton = tester.widget(buttonFinder) as ActionButton;
 
-      final Finder formFinder = find.byType(Form);
+      final Finder formFinder = descendantFinder(profileScreen, Form);
       expect(formFinder, findsOneWidget);
       final Form form = tester.widget(formFinder) as Form;
 
@@ -26,7 +34,8 @@ void main() {
       expect(actionButton.isActive, false);
       expect(formKey?.currentState?.validate(), false);
 
-      final Finder usernameFinder = find.byKey(ProfileKeys.usernameField);
+      final Finder usernameFinder =
+          descendantFinderByKey(profileScreen, ProfileKeys.usernameField);
       expect(usernameFinder, findsOneWidget);
       final CustomTextFormField usernameField =
           tester.widget(usernameFinder) as CustomTextFormField;
