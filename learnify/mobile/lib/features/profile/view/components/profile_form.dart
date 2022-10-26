@@ -10,7 +10,7 @@ class _ProfileForm extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Flexible(
-            child: BaseText(model.email.isEmpty ? 'hasanarisan@gmail.com' : '',
+            child: BaseText(model.email ?? 'hasanarisan@gmail.com',
                 translated: false)),
         context.sizedH(1.5),
         Form(

@@ -18,8 +18,8 @@ class ProfileViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
-  late String _email = '';
-  String get email => _email;
+  String? _email;
+  String? get email => _email;
 
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
@@ -33,7 +33,7 @@ class ProfileViewModel extends BaseViewModel {
   void initView() {
     _formKey = GlobalKey<FormState>();
     // TODO: Fix
-    _email = localManager.getString(StorageKeys.email) ?? _email;
+    _email = localManager.getString(StorageKeys.email);
     _initialUsername = localManager.getString(StorageKeys.username);
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _usernameController = TextEditingController(text: _initialUsername);
