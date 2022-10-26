@@ -12,4 +12,5 @@ class IconKeys {
   static const String logo = 'assets/images/logo-dblue.png';
   static const String learnIllustration =
       'assets/images/learn-illustration.png';
+  static const String userProfile = 'assets/images/user-profile.png';
 }

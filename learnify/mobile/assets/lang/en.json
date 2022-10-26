@@ -17,5 +17,19 @@
   "home": "Home",
   "search": "Search",
   "courses": "Courses",
-  "profile": "Profile"
+  "profile": "Profile",
+  "take_photo": "Camera",
+  "choose_from_gallery": "Gallery",
+  "friends": "Friends",
+  "enrolled": "Enrolled",
+  "contributed": "Contributed",
+  "avg": "avg",
+  "mon": "Mon",
+  "tue": "Tue",
+  "wed": "Wed",
+  "thur": "Thur",
+  "fri": "Fri",
+  "sat": "Sat",
+  "sun": "Sun",
+  "update": "Update"
 }

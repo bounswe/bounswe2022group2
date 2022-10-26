@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/profile/view/profile_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 
 class NavigationRoute {
@@ -20,6 +21,8 @@ class NavigationRoute {
             const Scaffold(body: Center(child: Text('LOGIN'))));
       case NavigationConstants.home:
         return normalNavigate(const HomeWrapper());
+      case NavigationConstants.profile:
+        return normalNavigate(const ProfileScreen());
       default:
         return normalNavigate(const SignupScreen());
     }
