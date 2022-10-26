@@ -1,11 +1,15 @@
 part of '../home_wrapper_screen.dart';
 
 class _BottomNavigationBar extends StatelessWidget {
-  const _BottomNavigationBar({Key? key}) : super(key: key);
+  const _BottomNavigationBar({this.initialIndex, Key? key}) : super(key: key);
+  final int? initialIndex;
 
   @override
   Widget build(BuildContext context) {
     final HomeWrapperViewModel homeModel = context.read<HomeWrapperViewModel>();
+    if (initialIndex != null) {
+      homeModel.setBottomNavIndex(initialIndex!, notify: false);
+    }
     final int index = SelectorHelper<int, HomeWrapperViewModel>().listenValue(
         (HomeWrapperViewModel model) => model.bottomNavBarIndex, context);
     return CurvedNavigationBar(

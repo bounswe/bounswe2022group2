@@ -43,15 +43,15 @@ void main() {
       final ObscuredTextFormField passwordField =
           tester.widget(passwordFinder) as ObscuredTextFormField;
 
-      emailField.controller?.text = 'example@gmail.com';
-      usernameField.controller?.text = 'example';
-      passwordField.controller.text = 'NotValidPassword';
+      emailField.controller?.text = 'hasan@gmail.com';
+      usernameField.controller?.text = 'hasan';
+      passwordField.controller.text = 'Hasan';
       await tester.pumpAndSettle();
       expect(formKey?.currentState?.validate(), false);
 
-      emailField.controller?.text = 'example@gmail.com';
-      usernameField.controller?.text = 'example';
-      passwordField.controller.text = 'Example123';
+      emailField.controller?.text = 'hasanarr@gmail.com';
+      usernameField.controller?.text = 'hasanarisan';
+      passwordField.controller.text = 'Hasan123';
       await tester.pumpAndSettle();
       expect(formKey?.currentState?.validate(), true);
       actionButton = tester.widget(buttonFinder) as ActionButton;

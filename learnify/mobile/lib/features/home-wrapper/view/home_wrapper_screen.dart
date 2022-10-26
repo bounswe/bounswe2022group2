@@ -25,10 +25,10 @@ import '../view-model/home_wrapper_view_model.dart';
 part 'components/bottom_navigation_bar.dart';
 
 class HomeWrapper extends BaseView<HomeWrapperViewModel> {
-  const HomeWrapper({Key? key})
+  HomeWrapper({int? initialIndex, Key? key})
       : super(
           builder: _builder,
-          bottomNavigationBar: const _BottomNavigationBar(),
+          bottomNavigationBar: _BottomNavigationBar(initialIndex: initialIndex),
           appBar: _appBarBuilder,
           key: key,
         );

@@ -28,10 +28,10 @@ class HomeWrapperViewModel extends BaseViewModel {
     super.disposeView();
   }
 
-  void setBottomNavIndex(int newIndex) {
+  void setBottomNavIndex(int newIndex, {bool notify = true}) {
     if (_bottomNavBarIndex == newIndex) return;
     _bottomNavBarIndex = newIndex;
-    notifyListeners();
+    if (notify) notifyListeners();
   }
 
   void _setDefault() {
