@@ -10,6 +10,7 @@ class ProfileViewModel extends BaseViewModel {
 
   late TextEditingController _usernameController;
   TextEditingController get usernameController => _usernameController;
+  String? _initialUsername;
 
   String? _selectedImage;
   String? get selectedImage => _selectedImage;
@@ -34,10 +35,10 @@ class ProfileViewModel extends BaseViewModel {
     _formKey = GlobalKey<FormState>();
     // TODO: Fix
     _email = localManager.getString(StorageKeys.email) ?? _email;
-    final String? initialUsername =
-        localManager.getString(StorageKeys.username);
-    _usernameController = TextEditingController(text: initialUsername);
+    _initialUsername = localManager.getString(StorageKeys.username);
+    _usernameController = TextEditingController(text: _initialUsername);
     _usernameController.addListener(_controllerListener);
+    _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _setDefault();
   }
 
@@ -49,7 +50,8 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   void _controllerListener() {
-    final bool newCanSignup = _usernameController.text.isNotEmpty;
+    final String newText = _usernameController.text;
+    final bool newCanSignup = newText.isNotEmpty && newText != _initialUsername;
     if (_canUpdate == newCanSignup) return;
     _canUpdate = newCanSignup;
     notifyListeners();
@@ -64,6 +66,20 @@ class ProfileViewModel extends BaseViewModel {
       notifyListeners();
     } on Exception catch (e) {
       return e.toString();
+    }
+    return null;
+  }
+
+  Future<String?> updateProfile() async {
+    final bool isValid = formKey.currentState?.validate() ?? false;
+    if (isValid) {
+      _initialUsername = _usernameController.text;
+      await localManager.setString(StorageKeys.username, _initialUsername!);
+      if (_selectedImage != null) {
+        await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
+      }
+      _canUpdate = false;
+      notifyListeners();
     }
     return null;
   }

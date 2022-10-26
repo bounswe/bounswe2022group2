@@ -12,6 +12,8 @@ import '../../../core/helpers/selector_helper.dart';
 import '../../../core/helpers/validators.dart';
 import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
+import '../../../core/widgets/buttons/action_button.dart';
+import '../../../core/widgets/divider/custom_vertical_divider.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
@@ -45,7 +47,10 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             const _ProfileForm(),
             context.sizedH(1.7),
             _totalCountRow(context),
+            context.sizedH(1),
             Transform.scale(scale: .85, child: const _ProfileChart()),
+            context.sizedH(1),
+            _updateButton,
           ],
         ),
       );
@@ -76,7 +81,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           children: <Widget>[
             _pickerRow(
                 context, Icons.camera_alt_outlined, TextKeys.takePhoto, false),
-            _verticalDivider(context),
+            const CustomVerticalDivider(),
             _pickerRow(context, Icons.file_present_outlined,
                 TextKeys.chooseFromGallery, true),
           ],
@@ -116,10 +121,10 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
               child: Row(
                 children: <Widget>[
                   Expanded(child: _countColumn(context, 14, TextKeys.friends)),
-                  _verticalDivider(context,
+                  const CustomVerticalDivider(
                       color: DarkAppTheme.lightActiveColor),
                   Expanded(child: _countColumn(context, 4, TextKeys.enrolled)),
-                  _verticalDivider(context,
+                  const CustomVerticalDivider(
                       color: DarkAppTheme.lightActiveColor),
                   Expanded(
                       child: _countColumn(context, 3, TextKeys.contributed)),
@@ -150,12 +155,20 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         ],
       );
 
-  static Widget _verticalDivider(BuildContext context, {Color? color}) =>
-      VerticalDivider(
-        color: color ?? context.primary,
-        thickness: 1,
-        width: 1,
-        indent: 1,
-        endIndent: 1,
+  static Widget get _updateButton =>
+      SelectorHelper<bool, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.canUpdate,
+        (BuildContext context, bool canSignup, _) {
+          final ProfileViewModel model = context.read<ProfileViewModel>();
+          return ActionButton(
+            text: TextKeys.update,
+            padding: EdgeInsets.symmetric(
+                horizontal: context.responsiveSize * 2.8,
+                vertical: context.responsiveSize * 1.4),
+            capitalizeAll: true,
+            isActive: canSignup,
+            onPressedError: model.updateProfile,
+          );
+        },
       );
 }

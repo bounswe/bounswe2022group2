@@ -31,4 +31,5 @@ class TextKeys {
   static const String fri = 'fri';
   static const String sat = 'sat';
   static const String sun = 'sun';
+  static const String update = 'update';
 }

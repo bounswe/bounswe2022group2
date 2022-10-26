@@ -7,4 +7,5 @@ enum StorageKeys {
   theme,
   email,
   username,
+  profilePhoto,
 }
