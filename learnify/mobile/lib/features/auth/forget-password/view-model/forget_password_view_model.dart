@@ -22,11 +22,13 @@ class ForgetPasswordViewModel extends BaseViewModel {
     _formKey = GlobalKey<FormState>();
     _emailController = TextEditingController();
     _emailController.addListener(_controllerListener);
+    _setDefault();
   }
 
   @override
   void disposeView() {
     _emailController.dispose();
+    _setDefault();
     super.disposeView();
   }
 
@@ -51,5 +53,9 @@ class ForgetPasswordViewModel extends BaseViewModel {
       return null;
     }
     return 'NOT VALID';
+  }
+
+  void _setDefault() {
+    _canVerify = false;
   }
 }
