@@ -21,4 +21,5 @@ class TextKeys {
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
+  static const String forgetDesc = 'forget_desc';
 }

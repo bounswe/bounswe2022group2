@@ -18,7 +18,8 @@
   "search": "Search",
   "courses": "Courses",
   "profile": "Profile",
-  "forget_password": "Forget Password?",
+  "forget_password": "Forgot your password?",
   "verify_email": "Send Verification Code",
-  "back_to_login": "Back to Login"
+  "back_to_login": "Back to Login",
+  "forget_desc": "Please enter the email you used to sign up.\n A verification code will be sent if the account exists."
 }

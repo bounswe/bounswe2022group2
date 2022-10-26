@@ -29,7 +29,7 @@ class ForgetPasswordScreen extends BaseView<ForgetPasswordViewModel> {
           _title(context, TextKeys.forgetPassword),
           context.sizedH(4),
           _description(context, TextKeys.forgetDesc),
-          context.sizedH(4),
+          context.sizedH(2),
           const _EmailForm(),
           context.sizedH(2),
           _verifyButton,
