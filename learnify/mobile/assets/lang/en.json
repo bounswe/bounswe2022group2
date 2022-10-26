@@ -22,5 +22,13 @@
   "choose_from_gallery": "Gallery",
   "friends": "Friends",
   "enrolled": "Enrolled",
-  "contributed": "Contributed"
+  "contributed": "Contributed",
+  "avg": "avg",
+  "mon": "Mon",
+  "tue": "Tue",
+  "wed": "Wed",
+  "thur": "Thur",
+  "fri": "Fri",
+  "sat": "Sat",
+  "sun": "Sun"
 }

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -9,16 +10,19 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/helpers/validators.dart';
+import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
+import '../../../product/theme/general_theme.dart';
 import '../../../product/theme/light_theme.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/profile_view_model.dart';
 
+part 'components/profile_chart.dart';
 part 'components/profile_form.dart';
 
 class ProfileScreen extends BaseView<ProfileViewModel> {
@@ -37,10 +41,11 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             _profilePhoto,
             context.sizedH(1),
             _pickImageRow(context),
-            context.sizedH(2.4),
+            context.sizedH(2),
             const _ProfileForm(),
-            context.sizedH(2.2),
+            context.sizedH(1.7),
             _totalCountRow(context),
+            Transform.scale(scale: .85, child: const _ProfileChart()),
           ],
         ),
       );
@@ -106,7 +111,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           borderRadius: BorderRadius.circular(15),
           child: Container(
             color: LightAppTheme.lightBlue.withOpacity(.8),
-            padding: EdgeInsets.all(context.responsiveSize * 2.3),
+            padding: EdgeInsets.all(context.responsiveSize * 2.5),
             child: IntrinsicHeight(
               child: Row(
                 children: <Widget>[
@@ -136,7 +141,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             fontWeight: FontWeight.bold,
             translated: false,
           ),
-          context.sizedH(.5),
+          context.sizedH(.3),
           BaseText(
             titleKey,
             style: context.bodyMedium,
