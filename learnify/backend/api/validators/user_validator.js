@@ -12,7 +12,7 @@ export function validateSignup(body) {
 export function validateVerifyEmail(body) {
   const schema = Joi.object({
     email: Joi.string().email().min(3).required(),
-    code: Joi.string().min(3).max(20).required(),
+    code: Joi.string().min(3).max(400).required(),
   });
   return schema.validate(body);
 }

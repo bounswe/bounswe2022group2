@@ -28,7 +28,7 @@ export default async (req, res) => {
     
     
     const userCode = req.body.code;
-    const databaseCode = user.code;
+    const databaseCode = user.verification_code;
 
     const codeCheck = databaseCode === userCode;
 
@@ -37,7 +37,7 @@ export default async (req, res) => {
 
     const token = jwt.sign(
         { user_id: user._id, email },
-        process.env.TOKEN_KEY,
+        process.env.JWT_KEY,
         {
             expiresIn: 600,
         }
