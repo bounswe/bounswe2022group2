@@ -14,10 +14,14 @@ class TextKeys {
   static const String privacyPolicy = 'privacy_policy';
   static const String alreadyHaveAccount = 'already_have_account';
   static const String login = 'login';
+  static const String forgetPassword = 'forget_password';
+  static const String verifyEmail = 'verify_email';
+  static const String backToLogin = 'back_to_login';
   static const String home = 'home';
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
+  static const String forgetDesc = 'forget_desc';
   static const String takePhoto = 'take_photo';
   static const String chooseFromGallery = 'choose_from_gallery';
   static const String friends = 'friends';
