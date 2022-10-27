@@ -19,7 +19,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-    - ./backend:/appp
+    - ./backend:/app
     networks:
       - mongo_net
     depends_on:
