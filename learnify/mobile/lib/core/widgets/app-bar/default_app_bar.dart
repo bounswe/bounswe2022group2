@@ -1,9 +1,13 @@
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../extensions/context/context_extensions.dart';
+import '../../extensions/context/theme_extensions.dart';
+import '../../managers/navigation/navigation_manager.dart';
+import '../base-icon/base_icon.dart';
+import '../buttons/base_icon_button.dart';
+import '../text/base_text.dart';
 
 /// Default App Bar extends [AppBar]
 /// with its required functions.
@@ -15,7 +19,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actionsList = const <Widget>[],
     this.titleIcon,
     this.titleText,
-    this.showBack,
+    this.showBack = false,
     this.textStyle,
     this.icon,
     this.absorb = false,
@@ -39,7 +43,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;
 
   /// Indicates whether to show a return back icon at top left.
-  final bool? showBack;
+  final bool showBack;
 
   /// Style of the title text.
   final TextStyle? textStyle;
@@ -53,22 +57,20 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// Custom padding value.
   final EdgeInsets? padding;
 
-  Widget _titleTextWidget(BuildContext context) => const Align(
+  Widget _titleTextWidget(BuildContext context) => Align(
         alignment: Alignment.centerLeft,
-        // TODO: Fix
-        // child: Padding(
-        //   padding: EdgeInsets.symmetric(horizontal: context.responsiveSize * 5),
-        //   child: BaseText(titleText!, style: textStyle),
-        // ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.responsiveSize * 5),
+          child: BaseText(titleText!, style: textStyle),
+        ),
       );
 
-  Widget _backButton(BuildContext context) => const FittedBox(
+  Widget _backButton(BuildContext context) => FittedBox(
         fit: BoxFit.scaleDown,
-        // TODO: Fix
-        // child: BaseIconButton(
-        //   onPressed: () => NavigationManager.instance.popRoute(),
-        //   icon: Icons.chevron_left_outlined,
-        // ),
+        child: BaseIconButton(
+          onPressed: NavigationManager.instance.pop,
+          icon: Icons.chevron_left_outlined,
+        ),
       );
 
   @override
@@ -85,7 +87,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       );
 
   Widget _safeAreaChild(BuildContext context, bool absorb) => Container(
-        color: Colors.black,
+        color: context.primary,
         alignment: Alignment.center,
         padding: padding ??
             EdgeInsets.symmetric(
@@ -101,12 +103,12 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget _appBarRow(BuildContext context) => Row(
         children: <Widget>[
-          if (showBack ?? !kIsWeb) _backButton(context),
-          if (icon != null) icon!(context),
-          // TODO: Fix
-          // else if (titleIcon != null)
-          //   BaseIcon(context, titleIcon!, color: Colors.white),
-          // context.sizedW(2),
+          if (showBack) _backButton(context),
+          if (icon != null)
+            icon!(context)
+          else if (titleIcon != null)
+            BaseIcon(context, titleIcon!, color: context.lightActiveColor),
+          context.sizedW(2),
           if (titleText != null) Expanded(child: _titleTextWidget(context)),
           ...actionsList,
         ],

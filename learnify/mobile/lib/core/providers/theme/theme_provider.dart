@@ -16,7 +16,7 @@ class ThemeProvider extends ChangeNotifier with LightAppTheme, DarkAppTheme {
   ThemeData get currentTheme {
     // TODO: Fix
     // if (_theme == null) _getStoredTheme();
-    return _theme ?? DarkAppTheme.darkTheme;
+    return _theme ?? LightAppTheme.lightTheme;
   }
 
   // TODO: Fix

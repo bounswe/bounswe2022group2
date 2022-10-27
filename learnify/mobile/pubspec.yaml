@@ -14,22 +14,44 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
 
   # State Management
-  provider: ^6.0.1
+  provider: ^6.0.4
+
+  # Network
+  dio: ^4.0.6
+
+  # UI
+  google_fonts: ^3.0.1
+  curved_navigation_bar: ^1.0.3
+  fl_chart: ^0.55.2
 
   # Model
   equatable: ^2.0.5
+  collection: ^1.16.0
+
+  # Local Storage
+  shared_preferences: ^2.0.15
+
+  # Helpers
+  image_picker: ^0.8.6
 
   async: ^2.9.0
+  url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  http_mock_adapter: ^0.3.3
+  flutter_lints: ^2.0.1
+
 
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/lang/
+    - assets/images/

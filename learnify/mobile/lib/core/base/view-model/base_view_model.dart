@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/enums/view_states.dart';
 import '../../helpers/completer_helper.dart';
+import '../../managers/local/local_manager.dart';
 import '../../managers/navigation/navigation_manager.dart';
 
 /// Base view model class to create customized view models extending this.
@@ -21,6 +22,7 @@ abstract class BaseViewModel extends ChangeNotifier {
 
   /// Singleton navigation manager to use across the view models.
   final NavigationManager navigationManager = NavigationManager.instance;
+  final LocalManager localManager = LocalManager.instance;
 
   /// Custom init method to call before the initialization process is completed.
   FutureOr<void> initViewModel();
@@ -61,12 +63,13 @@ abstract class BaseViewModel extends ChangeNotifier {
   }
 
   /// Custom dispose method of the view model.
-  void customDispose() {
-    Future<void>.delayed(Duration.zero, () async {
-      if (!completer.isCompleted) await completer.future;
-      await operation?.cancel();
-      await disposeViewModel();
-    });
+  Future<void> customDispose() async {
+    await _disposeOperation();
+  }
+
+  Future<void> _disposeOperation() async {
+    if (!completer.isCompleted) await completer.future;
+    await operation?.cancel();
   }
 
   /// Reloads the state.
