@@ -40,5 +40,7 @@
   "verification_description": "Please enter the verification code you received",
   "verify": "Verify",
   "code_not_received": "Didn't get a verification code? {0}",
-  "request_another_code": "Request another code"
+  "request_another_code": "Request another code",
+  "back_to_enter_email": "{0}",
+  "change_email": "Change Email"
 }

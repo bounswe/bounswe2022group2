@@ -6,9 +6,11 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/selector_helper.dart';
+import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../product/constants/icon_keys.dart';
+import '../../../../product/constants/navigation_constants.dart';
 import '../../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/verification_view_model.dart';
@@ -33,6 +35,7 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
           context.sizedH(2),
           _verifyButton,
           context.sizedH(2),
+          _backToEnterEmail(context)
           //_backToLogin(context),
         ],
       );
@@ -67,6 +70,19 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
           ReplaceValue(
             TextKeys.requestAnotherCode,
             onClick: () async => {},
+            color: context.primary,
+          )
+        ],
+      );
+
+  static Widget _backToEnterEmail(BuildContext context) => BaseText(
+        TextKeys.backToEnterEmail,
+        style: context.bodySmall,
+        replaceValues: <ReplaceValue>[
+          ReplaceValue(
+            TextKeys.changeEmail,
+            onClick: () async => NavigationManager.instance
+                .navigateToPage(path: NavigationConstants.forgetpass),
             color: context.primary,
           )
         ],
