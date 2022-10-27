@@ -25,7 +25,7 @@ export default async (user) => {
         text: token
       };
       user.verification_code = token;
-      console.log(token)
+      
       transporter.sendMail(mailOptions, function(error, info){
         if (error) {
           console.log(error);
@@ -35,7 +35,6 @@ export default async (user) => {
         }
       });
       
-      user.verification_token = jwt;
       
       user = await user.save().catch((err) =>{
         console.log("Could not save user to DB")

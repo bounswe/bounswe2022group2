@@ -28,7 +28,8 @@ export default async (req, res) => {
     const userCode = req.body.code;
     const databaseCode = user.verification_code;
 
-
+    console.log(userCode)
+    console.log(databaseCode)
     const codeCheck = databaseCode === userCode;
 
     if (!codeCheck)
@@ -36,7 +37,7 @@ export default async (req, res) => {
 
     const token = jwt.sign(
         { user_id: user._id, email },
-        process.env.TOKEN_KEY,
+        process.env.JWT_KEY,
         {
             expiresIn: 600,
         }
