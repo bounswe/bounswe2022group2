@@ -7,7 +7,17 @@ body{
     padding: 6%;
 }
 
+.login-page-logo{
+    align-self: flex-start;
+    padding: 6%;
+}
+
 .signup-page-illustration{
+    align-self: center;
+    overflow: hidden;
+}
+
+.login-page-illustration{
     align-self: center;
     overflow: hidden;
 }
@@ -48,6 +58,7 @@ body{
     padding-left: 8px;
     font-weight: bold;
     width: 40%;
+    text-align: left
 }
 
 .form__input{
@@ -66,6 +77,23 @@ body{
     padding-left: 40px;
     text-align: left;
 }
+
+.login-button{
+    padding-left: 40px;
+    text-align: left;
+    display: flex;
+}
+
+
+
+.additional-Nav-Text {
+    align-items: left;
+    color: #f45004;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1.5px solid #f45004;
+    padding-bottom: 5px;
+  }
 
 .pageLayout{
     height: 100vh;
@@ -107,12 +135,21 @@ body{
     padding-right: 40px;
 }
 
+.verificationCode{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 .space-3{
     padding: 3px;
 }
 
 .space-8{
     padding: 8px;
+}
+
+.space-50{
+    padding: 50px
 }
 
 .registerKVKK {
@@ -153,6 +190,26 @@ body{
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.btn-white{
+    padding-left: 40px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color:#1746A2;
+    cursor: pointer;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    left: 20 px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     touch-action: manipulation;
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
