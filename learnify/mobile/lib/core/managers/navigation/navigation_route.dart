@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../features/auth/forget-password/view/forget_password_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
+import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 
@@ -18,6 +19,8 @@ class NavigationRoute {
         return normalNavigate(const SignupScreen());
       case NavigationConstants.forgetpass:
         return normalNavigate(const ForgetPasswordScreen());
+      case NavigationConstants.verify:
+        return normalNavigate(const VerificationScreen());
       case NavigationConstants.login:
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
