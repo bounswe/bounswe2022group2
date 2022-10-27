@@ -1,7 +1,7 @@
 {
-  "name": "bounswe2022group2-learnify-backend",
-  "version": "0.1.0",
-  "description": "API of the project Learnify of the bounswe2022Group2.",
+  "name": "bounswe2022group2-backend",
+  "version": "1.0.0",
+  "description": "API of the project of the bounswe2022Group2.",
   "main": "app.js",
   "scripts": {
     "start": "NODE_ENV=dev node app.js",
@@ -33,18 +33,16 @@
     "express": "^4.18.1",
     "helmet": "^5.0.2",
     "joi": "^17.6.0",
-    "jsonwebtoken": "^8.5.1",
     "local-storage": "^2.0.0",
     "mocha": "^10.0.0",
     "mongodb-memory-server-core": "^8.5.2",
     "mongoose": "^6.3.3",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.8.0",
+    "supertest": "^6.2.3",
     "underscore": "^1.13.3"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
-    "supertest": "^6.2.3",
     "sinon": "^14.0.0"
   }
 }

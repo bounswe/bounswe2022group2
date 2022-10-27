@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
 import { User } from '../../../models/index.js';
 import { validateSignup } from '../../validators/user_validator.js';
-import send_verification_email from '../../../utils/auth/send_verification_email.js'
 const { hash } = bcrypt;
+
 
 export default async (req, res) => {
   const { error } = validateSignup(req.body);
@@ -44,12 +44,6 @@ export default async (req, res) => {
     return res.status(500).json({ "resultMessage": err.message });
   });
 
-  try{
-    await send_verification_email(user);
-  }catch(err){
-    console.log("Could not send verification email.")
-    return res.status(500).json({ "resultMessage": err.message });
-  }
   return res.status(200).json({
     resultMessage: "User is successfully signed up."
   });
