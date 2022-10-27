@@ -33,17 +33,19 @@ class _VerificationCodeField extends StatelessWidget {
           BuildContext context, TextEditingController controller, Key key) =>
       SizedBox(
         key: key,
-        height: 68,
-        width: 64,
+        width: context.width * 20,
         child: TextFormField(
           onChanged: (String value) {
-            if (value.length == 1) {
+            if (value.length == 1 &&
+                key != VerificationKeys.verificationCodeFourthDigitField) {
               FocusScope.of(context).nextFocus();
             }
+            if (value.isEmpty &&
+                key != VerificationKeys.verificationCodeFirstDigitField) {
+              FocusScope.of(context).previousFocus();
+            }
           },
-          //onSaved: (verificationCode) {},
           controller: controller,
-          //textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           textAlign: TextAlign.center,
           inputFormatters: [
