@@ -19,6 +19,10 @@ const userSchema = new Schema({
   is_verified: {
     type: Boolean, required: true, default: false
   },
+  //required false for signup endpoint not to fail
+  code: {
+    type: String, required: false
+  },
 },
   {
     timestamps: true,
