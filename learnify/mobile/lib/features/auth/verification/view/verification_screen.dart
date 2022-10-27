@@ -23,9 +23,9 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
         children: <Widget>[
           Image.asset(IconKeys.logo, width: context.width * 55),
           context.sizedH(8),
-          _title(context, "Verify Your Email"),
+          _title(context, TextKeys.verifyYourEmail),
           context.sizedH(1),
-          _description(context, "Please enter the code you received"),
+          _description(context, TextKeys.verificationDescription),
           context.sizedH(2),
           const _VerificationCodeField(),
           context.sizedH(2),
@@ -50,7 +50,7 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
       SelectorHelper<bool, VerificationViewModel>().builder(
           (_, VerificationViewModel model) => model.canVerify,
           (BuildContext context, bool canVerify, _) => ActionButton(
-                text: "Verify",
+                text: TextKeys.verify,
                 padding: EdgeInsets.symmetric(
                     horizontal: context.responsiveSize * 2.8,
                     vertical: context.responsiveSize * 1.4),
@@ -61,11 +61,11 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
               ));
 
   static Widget _requestAnotherCode(BuildContext context) => BaseText(
-        "You didn't receive the verification code",
+        TextKeys.codeNotReceived,
         style: context.bodySmall,
         replaceValues: <ReplaceValue>[
           ReplaceValue(
-            "Request another code",
+            TextKeys.requestAnotherCode,
             onClick: () async => {},
             color: context.primary,
           )

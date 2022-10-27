@@ -36,4 +36,9 @@ class TextKeys {
   static const String sat = 'sat';
   static const String sun = 'sun';
   static const String update = 'update';
+  static const String verifyYourEmail = "verify_your_email";
+  static const String verificationDescription = "verification_description";
+  static const String verify = "verify";
+  static const String codeNotReceived = "code_not_received";
+  static const String requestAnotherCode = "request_another_code";
 }
