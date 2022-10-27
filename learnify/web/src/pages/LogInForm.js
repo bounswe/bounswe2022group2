@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
-function LogInForm() {
+function LoginForm() {
 
     const [email, setEmail] = useState(null);
     const [password,setPassword] = useState(null);
@@ -43,30 +43,29 @@ function LogInForm() {
                     </NavLink>
                     <div className='space-8'/>
                     <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
-                        Log In
+                        Login
                     </NavLink>
                 </div>
                 <div className="form">
-                    
-                    <div className='space-50'/>
+                <div className="form-body">
                     <div className="email">
-                        <label className="form__label" for="email">EMAIL </label>
+                        <label className="form__label" for="email">E-MAIL </label>
                         <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
                     </div>
-
-                    <div className='space-50'/>
-
                     <div className="password">
                         <label className="form__label" for="password">PASSWORD </label>
                         <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
                     </div>
                 
                     <div class="signup-button">
-                        <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Log In</button>
+                        <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Login</button>
                     </div>
-                    <NavLink to="/" className="additional-Nav-Text">
-                    Forgot Password
-                    </NavLink>
+                    <div class="login-button">
+                        <NavLink to="/" >
+                            <button class="btn-white">Forgot Password</button>
+                        </NavLink>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,4 +73,4 @@ function LogInForm() {
     )       
 }
 
-export default LogInForm;
+export default LoginForm;

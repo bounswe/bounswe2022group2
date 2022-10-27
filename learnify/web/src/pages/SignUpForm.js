@@ -55,7 +55,7 @@ function SignUpForm() {
                     </NavLink>
                     <div className='space-8'/>
                     <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
-                        Log In
+                        Login
                     </NavLink>
                 </div>
                 <div className="form">
