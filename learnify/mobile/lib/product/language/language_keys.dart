@@ -43,4 +43,5 @@ class TextKeys {
   static const String requestAnotherCode = "request_another_code";
   static const String backToEnterEmail = "back_to_enter_email";
   static const String changeEmail = "change_email";
+  static const String remainingTime = "remaining_time";
 }

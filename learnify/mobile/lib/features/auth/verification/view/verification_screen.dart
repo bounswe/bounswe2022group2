@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +33,7 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
           context.sizedH(2),
           const _VerificationCodeField(),
           context.sizedH(2),
-          _requestAnotherCode(context),
+          const VerificationCodeTimer(),
           context.sizedH(2),
           _verifyButton,
           context.sizedH(2),
@@ -63,18 +65,6 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
                     context.read<VerificationViewModel>().verification,
               ));
 
-  static Widget _requestAnotherCode(BuildContext context) => BaseText(
-        TextKeys.codeNotReceived,
-        style: context.bodySmall,
-        replaceValues: <ReplaceValue>[
-          ReplaceValue(
-            TextKeys.requestAnotherCode,
-            onClick: () async => {},
-            color: context.primary,
-          )
-        ],
-      );
-
   static Widget _backToEnterEmail(BuildContext context) => BaseText(
         TextKeys.backToEnterEmail,
         style: context.bodySmall,
@@ -87,4 +77,75 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
           )
         ],
       );
+}
+
+class VerificationCodeTimer extends StatefulWidget {
+  const VerificationCodeTimer({Key? key}) : super(key: key);
+
+  @override
+  State<VerificationCodeTimer> createState() => _VerificationCodeTimerState();
+}
+
+class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
+  int _remainingTime = 180;
+  bool _shouldReset = false;
+
+  void startTimer() {
+    const Duration duration = Duration(seconds: 1);
+    Timer _timer = Timer.periodic(duration, (timer) {
+      if (_remainingTime == 0) {
+        setState(() {
+          timer.cancel();
+        });
+      } else if (_shouldReset) {
+        setState(() {
+          _remainingTime = 180;
+          _shouldReset = false;
+        });
+      } else {
+        setState(() {
+          _remainingTime--;
+        });
+      }
+    });
+  }
+
+  void resetTimer() {
+    setState(() {
+      _shouldReset = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) => Column(children: [
+        BaseText(
+          TextKeys.codeNotReceived,
+          style: context.bodySmall,
+          replaceValues: <ReplaceValue>[
+            ReplaceValue(
+              TextKeys.requestAnotherCode,
+              onClick: () async => {resetTimer()},
+              color: context.primary,
+            )
+          ],
+        ),
+        context.sizedH(2),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BaseText(
+              TextKeys.remainingTime,
+              style: context.bodySmall,
+            ),
+            context.sizedW(2),
+            Text('$_remainingTime seconds')
+          ],
+        )
+      ]);
+
+  @override
+  void initState() {
+    startTimer();
+    super.initState();
+  }
 }
