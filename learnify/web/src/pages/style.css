@@ -135,6 +135,11 @@ body{
     padding-right: 40px;
 }
 
+.verificationCode{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 .space-3{
     padding: 3px;
 }

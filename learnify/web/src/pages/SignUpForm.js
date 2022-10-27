@@ -99,7 +99,9 @@ function SignUpForm() {
                         </div>
                     </div>
                     <div class="signup-button">
+                    <NavLink to="/verify-email">
                         <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Register</button>
+                    </NavLink>
                     </div>
                 </div>
             </div>
