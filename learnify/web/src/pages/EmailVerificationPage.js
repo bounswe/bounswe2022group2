@@ -38,7 +38,7 @@ function EmailVerificationPage() {
                         Sign Up
                     </NavLink>
                     <div className='space-8'/>
-                    <NavLink to="/signin" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
                         Sign In
                     </NavLink>
                 </div>

@@ -61,7 +61,7 @@ function LoginForm() {
                         <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Login</button>
                     </div>
                     <div class="login-button">
-                        <NavLink to="/" >
+                        <NavLink to="/forget-password" >
                             <button class="btn-white">Forgot Password</button>
                         </NavLink>
                     </div>
