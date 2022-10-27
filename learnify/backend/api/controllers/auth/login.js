@@ -30,10 +30,10 @@ export default async (req,res) => {
 
     if (!passwordCheck) 
         return res.status(409).json({"resultMessage": "Wrong password."});
-    console.log(process.env.TOKEN_KEY)
+    console.log(process.env.JWT_KEY)
     const token = jwt.sign(
         { user_id: user._id, email },
-        process.env.TOKEN_KEY,
+        process.env.JWT_KEY,
         {
             expiresIn: "24h",
         }
