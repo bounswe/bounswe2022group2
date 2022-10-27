@@ -22,7 +22,13 @@ class NavigationRoute {
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
       case NavigationConstants.home:
-        return normalNavigate(const HomeWrapper());
+        return normalNavigate(HomeWrapper(initialIndex: 0));
+      case NavigationConstants.search:
+        return normalNavigate(HomeWrapper(initialIndex: 1));
+      case NavigationConstants.courses:
+        return normalNavigate(HomeWrapper(initialIndex: 2));
+      case NavigationConstants.profile:
+        return normalNavigate(HomeWrapper(initialIndex: 3));
       default:
         return normalNavigate(const SignupScreen());
     }

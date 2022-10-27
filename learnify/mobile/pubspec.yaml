@@ -25,6 +25,7 @@ dependencies:
   # UI
   google_fonts: ^3.0.1
   curved_navigation_bar: ^1.0.3
+  fl_chart: ^0.55.2
 
   # Model
   equatable: ^2.0.5
@@ -33,15 +34,19 @@ dependencies:
   # Local Storage
   shared_preferences: ^2.0.15
 
+  # Helpers
+  image_picker: ^0.8.6
+
   async: ^2.9.0
   url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  http_mock_adapter: ^0.3.3
 
+  http_mock_adapter: ^0.3.3
   flutter_lints: ^2.0.1
+
 
 flutter:
 

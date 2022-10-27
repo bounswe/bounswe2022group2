@@ -90,14 +90,16 @@ class BaseText extends StatelessWidget {
       capitalizeAll: capitalizeAll,
       capitalize: capitalize,
     );
-    return FittedBox(
-      fit: fit ?? BoxFit.scaleDown,
-      alignment: (textAlign ?? TextAlign.center).alignment,
-      child: replaceValues.isEmpty
-          ? _normalText(helper)
-          : helper.replacedText(text, replaceValues,
-              translated: translated, onClick: onClick),
-    );
+    return text.isEmpty
+        ? Container()
+        : FittedBox(
+            fit: fit ?? BoxFit.scaleDown,
+            alignment: (textAlign ?? TextAlign.center).alignment,
+            child: replaceValues.isEmpty
+                ? _normalText(helper)
+                : helper.replacedText(text, replaceValues,
+                    translated: translated, onClick: onClick),
+          );
   }
 
   Widget _normalText(TextHelpers helper) => helper.normalText(

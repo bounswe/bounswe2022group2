@@ -22,4 +22,18 @@ class TextKeys {
   static const String search = 'search';
   static const String courses = 'courses';
   static const String forgetDesc = 'forget_desc';
+  static const String takePhoto = 'take_photo';
+  static const String chooseFromGallery = 'choose_from_gallery';
+  static const String friends = 'friends';
+  static const String enrolled = 'enrolled';
+  static const String contributed = 'contributed';
+  static const String avg = 'avg';
+  static const String mon = 'mon';
+  static const String tue = 'tue';
+  static const String wed = 'wed';
+  static const String thur = 'thur';
+  static const String fri = 'fri';
+  static const String sat = 'sat';
+  static const String sun = 'sun';
+  static const String update = 'update';
 }

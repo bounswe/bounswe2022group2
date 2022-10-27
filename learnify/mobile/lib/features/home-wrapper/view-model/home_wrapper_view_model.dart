@@ -5,10 +5,10 @@ import '../../../../core/base/view-model/base_view_model.dart';
 
 /// View model to manage the data on home wrapper screen.
 class HomeWrapperViewModel extends BaseViewModel {
-  int _bottomNavBarIndex = 0;
+  int? _bottomNavBarIndex;
 
   /// Bottom nav bar index.
-  int get bottomNavBarIndex => _bottomNavBarIndex;
+  int get bottomNavBarIndex => _bottomNavBarIndex ?? 0;
   late GlobalKey<CurvedNavigationBarState> _bottomNavigationKey;
   GlobalKey<CurvedNavigationBarState> get bottomNavigationKey =>
       _bottomNavigationKey;
@@ -19,7 +19,6 @@ class HomeWrapperViewModel extends BaseViewModel {
   @override
   void initView() {
     _bottomNavigationKey = GlobalKey<CurvedNavigationBarState>();
-    _setDefault();
   }
 
   @override
@@ -28,10 +27,12 @@ class HomeWrapperViewModel extends BaseViewModel {
     super.disposeView();
   }
 
-  void setBottomNavIndex(int newIndex) {
-    if (_bottomNavBarIndex == newIndex) return;
+  void setBottomNavIndex(int newIndex,
+      {bool notify = true, bool initial = false}) {
+    if (_bottomNavBarIndex == newIndex ||
+        (initial && _bottomNavBarIndex != null)) return;
     _bottomNavBarIndex = newIndex;
-    notifyListeners();
+    if (notify) notifyListeners();
   }
 
   void _setDefault() {

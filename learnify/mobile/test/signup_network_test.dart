@@ -16,7 +16,7 @@ void main() {
 
     final Map<String, dynamic> userCredentials = <String, dynamic>{
       'email': 'bahrican@gmail.com',
-      'password': 'StrongPassword${DateTime.now().toIso8601String()}',
+      'password': 'Bahrican123${DateTime.now().toIso8601String()}',
       "username": "bahrican"
     };
 
