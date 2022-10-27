@@ -7,5 +7,6 @@ EXPOSE 3000
 ENV PORT=3000
 ENV NODE_ENV=production
 COPY . .
-ENV LEARNIFY_DOCKER="mongodb://mongo:27017"
+COPY .env.prod .env
+ENV DB_URI="mongodb://mongo:27017"
 CMD [ "pm2-runtime", "npm", "--", "start" ]

@@ -61,9 +61,6 @@ You can list of environment variables that our API uses for configuration:
 #### Compulsory Variables
 
 DB_URI : MongoDB URI of your local development database. 
-JWT_KEY: key to be used for jwt generation.
-MAIL: mailaddress the API uses, currently only gmail is supported
-MAIL_PASS: password of MAIL
 
 #### Optional Variables
 
