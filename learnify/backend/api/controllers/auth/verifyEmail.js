@@ -26,10 +26,10 @@ export default async (req, res) => {
     
     
     const userCode = req.body.code;
-    const databaseCode = user.code;
+    const databaseCode = user.verification_code;
 
 
-    const codeCheck = databaseCode == userCode;
+    const codeCheck = databaseCode === userCode;
 
     if (!codeCheck)
         return res.status(400).json({ "resultMessage": "Wrong code." });
