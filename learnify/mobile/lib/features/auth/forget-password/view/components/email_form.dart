@@ -8,16 +8,17 @@ class _EmailForm extends StatelessWidget {
     final ForgetPasswordViewModel model =
         context.read<ForgetPasswordViewModel>();
     return Form(
+        key: model.formKey,
         child: CustomTextFormField(
-      key: ForgetPasswordKeys.emailField,
-      controller: model.emailController,
-      hintText: TextKeys.emailHint,
-      labelText: TextKeys.emailLabel,
-      prefixIcon: Icons.email_outlined,
-      validator: Validators.email,
-      textInputAction: TextInputAction.next,
-      autofillHints: const <String>[AutofillHints.email],
-      textInputType: TextInputType.emailAddress,
-    ));
+          key: ForgetPasswordKeys.emailField,
+          controller: model.emailController,
+          hintText: TextKeys.emailHint,
+          labelText: TextKeys.emailLabel,
+          prefixIcon: Icons.email_outlined,
+          validator: Validators.email,
+          textInputAction: TextInputAction.next,
+          autofillHints: const <String>[AutofillHints.email],
+          textInputType: TextInputType.emailAddress,
+        ));
   }
 }

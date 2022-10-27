@@ -49,9 +49,7 @@ class ForgetPasswordViewModel extends BaseViewModel {
 
   Future<String?> _forgetPasswordRequest() async {
     final bool isValid = formKey.currentState?.validate() ?? false;
-    if (isValid) {
-      return null;
-    }
+    if (isValid) {}
     return null;
   }
 
