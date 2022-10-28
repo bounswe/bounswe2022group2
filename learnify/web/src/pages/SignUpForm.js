@@ -1,39 +1,45 @@
 import React, {useState,setState} from 'react';
 import { NavLink} from 'react-router-dom';
+import { useForm, useWatch } from "react-hook-form";
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
 
 function SignUpForm() {
     
-    const [userName, setUserName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
-    const [confirmPassword,setConfirmPassword] = useState(null);
+    // const [username, setUsername] = useState(null);
+    // const [email, setEmail] = useState(null);
+    // const [password,setPassword] = useState(null);
+    // const [confirmPassword,setConfirmPassword] = useState(null);
     const [isChecked, setIsChecked] = useState(false);
+
+    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+    }
 
     const handleInputChange = (e) => {
         const {id , value} = e.target;
-        if(id === "userName"){
-            setUserName(value);
-        }
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
-        }
+        // if(id === "username"){
+        //     setUsername(value);
+        // }
+        // if(id === "email"){
+        //     setEmail(value);
+        // }
+        // if(id === "password"){
+        //     setPassword(value);
+        // }
+        // if(id === "confirmPassword"){
+        //     setConfirmPassword(value);
+        // }
         if(id === "isChecked"){
             setIsChecked(value);
         }
     }
 
-    const handleSubmit  = () => {
-        console.log(userName,email,password,confirmPassword);
-    }
+    // const handleSubmit  = () => {
+    //     console.log(username,email,password,confirmPassword);
+    // }
 
     return(
         <div className='pageLayout'>
@@ -61,31 +67,54 @@ function SignUpForm() {
                 <div className="form">
                     <div className="form-body">
                         <div className="username">
-                            <label className="form__label" for="userName">USERNAME </label>
+                            <label className="form__label" for="username">USERNAME </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="text" value={userName} onChange = {(e) => handleInputChange(e)} id="userName" placeholder="User Name"/>
+                                <input className="form__input" type="text" {...register("username", { 
+                                    required: "Username is required!", 
+                                    minLength: {
+                                        value: 3,
+                                        message: "Username must have at least 3 characters"
+                                    }
+                                })} placeholder="Username"/>
+                                {errors.username && <p>{errors.username.message}</p>}
                             </div>
                         </div>
                         <div className="email">
                             <label className="form__label" for="email">E-MAIL </label>
                             <div className='space-3'></div>
                             <div>
-                                <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                                <input className="form__input" type="email" {...register("email", {
+                                    required: "Email is required!",
+                                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                                })} placeholder="Email"/>
+                                {errors.email && <p>Email is invalid!</p>}
                             </div>
                         </div>
                         <div className="password">
                             <label className="form__label" for="password">PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+                                <input className="form__input" type="password"  {...register("password", {
+                                    required: "Password is required!",
+                                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+                                })} placeholder="Password"/>
+                                {errors.password && <p>Password is invalid!</p>}
                             </div>
                         </div>
                         <div className="confirm-password">
                             <label className="form__label" for="confirmPassword">CONFIRM PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
+                                <input className="form__input" type="password" {...register("confirmPassword", {
+                                    required: "You need to confirm your password!",
+                                    validate: (val) => {
+                                        if (watch('password') !== val) {
+                                            errors.confirmPassword = "Passwords do not match!";
+                                        }
+                                    }
+                                })} placeholder="Confirm Password"/>
+                                {errors.confirmPassword}
                             </div>
                         </div>
                         <div className='signup-checkbox-field'>
@@ -99,9 +128,10 @@ function SignUpForm() {
                         </div>
                     </div>
                     <div class="signup-button">
-                    <NavLink to="/verify-email">
-                        <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Register</button>
-                    </NavLink>
+                    {/* <NavLink to="/verify-email">
+                        <button onClick={handleSubmit(onSubmit)} type="submit" class="btn-orange">Register</button>
+                    </NavLink> */}
+                    <button onClick={handleSubmit(onSubmit)} type="submit" class="btn-orange">Register</button>
                     </div>
                 </div>
             </div>

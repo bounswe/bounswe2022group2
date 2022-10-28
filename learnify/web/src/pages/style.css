@@ -78,6 +78,7 @@ body{
     text-align: left;
 }
 
+
 .login-button{
     padding-left: 40px;
     text-align: left;
@@ -238,4 +239,12 @@ body{
 
 .welcome-navigation-item-active{
     background-color: #FF731D;
+}
+
+
+*:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
+    pointer-events: none;
 }
