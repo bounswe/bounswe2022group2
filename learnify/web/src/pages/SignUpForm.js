@@ -1,45 +1,40 @@
 import React, {useState,setState} from 'react';
 import { NavLink} from 'react-router-dom';
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
 
 function SignUpForm() {
     
-    // const [username, setUsername] = useState(null);
-    // const [email, setEmail] = useState(null);
-    // const [password,setPassword] = useState(null);
-    // const [confirmPassword,setConfirmPassword] = useState(null);
-    const [isChecked, setIsChecked] = useState(false);
+    const formSchema = Yup.object().shape({
+        username: Yup.string()
+            .required("Username is required!")
+            .min(3, "Username must be at least 3 characters long!"),
+        email: Yup.string().email("Invalid email!")
+            .required("Email is required!"),
+        password: Yup.string()
+            .required("Password is required!")
+            .matches(
+                /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
+                "Password must be 6 to 20 characters long and contain at least one uppercase, one lowercase letter, and one number!"
+            ),
+        confirmPassword: Yup.string()
+            .required("You need to confirm your password!")
+            .oneOf([Yup.ref("password")], "Passwords do not match!"),
+        kvkk: Yup.boolean()
+            .oneOf([true], "You must agree the KVKK confirmation!")
+    })
+    const formOptions = { resolver: yupResolver(formSchema) }
 
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const { register, handleSubmit, formState } = useForm(formOptions);
+    const { errors } = formState
     const onSubmit = (data) => {
         console.log(data);
     }
-
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        // if(id === "username"){
-        //     setUsername(value);
-        // }
-        // if(id === "email"){
-        //     setEmail(value);
-        // }
-        // if(id === "password"){
-        //     setPassword(value);
-        // }
-        // if(id === "confirmPassword"){
-        //     setConfirmPassword(value);
-        // }
-        if(id === "isChecked"){
-            setIsChecked(value);
-        }
-    }
-
-    // const handleSubmit  = () => {
-    //     console.log(username,email,password,confirmPassword);
-    // }
 
     return(
         <div className='pageLayout'>
@@ -64,76 +59,81 @@ function SignUpForm() {
                         Login
                     </NavLink>
                 </div>
-                <div className="form">
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="username">
                             <label className="form__label" for="username">USERNAME </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="text" {...register("username", { 
-                                    required: "Username is required!", 
-                                    minLength: {
-                                        value: 3,
-                                        message: "Username must have at least 3 characters"
-                                    }
-                                })} placeholder="Username"/>
-                                {errors.username && <p>{errors.username.message}</p>}
+                                <input 
+                                    className={`form-control ${errors.username ? 'is-invalid' : ''}`}
+                                    type="text" 
+                                    placeholder="Username"
+                                    {...register('username')}
+                                />
+                                <div className="invalid-feedback">{errors.username?.message}</div>
                             </div>
                         </div>
                         <div className="email">
                             <label className="form__label" for="email">E-MAIL </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="email" {...register("email", {
-                                    required: "Email is required!",
-                                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                                })} placeholder="Email"/>
-                                {errors.email && <p>Email is invalid!</p>}
+                                <input 
+                                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                    type="email" 
+                                    placeholder="Email"
+                                    {...register('email')}
+                                />
+                                <div className="invalid-feedback">{errors.email?.message}</div>
                             </div>
                         </div>
                         <div className="password">
                             <label className="form__label" for="password">PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="password"  {...register("password", {
-                                    required: "Password is required!",
-                                    pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
-                                })} placeholder="Password"/>
-                                {errors.password && <p>Password is invalid!</p>}
+                                <input
+                                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                                    type="password" 
+                                    placeholder="Password"
+                                    {...register('password')}
+                                />
+                                <div className="invalid-feedback">{errors.password?.message}</div>
                             </div>
                         </div>
                         <div className="confirm-password">
                             <label className="form__label" for="confirmPassword">CONFIRM PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="password" {...register("confirmPassword", {
-                                    required: "You need to confirm your password!",
-                                    validate: (val) => {
-                                        if (watch('password') !== val) {
-                                            errors.confirmPassword = "Passwords do not match!";
-                                        }
-                                    }
-                                })} placeholder="Confirm Password"/>
-                                {errors.confirmPassword}
+                                <input
+                                    className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    {...register('confirmPassword')}
+                                />
+                                <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
                             </div>
                         </div>
                         <div className='signup-checkbox-field'>
                             <label className='checkboxSignUpLabel'>
-                                <input className='signup-checkbox' type="checkbox" value={isChecked} onChange = {(e) => handleInputChange(e)} />
+                                <input 
+                                    className={`form-check-input ${errors.kvkk ? 'is-invalid' : ''}`}
+                                    type="checkbox" 
+                                    {...register('kvkk')}
+                                />
                                 <span> I have read the {" "}<a href="https://www.nvi.gov.tr/kvkk-aydinlatma-metni" target="_blank" rel="noopener noreferrer" className="registerKVKK">
                                         clarification on KVKK
                                     </a> and agree on all the terms and conditions.
                                 </span>
+                                <div className="invalid-feedback">{errors.kvkk?.message}</div>
                             </label>
                         </div>
                     </div>
                     <div class="signup-button">
-                    {/* <NavLink to="/verify-email">
+                    <NavLink to="/verify-email">
                         <button onClick={handleSubmit(onSubmit)} type="submit" class="btn-orange">Register</button>
-                    </NavLink> */}
-                    <button onClick={handleSubmit(onSubmit)} type="submit" class="btn-orange">Register</button>
+                    </NavLink>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )       
