@@ -18,8 +18,6 @@ services:
       dockerfile: dockerfile
     ports:
       - "3000:3000"
-    volumes:
-    - ./backend:/app
     networks:
       - mongo_net
     depends_on:
