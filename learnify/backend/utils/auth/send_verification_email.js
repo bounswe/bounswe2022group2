@@ -19,6 +19,7 @@ export default async (user) => {
             expiresIn: 600,
         }
       )
+
       var mailOptions = {
         from: mail,
         to: user.email,

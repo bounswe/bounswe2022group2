@@ -12,6 +12,7 @@ export default async (req, res) => {
     const email = req.body.email;
     console.log(email)
 
+
     let emailCheck = await User.exists({ email: email })
         .catch((err) => {
             return res.status(500).json({ "resultMessage": err.message });
