@@ -111,9 +111,16 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
   }
 
   void resetTimer() {
-    setState(() {
-      _shouldReset = true;
-    });
+    if (_remainingTime > 0) {
+      setState(() {
+        _shouldReset = true;
+      });
+    } else {
+      setState(() {
+        _remainingTime = 180;
+        startTimer();
+      });
+    }
   }
 
   @override
