@@ -20,27 +20,33 @@ import '../view-model/verification_view_model.dart';
 part './components/verification_code_field.dart';
 
 class VerificationScreen extends BaseView<VerificationViewModel> {
-  const VerificationScreen({Key? key})
-      : super(builder: _builder, scrollable: true, key: key);
-  static Widget _builder(BuildContext context) => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image.asset(IconKeys.logo, width: context.width * 55),
-          context.sizedH(8),
-          _title(context, TextKeys.verifyYourEmail),
-          context.sizedH(1),
-          _description(context, TextKeys.verificationDescription),
-          context.sizedH(2),
-          const _VerificationCodeField(),
-          context.sizedH(2),
-          const VerificationCodeTimer(),
-          context.sizedH(2),
-          _verifyButton,
-          context.sizedH(2),
-          _backToEnterEmail(context)
-          //_backToLogin(context),
-        ],
-      );
+  VerificationScreen({required String email, Key? key})
+      : super(
+            builder: (BuildContext context) => _builder(context, email),
+            scrollable: true,
+            key: key);
+  static Widget _builder(BuildContext context, String email) {
+    print(email);
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Image.asset(IconKeys.logo, width: context.width * 55),
+        context.sizedH(8),
+        _title(context, TextKeys.verifyYourEmail),
+        context.sizedH(1),
+        _description(context, TextKeys.verificationDescription),
+        context.sizedH(2),
+        const _VerificationCodeField(),
+        context.sizedH(2),
+        const VerificationCodeTimer(),
+        context.sizedH(2),
+        _verifyButton,
+        context.sizedH(2),
+        _backToEnterEmail(context)
+        //_backToLogin(context),
+      ],
+    );
+  }
 
   static Widget _title(BuildContext context, String key, {Color? color}) =>
       BaseText(key, style: context.displayLarge, color: color);
@@ -92,33 +98,37 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
   void startTimer() {
     const Duration duration = Duration(seconds: 1);
     Timer _timer = Timer.periodic(duration, (timer) {
-      if (_remainingTime == 0) {
-        setState(() {
-          timer.cancel();
-        });
-      } else if (_shouldReset) {
-        setState(() {
-          _remainingTime = 180;
-          _shouldReset = false;
-        });
-      } else {
-        setState(() {
-          _remainingTime--;
-        });
+      if (mounted) {
+        if (_remainingTime == 0) {
+          setState(() {
+            timer.cancel();
+          });
+        } else if (_shouldReset) {
+          setState(() {
+            _remainingTime = 180;
+            _shouldReset = false;
+          });
+        } else {
+          setState(() {
+            _remainingTime--;
+          });
+        }
       }
     });
   }
 
   void resetTimer() {
-    if (_remainingTime > 0) {
-      setState(() {
-        _shouldReset = true;
-      });
-    } else {
-      setState(() {
-        _remainingTime = 180;
-        startTimer();
-      });
+    if (mounted) {
+      if (_remainingTime > 0) {
+        setState(() {
+          _shouldReset = true;
+        });
+      } else {
+        setState(() {
+          _remainingTime = 180;
+          startTimer();
+        });
+      }
     }
   }
 

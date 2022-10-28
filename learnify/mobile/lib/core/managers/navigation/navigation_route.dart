@@ -20,7 +20,9 @@ class NavigationRoute {
       case NavigationConstants.forgetpass:
         return normalNavigate(const ForgetPasswordScreen());
       case NavigationConstants.verify:
-        return normalNavigate(const VerificationScreen());
+        return normalNavigate(VerificationScreen(
+          email: arguments['email'],
+        ));
       case NavigationConstants.login:
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
