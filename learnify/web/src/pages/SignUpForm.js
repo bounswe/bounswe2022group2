@@ -1,5 +1,5 @@
-import React, {useState,setState} from 'react';
-import { NavLink} from 'react-router-dom';
+import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
@@ -30,10 +30,23 @@ function SignUpForm() {
     })
     const formOptions = { resolver: yupResolver(formSchema) }
 
-    const { register, handleSubmit, formState } = useForm(formOptions);
+    const { register, handleSubmit, formState } = useForm(
+        formOptions,
+        {defaultValues: {
+            username: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+            kvkk: false
+        }});
     const { errors } = formState
-    const onSubmit = (data) => {
-        console.log(data);
+
+    const navigate = useNavigate();
+
+    const onSubmit = (data, event) => {
+        console.log(data, event);
+        event.preventDefault();
+        navigate('/verify-email', {replace: true});
     }
 
     return(
@@ -51,14 +64,15 @@ function SignUpForm() {
             </div>
             <div className='rightPart'>
                 <div className='welcome-navigation'>
-                    <NavLink to="/" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/" className="welcome-navigation-item">
                         Sign Up
                     </NavLink>
                     <div className='space-8'/>
-                    <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/login" className="welcome-navigation-item">
                         Login
                     </NavLink>
                 </div>
+                <div className='space-20'/>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="username">
@@ -129,9 +143,12 @@ function SignUpForm() {
                         </div>
                     </div>
                     <div class="signup-button">
-                    <NavLink to="/verify-email">
-                        <button onClick={handleSubmit(onSubmit)} type="submit" class="btn-orange">Register</button>
-                    </NavLink>
+                        <button 
+                            onClick={handleSubmit(onSubmit)}
+                            type="submit" 
+                            class="btn-orange">
+                                Register
+                        </button>
                     </div>
                 </form>
             </div>
