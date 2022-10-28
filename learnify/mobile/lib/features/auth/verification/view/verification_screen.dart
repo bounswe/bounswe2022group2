@@ -66,13 +66,12 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
               ));
 
   static Widget _backToEnterEmail(BuildContext context) => BaseText(
-        TextKeys.backToEnterEmail,
+        TextKeys.backToPrevious,
         style: context.bodySmall,
         replaceValues: <ReplaceValue>[
           ReplaceValue(
-            TextKeys.changeEmail,
-            onClick: () async => NavigationManager.instance
-                .navigateToPage(path: NavigationConstants.forgetpass),
+            TextKeys.backToPreviousPage,
+            onClick: () async => Navigator.pop(context),
             color: context.primary,
           )
         ],

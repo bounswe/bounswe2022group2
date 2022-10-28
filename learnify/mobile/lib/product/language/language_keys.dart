@@ -41,7 +41,7 @@ class TextKeys {
   static const String verify = "verify";
   static const String codeNotReceived = "code_not_received";
   static const String requestAnotherCode = "request_another_code";
-  static const String backToEnterEmail = "back_to_enter_email";
-  static const String changeEmail = "change_email";
+  static const String backToPrevious = "back_to_previous";
+  static const String backToPreviousPage = "back_to_previous_page";
   static const String remainingTime = "remaining_time";
 }
