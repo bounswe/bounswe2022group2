@@ -1,10 +1,8 @@
 import jwt from "jsonwebtoken";
 import { User } from '../../../models/index.js';
-
 import { validateVerifyEmail } from '../../validators/user_validator.js';
 
 export default async (req, res) => {
-    //verify request
     const { error } = validateVerifyEmail(req.body);
     if (error) {
       console.log(error);
@@ -13,23 +11,26 @@ export default async (req, res) => {
 
     const email = req.body.email;
     console.log(email)
+
+
     let emailCheck = await User.exists({ email: email })
         .catch((err) => {
             return res.status(500).json({ "resultMessage": err.message });
         });
+
     if (!emailCheck)
         return res.status(404).json({ "resultMessage": "There is no user with the given email." });
+
     let user = await User.findOne({ email: email })
         .catch((err) => {
             return res.status(500).json({ "resultMessage": err.message });
         });
+
     
     
     const userCode = req.body.code;
     const databaseCode = user.verification_code;
 
-    console.log(userCode)
-    console.log(databaseCode)
     const codeCheck = databaseCode === userCode;
 
     if (!codeCheck)
@@ -52,6 +53,6 @@ export default async (req, res) => {
         resultMessage: "Successfully verified email.",
         token: token,
         user: user.toJSON(),
-
+        
     });
 };
