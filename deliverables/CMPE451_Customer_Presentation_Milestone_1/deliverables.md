@@ -18,6 +18,50 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 ## Individual Contributions Report
 
 --------------------------  
+### *Member:*  
+
+Name: Ecenur Sezer  
+Group: Group2 - Backend Team
+
+### *Responsibilities:*
+
+  1. Implementing the login endpoint
+  2. Implementing the verify email endpoint
+  3. Testing and documenting both endpoints
+  4. Implementing unit tests for both endpoints
+  5. Reviewing all works done by backend teammates  
+  6. Doing research on technologies needed to use on backend development
+
+### *Main contributions:*
+
+We are a team of three for backend development of Learnify app. In that context, I firstly deeply researched the popular technologies on software development and we decided as a team on Node.js. Secondly, we do job share on implementation of needed endpoints. For Milestone 1, we had 4 endpoints planned and I implemented two of them, verify email and login.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Backend: Implementing Unit Tests for Login Endpoint ](https://github.com/bounswe/bounswe2022group2/issues/421)
+  2. [Backend: Writing Tests for Verify Email Endpoint](https://github.com/bounswe/bounswe2022group2/issues/418)
+  3. [Backend: Implementation of Login API ](https://github.com/bounswe/bounswe2022group2/issues/380)
+  4. [Backend: Email Verification API](https://github.com/bounswe/bounswe2022group2/issues/364)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Research & Report for Backend Technologies (Backend Team) ](https://github.com/bounswe/bounswe2022group2/issues/321)
+  2. [Revising the Requirements : User - User Interaction](https://github.com/bounswe/bounswe2022group2/issues/334)
+  3. [Revising the Requirements : Glossary](https://github.com/bounswe/bounswe2022group2/issues/335)
+  4. [Revising the Diagrams based on User - User Interaction ](https://github.com/bounswe/bounswe2022group2/issues/336)
+  5. [Reviewing the Revising the Requirements: Achievements and Badges ](https://github.com/bounswe/bounswe2022group2/issues/333)
+  6. [Reviewing the Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
+  7. [Reviewing the Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
+  8. [Reviewing the Dockerization of the API](https://github.com/bounswe/bounswe2022group2/issues/355)
+
+### *Pull requests:*
+
+1. Backend: Implementing Unit Tests for Login endpoint  [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
+2. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/420)
+3. 380 implementation of login api [#380](https://github.com/bounswe/bounswe2022group2/pull/380)
+4. Verify email endpoint [#374](https://github.com/bounswe/bounswe2022group2/pull/374)
+
+### *Additional information:*  
+I have attended all team meetings on backend & overall. Some took part face-to-face and some were on Discord.
 
 ### *Member:*  
 
@@ -81,49 +125,6 @@ I built the base file, folder structure on mobile project. We have decided to us
 
 I actively participated in and give suggestions about the endpoints we should have. I also give suggestions about the request and response bodies of the endpoints. I explained some concepts and real-life examples of the front designs both for web and mobile. I contributed to the logic we should implement in the authentication flow (signup-login-forgot password-email verification)
 
-### *Member:*  
 
-Name: Ecenur Sezer  
-Group: Group2 - Backend Team
-
-### *Responsibilities:*
-
-  1. Implementing the login endpoint
-  2. Implementing the verify email endpoint
-  3. Testing and documenting both endpoints
-  4. Implementing unit tests for both endpoints
-  5. Reviewing all works done by backend teammates  
-  6. Doing research on technologies needed to use on backend development
-
-### *Main contributions:*
-
-We are a team of three for backend development of Learnify app. In that context, I firstly deeply researched the popular technologies on software development and we decided as a team on Node.js. Secondly, we do job share on implementation of needed endpoints. For Milestone 1, we had 4 endpoints planned and I implemented two of them, verify email and login.
-
-* *Code related significant issues:* My issues that contribute to the code base
-demonstrated during the demo:
-  1. [Backend: Implementing Unit Tests for Login Endpoint ](https://github.com/bounswe/bounswe2022group2/issues/421)
-  2. [Backend: Writing Tests for Verify Email Endpoint](https://github.com/bounswe/bounswe2022group2/issues/418)
-  3. [Backend: Implementation of Login API ](https://github.com/bounswe/bounswe2022group2/issues/380)
-  4. [Backend: Email Verification API](https://github.com/bounswe/bounswe2022group2/issues/364)
-* *Management related significant issues:* My issues that contribute to the
-management of our software project:
-  1. [Research & Report for Backend Technologies (Backend Team) ](https://github.com/bounswe/bounswe2022group2/issues/321)
-  2. [Revising the Requirements : User - User Interaction](https://github.com/bounswe/bounswe2022group2/issues/334)
-  3. [Revising the Requirements : Glossary](https://github.com/bounswe/bounswe2022group2/issues/335)
-  4. [Revising the Diagrams based on User - User Interaction ](https://github.com/bounswe/bounswe2022group2/issues/336)
-  5. [Reviewing the Revising the Requirements: Achievements and Badges ](https://github.com/bounswe/bounswe2022group2/issues/333)
-  6. [Reviewing the Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
-  7. [Reviewing the Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
-  8. [Reviewing the Dockerization of the API](https://github.com/bounswe/bounswe2022group2/issues/355)
-
-### *Pull requests:*
-
-1. Backend: Implementing Unit Tests for Login endpoint  [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
-2. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/420)
-3. 380 implementation of login api [#380](https://github.com/bounswe/bounswe2022group2/pull/380)
-4. Verify email endpoint [#374](https://github.com/bounswe/bounswe2022group2/pull/374)
-
-### *Additional information:*  
-I have attended all team meetings on backend & overall. Some took part face-to-face and some were on Discord.
 
 ## Milestone Group Review
