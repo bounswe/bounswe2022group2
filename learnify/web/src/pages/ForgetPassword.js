@@ -4,19 +4,20 @@ import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
 
-function EmailVerificationPage() {
+function ForgetPassword() {
     
-    const [verificationCode, setVerificationCode] = useState(null);
+    const [email, setEmail] = useState(null);
+
 
     const handleInputChange = (e) => {
         const {id , value} = e.target;
-        if(id === "verificationCode"){
-            setVerificationCode(value);
+        if(id === "email"){
+            setEmail(value);
         }
     }
 
     const handleSubmit  = () => {
-        console.log(verificationCode);
+        console.log(email);
     }
 
     return(
@@ -44,18 +45,21 @@ function EmailVerificationPage() {
                 </div>
                 <div className="form">
                     <div className="form-body">
-                        <div className="verificationCode">
-                            <label className="form__label" for="verificationCode">VERIFICATION CODE </label>
-                            <div className='space-3'></div>
+                        <div className="email">
+                            <label className="form__label" for="email"> RESET PASSWORD  </label>
+                            <p className="text-body">
+                                Enter your email address and we'll send you a code to reset your password.
+                            </p>
+
                             <div>
-                                <input className="form__input" type="text" value={verificationCode} onChange = {(e) => handleInputChange(e)} id="verificationCode" placeholder="Verification Code"/>
+                                <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
                             </div>
                         </div>
                     </div>
                     <div class="signup-button">
-                        <NavLink to="/home-page">
-                            <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Verify</button>
-                        </NavLink>
+                    <NavLink to="/verify-email">
+                        <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Send Code</button>
+                    </NavLink>
                     </div>
                 </div>
             </div>
@@ -63,4 +67,4 @@ function EmailVerificationPage() {
     )       
 }
 
-export default EmailVerificationPage;
+export default ForgetPassword;
