@@ -74,10 +74,11 @@ class VerificationCodeTimer extends StatefulWidget {
 class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
   int _remainingTime = 180;
   bool _shouldReset = false;
+  final Duration _duration = const Duration(seconds: 1);
+  late Timer _timer;
 
   void startTimer() {
-    const Duration duration = Duration(seconds: 1);
-    final Timer timer = Timer.periodic(duration, (Timer timer) {
+    _timer = Timer.periodic(_duration, (Timer timer) {
       if (mounted) {
         if (_remainingTime == 0) {
           setState(() {
@@ -145,6 +146,12 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
   void initState() {
     startTimer();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   Widget get _verifyButton =>
