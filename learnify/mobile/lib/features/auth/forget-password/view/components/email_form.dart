@@ -16,7 +16,6 @@ class _EmailForm extends StatelessWidget {
           labelText: TextKeys.emailLabel,
           prefixIcon: Icons.email_outlined,
           validator: Validators.email,
-          textInputAction: TextInputAction.next,
           autofillHints: const <String>[AutofillHints.email],
           textInputType: TextInputType.emailAddress,
         ));
