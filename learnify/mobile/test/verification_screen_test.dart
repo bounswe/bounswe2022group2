@@ -10,7 +10,7 @@ import 'test_helpers.dart';
 void main() {
   testWidgets("Test verification screen", (WidgetTester tester) async {
     final VerificationScreen verificationScreen =
-        VerificationScreen(email: "example@gmail.com");
+        VerificationScreen(email: "aizheng@gmail.com");
     await tester.pumpWidget(TestHelpers.appWidget(verificationScreen));
 
     final Finder buttonFinder = find.byType(ActionButton);
