@@ -72,8 +72,7 @@ class VerificationCodeTimer extends StatefulWidget {
 }
 
 class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
-  int _remainingTime = 180;
-  bool _shouldReset = false;
+  int _remainingTime = 15;
   final Duration _duration = const Duration(seconds: 1);
   late Timer _timer;
 
@@ -83,11 +82,6 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
         if (_remainingTime == 0) {
           setState(() {
             timer.cancel();
-          });
-        } else if (_shouldReset) {
-          setState(() {
-            _remainingTime = 180;
-            _shouldReset = false;
           });
         } else {
           setState(() {
@@ -100,16 +94,11 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
 
   void resetTimer() {
     if (mounted) {
-      if (_remainingTime > 0) {
-        setState(() {
-          _shouldReset = true;
-        });
-      } else {
-        setState(() {
-          _remainingTime = 180;
-          startTimer();
-        });
-      }
+      setState(() {
+        _timer.cancel();
+        _remainingTime = 15;
+        startTimer();
+      });
     }
   }
 
