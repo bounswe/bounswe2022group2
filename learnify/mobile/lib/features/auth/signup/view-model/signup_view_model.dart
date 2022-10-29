@@ -90,7 +90,7 @@ class SignupViewModel extends BaseViewModel {
       await localManager.setString(StorageKeys.email, _emailController.text);
       await localManager.setString(
           StorageKeys.username, _usernameController.text);
-      await navigationManager.navigateToPageClear(
+      await navigationManager.navigateToPage(
           path: NavigationConstants.verify,
           data: <String, dynamic>{'email': _emailController.text});
     }
