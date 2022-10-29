@@ -20,14 +20,12 @@ class NavigationRoute {
       case NavigationConstants.forgetpass:
         return normalNavigate(const ForgetPasswordScreen());
       case NavigationConstants.verify:
-        return normalNavigate(VerificationScreen(
-          email: arguments['email'],
-        ));
+        return normalNavigate(VerificationScreen(email: arguments['email']));
       case NavigationConstants.login:
         return normalNavigate(
             const Scaffold(body: Center(child: Text('LOGIN'))));
       case NavigationConstants.home:
-        return normalNavigate(HomeWrapper(initialIndex: 0));
+        return normalNavigate(HomeWrapper());
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1));
       case NavigationConstants.courses:
