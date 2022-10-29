@@ -8,13 +8,14 @@ export default async (req, res) => {
   const { error } = validateSignup(req.body);
   if (error) {
     console.log(error);
-    return res.status(400).json({ "resultMessage": error.details[0].message });
+    return res.status(400).json({ "resultMessage": "Please check your inputs."});
   }
   
   const exists_email = await User.exists({ email: req.body.email })
     .catch((err) => {
       console.log("Could not fetch users from mongoDB")
-      return res.status(500).json({ "resultMessage": err.message });
+      console.log(err.message);
+      return res.status(500).json({ "resultMessage": "Something is wrong." });
     });
   
   if (exists_email) {
@@ -24,7 +25,8 @@ export default async (req, res) => {
   const exists_username = await User.exists({ username: req.body.username })
   .catch((err) => {
     console.log("Could not fetch users from mongoDB")
-    return res.status(500).json({ "resultMessage": err.message });
+    console.log(err.message)
+    return res.status(500).json({ "resultMessage": "Something is wrong" });
   });
 
   if (exists_username) {
@@ -44,7 +46,8 @@ export default async (req, res) => {
     await send_verification_email(user);
   }catch(err){
     console.log("Could not send verification email.")
-    return res.status(500).json({ "resultMessage": err.message });
+    console.log(err.message)
+    return res.status(500).json({ "resultMessage":  "Could not send verification email."});
   }
   return res.status(200).json({
     resultMessage: "User is successfully signed up."

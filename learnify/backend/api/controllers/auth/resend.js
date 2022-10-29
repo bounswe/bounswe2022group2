@@ -7,14 +7,15 @@ export default async (req, res) => {
 
     let user = await User.findOne({ email: email })
         .catch((err) => {
-            return res.status(500).json({ "resultMessage": err.message });
+            console.log(err.message);
+            return res.status(500).json({ "resultMessage": "Something is wrong." });
         });
 
     try{
         await send_verification_email(user);
     }catch(err){
-        console.log("Could not send verification email.")
-        return res.status(500).json({ "resultMessage": err.message });
+        console.log(err.message);
+        return res.status(500).json({ "resultMessage": "Could not send verification email." });
     }
     return res.status(200).json({
         resultMessage: "Verification code is succesfully resended."

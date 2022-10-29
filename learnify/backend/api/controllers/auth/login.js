@@ -5,14 +5,17 @@ import { User } from '../../../models/index.js';
 
 export default async (req,res) => {
     const { error } = validateLogin(req.body);
-    if (error) 
-        return res.status(400).json({ "resultMessage": error.details[0].message });
+    if (error) {
+        console.log(error.details[0].message);
+        return res.status(400).json({ "resultMessage": "Please check your inputs." });
+    }
 
     const email = req.body.email;
 
     let emailCheck = await User.exists({ email: email})
         .catch((err) => {
-        return res.status(500).json({ "resultMessage": err.message });
+        console.log(err.message);
+        return res.status(500).json({ "resultMessage":  "Something is wrong."});
     });
 
     if (!emailCheck) 
@@ -20,7 +23,8 @@ export default async (req,res) => {
 
     let user = await User.findOne({ email: email }).select('+password')
         .catch((err) => {
-        return res.status(500).json({ "resultMessage": err.message });
+        console.log(err.message);
+        return res.status(500).json({ "resultMessage": "Something is wrong." });
     });
 
     
