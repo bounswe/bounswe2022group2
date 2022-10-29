@@ -39,10 +39,6 @@ export default async (req, res) => {
     password: hashed,
     username: req.body.username,
   });
-  user = await user.save().catch((err) =>{
-    console.log("Could not save user to DB")
-    return res.status(500).json({ "resultMessage": err.message });
-  });
 
   try{
     await send_verification_email(user);
