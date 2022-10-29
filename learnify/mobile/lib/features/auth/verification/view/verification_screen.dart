@@ -8,11 +8,9 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/selector_helper.dart';
-import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../product/constants/icon_keys.dart';
-import '../../../../product/constants/navigation_constants.dart';
 import '../../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/verification_view_model.dart';
@@ -59,15 +57,10 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
       child: Text(key, style: context.titleSmall));
 
   static Widget _backToEnterEmail(BuildContext context) => BaseText(
-        TextKeys.backToPrevious,
+        TextKeys.backToPreviousPage,
         style: context.bodySmall,
-        replaceValues: <ReplaceValue>[
-          ReplaceValue(
-            TextKeys.backToPreviousPage,
-            onClick: () async => Navigator.pop(context),
-            color: context.primary,
-          )
-        ],
+        onClick: () async => Navigator.pop(context),
+        color: context.primary,
       );
 }
 
@@ -84,7 +77,7 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
 
   void startTimer() {
     const Duration duration = Duration(seconds: 1);
-    Timer _timer = Timer.periodic(duration, (timer) {
+    final Timer timer = Timer.periodic(duration, (Timer timer) {
       if (mounted) {
         if (_remainingTime == 0) {
           setState(() {
