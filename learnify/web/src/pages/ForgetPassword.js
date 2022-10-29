@@ -47,11 +47,10 @@ function ForgetPassword() {
                     <div className="form-body">
                         <div className="email">
                             <label className="form__label" for="email"> RESET PASSWORD  </label>
-                            <div/>
-                            <label className="text-body">
+                            <p className="text-body">
                                 Enter your email address and we'll send you a code to reset your password.
-                            </label>
-                            <div className='space-3'></div>
+                            </p>
+
                             <div>
                                 <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
                             </div>
