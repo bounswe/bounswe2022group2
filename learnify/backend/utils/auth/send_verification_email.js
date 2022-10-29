@@ -30,7 +30,7 @@ export default async (user) => {
           }
         });
       }
-      user.verification_token = token;
+      user.verification_code = token;
       user = await user.save().catch((err) =>{
         console.log("Could not save user to DB")
         return res.status(500).json({ "resultMessage": err.message });
