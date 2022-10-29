@@ -22,6 +22,8 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
       : super(
             builder: (BuildContext context) => _builder(context, email),
             scrollable: true,
+            voidInit: (BuildContext context) =>
+                context.read<VerificationViewModel>().email = email,
             key: key);
   static Widget _builder(BuildContext context, String email) => Column(
         mainAxisAlignment: MainAxisAlignment.center,

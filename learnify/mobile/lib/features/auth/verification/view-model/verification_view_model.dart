@@ -2,7 +2,17 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:learnify/core/base/view-model/base_view_model.dart';
 
+import '../../../../core/managers/network/models/l_response_model.dart';
+import '../../../../product/constants/navigation_constants.dart';
+import '../../service/auth_service.dart';
+import '../../service/l_auth_service.dart';
+import '../model/verify_email_request_model.dart';
+import '../model/verify_email_response_model.dart';
+
 class VerificationViewModel extends BaseViewModel {
+  late final IAuthService _authService;
+  late String email;
+
   late TextEditingController _verificationCodeFirstDigitController;
   late TextEditingController _verificationCodeSecondDigitController;
   late TextEditingController _verificationCodeThirdDigitController;
@@ -21,7 +31,9 @@ class VerificationViewModel extends BaseViewModel {
   bool get canVerify => _canVerify;
 
   @override
-  void initViewModel() {}
+  void initViewModel() {
+    _authService = AuthService.instance;
+  }
 
   @override
   void initView() {
@@ -65,6 +77,24 @@ class VerificationViewModel extends BaseViewModel {
   }
 
   Future<String?> _verificationRequest() async {
+    final String verificationCode = _verificationCodeFirstDigitController.text +
+        _verificationCodeSecondDigitController.text +
+        _verificationCodeThirdDigitController.text +
+        _verificationCodeFourthDigitController.text;
+
+    final VerifyEmailRequest requestModel =
+        VerifyEmailRequest(email: email, code: verificationCode);
+
+    final IResponseModel<VerifyEmailResponse> resp =
+        await _authService.verifyEmail(requestModel);
+
+    if (resp.hasError) return resp.error?.errorMessage;
+    await navigationManager.navigateToPage(
+        path: NavigationConstants.home,
+        data: <String, dynamic>{
+          "token": resp.data?.token,
+          "user": resp.data?.user
+        });
     return null;
   }
 
