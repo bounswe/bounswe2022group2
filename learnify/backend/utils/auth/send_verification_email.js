@@ -17,7 +17,7 @@ export default async (user) => {
       var mailOptions = {
         from: mail,
         to: user.email,
-        subject: 'Learnify 3rd Party Auth',
+        subject: 'Learnify Email Verification',
         text: "Your verification code: " + token
       };
       if(!(env === "test")){
