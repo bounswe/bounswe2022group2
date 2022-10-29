@@ -25,28 +25,27 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
             builder: (BuildContext context) => _builder(context, email),
             scrollable: true,
             key: key);
-  static Widget _builder(BuildContext context, String email) {
-    print(email);
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Image.asset(IconKeys.logo, width: context.width * 55),
-        context.sizedH(8),
-        _title(context, TextKeys.verifyYourEmail),
-        context.sizedH(1),
-        _description(context, TextKeys.verificationDescription),
-        context.sizedH(2),
-        const _VerificationCodeField(),
-        context.sizedH(2),
-        const VerificationCodeTimer(),
-        context.sizedH(2),
-        _verifyButton,
-        context.sizedH(2),
-        _backToEnterEmail(context)
-        //_backToLogin(context),
-      ],
-    );
-  }
+  static Widget _builder(BuildContext context, String email) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Image.asset(IconKeys.logo, width: context.width * 55),
+          context.sizedH(8),
+          _title(context, TextKeys.verifyYourEmail),
+          context.sizedH(1),
+          _description(context, TextKeys.verificationDescription),
+          context.sizedH(2),
+          _userEmailAddress(context, email),
+          context.sizedH(2),
+          const _VerificationCodeField(),
+          context.sizedH(2),
+          const VerificationCodeTimer(),
+          context.sizedH(2),
+          _verifyButton,
+          context.sizedH(2),
+          _backToEnterEmail(context)
+          //_backToLogin(context),
+        ],
+      );
 
   static Widget _title(BuildContext context, String key, {Color? color}) =>
       BaseText(key, style: context.displayLarge, color: color);
@@ -56,6 +55,10 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
       Padding(
           padding: EdgeInsets.symmetric(horizontal: context.width * 10),
           child: BaseText(key, style: context.displayMedium, color: color));
+
+  static Widget _userEmailAddress(BuildContext context, String key) => Padding(
+      padding: EdgeInsets.symmetric(horizontal: context.width * 10),
+      child: Text(key, style: context.titleSmall));
 
   static Widget get _verifyButton =>
       SelectorHelper<bool, VerificationViewModel>().builder(
