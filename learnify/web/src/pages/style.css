@@ -84,6 +84,7 @@ body{
     text-align: left;
 }
 
+
 .login-button{
     padding-left: 40px;
     text-align: left;
@@ -152,6 +153,10 @@ body{
 
 .space-8{
     padding: 8px;
+}
+
+.space-20{
+    padding: 20px
 }
 
 .space-50{
@@ -223,20 +228,22 @@ body{
 .welcome-navigation{
     display: flex;
     justify-content: flex-start;
-    margin-left: 13%;
+    margin-left: 7%;
     margin-top: 10%;
 }
 
 .welcome-navigation-item{
     background-color:#FFF7E9;
     color:#1746A2;
-    padding: 10px 20px;
+    padding-top: 6px;
     cursor: pointer;
     border: none;
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     border-radius: 100px;
-    width: 60px;
+    width: 100px;
+    height: 40px;
     font-family: 'Open Sans' sans-serif;
     font-weight: 600;
     font-size: 16px;
@@ -244,4 +251,12 @@ body{
 
 .welcome-navigation-item-active{
     background-color: #FF731D;
+}
+
+
+*:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
+    pointer-events: none;
 }
