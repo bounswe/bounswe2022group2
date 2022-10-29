@@ -35,5 +35,12 @@
   "fri": "Fri",
   "sat": "Sat",
   "sun": "Sun",
-  "update": "Update"
+  "update": "Update",
+  "verify_your_email": "Verify your email",
+  "verification_description": "Please enter the verification code you received",
+  "verify": "Verify",
+  "code_not_received": "Didn't get a verification code? {0}",
+  "request_another_code": "Request another code",
+  "back_to_previous_page": "Back to previous page",
+  "remaining_time": "Remaining Time:"
 }
