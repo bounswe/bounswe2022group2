@@ -40,8 +40,6 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
           context.sizedH(2),
           const VerificationCodeTimer(),
           context.sizedH(2),
-          _verifyButton,
-          context.sizedH(2),
           _backToEnterEmail(context)
           //_backToLogin(context),
         ],
@@ -59,20 +57,6 @@ class VerificationScreen extends BaseView<VerificationViewModel> {
   static Widget _userEmailAddress(BuildContext context, String key) => Padding(
       padding: EdgeInsets.symmetric(horizontal: context.width * 10),
       child: Text(key, style: context.titleSmall));
-
-  static Widget get _verifyButton =>
-      SelectorHelper<bool, VerificationViewModel>().builder(
-          (_, VerificationViewModel model) => model.canVerify,
-          (BuildContext context, bool canVerify, _) => ActionButton(
-                text: TextKeys.verify,
-                padding: EdgeInsets.symmetric(
-                    horizontal: context.responsiveSize * 2.8,
-                    vertical: context.responsiveSize * 1.4),
-                capitalizeAll: true,
-                isActive: canVerify,
-                onPressedError:
-                    context.read<VerificationViewModel>().verification,
-              ));
 
   static Widget _backToEnterEmail(BuildContext context) => BaseText(
         TextKeys.backToPrevious,
@@ -159,7 +143,9 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
             context.sizedW(2),
             Text('$_remainingTime seconds')
           ],
-        )
+        ),
+        context.sizedH(2),
+        _verifyButton
       ]);
 
   @override
@@ -167,4 +153,18 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
     startTimer();
     super.initState();
   }
+
+  Widget get _verifyButton =>
+      SelectorHelper<bool, VerificationViewModel>().builder(
+          (_, VerificationViewModel model) => model.canVerify,
+          (BuildContext context, bool canVerify, _) => ActionButton(
+                text: TextKeys.verify,
+                padding: EdgeInsets.symmetric(
+                    horizontal: context.responsiveSize * 2.8,
+                    vertical: context.responsiveSize * 1.4),
+                capitalizeAll: true,
+                isActive: canVerify && _remainingTime > 0,
+                onPressedError:
+                    context.read<VerificationViewModel>().verification,
+              ));
 }
