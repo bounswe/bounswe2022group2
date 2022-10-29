@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:learnify/core/base/view-model/base_view_model.dart';
 
 import '../../../../core/managers/network/models/l_response_model.dart';
+import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../forget-password/model/send_verification_request_model.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
 import '../model/verify_email_request_model.dart';
@@ -95,6 +97,23 @@ class VerificationViewModel extends BaseViewModel {
           "token": resp.data?.token,
           "user": resp.data?.user
         });
+    return null;
+  }
+
+  Future<String?> resendCode() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_resendCodeRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _resendCodeRequest() async {
+    final SendVerificationRequest requestModel =
+        SendVerificationRequest(email: email);
+
+    final IResponseModel<MessageResponse> resp =
+        await _authService.sendVerification(requestModel);
+    if (resp.hasError) return resp.error?.errorMessage;
     return null;
   }
 

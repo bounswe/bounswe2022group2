@@ -112,7 +112,10 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
           replaceValues: <ReplaceValue>[
             ReplaceValue(
               TextKeys.requestAnotherCode,
-              onClick: () async => {resetTimer()},
+              onClick: () async {
+                await context.read<VerificationViewModel>().resendCode();
+                resetTimer();
+              },
               color: context.primary,
             )
           ],
