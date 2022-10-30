@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { NavLink} from 'react-router-dom';
+import { NavLink, useNavigate} from 'react-router-dom';
+import * as Yup from 'yup'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
@@ -8,16 +9,63 @@ function ForgetPassword() {
     
     const [email, setEmail] = useState(null);
 
+    const [message, setMessage] = useState("");
+    const navigate = useNavigate();
+
+    const validation = Yup.object().shape({
+        email: Yup.string().email('Invalid email format').required('Required'),
+     });
+
+    const forgetPassword = async (email) => {
+        await fetch("http://3.75.151.200:3000/auth/resend", {
+            method: "POST",
+            body: JSON.stringify({
+                email: email,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    navigate('/verify-email', {replace: true});
+                    console.log("Password reset link has been sent to your email address!");
+                } else {
+                    response.json().then( json => {
+                        setMessage(json.resultMessage)
+                    });
+                    console.log("There is no user with this email address!");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
 
     const handleInputChange = (e) => {
         const {id , value} = e.target;
         if(id === "email"){
-            setEmail(value);
+                setEmail(value);
+
         }
+        
     }
 
+    
     const handleSubmit  = () => {
-        console.log(email);
+        if(email){
+            validation
+            .validate({email: email})   // <--- pass the value to validate
+            .then(() => {
+                // if valid, set the value
+            forgetPassword(email);
+            })
+            .catch((err) => {
+                // if invalid, set the error message
+                setMessage(err.message);
+            });
+        }
     }
 
     return(
@@ -47,19 +95,25 @@ function ForgetPassword() {
                     <div className="form-body">
                         <div className="email">
                             <label className="form__label" for="email"> RESET PASSWORD  </label>
-                            <p className="text-body">
+    
+                           <div className='form-note'>
                                 Enter your email address and we'll send you a code to reset your password.
-                            </p>
-
+                            </div>
+                            
                             <div>
                                 <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
                             </div>
                         </div>
                     </div>
                     <div class="signup-button">
-                    <NavLink to="/verify-email">
-                        <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Send Code</button>
-                    </NavLink>
+                        <button
+                            disabled={!email}
+                            onClick={()=>handleSubmit()} 
+                            type="submit" 
+                            class="btn-orange">
+                                Send Code
+                        </button>
+                        <div className="submit-button-error">{message ? <p>{message}</p> : null}</div>
                     </div>
                 </div>
             </div>
