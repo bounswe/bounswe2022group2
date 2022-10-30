@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { NavLink, useNavigate} from 'react-router-dom';
+import * as Yup from 'yup'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
@@ -10,6 +11,10 @@ function ForgetPassword() {
 
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+
+    const validation = Yup.object().shape({
+        email: Yup.string().email('Invalid email format').required('Required'),
+     });
 
     const forgetPassword = async (email) => {
         await fetch("http://3.75.151.200:3000/auth/resend", {
@@ -41,14 +46,27 @@ function ForgetPassword() {
     const handleInputChange = (e) => {
         const {id , value} = e.target;
         if(id === "email"){
-            setEmail(value);
+            // check validity of email
+            validation
+            .validate({email: value})   // <--- pass the value to validate
+            .then(() => {
+                // if valid, set the value
+                setEmail(value);
+            })  
+            .catch((err) => {
+                // if invalid, set the error message
+                setMessage(err.message);
+            });
         }
+        
     }
 
     
     const handleSubmit  = () => {
-        forgetPassword(email);
-        console.log(email);
+        if(email){
+            forgetPassword(email);
+            console.log(email);
+        }
     }
 
     return(
@@ -89,7 +107,8 @@ function ForgetPassword() {
                         </div>
                     </div>
                     <div class="signup-button">
-                        <button 
+                        <button
+                            disabled={!email}
                             onClick={()=>handleSubmit()} 
                             type="submit" 
                             class="btn-orange">
