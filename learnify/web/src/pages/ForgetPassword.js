@@ -40,7 +40,7 @@ function ForgetPassword() {
                     </NavLink>
                     <div className='space-8'/>
                     <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
-                        Sign In
+                        Login
                     </NavLink>
                 </div>
                 <div className="form">
