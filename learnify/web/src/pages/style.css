@@ -253,6 +253,13 @@ body{
     background-color: #FF731D;
 }
 
+.submit-button-error{
+    width:100%;
+    margin-top:.25rem;
+    font-size:.875em;
+    color:#dc3545;
+    padding-left: 10px;
+}
 
 *:disabled {
     background-color: dimgrey;
