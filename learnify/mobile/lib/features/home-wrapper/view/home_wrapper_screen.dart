@@ -8,6 +8,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/managers/network/custom_interceptors.dart';
 import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
@@ -66,6 +67,20 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
               icon: _appBarIcon(index),
               padding: EdgeInsets.all(context.responsiveSize * .9),
               color: context.lightActiveColor,
+            ),
+          ),
+          SelectorHelper<int, HomeWrapperViewModel>().builder(
+            (_, HomeWrapperViewModel model) => model.bottomNavBarIndex,
+            (BuildContext context, int index, __) => Visibility(
+              visible: index == 3,
+              child: Padding(
+                padding: EdgeInsets.only(left: context.width * 1.8),
+                child: BaseIconButton(
+                  onPressed: CustomInterceptors.navigateToLogin,
+                  icon: Icons.logout_outlined,
+                  color: context.lightActiveColor,
+                ),
+              ),
             ),
           ),
         ],

@@ -1,13 +1,15 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
-import 'package:learnify/core/base/view-model/base_view_model.dart';
 
+import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../../../product/constants/storage_keys.dart';
 import '../../forget-password/model/send_verification_request_model.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
+import '../model/user_model.dart';
 import '../model/verify_email_request_model.dart';
 import '../model/verify_email_response_model.dart';
 
@@ -83,20 +85,17 @@ class VerificationViewModel extends BaseViewModel {
         _verificationCodeSecondDigitController.text +
         _verificationCodeThirdDigitController.text +
         _verificationCodeFourthDigitController.text;
-
     final VerifyEmailRequest requestModel =
         VerifyEmailRequest(email: email, code: verificationCode);
-
     final IResponseModel<VerifyEmailResponse> resp =
         await _authService.verifyEmail(requestModel);
-
     if (resp.hasError) return resp.error?.errorMessage;
+    final User? user = resp.data?.user;
+    if (user == null) return "User couldn't fetch";
+    await localManager.setModel(user, StorageKeys.user);
     await navigationManager.navigateToPage(
         path: NavigationConstants.home,
-        data: <String, dynamic>{
-          "token": resp.data?.token,
-          "user": resp.data?.user
-        });
+        data: <String, dynamic>{'user': user.toJson});
     return null;
   }
 
