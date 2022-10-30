@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from "react-hook-form";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import * as Yup from 'yup'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
