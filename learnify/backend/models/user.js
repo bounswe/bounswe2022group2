@@ -30,7 +30,6 @@ const userSchema = new Schema({
         ret.id = ret._id;
         delete ret._id;
         delete ret.password;
-        delete ret.is_verified;
         delete ret.verification_code;
         delete ret.updated_at;
         return ret;
