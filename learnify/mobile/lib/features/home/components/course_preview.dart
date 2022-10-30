@@ -50,18 +50,15 @@ class _CoursePreview extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Expanded(
-            flex: 4,
-            child: BaseText(textKey,
+            flex: 10,
+            child: Text(textKey,
                 textAlign: TextAlign.left,
-                maxLength: 15,
-                useCorrectEllipsis: true,
-                fontWeight: FontWeight.bold,
-                translated: false),
+                style: const TextStyle(fontWeight: FontWeight.bold),
+                overflow: TextOverflow.ellipsis),
           ),
           const Spacer(),
           const Icon(Icons.people_alt_outlined, size: 15),
-          BaseText(participantNumber.toString(),
-              textAlign: TextAlign.right, translated: false)
+          Text(participantNumber.toString(), textAlign: TextAlign.right)
         ],
       ));
 }
