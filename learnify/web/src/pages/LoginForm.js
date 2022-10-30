@@ -45,7 +45,7 @@ function LoginForm() {
                 console.log(response.status);
                 console.log(response.statusText);
                 if (response.ok) {
-                    navigate('/home-page');
+                    navigate('/home-page',{replace: true});
                     return response.json();
                 } else {
                     response.json().then( json => {
@@ -119,6 +119,7 @@ function LoginForm() {
                 
                     <div class="login-button">
                         <button onClick={()=>handleSubmit(onSubmit)} type="submit" class="btn-orange">Login</button>
+
                     </div>
                     <div class="login-button">
                         <NavLink to="/forget-password" >
@@ -126,7 +127,7 @@ function LoginForm() {
                         </NavLink>
                     </div>
                     </div>
-                
+                    <div className="login-button-error">{message ? <p>{message}</p> : null}</div>
                 </form>
             </div>
         </div>
