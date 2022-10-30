@@ -34,6 +34,12 @@ export default async (req,res) => {
 
     if (!passwordCheck) 
         return res.status(409).json({"resultMessage": "Wrong password."});
+    if(!user.is_verified){
+        return res.status(401).json({
+            resultMessage: "User is not verified.",
+            user: user.toJSON(),
+        });
+    }
     console.log(process.env.JWT_KEY)
     const token = jwt.sign(
         { user_id: user._id, email },
@@ -43,6 +49,7 @@ export default async (req,res) => {
         }
         );
 
+    
     return res.status(200).json({
         resultMessage: "Successfully logged in.",
         user: user.toJSON(),
