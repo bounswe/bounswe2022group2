@@ -3,9 +3,12 @@ import 'dart:async';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
+import '/../../product/constants/storage_keys.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
+import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../forget-password/model/send_verification_request_model.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
 import '../model/login_request_model.dart';
@@ -74,8 +77,20 @@ class LoginViewModel extends BaseViewModel {
       final IResponseModel<LoginResponse> res =
           await _authService.login(requestModel);
       if (res.hasError) return res.error?.errorMessage;
-      await navigationManager.navigateToPageClear(
-          path: NavigationConstants.home);
+      await localManager.setString(StorageKeys.email, _emailController.text);
+      if (res.data?.user?.isVerified == false) {
+        final SendVerificationRequest requestModel =
+            SendVerificationRequest(email: _emailController.text);
+        final IResponseModel<MessageResponse> resp =
+            await _authService.sendVerification(requestModel);
+        if (resp.hasError) return resp.error?.errorMessage;
+        await navigationManager.navigateToPage(
+            path: NavigationConstants.verify,
+            data: <String, dynamic>{'email': _emailController.text});
+      } else {
+        await navigationManager.navigateToPageClear(
+            path: NavigationConstants.home);
+      }
     }
     return null;
   }
