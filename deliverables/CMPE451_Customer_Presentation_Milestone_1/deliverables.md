@@ -128,6 +128,7 @@ I actively participated in and give suggestions about the endpoints we should ha
 ### *Member:*  
 
 Name: Batuhan Çelik 
+
 Group: Group2 - Backend Team
 
 ### *Responsibilities:*
@@ -146,7 +147,9 @@ Group: Group2 - Backend Team
 
 ### *Main contributions:*
 
-I took an active part in team management: came up with the project plan, talked with the customer personally to create a feasible plan, designed API definition and project architecture with Bahrican while keeping needs of front and backend in mind. I created the server implementation structure editing the practice-app's structure. I set up the connecting to database process such that it recognizes when it should use docker network, connect to and actual server and create a in-memory volatile database for testing purposes. After creating the development environment for backend, I implemented the signup endpoint with its tests. After it is implemented I used it as a base case to implement the docker file for the backend and optimized it for fast building. Then created a docker compose file to connect my container to a MongoDB container using docker network. After the dockerization of backend is complete, working with Altay, I took part in dockerization og the frontend. Then, set up the EC2 instance with Ellastic IP and required security settings. Since we do not have github actions, I became the github actions myself via being online and taking action whenever a hardfix is needed. After those ended, I implemented a migration and mock courses endpoint to provide dataflow from database to mocking pages.  
+I took an active part in team management: came up with the project plan, talked with the customer personally to create a feasible plan, designed API definition and project architecture with Bahrican while keeping needs of front and backend in mind. I created the server implementation structure editing the practice-app's structure. I set up the connecting to database process such that it recognizes when it should use docker network, connect to and actual server and create a in-memory volatile database for testing purposes. After creating the development environment for backend, I implemented the signup endpoint with its tests. After it is implemented I used it as a base case to implement the docker file for the backend and optimized it for fast building. Then created a docker compose file to connect my container to a MongoDB container using docker network. After the dockerization of backend is complete, working with Altay, I took part in dockerization og the frontend. Then, set up the EC2 instance with Ellastic IP and required security settings. Since we do not have github actions, I became the github actions myself via being online and taking action whenever a hardfix is needed. After those ended, I implemented a migration and mock courses endpoint to provide dataflow from database to mocking pages.
+
+On top of that, I was active in all of the meetings and PSes.
 
 * *Code related significant issues, hotfixes and PRs:* My contribution to the code base
 demonstrated during the demo:
