@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
-import '../../../../core/managers/network/models/message_response.dart';
-import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
 import '../model/login_request_model.dart';
+import '../model/login_response_model.dart';
 
 /// View model to manage the data on login screen.
 class LoginViewModel extends BaseViewModel {
@@ -25,9 +24,6 @@ class LoginViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
-  late GlobalKey<ActionButtonState> _actionButtonKey;
-  GlobalKey<ActionButtonState> get actionButtonKey => _actionButtonKey;
-
   bool _canLogin = false;
   bool get canLogin => _canLogin;
 
@@ -41,7 +37,6 @@ class LoginViewModel extends BaseViewModel {
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _formKey = GlobalKey<FormState>();
-    _actionButtonKey = GlobalKey<ActionButtonState>();
     _emailController.addListener(_controllerListener);
     _passwordController.addListener(_controllerListener);
     _setDefault();
@@ -76,7 +71,7 @@ class LoginViewModel extends BaseViewModel {
     if (isValid) {
       final LoginRequest requestModel = LoginRequest(
           email: _emailController.text, password: _passwordController.text);
-      final IResponseModel<MessageResponse> res =
+      final IResponseModel<LoginResponse> res =
           await _authService.login(requestModel);
       if (res.hasError) return res.error?.errorMessage;
       await navigationManager.navigateToPageClear(
@@ -96,9 +91,6 @@ class LoginViewModel extends BaseViewModel {
     await navigationManager.navigateToPage(path: NavigationConstants.signup);
     return null;
   }
-
-  /// Callback for have account text press.
-  void onPasswordSubmit(_) => _actionButtonKey.currentState?.localOnPressed();
 
   void _setDefault() {
     _canLogin = false;

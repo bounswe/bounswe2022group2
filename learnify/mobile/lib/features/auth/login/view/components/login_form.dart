@@ -41,6 +41,5 @@ class _LoginForm extends StatelessWidget {
         prefixIcon: Icons.password_outlined,
         textInputAction: TextInputAction.next,
         validator: Validators.password,
-        onFieldSubmitted: context.read<LoginViewModel>().onPasswordSubmit,
       );
 }

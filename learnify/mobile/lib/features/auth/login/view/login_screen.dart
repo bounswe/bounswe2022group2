@@ -49,7 +49,6 @@ class LoginScreen extends BaseView<LoginViewModel> {
         (BuildContext context, bool canLogin, _) {
           final LoginViewModel model = context.read<LoginViewModel>();
           return ActionButton(
-            key: model.actionButtonKey,
             text: TextKeys.login,
             padding: EdgeInsets.symmetric(
                 horizontal: context.responsiveSize * 2.8,
