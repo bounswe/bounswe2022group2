@@ -37,6 +37,8 @@ class LoginScreen extends BaseView<LoginViewModel> {
           _loginButton,
           context.sizedH(1.8),
           _createNewAccount(context),
+          context.sizedH(1.8),
+          _forgetPassword(context),
         ],
       );
 
@@ -71,5 +73,13 @@ class LoginScreen extends BaseView<LoginViewModel> {
             color: context.primary,
           )
         ],
+      );
+
+  static Widget _forgetPassword(BuildContext context) => BaseText(
+        TextKeys.forgetPassword,
+        style: context.bodySmall,
+        onClick: () async => NavigationManager.instance
+            .navigateToPage(path: NavigationConstants.forgetpass),
+        color: context.primary,
       );
 }
