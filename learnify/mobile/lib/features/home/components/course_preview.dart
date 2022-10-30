@@ -43,20 +43,25 @@ class _CoursePreview extends StatelessWidget {
         ),
       );
 
-  Widget _courseDescription(BuildContext context) => Padding(
-      padding: EdgeInsets.symmetric(horizontal: context.width * 1),
+  Widget _courseDescription(BuildContext context) => Container(
+      padding: EdgeInsets.symmetric(horizontal: context.width * 3),
+      width: context.width * 40,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          BaseText(textKey,
-              textAlign: TextAlign.left,
-              fontWeight: FontWeight.bold,
-              translated: false),
-          context.sizedW(3),
+          Expanded(
+            flex: 4,
+            child: BaseText(textKey,
+                textAlign: TextAlign.left,
+                maxLength: 15,
+                useCorrectEllipsis: true,
+                fontWeight: FontWeight.bold,
+                translated: false),
+          ),
+          const Spacer(),
           const Icon(Icons.people_alt_outlined, size: 15),
           BaseText(participantNumber.toString(),
-              textAlign: TextAlign.right, translated: false),
+              textAlign: TextAlign.right, translated: false)
         ],
       ));
 }
