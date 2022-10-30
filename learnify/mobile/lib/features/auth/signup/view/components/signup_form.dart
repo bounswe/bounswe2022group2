@@ -56,6 +56,5 @@ class _SignupForm extends StatelessWidget {
         prefixIcon: Icons.password_outlined,
         textInputAction: TextInputAction.next,
         validator: Validators.password,
-        onFieldSubmitted: context.read<SignupViewModel>().onPasswordSubmit,
       );
 }

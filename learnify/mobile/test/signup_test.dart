@@ -7,14 +7,14 @@ import 'package:learnify/core/widgets/text-field/obscured_text_form_field.dart';
 import 'package:learnify/features/auth/signup/constants/widget_keys.dart';
 import 'package:learnify/features/auth/signup/view/signup_screen.dart';
 
-import 'app_pumper.dart';
+import 'test_helpers.dart';
 
 void main() {
   testWidgets(
     "Test signup when invalid email/username/password is provided.",
     (WidgetTester tester) async {
       const SignupScreen signupScreen = SignupScreen();
-      await tester.pumpWidget(appWidget(signupScreen));
+      await tester.pumpWidget(TestHelpers.appWidget(signupScreen));
 
       final Finder buttonFinder = find.byType(ActionButton);
       expect(buttonFinder, findsOneWidget);
@@ -43,15 +43,15 @@ void main() {
       final ObscuredTextFormField passwordField =
           tester.widget(passwordFinder) as ObscuredTextFormField;
 
-      emailField.controller?.text = 'example@gmail.com';
-      usernameField.controller?.text = 'example';
-      passwordField.controller.text = 'NotValidPassword';
+      emailField.controller?.text = 'hasan@gmail.com';
+      usernameField.controller?.text = 'hasan';
+      passwordField.controller.text = 'Hasan';
       await tester.pumpAndSettle();
       expect(formKey?.currentState?.validate(), false);
 
-      emailField.controller?.text = 'example@gmail.com';
-      usernameField.controller?.text = 'example';
-      passwordField.controller.text = 'Example123';
+      emailField.controller?.text = 'hasanarr@gmail.com';
+      usernameField.controller?.text = 'hasanarisan';
+      passwordField.controller.text = 'Hasan123';
       await tester.pumpAndSettle();
       expect(formKey?.currentState?.validate(), true);
       actionButton = tester.widget(buttonFinder) as ActionButton;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../features/auth/login/view/login_screen.dart';
+import '../../../features/auth/forget-password/view/forget_password_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
+import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 
@@ -15,10 +17,20 @@ class NavigationRoute {
     switch (args.name) {
       case NavigationConstants.signup:
         return normalNavigate(const SignupScreen());
+      case NavigationConstants.forgetpass:
+        return normalNavigate(const ForgetPasswordScreen());
+      case NavigationConstants.verify:
+        return normalNavigate(VerificationScreen(email: arguments['email']));
       case NavigationConstants.login:
         return normalNavigate(const LoginScreen());
       case NavigationConstants.home:
-        return normalNavigate(const HomeWrapper());
+        return normalNavigate(HomeWrapper());
+      case NavigationConstants.search:
+        return normalNavigate(HomeWrapper(initialIndex: 1));
+      case NavigationConstants.courses:
+        return normalNavigate(HomeWrapper(initialIndex: 2));
+      case NavigationConstants.profile:
+        return normalNavigate(HomeWrapper(initialIndex: 3));
       default:
         return normalNavigate(const SignupScreen());
     }

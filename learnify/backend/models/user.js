@@ -14,10 +14,13 @@ const userSchema = new Schema({
     type: String, required: true, select: false
   },
   username: {
-    type: String, required: true, select: false, unique: true
+    type: String, required: true, unique: true
   },
   is_verified: {
     type: Boolean, required: true, default: false
+  },
+  verification_code: {
+    type: String, required: false, default: false
   },
 },
   {
@@ -27,6 +30,8 @@ const userSchema = new Schema({
         ret.id = ret._id;
         delete ret._id;
         delete ret.password;
+        delete ret.verification_code;
+        delete ret.updated_at;
         return ret;
       },
       virtuals: true,

@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
-import '../../../../core/widgets/buttons/action_button.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../../../product/constants/storage_keys.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
 import '../model/signup_request_model.dart';
@@ -27,9 +27,6 @@ class SignupViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
-  late GlobalKey<ActionButtonState> _actionButtonKey;
-  GlobalKey<ActionButtonState> get actionButtonKey => _actionButtonKey;
-
   bool _acceptedAgreement = false;
   bool get acceptedAgreement => _acceptedAgreement;
 
@@ -47,7 +44,6 @@ class SignupViewModel extends BaseViewModel {
     _passwordController = TextEditingController();
     _usernameController = TextEditingController();
     _formKey = GlobalKey<FormState>();
-    _actionButtonKey = GlobalKey<ActionButtonState>();
     _emailController.addListener(_controllerListener);
     _passwordController.addListener(_controllerListener);
     _usernameController.addListener(_controllerListener);
@@ -90,8 +86,13 @@ class SignupViewModel extends BaseViewModel {
       final IResponseModel<MessageResponse> res =
           await _authService.signup(requestModel);
       if (res.hasError) return res.error?.errorMessage;
-      await navigationManager.navigateToPageClear(
-          path: NavigationConstants.home);
+      // TODO: Fix
+      await localManager.setString(StorageKeys.email, _emailController.text);
+      await localManager.setString(
+          StorageKeys.username, _usernameController.text);
+      await navigationManager.navigateToPage(
+          path: NavigationConstants.verify,
+          data: <String, dynamic>{'email': _emailController.text});
     }
     return null;
   }
@@ -106,9 +107,6 @@ class SignupViewModel extends BaseViewModel {
     await navigationManager.navigateToPage(path: NavigationConstants.login);
     return null;
   }
-
-  /// Callback for have account text press.
-  void onPasswordSubmit(_) => _actionButtonKey.currentState?.localOnPressed();
 
   void setAcceptedAgreement(bool val) {
     if (_acceptedAgreement == val) return;

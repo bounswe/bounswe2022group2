@@ -14,6 +14,7 @@ class _BottomNavigationBar extends StatelessWidget {
         HomeScreenConstants.bottomNavBarTexts.length,
         (int i) => _BottomNavItem(index: i, selectedIndex: index),
       ),
+      index: index,
       onTap: homeModel.setBottomNavIndex,
       buttonBackgroundColor: context.primary,
       backgroundColor: context.primary,
