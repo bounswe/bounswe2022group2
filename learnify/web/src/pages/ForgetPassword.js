@@ -46,17 +46,8 @@ function ForgetPassword() {
     const handleInputChange = (e) => {
         const {id , value} = e.target;
         if(id === "email"){
-            // check validity of email
-            validation
-            .validate({email: value})   // <--- pass the value to validate
-            .then(() => {
-                // if valid, set the value
                 setEmail(value);
-            })  
-            .catch((err) => {
-                // if invalid, set the error message
-                setMessage(err.message);
-            });
+
         }
         
     }
@@ -64,8 +55,16 @@ function ForgetPassword() {
     
     const handleSubmit  = () => {
         if(email){
+            validation
+            .validate({email: email})   // <--- pass the value to validate
+            .then(() => {
+                // if valid, set the value
             forgetPassword(email);
-            console.log(email);
+            })
+            .catch((err) => {
+                // if invalid, set the error message
+                setMessage(err.message);
+            });
         }
     }
 
