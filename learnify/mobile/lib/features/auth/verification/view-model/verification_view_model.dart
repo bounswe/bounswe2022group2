@@ -93,7 +93,7 @@ class VerificationViewModel extends BaseViewModel {
     final User? user = resp.data?.user;
     if (user == null) return "User couldn't fetch";
     await localManager.setModel(user, StorageKeys.user);
-    await navigationManager.navigateToPage(
+    await navigationManager.navigateToPageClear(
         path: NavigationConstants.home,
         data: <String, dynamic>{'user': user.toJson});
     return null;
