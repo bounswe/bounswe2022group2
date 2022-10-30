@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -43,10 +43,41 @@ function SignUpForm() {
 
     const navigate = useNavigate();
 
-    const onSubmit = (data, event) => {
-        console.log(data, event);
+    const [message, setMessage] = useState("");
+    
+    const registerUser = async (username, email, password) => {
+        await fetch("http://3.75.151.200:3000/auth/signup", {
+            method: "POST",
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => {
+                console.log(response.status);
+                console.log(response.statusText);
+                if (response.ok) {
+                    navigate('/verify-email', {replace: true});
+                    return response.json();
+                } else {
+                    response.json().then( json => {
+                        setMessage(json.resultMessage)
+                    });
+                    throw Error(response.statusText);
+                }
+            })
+            .catch((err) => {
+                console.log(err.message);
+            })
+    };
+
+    const onSubmit = (registerData, event) => {
         event.preventDefault();
-        navigate('/verify-email', {replace: true});
+        registerUser(registerData.username, registerData.email, registerData.password);
     }
 
     return(
@@ -149,6 +180,7 @@ function SignUpForm() {
                             class="btn-orange">
                                 Register
                         </button>
+                        <div className="submit-button-error">{message ? <p>{message}</p> : null}</div>
                     </div>
                 </form>
             </div>
