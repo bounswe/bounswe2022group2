@@ -1,26 +1,67 @@
 import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from "react-hook-form";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import * as Yup from 'yup'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
+
 function LoginForm() {
 
-    const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
+    const formSchema = Yup.object().shape({
+        email: Yup.string().email("Invalid email!")
+            .required("Email is required!"),
+        password: Yup.string()
+            .required("Password is required!")
+    })
+    const formOptions = { resolver: yupResolver(formSchema) }
 
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-    }
+    const { register, handleSubmit, formState } = useForm(
+        formOptions,
+        {defaultValues: {
+            email: "",
+            password: "",
+        }});
+    const { errors } = formState
 
-    const handleSubmit  = () => {
-        console.log("email and password was entered as");
-        console.log(email,password);
+    const navigate = useNavigate();
+
+    const [message, setMessage] = useState("");
+
+    const loginUser = async (email, password) => {
+        await fetch("http://3.75.151.200:3000/auth/login", {
+            method: "POST",
+            body: JSON.stringify({
+                email: email,
+                password: password
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => {
+                console.log(response.status);
+                console.log(response.statusText);
+                if (response.ok) {
+                    navigate('/home-page',{replace: true});
+                    return response.json();
+                } else {
+                    response.json().then( json => {
+                        setMessage(json.resultMessage)
+                    });
+                    throw Error(response.statusText);
+                }
+            })
+            .catch((err) => {
+                console.log(err.message);
+            })
+    };
+
+    const onSubmit = (registerData, event) => {
+        event.preventDefault();
+        loginUser(registerData.email, registerData.password);
     }
 
     return(
@@ -46,19 +87,39 @@ function LoginForm() {
                         Login
                     </NavLink>
                 </div>
-                <div className="form">
+                <div className='space-20'/>
+                <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-body">
-                    <div className="email">
+                <div className="email">
                         <label className="form__label" for="email">E-MAIL </label>
-                        <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
-                    </div>
+                            <div className='space-3'></div>
+                            <div>
+                                <input 
+                                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                    type="email" 
+                                    placeholder="Email"
+                                    {...register('email')}
+                                />
+                                <div className="invalid-feedback">{errors.email?.message}</div>
+                            </div>
+                        </div>
                     <div className="password">
-                        <label className="form__label" for="password">PASSWORD </label>
-                        <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
-                    </div>
+                            <label className="form__label" for="password">PASSWORD </label>
+                            <div className='space-3'></div>
+                            <div>
+                                <input
+                                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                                    type="password" 
+                                    placeholder="Password"
+                                    {...register('password')}
+                                />
+                                <div className="invalid-feedback">{errors.password?.message}</div>
+                            </div>
+                        </div>
                 
-                    <div class="signup-button">
-                        <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Login</button>
+                    <div class="login-button">
+                        <button onClick={()=>handleSubmit(onSubmit)} type="submit" class="btn-orange">Login</button>
+
                     </div>
                     <div class="login-button">
                         <NavLink to="/forget-password" >
@@ -66,7 +127,8 @@ function LoginForm() {
                         </NavLink>
                     </div>
                     </div>
-                </div>
+                    <div className="login-button-error">{message ? <p>{message}</p> : null}</div>
+                </form>
             </div>
         </div>
        
