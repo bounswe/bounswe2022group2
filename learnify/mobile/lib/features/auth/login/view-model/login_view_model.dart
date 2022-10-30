@@ -76,9 +76,9 @@ class LoginViewModel extends BaseViewModel {
           email: _emailController.text, password: _passwordController.text);
       final IResponseModel<LoginResponse> res =
           await _authService.login(requestModel);
-      if (res.hasError) return res.error?.errorMessage;
-      await localManager.setString(StorageKeys.email, _emailController.text);
-      if (res.data?.user?.isVerified == false) {
+
+      if (res.error?.statusCode == 401) {
+        await localManager.setString(StorageKeys.email, _emailController.text);
         final SendVerificationRequest requestModel =
             SendVerificationRequest(email: _emailController.text);
         final IResponseModel<MessageResponse> resp =
@@ -87,6 +87,8 @@ class LoginViewModel extends BaseViewModel {
         await navigationManager.navigateToPage(
             path: NavigationConstants.verify,
             data: <String, dynamic>{'email': _emailController.text});
+      } else if (res.hasError) {
+        return res.error?.errorMessage;
       } else {
         await navigationManager.navigateToPageClear(
             path: NavigationConstants.home);
