@@ -1,22 +1,39 @@
-import React, {useState,setState} from 'react';
-import { NavLink} from 'react-router-dom';
+import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
+import ButtonLoader from "../buttonIndex";
 
 function EmailVerificationPage() {
     
-    const [verificationCode, setVerificationCode] = useState(null);
+    const formSchema = Yup.object().shape({
+        verificationCode: Yup.string()
+            .required("Verification Code is required!")
+            .matches(
+                /^\d{4}$/,
+                "Verification Code must contain exactly 4 digit number!"
+            ),
+    })
+    const formOptions = { resolver: yupResolver(formSchema) }
 
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "verificationCode"){
-            setVerificationCode(value);
-        }
-    }
+    const { register, handleSubmit, formState } = useForm(
+        formOptions,
+        {defaultValues: {
+            verificationCode: "",
+        }});
+    const { errors } = formState
 
-    const handleSubmit  = () => {
-        console.log(verificationCode);
+    const navigate = useNavigate();
+
+    const onSubmit = (data, event) => {
+        console.log(data, event);
+        event.preventDefault();
+        navigate('/home-page', {replace: true});
     }
 
     return(
@@ -34,30 +51,42 @@ function EmailVerificationPage() {
             </div>
             <div className='rightPart'>
                 <div className='welcome-navigation'>
-                    <NavLink to="/" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/" className="welcome-navigation-item">
                         Sign Up
                     </NavLink>
                     <div className='space-8'/>
-                    <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
-                        Sign In
+                    <NavLink to="/login" className="welcome-navigation-item">
+                        Login
                     </NavLink>
                 </div>
-                <div className="form">
+                <div className='space-20'/>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="verificationCode">
                             <label className="form__label" for="verificationCode">VERIFICATION CODE </label>
                             <div className='space-3'></div>
                             <div>
-                                <input className="form__input" type="text" value={verificationCode} onChange = {(e) => handleInputChange(e)} id="verificationCode" placeholder="Verification Code"/>
+                                <input
+                                    className={`form-control ${errors.verificationCode ? 'is-invalid' : ''}`}
+                                    type="verificationCode" 
+                                    placeholder="Verification Code"
+                                    {...register('verificationCode')}
+                                />
+                                <div className="invalid-feedback">{errors.verificationCode?.message}</div>
                             </div>
                         </div>
                     </div>
                     <div class="signup-button">
-                        <NavLink to="/home-page">
-                            <button onClick={()=>handleSubmit()} type="submit" class="btn-orange">Verify</button>
-                        </NavLink>
+                        <button 
+                            onClick={handleSubmit(onSubmit)}
+                            type="submit" 
+                            class="btn-orange">
+                                Verify
+                        </button>
+                    <div className='space-8'/>
+                    <ButtonLoader />
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )       

@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import EmailVerificationPage from './pages/EmailVerificationPage';
 import ForgetPassword from './pages/ForgetPassword';
-import Header from './pages/Header';
 import LoginForm from './pages/LoginForm';
 import HomePage from './pages/HomePage';
 import SignUpForm from './pages/SignUpForm';
