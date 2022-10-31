@@ -91,24 +91,26 @@ function LoginForm() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-body">
                 <div className="email">
-                        <label className="form__label" for="email">E-MAIL </label>
+                        <label className="form__label" htmlFor="email">E-MAIL </label>
                             <div className='space-3'></div>
                             <div>
                                 <input 
                                     className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                    data-testid="email"
                                     type="email" 
                                     placeholder="Email"
                                     {...register('email')}
                                 />
                                 <div className="invalid-feedback">{errors.email?.message}</div>
                             </div>
-                        </div>
+                </div>
                     <div className="password">
-                            <label className="form__label" for="password">PASSWORD </label>
+                            <label className="form__label" htmlFor="password">PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
                                 <input
                                     className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                                    data-testid="password"
                                     type="password" 
                                     placeholder="Password"
                                     {...register('password')}
@@ -118,12 +120,12 @@ function LoginForm() {
                         </div>
                 
                     <div class="login-button">
-                        <button onClick={()=>handleSubmit(onSubmit)} type="submit" class="btn-orange">Login</button>
+                        <button onClick={()=>handleSubmit(onSubmit)} type="submit" data-testid="submit" class="btn-orange">Login</button>
 
                     </div>
                     <div class="login-button">
                         <NavLink to="/forget-password" >
-                            <button class="btn-white">Forgot Password</button>
+                            <button class="btn-white" data-testid="forgotPassword">Forgot Password</button>
                         </NavLink>
                     </div>
                     </div>
