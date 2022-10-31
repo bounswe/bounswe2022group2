@@ -422,7 +422,6 @@ Group: Group2 - Frontend Team
   11. Adding Form Validation for LoginForm
   12. Implementing navigation items from LoginForm(namely via forgot password redirector and login button)
   13. Implementing the Unit Tests related to the LoginForm
-  14. Testing the LoginForm by writing unit tests
 
 
 ### *Main contributions:*
