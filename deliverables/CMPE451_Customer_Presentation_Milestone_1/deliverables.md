@@ -70,6 +70,65 @@ management of our software project:
 
 ### *Member:*  
 
+Name: Egemen Atik  
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+  1. Implementing verification screen for mobile application.
+  2. Implementing "resend code" functionality and countdown timer in verification screen.
+  3. Providing backend connection for verification screen.
+  4. Implementing verification screen tests and verification network tests.
+  5. Implementing horizontal scrollable course preview list widget for home screen.
+  6. Reviewing and testing work done by other mobile team members.
+  7. Revising Requirements & UML design related to Lecture Structure
+  8. Learning flutter, flutter testing. 
+
+
+### *Main contributions:*
+
+I am one of the four members in our application's, Learnify, mobile development team. We chose using Flutter as our main technology in mobile development. Since I did not use Flutter prior to this, my first task was getting familiar with Flutter and Dart. I set up my environment and tried to understand the basics of Flutter, learn how to program effectively with Flutter. Later, as a team we all voted for our application's name, main theme(colors, fonts) and logo just before we started our implementations.
+
+Then, I have been assigned with implementing the verification screen of our mobile application. In verification screen; I implemented four input boxes for users to enter the verification code they received, a "verify" button to confirm the verification code(it gets activated when remaining time is bigger than 0 and all four input fields are filled), a countdown timer informing user about validity period of the code they received, a description for verification screen and a "request another code" button which resets the timer and sends another verification code to user. I also implemented correct navigation routes. Finally, I provided back-end connection, widget tests and network tests to our verification screen. While providing the back-end connection, I implemented necessary response and request models and functions like "VerifyEmailRequest" model, "VerifyEmailResponse" model. I also researched about testing in Flutter and implemented my tests.
+
+Then, I implemented a horizontal scrollable course preview list widget for our home page. It is not crucial for this demo session, since it only contains mock data for now; but in the next demo sessions, it will have a more important role.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile: Implementing Verification Screen #395](https://github.com/bounswe/bounswe2022group2/issues/395)
+  2. [Mobile: Writing Tests for Verification Screen #417](https://github.com/bounswe/bounswe2022group2/issues/417)
+  3. [Mobile: Back-end Connection of Verification Endpoint #434](https://github.com/bounswe/bounswe2022group2/issues/434)
+  4. [Mobile: Writing Network Connection Tests for Verification Screen #454](https://github.com/bounswe/bounswe2022group2/issues/454)
+  5. [Mobile: Scrollable Horizontal Course List Widget For Home Screen #457](https://github.com/bounswe/bounswe2022group2/issues/457)
+
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Update Personal Wiki Pages #324](https://github.com/bounswe/bounswe2022group2/issues/324)
+  2. [Update Requirements Page #325](https://github.com/bounswe/bounswe2022group2/issues/325)
+  3. [Revising the Requirements: Lecture Structure #341](https://github.com/bounswe/bounswe2022group2/issues/341)
+  4. [Revising the Diagrams based on Lecture Structure #347](https://github.com/bounswe/bounswe2022group2/issues/347)
+  5. [Documenting Meeting Notes for the Meeting 4 of CMPE 451 #425](https://github.com/bounswe/bounswe2022group2/issues/425)
+  6. [Documenting Meeting Notes for the Meeting 2 of Mobile Team #427](https://github.com/bounswe/bounswe2022group2/issues/427)
+
+
+### *Pull requests:*
+
+1. Mobile/verification screen [#416](https://github.com/bounswe/bounswe2022group2/pull/416)
+2. Mobile/verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
+3. Mobile: Back-End Connection of Verification Screen [#435](https://github.com/bounswe/bounswe2022group2/pull/435)
+4. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
+5. Mobile: Scrollable horizontal course list widget for home screen [#462](https://github.com/bounswe/bounswe2022group2/pull/462)
+
+
+### *Additional information:*  
+
+I participated in all lecture hours, PS hours, general team meetings and mobile team meetings and shared my opinions in those gatherings to help building our application.
+
+***
+
+### *Member:*  
+
 Name: Ezgi Aysel Batı  
 
 Group: Group2 - Mobile Team
