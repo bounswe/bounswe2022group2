@@ -25,7 +25,7 @@ function EmailVerificationPage() {
             .required("Verification Code is required!")
             .matches(
                 /^\d{4}$/,
-                "Verification Code must contain exactly 4 digits!"
+                "Verification Code must contain exactly 4 digit number!"
             ),
     })
     const formOptions = { resolver: yupResolver(formSchema) }
