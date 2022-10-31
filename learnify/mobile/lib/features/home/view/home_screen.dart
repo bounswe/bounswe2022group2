@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
@@ -9,11 +10,13 @@ import '../view-model/home_view_model.dart';
 part '../components/course_preview.dart';
 
 class HomeScreen extends BaseView<HomeViewModel> {
-  const HomeScreen({Key? key})
+  HomeScreen({Key? key})
       : super(
           builder: _builder,
           scrollable: true,
           hasScaffold: false,
+          futureInit: (BuildContext context) =>
+              context.read<HomeViewModel>().getCourses(),
           key: key,
         );
 

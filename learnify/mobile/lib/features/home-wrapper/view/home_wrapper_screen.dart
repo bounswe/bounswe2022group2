@@ -47,7 +47,7 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
           case 3:
             return const ProfileScreen();
           default:
-            return const HomeScreen();
+            return HomeScreen();
         }
       });
 

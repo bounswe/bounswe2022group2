@@ -11,45 +11,34 @@ import '../service/home_service.dart';
 class HomeViewModel extends BaseViewModel {
   late final IHomeService _homeService;
 
-  late List<Course> _takenCourses;
+  List<Course> _takenCourses = <Course>[];
   List<Course> get takenCourses => _takenCourses;
 
-  late List<Course> _friendCourses;
+  List<Course> _friendCourses = <Course>[];
   List<Course> get friendCourses => _friendCourses;
 
-  late List<Course> _recommendedCourses;
+  List<Course> _recommendedCourses = <Course>[];
   List<Course> get recommendedCourses => _recommendedCourses;
 
   @override
-  Future<String?> initViewModel() async {
+  void initViewModel() {
     _homeService = HomeService.instance;
-    await _getCourses();
-    return null;
-  }
-
-  @override
-  Future<String?> initView() async {
-    _setDefault();
-    if (_takenCourses.isEmpty &&
-        _friendCourses.isEmpty &&
-        _recommendedCourses.isEmpty) {
-      await _getCourses();
-    }
-    return null;
+    // await _getCourses();
   }
 
   @override
   void disposeView() {
-    _takenCourses.clear();
-    _friendCourses.clear();
-    _recommendedCourses.clear();
     _setDefault();
     super.disposeView();
   }
 
-  void _setDefault() {}
+  void _setDefault() {
+    _takenCourses.clear();
+    _friendCourses.clear();
+    _recommendedCourses.clear();
+  }
 
-  Future<String?> _getCourses() async {
+  Future<String?> getCourses() async {
     await operation?.cancel();
     operation = CancelableOperation<String?>.fromFuture(_getCoursesRequest());
     final String? res = await operation?.valueOrCancellation();
@@ -59,13 +48,11 @@ class HomeViewModel extends BaseViewModel {
   Future<String?> _getCoursesRequest() async {
     final IResponseModel<GetCoursesResponse> resp =
         await _homeService.getCourses();
-    if (resp.hasError) return resp.error?.errorMessage;
-    // ignore: cast_nullable_to_non_nullable
-    _takenCourses = resp.data?.takenCourses as List<Course>;
-    // ignore: cast_nullable_to_non_nullable
-    _friendCourses = resp.data?.friendCourses as List<Course>;
-    // ignore: cast_nullable_to_non_nullable
-    _recommendedCourses = resp.data?.recommendedCourses as List<Course>;
+    final GetCoursesResponse? respData = resp.data;
+    if (resp.hasError || respData == null) return resp.error?.errorMessage;
+    _takenCourses = respData.takenCourses;
+    _friendCourses = respData.friendCourses;
+    _recommendedCourses = respData.recommendedCourses;
     return null;
   }
 }

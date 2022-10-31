@@ -17,6 +17,7 @@ class NavigationRoute {
     final Map<String, dynamic> arguments = getArguments(args);
     switch (args.name) {
       case NavigationConstants.signup:
+        return normalNavigate(HomeWrapper());
         return normalNavigate(const SignupScreen());
       case NavigationConstants.forgetpass:
         return normalNavigate(const ForgetPasswordScreen());
@@ -33,6 +34,7 @@ class NavigationRoute {
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3));
       default:
+        return normalNavigate(HomeWrapper());
         return normalNavigate(const SignupScreen());
     }
   }
