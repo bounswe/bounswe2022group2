@@ -5,7 +5,6 @@ import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../product/constants/navigation_constants.dart';
-import '../../../../product/constants/storage_keys.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
 import '../model/send_verification_request_model.dart';
@@ -67,7 +66,6 @@ class ForgetPasswordViewModel extends BaseViewModel {
       final IResponseModel<MessageResponse> resp =
           await _authService.sendVerification(requestModel);
       if (resp.hasError) return resp.error?.errorMessage;
-      await localManager.setString(StorageKeys.email, _emailController.text);
       await navigationManager.navigateToPage(
           path: NavigationConstants.verify,
           data: <String, dynamic>{'email': _emailController.text});

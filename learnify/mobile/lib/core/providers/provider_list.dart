@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -48,9 +49,17 @@ class ProviderList {
       lazy: true,
       create: (_) => CoursesViewModel(),
     ),
-    ChangeNotifierProvider<ProfileViewModel>(
+    ChangeNotifierProxyProvider<HomeWrapperViewModel, ProfileViewModel>(
       lazy: true,
-      create: (_) => ProfileViewModel(),
+      create: (BuildContext context) =>
+          ProfileViewModel(context.read<HomeWrapperViewModel>().user),
+      update: (_, HomeWrapperViewModel viewModel,
+          ProfileViewModel? profileViewModel) {
+        final ProfileViewModel updatedModel =
+            profileViewModel ?? ProfileViewModel(viewModel.user)
+              ..updateUser(viewModel.user);
+        return updatedModel;
+      },
     ),
     ChangeNotifierProvider<ForgetPasswordViewModel>(
       lazy: true,

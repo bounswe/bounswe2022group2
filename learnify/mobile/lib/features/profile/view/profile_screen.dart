@@ -21,6 +21,7 @@ import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../../product/theme/light_theme.dart';
+import '../../home-wrapper/view-model/home_wrapper_view_model.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/profile_view_model.dart';
 
@@ -160,6 +161,8 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         (_, ProfileViewModel model) => model.canUpdate,
         (BuildContext context, bool canSignup, _) {
           final ProfileViewModel model = context.read<ProfileViewModel>();
+          final HomeWrapperViewModel homeModel =
+              context.read<HomeWrapperViewModel>();
           return ActionButton(
             text: TextKeys.update,
             padding: EdgeInsets.symmetric(
@@ -167,7 +170,11 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
                 vertical: context.responsiveSize * 1.4),
             capitalizeAll: true,
             isActive: canSignup,
-            onPressedError: model.updateProfile,
+            onPressedError: () async {
+              final String? res = await model.updateProfile();
+              if (res == null) homeModel.setUser(model.user);
+              return res;
+            },
           );
         },
       );

@@ -31,6 +31,11 @@ abstract class BaseModel<T> extends Equatable {
     } else if (R == double) {
       if (data is R?) return data;
       if (data is num) return data.toDouble() as R;
+      if (data is String?) return double.tryParse(data ?? '') as R?;
+    } else if (R == int) {
+      if (data is R?) return data;
+      if (data is num) return data.toInt() as R;
+      if (data is String?) return int.tryParse(data ?? '') as R?;
     }
     return data is R ? data : (R == String ? data.toString() as R : null);
   }
