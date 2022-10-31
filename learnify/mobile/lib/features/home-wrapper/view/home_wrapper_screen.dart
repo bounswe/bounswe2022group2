@@ -31,9 +31,8 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
           builder: _builder,
           bottomNavigationBar: const _BottomNavigationBar(),
           appBar: _appBarBuilder,
-          voidInit: (BuildContext context) => context
-              .read<HomeWrapperViewModel>()
-              .setBottomNavIndex(initialIndex, initial: true, notify: false),
+          voidInit: (BuildContext context) =>
+              context.read<HomeWrapperViewModel>().homeInit(initialIndex),
           key: key,
         );
 

@@ -7,9 +7,11 @@ import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../../../product/constants/storage_keys.dart';
 import '../../forget-password/model/send_verification_request_model.dart';
 import '../../service/auth_service.dart';
 import '../../service/l_auth_service.dart';
+import '../../verification/model/user_model.dart';
 import '../model/login_request_model.dart';
 import '../model/login_response_model.dart';
 
@@ -88,8 +90,12 @@ class LoginViewModel extends BaseViewModel {
       } else if (res.hasError) {
         return res.error?.errorMessage;
       } else {
+        final User? user = res.data?.user;
+        if (user == null) return "User couldn't fetch";
+        await localManager.setModel(user, StorageKeys.user);
         await navigationManager.navigateToPageClear(
-            path: NavigationConstants.home);
+            path: NavigationConstants.home,
+            data: <String, dynamic>{'user': user.toJson});
       }
     }
     return null;

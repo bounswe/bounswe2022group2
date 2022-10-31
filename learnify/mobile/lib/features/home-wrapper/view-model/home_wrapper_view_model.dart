@@ -43,11 +43,18 @@ class HomeWrapperViewModel extends BaseViewModel {
   }
 
   void setUser(User newUser) {
+    final bool notify = _user.id == null;
     if (newUser == _user) return;
     _user = newUser;
+    if (notify) notifyListeners();
   }
 
   void _setDefault() {
     _bottomNavBarIndex = 0;
+  }
+
+  void homeInit(int initialIndex) {
+    setBottomNavIndex(initialIndex, initial: true, notify: false);
+    setUser(LocalManager.instance.getModel(const User(), StorageKeys.user));
   }
 }

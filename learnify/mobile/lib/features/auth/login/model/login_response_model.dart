@@ -1,5 +1,5 @@
 import '../../../../core/base/model/base_model.dart';
-import 'user_model.dart';
+import '../../verification/model/user_model.dart';
 
 class LoginResponse extends BaseModel<LoginResponse> {
   const LoginResponse({this.resultMessage, this.token, this.user});
