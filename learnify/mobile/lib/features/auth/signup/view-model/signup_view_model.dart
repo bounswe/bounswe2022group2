@@ -86,10 +86,6 @@ class SignupViewModel extends BaseViewModel {
       final IResponseModel<MessageResponse> res =
           await _authService.signup(requestModel);
       if (res.hasError) return res.error?.errorMessage;
-      // TODO: Fix
-      await localManager.setString(StorageKeys.email, _emailController.text);
-      await localManager.setString(
-          StorageKeys.username, _usernameController.text);
       await navigationManager.navigateToPage(
           path: NavigationConstants.verify,
           data: <String, dynamic>{'email': _emailController.text});

@@ -3,9 +3,13 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../product/constants/storage_keys.dart';
+import '../../auth/verification/model/user_model.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
+  ProfileViewModel(this._user);
+  User _user;
+  User get user => _user;
   late final ImagePicker _picker;
 
   late TextEditingController _usernameController;
@@ -33,8 +37,7 @@ class ProfileViewModel extends BaseViewModel {
   void initView() {
     _formKey = GlobalKey<FormState>();
     // TODO: Fix
-    _email = localManager.getString(StorageKeys.email);
-    _initialUsername = localManager.getString(StorageKeys.username);
+    _setUserData();
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _usernameController = TextEditingController(text: _initialUsername);
     _usernameController.addListener(_controllerListener);
@@ -56,6 +59,11 @@ class ProfileViewModel extends BaseViewModel {
     notifyListeners();
   }
 
+  void _setUserData() {
+    _email = _user.email;
+    _initialUsername = _user.username;
+  }
+
   Future<String?> pickImage(ImageSource source) async {
     try {
       final XFile? pickedFile = await _picker.pickImage(source: source);
@@ -73,7 +81,8 @@ class ProfileViewModel extends BaseViewModel {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid) {
       _initialUsername = _usernameController.text;
-      await localManager.setString(StorageKeys.username, _initialUsername!);
+      _user = _user.copyWith(username: _usernameController.text);
+      await localManager.setModel(_user, StorageKeys.user);
       if (_selectedImage != null) {
         await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
       }
@@ -85,5 +94,12 @@ class ProfileViewModel extends BaseViewModel {
 
   void _setDefault() {
     _canUpdate = false;
+  }
+
+  void updateUser(User newUser) {
+    if (newUser == _user) return;
+    _user = newUser;
+    _setUserData();
+    notifyListeners();
   }
 }

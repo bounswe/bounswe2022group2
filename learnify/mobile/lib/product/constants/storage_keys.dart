@@ -5,7 +5,6 @@ enum StorageKeys {
   refreshTokenExpires,
   langCode,
   theme,
-  email,
-  username,
+  user,
   profilePhoto,
 }

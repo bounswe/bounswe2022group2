@@ -40,9 +40,9 @@ class LocalManager implements ILocalManager {
       await _prefs?.setBool(key.toString(), value) ?? false;
 
   @override
-  Future<List<T>> getList<T>(BaseModel<T> sampleModel, StorageKeys key) async {
+  List<T> getList<T>(BaseModel<T> sampleModel, StorageKeys key) {
     final Map<String, dynamic> customMap =
-        await jsonDecode(_prefs?.getString(key.toString()) ?? '')
+        jsonDecode(_prefs?.getString(key.toString()) ?? '')
             as Map<String, dynamic>;
     return List<T>.from((customMap['list'] as List<Map<String, dynamic>>)
         .map((Map<String, dynamic> model) => sampleModel.fromJson(model)));
@@ -58,9 +58,10 @@ class LocalManager implements ILocalManager {
   }
 
   @override
-  Future<T> getModel<T>(BaseModel<T> model, StorageKeys key) async {
+  T getModel<T>(BaseModel<T> model, StorageKeys key) {
     final Map<String, dynamic> customMap =
-        await jsonDecode(_prefs?.getString(key.toString()) ?? '');
+        jsonDecode(_prefs?.getString(key.toString()) ?? '{}') ??
+            <String, dynamic>{};
     return model.fromJson(customMap);
   }
 

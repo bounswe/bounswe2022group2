@@ -67,7 +67,6 @@ class ForgetPasswordViewModel extends BaseViewModel {
       final IResponseModel<MessageResponse> resp =
           await _authService.sendVerification(requestModel);
       if (resp.hasError) return resp.error?.errorMessage;
-      await localManager.setString(StorageKeys.email, _emailController.text);
       await navigationManager.navigateToPage(
           path: NavigationConstants.verify,
           data: <String, dynamic>{'email': _emailController.text});

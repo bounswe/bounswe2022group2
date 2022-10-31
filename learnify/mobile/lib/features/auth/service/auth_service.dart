@@ -5,6 +5,8 @@ import '../forget-password/model/send_verification_request_model.dart';
 import '../login/model/login_request_model.dart';
 import '../login/model/login_response_model.dart';
 import '../signup/model/signup_request_model.dart';
+import '../verification/model/verify_email_request_model.dart';
+import '../verification/model/verify_email_response_model.dart';
 import 'l_auth_service.dart';
 
 /// Service for network request of auth view-model.
@@ -21,6 +23,7 @@ class AuthService extends IAuthService {
   static const String _signup = '/auth/signup';
   static const String _login = '/auth/login';
   static const String _resend = '/auth/resend';
+  static const String _verify = '/auth/verifyEmail';
 
   @override
   Future<IResponseModel<MessageResponse>> signup(SignupRequest body) async =>
@@ -47,6 +50,15 @@ class AuthService extends IAuthService {
           SendVerificationRequest body) async =>
       networkManager.send<SendVerificationRequest, MessageResponse>(_resend,
           parseModel: const MessageResponse(),
+          type: RequestTypes.post,
+          body: body,
+          requireAuth: false);
+
+  @override
+  Future<IResponseModel<VerifyEmailResponse>> verifyEmail(
+          VerifyEmailRequest body) async =>
+      networkManager.send<VerifyEmailRequest, VerifyEmailResponse>(_verify,
+          parseModel: const VerifyEmailResponse(),
           type: RequestTypes.post,
           body: body,
           requireAuth: false);
