@@ -1,5 +1,4 @@
-import React, {useState,setState} from 'react';
-import { NavLink} from 'react-router-dom';
+import React from 'react';
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'

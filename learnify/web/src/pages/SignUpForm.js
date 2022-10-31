@@ -77,6 +77,7 @@ function SignUpForm() {
 
     const onSubmit = (registerData, event) => {
         event.preventDefault();
+        localStorage.setItem('email', registerData.email);
         registerUser(registerData.username, registerData.email, registerData.password);
     }
 
