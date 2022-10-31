@@ -7,12 +7,14 @@ class TextKeys {
   static const String passwordHint = 'password_hint';
   static const String passwordLabel = 'password_label';
   static const String signupTo = 'signup_to';
+  static const String loginTo = 'login_to';
   static const String learnify = 'learnify';
   static const String errorTitle = 'error_title';
   static const String termsAgreementText = 'terms_agreement_text';
   static const String generalTerms = 'general_terms';
   static const String privacyPolicy = 'privacy_policy';
   static const String alreadyHaveAccount = 'already_have_account';
+  static const String createNewAccount = 'create_new_account';
   static const String login = 'login';
   static const String forgetPassword = 'forget_password';
   static const String verifyEmail = 'verify_email';
@@ -36,4 +38,11 @@ class TextKeys {
   static const String sat = 'sat';
   static const String sun = 'sun';
   static const String update = 'update';
+  static const String verifyYourEmail = "verify_your_email";
+  static const String verificationDescription = "verification_description";
+  static const String verify = "verify";
+  static const String codeNotReceived = "code_not_received";
+  static const String requestAnotherCode = "request_another_code";
+  static const String backToPreviousPage = "back_to_previous_page";
+  static const String remainingTime = "remaining_time";
 }

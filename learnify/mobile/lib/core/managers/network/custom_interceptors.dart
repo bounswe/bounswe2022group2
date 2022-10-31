@@ -4,7 +4,6 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
-import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../constants/durations.dart';
 import '../../extensions/string/string_extensions.dart';
@@ -39,7 +38,7 @@ class CustomInterceptors extends Interceptor {
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
     log("""ERROR[${err.response?.statusCode}] =>PATH:${err.requestOptions.path}\nDetails: ${err.response?.data ?? err.message}""");
-    if (_tokenResCheck(err.response)) _navigateToLogin();
+    if (_tokenResCheck(err.response)) navigateToLogin();
     return super.onError(err, handler);
   }
 
@@ -71,7 +70,7 @@ class CustomInterceptors extends Interceptor {
   String? get _tokenCheck {
     final String? token = getStoredToken;
     if (token == null) {
-      _navigateToLogin();
+      navigateToLogin();
       return null;
     }
     return token;
@@ -91,12 +90,13 @@ class CustomInterceptors extends Interceptor {
   }
 
   /// Navigates to the login screen on unauthenticated cases.
-  static Future<void> _navigateToLogin() async {
+  static Future<void> navigateToLogin() async {
     // TODO: Fix
     // LoginViewModel.kickedOut = true;
     await LocalManager.instance.clearAll();
     await NavigationManager.instance
-        .navigateToPageClear(path: NavigationConstants.login);
+        // TODO: Fix
+        .navigateToPageClear();
   }
 
   Future<void> _storeToken(String token) async {

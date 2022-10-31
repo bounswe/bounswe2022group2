@@ -7,6 +7,7 @@
   "password_hint": "Enter a Password",
   "password_label": "Password",
   "signup_to": "Sign Up to",
+  "login_to": "Log In to",
   "learnify": "Learnify",
   "error_title": "An Error Occurred!",
   "terms_agreement_text": "I have read and agree to the {0} and {1}",
@@ -14,6 +15,7 @@
   "privacy_policy": "Privacy Policy",
   "already_have_account": "Already have an account?  {0}",
   "login": "Log In",
+  "create_new_account": "Don't have an account? {0}",
   "home": "Home",
   "search": "Search",
   "courses": "Courses",
@@ -35,5 +37,12 @@
   "fri": "Fri",
   "sat": "Sat",
   "sun": "Sun",
-  "update": "Update"
+  "update": "Update",
+  "verify_your_email": "Verify your email",
+  "verification_description": "Please enter the verification code you received",
+  "verify": "Verify",
+  "code_not_received": "Didn't get a verification code? {0}",
+  "request_another_code": "Request another code",
+  "back_to_previous_page": "Back to previous page",
+  "remaining_time": "Remaining Time:"
 }

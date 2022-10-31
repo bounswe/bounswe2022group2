@@ -4,18 +4,27 @@ import 'package:provider/provider.dart';
 import 'core/managers/local/local_manager.dart';
 import 'core/managers/navigation/navigation_manager.dart';
 import 'core/managers/navigation/navigation_route.dart';
+import 'core/managers/network/custom_interceptors.dart';
 import 'core/providers/language/language_provider.dart';
 import 'core/providers/provider_list.dart';
 import 'core/providers/theme/theme_provider.dart';
+import 'features/auth/verification/model/user_model.dart';
+import 'product/constants/navigation_constants.dart';
+import 'product/constants/storage_keys.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalManager().initPreferences();
-  runApp(const InitialApp());
+  final bool hasToken = CustomInterceptors.getStoredToken != null;
+  final User user =
+      await LocalManager.instance.getModel(const User(), StorageKeys.user);
+  final bool hasAuth = hasToken && user.email != null;
+  runApp(InitialApp(hasAuth: hasAuth));
 }
 
 class InitialApp extends StatefulWidget {
-  const InitialApp({Key? key}) : super(key: key);
+  const InitialApp({required this.hasAuth, Key? key}) : super(key: key);
+  final bool hasAuth;
 
   @override
   State<InitialApp> createState() => InitialAppState();
@@ -25,17 +34,20 @@ class InitialAppState extends State<InitialApp> {
   @override
   Widget build(BuildContext context) => MultiProvider(
         providers: ProviderList.providers,
-        child: const _MaterialApp(),
+        child: _MaterialApp(hasAuth: widget.hasAuth),
       );
 }
 
 class _MaterialApp extends StatelessWidget {
-  const _MaterialApp({Key? key}) : super(key: key);
+  const _MaterialApp({required this.hasAuth, Key? key}) : super(key: key);
+  final bool hasAuth;
 
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'Learnify',
         debugShowCheckedModeBanner: false,
+        initialRoute:
+            hasAuth ? NavigationConstants.home : NavigationConstants.signup,
         onGenerateRoute: NavigationRoute.instance.generateRoute,
         navigatorKey: NavigationManager.instance.navigatorKey,
         theme: context.watch<ThemeProvider>().currentTheme,

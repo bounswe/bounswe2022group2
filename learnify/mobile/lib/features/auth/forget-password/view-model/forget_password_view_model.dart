@@ -2,8 +2,17 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../../core/managers/network/models/l_response_model.dart';
+import '../../../../core/managers/network/models/message_response.dart';
+import '../../../../product/constants/navigation_constants.dart';
+import '../../../../product/constants/storage_keys.dart';
+import '../../service/auth_service.dart';
+import '../../service/l_auth_service.dart';
+import '../model/send_verification_request_model.dart';
 
 class ForgetPasswordViewModel extends BaseViewModel {
+  late final IAuthService _authService;
+
   late TextEditingController _emailController;
 
   TextEditingController get emailController => _emailController;
@@ -15,7 +24,9 @@ class ForgetPasswordViewModel extends BaseViewModel {
   bool get canVerify => _canVerify;
 
   @override
-  void initViewModel() {}
+  void initViewModel() {
+    _authService = AuthService.instance;
+  }
 
   @override
   void initView() {
@@ -49,7 +60,17 @@ class ForgetPasswordViewModel extends BaseViewModel {
 
   Future<String?> _forgetPasswordRequest() async {
     final bool isValid = formKey.currentState?.validate() ?? false;
-    if (isValid) {}
+    if (isValid) {
+      final SendVerificationRequest requestModel =
+          SendVerificationRequest(email: _emailController.text);
+
+      final IResponseModel<MessageResponse> resp =
+          await _authService.sendVerification(requestModel);
+      if (resp.hasError) return resp.error?.errorMessage;
+      await navigationManager.navigateToPage(
+          path: NavigationConstants.verify,
+          data: <String, dynamic>{'email': _emailController.text});
+    }
     return null;
   }
 
