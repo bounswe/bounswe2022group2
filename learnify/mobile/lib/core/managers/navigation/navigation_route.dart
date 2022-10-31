@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../features/auth/forget-password/view/forget_password_screen.dart';
+import '../../../features/auth/login/view/login_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
-import '../../../features/auth/verification/model/user_model.dart';
 import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
-import '../../../product/constants/storage_keys.dart';
-import '../local/local_manager.dart';
 
 class NavigationRoute {
   factory NavigationRoute() => _instance;
@@ -25,8 +23,7 @@ class NavigationRoute {
       case NavigationConstants.verify:
         return normalNavigate(VerificationScreen(email: arguments['email']));
       case NavigationConstants.login:
-        return normalNavigate(
-            const Scaffold(body: Center(child: Text('LOGIN'))));
+        return normalNavigate(const LoginScreen());
       case NavigationConstants.home:
         return normalNavigate(HomeWrapper());
       case NavigationConstants.search:

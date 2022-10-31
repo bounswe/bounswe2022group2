@@ -1,6 +1,7 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
+
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
@@ -16,7 +17,6 @@ import '../model/verify_email_response_model.dart';
 class VerificationViewModel extends BaseViewModel {
   late final IAuthService _authService;
   late String email;
-
   late TextEditingController _verificationCodeFirstDigitController;
   late TextEditingController _verificationCodeSecondDigitController;
   late TextEditingController _verificationCodeThirdDigitController;

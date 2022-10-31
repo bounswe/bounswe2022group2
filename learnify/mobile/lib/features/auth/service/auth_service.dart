@@ -2,6 +2,8 @@ import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/message_response.dart';
 import '../forget-password/model/send_verification_request_model.dart';
+import '../login/model/login_request_model.dart';
+import '../login/model/login_response_model.dart';
 import '../signup/model/signup_request_model.dart';
 import '../verification/model/verify_email_request_model.dart';
 import '../verification/model/verify_email_response_model.dart';
@@ -19,6 +21,7 @@ class AuthService extends IAuthService {
   static AuthService get instance => _instance;
 
   static const String _signup = '/auth/signup';
+  static const String _login = '/auth/login';
   static const String _resend = '/auth/resend';
   static const String _verify = '/auth/verifyEmail';
 
@@ -27,6 +30,16 @@ class AuthService extends IAuthService {
       networkManager.send<SignupRequest, MessageResponse>(
         _signup,
         parseModel: const MessageResponse(),
+        type: RequestTypes.post,
+        body: body,
+        requireAuth: false,
+      );
+
+  @override
+  Future<IResponseModel<LoginResponse>> login(LoginRequest body) async =>
+      networkManager.send<LoginRequest, LoginResponse>(
+        _login,
+        parseModel: const LoginResponse(),
         type: RequestTypes.post,
         body: body,
         requireAuth: false,

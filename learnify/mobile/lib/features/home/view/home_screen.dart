@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
-import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../view-model/home_view_model.dart';

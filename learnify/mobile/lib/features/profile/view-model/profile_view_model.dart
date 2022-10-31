@@ -10,7 +10,6 @@ class ProfileViewModel extends BaseViewModel {
   ProfileViewModel(this._user);
   User _user;
   User get user => _user;
-
   late final ImagePicker _picker;
 
   late TextEditingController _usernameController;

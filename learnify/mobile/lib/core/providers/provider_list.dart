@@ -4,6 +4,7 @@ import 'package:provider/single_child_widget.dart';
 
 import '../../features/auth/forget-password/view-model/forget_password_view_model.dart';
 import '../../features/auth/signup/view-model/signup_view_model.dart';
+import '../../features/auth/login/view-model/login_view_model.dart';
 import '../../features/auth/verification/view-model/verification_view_model.dart';
 import '../../features/courses/view-model/courses_view_model.dart';
 import '../../features/home-wrapper/view-model/home_wrapper_view_model.dart';
@@ -33,6 +34,10 @@ class ProviderList {
       lazy: true,
       create: (_) => SignupViewModel(),
     ),
+    ChangeNotifierProvider<LoginViewModel>(
+      lazy: true,
+      create: (_) => LoginViewModel(),
+    ),
     ChangeNotifierProvider<HomeWrapperViewModel>(
       lazy: true,
       create: (_) => HomeWrapperViewModel(),
@@ -60,6 +65,14 @@ class ProviderList {
               ..updateUser(viewModel.user);
         return updatedModel;
       },
+    ),
+    ChangeNotifierProvider<ForgetPasswordViewModel>(
+      lazy: true,
+      create: (_) => ForgetPasswordViewModel(),
+    ),
+    ChangeNotifierProvider<VerificationViewModel>(
+      lazy: true,
+      create: (_) => VerificationViewModel(),
     ),
     ChangeNotifierProvider<ForgetPasswordViewModel>(
       lazy: true,
