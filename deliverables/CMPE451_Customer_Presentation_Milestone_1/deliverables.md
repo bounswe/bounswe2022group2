@@ -20,6 +20,54 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 --------------------------  
 ### *Member:*  
 
+Name: Altay Acar
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+  1. Designing the logo of our app and determining the typeface and color scheme that is used throughout the app.
+  2. Building the main structure and layout of authentication pages.
+  3. Implementing the sign up page.
+  4. Implementing the validation check for the sign up form.
+  5. Implementing the backend connection between the sign up page and our REST API.
+  6. Implementing unit tests for the sign up page.
+  7. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  8. Providing methods for validation.
+  9. Providing methods for backend connection.
+  10. Reviewing the works done by the frontend team.
+
+### *Main contributions:*
+
+I am a member of our fronend team for the development of our application, namely Learnify. Generally, I took the responsibility of visual side of our web application. For that extent I have designed our logo, provided and appropriate typeface and color scheme using Adobe applications. Then, I have provided the general layout and structure of our authentication pages with appropriate theme. I was also responsible for the implementation of the sign up page from the scratch. Since any of us in the frontend team is not used to work with React,I have conducted very detailed research on how to connect pages, how to uses states, how to validate form inputs, how to handle API requests, and how to do unit testing. In the light of my findings I have implemented our sign up page: First the initial structure and layout, then the validation, then the backend connection, and last the unit testing. Additionaly I took care of the dockerization of our web application's frontend.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Designing the Logo and Determining Color Scheme, Typeface of the Project](https://github.com/bounswe/bounswe2022group2/issues/353)
+  2. [Frontend: Implementation of Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/376)
+  3. [Frontend: Backend Connection for the Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/405)
+  4. [Frontend: Adding Form Validations for Sign Up Form](https://github.com/bounswe/bounswe2022group2/issues/424)
+  5. [Frontend: Unit Tests for Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/451)
+  6. [Frontend: Dockerization of the Frontend](https://github.com/bounswe/bounswe2022group2/issues/412)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  3. [Documenting Meeting Notes for the Meeting 2 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/328)
+  4. [Revising the Requirements Specification: Notifications](https://github.com/bounswe/bounswe2022group2/issues/329)
+
+
+### *Pull requests:*
+
+1. Frontend: Sign up page implementation [#387](https://github.com/bounswe/bounswe2022group2/pull/387)
+2. Dockerization of Frontend [#413](https://github.com/bounswe/bounswe2022group2/pull/413)
+3. Frontend: Sign Up Form Validation [#426](https://github.com/bounswe/bounswe2022group2/pull/426)
+4. Frontend: Backend connection for sign up page [#438](https://github.com/bounswe/bounswe2022group2/pull/438)
+
+***
+
+### *Member:*  
+
 Name: Ecenur Sezer  
 Group: Group2 - Backend Team
 
@@ -62,6 +110,8 @@ management of our software project:
 
 ### *Additional information:*  
 I have attended all team meetings on backend & overall. Some took part face-to-face and some were on Discord.
+
+***
 
 ### *Member:*  
 
@@ -124,6 +174,8 @@ management of our software project:
 I built the base file, folder structure on mobile project. We have decided to use MVVM design pattern while implementing the project and I created a base structure for it. I have informed my teammates about the user flow we should follow.
 
 I actively participated in and give suggestions about the endpoints we should have. I also give suggestions about the request and response bodies of the endpoints. I explained some concepts and real-life examples of the front designs both for web and mobile. I contributed to the logic we should implement in the authentication flow (signup-login-forgot password-email verification)
+
+***
 
 ### *Member:*  
 
