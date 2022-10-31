@@ -39,7 +39,7 @@ Group: Group2 - Frontend Team
 
 ### *Main contributions:*
 
-I am a member of our fronend team for the development of our application, namely Learnify. Generally, I took the responsibility of visual side of our web application. For that extent I have designed our logo, provided and appropriate typeface and color scheme using Adobe applications. Then, I have provided the general layout and structure of our authentication pages with appropriate theme. I was also responsible for the implementation of the sign up page from the scratch. Since any of us in the frontend team is not used to work with React,I have conducted very detailed research on how to connect pages, how to uses states, how to validate form inputs, how to handle API requests, and how to do unit testing. In the light of my findings I have implemented our sign up page: First the initial structure and layout, then the validation, then the backend connection, and last the unit testing. Additionaly I took care of the dockerization of our web application's frontend.
+I am a member of our fronend team for the development of our application, namely Learnify. Generally, I took the responsibility of visual side of our web application. For that extent I have designed our logo, provided and appropriate typeface and color scheme using Adobe applications. Then, I have provided the general layout and structure of our authentication pages with appropriate theme. I was also responsible for the implementation of the sign up page from the scratch. Since any of us in the frontend team is not used to work with React,I have conducted very detailed research on how to connect pages, how to uses states, how to validate form inputs, how to handle API requests, and how to do unit testing. In the light of my findings I have implemented our sign up page: First the initial structure and layout, then the validation, then the backend connection, and last the unit testing. Additionaly I took care of the dockerization and the AWS deployment of our web application's frontend.
 
 * *Code related significant issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -63,6 +63,7 @@ management of our software project:
 2. Dockerization of Frontend [#413](https://github.com/bounswe/bounswe2022group2/pull/413)
 3. Frontend: Sign Up Form Validation [#426](https://github.com/bounswe/bounswe2022group2/pull/426)
 4. Frontend: Backend connection for sign up page [#438](https://github.com/bounswe/bounswe2022group2/pull/438)
+5. Frontend: Unit tests for sign up page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
 
 ***
 ### *Member:*  
