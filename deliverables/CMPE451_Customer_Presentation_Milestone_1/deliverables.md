@@ -405,6 +405,55 @@ I have been there for all lectures, problem sessions, frontend meetings, and gen
 
 ### *Member:*  
 
+Name: Koray Tekin 
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+  1. Requirements and Diagrams revision and replacement of chat with forum
+  2. Updating the group issue template
+  3. Creating personal wiki page as a new member
+  4. Implementing the functionality for the LoginForm for the web application
+  6. Doing research on technologies needed to use on front-end development(mainly react)
+  7. Documenting front-end meeting notes
+  8. Reviewing related issues and mentioned PR's of front-end team members'
+  9. Providing methods for establishing back-end connection
+  10. Setting up the LoginForm's back-end connection
+  11. Adding Form Validation for LoginForm
+  12. Implementing navigation items from LoginForm(namely via forgot password redirector and login button)
+  13. Implementing the Unit Tests related to the LoginForm
+  14. Testing the Email Verification page by writing unit tests
+
+
+### *Main contributions:*
+
+As one of the new members of the team the first subject I gave priority was to catch up with the requirements specification and the diagrams that my team has prepared in the last term. In order to manage that, I have been assigned several discovery tasks, and I also took responsibility in terms of contributing to the revision of both the requirements and the diagrams. I was the assignee for the replacement of the chat feature with the forum feature specific to lectures. After a fast on-boarding our team was divided into sub-groups and I took part in the front-end team, had responsibility in research tasks such as "discovering the features of react applications", "how to initialize a react project", "implementation of unit tests in react projects", etc. Then in order to proceed faster the initial pages have been shared among the front-end team members, and accordingly I have created the design, structure items, and functional elements such as buttons and redirectors for the LoginForm. Then I have implemented the back-end connection of the LoginForm, and finally the unit tests also for LoginForm. For both of these tasks I had to do discovery research since I had no experience at this side of the coin, I mean the front-end.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Frontend: Implementation of LoginForm](https://github.com/bounswe/bounswe2022group2/issues/390)
+  2. [Frontend: Adding Form Validation and Back-end connection for LoginForm](https://github.com/bounswe/bounswe2022group2/issues/441)
+  3. [Frontend: Unit Tests Implementation for LoginForm](https://github.com/bounswe/bounswe2022group2/issues/466)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Adding my personal wiki page](https://github.com/bounswe/bounswe2022group2/issues/312)
+  2. [Discovery and on-boarding for new members](https://github.com/bounswe/bounswe2022group2/issues/320)
+  3. [Revising the Requirements and the Diagrams related to conversion of chat/forum](https://github.com/bounswe/bounswe2022group2/issues/344)
+  4. [Documentation of meeting notes of first meeting(front-end team)](https://github.com/bounswe/bounswe2022group2/issues/388)
+  5. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+
+### *Pull requests:*
+
+1. Frontend: LoginForm Implementation [#399](https://github.com/bounswe/bounswe2022group2/pull/399)
+2. Frontend: LoginForm Validation and Back-end Connection [#446](https://github.com/bounswe/bounswe2022group2/pull/446)
+3. Frontend: Implementation of Unit tests for LoginForm [#467](https://github.com/bounswe/bounswe2022group2/pull/467)
+
+### *Additional information:*  
+
+I have been present for all of the lectures, labs, general team meetings, and sub-team meetings. I have tried my best in terms of discovery tasks and contribution to implementation of the front-end. 
+
+### *Member:*  
+
 Name: Bahrican Yeşil  
 Group: Group2 - Mobile Team
 
