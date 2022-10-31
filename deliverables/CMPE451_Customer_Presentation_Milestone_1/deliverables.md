@@ -289,6 +289,7 @@ management of our software project:
 1. Frontend: Email Verification Page Implementation [#392](https://github.com/bounswe/bounswe2022group2/pull/392)
 2. Frontend: Email Verification Form Validation [#431](https://github.com/bounswe/bounswe2022group2/pull/431)
 3. Frontend: Backend Connection for Email Verification Page [#450](https://github.com/bounswe/bounswe2022group2/pull/450)
+4. Frontend: Unit Tests for Email Verification Page [#453](https://github.com/bounswe/bounswe2022group2/pull/453)
 
 ### *Additional information:*  
 
