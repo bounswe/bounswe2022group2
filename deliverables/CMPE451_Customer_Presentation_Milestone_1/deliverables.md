@@ -234,6 +234,7 @@ management of our software project:
   6. [Reviewing the Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
   7. [Reviewing the Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
   8. [Reviewing the Dockerization of the API](https://github.com/bounswe/bounswe2022group2/issues/355)
+  9. [Prepaing the Slide for our First Demo](https://github.com/bounswe/bounswe2022group2/issues/460)
 
 ### *Pull requests:*
 
