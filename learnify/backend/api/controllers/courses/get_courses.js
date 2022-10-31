@@ -17,4 +17,4 @@ export default async  (req, res) =>{
         friendCourses: [courses[3].toJSON(), courses[4].toJSON(), courses[5].toJSON()],
         recomendedCourses: [courses[0].toJSON(), courses[6].toJSON(), courses[7].toJSON()]
     })
-}
+}  
