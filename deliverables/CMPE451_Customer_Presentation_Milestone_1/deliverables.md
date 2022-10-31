@@ -451,6 +451,7 @@ management of our software project:
 
 I have been present for all of the lectures, labs, general team meetings, and sub-team meetings. I have tried my best in terms of discovery tasks and contribution to implementation of the front-end. 
 
+***
 ### *Member:*  
 
 Name: Bahrican Yeşil  
