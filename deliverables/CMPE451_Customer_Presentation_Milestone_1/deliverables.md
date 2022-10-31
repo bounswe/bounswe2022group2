@@ -260,6 +260,52 @@ I've attended the team meetings on backend & overall. Some of them are on discor
 
 ### *Member:*  
 
+Name: Onur Kömürcü 
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+  1. Doing research on Flutter and Android Studio
+  2. Implementing login page
+  3. Setting up back end connection of login page
+  4. Writing tests for login page
+  5. Reviewing whole work that is done by mobile team
+  6. Contributing to project plan development
+  7. Transferring project plan notion to ProjectLibre
+  
+### *Main contributions:*
+
+I am member of the mobile team. I mainly contribute to the tasks that are related to the mobile side of our project. At first, I contribute to planning the project for the whole term. After that, I contribute to the tasks that are related to updating and reviewing at the beginning of the term. When we started to implementation, I have responsibility to implement login page. I implement the login page and make the backend connection. Tested whole edge cases using emulator. Additionally, I write widget tests also. During this process, I analyze the backend responses and other structural objects in mobile. These ease my learning process of the Flutter. Reviewed almost whole features. Also, contributed to the clarification of some points for the whole project (contributor issue and annotation). 
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile Team: Setting up development Environment](https://github.com/bounswe/bounswe2022group2/issues/372)
+  2. [Mobile - Implementing Login Page Including Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/396)
+  3. [Mobile: Writing Tests for Login Page](https://github.com/bounswe/bounswe2022group2/issues/447) (Ongoing)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Update the Project plan for upcoming semester](https://github.com/bounswe/bounswe2022group2/issues/316)
+  3. [Milestone 1: Project Plan](https://github.com/bounswe/bounswe2022group2/issues/448)
+  4. [Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/377)
+  5. [Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
+  6. [Revising the Requirements: Achievements and Badges](https://github.com/bounswe/bounswe2022group2/issues/333)
+  7. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+  
+### *Pull requests:*
+
+1. Mobile: Implementation of Login Screen Including Backend Connection [#398](https://github.com/bounswe/bounswe2022group2/pull/398)
+
+
+### *Additional information:*  
+
+I have attended whole classes, labs, mobile team meetings and weekly meetings. I learn so much thing in a very short period of time as in CmpE352. Also, have better knowledge about git usage. I am now using the git system more effectively and consciously. 
+
+***
+
+### *Member:*  
+
 Name: Ecenur Sezer  
 Group: Group2 - Backend Team
 
@@ -485,51 +531,5 @@ management of our software project:
 
 As a new team member, I have tried to actively participated in the discussions and give suggestions about project. Even though it is hard to catch up the ideas on the project by the team members since they have been dealing with this project for half a year more than me, I managed to be an active member on meetings. I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I shared all information that I know and I learn during the course of development by discord, whatsapp and github issues with the frontend team. 
 
-***
 
-### *Member:*  
-
-Name: Onur Kömürcü 
-
-Group: Group2 - Mobile Team
-
-### *Responsibilities:*
-
-  1. Doing research on Flutter and Android Studio
-  2. Implementing login page
-  3. Setting up back end connection of login page
-  4. Writing tests for login page
-  5. Reviewing whole work that is done by mobile team
-  6. Contributing to project plan development
-  7. Transferring project plan notion to ProjectLibre
-  
-### *Main contributions:*
-
-I am member of the mobile team. I mainly contribute to the tasks that are related to the mobile side of our project. At first, I contribute to planning the project for the whole term. After that, I contribute to the tasks that are related to updating and reviewing at the beginning of the term. When we started to implementation, I have responsibility to implement login page. I implement the login page and make the backend connection. Tested whole edge cases using emulator. Additionally, I write widget tests also. During this process, I analyze the backend responses and other structural objects in mobile. These ease my learning process of the Flutter. Reviewed almost whole features. Also, contributed to the clarification of some points for the whole project (contributor issue and annotation). 
-
-* *Code related significant issues:* My issues that contribute to the code base
-demonstrated during the demo:
-  1. [Mobile Team: Setting up development Environment](https://github.com/bounswe/bounswe2022group2/issues/372)
-  2. [Mobile - Implementing Login Page Including Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/396)
-  3. [Mobile: Writing Tests for Login Page](https://github.com/bounswe/bounswe2022group2/issues/447) (Ongoing)
-* *Management related significant issues:* My issues that contribute to the
-management of our software project:
-  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
-  2. [Update the Project plan for upcoming semester](https://github.com/bounswe/bounswe2022group2/issues/316)
-  3. [Milestone 1: Project Plan](https://github.com/bounswe/bounswe2022group2/issues/448)
-  4. [Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/377)
-  5. [Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
-  6. [Revising the Requirements: Achievements and Badges](https://github.com/bounswe/bounswe2022group2/issues/333)
-  7. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
-  
-### *Pull requests:*
-
-1. Mobile: Implementation of Login Screen Including Backend Connection [#398](https://github.com/bounswe/bounswe2022group2/pull/398)
-
-
-### *Additional information:*  
-
-I have attended whole classes, labs, mobile team meetings and weekly meetings. I learn so much thing in a very short period of time as in CmpE352. Also, have better knowledge about git usage. I am now using the git system more effectively and consciously. 
-
-***
 ## Milestone Group Review
