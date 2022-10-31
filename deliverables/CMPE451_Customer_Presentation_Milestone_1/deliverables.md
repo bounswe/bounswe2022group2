@@ -432,5 +432,29 @@ I built the base file, folder structure on mobile project. We have decided to us
 I actively participated in and give suggestions about the endpoints we should have. I also give suggestions about the request and response bodies of the endpoints. I explained some concepts and real-life examples of the front designs both for web and mobile. I contributed to the logic we should implement in the authentication flow (signup-login-forgot password-email verification)
 
 ***
+### *Member:*  
+
+Name: Mehmet Gökay Yıldız
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+  1. Initializing the project.
+  2. Creating the initial sign up and login forms.
+  3. Implementing the forget password page.
+  4. Implementing the validation check for the forget password form.
+  5. Implementing the backend connection between the forget password page and our REST API.
+  6. Implementing unit tests for the forget password page.
+  7. Integrating mockup home screen to the project.
+  8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  9. Implementing methods for validation.
+  10. Implementing methods for backend connection.
+  11. Reviewing the works done by the frontend team.
+
+### *Main contributions:*
+
+I am a part of the frontend team of our project. Took part at the naming of the project and the final decision, Learnify is one of my suggestions. After deciding the essentials and seperating into teams, I initialize the frontend project and created initial pages to make colaborative work possible. We decided branch naming conventions to follow each others work easily as frontend team. After that, I was also responsible for the implementation of the forget password page by the design perspective that our team follows. Since we do not have a detailed experience on React, I have go over the basics of React for subjects like; connecting pages, routing, using states, input forms and validations, handling API requests, and unit testing. After my research, individual trials and discussions in the team, I have implemented our forget password page. After that the backend connection, input verification and unit testing. Additionaly, I took part of each of the pull requests by the front end team, review and give feedback to all.
+
 
 ## Milestone Group Review
