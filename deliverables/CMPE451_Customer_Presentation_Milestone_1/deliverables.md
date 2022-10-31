@@ -244,6 +244,55 @@ management of our software project:
 I have attended all team meetings on backend & overall. Some took part face-to-face and some were on Discord.
 
 ***
+### *Member:*  
+
+Name: Muhammed Enes Sürmeli  
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+
+  1. Implementing Email Verification page
+  2. Adding Form Validation for Email Verification Page
+  3. Providing validation methods
+  4. Implementing navigation from and to the Email Verification page
+  5. Testing the Email Verification page by writing unit tests
+  6. Setting up the Email Verification page's back-end connection
+  7. Providing methods for establishing back-end connection
+  8. Reviewing all frontend team members' work
+  9. Doing research on technologies needed to use on frontend development
+  
+  
+### *Main contributions:*
+
+I contributed mainly to the frontend side with React since I am a member of the frontend team of our application, Learnify. In general, I was given the task of building the web application's email verification page. To achieve this, I was in charge of creating the functions and components for the email verification page from scratch and putting it into operation. I did a research on testing with React and am also responsible for the tests of the Email Verification page I developed. We had to undertake thorough research on how to link pages, how to utilize states, how to validate form inputs, how to manage API calls, and how to do unit testing because none of us on the frontend team are accustomed to working with React. My conclusions have led me to implement our email verification page. Initial structure and layout were implemented initially, followed by validation, the backend connection, and finally, unit testing.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Frontend: Implementation of Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/385)
+  2. [Frontend: Adding Form Validation for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/429)
+  3. [Frontend: Backend Connection for the Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/449)
+  4. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Conducting Research on React Router](https://github.com/bounswe/bounswe2022group2/issues/386)
+  3. [Revising the Requirements Specification: Notifications](https://github.com/bounswe/bounswe2022group2/issues/329)
+  4. [Revisions About All the Diagrams](https://github.com/bounswe/bounswe2022group2/issues/422)
+  5. [Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/315)
+  6. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  7. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+  
+### *Pull requests:*
+
+1. Frontend: Email Verification Page Implementation [#392](https://github.com/bounswe/bounswe2022group2/pull/392)
+2. Frontend: Email Verification Form Validation [#431](https://github.com/bounswe/bounswe2022group2/pull/431)
+3. Frontend: Backend Connection for Email Verification Page [#450](https://github.com/bounswe/bounswe2022group2/pull/450)
+
+### *Additional information:*  
+
+I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I readily contributed and shared my ideas when it came to project planning and decision making with other team members. Lastly, I had no prior experience with frontend development or React, so, I had to step outside of my comfort zone to learn and understand more about these topics.
+***
 
 ### *Member:*  
 
