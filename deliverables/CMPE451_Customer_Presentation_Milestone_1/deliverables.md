@@ -49,6 +49,7 @@ demonstrated during the demo:
   4. [Frontend: Adding Form Validations for Sign Up Form](https://github.com/bounswe/bounswe2022group2/issues/424)
   5. [Frontend: Unit Tests for Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/451)
   6. [Frontend: Dockerization of the Frontend](https://github.com/bounswe/bounswe2022group2/issues/412)
+  7. [AWS Deployment of the Web Application](https://github.com/bounswe/bounswe2022group2/issues/459)
 * *Management related significant issues:* My issues that contribute to the
 management of our software project:
   1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
