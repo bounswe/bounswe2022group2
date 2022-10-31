@@ -45,49 +45,5 @@ describe.only("LoginForm", () => {
 
   });
 
-  test("should render correct error message when unregistered e-mail is entered", async () => {
-    render(<BrowserRouter><LoginForm /></BrowserRouter>);
-
-    const emailInput = screen.getByTestId("email");
-    const passwordInput = screen.getByTestId("password");
-    const loginButton = screen.getByTestId("submit");
-
-    fireEvent.change(emailInput, {
-      target: { value: "test@test.com" },
-    });
-
-    fireEvent.change(passwordInput, {
-      target: { value: "TestPassword" },
-    });
-
-    fireEvent.submit(loginButton);
-
-    await screen.findByText("There is no user with the given email.");
-
-  });
-
-  test("should render correct error message when e-mail is registered but password is wrong", async () => {
-    render(<BrowserRouter><LoginForm /></BrowserRouter>);
-
-    const emailInput = screen.getByTestId("email");
-    const passwordInput = screen.getByTestId("password");
-    const registerButton = screen.getByTestId("submit");
-
-
-    fireEvent.change(emailInput, {
-      target: { value: "koraytekin2005@gmail.com" },
-    });
-
-    fireEvent.change(passwordInput, {
-      target: { value: "Testing1" },
-    });
-
-    fireEvent.submit(registerButton);
-
-    await screen.findByText("Wrong password.");
-
-  });
-
-  
 
 });
