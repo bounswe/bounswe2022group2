@@ -12,7 +12,6 @@ function App() {
       <BrowserRouter>
         <Routes>  
           <Route path="/" element={<SignUpForm/>}/>
-
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/verify-email" element={<EmailVerificationPage/>}/>
           <Route path="/home-page" element={<HomePage/>}/>

@@ -108,77 +108,83 @@ function SignUpForm() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="username">
-                            <label className="form__label" for="username">USERNAME </label>
+                            <label className="form__label" htmlFor="username">USERNAME </label>
                             <div className='space-3'></div>
                             <div>
                                 <input 
                                     className={`form-control ${errors.username ? 'is-invalid' : ''}`}
+                                    data-testid="username"
                                     type="text" 
                                     placeholder="Username"
                                     {...register('username')}
                                 />
-                                <div className="invalid-feedback">{errors.username?.message}</div>
+                                <div className="invalid-feedback" data-testid="username-error">{errors.username?.message}</div>
                             </div>
                         </div>
                         <div className="email">
-                            <label className="form__label" for="email">E-MAIL </label>
+                            <label className="form__label" htmlFor="email">E-MAIL </label>
                             <div className='space-3'></div>
                             <div>
                                 <input 
                                     className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                    type="email" 
+                                    type="email"
+                                    data-testid="email"
                                     placeholder="Email"
                                     {...register('email')}
                                 />
-                                <div className="invalid-feedback">{errors.email?.message}</div>
+                                <div className="invalid-feedback" data-testid="email-error">{errors.email?.message}</div>
                             </div>
                         </div>
                         <div className="password">
-                            <label className="form__label" for="password">PASSWORD </label>
+                            <label className="form__label" htmlFor="password">PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
                                 <input
                                     className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                                    type="password" 
+                                    type="password"
+                                    data-testid="password"
                                     placeholder="Password"
                                     {...register('password')}
                                 />
-                                <div className="invalid-feedback">{errors.password?.message}</div>
+                                <div className="invalid-feedback" data-testid="password-error">{errors.password?.message}</div>
                             </div>
                         </div>
                         <div className="confirm-password">
-                            <label className="form__label" for="confirmPassword">CONFIRM PASSWORD </label>
+                            <label className="form__label" htmlFor="confirmPassword">CONFIRM PASSWORD </label>
                             <div className='space-3'></div>
                             <div>
                                 <input
                                     className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
                                     type="password"
+                                    data-testid="confirmPassword"
                                     placeholder="Confirm Password"
                                     {...register('confirmPassword')}
                                 />
-                                <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
+                                <div className="invalid-feedback" data-testid="cfpassword-error">{errors.confirmPassword?.message}</div>
                             </div>
                         </div>
                         <div className='signup-checkbox-field'>
                             <label className='checkboxSignUpLabel'>
                                 <input 
                                     className={`form-check-input ${errors.kvkk ? 'is-invalid' : ''}`}
-                                    type="checkbox" 
+                                    type="checkbox"
+                                    data-testid="kvkk"
                                     {...register('kvkk')}
                                 />
                                 <span> I have read the {" "}<a href="https://www.nvi.gov.tr/kvkk-aydinlatma-metni" target="_blank" rel="noopener noreferrer" className="registerKVKK">
                                         clarification on KVKK
                                     </a> and agree on all the terms and conditions.
                                 </span>
-                                <div className="invalid-feedback">{errors.kvkk?.message}</div>
+                                <div className="invalid-feedback" data-testid="kvkk-error">{errors.kvkk?.message}</div>
                             </label>
                         </div>
                     </div>
-                    <div class="signup-button">
+                    <div className="signup-button">
                         <button 
                             onClick={handleSubmit(onSubmit)}
                             type="submit" 
-                            class="btn-orange">
+                            data-testid="submit"
+                            className="btn-orange">
                                 Register
                         </button>
                         <div className="submit-button-error">{message ? <p>{message}</p> : null}</div>
