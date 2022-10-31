@@ -1,20 +1,32 @@
 import React, {useState} from 'react';
 import { NavLink, useNavigate} from 'react-router-dom';
+import { useForm } from "react-hook-form";
 import * as Yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 import logo from '../images/logo-dblue.png'
 import illustration from '../images/learn-illustration.png'
 
-function ForgetPassword() {
-    
-    const [email, setEmail] = useState(null);
-
+function ForgetPassword() {   
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
     const validation = Yup.object().shape({
-        email: Yup.string().email('Invalid email format').required('Required'),
-     });
+        email: Yup.string()
+        .email("Invalid email format!")
+        .required("Required"),
+     })
+
+     const formOptions = { resolver: yupResolver(validation) }
+     const { register, handleSubmit, formState } = useForm(
+            formOptions,
+            {defaultValues: {
+                email: "",
+            }});
+    
+    const { errors } = formState
+
 
     const forgetPassword = async (email) => {
         await fetch("http://3.75.151.200:3000/auth/resend", {
@@ -42,32 +54,11 @@ function ForgetPassword() {
             });
     };
 
+    const onSubmit = (data, event) => {
+        event.preventDefault();
+        forgetPassword(data.email);
+    };
 
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "email"){
-                setEmail(value);
-
-        }
-        
-    }
-
-    
-    const handleSubmit  = () => {
-        if(email){
-            validation
-            .validate({email: email})   // <--- pass the value to validate
-            .then(() => {
-            localStorage.setItem('email', email);
-                // if valid, set the value
-            forgetPassword(email);
-            })
-            .catch((err) => {
-                // if invalid, set the error message
-                setMessage(err.message);
-            });
-        }
-    }
 
     return(
         <div className='pageLayout'>
@@ -84,39 +75,46 @@ function ForgetPassword() {
             </div>
             <div className='rightPart'>
                 <div className='welcome-navigation'>
-                    <NavLink to="/" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/" className="welcome-navigation-item">
                         Sign Up
                     </NavLink>
                     <div className='space-8'/>
-                    <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/login" className="welcome-navigation-item">
                         Login
                     </NavLink>
                 </div>
-                <div className="form">
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="email">
-                            <label className="form__label" for="email"> RESET PASSWORD  </label>
+                            <label className="form__label" htmlFor="email"> RESET PASSWORD  </label>
     
                            <div className='form-note'>
                                 Enter your email address and we'll send you a code to reset your password.
                             </div>
                             
                             <div>
-                                <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                                <input
+                                    className= {`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                    type="email" 
+                                    data-testid="email"
+                                    placeholder="Email"
+                                    {...register("email")}                                   
+                                />
+                                <div className="invalid-feedback" data-testid="email-error">{errors.email?.message}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="signup-button">
+                    <div className="signup-button">
                         <button
-                            disabled={!email}
-                            onClick={()=>handleSubmit()} 
-                            type="submit" 
-                            class="btn-orange">
+                            onClick={handleSubmit(onSubmit)} 
+                            type="submit"
+                            data-testid="submit"
+                            className="btn-orange">
                                 Send Code
                         </button>
-                        <div className="submit-button-error">{message ? <p>{message}</p> : null}</div>
+                        <div className="submit-button-error">{message ? <text>{message}</text> : null}</div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )       
