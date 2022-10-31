@@ -140,30 +140,32 @@ function EmailVerificationPage() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="verificationCode">
-                            <label className="form__label" for="verificationCode">VERIFICATION CODE </label>
+                            <label className="form__label" htmlFor="verificationCode">VERIFICATION CODE </label>
                             <div className='space-3'></div>
                             <div>
                                 <input
                                     className={`form-control ${errors.verificationCode ? 'is-invalid' : ''}`}
+                                    data-testid="verificationCode"
                                     type="verificationCode" 
                                     placeholder="Verification Code"
                                     {...register('verificationCode')}
                                 />
-                                <div className="invalid-feedback">{errors.verificationCode?.message}</div>
+                                <div className="invalid-feedback" data-testid="verificationCode-error">{errors.verificationCode?.message}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="signup-button">
+                    <div className="signup-button">
                         <button 
                             onClick={handleSubmit(onSubmit)}
                             type="submit" 
-                            class="btn-orange">
+                            data-testid="submit"
+                            className="btn-orange">
                                 Verify
                         </button>
                         <div className="submit-button-error">{message ? <p>{message}</p> : null}</div>
                     </div>
-                    <div class="signup-button">
-                        <button className={orange ? "btn-orange" : "btn-grey"} onClick={()=>handleSubmitResend()} type="submit" disabled={loading}>
+                    <div className="signup-button">
+                        <button className={orange ? "btn-orange" : "btn-grey"} onClick={()=>handleSubmitResend()} type="submit" data-testid="submitResend" disabled={loading}>
                         {loading && (
                             <i
                             className="fa fa-refresh fa-spin"
