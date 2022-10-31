@@ -65,7 +65,52 @@ management of our software project:
 4. Frontend: Backend connection for sign up page [#438](https://github.com/bounswe/bounswe2022group2/pull/438)
 
 ***
+### *Member:*  
 
+Name: Ezgi Aysel Batı  
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+  1. Implementing forget password screen and backend connection for mobile.
+  2. Implementing Course Preview widget which is the main component of mobile home page.
+  3. Implementing unit & widget tests.
+  4. Reviewing and testing work done by other mobile team members.
+  5. Revising Requirements & UML design related to User-Lecture interactions
+  6. Writing System Manual for Mobile.
+  7. Learning flutter, flutter testing. 
+
+
+### *Main contributions:*
+
+As a member of the mobile team, my first priority was to learn flutter and keep researching about it every step of the way in order to come up with the best possible implementation. I worked on implementing the forgot password screen, its connection to the backend endpoint send verification code and also unit/widget tests. I also worked on creating a custom part that displays a preview of courses, which will be the main part of home page. This process involved experimenting with different designs and trying out different combination of components to come up with something that both works nicely and is pleasing visually.   
+I attended all lectures, ps'es, mobile & general team meetings. I participated actively especially regarding future planning. I had no prior knowledge of flutter or mobile development.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile Team: Setting up development Environment #372](https://github.com/bounswe/bounswe2022group2/issues/372)
+  2. [Mobile: Implementing Forget Password Screen #375](https://github.com/bounswe/bounswe2022group2/issues/375)
+  3. [Mobile: Writing Tests for Forget Password Screen #383](https://github.com/bounswe/bounswe2022group2/issues/383)
+  4. [Mobile: Back-end Connection of Forget Password/Verify Email Endpoint #384](https://github.com/bounswe/bounswe2022group2/issues/384)
+  5. [Mobile: Custom Widget For Course Preview #408](https://github.com/bounswe/bounswe2022group2/issues/408)
+
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Revising the Requirements: User-Lecture Interaction #330](https://github.com/bounswe/bounswe2022group2/issues/330)
+  2. [Updating ReadMe #317](https://github.com/bounswe/bounswe2022group2/issues/317)
+  3. [Revising the Diagrams based on User - Lecture Interaction #343](https://github.com/bounswe/bounswe2022group2/issues/343)
+  4. [Writing System Manual For Mobile #407](https://github.com/bounswe/bounswe2022group2/issues/407)
+
+
+### *Pull requests:*
+
+1. Mobile/forget password screen [#382](https://github.com/bounswe/bounswe2022group2/pull/382)
+2. Mobile: course preview widget [#430](https://github.com/bounswe/bounswe2022group2/pull/430)
+3. Mobile: forget password backend [#433](https://github.com/bounswe/bounswe2022group2/pull/433)
+4. Mobile: implement tests for forget password [#442](https://github.com/bounswe/bounswe2022group2/pull/442)
+
+***
 ### *Member:*  
 
 Name: Ecenur Sezer  
