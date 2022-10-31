@@ -18,6 +18,7 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 ## Individual Contributions Report
 
 --------------------------  
+
 ### *Member:*  
 
 Name: Altay Acar
@@ -57,7 +58,6 @@ management of our software project:
   3. [Documenting Meeting Notes for the Meeting 2 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/328)
   4. [Revising the Requirements Specification: Notifications](https://github.com/bounswe/bounswe2022group2/issues/329)
 
-
 ### *Pull requests:*
 
 1. Frontend: Sign up page implementation [#387](https://github.com/bounswe/bounswe2022group2/pull/387)
@@ -67,6 +67,7 @@ management of our software project:
 5. Frontend: Unit tests for sign up page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
 
 ***
+
 ### *Member:*  
 
 Name: Ezgi Aysel Batı  
@@ -81,12 +82,11 @@ Group: Group2 - Mobile Team
   4. Reviewing and testing work done by other mobile team members.
   5. Revising Requirements & UML design related to User-Lecture interactions
   6. Writing System Manual for Mobile.
-  7. Learning flutter, flutter testing. 
-
+  7. Learning flutter, flutter testing.
 
 ### *Main contributions:*
 
-As a member of the mobile team, my first priority was to learn flutter and keep researching about it every step of the way in order to come up with the best possible implementation. I worked on implementing the forgot password screen, its connection to the backend endpoint send verification code and also unit/widget tests. I also worked on creating a custom part that displays a preview of courses, which will be the main part of home page. This process involved experimenting with different designs and trying out different combination of components to come up with something that both works nicely and is pleasing visually.   
+As a member of the mobile team, my first priority was to learn flutter and keep researching about it every step of the way in order to come up with the best possible implementation. I worked on implementing the forgot password screen, its connection to the backend endpoint send verification code and also unit/widget tests. I also worked on creating a custom part that displays a preview of courses, which will be the main part of home page. This process involved experimenting with different designs and trying out different combination of components to come up with something that both works nicely and is pleasing visually.
 I attended all lectures, ps'es, mobile & general team meetings. I participated actively especially regarding future planning. I had no prior knowledge of flutter or mobile development.
 
 * *Code related significant issues:* My issues that contribute to the code base
@@ -104,7 +104,6 @@ management of our software project:
   3. [Revising the Diagrams based on User - Lecture Interaction #343](https://github.com/bounswe/bounswe2022group2/issues/343)
   4. [Writing System Manual For Mobile #407](https://github.com/bounswe/bounswe2022group2/issues/407)
 
-
 ### *Pull requests:*
 
 1. Mobile/forget password screen [#382](https://github.com/bounswe/bounswe2022group2/pull/382)
@@ -116,7 +115,7 @@ management of our software project:
 
 ### *Member:*  
 
-Name: Batuhan Çelik 
+Name: Batuhan Çelik
 
 Group: Group2 - Backend Team
 
@@ -159,23 +158,23 @@ management of our software project:
   3. [Revising non functional requirements](https://github.com/bounswe/bounswe2022group2/issues/339)
   4. [Research and Report Backend Technologies](https://github.com/bounswe/bounswe2022group2/issues/321)
   5. [Update the project plan for milestone 1](https://github.com/bounswe/bounswe2022group2/issues/448)
-  6. [Dockerization of the frontend](https://github.com/bounswe/bounswe2022group2/issues/412) 
+  6. [Dockerization of the frontend](https://github.com/bounswe/bounswe2022group2/issues/412)
   [Even though I am not the assignee of this one, I helped Altay greatly with docker issues]
 
 ***
 
 ### *Member:*  
 
-Name: Hasan Can Erol    
+Name: Hasan Can Erol
 Group: Group2 - Backend Team
 
 ### *Responsibilities:*
 
   1. Implementing the resend verification email endpoint
-  2. Reviewing and making sure all works done by each beackend team member are working properly 
+  2. Reviewing and making sure all works done by each beackend team member are working properly
   3. Providing postman documentations for the frontend and mobile teams
   4. Doing research on technologies needed to use on backend development
- 
+
 ### *Main contributions:*
   
 I'm one of the 3 contributors of backend team for the Learnify app. Firstly, we discuss about popular technologies on software development and decided on Node.js as a team. After that, we splitted the implementation of 4 endpoints which are decided to be developed for the milestone-1 demo. I implemented resend the verificaiton email for signup and forgot password pages. I was always on touch with my backend teammates via discord, whatsapp or on person. I tried the project on my local and made sure the whole backend demo works properly.
@@ -220,17 +219,17 @@ We are a team of three for backend development of Learnify app. In that context,
 
 * *Code related significant issues:* My issues that contribute to the code base
 demonstrated during the demo:
-  1. [Backend: Implementing Unit Tests for Login Endpoint ](https://github.com/bounswe/bounswe2022group2/issues/421)
+  1. [Backend: Implementing Unit Tests for Login Endpoint](https://github.com/bounswe/bounswe2022group2/issues/421)
   2. [Backend: Writing Tests for Verify Email Endpoint](https://github.com/bounswe/bounswe2022group2/issues/418)
-  3. [Backend: Implementation of Login API ](https://github.com/bounswe/bounswe2022group2/issues/380)
+  3. [Backend: Implementation of Login API](https://github.com/bounswe/bounswe2022group2/issues/380)
   4. [Backend: Email Verification API](https://github.com/bounswe/bounswe2022group2/issues/364)
 * *Management related significant issues:* My issues that contribute to the
 management of our software project:
-  1. [Research & Report for Backend Technologies (Backend Team) ](https://github.com/bounswe/bounswe2022group2/issues/321)
+  1. [Research & Report for Backend Technologies (Backend Team)](https://github.com/bounswe/bounswe2022group2/issues/321)
   2. [Revising the Requirements : User - User Interaction](https://github.com/bounswe/bounswe2022group2/issues/334)
   3. [Revising the Requirements : Glossary](https://github.com/bounswe/bounswe2022group2/issues/335)
-  4. [Revising the Diagrams based on User - User Interaction ](https://github.com/bounswe/bounswe2022group2/issues/336)
-  5. [Reviewing the Revising the Requirements: Achievements and Badges ](https://github.com/bounswe/bounswe2022group2/issues/333)
+  4. [Revising the Diagrams based on User - User Interaction](https://github.com/bounswe/bounswe2022group2/issues/336)
+  5. [Reviewing the Revising the Requirements: Achievements and Badges](https://github.com/bounswe/bounswe2022group2/issues/333)
   6. [Reviewing the Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
   7. [Reviewing the Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
   8. [Reviewing the Dockerization of the API](https://github.com/bounswe/bounswe2022group2/issues/355)
@@ -244,16 +243,17 @@ management of our software project:
 4. Verify email endpoint [#374](https://github.com/bounswe/bounswe2022group2/pull/374)
 
 ### *Additional information:*  
+
 I have attended all team meetings on backend & overall. Some took part face-to-face and some were on Discord.
 
 ***
+
 ### *Member:*  
 
 Name: Muhammed Enes Sürmeli  
 Group: Group2 - Frontend Team
 
 ### *Responsibilities:*
-
 
   1. Implementing Email Verification page
   2. Adding Form Validation for Email Verification Page
@@ -264,7 +264,6 @@ Group: Group2 - Frontend Team
   7. Providing methods for establishing back-end connection
   8. Reviewing all frontend team members' work
   9. Doing research on technologies needed to use on frontend development
-  
   
 ### *Main contributions:*
 
@@ -296,6 +295,7 @@ management of our software project:
 ### *Additional information:*  
 
 I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I readily contributed and shared my ideas when it came to project planning and decision making with other team members. Lastly, I had no prior experience with frontend development or React, so, I had to step outside of my comfort zone to learn and understand more about these topics.
+
 ***
 
 ### *Member:*  
@@ -314,11 +314,17 @@ Group: Group2 - Mobile Team
   7. Writing tests of the profile screen
   8. Make the app icon as our logo and configure the app name
   9. Implementing bottom navigation and app bars
-  10. Reviewing all works done by mobile teammates  
+  10. Reviewing all works done by the mobile teammates
+  11. Determination of the endpoints, request and response bodies
+  12. Implement app icon and app name to the required config files
 
 ### *Main contributions:*
 
-I especially contributed to the mobile side with Flutter since I am a part of the mobile team. I have set up the base project, implemented the base managers (network, navigation, local), base widgets and logics which appear at almost every part of the app (like extensions, common widgets, helpers). I also took the responsibility of the signup and profile (static) screens and implemented them successfully. I did a research on testing with Flutter and I wrote the tests of the screens I developed. These tests created helpful examples for my teammates to use.
+I played active and important role while designing the API definition and project architecture while keeping needs of front and backend in mind. I reviewed all works done by the mobile team, build the communication between back-end and mobile teams. I actively reported the problems, missing points to them and had discussion on the processes. I explained the flow we should follow for email verification to all team members in our weekly meeting. I also expressed my suggestions on the request and response bodies.
+
+I especially contributed to the mobile side with Flutter since I am a part of the mobile team. I have set up the base project, implemented the base managers (network, navigation, local), base widgets and logics which appear at almost every part of the app (like extensions, common widgets, helpers). I created the base structure to support multi-language and multi-theme features. I took the responsibility of the signup screen which was the first screen we developed on mobile. I developed various generic widgets while developing this screen like CustomFormField, ActionButton, and so on. I also created a base network manager to use across the app and built the back-end connection of the signup endpoint. I did a research on testing with Flutter and created the first tests of our app, wrote some examples and beneficial helpers. I also write both unit-widget tests and also the network request tests of the signup screen.
+
+I also took the responsibility of the profile screen. Since the back-end connection and content of this screen is not ready yet, I implemented it as static (by using some dynamic data from login/signup screens). I managed the navigation from authentication screen to the home screen and movement/update of the data of authentication screens. I also wrote unit-widget tests for the profile screen. Additionally, I implemented the bottom and top app bars for the home screen. Finally, I configured the required files for the app logo and name.
 
 * *Code related significant issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -331,6 +337,7 @@ demonstrated during the demo:
   7. [Mobile: Implementing the Navigation Manager](https://github.com/bounswe/bounswe2022group2/issues/356)
   8. [Mobile: Base Setup for Multi-Language and Multi-Theme Setup](https://github.com/bounswe/bounswe2022group2/issues/357)
   9. [Mobile: Bottom Navigation and App Bar Widgets](https://github.com/bounswe/bounswe2022group2/issues/393)
+  10. [Mobile: Implement App Icon](https://github.com/bounswe/bounswe2022group2/issues/401)
 * *Management related significant issues:* My issues that contribute to the
 management of our software project:
   1. [Revising the Requirements: Authentication](https://github.com/bounswe/bounswe2022group2/issues/331)
@@ -339,6 +346,9 @@ management of our software project:
   4. [Documenting Meeting Notes for the Meeting 1 of Mobile Team](https://github.com/bounswe/bounswe2022group2/issues/349)
   5. [Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
   6. [Preparing Milestone 1 - CMPE 451 Deliverables](https://github.com/bounswe/bounswe2022group2/issues/409)
+  7. [Updating Sidebar](https://github.com/bounswe/bounswe2022group2/issues/313)
+  8. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+  9. [Report and Research on Flutter](https://github.com/bounswe/bounswe2022group2/issues/314)
 
 ### *Pull requests:*
 
@@ -353,6 +363,8 @@ management of our software project:
 9. Profile Screen Tests [#404](https://github.com/bounswe/bounswe2022group2/pull/404)
 10. Configuring app icon as our logo [#402](https://github.com/bounswe/bounswe2022group2/pull/402)
 11. Creating milestone 1 deliverables and individual report [#410](https://github.com/bounswe/bounswe2022group2/pull/410)
+12. Update Issue Templates [#340](https://github.com/bounswe/bounswe2022group2/pull/340)
+13. Create the base folder structure and base files of the Flutter project [#342](https://github.com/bounswe/bounswe2022group2/pull/342)
 
 ### *Additional information:*  
 
@@ -361,6 +373,5 @@ I built the base file, folder structure on mobile project. We have decided to us
 I actively participated in and give suggestions about the endpoints we should have. I also give suggestions about the request and response bodies of the endpoints. I explained some concepts and real-life examples of the front designs both for web and mobile. I contributed to the logic we should implement in the authentication flow (signup-login-forgot password-email verification)
 
 ***
-
 
 ## Milestone Group Review
