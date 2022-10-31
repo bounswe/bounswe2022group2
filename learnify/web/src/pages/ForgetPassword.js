@@ -13,7 +13,7 @@ function ForgetPassword() {
     const navigate = useNavigate();
 
     const validation = Yup.object().shape({
-        email: Yup.string().email('Invalid email format').required('Required'),
+        email: Yup.string().email("Invalid email format!").required("Required"),
      });
 
     const forgetPassword = async (email) => {
@@ -46,7 +46,7 @@ function ForgetPassword() {
     const handleInputChange = (e) => {
         const {id , value} = e.target;
         if(id === "email"){
-                setEmail(value);
+            setEmail(value);
 
         }
         
@@ -102,7 +102,16 @@ function ForgetPassword() {
                             </div>
                             
                             <div>
-                                <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                                <input  
+                                    type="email" 
+                                    id="email"
+                                    data-testid="email"
+                                    className="form__input" 
+                                    value={email} 
+                                    onChange = {(e) => handleInputChange(e)} 
+                                    placeholder="Email"
+                                />
+
                             </div>
                         </div>
                     </div>
@@ -110,11 +119,12 @@ function ForgetPassword() {
                         <button
                             disabled={!email}
                             onClick={()=>handleSubmit()} 
-                            type="submit" 
+                            type="submit"
+                            data-testid="submit"
                             class="btn-orange">
                                 Send Code
                         </button>
-                        <div className="submit-button-error">{message ? <p>{message}</p> : null}</div>
+                        <div className="submit-button-error">{message ? <text>{message}</text> : null}</div>
                     </div>
                 </div>
             </div>
