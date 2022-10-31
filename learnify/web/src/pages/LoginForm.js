@@ -45,6 +45,7 @@ function LoginForm() {
                 console.log(response.status);
                 console.log(response.statusText);
                 if (response.ok) {
+                    console.log("successfull")
                     navigate('/home-page',{replace: true});
                     return response.json();
                 } else {
@@ -54,8 +55,8 @@ function LoginForm() {
                     throw Error(response.statusText);
                 }
             })
-            .catch((err) => {
-                console.log(err.message);
+            .catch((error) => {
+                console.log(error.message);
             })
     };
 
@@ -79,11 +80,11 @@ function LoginForm() {
             </div>
             <div className="rightPart">
                 <div className='welcome-navigation'>
-                    <NavLink to="/" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/" activeclassname="welcome-navigation-item-active" className="welcome-navigation-item">
                         Sign Up
                     </NavLink>
                     <div className='space-8'/>
-                    <NavLink to="/login" activeClassName="welcome-navigation-item-active" className="welcome-navigation-item">
+                    <NavLink to="/login" activeclassname="welcome-navigation-item-active" className="welcome-navigation-item">
                         Login
                     </NavLink>
                 </div>
@@ -119,13 +120,13 @@ function LoginForm() {
                             </div>
                         </div>
                 
-                    <div class="login-button">
-                        <button onClick={()=>handleSubmit(onSubmit)} type="submit" data-testid="submit" class="btn-orange">Login</button>
+                    <div className="login-button">
+                        <button onClick={()=>handleSubmit(onSubmit)} type="submit" data-testid="submit" className="btn-orange">Login</button>
 
                     </div>
-                    <div class="login-button">
+                    <div className="login-button">
                         <NavLink to="/forget-password" >
-                            <button class="btn-white" data-testid="forgotPassword">Forgot Password</button>
+                            <button className="btn-white" data-testid="forgotPassword">Forgot Password</button>
                         </NavLink>
                     </div>
                     </div>
