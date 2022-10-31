@@ -4,6 +4,7 @@ import request from 'supertest';
 import { User } from '../models/index.js';
 import app from '../app.js';
 import bcrypt from 'bcryptjs';
+import jwt_decode from "jwt-decode";
 
 const { hash } = bcrypt;
 const ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
@@ -75,6 +76,10 @@ describe('POST /auth/login', () => {
       .post(loginUrl)
       .send({ email, password })
       .expect((res) => {
+
+        var decodedPayload = jwt_decode(res.body.token, { payload: true });
+        expect(decodedPayload.email).toBe(email);
+        expect(decodedPayload.user_id).toBe(ids[0].toString());
         expect(res.headers['x-auth']).not.toBeNull();
         expect(res.body.user).not.toBeNull();
         expect(res.body.user).not.toBeUndefined();

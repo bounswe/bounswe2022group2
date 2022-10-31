@@ -34,6 +34,7 @@
     "helmet": "^5.0.2",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "local-storage": "^2.0.0",
     "mocha": "^10.0.0",
     "mongodb-memory-server-core": "^8.5.2",
@@ -44,7 +45,7 @@
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
-    "supertest": "^6.2.3",
-    "sinon": "^14.0.0"
+    "sinon": "^14.0.0",
+    "supertest": "^6.2.3"
   }
 }
