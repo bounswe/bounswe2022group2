@@ -161,6 +161,43 @@ management of our software project:
   [Even though I am not the assignee of this one, I helped Altay greatly with docker issues]
 
 ***
+
+### *Member:*  
+
+Name: Hasan Can Erol    
+Group: Group2 - Backend Team
+
+### *Responsibilities:*
+
+  1. Implementing the resend verification email endpoint
+  2. Reviewing and making sure all works done by each beackend team member are working properly 
+  3. Providing postman documentations for the frontend and mobile teams
+  4. Doing research on technologies needed to use on backend development
+ 
+### *Main contributions:*
+  
+I'm one of the 3 contributors of backend team for the Learnify app. Firstly, we discuss about popular technologies on software development and decided on Node.js as a team. After that, we splitted the implementation of 4 endpoints which are decided to be developed for the milestone-1 demo. I implemented resend the verificaiton email for signup and forgot password pages. I was always on touch with my backend teammates via discord, whatsapp or on person. I tried the project on my local and made sure the whole backend demo works properly.
+
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Backend: Implementation of Resend Email Verification](https://github.com/bounswe/bounswe2022group2/issues/406)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Revising the Requirements: Profile Page](https://github.com/bounswe/bounswe2022group2/issues/345)
+  2. [Revisions About All the Diagrams](https://github.com/bounswe/bounswe2022group2/issues/322)
+  3. [Reviewing the Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/315)
+  4. [Reviewing the Revising the Requirements: Chat to forum Transformation](https://github.com/bounswe/bounswe2022group2/issues/344)
+  
+### *Pull requests:*
+
+  1. [Backend: Implementing Resend The Verification Code](https://github.com/bounswe/bounswe2022group2/pull/411)
+
+### *Additional information:*  
+
+I've attended the team meetings on backend & overall. Some of them are on discord or zoom, some of them on the class which is the PS's classroom.
+
+***
+
 ### *Member:*  
 
 Name: Ecenur Sezer  
