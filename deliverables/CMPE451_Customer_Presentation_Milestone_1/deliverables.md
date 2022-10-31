@@ -456,5 +456,33 @@ Group: Group2 - Frontend Team
 
 I am a part of the frontend team of our project. Took part at the naming of the project and the final decision, Learnify is one of my suggestions. After deciding the essentials and seperating into teams, I initialize the frontend project and created initial pages to make colaborative work possible. We decided branch naming conventions to follow each others work easily as frontend team. After that, I was also responsible for the implementation of the forget password page by the design perspective that our team follows. Since we do not have a detailed experience on React, I have go over the basics of React for subjects like; connecting pages, routing, using states, input forms and validations, handling API requests, and unit testing. After my research, individual trials and discussions in the team, I have implemented our forget password page. After that the backend connection, input verification and unit testing. Additionaly, I took part of each of the pull requests by the front end team, review and give feedback to all.
 
+* *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Initialization of the frontend project](https://github.com/bounswe/bounswe2022group2/issues/371)
+  2. [Frontend: Implementing Forgot Password Screen](https://github.com/bounswe/bounswe2022group2/issues/379)
+  3. [Frontend: Backend connection for the Forget Password page](https://github.com/bounswe/bounswe2022group2/issues/444)
+  4. [Frontend: Unit Tests for Forget Password page](https://github.com/bounswe/bounswe2022group2/issues/464)
+  5. [Frontend: Creating mock home page and adding to the repository](https://github.com/bounswe/bounswe2022group2/issues/465)
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+  1. [Personal Wiki Page: Gokay Yildiz](https://github.com/bounswe/bounswe2022group2/issues/311)
+  2. [Discovery and Questions about Project for New Members](https://github.com/bounswe/bounswe2022group2/issues/320)
+  3. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  4. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  5. [Revising the Requirements: Profile Page](https://github.com/bounswe/bounswe2022group2/issues/345)
+  6. [Conducting Research on React Router](https://github.com/bounswe/bounswe2022group2/issues/386)
+
+### *Pull requests:*
+
+1. Frontend: Initial pages created to present as an example [#378](https://github.com/bounswe/bounswe2022group2/pull/378)
+2. Frontend/forget password [#419](https://github.com/bounswe/bounswe2022group2/pull/419)
+3. Frontend: Backend connection to forget password [#445](https://github.com/bounswe/bounswe2022group2/pull/445)
+4. Frontend: Frontend/dev to dev [#452](https://github.com/bounswe/bounswe2022group2/pull/452)
+5. Frontend: Home page mock [#461](https://github.com/bounswe/bounswe2022group2/pull/461)
+6. Frontend/dev forget password unit tests [#463](https://github.com/bounswe/bounswe2022group2/pull/463)
+
+### *Additional information:*  
+
+As a new team member, I have tried to actively participated in the discussions and give suggestions about project. Even though it is hard to catch up the ideas on the project by the team members since they have been dealing with this project for half a year more than me, I managed to be an active member on meetings. I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I shared all information that I know and I learn during the course of development by discord, whatsapp and github issues with the frontend team. 
 
 ## Milestone Group Review
