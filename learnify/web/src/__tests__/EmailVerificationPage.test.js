@@ -38,7 +38,7 @@ describe.only("EmailVerificationPage", () => {
 
     fireEvent.submit(resendButton);
 
-    await screen.findByText("Verification Code must contain exactly 4 digits!");
+    await screen.findByText("Verification Code must contain exactly 4 digit number!");
 
   });
 
