@@ -272,7 +272,7 @@ Group: Group2 - Mobile Team
   4. Writing tests for login page
   5. Reviewing whole work that is done by mobile team
   6. Contributing to project plan development
-  7. Transferring project plan notion to ProjectLibre
+  7. Transferring project plan from notion to ProjectLibre
   
 ### *Main contributions:*
 
