@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
-import '/../../product/constants/storage_keys.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../../core/managers/network/models/message_response.dart';
@@ -78,7 +77,6 @@ class LoginViewModel extends BaseViewModel {
           await _authService.login(requestModel);
 
       if (res.error?.statusCode == 401) {
-        await localManager.setString(StorageKeys.email, _emailController.text);
         final SendVerificationRequest requestModel =
             SendVerificationRequest(email: _emailController.text);
         final IResponseModel<MessageResponse> resp =
