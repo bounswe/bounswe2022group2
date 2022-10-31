@@ -4,9 +4,9 @@ import 'course_model.dart';
 class GetCoursesResponse extends BaseModel<GetCoursesResponse> {
   const GetCoursesResponse(
       {this.resultMessage,
-      this.takenCourses,
-      this.friendCourses,
-      this.recommendedCourses});
+      this.takenCourses = const <Course>[],
+      this.friendCourses = const <Course>[],
+      this.recommendedCourses = const <Course>[]});
 
   factory GetCoursesResponse.fromJson(Map<String, dynamic> json) =>
       GetCoursesResponse(
@@ -19,9 +19,9 @@ class GetCoursesResponse extends BaseModel<GetCoursesResponse> {
               json['recomendedCourses'], const Course()));
 
   final String? resultMessage;
-  final List<Course>? takenCourses;
-  final List<Course>? friendCourses;
-  final List<Course>? recommendedCourses;
+  final List<Course> takenCourses;
+  final List<Course> friendCourses;
+  final List<Course> recommendedCourses;
 
   @override
   GetCoursesResponse fromJson(Map<String, dynamic> json) =>
