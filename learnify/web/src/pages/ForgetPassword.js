@@ -58,6 +58,7 @@ function ForgetPassword() {
             validation
             .validate({email: email})   // <--- pass the value to validate
             .then(() => {
+            localStorage.setItem('email', email);
                 // if valid, set the value
             forgetPassword(email);
             })
