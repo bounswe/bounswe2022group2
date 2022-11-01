@@ -14,7 +14,8 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 * [Project Plan](https://github.com/bounswe/bounswe2022group2/wiki/Project-Plan)
 * [Individual Contribution Reports](#Individual-Contributions-Report)
 * [Customer Milestone 1 Group Review](#Milestone-Group-Review)
-
+* [Mobile App APK](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK)
+* [Mobile System Manual](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual)
 ## Individual Contributions Report
 
 --------------------------  
