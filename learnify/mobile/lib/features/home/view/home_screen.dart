@@ -21,25 +21,28 @@ class HomeScreen extends BaseView<HomeViewModel> {
           key: key,
         );
 
-  static Widget _builder(BuildContext context) => Column(
-        children: <Widget>[
-          SizedBox(
-            height: 250,
-            child: _coursePreviewList(context, 'Taken Courses',
-                context.read<HomeViewModel>().takenCourses),
-          ),
-          context.sizedH(1),
-          SizedBox(
-            height: 250,
-            child: _coursePreviewList(context, "Friends Courses",
-                context.read<HomeViewModel>().friendCourses),
-          ),
-          context.sizedH(1),
-          SizedBox(
-              height: 250,
-              child: _coursePreviewList(context, 'Recommended Courses',
-                  context.read<HomeViewModel>().recommendedCourses)),
-        ],
+  static Widget _builder(BuildContext context) => Padding(
+        padding: EdgeInsets.all(context.width * 5),
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 185,
+              child: _coursePreviewList(context, 'Taken Courses',
+                  context.read<HomeViewModel>().takenCourses),
+            ),
+            context.sizedH(3),
+            SizedBox(
+              height: 185,
+              child: _coursePreviewList(context, "Friends Courses",
+                  context.read<HomeViewModel>().friendCourses),
+            ),
+            context.sizedH(3),
+            SizedBox(
+                height: 185,
+                child: _coursePreviewList(context, 'Recommended Courses',
+                    context.read<HomeViewModel>().recommendedCourses)),
+          ],
+        ),
       );
 
   static Widget _coursePreviewList(
@@ -50,14 +53,13 @@ class HomeScreen extends BaseView<HomeViewModel> {
               textAlign: TextAlign.left,
               style: const TextStyle(fontWeight: FontWeight.bold)),
           context.sizedH(2),
-          SizedBox(
-            height: 200,
+          Expanded(
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: courseList.length,
-              separatorBuilder: (BuildContext context, _) => SizedBox(
-                width: context.width * 10,
-              ),
+              shrinkWrap: true,
+              separatorBuilder: (BuildContext context, _) =>
+                  SizedBox(width: context.width * 5),
               itemBuilder: (BuildContext context, int index) => _CoursePreview(
                   textKey: courseList[index].name ?? '',
                   participantNumber: courseList[index].numParticipants ?? 0),
