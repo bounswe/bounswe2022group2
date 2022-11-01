@@ -15,12 +15,12 @@ abstract class IAuthService extends BaseService {
 
   ///Logins the user.
   Future<IResponseModel<LoginResponse>> login(LoginRequest body);
-  
+
   /// Sends verification code to email
   Future<IResponseModel<MessageResponse>> sendVerification(
       SendVerificationRequest body);
 
-  // Sends entered code to check to verify email
+  /// Sends entered code to check to verify email
   Future<IResponseModel<VerifyEmailResponse>> verifyEmail(
       VerifyEmailRequest body);
 }
