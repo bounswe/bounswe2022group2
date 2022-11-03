@@ -14,8 +14,8 @@ class Chapter extends BaseModel<Chapter> {
   factory Chapter.dummy(int id) => Chapter(
         id: id.toString(),
         courseId: id.toString(),
-        title: RandomHelper.randomString(min: 10, max: 25),
-        materialText: RandomHelper.randomString(),
+        title: 'Running Apps on Different Devices',
+        materialText: RandomHelper.randomString(min: 150),
         materialVisual: const <String>[
           'https://picsum.photos/700/400',
           'https://picsum.photos/700/400',

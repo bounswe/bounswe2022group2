@@ -8,7 +8,7 @@ mixin RandomHelper {
     final Random rnd = Random();
     final int minAssigned = min ?? 20;
     return String.fromCharCodes(Iterable<int>.generate(
-        Random().nextInt((max ?? 100) - minAssigned) + minAssigned,
+        Random().nextInt((max ?? minAssigned + 80) - minAssigned) + minAssigned,
         (_) => _chars.codeUnitAt(rnd.nextInt(_chars.length))));
   }
 }

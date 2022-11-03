@@ -16,7 +16,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initViewModel() {
-    _chapters = List<Chapter>.generate(12, Chapter.dummy);
+    _chapters = List<Chapter>.generate(20, Chapter.dummy);
   }
 
   @override
