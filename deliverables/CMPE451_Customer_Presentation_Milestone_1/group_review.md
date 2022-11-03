@@ -130,6 +130,14 @@ These are the Requirements addressed up to this milestone.
     5. Revising Requirements & UML design related to User-Lecture interactions
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
+  
+- **Onur Kömürcü**
+    1. Implementing login screen and its backend connection for mobile app.
+    2. Implementing widget and network test for login screen.
+    3. Reviewing the codes that are written by mobile team.
+    4. Learning implementation details of Flutter.
+    5. Revising achievements related software requirements specifications and UML diagrams.
+    6. Updating project plan and communication plan.
 
 - **Bahrican Yeşil:**
     1. Building the main structure of the Flutter project
@@ -191,6 +199,24 @@ These are the Requirements addressed up to this milestone.
   |Mobile: course preview widget |[#430](https://github.com/bounswe/bounswe2022group2/pull/430)|
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
+  
+- **Onur Kömürcü:**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Mobile: Setting up development Environment #372|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/372)|
+  |Mobile: Implementation of Login Screen Including Backend Connection|[Issue Link](https://github.com/bounswe/bounswe2022group2/pull/398)|
+  |Mobile: Writing Tests for Login Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/447)|
+  |Milestone 1: Project Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/448)|
+  |Updating Communication Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/377)|
+  |Updating the Project plan for upcoming semeste|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/316)|
+  |Revising the Requirements: Achievements and Badges|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/333)|
+  |Revising the Diagrams based on Achievements|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/346)|
+  |Updating Personal Wiki Pages|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/324)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Mobile: Implementing Login Page Including Backend Connection|[#396](https://github.com/bounswe/bounswe2022group2/issues/396)|
+  |Mobile: Tests for Login Page|[#485](https://github.com/bounswe/bounswe2022group2/pull/485)|
   
 - **Bahrican Yeşil:**
   |Issue Title|Link|
