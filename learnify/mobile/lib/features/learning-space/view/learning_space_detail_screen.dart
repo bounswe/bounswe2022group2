@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view/base_view.dart';
-import '../view-model/courses_view_model.dart';
+import '../view-model/learning_space_view_model.dart';
 
-class CoursesScreen extends BaseView<CoursesViewModel> {
-  const CoursesScreen({Key? key})
+class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel> {
+  const LearningSpaceDetailScreen({Key? key})
       : super(
           builder: _builder,
           scrollable: true,

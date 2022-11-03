@@ -23,7 +23,13 @@ class HomeViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _homeService = HomeService.instance;
-    // await _getCourses();
+  }
+
+  @override
+  void disposeViewModel() {
+    _takenCourses.clear();
+    _friendCourses.clear();
+    _recommendedCourses.clear();
   }
 
   @override
@@ -32,13 +38,16 @@ class HomeViewModel extends BaseViewModel {
     super.disposeView();
   }
 
-  void _setDefault() {
-    _takenCourses.clear();
-    _friendCourses.clear();
-    _recommendedCourses.clear();
+  void _setDefault() {}
+
+  Future<void> fetchInitialCourses() async {
+    if (_takenCourses.isNotEmpty ||
+        _friendCourses.isNotEmpty ||
+        _recommendedCourses.isNotEmpty) return;
+    await _getCourses();
   }
 
-  Future<String?> getCourses() async {
+  Future<String?> _getCourses() async {
     await operation?.cancel();
     operation = CancelableOperation<String?>.fromFuture(_getCoursesRequest());
     final String? res = await operation?.valueOrCancellation();

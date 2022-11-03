@@ -1,7 +1,7 @@
 import '../../../../core/base/view-model/base_view_model.dart';
 
-/// View model to manage the data on courses screen.
-class CoursesViewModel extends BaseViewModel {
+/// View model to manage the data on learning space screen.
+class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initViewModel() {}
 
