@@ -291,13 +291,8 @@ class CustomExpansionTileState extends State<CustomExpansionTile>
     _iconColor = _controller.drive(_iconColorTween.chain(_easeInTween));
     _backgroundColor =
         _controller.drive(_backgroundColorTween.chain(_easeOutTween));
-
-    isExpanded = PageStorage.of(context)?.readState(context) is bool
-        ? (PageStorage.of(context)?.readState(context) as bool)
-        : widget.initiallyExpanded;
-    if (isExpanded) {
-      _controller.value = 1.0;
-    }
+    isExpanded = widget.initiallyExpanded;
+    if (isExpanded) _controller.value = 1.0;
   }
 
   @override
@@ -323,6 +318,23 @@ class CustomExpansionTileState extends State<CustomExpansionTile>
       PageStorage.of(context)?.writeState(context, isExpanded);
     });
     if (callback) widget.onExpansionChanged?.call(isExpanded);
+  }
+
+  /// Handle tap
+  void setExpansion(bool newVal) {
+    if (isExpanded == newVal) return;
+    setState(() {
+      isExpanded = newVal;
+      if (isExpanded) {
+        _controller.forward();
+      } else {
+        _controller.reverse().then<void>((void value) {
+          if (!mounted) return;
+          setState(() {});
+        });
+      }
+      PageStorage.of(context)?.writeState(context, isExpanded);
+    });
   }
 
   // Platform or null affinity defaults to trailing.

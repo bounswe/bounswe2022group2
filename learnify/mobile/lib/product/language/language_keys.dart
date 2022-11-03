@@ -48,4 +48,6 @@ class TextKeys {
   static const String chapters = "chapters";
   static const String events = "events";
   static const String forum = "forum";
+  static const String createChapter = "create_chapter";
+  
 }

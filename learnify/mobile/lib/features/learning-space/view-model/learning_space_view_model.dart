@@ -15,11 +15,11 @@ class LearningSpaceViewModel extends BaseViewModel {
   List<GlobalKey<CustomExpansionTileState>> get expansionTileKeys =>
       _expansionTileKeys;
 
-  CarouselController _carouselController = CarouselController();
-  CarouselController get carouselController => _carouselController;
+  List<CarouselController> _carouselControllers = <CarouselController>[];
+  List<CarouselController> get carouselControllers => _carouselControllers;
 
-  int _carouselPageIndex = 0;
-  int get carouselPageIndex => _carouselPageIndex;
+  List<int> _carouselPageIndexes = <int>[];
+  List<int> get carouselPageIndexes => _carouselPageIndexes;
 
   @override
   void initViewModel() {
@@ -33,7 +33,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   void initView() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
         _chapters.length, (_) => GlobalKey<CustomExpansionTileState>());
-    _carouselController = CarouselController();
+    _carouselControllers = List<CarouselController>.generate(
+        _chapters.length, (_) => CarouselController());
+    _carouselPageIndexes = List<int>.generate(_chapters.length, (_) => 0);
   }
 
   @override
@@ -44,9 +46,16 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   void setDefault() {}
 
-  void setCarouselPageIndex(int newIndex) {
-    if (newIndex == _carouselPageIndex) return;
-    _carouselPageIndex = newIndex;
+  void setCarouselPageIndex(int newIndex, int i) {
+    if (newIndex == _carouselPageIndexes[i]) return;
+    _carouselPageIndexes[i] = newIndex;
     notifyListeners();
+  }
+
+  Future<String?> createChapter() async {
+    // TODO: Fix
+    // await navigationManager.navigateToPage(
+    //     path: NavigationConstants.createEditChapter);
+    return null;
   }
 }

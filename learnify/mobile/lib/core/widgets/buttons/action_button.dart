@@ -129,10 +129,7 @@ class ActionButtonState extends State<ActionButton> {
             height: _buttonHeight,
             child: ElevatedButton.icon(
               onPressed: widget.isActive ? localOnPressed : null,
-              style: _buttonStyle(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: context.responsiveSize * 2,
-                      vertical: context.responsiveSize)),
+              style: _buttonStyle(),
               focusNode: widget.focusNode,
               label: _buttonChild,
               icon: widget.icon!,

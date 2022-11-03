@@ -18,22 +18,26 @@ class _ChapterList extends StatelessWidget {
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (_, int i) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: context.height * .3),
-              child: _ChapterItem(
-                chapter: chapters[i],
-                itemIndex: i,
-                callback: () => updateExpansions(i, keys),
-                expansionTileKey: keys[i],
+        (_, int i) => i == 0
+            ? _createButton(context)
+            : Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: context.height * .3),
+                    child: _ChapterItem(
+                      chapter: chapters[i - 1],
+                      itemIndex: i - 1,
+                      callback: (int itemIndex) =>
+                          updateExpansions(itemIndex, keys),
+                      expansionTileKey: keys[i - 1],
+                    ),
+                  ),
+                  const CustomDivider(),
+                ],
               ),
-            ),
-            const CustomDivider(),
-          ],
-        ),
-        childCount: chapters.length,
+        childCount: chapters.length + 1,
       ),
     );
   }
@@ -42,8 +46,26 @@ class _ChapterList extends StatelessWidget {
       int index, List<GlobalKey<CustomExpansionTileState>> keys) {
     for (int i = 0; i < keys.length; i++) {
       final CustomExpansionTileState? state = keys[i].currentState;
-      if (index == i || !(state?.isExpanded ?? true)) continue;
-      state?.handleTap(callback: false);
+      if (index == i) continue;
+      state?.setExpansion(false);
     }
   }
+
+  Widget _createButton(BuildContext context) => Padding(
+        padding: EdgeInsets.only(
+            top: context.height * 1.7,
+            bottom: context.height * .3,
+            left: context.width * 20,
+            right: context.width * 20),
+        child: ActionButton(
+          icon: BaseIcon(context, Icons.add_outlined),
+          text: TextKeys.createChapter,
+          height: context.height * 5.3,
+          backgroundColor: context.secondary,
+          padding: EdgeInsets.symmetric(
+              horizontal: context.responsiveSize * 2.8,
+              vertical: context.responsiveSize * 1.4),
+          onPressedError: context.read<LearningSpaceViewModel>().createChapter,
+        ),
+      );
 }

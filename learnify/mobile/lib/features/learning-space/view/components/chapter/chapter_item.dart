@@ -10,7 +10,7 @@ class _ChapterItem extends StatelessWidget {
   }) : super(key: key);
   final Chapter chapter;
   final int itemIndex;
-  final VoidCallback callback;
+  final IndexCallback callback;
   final GlobalKey<CustomExpansionTileState> expansionTileKey;
 
   @override
@@ -46,7 +46,7 @@ class _ChapterItem extends StatelessWidget {
       iconColor: context.primary,
       onExpansionChanged: (bool val) {
         if (val) {
-          callback();
+          callback(itemIndex);
           viewModel.setDefault();
         }
       },
@@ -67,7 +67,7 @@ class _ChapterItem extends StatelessWidget {
     return CarouselSlider.builder(
       key: PageStorageKey<String>(chapter.id ?? ''),
       itemCount: images.length,
-      carouselController: viewModel.carouselController,
+      carouselController: viewModel.carouselControllers[itemIndex],
       options: CarouselOptions(
         aspectRatio: 20 / 9,
         viewportFraction: 0.75,
@@ -75,10 +75,12 @@ class _ChapterItem extends StatelessWidget {
         autoPlay: true,
         enableInfiniteScroll: false,
         onPageChanged: (int newIndex, _) =>
-            viewModel.setCarouselPageIndex(newIndex),
+            viewModel.setCarouselPageIndex(newIndex, itemIndex),
       ),
-      itemBuilder: (BuildContext context, int i, int pageViewIndex) =>
-          CustomNetworkImage(images[i]),
+      itemBuilder: (_, int i, __) => CustomNetworkImage(
+        images[i],
+        key: PageStorageKey<String>(images[i]),
+      ),
     );
   }
 
@@ -87,9 +89,11 @@ class _ChapterItem extends StatelessWidget {
         children: List<Widget>.generate(
           chapter.materialVisual.length,
           (int i) => GestureDetector(
-            onTap: () => viewModel.carouselController.animateToPage(i),
+            onTap: () =>
+                viewModel.carouselControllers[itemIndex].animateToPage(i),
             child: SelectorHelper<int, LearningSpaceViewModel>().builder(
-              (_, LearningSpaceViewModel model) => model.carouselPageIndex,
+              (_, LearningSpaceViewModel model) =>
+                  model.carouselPageIndexes[itemIndex],
               (BuildContext context, int index, _) => Container(
                 width: context.width * 2.5,
                 height: context.width * 2.5,

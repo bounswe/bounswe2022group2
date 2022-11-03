@@ -1,14 +1,15 @@
-import 'dart:ui';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
 import '../../../../core/base/view/base_view.dart';
+import '../../../core/constants/main_type_definitions.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/widgets/base-icon/base_icon.dart';
+import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/custom_network_image.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
