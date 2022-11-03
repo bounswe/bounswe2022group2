@@ -203,7 +203,7 @@ These are the Requirements addressed up to this milestone.
 - **Onur Kömürcü:**
   |Issue Title|Link|
   |-----|:--------:|
-  |Mobile: Setting up development Environment #372|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/372)|
+  |Mobile: Setting up development Environment|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/372)|
   |Mobile: Implementation of Login Screen Including Backend Connection|[Issue Link](https://github.com/bounswe/bounswe2022group2/pull/398)|
   |Mobile: Writing Tests for Login Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/447)|
   |Milestone 1: Project Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/448)|
