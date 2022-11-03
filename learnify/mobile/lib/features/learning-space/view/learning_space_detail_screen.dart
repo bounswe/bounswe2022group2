@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
+import '../../../core/helpers/selector_helper.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../constants/learning_space_constants.dart';
+import '../models/chapter_model.dart';
 import '../view-model/learning_space_view_model.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
@@ -41,13 +43,18 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
         SliverPadding(
           padding: EdgeInsets.symmetric(
               vertical: context.height * .6, horizontal: context.width * 2),
-          sliver: SliverFixedExtentList(
-            itemExtent: context.height * 12,
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) => ListTile(
-                title: Text('Item $index'),
+          sliver:
+              SelectorHelper<List<Chapter>, LearningSpaceViewModel>().builder(
+            (_, LearningSpaceViewModel model) => model.chapters,
+            (BuildContext context, List<Chapter> chapters, _) =>
+                SliverFixedExtentList(
+              itemExtent: context.height * 12,
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) => ListTile(
+                  title: Text('Item $index'),
+                ),
+                childCount: chapters.length,
               ),
-              childCount: 30,
             ),
           ),
         ),
