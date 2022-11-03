@@ -113,6 +113,15 @@ These are the Requirements addressed up to this milestone.
 
 ## Responsibilities
 
+- **Egemen Atik**
+    1. Implementing verification screen and providing its back-end connection.
+    2. Implementing the resend button and countdown timer for verification screen.
+    3. Implementing widget tests and network tests for verification screen.
+    4. Implementing a horizontal scrollable course preview list widget for home screen.
+    5. Reviewing all works done by the mobile team members.
+    6. Learning Flutter and testing in Flutter.
+    7. Revising and updating requirements and UML diagrams related to Lecture Structure.
+
 - **Ezgi Aysel Batı**
     1. Implementing forget password screen and backend connection for mobile.
     2. Implementing Course Preview widget which is the main component of mobile home page.
@@ -139,6 +148,29 @@ These are the Requirements addressed up to this milestone.
 ---------
 
 ## Summary of Individual Work
+
+- **Egemen Atik**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Mobile: Scrollable Horizontal Course List Widget For Home Screen #457|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/457)|
+  |Mobile: Writing Network Connection Tests for Verification Screen #454|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/454)|
+  |Mobile: Back-end Connection of Verification Screen #434|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/434)|
+  |Documenting Meeting Notes for the Meeting 2 of Mobile Team #427|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/427)|
+  |Documenting Meeting Notes for the Meeting 4 of CMPE 451 #425|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/425)|
+  |Mobile: Writing Tests for Verification Screen #417|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/417)|
+  |Mobile: Implementing Verification Screen #395|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/395)|
+  |Revising the Diagrams based on Lecture Structure #347|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/347)|
+  |Revising the Requirements: Lecture Structure #341|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/341)|
+  |Update Requirements Page #325|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/325)|
+  |Update Personal Wiki Pages #324|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/324)|
+
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Mobile: Scrollable horizontal course list widget for home screen / 457|[#462](https://github.com/bounswe/bounswe2022group2/pull/462)|
+  |Mobile: Verification screen network tests|[#455](https://github.com/bounswe/bounswe2022group2/pull/455)|
+  |Mobile: Back-End Connection of Verification Screen/434|[#435](https://github.com/bounswe/bounswe2022group2/pull/435)|
+  |Mobile/verification screen tests 417|[#432](https://github.com/bounswe/bounswe2022group2/pull/432)|
+  |Mobile/verification screen 395|[#416](https://github.com/bounswe/bounswe2022group2/pull/416)|
 
 - **Ezgi Aysel Batı**
   |Issue Title|Link|
