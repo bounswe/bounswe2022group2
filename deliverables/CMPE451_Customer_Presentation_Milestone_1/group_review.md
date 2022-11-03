@@ -76,6 +76,20 @@ We conducted research on Flutter before we decided to use it for mobile developm
 
 After the first milestone demo, we understood that we gave the correct decision by choosing Flutter. We were able to quickly develop the first milestone with lots of good features, nice design touches, and fewer problems. People in the mobile team who have curious about Flutter but have no experience got the initial experience. According to their feedback in our team meetings, we are satisfied with the development experience with Flutter.
 
+#### **5. React**
+
+We conducted research on React before we decided to use it for Web Application development. Here are our findings and reasonings to choose React as the tool for Web development:
+- React is arguably the most popular frontend technology of today and because of that there are almost numerous resources that we can use while practicing React. There are tons of free tutorials on YouTube as well. Its syntax is very easy compared to the others and only needs some practice in HTML.
+- React has vast resources and community support. During the development process, when we encounter a problem we can find a solution for it easily on the internet.
+- Reusability of React components, each React component that you have developed can be reused in other parts of the app.
+- Debugging and error-checking are much more efficient in React due to the unidirectional data binding providing higher control over data access of components.
+
+
+### ~ Evaluation of Processes ~
+
+#### **1. Team Meetings**
+As stated in our communication plan, after the creation of the sub-groups namely front-end, back-end and mobile teams we have updated the scheduling of our weekly meetings. Every sub-group has one specified weekly meeting and additional meetings depending on the necessity. For our general group meetings the convention is, we; as the whole team gather on our discord channel on a weekly basis to discuss respectively; previous week's feedback, report the unfinished tasks, consider the new organizational tasks (that should be shared among the whole team members), and also plan the next week's progress for our application "Learnify" to have correlation among the sub-groups while the development continues. Also during our general team meetings we use Discord screen sharing functionality to have a better visualization, and take "meeting notes" during each meeting to keep the record of the decissions that are made, assignees of the tasks and also the reviewers that have been decided on. 
+
 ---------
 
 ## Requirements
@@ -130,6 +144,21 @@ These are the Requirements addressed up to this milestone.
     5. Revising Requirements & UML design related to User-Lecture interactions
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
+
+
+- **Koray Tekin:**
+    1. Requirements and Diagrams revision and replacement of chat with forum
+    2. Updating the group issue template
+    3. Creating personal wiki page as a new member
+    4. Implementing the functionality for the LoginForm for the web application
+    5. Doing research on technologies needed to use on front-end development(mainly react)
+    6. Documenting front-end meeting notes
+    7. Reviewing related issues and mentioned PR's of front-end team members'
+    8. Providing methods for establishing back-end connection
+    9. Setting up the LoginForm's back-end connection
+    10. Adding Form Validation for LoginForm
+    11. Implementing navigation items from LoginForm(namely via forgot password redirector and login button)
+    12. Implementing the Unit Tests related to the LoginForm
 
 - **Bahrican Yeşil:**
     1. Building the main structure of the Flutter project
@@ -191,6 +220,24 @@ These are the Requirements addressed up to this milestone.
   |Mobile: course preview widget |[#430](https://github.com/bounswe/bounswe2022group2/pull/430)|
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
+  
+- **Koray Tekin**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Frontend: Implementation of LoginForm #390|[Issue](https://github.com/bounswe/bounswe2022group2/issues/390)|
+  |Frontend: Adding Form Validation and Back-end connection for LoginForm #441|[Issue](https://github.com/bounswe/bounswe2022group2/issues/441)|
+  |Frontend: Unit Tests Implementation for LoginForm #460|[Issue](https://github.com/bounswe/bounswe2022group2/issues/466)|
+  |Adding my personal wiki page #312|[Issue](https://github.com/bounswe/bounswe2022group2/issues/312)|
+  |Discovery and on-boarding for new members #320|[Issue](https://github.com/bounswe/bounswe2022group2/issues/320)|
+  |Revising the Requirements and the Diagrams related to conversion of chat/forum #344|[Issue](https://github.com/bounswe/bounswe2022group2/issues/344)|
+  |Documentation of meeting notes of first meeting(front-end team) #388|[Issue](https://github.com/bounswe/bounswe2022group2/issues/388)|
+  |Research & Report for Frontend Technologies (Frontend Team) #327|[Issue](https://github.com/bounswe/bounswe2022group2/issues/327)|
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: LoginForm Implementation|[#399](https://github.com/bounswe/bounswe2022group2/pull/399)|
+  |Frontend: LoginForm Validation and Back-end Connection|[#446](https://github.com/bounswe/bounswe2022group2/pull/446)|
+  |Frontend: Implementation of Unit tests for LoginForm|[#467](https://github.com/bounswe/bounswe2022group2/pull/467)
   
 - **Bahrican Yeşil:**
   |Issue Title|Link|
