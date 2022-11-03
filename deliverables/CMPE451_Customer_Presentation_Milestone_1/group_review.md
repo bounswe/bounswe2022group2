@@ -12,7 +12,7 @@
 
 ## Executive Summary
 
----------
+Our application is an online learning platform named Learnify, where learning is accomplished through collaboration. Our application name comes from the words Learn and Unify. Each user can add their expertise to the learning space on our platform by adding any content, comments, notes, or even annotations to the already-existing learning materials. The application is not based on teachers and students, it has a forum  where the users who take part a learning space can share their thoughts and recommendation.There are also annotation available for learning space contents so the users can take notes and reminders for theirselves and other users. This features provide ultimate collaboration on learning spaces. Our application works on mobile and web platforms. The current status of our application is that it supports sing-up, login, email verification, forgot password and resend email verification code features. These were the requirements we aimed to implement for Milestone-1.
 
 ## List and Status of Deliverables
 
