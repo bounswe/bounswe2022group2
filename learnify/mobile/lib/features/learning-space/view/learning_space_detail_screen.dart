@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,9 +10,11 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
+import '../../../core/widgets/image/custom_network_image.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../../product/language/language_keys.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/chapter_model.dart';
 import '../view-model/learning_space_view_model.dart';
@@ -36,7 +40,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
                     child: Builder(
                       builder: (BuildContext context) => CustomScrollView(
                         key: PageStorageKey<String>(key),
-                        slivers: _slivers(context),
+                        slivers: _slivers(context, key),
                       ),
                     ),
                   ),
@@ -46,14 +50,30 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
         ),
       );
 
-  static List<Widget> _slivers(BuildContext context) => <Widget>[
+  static List<Widget> _slivers(BuildContext context, String tabKey) => <Widget>[
         SliverOverlapInjector(
           handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(
               vertical: context.height * .6, horizontal: context.width * 2),
-          sliver: const _ChapterList(),
+          sliver: tabKey == TextKeys.chapters
+              ? const _ChapterList()
+              : SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (_, int i) => Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: context.height * .3),
+                            child: const Text('i')),
+                        const CustomDivider(),
+                      ],
+                    ),
+                    childCount: 12,
+                  ),
+                ),
         ),
       ];
 
@@ -63,13 +83,18 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
         SliverOverlapAbsorber(
           handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
           sliver: SliverAppBar(
-            flexibleSpace: Column(
-              children: <Widget>[
-                const Text('Books'),
-                Image.asset(IconKeys.learnIllustration,
-                    width: context.width * 45),
-              ],
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              background: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const Text('Books'),
+                  Image.asset(IconKeys.learnIllustration,
+                      width: context.width * 45),
+                ],
+              ),
             ),
+            floating: true,
             pinned: true,
             expandedHeight: context.height * 42,
             forceElevated: innerBoxIsScrolled,

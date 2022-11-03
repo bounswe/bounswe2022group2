@@ -18,6 +18,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   CarouselController _carouselController = CarouselController();
   CarouselController get carouselController => _carouselController;
 
+  int _carouselPageIndex = 0;
+  int get carouselPageIndex => _carouselPageIndex;
+
   @override
   void initViewModel() {
     _chapters = List<Chapter>.generate(20, Chapter.dummy);
@@ -40,4 +43,10 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   void setDefault() {}
+
+  void setCarouselPageIndex(int newIndex) {
+    if (newIndex == _carouselPageIndex) return;
+    _carouselPageIndex = newIndex;
+    notifyListeners();
+  }
 }

@@ -30,14 +30,15 @@ class _ChapterItem extends StatelessWidget {
       );
 
   Widget _expansionTile(BuildContext context) {
-    final List<String> images = chapter.materialVisual;
+    final LearningSpaceViewModel viewModel =
+        context.read<LearningSpaceViewModel>();
     return CustomExpansionTile(
       key: expansionTileKey,
       collapsedTextColor: context.inactiveTextColor,
       collapsedIconColor: context.inactiveTextColor,
       tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      childrenPadding: EdgeInsets.symmetric(
-          horizontal: context.width * 3, vertical: context.height * .4),
+      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 5)
+          .copyWith(bottom: context.height * 1.7),
       title: MultiLineText('${itemIndex + 1}. ${chapter.title}',
           translated: false),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
@@ -46,24 +47,61 @@ class _ChapterItem extends StatelessWidget {
       onExpansionChanged: (bool val) {
         if (val) {
           callback();
-          context.read<LearningSpaceViewModel>().setDefault();
+          viewModel.setDefault();
         }
       },
       children: <Widget>[
-        CarouselSlider.builder(
-          key: PageStorageKey<String>(chapter.id ?? ''),
-          itemCount: images.length,
-          carouselController:
-              context.read<LearningSpaceViewModel>().carouselController,
-          options: CarouselOptions(
-            height: context.height * 10,
-            autoPlay: true,
-            enableInfiniteScroll: false,
-          ),
-          itemBuilder: (BuildContext context, int i, int pageViewIndex) =>
-              Image.network(images[i]),
-        ),
+        _carouselSlider(viewModel),
+        _sliderIndicator(viewModel),
+        context.sizedH(1.4),
+        MultiLineText(
+            '    ${chapter.materialText?.replaceAll('\n', '\n\n    ')}',
+            maxLines: 10000,
+            translated: false),
       ],
     );
   }
+
+  CarouselSlider _carouselSlider(LearningSpaceViewModel viewModel) {
+    final List<String> images = chapter.materialVisual;
+    return CarouselSlider.builder(
+      key: PageStorageKey<String>(chapter.id ?? ''),
+      itemCount: images.length,
+      carouselController: viewModel.carouselController,
+      options: CarouselOptions(
+        aspectRatio: 20 / 9,
+        viewportFraction: 0.75,
+        enlargeCenterPage: true,
+        autoPlay: true,
+        enableInfiniteScroll: false,
+        onPageChanged: (int newIndex, _) =>
+            viewModel.setCarouselPageIndex(newIndex),
+      ),
+      itemBuilder: (BuildContext context, int i, int pageViewIndex) =>
+          CustomNetworkImage(images[i]),
+    );
+  }
+
+  Widget _sliderIndicator(LearningSpaceViewModel viewModel) => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List<Widget>.generate(
+          chapter.materialVisual.length,
+          (int i) => GestureDetector(
+            onTap: () => viewModel.carouselController.animateToPage(i),
+            child: SelectorHelper<int, LearningSpaceViewModel>().builder(
+              (_, LearningSpaceViewModel model) => model.carouselPageIndex,
+              (BuildContext context, int index, _) => Container(
+                width: context.width * 2.5,
+                height: context.width * 2.5,
+                margin: EdgeInsets.symmetric(
+                    vertical: context.height, horizontal: context.width),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: context.primary.withOpacity(index == i ? 0.9 : 0.4),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
 }
