@@ -4,10 +4,11 @@ import 'dart:math';
 mixin RandomHelper {
   static const String _chars =
       'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
-  static String randomString({int? length}) {
+  static String randomString({int? min, int? max}) {
     final Random rnd = Random();
+    final int minAssigned = min ?? 20;
     return String.fromCharCodes(Iterable<int>.generate(
-        length ?? Random().nextInt(80) + 20,
+        Random().nextInt((max ?? 100) - minAssigned) + minAssigned,
         (_) => _chars.codeUnitAt(rnd.nextInt(_chars.length))));
   }
 }

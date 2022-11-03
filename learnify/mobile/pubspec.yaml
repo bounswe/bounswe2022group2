@@ -30,6 +30,7 @@ dependencies:
   # Model
   equatable: ^2.0.5
   collection: ^1.16.0
+  tuple: ^2.0.1
 
   # Local Storage
   shared_preferences: ^2.0.15
