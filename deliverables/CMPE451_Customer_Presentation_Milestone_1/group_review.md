@@ -16,6 +16,22 @@
 
 ## List and Status of Deliverables
 
+|Deliverable|Status|Date Delivered| 
+|-----|:--------:|:------:| 
+|[Software Requirements Specification](https://github.com/bounswe/bounswe2022group2/wiki/Requirements)| Delivered |01/11/2022 |
+|[Software Design (UML):Use-Case Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Use-Case-Diagram)|Delivered|01/11/2022|
+|[Software Design (UML):Class Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Class-Diagram)|Delivered|01/11/2022|
+|[Software Design (UML):Sequence Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Sequence-Diagram)|Delivered|01/11/2022|
+|Scenarios and Mockups ([1](https://github.com/bounswe/bounswe2022group2/wiki/Registered-Lecturer-Scenario,-Hasan-Ta%C5%9Fk%C4%B1ran),   [2](https://github.com/bounswe/bounswe2022group2/wiki/Unregistered-Learner-Scenario,-Ai-Zheng),  [3](https://github.com/bounswe/bounswe2022group2/wiki/Lecturer-Creates-Community-Event-Scenario,-Ezgi-Ece-Smith)) | Delivered | 01/11/2022|
+|[Project Plan](https://github.com/bounswe/bounswe2022group2/wiki/Project-Plan)|Delivered|01/11/2022|
+|[Individual Contribution Reports](https://github.com/bounswe/bounswe2022group2/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_1/deliverables.md#Individual-Contributions-Report)|Delivered|01/11/2022|
+|[Software](https://github.com/bounswe/bounswe2022group2) | Delivered | 01/11/2022| 
+|Mobile Deliverables ([Manual](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual),     [APK](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK))|Delivered |01/11/2022|
+|Group Review (This Document) | Delivered | 04/11/2022|
+
+
+
+
 ---------
 
 ## Evaluation of Deliverables
@@ -63,10 +79,48 @@ After the first milestone demo, we understood that we gave the correct decision 
 ---------
 
 ## Requirements
+These are the Requirements addressed up to this milestone.  
+**1.1.1.1. Signup**   
+1.1.1.1.1. Guests shall enter an unused username, an unregistered email address, and a strong password to signup.  
+1.1.1.1.2. Guests shall agree to the privacy policy and terms&conditions to signup.  
+**1.1.1.2. Login**  
+1.1.1.2.1. Users shall provide their usernames and passwords to log in.  
+**1.1.1.3. Email Verification**  
+1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.  
+**1.1.1.4. Forgot Password**  
+1.1.1.4.1. Users shall first enter the email addresses they signed up with and then the verification code they received.  
+**1.1.1.5. Logout**  
+1.1.1.5.1. Users shall be able to log out.  
+**1.1.2. Profile Page**  
+1.1.2.1. Users shall have a profile page.  
+1.1.2.4. Users shall have an avatar.  
+1.1.2.5. Users shall be able to change their avatars.  
+**2.1.  Availability and Accessibility**  
+2.1.1. System should have a Website interface that provides an web specific user experience.  
+2.1.2. System should have a Android application interface that provides an mobile specific user experience.  
+2.1.4. System should support English language.  
+**2.2. Privacy**  
+2.2.1. Ethical concerns must be considered, so system must follow the rules defined by GDPR/KVKK.  
+2.2.1.2 Users must agree to the Privacy Policy and User Agreement.  
+**2.3. Security**  
+2.3.1 All sensitive data shall be encrypted before storing.  
+**2.5. Usability**  
+2.5.1 The system should provide a user-friendly interface. It should contain a basic site map and should not contain a confusing linking system.  
+2.5.2 The system should provide a direct feedback mechanism. Upon interaction, user shall be informed about success or failure of their action.  
+2.5.3 The system should have a well-chosen typeface that should be readable and clean.  
 
 ---------
 
 ## Responsibilities
+
+- **Ezgi Aysel Batı**
+    1. Implementing forget password screen and backend connection for mobile.
+    2. Implementing Course Preview widget which is the main component of mobile home page.
+    3. Implementing unit & widget tests.
+    4. Reviewing and testing work done by other mobile team members.
+    5. Revising Requirements & UML design related to User-Lecture interactions
+    6. Writing System Manual for Mobile.
+    7. Learning flutter, flutter testing.
 
 - **Bahrican Yeşil:**
     1. Building the main structure of the Flutter project
@@ -86,6 +140,26 @@ After the first milestone demo, we understood that we gave the correct decision 
 
 ## Summary of Individual Work
 
+- **Ezgi Aysel Batı**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Mobile Team: Setting up development Environment #372|[Issue](https://github.com/bounswe/bounswe2022group2/issues/372)|
+  |Mobile: Implementing Forget Password Screen #375|[Issue](https://github.com/bounswe/bounswe2022group2/issues/375)|
+  |Mobile: Writing Tests for Forget Password Screen #383|[Issue](https://github.com/bounswe/bounswe2022group2/issues/383)|
+  |Mobile: Back-end Connection of Forget Password/Verify Email Endpoint #384|[Issue](https://github.com/bounswe/bounswe2022group2/issues/384)|
+  |Mobile: Custom Widget For Course Preview #408|[Issue](https://github.com/bounswe/bounswe2022group2/issues/408)|
+  |Revising the Requirements: User-Lecture Interaction #330|[Issue](https://github.com/bounswe/bounswe2022group2/issues/330)|
+  |Updating ReadMe #317|[Issue](https://github.com/bounswe/bounswe2022group2/issues/317)|
+  |Revising the Diagrams based on User - Lecture Interaction #343|[Issue](https://github.com/bounswe/bounswe2022group2/issues/343)|
+  |Writing System Manual For Mobile #407|[Issue](https://github.com/bounswe/bounswe2022group2/issues/407)|
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Mobile/forget password screen|[#382](https://github.com/bounswe/bounswe2022group2/pull/382)|
+  |Mobile: course preview widget |[#430](https://github.com/bounswe/bounswe2022group2/pull/430)|
+  |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
+  |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
+  
 - **Bahrican Yeşil:**
   |Issue Title|Link|
   |-----|:--------:|
