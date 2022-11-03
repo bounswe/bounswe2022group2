@@ -17,9 +17,9 @@ class Chapter extends BaseModel<Chapter> {
         title: 'Running Apps on Different Devices',
         materialText: RandomHelper.randomString(min: 150),
         materialVisual: const <String>[
-          'https://picsum.photos/700/400',
-          'https://picsum.photos/700/400',
-          'https://picsum.photos/700/400'
+          'https://picsum.photos/id/1/700/400',
+          'https://picsum.photos/id/2/700/400',
+          'https://picsum.photos/id/3/700/400'
         ],
         createdAt: DateTime.now().subtract(const Duration(days: 1)),
         updatedAt: DateTime.now(),

@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
@@ -14,6 +15,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   List<GlobalKey<CustomExpansionTileState>> get expansionTileKeys =>
       _expansionTileKeys;
 
+  CarouselController _carouselController = CarouselController();
+  CarouselController get carouselController => _carouselController;
+
   @override
   void initViewModel() {
     _chapters = List<Chapter>.generate(20, Chapter.dummy);
@@ -26,6 +30,7 @@ class LearningSpaceViewModel extends BaseViewModel {
   void initView() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
         _chapters.length, (_) => GlobalKey<CustomExpansionTileState>());
+    _carouselController = CarouselController();
   }
 
   @override
