@@ -44,5 +44,8 @@
   "code_not_received": "Didn't get a verification code? {0}",
   "request_another_code": "Request another code",
   "back_to_previous_page": "Back to previous page",
-  "remaining_time": "Remaining Time:"
+  "remaining_time": "Remaining Time:",
+  "chapters": "Chapters",
+  "events": "Events",
+  "forum": "Forum"
 }

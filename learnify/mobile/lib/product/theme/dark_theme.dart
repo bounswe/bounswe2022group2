@@ -12,28 +12,28 @@ mixin DarkAppTheme {
   static final Color? errorColor = Colors.red[600];
 
   static ThemeData get darkTheme => ThemeData.dark().copyWith(
-        primaryColor: orange,
+        primaryColor: lightBlue,
         brightness: Brightness.dark,
         inputDecorationTheme: GeneralTheme.inputDeco(
             activeColor: lightActiveColor,
             errorColor: errorColor,
             focusColor: orange,
             inactiveColor: darkActiveColor),
-        buttonTheme: GeneralTheme.buttonTheme(orange),
-        textButtonTheme: GeneralTheme.textButtonTheme(orange),
-        dividerTheme: GeneralTheme.dividerTheme(orange),
-        progressIndicatorTheme: GeneralTheme.progressIndicatorTheme(orange),
+        buttonTheme: GeneralTheme.buttonTheme(lightBlue),
+        textButtonTheme: GeneralTheme.textButtonTheme(lightBlue),
+        dividerTheme: GeneralTheme.dividerTheme(lightBlue),
+        progressIndicatorTheme: GeneralTheme.progressIndicatorTheme(lightBlue),
         textTheme: GeneralTheme.textTheme(lightActiveColor),
-        cardColor: orange,
+        cardColor: lightBlue,
         cardTheme: CardTheme(shape: Border.all(color: darkBlue), elevation: 3),
-        switchTheme: GeneralTheme.switchThemeData(orange),
-        tabBarTheme: GeneralTheme.tabBarTheme(orange),
-        textSelectionTheme: GeneralTheme.textSelectionTheme(orange),
-        scrollbarTheme: GeneralTheme.scrollBarThemeData(orange),
-        hoverColor: orange.withOpacity(.3),
-        indicatorColor: orange,
-        appBarTheme: const AppBarTheme(backgroundColor: orange),
+        switchTheme: GeneralTheme.switchThemeData(lightBlue),
+        tabBarTheme: GeneralTheme.tabBarTheme(lightBlue),
+        textSelectionTheme: GeneralTheme.textSelectionTheme(lightBlue),
+        scrollbarTheme: GeneralTheme.scrollBarThemeData(lightBlue),
+        hoverColor: lightBlue.withOpacity(.3),
+        indicatorColor: lightBlue,
+        appBarTheme: const AppBarTheme(backgroundColor: lightBlue),
         colorScheme:
-            const ColorScheme.dark(primary: orange, secondary: darkBlue),
+            const ColorScheme.dark(primary: lightBlue, secondary: orange),
       );
 }

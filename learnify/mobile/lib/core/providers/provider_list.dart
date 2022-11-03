@@ -70,6 +70,10 @@ class ProviderList {
       lazy: true,
       create: (_) => ForgetPasswordViewModel(),
     ),
+    ChangeNotifierProvider<LearningSpaceViewModel>(
+      lazy: true,
+      create: (_) => LearningSpaceViewModel(),
+    ),
     ChangeNotifierProvider<VerificationViewModel>(
       lazy: true,
       create: (_) => VerificationViewModel(),

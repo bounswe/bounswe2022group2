@@ -5,6 +5,7 @@ import '../../../features/auth/login/view/login_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/learning-space/view/learning_space_detail_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 
 class NavigationRoute {
@@ -25,6 +26,8 @@ class NavigationRoute {
       case NavigationConstants.login:
         return normalNavigate(const LoginScreen());
       case NavigationConstants.home:
+        // TODO: Fix
+        return normalNavigate(const LearningSpaceDetailScreen());
         return normalNavigate(HomeWrapper());
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1));
@@ -32,6 +35,9 @@ class NavigationRoute {
         return normalNavigate(HomeWrapper(initialIndex: 2));
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3));
+      case NavigationConstants.learningSpace:
+        return normalNavigate(const LearningSpaceDetailScreen());
+
       default:
         return normalNavigate(const SignupScreen());
     }
