@@ -60,6 +60,38 @@ We conducted research on Flutter before we decided to use it for mobile developm
 
 After the first milestone demo, we understood that we gave the correct decision by choosing Flutter. We were able to quickly develop the first milestone with lots of good features, nice design touches, and fewer problems. People in the mobile team who have curious about Flutter but have no experience got the initial experience. According to their feedback in our team meetings, we are satisfied with the development experience with Flutter.
 
+#### **4. NodeJS**
+
+We choosed to implement our application on NodeJS keeping following in mind.
+
+1- We already have implemented our practice app in Node.JS, thus, members were educated on the stack. We have already completed courses on REST API implementation on NodeJS. Moreover, we already have a base project to use with some cool features readily implemented like in memory test database from our test API.
+
+2- It is considerably more lightweight compared to its closest competitor(Python) during our research, since we will be using a free tier EC2 instance, we try to keep our CPU usage low as much as possible.
+
+3- It is a well established stack, meaning it will be more reliable than other suggestions like FastAPI(which is still in alpha).
+
+4- There is a huge community of NodeJs, thus, a huge community support and lots of out of the box packages for DB access, data validation, etc.
+
+The last point was the actual reason we have gone with the NodeJS and during our implementation we enjoyed being able to Google every bug we encountered.
+
+
+#### **5. Docker and the DockerHub**
+
+As the our team has grew and divided, setting up the apps on everyone's local environments was not feasible, so we dockerized our database, backend, and frontend via collecting all containers in a single dockerfile. This is especially helpful with EC2 instances because they come with virtually no software installed on Ubuntu. However, one problem with docker being we use more than 3000 packages for our frontend, thus, each docker build requires a considerable computation power which consumes almost all the CPU credits on our EC2 instance. This is where DockerHub comes into the picture. We created docker images on our personal computers and uploaded images to the DockerHub to be used on our EC2 instance. In the next stages of the project we plan to make it so all members can access to all containers on DockerHub. 
+
+Our docker images are private on Dockerhub because they come with bash installed, so if we made them public, anyone on the internet can access to our API keys(like the one we use to connect to our Gmail Address).
+
+#### **AWS: EC2 and Cloudwatch**
+
+Both of our apps, practice app and Learnify, are deployed on free EC2 instances with their databases alongside. Only interface our EC2 machines provide are through API's and there is no way to directly access the databases, keeping our data safe and square. Instance's ssh settings are on default, so that shh connection can be established only using a .pem file.
+
+One crucial mistake we have been made last semester was not keeping an eye on our instance monitoring which resulted in a 10$ bill. Therefore, this semester we introduced AWS Cloudwatch to our system. Cloudwatch is a monitoring tool provided by AWS that checks our instance's CPU usage, CPU credit(amount of CPU time our free instance has left) and runtime. We set the cloudwatch so that if we ever get close to the billing range, it will shut down the server automatically, keeping us safe in the free-tier zone.
+
+#### **Gmail**
+
+We needed a mail account to send our verification mails. This comes with some complications since logging in to a mail account as a person(performing a Captcha check) is a lot simpler than logging in to a mail account as a bot. Most providers require you to set a development account and store some keys for OAuth2 authentication. However, Google implemented a quite developer friendly system named Application Password. Their working process is in the following: You generate an application password from Gmail web interface then use that password to perform OAauth1 authentication. Then the password is set for your MAC address and your application can log in to Gmail using its MAC and Application Password pair. This requires generating a new application password for each device our server will run but generating one for the server and 3 for backend memebers were sufficient since mobile and front teams directly interacted with the API set up on EC2 instance.   
+
+
 ---------
 
 ## Requirements
