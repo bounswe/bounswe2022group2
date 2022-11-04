@@ -41,9 +41,9 @@ class CustomExpansionTile extends StatefulWidget {
   /// the tile to reveal or hide the [children]. The [initiallyExpanded] property must
   /// be non-null.
   const CustomExpansionTile({
+    required this.title,
     Key? key,
     this.leading,
-    required this.title,
     this.subtitle,
     this.onExpansionChanged,
     this.children = const <Widget>[],
@@ -105,8 +105,7 @@ class CustomExpansionTile extends StatefulWidget {
   ///
   /// See also:
   ///
-  /// * [CustomExpansionTileTheme.of], which returns the nearest [CustomExpansionTileTheme]'s
-  ///   [CustomExpansionTileThemeData].
+  /// * [CustomExpansionTileTheme.of], which returns the nearest [CustomExpansionTileTheme]'s.
   final Color? backgroundColor;
 
   /// When not null, defines the background color of tile when the sublist is collapsed.

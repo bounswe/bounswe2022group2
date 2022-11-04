@@ -26,8 +26,6 @@ class NavigationRoute {
       case NavigationConstants.login:
         return normalNavigate(const LoginScreen());
       case NavigationConstants.home:
-        // TODO: Fix
-        return normalNavigate(const LearningSpaceDetailScreen());
         return normalNavigate(HomeWrapper());
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1));

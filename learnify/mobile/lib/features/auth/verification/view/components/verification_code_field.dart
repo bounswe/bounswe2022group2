@@ -8,7 +8,7 @@ class _VerificationCodeField extends StatelessWidget {
     final VerificationViewModel model = context.read<VerificationViewModel>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
+      children: <Widget>[
         _verificationCodeDigitField(
             context,
             model.verificationCodeFirstDigitController,
@@ -48,7 +48,7 @@ class _VerificationCodeField extends StatelessWidget {
           controller: controller,
           keyboardType: TextInputType.number,
           textAlign: TextAlign.center,
-          inputFormatters: [
+          inputFormatters: <TextInputFormatter>[
             LengthLimitingTextInputFormatter(1),
             FilteringTextInputFormatter.digitsOnly
           ],
