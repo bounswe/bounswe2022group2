@@ -19,3 +19,9 @@ typedef ErrorHelper = FutureOr<String?> Function();
 
 /// Callback of the checkbox.
 typedef CheckboxCallback = void Function(bool value);
+
+/// index callback
+typedef IndexCallback = void Function(int index);
+
+/// id callback
+typedef IdCallback = void Function(String id);

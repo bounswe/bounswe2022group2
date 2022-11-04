@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
@@ -87,7 +86,7 @@ void main() {
     late DioAdapter dioAdapter;
 
     Response<dynamic> resp;
-    const String baseUrl = NetworkConstants.baseUrl;
+    const String baseUrl = NetworkConstants.localhostUrl;
     const String route = '/auth/verifyEmail';
 
     final Map<String, dynamic> correctCode = <String, dynamic>{

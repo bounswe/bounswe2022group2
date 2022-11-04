@@ -3,12 +3,12 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 import '../../features/auth/forget-password/view-model/forget_password_view_model.dart';
-import '../../features/auth/signup/view-model/signup_view_model.dart';
 import '../../features/auth/login/view-model/login_view_model.dart';
+import '../../features/auth/signup/view-model/signup_view_model.dart';
 import '../../features/auth/verification/view-model/verification_view_model.dart';
-import '../../features/courses/view-model/courses_view_model.dart';
 import '../../features/home-wrapper/view-model/home_wrapper_view_model.dart';
 import '../../features/home/view-model/home_view_model.dart';
+import '../../features/learning-space/view-model/learning_space_view_model.dart';
 import '../../features/profile/view-model/profile_view_model.dart';
 import '../../features/search/view-model/search_view_model.dart';
 import '../managers/navigation/navigation_manager.dart';
@@ -50,9 +50,9 @@ class ProviderList {
       lazy: true,
       create: (_) => SearchViewModel(),
     ),
-    ChangeNotifierProvider<CoursesViewModel>(
+    ChangeNotifierProvider<LearningSpaceViewModel>(
       lazy: true,
-      create: (_) => CoursesViewModel(),
+      create: (_) => LearningSpaceViewModel(),
     ),
     ChangeNotifierProxyProvider<HomeWrapperViewModel, ProfileViewModel>(
       lazy: true,
@@ -69,6 +69,10 @@ class ProviderList {
     ChangeNotifierProvider<ForgetPasswordViewModel>(
       lazy: true,
       create: (_) => ForgetPasswordViewModel(),
+    ),
+    ChangeNotifierProvider<LearningSpaceViewModel>(
+      lazy: true,
+      create: (_) => LearningSpaceViewModel(),
     ),
     ChangeNotifierProvider<VerificationViewModel>(
       lazy: true,

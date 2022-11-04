@@ -19,7 +19,7 @@ class _CoursePreview extends StatelessWidget {
         elevation: 8,
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
-          splashColor: DarkAppTheme.orange,
+          splashColor: DarkAppTheme.lightBlue,
           onTap: () {},
           child: Column(
             mainAxisSize: MainAxisSize.min,

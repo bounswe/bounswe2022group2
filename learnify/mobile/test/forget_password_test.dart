@@ -52,7 +52,7 @@ void main() {
     late DioAdapter dioAdapter;
 
     Response<dynamic> resp;
-    const String baseUrl = NetworkConstants.baseUrl;
+    const String baseUrl = NetworkConstants.localhostUrl;
     const String route = '/auth/resend';
 
     final Map<String, dynamic> enteredInfo = <String, dynamic>{

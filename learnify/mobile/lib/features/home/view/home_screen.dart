@@ -17,7 +17,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
           scrollable: true,
           hasScaffold: false,
           futureInit: (BuildContext context) =>
-              context.read<HomeViewModel>().getCourses(),
+              context.read<HomeViewModel>().fetchInitialCourses(),
           key: key,
         );
 

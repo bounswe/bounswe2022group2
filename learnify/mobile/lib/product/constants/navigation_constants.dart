@@ -7,4 +7,6 @@ class NavigationConstants {
   static const String search = '/search';
   static const String courses = '/courses';
   static const String verify = '/verify';
+  static const String learningSpace = '/learning-space';
+  static const String createEditChapter = '/create-edit-chapter';
 }

@@ -45,4 +45,9 @@ class TextKeys {
   static const String requestAnotherCode = "request_another_code";
   static const String backToPreviousPage = "back_to_previous_page";
   static const String remainingTime = "remaining_time";
+  static const String chapters = "chapters";
+  static const String events = "events";
+  static const String forum = "forum";
+  static const String createChapter = "create_chapter";
+  static const String editChapter = "edit_chapter";
 }
