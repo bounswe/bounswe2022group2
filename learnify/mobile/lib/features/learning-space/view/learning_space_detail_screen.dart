@@ -59,7 +59,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           padding: EdgeInsets.symmetric(
               vertical: context.height * .6, horizontal: context.width * 2),
           sliver: tabKey == TextKeys.chapters
-              ? const _ChapterList()
+              ? const ChapterList()
               : SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (_, int i) => Column(

@@ -1,7 +1,7 @@
 part of '../../learning_space_detail_screen.dart';
 
-class _ChapterList extends StatelessWidget {
-  const _ChapterList({Key? key}) : super(key: key);
+class ChapterList extends StatelessWidget {
+  const ChapterList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _ChapterList extends StatelessWidget {
                   Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: context.height * .3),
-                    child: _ChapterItem(
+                    child: ChapterItem(
                       chapter: chapters[i - 1],
                       itemIndex: i - 1,
                       callback: (int itemIndex) =>

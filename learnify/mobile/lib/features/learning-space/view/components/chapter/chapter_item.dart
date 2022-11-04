@@ -1,7 +1,7 @@
 part of '../../learning_space_detail_screen.dart';
 
-class _ChapterItem extends StatelessWidget {
-  const _ChapterItem({
+class ChapterItem extends StatelessWidget {
+  const ChapterItem({
     required this.chapter,
     required this.callback,
     required this.itemIndex,
@@ -59,7 +59,7 @@ class _ChapterItem extends StatelessWidget {
           maxLines: 10000,
           translated: false,
         ),
-        _ChapterList.createEditButton(context, TextKeys.editChapter,
+        ChapterList.createEditButton(context, TextKeys.editChapter,
             Icons.edit_outlined, viewModel.editChapter),
       ],
     );
