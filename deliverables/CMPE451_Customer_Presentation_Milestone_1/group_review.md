@@ -4,9 +4,10 @@
 2. [List and status of deliverables](#list-and-status-of-deliverables)
 3. [Evaluation of the status of deliverables and its impact on your project plan](#evaluation-of-deliverables)
 4. [Evaluation of tools and processes you have used to manage your team project](#evaluation-of-tools-and-processes)
-5. [The requirements addressed in this milestone](#requirements)
-6. [Overall description of responsibilities that are assigned to each member](#responsibilities)
-7. [A Summary of work performed by each team member (in tabular format)](#summary-of-individual-work)
+5. [Review the Milestone](#review-the-milestone)
+6. [The requirements addressed in this milestone](#requirements)
+7. [Overall description of responsibilities that are assigned to each member](#responsibilities)
+8. [A Summary of work performed by each team member (in tabular format)](#summary-of-individual-work)
 
 ---------
 
@@ -107,6 +108,33 @@ One crucial mistake we have been made last semester was not keeping an eye on ou
 
 We needed a mail account to send our verification mails. This comes with some complications since logging in to a mail account as a person(performing a Captcha check) is a lot simpler than logging in to a mail account as a bot. Most providers require you to set a development account and store some keys for OAuth2 authentication. However, Google implemented a quite developer friendly system named Application Password. Their working process is in the following: You generate an application password from Gmail web interface then use that password to perform OAauth1 authentication. Then the password is set for your MAC address and your application can log in to Gmail using its MAC and Application Password pair. This requires generating a new application password for each device our server will run but generating one for the server and 3 for backend memebers were sufficient since mobile and front teams directly interacted with the API set up on EC2 instance.   
 
+---------
+
+## Review the Milestone
+
+---------
+
+### ~ Against Objectives ~
+
+---------
+
+### ~ Progress ~
+
+With the start of the semester, we have started the development of our application Learnify. Learnify is an online learning platform, which aims to create a collaborative learning space for all the users. Although we have successfully completed the design and planning phases of our project last semester, we needed to revise most of the design before starting the development. We have divided into three teams, which have worked on separate parts of our application. Frontend team worked on the web application, mobile team worked on the mobile application, and the backend team worked on the development of our RESTful API. At the beginning of our development phase we have updated our communication plan and project plan according to the needs and aims of the scope of our project. We have welcomed new members. Every week we have held a customer meeting, in which we discussed the current state of our project and in the following a general group meeting where everyone participated and the tasks are identified for the next week. Every development team also held their own meetings each week to meet the objectives of our application’s development.
+
+For the milestone 1, we have aimed to have a fully functioning authentication part of our application. After discussing with our customer, we have decided to have e-mail verification for a registered user. Also, when a user forgets their password, they can also reset their password via e-mail verification. For the demonstration purposes, a static mockup homepage also can be seen after successfully signing in to our application. To develop every related part of the project each team collaboratively worked together and before Milestone 1 every feature, page, and screen was implemented, tested, dockerized, and deployed as planned. We have effectively used React and some external libraries for frontend, Flutter for mobile, Node.js for the backend, Docker for dockerization, and AWS for the deployment.
+
+---------
+
+### ~ What went well? ~
+
+---------
+
+### ~ What did not go well? ~
+
+---------
+
+### ~ The Customer Presentation ~
 
 ---------
 
