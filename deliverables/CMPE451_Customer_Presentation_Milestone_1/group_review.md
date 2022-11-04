@@ -251,7 +251,19 @@ These are the Requirements addressed up to this milestone.
     5. Revising Requirements & UML design related to User-Lecture interactions
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
-
+ 
+- **Batuhan Çelik**
+    1. Creating process plan for the milestone 1.
+    2. Reviewing non functional requirements.
+    3. Initialization of the backend project.
+    5. Dockerization of the backend project.
+    6. Dockerhub account management for the project.
+    7. Deloyment of the backend project.
+    8. Server management and Cloudwatch setup.
+    9. Implementing the emailing system and managing project mail address(learnify451@gmail.com).
+    10. Implementing mock endpoint for courses.
+    11. Reviewing tools used for the backend.
+  
 - **Ecenur Sezer:**
     1. Implementing the login endpoint
     2. Implementing the verify email endpoint
@@ -376,7 +388,8 @@ These are the Requirements addressed up to this milestone.
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
   
-  - **Batuhan Çelik**
+- **Batuhan Çelik**
+  
   |Issue Title|Link|
   |-----|:--------:|
   |Documentation of meeting notes 1 of CMPE451 #309|[Issue](https://github.com/bounswe/bounswe2022group2/issues/309)|
@@ -391,7 +404,7 @@ These are the Requirements addressed up to this milestone.
   |Pull Request Title|Link|
   |-----|:--------:|
   |351 initialization of the backend project |[#352](https://github.com/bounswe/bounswe2022group2/pull/352)|
-  |365 sign up endpoint |[#366](https://github.com/bounswe/bounswe2022group2/pull/366) [#391](https://github.com/bounswe/bounswe2022group2/pull/391) [#428](https://github.com/bounswe/bounswe2022group2/pull/428)|
+  |365 sign up endpoint |[#366](https://github.com/bounswe/bounswe2022group2/pull/366) [#391](https://github.com/bounswe/bounswe2022group2/pull/391)|[#428](https://github.com/bounswe/bounswe2022group2/pull/428)|
   |355 dockerization of the api |[#367](https://github.com/bounswe/bounswe2022group2/pull/367)|
   |hotfix: usermodel update|[#436](https://github.com/bounswe/bounswe2022group2/pull/436)|
   |return mock course data|[#443](https://github.com/bounswe/bounswe2022group2/pull/443)|
