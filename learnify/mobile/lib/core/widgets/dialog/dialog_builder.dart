@@ -31,13 +31,19 @@ class DialogBuilder {
       );
 
   /// Example text dialog
-  Future<void> textDialog(String text, String title,
-          {bool translate = false}) async =>
+  Future<void> textDialog(
+    String text,
+    String title, {
+    bool translate = false,
+    bool translateTitle = true,
+  }) async =>
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
           title: MultiLineText(title,
-              style: context.displaySmall, textAlign: TextAlign.center),
+              style: context.displaySmall,
+              textAlign: TextAlign.center,
+              translated: translateTitle),
           content: ConstrainedBox(
             constraints: BoxConstraints.loose(
                 Size(context.width * 60, context.height * 70)),

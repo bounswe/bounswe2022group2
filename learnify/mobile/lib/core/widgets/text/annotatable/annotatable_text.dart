@@ -27,7 +27,7 @@ class AnnotatableText extends StatelessWidget {
 
   final List<TextStyle?>? textStyles;
 
-  final StringCallback onAnnotationClick;
+  final AnnotationClickCallback onAnnotationClick;
 
   final String? annotateLabel;
 
@@ -45,26 +45,18 @@ class AnnotatableText extends StatelessWidget {
                     final bool isLast = i == annotations.length * 2;
                     final Annotation currentAnnotation =
                         isLast ? const Annotation() : annotations[i ~/ 2];
+                    final String text = content.substring(
+                        _startIndex(i, currentAnnotation),
+                        _endIndex(i, currentAnnotation, isLast));
                     return TextSpan(
-                      text: content.substring(
-                        i.isEven
-                            ? (i == 0
-                                ? 0
-                                : annotations[(i ~/ 2) - 1].endIndex + 1)
-                            : currentAnnotation.startIndex,
-                        i.isEven
-                            ? (isLast
-                                ? content.length
-                                : currentAnnotation.startIndex)
-                            : currentAnnotation.endIndex + 1,
-                      ),
+                      text: text,
                       style: TextStyle(
                           backgroundColor: i.isEven ? null : context.primary),
                       recognizer: i.isEven
                           ? null
                           : (TapGestureRecognizer()
-                            ..onTap = () =>
-                                onAnnotationClick(currentAnnotation.id ?? '')),
+                            ..onTap = () => onAnnotationClick(
+                                currentAnnotation.id ?? '', text)),
                     );
                   },
                 ),
@@ -83,4 +75,12 @@ class AnnotatableText extends StatelessWidget {
           textStyles: textStyles,
         ),
       );
+
+  int _startIndex(int i, Annotation annotation) => i.isEven
+      ? (i == 0 ? 0 : annotations[(i ~/ 2) - 1].endIndex + 1)
+      : annotation.startIndex;
+
+  int _endIndex(int i, Annotation annotation, bool isLast) => i.isEven
+      ? (isLast ? content.length : annotation.startIndex)
+      : annotation.endIndex + 1;
 }
