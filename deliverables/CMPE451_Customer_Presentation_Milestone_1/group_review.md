@@ -128,9 +128,13 @@ For the milestone 1, we have aimed to have a fully functioning authentication pa
 
 ### ~ What went well? ~
 
+There are some areas where we, as a team, have been quite successful in dealing with the challenges we faced from the beginning of the term to the milestone delivery. First of all, since everyone on the team, including our newly joined teammates, worked diligently and in accordance with the project plan throughout the entire development process, and completed the tasks assigned to them in a timely and thorough manner, all the components we implemented worked perfectly during the milestone presentation. Secondly, we were also able to provide the deliverables asked by the instructors before the deadline they set to us as a natural result of the fact that all members of the group were able to finish their job on time. Moreover, despite the fact that we had to be divided into 3 separate groups at the beginning of the semester according to the needs of our project as Frontend, Backend and Mobile Teams, all the members in these 3 groups fully participated in both the general meetings and the in-team meetings, showing their commitment to the project and allowing our work to run in line with the project pipeline. In addition, both being able to organize the meetings face-to-face unlike the group meetings held online last semester, and the fact that the team members were in constant communication were very helpful in resolving the problems we encountered during the project implementation as quickly as possible. In addition to the aforementioned, another advantage of our division into 3 separate teams that has been working in different fields was that the general meetings held were completed in a relatively short time instead of taking too long than expected as in the previous semester. Furthermore, we ensured that the branch structure was properly organized, as in the example of master -> dev -> dev/front, so that the permanent modifications we made did not negatively impact each other's work. Finally, unlike all the other teams that made a presentation on the Milestone day, we were able to stay one step ahead, as we managed to implement the email verification page in a way that all the functionality from the backend and the frontend parts would work seamlessly and compatible with each other.
+
 ---------
 
 ### ~ What did not go well? ~
+
+Even though very few, there are some areas where we, as a team, might have handled better the difficulties we had from the start of the term through the milestone delivery. Firstly, we had to spend a lot of time modifying the requirements we prepared last semester in order to satisfy the needs of the new client since our instructor, who served as the customer, changed from the term before due to circumstances beyond our control. Secondly, because of the unavoidable changes in the requirements, we were forced to update all of the software designs we had previously created. Additionally, because we had to spent our time discussing how the new diagrams we had made should function, we were unable to use that valuable time for other more productive tasks. Moreover, we may have been able to lessen the pressure of having to provide the deliverables in the final few days before the deadline if we had only taken a little more time to prepare the Milestone report. In addition, although all three of the teams we formed were able to do the necessary unit tests on time, we left the unit testing to the relatively later stages of the project development phases, so there was some concern among the team members in the final days before the milestone delivery on whether or not we could complete them on time. Finally, although we managed to create frontend and mobile pages in a timely manner with an eye-catching and visually impressive design, the initial learning processes and code implementations of these parts took a little longer than expected, as most of the Frontend and Mobile team members were working with tools they had never experienced before.
 
 ---------
 
@@ -223,6 +227,16 @@ These are the Requirements addressed up to this milestone.
     5. Revising achievements related software requirements specifications and UML diagrams.
     6. Updating project plan and communication plan.
 
+- **Muhammed Enes Sürmeli:**
+    1. Implementing Email Verification page
+    2. Adding Form Validation for Email Verification Page
+    3. Providing validation methods
+    4. Implementing navigation from and to the Email Verification page
+    5. Testing the Email Verification page by writing unit tests
+    6. Setting up the Email Verification page's back-end connection
+    7. Providing methods for establishing back-end connection
+    8. Reviewing all frontend team members' work
+    9. Doing research on technologies needed to use on frontend development
 
 - **Bahrican Yeşil:**
     1. Building the main structure of the Flutter project
@@ -357,6 +371,28 @@ These are the Requirements addressed up to this milestone.
   |-----|:--------:|
   |Mobile: Implementing Login Page Including Backend Connection|[#396](https://github.com/bounswe/bounswe2022group2/issues/396)|
   |Mobile: Tests for Login Page|[#485](https://github.com/bounswe/bounswe2022group2/pull/485)|
+  
+- **Muhammed Enes Sürmeli:**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Frontend: Implementation of Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/385)|
+  |Frontend: Adding Form Validation for Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/429)|
+  |Frontend: Backend Connection for the Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/449)|
+  |Frontend: Unit Tests for Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/453)|
+  |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
+  |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)|
+  |Revising the Requirements Specification: Notifications|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/329)|
+  |Revisions About All the Diagrams|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/422)|
+  |Updating Communication Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/315)|
+  |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
+  |Revising Mockups|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/326)|
+
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: Email Verification Page Implementation |[#392](https://github.com/bounswe/bounswe2022group2/pull/392)|
+  |Frontend: Email Verification Form Validation |[#431](https://github.com/bounswe/bounswe2022group2/pull/431)|
+  |Frontend: Backend Connection for Email Verification Page |[#450](https://github.com/bounswe/bounswe2022group2/pull/450)|
+  |Frontend: Unit Tests for Email Verification Page |[#453](https://github.com/bounswe/bounswe2022group2/pull/453)|
   
 - **Bahrican Yeşil:**
   |Issue Title|Link|
