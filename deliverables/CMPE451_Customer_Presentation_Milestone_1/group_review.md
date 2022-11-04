@@ -8,6 +8,7 @@
 6. [The requirements addressed in this milestone](#requirements)
 7. [Overall description of responsibilities that are assigned to each member](#responsibilities)
 8. [A Summary of work performed by each team member (in tabular format)](#summary-of-individual-work)
+9. [Moving Forward](#moving-forward)
 
 ---------
 
@@ -263,7 +264,13 @@ These are the Requirements addressed up to this milestone.
     9. Implementing the emailing system and managing project mail address(learnify451@gmail.com).
     10. Implementing mock endpoint for courses.
     11. Reviewing tools used for the backend.
-  
+
+- **Hasan Can Erol**
+    1. Implementing the resend verification endpoint.
+    2. Testing and documenting this endpoint.
+    3. Reviewing all works done by each backend teammates
+    4. Providing postman results for other teams.
+
 - **Ecenur Sezer:**
     1. Implementing the login endpoint
     2. Implementing the verify email endpoint
@@ -412,6 +419,19 @@ These are the Requirements addressed up to this milestone.
   |adding AWS, Docker, Gmail and NodeJS to tools evaluation|[#488](https://github.com/bounswe/bounswe2022group2/pull/488)|
   |GET /courses|[#437](https://github.com/bounswe/bounswe2022group2/pull/437)|
   
+- **Hasan Can Erol**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Backend: Implementation of Resend Email Verification|[#406](https://github.com/bounswe/bounswe2022group2/issues/406)|
+  |Revising the Requirements: Profile Page|[#345](https://github.com/bounswe/bounswe2022group2/issues/345)|
+  |Revisions About All the Diagrams|[#322](https://github.com/bounswe/bounswe2022group2/issues/322)|
+  |Reviewing the Updating Communication Plan|[#315](https://github.com/bounswe/bounswe2022group2/issues/315)|
+  |Reviewing the Revising the Requirements: Chat to forum Transformation|[#344](https://github.com/bounswe/bounswe2022group2/issues/344)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Backend: Implementing Resend The Verification Code|[#411](https://github.com/bounswe/bounswe2022group2/pull/411)|
+  
 - **Ecenur Sezer**
   |Issue Title|Link|
   |-----|:--------:|
@@ -533,3 +553,26 @@ These are the Requirements addressed up to this milestone.
   |Frontend: Backend connection to forget password|[#445](https://github.com/bounswe/bounswe2022group2/pull/445)|
   |Frontend: Home page mock|[#461](https://github.com/bounswe/bounswe2022group2/pull/461)|
   |Frontend/dev forget password unit tests|[#463](https://github.com/bounswe/bounswe2022group2/pull/463)|
+  
+  ---------
+  
+  ## Moving Forward
+  
+  1. First of all, co-learning will be the main objective and the keyword "learning space" will be used instead of course according to the response from our customer demo.
+  2. One of the keywords "Start a discussion" or "Create a learning space" will be used instead of "Create a course".
+  3. Updating features of the profile page such as creating and editing personal bio, profile page visibility will be implemented.
+  4. Following mechanism will be added and users will be able to add interest areas and notes.
+  5. Users will be able to show their annotations, achievements, all the learning spaces they are contributed and progress on their profile page.
+  6. Blocking the user mechaniism will be implemented.
+  7. All the users will be able to create a learning space according to their professions.
+  8. Creator of a learning space can be edit and specificate the deatils of the space.
+  9. Contributors of the learning space will be able to add feedback into forum part of the space and give start to review.
+  10. Contributors of the learning space will be able to report inappropriate comments in the discussion forum of the space.
+  11. Annotation mechanism is going to be implemented according to the W3 Web Annotation Data Model for the learning spaces and the contributors.
+  12. Community events part of the requirements will be implemented as mentioned. Requirement page can be seen via [link](https://github.com/bounswe/bounswe2022group2/wiki/Requirements).
+  13. Forum will be added for the spaces.
+  14. Admin mechanism will be implemented and admins will be able to ban users and remove any content from application or learning space respectively.
+  15. Notification mechanism is going to implemented, the system will notify the users when anything about the user has happened.
+  16. Implementation of sementic searching will be done. Users will be able to search for other users or learning spaces as mentioned on requirements page.
+  17. The system is going to allow users to delete his/her accounts.
+  
