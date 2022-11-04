@@ -90,6 +90,19 @@ We conducted research on React before we decided to use it for Web Application d
 #### **1. Team Meetings**
 As stated in our communication plan, after the creation of the sub-groups namely front-end, back-end and mobile teams we have updated the scheduling of our weekly meetings. Every sub-group has one specified weekly meeting and additional meetings depending on the necessity. For our general group meetings the convention is, we; as the whole team gather on our discord channel on a weekly basis to discuss respectively; previous week's feedback, report the unfinished tasks, consider the new organizational tasks (that should be shared among the whole team members), and also plan the next week's progress for our application "Learnify" to have correlation among the sub-groups while the development continues. Also during our general team meetings we use Discord screen sharing functionality to have a better visualization, and take "meeting notes" during each meeting to keep the record of the decissions that are made, assignees of the tasks and also the reviewers that have been decided on. 
 
+#### **2. TA/Customer Meetings**
+Once a week, we hold a customer meeting with our teaching assistant. In those meetings, our teaching assistant gives us feedback upon our project’s current status. If we have questions about our tasks or things we have done, they answer those questions and make everything as clear as possible for us to move forward. After each customer meeting session, we make necessary changes and update our project according to the feedback given by our teaching assistant.
+
+#### **3. Issue Creation and Management**
+
+We mainly control the workflow for our project by issue management from our GitHub repository. Thus, we have prepared three templates for issue creation: generic issue template, group issue template, and research issue template.
+
+In each meeting, we distribute the tasks we will do among the team members and then manage these tasks by creating issues in our project repository in GitHub. Each issue is assigned to one member and when more than one member’s work is associated with the issue we use checklists to follow each member’s work. In those cases each member opens a sub-issue and connects it to the general issue for group work. According to our templates we provide a title, a detailed and clear description of the issue, step details about the task and final actions to be taken by resolving the issue. There is a deadline for each issue. There is also a reviewer assigned to each issue alongside an additional deadline for the review.
+
+We manage the issues mainly with the labels attached to them. There are priority levels of the issues and also we specify the type of the issue with the labels. We also provide a communication baseline with the labels: When an issue is created we assign a “status-new” tag, then when the assignee starts to work on the issue they change the label to “status-inprogress.” After the tasks are finished, the assignee labels the issue as “status-needreview.” When the assigned reviewer sees this label, they review the issue and provide feedback if necessary. In order to alert the assignee, the reviewer changes the label into “status-waitingresponse” and assignee make the necessary adjustments. After all is done, we close the issue and label it as “status-completed.”
+
+With this structure we are able to ensure each team member is aware of their tasks and the deadlines, alongside a review process for each issue for double check before completion.
+
 ---------
 
 ## Requirements
