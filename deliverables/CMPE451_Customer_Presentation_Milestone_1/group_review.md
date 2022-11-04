@@ -4,9 +4,10 @@
 2. [List and status of deliverables](#list-and-status-of-deliverables)
 3. [Evaluation of the status of deliverables and its impact on your project plan](#evaluation-of-deliverables)
 4. [Evaluation of tools and processes you have used to manage your team project](#evaluation-of-tools-and-processes)
-5. [The requirements addressed in this milestone](#requirements)
-6. [Overall description of responsibilities that are assigned to each member](#responsibilities)
-7. [A Summary of work performed by each team member (in tabular format)](#summary-of-individual-work)
+5. [Review the Milestone](#review-the-milestone)
+6. [The requirements addressed in this milestone](#requirements)
+7. [Overall description of responsibilities that are assigned to each member](#responsibilities)
+8. [A Summary of work performed by each team member (in tabular format)](#summary-of-individual-work)
 
 ---------
 
@@ -135,6 +136,33 @@ We manage the issues mainly with the labels attached to them. There are priority
 
 With this structure we are able to ensure each team member is aware of their tasks and the deadlines, alongside a review process for each issue for double check before completion.
 
+---------
+
+## Review the Milestone
+
+---------
+
+### ~ Against Objectives ~
+
+---------
+
+### ~ Progress ~
+
+With the start of the semester, we have started the development of our application Learnify. Learnify is an online learning platform, which aims to create a collaborative learning space for all the users. Although we have successfully completed the design and planning phases of our project last semester, we needed to revise most of the design before starting the development. We have divided into three teams, which have worked on separate parts of our application. Frontend team worked on the web application, mobile team worked on the mobile application, and the backend team worked on the development of our RESTful API. At the beginning of our development phase we have updated our communication plan and project plan according to the needs and aims of the scope of our project. We have welcomed new members. Every week we have held a customer meeting, in which we discussed the current state of our project and in the following a general group meeting where everyone participated and the tasks are identified for the next week. Every development team also held their own meetings each week to meet the objectives of our application’s development.
+
+For the milestone 1, we have aimed to have a fully functioning authentication part of our application. After discussing with our customer, we have decided to have e-mail verification for a registered user. Also, when a user forgets their password, they can also reset their password via e-mail verification. For the demonstration purposes, a static mockup homepage also can be seen after successfully signing in to our application. To develop every related part of the project each team collaboratively worked together and before Milestone 1 every feature, page, and screen was implemented, tested, dockerized, and deployed as planned. We have effectively used React and some external libraries for frontend, Flutter for mobile, Node.js for the backend, Docker for dockerization, and AWS for the deployment.
+
+---------
+
+### ~ What went well? ~
+
+---------
+
+### ~ What did not go well? ~
+
+---------
+
+### ~ The Customer Presentation ~
 
 ---------
 
@@ -206,7 +234,15 @@ These are the Requirements addressed up to this milestone.
     5. Revising Requirements & UML design related to User-Lecture interactions
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
-  
+
+- **Ecenur Sezer:**
+    1. Implementing the login endpoint
+    2. Implementing the verify email endpoint
+    3. Testing and documenting both endpoints
+    4. Implementing unit tests for both endpoints
+    5. Reviewing all works done by backend teammates  
+    6. Doing research on technologies needed to use on backend development
+
 - **Onur Kömürcü**
     1. Implementing login screen and its backend connection for mobile app.
     2. Implementing widget and network test for login screen.
@@ -214,7 +250,6 @@ These are the Requirements addressed up to this milestone.
     4. Learning implementation details of Flutter.
     5. Revising achievements related software requirements specifications and UML diagrams.
     6. Updating project plan and communication plan.
-
 
 - **Koray Tekin:**
     1. Requirements and Diagrams revision and replacement of chat with forum
@@ -243,6 +278,19 @@ These are the Requirements addressed up to this milestone.
     10. Reviewing all works done by the mobile teammates
     11. Determination of the endpoints, request and response bodies
     12. Implement app icon and app name to the required config files
+
+- **Mehmet Gökay Yıldız**
+  1. Initializing the project.
+  2. Creating the initial sign up and login forms.
+  3. Implementing the forget password page.
+  4. Implementing the validation check for the forget password form.
+  5. Implementing the backend connection between the forget password page and our REST API.
+  6. Implementing unit tests for the forget password page.
+  7. Integrating mockup home screen to the project.
+  8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  9. Implementing methods for validation.
+  10. Implementing methods for backend connection.
+  11. Reviewing the works done by the frontend team.
 
 ---------
 
@@ -314,7 +362,25 @@ These are the Requirements addressed up to this milestone.
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
   
-
+- **Ecenur Sezer**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Backend: Implementing Unit Tests for Login Endpoint|[Issue](https://github.com/bounswe/bounswe2022group2/issues/421)|
+  |Backend: Writing Tests for Verify Email Endpoint|[Issue](https://github.com/bounswe/bounswe2022group2/issues/418)|
+  |Backend: Implementation of Login API|[Issue](https://github.com/bounswe/bounswe2022group2/issues/380)|
+  |Backend: Email Verification API|[Issue](https://github.com/bounswe/bounswe2022group2/issues/364)|
+  |Research & Report for Backend Technologies (Backend Team)|[Issue](https://github.com/bounswe/bounswe2022group2/issues/321)|
+  |Revising the Requirements : User - User Interaction|[Issue](https://github.com/bounswe/bounswe2022group2/issues/334)|
+  |Revising the Requirements : Glossary|[Issue](https://github.com/bounswe/bounswe2022group2/issues/335)|
+  |Prepaing the Slide for our First Demo|[Issue](https://github.com/bounswe/bounswe2022group2/issues/460)|
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Backend: Implementing Unit Tests for Login endpoint |[#422](https://github.com/bounswe/bounswe2022group2/pull/422)|
+  |Backend: Implementing Tests for Verify Email Endpoint|[#420](https://github.com/bounswe/bounswe2022group2/pull/420)|
+  |380 implementation of login api|[#380](https://github.com/bounswe/bounswe2022group2/pull/380)|
+  |Verify email endpoint|[#374](https://github.com/bounswe/bounswe2022group2/pull/374)|
+  
 - **Onur Kömürcü:**
   |Issue Title|Link|
   |-----|:--------:|
@@ -351,7 +417,6 @@ These are the Requirements addressed up to this milestone.
   |Frontend: LoginForm Validation and Back-end Connection|[#446](https://github.com/bounswe/bounswe2022group2/pull/446)|
   |Frontend: Implementation of Unit tests for LoginForm|[#467](https://github.com/bounswe/bounswe2022group2/pull/467)
 
-  
 - **Bahrican Yeşil:**
   |Issue Title|Link|
   |-----|:--------:|
@@ -390,3 +455,26 @@ These are the Requirements addressed up to this milestone.
   |Creating milestone 1 deliverables and individual report|[#410](https://github.com/bounswe/bounswe2022group2/pull/410)|
   |Update Issue Templates|[#340](https://github.com/bounswe/bounswe2022group2/pull/340)|
   |Create the base folder structure and base files of the Flutter project|[#342](https://github.com/bounswe/bounswe2022group2/pull/342)|
+  
+ - **Mehmet Gökay Yıldız**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)|
+  |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)|
+  |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
+  |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
+  |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)|
+  |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)|
+  |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)|
+  |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)|
+  |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)|
+  |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)|
+  |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: Initial pages created to present as an example|[#378](https://github.com/bounswe/bounswe2022group2/pull/378)|
+  |Frontend/forget password|[#419](https://github.com/bounswe/bounswe2022group2/pull/419)|
+  |Frontend: Backend connection to forget password|[#445](https://github.com/bounswe/bounswe2022group2/pull/445)|
+  |Frontend: Home page mock|[#461](https://github.com/bounswe/bounswe2022group2/pull/461)|
+  |Frontend/dev forget password unit tests|[#463](https://github.com/bounswe/bounswe2022group2/pull/463)|
