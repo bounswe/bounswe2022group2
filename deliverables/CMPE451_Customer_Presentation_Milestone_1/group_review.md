@@ -12,7 +12,7 @@
 
 ## Executive Summary
 
----------
+Our application is an online learning platform named Learnify, where learning is accomplished through collaboration. Our application name comes from the words Learn and Unify. Each user can add their expertise to the learning space on our platform by adding any content, comments, notes, or even annotations to the already-existing learning materials. The application is not based on teachers and students, it has a forum  where the users who take part a learning space can share their thoughts and recommendation.There are also annotation available for learning space contents so the users can take notes and reminders for theirselves and other users. This features provide ultimate collaboration on learning spaces. Our application works on mobile and web platforms. The current status of our application is that it supports sing-up, login, email verification, forgot password and resend email verification code features. These were the requirements we aimed to implement for Milestone-1.
 
 ## List and Status of Deliverables
 
@@ -76,7 +76,39 @@ We conducted research on Flutter before we decided to use it for mobile developm
 
 After the first milestone demo, we understood that we gave the correct decision by choosing Flutter. We were able to quickly develop the first milestone with lots of good features, nice design touches, and fewer problems. People in the mobile team who have curious about Flutter but have no experience got the initial experience. According to their feedback in our team meetings, we are satisfied with the development experience with Flutter.
 
-#### **5. React**
+
+#### **5. NodeJS**
+
+We choosed to implement our application on NodeJS keeping following in mind.
+
+1- We already have implemented our practice app in Node.JS, thus, members were educated on the stack. We have already completed courses on REST API implementation on NodeJS. Moreover, we already have a base project to use with some cool features readily implemented like in memory test database from our test API.
+
+2- It is considerably more lightweight compared to its closest competitor(Python) during our research, since we will be using a free tier EC2 instance, we try to keep our CPU usage low as much as possible.
+
+3- It is a well established stack, meaning it will be more reliable than other suggestions like FastAPI(which is still in alpha).
+
+4- There is a huge community of NodeJs, thus, a huge community support and lots of out of the box packages for DB access, data validation, etc.
+
+The last point was the actual reason we have gone with the NodeJS and during our implementation we enjoyed being able to Google every bug we encountered.
+
+
+#### **6. Docker and the DockerHub**
+
+As the our team has grew and divided, setting up the apps on everyone's local environments was not feasible, so we dockerized our database, backend, and frontend via collecting all containers in a single dockerfile. This is especially helpful with EC2 instances because they come with virtually no software installed on Ubuntu. However, one problem with docker being we use more than 3000 packages for our frontend, thus, each docker build requires a considerable computation power which consumes almost all the CPU credits on our EC2 instance. This is where DockerHub comes into the picture. We created docker images on our personal computers and uploaded images to the DockerHub to be used on our EC2 instance. In the next stages of the project we plan to make it so all members can access to all containers on DockerHub. 
+
+Our docker images are private on Dockerhub because they come with bash installed, so if we made them public, anyone on the internet can access to our API keys(like the one we use to connect to our Gmail Address).
+
+#### **7. AWS: EC2 and Cloudwatch**
+
+Both of our apps, practice app and Learnify, are deployed on free EC2 instances with their databases alongside. Only interface our EC2 machines provide are through API's and there is no way to directly access the databases, keeping our data safe and square. Instance's ssh settings are on default, so that shh connection can be established only using a .pem file.
+
+One crucial mistake we have been made last semester was not keeping an eye on our instance monitoring which resulted in a 10$ bill. Therefore, this semester we introduced AWS Cloudwatch to our system. Cloudwatch is a monitoring tool provided by AWS that checks our instance's CPU usage, CPU credit(amount of CPU time our free instance has left) and runtime. We set the cloudwatch so that if we ever get close to the billing range, it will shut down the server automatically, keeping us safe in the free-tier zone.
+
+#### **8. Gmail**
+
+We needed a mail account to send our verification mails. This comes with some complications since logging in to a mail account as a person(performing a Captcha check) is a lot simpler than logging in to a mail account as a bot. Most providers require you to set a development account and store some keys for OAuth2 authentication. However, Google implemented a quite developer friendly system named Application Password. Their working process is in the following: You generate an application password from Gmail web interface then use that password to perform OAauth1 authentication. Then the password is set for your MAC address and your application can log in to Gmail using its MAC and Application Password pair. This requires generating a new application password for each device our server will run but generating one for the server and 3 for backend memebers were sufficient since mobile and front teams directly interacted with the API set up on EC2 instance.  
+
+#### **9. React**
 
 We conducted research on React before we decided to use it for Web Application development. Here are our findings and reasonings to choose React as the tool for Web development:
 - React is arguably the most popular frontend technology of today and because of that there are almost numerous resources that we can use while practicing React. There are tons of free tutorials on YouTube as well. Its syntax is very easy compared to the others and only needs some practice in HTML.
@@ -102,6 +134,7 @@ In each meeting, we distribute the tasks we will do among the team members and t
 We manage the issues mainly with the labels attached to them. There are priority levels of the issues and also we specify the type of the issue with the labels. We also provide a communication baseline with the labels: When an issue is created we assign a “status-new” tag, then when the assignee starts to work on the issue they change the label to “status-inprogress.” After the tasks are finished, the assignee labels the issue as “status-needreview.” When the assigned reviewer sees this label, they review the issue and provide feedback if necessary. In order to alert the assignee, the reviewer changes the label into “status-waitingresponse” and assignee make the necessary adjustments. After all is done, we close the issue and label it as “status-completed.”
 
 With this structure we are able to ensure each team member is aware of their tasks and the deadlines, alongside a review process for each issue for double check before completion.
+
 
 ---------
 
@@ -140,6 +173,22 @@ These are the Requirements addressed up to this milestone.
 
 ## Responsibilities
 
+- **Altay Acar**
+    1. Designing the logo of our app and determining the typeface and color scheme that is used throughout the app.
+    2. Building the main structure and layout of authentication pages.
+    3. Implementing the sign up page.
+    4. Implementing the validation check for the sign up form.
+    5. Implementing the backend connection between the sign up page and our REST API.
+    6. Implementing unit tests for the sign up page.
+    7. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+    8. Providing methods for validation.
+    9. Providing methods for backend connection.
+    10. Providing methods for unit tests.
+    11. Dockerization of the frontend.
+    12. Deployment of the frontend.
+    13. Creating a new mockup homepage image for the demonstration.
+    14. Reviewing the works done by the frontend team.
+
 - **Egemen Atik**
     1. Implementing verification screen and providing its back-end connection.
     2. Implementing the resend button and countdown timer for verification screen.
@@ -157,6 +206,14 @@ These are the Requirements addressed up to this milestone.
     5. Revising Requirements & UML design related to User-Lecture interactions
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
+  
+- **Onur Kömürcü**
+    1. Implementing login screen and its backend connection for mobile app.
+    2. Implementing widget and network test for login screen.
+    3. Reviewing the codes that are written by mobile team.
+    4. Learning implementation details of Flutter.
+    5. Revising achievements related software requirements specifications and UML diagrams.
+    6. Updating project plan and communication plan.
 
 
 - **Koray Tekin:**
@@ -190,6 +247,29 @@ These are the Requirements addressed up to this milestone.
 ---------
 
 ## Summary of Individual Work
+
+- **Altay Acar**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Revising the Requirements Specification #323|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
+  |Research & Report for Frontend Technologies (Frontend Team) #327|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
+  |Documenting Meeting Notes for the Meeting 2 of CMPE 451 #328|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/328)|
+  |Revising the Requirements Specification: Notifications #329|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/329)|
+  |Designing the Logo and Determining Color Scheme, Typeface of the Project #353|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/353)|
+  |Frontend: Implementation of Sign Up Page #376|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/376)|
+  |Frontend: Backend Connection for the Sign Up Page #405|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/405)|
+  |Frontend: Dockerization of the Frontend #412|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/412)|
+  |Frontend: Adding Form Validations for Sign Up Form #424|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/424)|
+  |Frontend: Unit Tests for Sign Up Page #451|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/451)|
+  |AWS Deployment of the Web Application #459|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/459)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: Sign up page implementation|[#387](https://github.com/bounswe/bounswe2022group2/pull/387)|
+  |Dockerization of Frontend|[#413](https://github.com/bounswe/bounswe2022group2/pull/413)|
+  |Frontend: Sign Up Form Validation|[#426](https://github.com/bounswe/bounswe2022group2/pull/426)|
+  |Frontend: Backend connection for sign up page|[#438](https://github.com/bounswe/bounswe2022group2/pull/438)|
+  |Frontend: Unit tests for sign up page|[#456](https://github.com/bounswe/bounswe2022group2/pull/456)|
 
 - **Egemen Atik**
   |Issue Title|Link|
@@ -234,6 +314,25 @@ These are the Requirements addressed up to this milestone.
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
   
+
+- **Onur Kömürcü:**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Mobile: Setting up development Environment|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/372)|
+  |Mobile: Implementation of Login Screen Including Backend Connection|[Issue Link](https://github.com/bounswe/bounswe2022group2/pull/398)|
+  |Mobile: Writing Tests for Login Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/447)|
+  |Milestone 1: Project Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/448)|
+  |Updating Communication Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/377)|
+  |Updating the Project plan for upcoming semeste|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/316)|
+  |Revising the Requirements: Achievements and Badges|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/333)|
+  |Revising the Diagrams based on Achievements|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/346)|
+  |Updating Personal Wiki Pages|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/324)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Mobile: Implementing Login Page Including Backend Connection|[#396](https://github.com/bounswe/bounswe2022group2/issues/396)|
+  |Mobile: Tests for Login Page|[#485](https://github.com/bounswe/bounswe2022group2/pull/485)|
+  
 - **Koray Tekin**
   |Issue Title|Link|
   |-----|:--------:|
@@ -251,6 +350,7 @@ These are the Requirements addressed up to this milestone.
   |Frontend: LoginForm Implementation|[#399](https://github.com/bounswe/bounswe2022group2/pull/399)|
   |Frontend: LoginForm Validation and Back-end Connection|[#446](https://github.com/bounswe/bounswe2022group2/pull/446)|
   |Frontend: Implementation of Unit tests for LoginForm|[#467](https://github.com/bounswe/bounswe2022group2/pull/467)
+
   
 - **Bahrican Yeşil:**
   |Issue Title|Link|
