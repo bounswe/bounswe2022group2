@@ -130,7 +130,13 @@ These are the Requirements addressed up to this milestone.
     5. Revising Requirements & UML design related to User-Lecture interactions
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
-
+- **Ecenur Sezer:**
+    1. Implementing the login endpoint
+    2. Implementing the verify email endpoint
+    3. Testing and documenting both endpoints
+    4. Implementing unit tests for both endpoints
+    5. Reviewing all works done by backend teammates  
+    6. Doing research on technologies needed to use on backend development
 - **Bahrican Yeşil:**
     1. Building the main structure of the Flutter project
     2. Implementing core managers: network, navigation, and local storage managers
@@ -191,6 +197,25 @@ These are the Requirements addressed up to this milestone.
   |Mobile: course preview widget |[#430](https://github.com/bounswe/bounswe2022group2/pull/430)|
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
+  
+- **Ecenur Sezer**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Backend: Implementing Unit Tests for Login Endpoint|[Issue](https://github.com/bounswe/bounswe2022group2/issues/421)|
+  |Backend: Writing Tests for Verify Email Endpoint|[Issue](https://github.com/bounswe/bounswe2022group2/issues/418)|
+  |Backend: Implementation of Login API|[Issue](https://github.com/bounswe/bounswe2022group2/issues/380)|
+  |Backend: Email Verification API|[Issue](https://github.com/bounswe/bounswe2022group2/issues/364)|
+  |Research & Report for Backend Technologies (Backend Team)|[Issue](https://github.com/bounswe/bounswe2022group2/issues/321)|
+  |Revising the Requirements : User - User Interaction|[Issue](https://github.com/bounswe/bounswe2022group2/issues/334)|
+  |Revising the Requirements : Glossary|[Issue](https://github.com/bounswe/bounswe2022group2/issues/335)|
+  |Prepaing the Slide for our First Demo|[Issue](https://github.com/bounswe/bounswe2022group2/issues/460)|
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Backend: Implementing Unit Tests for Login endpoint |[#422](https://github.com/bounswe/bounswe2022group2/pull/422)|
+  |Backend: Implementing Tests for Verify Email Endpoint|[#420](https://github.com/bounswe/bounswe2022group2/pull/420)|
+  |380 implementation of login api|[#380](https://github.com/bounswe/bounswe2022group2/pull/380)|
+  |Verify email endpoint|[#374](https://github.com/bounswe/bounswe2022group2/pull/374)|
   
 - **Bahrican Yeşil:**
   |Issue Title|Link|
