@@ -145,6 +145,22 @@ These are the Requirements addressed up to this milestone.
 
 ## Responsibilities
 
+- **Altay Acar**
+    1. Designing the logo of our app and determining the typeface and color scheme that is used throughout the app.
+    2. Building the main structure and layout of authentication pages.
+    3. Implementing the sign up page.
+    4. Implementing the validation check for the sign up form.
+    5. Implementing the backend connection between the sign up page and our REST API.
+    6. Implementing unit tests for the sign up page.
+    7. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+    8. Providing methods for validation.
+    9. Providing methods for backend connection.
+    10. Providing methods for unit tests.
+    11. Dockerization of the frontend.
+    12. Deployment of the frontend.
+    13. Creating a new mockup homepage image for the demonstration.
+    14. Reviewing the works done by the frontend team.
+
 - **Egemen Atik**
     1. Implementing verification screen and providing its back-end connection.
     2. Implementing the resend button and countdown timer for verification screen.
@@ -188,6 +204,29 @@ These are the Requirements addressed up to this milestone.
 ---------
 
 ## Summary of Individual Work
+
+- **Altay Acar**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Revising the Requirements Specification #323|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
+  |Research & Report for Frontend Technologies (Frontend Team) #327|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
+  |Documenting Meeting Notes for the Meeting 2 of CMPE 451 #328|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/328)|
+  |Revising the Requirements Specification: Notifications #329|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/329)|
+  |Designing the Logo and Determining Color Scheme, Typeface of the Project #353|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/353)|
+  |Frontend: Implementation of Sign Up Page #376|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/376)|
+  |Frontend: Backend Connection for the Sign Up Page #405|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/405)|
+  |Frontend: Dockerization of the Frontend #412|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/412)|
+  |Frontend: Adding Form Validations for Sign Up Form #424|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/424)|
+  |Frontend: Unit Tests for Sign Up Page #451|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/451)|
+  |AWS Deployment of the Web Application #459|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/459)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: Sign up page implementation|[#387](https://github.com/bounswe/bounswe2022group2/pull/387)|
+  |Dockerization of Frontend|[#413](https://github.com/bounswe/bounswe2022group2/pull/413)|
+  |Frontend: Sign Up Form Validation|[#426](https://github.com/bounswe/bounswe2022group2/pull/426)|
+  |Frontend: Backend connection for sign up page|[#438](https://github.com/bounswe/bounswe2022group2/pull/438)|
+  |Frontend: Unit tests for sign up page|[#456](https://github.com/bounswe/bounswe2022group2/pull/456)|
 
 - **Egemen Atik**
   |Issue Title|Link|
