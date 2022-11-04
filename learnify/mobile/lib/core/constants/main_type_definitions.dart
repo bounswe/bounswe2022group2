@@ -25,3 +25,6 @@ typedef IndexCallback = void Function(int index);
 
 /// id callback
 typedef IdCallback = void Function(String id);
+
+typedef AnnotateCallback = Future<String?> Function(
+    String annotatedText, String annotation);

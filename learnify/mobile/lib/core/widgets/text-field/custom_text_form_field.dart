@@ -22,7 +22,7 @@ class CustomTextFormField extends StatefulWidget {
     this.textInputAction = TextInputAction.done,
     this.autofillHints = const <String>[],
     this.textInputType,
-    this.maxLines = 1,
+    this.maxLines,
     this.onFieldSubmitted,
     this.focusNode,
     this.padding,
@@ -50,6 +50,7 @@ class CustomTextFormField extends StatefulWidget {
     this.showCursor = true,
     this.enableInteractiveSelection,
     this.autofocus,
+    this.maxLength,
     Key? key,
   }) : super(key: key);
 
@@ -96,7 +97,7 @@ class CustomTextFormField extends StatefulWidget {
   final FocusNode? focusNode;
 
   /// Maximum lines.
-  final int maxLines;
+  final int? maxLines;
 
   /// Content padding.
   final EdgeInsets? padding;
@@ -173,6 +174,9 @@ class CustomTextFormField extends StatefulWidget {
   /// autofocus
   final bool? autofocus;
 
+  /// maxLength
+  final int? maxLength;
+
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -200,6 +204,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               _localValidator(val);
             }
           },
+          maxLength: widget.maxLength,
           autofillHints: widget.autofillHints,
           keyboardType: widget.textInputType,
           decoration: widget.decoration ?? _deco(context),

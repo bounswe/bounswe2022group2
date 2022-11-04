@@ -51,4 +51,8 @@ class TextKeys {
   static const String createChapter = "create_chapter";
   static const String editChapter = "edit_chapter";
   static const String annotate = "annotate";
+  static const String annotateText = "annotate_text";
+  static const String annotationHintText = "annotation_hint_text";
+  static const String cancel = "cancel";
+  static const String cannotBeEmpty = "cannot_be_empty";
 }

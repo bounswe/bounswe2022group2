@@ -65,4 +65,10 @@ class LearningSpaceViewModel extends BaseViewModel {
     //     path: NavigationConstants.createEditChapter);
     return null;
   }
+
+  Future<String?> annotateText(String annotatedText, String annotation) async {
+    print(annotatedText);
+    print(annotation);
+    return null;
+  }
 }

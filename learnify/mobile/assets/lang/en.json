@@ -50,5 +50,9 @@
   "forum": "Forum",
   "create_chapter": "Create a Chapter",
   "edit_chapter": "Edit the Chapter",
-  "annotate":"Annotate"
+  "annotate": "Annotate",
+  "annotate_text": "Annotate the Text",
+  "annotation_hint_text": "Write your annotation",
+  "cancel": "Cancel",
+  "cannot_be_empty": "Cannot be empty!"
 }
