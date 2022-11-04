@@ -321,6 +321,29 @@ These are the Requirements addressed up to this milestone.
   |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
   |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
   
+  - **Batuhan Çelik**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Documentation of meeting notes 1 of CMPE451 #309|[Issue](https://github.com/bounswe/bounswe2022group2/issues/309)|
+  |Update Project plan for upcoming semester #316|[Issue](https://github.com/bounswe/bounswe2022group2/issues/316)|
+  |Revising non functional requirements #339|[Issue](https://github.com/bounswe/bounswe2022group2/issues/339)|
+  |Backend: Initialization of backend project #351|[Issue](https://github.com/bounswe/bounswe2022group2/issues/351)|
+  |Backend: Dockerization of the API #355|[Issue](https://github.com/bounswe/bounswe2022group2/issues/355)|
+  |Backend: Sign up endpoint #365|[Issue](https://github.com/bounswe/bounswe2022group2/issues/365)|
+  |Backend: AWS deployment of backend #423|[Issue](https://github.com/bounswe/bounswe2022group2/issues/423)|
+  |Backend: GET /courses(mock endpoint) #437|[Issue](https://github.com/bounswe/bounswe2022group2/issues/437)|
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |351 initialization of the backend project |[#352](https://github.com/bounswe/bounswe2022group2/pull/352)|
+  |365 sign up endpoint |[#366](https://github.com/bounswe/bounswe2022group2/pull/366) [#391](https://github.com/bounswe/bounswe2022group2/pull/391) [#428](https://github.com/bounswe/bounswe2022group2/pull/428)|
+  |355 dockerization of the api |[#367](https://github.com/bounswe/bounswe2022group2/pull/367)|
+  |hotfix: usermodel update|[#436](https://github.com/bounswe/bounswe2022group2/pull/436)|
+  |return mock course data|[#443](https://github.com/bounswe/bounswe2022group2/pull/443)|
+  |create readme.md for learnify folder with setup instructions|[#472](https://github.com/bounswe/bounswe2022group2/pull/472)|
+  |adding AWS, Docker, Gmail and NodeJS to tools evaluation|[#488](https://github.com/bounswe/bounswe2022group2/pull/488)|
+  |GET /courses|[#437](https://github.com/bounswe/bounswe2022group2/pull/437)|
+  
 - **Ecenur Sezer**
   |Issue Title|Link|
   |-----|:--------:|
