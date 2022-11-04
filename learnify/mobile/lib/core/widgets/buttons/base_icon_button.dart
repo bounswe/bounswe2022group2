@@ -17,6 +17,7 @@ class BaseIconButton extends StatelessWidget {
     this.margin,
     this.splashRadius,
     this.sizeFactor,
+    this.iconPadding,
     Key? key,
   }) : super(key: key);
 
@@ -38,6 +39,9 @@ class BaseIconButton extends StatelessWidget {
   /// Padding around the icon.
   final EdgeInsets? padding;
 
+  /// Padding around the icon.
+  final EdgeInsets? iconPadding;
+
   /// Margin around the icon.
   final EdgeInsets? margin;
 
@@ -48,37 +52,40 @@ class BaseIconButton extends StatelessWidget {
   final double? sizeFactor;
 
   @override
-  Widget build(BuildContext context) => Material(
-        color: Colors.transparent,
-        shape: const CircleBorder(),
-        clipBehavior: Clip.hardEdge,
-        child: IconButton(
-          icon: BaseIcon(
-            context,
-            icon,
-            color: color,
-            size: sizeFactor == null
+  Widget build(BuildContext context) => Padding(
+        padding: margin ?? EdgeInsets.zero,
+        child: Material(
+          color: Colors.transparent,
+          shape: const CircleBorder(),
+          clipBehavior: Clip.hardEdge,
+          child: IconButton(
+            icon: BaseIcon(
+              context,
+              icon,
+              color: color,
+              size: sizeFactor == null
+                  ? null
+                  : context.responsiveSize * sizeFactor!,
+              padding: iconPadding,
+            ),
+            splashRadius: splashRadius ??
+                (context.responsiveSize *
+                    (sizeFactor == null ? 5.8 : sizeFactor! * 1.3)),
+            padding: padding ?? EdgeInsets.zero,
+            highlightColor:
+                (highlightColor ?? context.activeColor).withOpacity(.6),
+            constraints: const BoxConstraints(),
+            iconSize: sizeFactor == null
                 ? null
-                : context.responsiveSize * sizeFactor!,
-            padding: padding ?? EdgeInsets.all(context.responsiveSize * .2),
+                : (context.responsiveSize * sizeFactor!),
+            onPressed: onPressed == null
+                ? null
+                : () {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                    onPressed!();
+                  },
+            hoverColor: hoverColor ?? context.primary,
           ),
-          splashRadius: splashRadius ??
-              (context.responsiveSize *
-                  (sizeFactor == null ? 5.8 : sizeFactor! * 1.3)),
-          padding: margin ?? EdgeInsets.all(context.responsiveSize * 1.6),
-          highlightColor:
-              (highlightColor ?? context.activeColor).withOpacity(.6),
-          constraints: const BoxConstraints(),
-          iconSize: sizeFactor == null
-              ? null
-              : (context.responsiveSize * sizeFactor!),
-          onPressed: onPressed == null
-              ? null
-              : () {
-                  FocusManager.instance.primaryFocus?.unfocus();
-                  onPressed!();
-                },
-          hoverColor: hoverColor ?? context.primary,
         ),
       );
 }

@@ -49,5 +49,6 @@
   "events": "Events",
   "forum": "Forum",
   "create_chapter": "Create a Chapter",
-  "edit_chapter": "Edit the Chapter"
+  "edit_chapter": "Edit the Chapter",
+  "annotate":"Annotate"
 }
