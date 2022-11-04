@@ -123,6 +123,7 @@ We conducted research on Flutter before we decided to use it for mobile developm
 
 After the first milestone demo, we understood that we gave the correct decision by choosing Flutter. We were able to quickly develop the first milestone with lots of good features, nice design touches, and fewer problems. People in the mobile team who have curious about Flutter but have no experience got the initial experience. According to their feedback in our team meetings, we are satisfied with the development experience with Flutter.
 
+
 #### **5. NodeJS**
 
 We choosed to implement our application on NodeJS keeping following in mind.
@@ -151,7 +152,34 @@ One crucial mistake we have been made last semester was not keeping an eye on ou
 
 #### **8. Gmail**
 
-We needed a mail account to send our verification mails. This comes with some complications since logging in to a mail account as a person(performing a Captcha check) is a lot simpler than logging in to a mail account as a bot. Most providers require you to set a development account and store some keys for OAuth2 authentication. However, Google implemented a quite developer friendly system named Application Password. Their working process is in the following: You generate an application password from Gmail web interface then use that password to perform OAauth1 authentication. Then the password is set for your MAC address and your application can log in to Gmail using its MAC and Application Password pair. This requires generating a new application password for each device our server will run but generating one for the server and 3 for backend memebers were sufficient since mobile and front teams directly interacted with the API set up on EC2 instance.
+We needed a mail account to send our verification mails. This comes with some complications since logging in to a mail account as a person(performing a Captcha check) is a lot simpler than logging in to a mail account as a bot. Most providers require you to set a development account and store some keys for OAuth2 authentication. However, Google implemented a quite developer friendly system named Application Password. Their working process is in the following: You generate an application password from Gmail web interface then use that password to perform OAauth1 authentication. Then the password is set for your MAC address and your application can log in to Gmail using its MAC and Application Password pair. This requires generating a new application password for each device our server will run but generating one for the server and 3 for backend memebers were sufficient since mobile and front teams directly interacted with the API set up on EC2 instance.  
+
+#### **9. React**
+
+We conducted research on React before we decided to use it for Web Application development. Here are our findings and reasonings to choose React as the tool for Web development:
+- React is arguably the most popular frontend technology of today and because of that there are almost numerous resources that we can use while practicing React. There are tons of free tutorials on YouTube as well. Its syntax is very easy compared to the others and only needs some practice in HTML.
+- React has vast resources and community support. During the development process, when we encounter a problem we can find a solution for it easily on the internet.
+- Reusability of React components, each React component that you have developed can be reused in other parts of the app.
+- Debugging and error-checking are much more efficient in React due to the unidirectional data binding providing higher control over data access of components.
+
+
+### ~ Evaluation of Processes ~
+
+#### **1. Team Meetings**
+As stated in our communication plan, after the creation of the sub-groups namely front-end, back-end and mobile teams we have updated the scheduling of our weekly meetings. Every sub-group has one specified weekly meeting and additional meetings depending on the necessity. For our general group meetings the convention is, we; as the whole team gather on our discord channel on a weekly basis to discuss respectively; previous week's feedback, report the unfinished tasks, consider the new organizational tasks (that should be shared among the whole team members), and also plan the next week's progress for our application "Learnify" to have correlation among the sub-groups while the development continues. Also during our general team meetings we use Discord screen sharing functionality to have a better visualization, and take "meeting notes" during each meeting to keep the record of the decissions that are made, assignees of the tasks and also the reviewers that have been decided on. 
+
+#### **2. TA/Customer Meetings**
+Once a week, we hold a customer meeting with our teaching assistant. In those meetings, our teaching assistant gives us feedback upon our project’s current status. If we have questions about our tasks or things we have done, they answer those questions and make everything as clear as possible for us to move forward. After each customer meeting session, we make necessary changes and update our project according to the feedback given by our teaching assistant.
+
+#### **3. Issue Creation and Management**
+
+We mainly control the workflow for our project by issue management from our GitHub repository. Thus, we have prepared three templates for issue creation: generic issue template, group issue template, and research issue template.
+
+In each meeting, we distribute the tasks we will do among the team members and then manage these tasks by creating issues in our project repository in GitHub. Each issue is assigned to one member and when more than one member’s work is associated with the issue we use checklists to follow each member’s work. In those cases each member opens a sub-issue and connects it to the general issue for group work. According to our templates we provide a title, a detailed and clear description of the issue, step details about the task and final actions to be taken by resolving the issue. There is a deadline for each issue. There is also a reviewer assigned to each issue alongside an additional deadline for the review.
+
+We manage the issues mainly with the labels attached to them. There are priority levels of the issues and also we specify the type of the issue with the labels. We also provide a communication baseline with the labels: When an issue is created we assign a “status-new” tag, then when the assignee starts to work on the issue they change the label to “status-inprogress.” After the tasks are finished, the assignee labels the issue as “status-needreview.” When the assigned reviewer sees this label, they review the issue and provide feedback if necessary. In order to alert the assignee, the reviewer changes the label into “status-waitingresponse” and assignee make the necessary adjustments. After all is done, we close the issue and label it as “status-completed.”
+
+With this structure we are able to ensure each team member is aware of their tasks and the deadlines, alongside a review process for each issue for double check before completion.
 
 ---------
 
@@ -294,6 +322,20 @@ These are the Requirements addressed up to this milestone.
     4. Learning implementation details of Flutter.
     5. Revising achievements related software requirements specifications and UML diagrams.
     6. Updating project plan and communication plan.
+
+- **Koray Tekin:**
+    1. Requirements and Diagrams revision and replacement of chat with forum
+    2. Updating the group issue template
+    3. Creating personal wiki page as a new member
+    4. Implementing the functionality for the LoginForm for the web application
+    5. Doing research on technologies needed to use on front-end development(mainly react)
+    6. Documenting front-end meeting notes
+    7. Reviewing related issues and mentioned PR's of front-end team members'
+    8. Providing methods for establishing back-end connection
+    9. Setting up the LoginForm's back-end connection
+    10. Adding Form Validation for LoginForm
+    11. Implementing navigation items from LoginForm(namely via forgot password redirector and login button)
+    12. Implementing the Unit Tests related to the LoginForm
 
 - **Muhammed Enes Sürmeli:**
     1. Implementing Email Verification page
@@ -482,6 +524,24 @@ These are the Requirements addressed up to this milestone.
   |Mobile: Implementing Login Page Including Backend Connection|[#396](https://github.com/bounswe/bounswe2022group2/issues/396)|
   |Mobile: Tests for Login Page|[#485](https://github.com/bounswe/bounswe2022group2/pull/485)|
   
+- **Koray Tekin**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Frontend: Implementation of LoginForm #390|[Issue](https://github.com/bounswe/bounswe2022group2/issues/390)|
+  |Frontend: Adding Form Validation and Back-end connection for LoginForm #441|[Issue](https://github.com/bounswe/bounswe2022group2/issues/441)|
+  |Frontend: Unit Tests Implementation for LoginForm #460|[Issue](https://github.com/bounswe/bounswe2022group2/issues/466)|
+  |Adding my personal wiki page #312|[Issue](https://github.com/bounswe/bounswe2022group2/issues/312)|
+  |Discovery and on-boarding for new members #320|[Issue](https://github.com/bounswe/bounswe2022group2/issues/320)|
+  |Revising the Requirements and the Diagrams related to conversion of chat/forum #344|[Issue](https://github.com/bounswe/bounswe2022group2/issues/344)|
+  |Documentation of meeting notes of first meeting(front-end team) #388|[Issue](https://github.com/bounswe/bounswe2022group2/issues/388)|
+  |Research & Report for Frontend Technologies (Frontend Team) #327|[Issue](https://github.com/bounswe/bounswe2022group2/issues/327)|
+    
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: LoginForm Implementation|[#399](https://github.com/bounswe/bounswe2022group2/pull/399)|
+  |Frontend: LoginForm Validation and Back-end Connection|[#446](https://github.com/bounswe/bounswe2022group2/pull/446)|
+  |Frontend: Implementation of Unit tests for LoginForm|[#467](https://github.com/bounswe/bounswe2022group2/pull/467)
+
 - **Muhammed Enes Sürmeli:**
   |Issue Title|Link|
   |-----|:--------:|
