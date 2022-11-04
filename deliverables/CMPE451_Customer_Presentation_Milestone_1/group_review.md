@@ -37,6 +37,25 @@ Our application is an online learning platform named Learnify, where learning is
 
 ## Evaluation of Deliverables
 
+#### Individual Contributions Reports
+Individual Contributions Reports have been filled with all the work done by each of our group members since the beginning of this semester. It is built as an index-like structure that enables you to access the detail of any issue mentioned or any pull request made by any of our group members. It shows a comprehensive summary of the work done throughout this semester.
+
+Each team member writes just about their work and the whole part was constructed by all of us.
+
+#### Software
+The software product that we have been working on is prepared within the goals determined in the project plan for Milestone 1. Three legs of our team have managed to meet the goals for Milestone 1, so we have a fully working, dockerized, and deployed frontend and backend. We also presented our deployed, working project in class during demo sessions without any fault or bug.
+
+We started to implement the project after deciding on our design criteria and separating the team into sub-teams at the beginning of the semester. Then we started implementing the project within separate teams but constantly communicating with each other.
+
+#### Mobile Deliverables (APK and Manual)
+In addition to the work done by the backend and frontend teams, the mobile team also provided a fully working mobile application and managed to present during in-class demos. The mobile team has also provided a manual to those that are eager to use the app on their local android environments.
+
+The mobile team started to implement their projects after the same process that is mentioned under the Software section and prepared a manual.
+
+#### Group Review
+,
+Group Review is the work that is currently done by the team as the final work of Milestone 1. We both evaluate the ongoing project, the tools that have been used, the status of our deliverables, the team members, and the part of the milestone that we have completed so far.
+
 ---------
 
 ## Evaluation of Tools and Processes
@@ -398,19 +417,20 @@ These are the Requirements addressed up to this milestone.
   |Create the base folder structure and base files of the Flutter project|[#342](https://github.com/bounswe/bounswe2022group2/pull/342)|
   
  - **Mehmet Gökay Yıldız**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)|
-  |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)|
-  |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
-  |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
-  |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)|
-  |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)|
-  |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)|
-  |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)|
-  |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)|
-  |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)|
-  |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)|
+    |Issue Title|Link|
+    |-----|:--------:|    
+    |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)|
+    |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)|
+    |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
+    |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
+    |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)|
+    |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)|
+    |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)|
+    |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)|
+    |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)|
+    |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)|
+    |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)|
+
   
   |Pull Request Title|Link|
   |-----|:--------:|
