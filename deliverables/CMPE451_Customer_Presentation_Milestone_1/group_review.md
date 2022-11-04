@@ -238,6 +238,19 @@ These are the Requirements addressed up to this milestone.
     11. Determination of the endpoints, request and response bodies
     12. Implement app icon and app name to the required config files
 
+- **Mehmet Gökay Yıldız**
+  1. Initializing the project.
+  2. Creating the initial sign up and login forms.
+  3. Implementing the forget password page.
+  4. Implementing the validation check for the forget password form.
+  5. Implementing the backend connection between the forget password page and our REST API.
+  6. Implementing unit tests for the forget password page.
+  7. Integrating mockup home screen to the project.
+  8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  9. Implementing methods for validation.
+  10. Implementing methods for backend connection.
+  11. Reviewing the works done by the frontend team.
+
 ---------
 
 ## Summary of Individual Work
@@ -383,3 +396,26 @@ These are the Requirements addressed up to this milestone.
   |Creating milestone 1 deliverables and individual report|[#410](https://github.com/bounswe/bounswe2022group2/pull/410)|
   |Update Issue Templates|[#340](https://github.com/bounswe/bounswe2022group2/pull/340)|
   |Create the base folder structure and base files of the Flutter project|[#342](https://github.com/bounswe/bounswe2022group2/pull/342)|
+  
+ - **Mehmet Gökay Yıldız**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)|
+  |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)|
+  |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|
+  |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|
+  |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)|
+  |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)|
+  |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)|
+  |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)|
+  |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)|
+  |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)|
+  |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Frontend: Initial pages created to present as an example|[#378](https://github.com/bounswe/bounswe2022group2/pull/378)|
+  |Frontend/forget password|[#419](https://github.com/bounswe/bounswe2022group2/pull/419)|
+  |Frontend: Backend connection to forget password|[#445](https://github.com/bounswe/bounswe2022group2/pull/445)|
+  |Frontend: Home page mock|[#461](https://github.com/bounswe/bounswe2022group2/pull/461)|
+  |Frontend/dev forget password unit tests|[#463](https://github.com/bounswe/bounswe2022group2/pull/463)|
