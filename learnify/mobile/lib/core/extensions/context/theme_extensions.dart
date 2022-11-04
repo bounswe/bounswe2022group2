@@ -20,7 +20,7 @@ extension ColorExtensions on BuildContext {
   Color get lightActiveColor => LightAppTheme.lightActiveColor;
   Color get darkActiveColor => LightAppTheme.darkActiveColor;
   Color get activeColor =>
-      !watch<ThemeProvider>().isDark ? lightActiveColor : darkActiveColor;
+      watch<ThemeProvider>().isDark ? lightActiveColor : darkActiveColor;
 
   TextStyle get labelSmall => _textTheme.labelSmall ?? _defaultStyle;
   TextStyle get labelMedium => _textTheme.labelMedium ?? _defaultStyle;

@@ -55,9 +55,12 @@ class _ChapterItem extends StatelessWidget {
         _sliderIndicator(viewModel),
         context.sizedH(1.4),
         MultiLineText(
-            '    ${chapter.materialText?.replaceAll('\n', '\n\n    ')}',
-            maxLines: 10000,
-            translated: false),
+          '    ${chapter.materialText?.replaceAll('\n', '\n\n    ')}',
+          maxLines: 10000,
+          translated: false,
+        ),
+        _ChapterList.createEditButton(context, TextKeys.editChapter,
+            Icons.edit_outlined, viewModel.editChapter),
       ],
     );
   }

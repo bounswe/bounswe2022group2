@@ -58,4 +58,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     //     path: NavigationConstants.createEditChapter);
     return null;
   }
+
+  Future<String?> editChapter() async {
+    // TODO: Fix
+    // await navigationManager.navigateToPage(
+    //     path: NavigationConstants.createEditChapter);
+    return null;
+  }
 }

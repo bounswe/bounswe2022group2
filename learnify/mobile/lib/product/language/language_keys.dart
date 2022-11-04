@@ -49,5 +49,5 @@ class TextKeys {
   static const String events = "events";
   static const String forum = "forum";
   static const String createChapter = "create_chapter";
-  
+  static const String editChapter = "edit_chapter";
 }

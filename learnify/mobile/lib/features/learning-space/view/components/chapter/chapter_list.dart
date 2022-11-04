@@ -19,7 +19,12 @@ class _ChapterList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
-            ? _createButton(context)
+            ? createEditButton(
+                context,
+                TextKeys.createChapter,
+                Icons.add_outlined,
+                context.read<LearningSpaceViewModel>().createChapter,
+              )
             : Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -51,21 +56,23 @@ class _ChapterList extends StatelessWidget {
     }
   }
 
-  Widget _createButton(BuildContext context) => Padding(
+  static Widget createEditButton(BuildContext context, String textKey,
+          IconData icon, ErrorHelper callback) =>
+      Padding(
         padding: EdgeInsets.only(
             top: context.height * 1.7,
             bottom: context.height * .3,
             left: context.width * 20,
             right: context.width * 20),
         child: ActionButton(
-          icon: BaseIcon(context, Icons.add_outlined),
-          text: TextKeys.createChapter,
-          height: context.height * 5.3,
+          icon: BaseIcon(context, icon),
+          text: textKey,
+          height: context.height * 4.8,
           backgroundColor: context.secondary,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
               vertical: context.responsiveSize * 1.4),
-          onPressedError: context.read<LearningSpaceViewModel>().createChapter,
+          onPressedError: callback,
         ),
       );
 }
