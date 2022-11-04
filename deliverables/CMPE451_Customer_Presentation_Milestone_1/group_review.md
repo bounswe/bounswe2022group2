@@ -37,6 +37,28 @@ Our application is an online learning platform named Learnify, where learning is
 
 ## Evaluation of Deliverables
 
+#### Software Requirements Specification
+In the first two weeks of this term, we updated and changed our requirements according to the customers feedback. For now, software requirements specification is finalized. Software requirements specification now include whole features that are required to implemented and included. It is a crucial document to prevent misunderstanding about any features among team members. It should be checking during the development process.
+
+#### Software Design (UML)
+_Use case diagram_ includes whole use case scenarios for all types of users. From that UML, people can understand the concept and logic of the software. The location of the pages and navigation among them is derived from the use case diagram. This information is used in implementation stage.<br>
+
+_Class diagram_ clarify the structure of classes in software. It includes classes, their methods and relations with other classes. This UML is beneficial for backend implementation. We are also benefitted from this diagram.<br>
+
+_Sequence diagram_ has several use case scenarios. For each scenarios, it calls methods and gives responses. It is kind of concatenation of use case and class diagram. We used them when requests and responses occurred.<br>
+
+Whole UML’s are also updated in the first two week of the term according to the changes in the requirements specification.
+
+#### Scenarios and Mockups
+For the sake of collaborative learning mindset across platform, we think that users can be both learner and lecturer. So, there won’t be any separate user types in our software. The scenarios and mockups that we made in the last semester won't fit in that requirement. So, in the customer presentation, we modified the scenarios. However, mockups generally satisfy our requirements.<br>
+
+In the customer presentation, our first scenario was about unregistered user. User sign ups and receives verification code. S/he is redirected to the verification page. Verification code is entered and user is now in the app. S/he views the home page and log out. After that s/he tries to log in and successfully log in. This scenario is also showed in mobile app. In addition to that, since profile page was implemented in the mobile app, user navigate to the profile page and take a photo of himself/herself. And change the profile photo.<br>
+
+With this scenarios, wrong inputs and their response messages are also shown to the customer. At the end, scenarios and mockups have great impact on the customer. It is kind of an evidence of the progress.
+
+#### Project Plan
+Project plan prioritize and schedules the whole term. We can say it is like a process scheduling in an operation system. We divide our work and distribute them evenly. In this way, in a relatively short period of time, lots of work will done simultaneously. And also, there won't be much work right before the deadlines and we don't miss any tasks during development. By this way, having a project plan is the most convenient thing to keep track of the progress as well.
+
 #### Individual Contributions Reports
 Individual Contributions Reports have been filled with all the work done by each of our group members since the beginning of this semester. It is built as an index-like structure that enables you to access the detail of any issue mentioned or any pull request made by any of our group members. It shows a comprehensive summary of the work done throughout this semester.
 
@@ -53,7 +75,7 @@ In addition to the work done by the backend and frontend teams, the mobile team 
 The mobile team started to implement their projects after the same process that is mentioned under the Software section and prepared a manual.
 
 #### Group Review
-,
+
 Group Review is the work that is currently done by the team as the final work of Milestone 1. We both evaluate the ongoing project, the tools that have been used, the status of our deliverables, the team members, and the part of the milestone that we have completed so far.
 
 ---------
