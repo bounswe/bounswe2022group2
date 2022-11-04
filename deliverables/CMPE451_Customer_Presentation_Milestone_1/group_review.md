@@ -248,6 +248,12 @@ These are the Requirements addressed up to this milestone.
     6. Writing System Manual for Mobile.
     7. Learning flutter, flutter testing.
 
+- **Hasan Can Erol**
+    1. Implementing the resend verification endpoint.
+    2. Testing and documenting this endpoint.
+    3. Reviewing all works done by each backend teammates
+    4. Providing postman results for other teams.
+
 - **Ecenur Sezer:**
     1. Implementing the login endpoint
     2. Implementing the verify email endpoint
@@ -384,6 +390,19 @@ These are the Requirements addressed up to this milestone.
   |create readme.md for learnify folder with setup instructions|[#472](https://github.com/bounswe/bounswe2022group2/pull/472)|
   |adding AWS, Docker, Gmail and NodeJS to tools evaluation|[#488](https://github.com/bounswe/bounswe2022group2/pull/488)|
   |GET /courses|[#437](https://github.com/bounswe/bounswe2022group2/pull/437)|
+  
+- **Hasan Can Erol**
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Backend: Implementation of Resend Email Verification|[#406](https://github.com/bounswe/bounswe2022group2/issues/406)|
+  |Revising the Requirements: Profile Page|[#345](https://github.com/bounswe/bounswe2022group2/issues/345)|
+  |Revisions About All the Diagrams|[#322](https://github.com/bounswe/bounswe2022group2/issues/322)|
+  |Reviewing the Updating Communication Plan|[#315](https://github.com/bounswe/bounswe2022group2/issues/315)|
+  |Reviewing the Revising the Requirements: Chat to forum Transformation|[#344](https://github.com/bounswe/bounswe2022group2/issues/344)|
+  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |Backend: Implementing Resend The Verification Code|[#411](https://github.com/bounswe/bounswe2022group2/pull/411)|
   
 - **Ecenur Sezer**
   |Issue Title|Link|
