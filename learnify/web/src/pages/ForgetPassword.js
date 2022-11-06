@@ -40,7 +40,7 @@ function ForgetPassword() {
         })
             .then((response) => {
                 if (response.status === 200) {
-                    sessionStorage.setItem("emailVerified", true);
+                    localStorage.setItem("emailVerified", true);
                     navigate('/verify-email', {replace: true});
                     console.log("Password reset link has been sent to your email address!");
                 } else {
