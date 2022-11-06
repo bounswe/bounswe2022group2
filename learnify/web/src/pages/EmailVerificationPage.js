@@ -55,6 +55,7 @@ function EmailVerificationPage() {
                 console.log(response.status);
                 console.log(response.statusText);
                 if (response.ok) {
+                    sessionStorage.setItem("token", response.json().token)
                     navigate('/home-page', {replace: true});
                     return response.json();
                 } else {
