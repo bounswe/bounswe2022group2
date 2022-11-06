@@ -61,6 +61,7 @@ function SignUpForm() {
                 console.log(response.status);
                 console.log(response.statusText);
                 if (response.ok) {
+                    sessionStorage.setItem("emailVerified", true);
                     navigate('/verify-email', {replace: true});
                     return response.json();
                 } else {
