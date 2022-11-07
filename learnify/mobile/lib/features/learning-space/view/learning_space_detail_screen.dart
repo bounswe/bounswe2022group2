@@ -89,15 +89,41 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
               background: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const Text('Books'),
                   Image.asset(IconKeys.learnIllustration,
-                      width: context.width * 45),
+                      width: context.width * 60),
+                  context.sizedH(1),
+                  Container(
+                    padding: EdgeInsets.all(15),
+                    width: double.infinity,
+                    color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Placeholder Learning Space",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              overflow: TextOverflow.ellipsis,
+                              fontSize: 18),
+                        ),
+                        context.sizedH(2),
+                        Text(
+                          "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                        context.sizedH(2),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
             floating: true,
             pinned: true,
-            expandedHeight: context.height * 42,
+            expandedHeight: context.height * 60,
             forceElevated: innerBoxIsScrolled,
             bottom: TabBar(
               tabs: LearningSpaceConstants.tabKeys

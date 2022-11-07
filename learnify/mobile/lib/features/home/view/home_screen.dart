@@ -24,8 +24,13 @@ class HomeScreen extends BaseView<HomeViewModel> {
         );
 
   static Widget _builder(BuildContext context) => Padding(
-        padding: EdgeInsets.all(context.width * 5),
+        padding: EdgeInsets.only(
+            left: context.width * 4,
+            top: context.height * 3,
+            bottom: context.height * 3,
+            right: context.width * 1),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
               height: context.height * 23,
@@ -54,15 +59,15 @@ class HomeScreen extends BaseView<HomeViewModel> {
         children: <Widget>[
           BaseText(coursesType,
               style: const TextStyle(fontWeight: FontWeight.bold)),
-          context.sizedH(2),
+          context.sizedH(.8),
           Expanded(
             child: ListView.separated(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
               scrollDirection: Axis.horizontal,
               itemCount: courseList.length >= 8 ? 8 : courseList.length,
               shrinkWrap: true,
               separatorBuilder: (BuildContext context, _) =>
-                  SizedBox(width: context.width * 5),
+                  SizedBox(width: context.width * 3),
               itemBuilder: (BuildContext context, int index) => _CoursePreview(
                   textKey: courseList[index].name ?? '',
                   participantNumber: courseList[index].numParticipants ?? 0),

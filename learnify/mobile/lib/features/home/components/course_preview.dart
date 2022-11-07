@@ -23,8 +23,8 @@ class _CoursePreview extends StatelessWidget {
           onTap: () {},
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const SizedBox(height: 6),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: context.width * 4),
                   child: Ink.image(
@@ -37,7 +37,6 @@ class _CoursePreview extends StatelessWidget {
                   )),
               context.sizedH(.5),
               _courseDescription(context),
-              context.sizedH(.3)
             ],
           ),
         ),
@@ -45,7 +44,7 @@ class _CoursePreview extends StatelessWidget {
 
   Widget _courseDescription(BuildContext context) => Container(
       padding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      width: context.width * 40,
+      width: context.width * 38,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
