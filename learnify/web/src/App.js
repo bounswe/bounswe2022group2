@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<SignUpForm/>}/>
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
-          <Route path="/home-page" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
+          <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
         </Routes> 
       </BrowserRouter>
