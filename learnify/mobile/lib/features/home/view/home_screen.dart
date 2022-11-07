@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
+import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../model/course_model.dart';
 import '../view-model/home_view_model.dart';
@@ -26,20 +28,20 @@ class HomeScreen extends BaseView<HomeViewModel> {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 185,
-              child: _coursePreviewList(context, 'Taken Courses',
+              height: context.height * 23,
+              child: _coursePreviewList(context, TextKeys.takenCourses,
                   context.read<HomeViewModel>().takenCourses),
             ),
             context.sizedH(3),
             SizedBox(
-              height: 185,
-              child: _coursePreviewList(context, "Friends Courses",
+              height: context.height * 23,
+              child: _coursePreviewList(context, TextKeys.friendCourses,
                   context.read<HomeViewModel>().friendCourses),
             ),
             context.sizedH(3),
             SizedBox(
-                height: 185,
-                child: _coursePreviewList(context, 'Recommended Courses',
+                height: context.height * 23,
+                child: _coursePreviewList(context, TextKeys.recommendedCourses,
                     context.read<HomeViewModel>().recommendedCourses)),
           ],
         ),
@@ -48,15 +50,16 @@ class HomeScreen extends BaseView<HomeViewModel> {
   static Widget _coursePreviewList(
           BuildContext context, String coursesType, List<Course> courseList) =>
       Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(coursesType,
-              textAlign: TextAlign.left,
+          BaseText(coursesType,
               style: const TextStyle(fontWeight: FontWeight.bold)),
           context.sizedH(2),
           Expanded(
             child: ListView.separated(
+              padding: const EdgeInsets.all(8),
               scrollDirection: Axis.horizontal,
-              itemCount: courseList.length,
+              itemCount: courseList.length >= 8 ? 8 : courseList.length,
               shrinkWrap: true,
               separatorBuilder: (BuildContext context, _) =>
                   SizedBox(width: context.width * 5),

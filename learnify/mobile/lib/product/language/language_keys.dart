@@ -50,4 +50,7 @@ class TextKeys {
   static const String forum = "forum";
   static const String createChapter = "create_chapter";
   static const String editChapter = "edit_chapter";
+  static const String takenCourses = "taken_courses";
+  static const String friendCourses = "friend_courses";
+  static const String recommendedCourses = "recommended_courses";
 }

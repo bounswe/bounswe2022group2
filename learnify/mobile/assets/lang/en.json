@@ -49,5 +49,8 @@
   "events": "Events",
   "forum": "Forum",
   "create_chapter": "Create a Chapter",
-  "edit_chapter": "Edit the Chapter"
+  "edit_chapter": "Edit the Chapter",
+  "taken_courses": "Taken Courses",
+  "friend_courses": "Friends' Courses",
+  "recommended_courses": "Recommended Courses"
 }
