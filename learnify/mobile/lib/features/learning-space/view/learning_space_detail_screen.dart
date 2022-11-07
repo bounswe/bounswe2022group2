@@ -114,7 +114,17 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
                             fontSize: 14,
                           ),
                         ),
-                        context.sizedH(2),
+                        context.sizedH(1),
+                        _tagWidget(context, [
+                          "flutter",
+                          "react.js",
+                          "node.js",
+                          "mongodb",
+                          "aws",
+                          "docker",
+                          "git",
+                          "jenkins"
+                        ])
                       ],
                     ),
                   )
@@ -133,4 +143,20 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           ),
         ),
       ];
+
+  static Widget _tagWidget(BuildContext context, List<String> tagList) => Wrap(
+      runSpacing: 5,
+      spacing: 5,
+      children: tagList
+          .map((tag) => Chip(
+                label: Text(tag),
+                labelPadding: EdgeInsets.zero,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                labelStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 12),
+                backgroundColor: context.primary,
+              ))
+          .toList());
 }
