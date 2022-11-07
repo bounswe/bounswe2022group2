@@ -89,6 +89,20 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
               background: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(Icons.arrow_back)),
+                        IconButton(
+                            onPressed: () {
+                              //TODO: Navigate to edit learning space screen
+                            },
+                            icon: Icon(Icons.edit)),
+                      ]),
                   Image.asset(IconKeys.learnIllustration,
                       width: context.width * 60),
                   context.sizedH(1),
@@ -124,7 +138,25 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
                           "docker",
                           "git",
                           "jenkins"
-                        ])
+                        ]),
+                        context.sizedH(1),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                "Created by: placeholder_username",
+                                textAlign: TextAlign.left,
+                                style:
+                                    TextStyle(overflow: TextOverflow.ellipsis),
+                              ),
+                            ),
+                            Icon(Icons.people_alt_outlined, size: 20),
+                            Text(
+                              "100",
+                            )
+                          ],
+                        )
                       ],
                     ),
                   )
@@ -133,7 +165,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
             ),
             floating: true,
             pinned: true,
-            expandedHeight: context.height * 60,
+            expandedHeight: context.height * 65,
             forceElevated: innerBoxIsScrolled,
             bottom: TabBar(
               tabs: LearningSpaceConstants.tabKeys
