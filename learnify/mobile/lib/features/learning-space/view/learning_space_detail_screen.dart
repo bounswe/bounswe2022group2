@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
+import 'package:measured_size/measured_size.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/constants/main_type_definitions.dart';
@@ -80,101 +81,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
 
   static List<Widget> _headerSliverBuilder(
           BuildContext context, bool innerBoxIsScrolled) =>
-      <Widget>[
-        SliverOverlapAbsorber(
-          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-          sliver: SliverAppBar(
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              background: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: Icon(Icons.arrow_back)),
-                        IconButton(
-                            onPressed: () {
-                              //TODO: Navigate to edit learning space screen
-                            },
-                            icon: Icon(Icons.edit)),
-                      ]),
-                  Image.asset(IconKeys.learnIllustration,
-                      width: context.width * 60),
-                  context.sizedH(1),
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "Placeholder Learning Space",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              overflow: TextOverflow.ellipsis,
-                              fontSize: 18),
-                        ),
-                        context.sizedH(2),
-                        Text(
-                          "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14,
-                          ),
-                        ),
-                        context.sizedH(1),
-                        _tagWidget(context, [
-                          "flutter",
-                          "react.js",
-                          "node.js",
-                          "mongodb",
-                          "aws",
-                          "docker",
-                          "git",
-                          "jenkins"
-                        ]),
-                        context.sizedH(1),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Expanded(
-                              child: Text(
-                                "Created by: placeholder_username",
-                                textAlign: TextAlign.left,
-                                style:
-                                    TextStyle(overflow: TextOverflow.ellipsis),
-                              ),
-                            ),
-                            Icon(Icons.people_alt_outlined, size: 20),
-                            Text(
-                              "100",
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            floating: true,
-            pinned: true,
-            expandedHeight: context.height * 65,
-            forceElevated: innerBoxIsScrolled,
-            bottom: TabBar(
-              tabs: LearningSpaceConstants.tabKeys
-                  .map((String key) => Tab(text: context.tr(key)))
-                  .toList(),
-            ),
-          ),
-        ),
-      ];
+      <Widget>[MySliverOverlayAbsorber(innerBoxIsScrolled: innerBoxIsScrolled)];
 
   static Widget _tagWidget(BuildContext context, List<String> tagList) => Wrap(
       runSpacing: 5,
@@ -191,4 +98,123 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
                 backgroundColor: context.primary,
               ))
           .toList());
+}
+
+class MySliverOverlayAbsorber extends StatefulWidget {
+  final bool innerBoxIsScrolled;
+  MySliverOverlayAbsorber({required this.innerBoxIsScrolled});
+  State<MySliverOverlayAbsorber> createState() =>
+      _MySliverOverlayAbsorberState();
+}
+
+class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
+  Size wsize = Size.zero;
+
+  Widget build(BuildContext) => SliverOverlapAbsorber(
+        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+        sliver: SliverAppBar(
+          flexibleSpace: FlexibleSpaceBar(
+            centerTitle: true,
+            background: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.arrow_back)),
+                      IconButton(
+                          onPressed: () {
+                            //TODO: Navigate to edit learning space screen
+                          },
+                          icon: Icon(Icons.edit)),
+                    ]),
+                Image.asset(IconKeys.learnIllustration,
+                    width: context.width * 60),
+                context.sizedH(1),
+                Container(
+                  padding: EdgeInsets.all(15),
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Placeholder Learning Space",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: 18),
+                      ),
+                      context.sizedH(2),
+                      Text(
+                        "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                        ),
+                      ),
+                      context.sizedH(1),
+                      MeasuredSize(
+                        onChange: (Size size) {
+                          setState(() {
+                            wsize = size;
+                          });
+                        },
+                        child: LearningSpaceDetailScreen._tagWidget(context, [
+                          "flutter",
+                          "react.js",
+                          "node.js",
+                          "mongodb",
+                          "aws",
+                          "docker",
+                          "git",
+                          "jenkins",
+                          "flutter",
+                          "react.js",
+                          "node.js",
+                          "mongodb",
+                          "aws",
+                          "docker",
+                          "git",
+                          "jenkins"
+                        ]),
+                      ),
+                      context.sizedH(1),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Expanded(
+                            child: Text(
+                              "Created by: placeholder_username",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(overflow: TextOverflow.ellipsis),
+                            ),
+                          ),
+                          Icon(Icons.people_alt_outlined, size: 20),
+                          Text(
+                            "100",
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          floating: true,
+          pinned: true,
+          expandedHeight: context.height * 55 + wsize.height,
+          forceElevated: widget.innerBoxIsScrolled,
+          bottom: TabBar(
+            tabs: LearningSpaceConstants.tabKeys
+                .map((String key) => Tab(text: context.tr(key)))
+                .toList(),
+          ),
+        ),
+      );
 }

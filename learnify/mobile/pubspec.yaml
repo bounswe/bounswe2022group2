@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  measured_size: ^1.0.0
+  
   flutter_localizations:
     sdk: flutter
 
