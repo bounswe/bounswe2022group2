@@ -87,6 +87,7 @@ function ForgetPassword() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="email">
+                        <div className='space-20'/>
                             <label className="form__label" htmlFor="email"> RESET PASSWORD  </label>
     
                            <div className='form-note'>
