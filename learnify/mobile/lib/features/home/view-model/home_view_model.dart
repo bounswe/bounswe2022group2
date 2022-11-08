@@ -2,6 +2,7 @@ import 'package:async/async.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../model/course_model.dart';
 import '../model/get_courses_response_model.dart';
 import '../service/I_home_service.dart';
@@ -19,6 +20,15 @@ class HomeViewModel extends BaseViewModel {
 
   List<Course> _recommendedCourses = <Course>[];
   List<Course> get recommendedCourses => _recommendedCourses;
+
+  bool _takenViewAll = false;
+  bool get takenViewAll => _takenViewAll;
+
+  bool _friendViewAll = false;
+  bool get friendViewAll => _friendViewAll;
+
+  bool _recommendedViewAll = false;
+  bool get recommendedViewAll => _recommendedViewAll;
 
   @override
   void initViewModel() {
@@ -62,6 +72,32 @@ class HomeViewModel extends BaseViewModel {
     _takenCourses = respData.takenCourses;
     _friendCourses = respData.friendCourses;
     _recommendedCourses = respData.recommendedCourses;
+    if (_takenCourses.length > 8) _takenViewAll = true;
+    if (_friendCourses.length > 8) _friendViewAll = true;
+    if (_recommendedCourses.length > 8) _recommendedViewAll = true;
+    return null;
+  }
+
+  Future<String?> viewAll(String coursesType) async {
+    await operation?.cancel();
+    if (coursesType == "Taken Courses") {
+      operation = CancelableOperation<String?>.fromFuture(
+          _viewAllResponse(takenCourses));
+    } else if (coursesType == "Friends Courses") {
+      operation = CancelableOperation<String?>.fromFuture(
+          _viewAllResponse(friendCourses));
+    } else if (coursesType == "Recommended Courses") {
+      operation = CancelableOperation<String?>.fromFuture(
+          _viewAllResponse(recommendedCourses));
+    }
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _viewAllResponse(List<Course> expectedCourses) async {
+    await navigationManager.navigateToPage(
+        path: NavigationConstants.viewall,
+        data: <String, dynamic>{'courses': expectedCourses});
     return null;
   }
 }
