@@ -4,12 +4,12 @@ import mockup from '../images/451-mockup.jpg'
 import NavBar from './NavBar';
 
 function HomePage() {
-
   return(
         
-        <div className='pageLayout'>
+        <div className='homePageLayout'>
             
-            <img src={mockup} alt="Learnify Home" class = 'mockup'/>
+            <NavBar/>
+            <img src={mockup} alt="Learnify Home" class = 'mockup' height={860} />
         </div>
     )       
 }
