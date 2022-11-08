@@ -1,7 +1,7 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import './style.css'
-import notfound from '../images/404NotFound.png'
+import notfound from '../images/404NotFound.jpg'
 import logo from '../images/logo-dblue.png'
 
 function NotFoundPage() {
@@ -10,15 +10,14 @@ function NotFoundPage() {
 
   return(        
         <div className='notFoundPageLayout'>
-            <div className='welcomeNotFound'>
-                <div className='notfound-page-logo'>
-                    <img src={logo} alt="Learnify Logo" height={60} />
-                </div>
-                <div className='notfoundpage-text'><h1>Oops! Something went wrong!</h1>
-                </div>
+            <div className='notfound-page-logo'>
+                <img  style={{float:"left"}} src={logo} alt="Learnify Logo" height={60} />
             </div>
-            <img src={notfound} style={{ width: "70%", height: "80.5%" }} alt="Learnify 404 Not Found" class = 'mockup'/> 
-            <button className="btn-blue" onClick={() => navigate(-1)}>Return</button>
+            <div className='notfoundpage-text'><h1>Oops! Something went wrong!</h1></div>
+            <img src={notfound} style={{ width: "60%"}} alt="Learnify 404 Not Found" class = 'mockup'/> 
+            <div>
+                <button className="btn-blue" onClick={() => navigate(-1)}>Return</button>
+            </div>
         </div>
     )       
 }
