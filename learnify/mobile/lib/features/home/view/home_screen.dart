@@ -76,12 +76,13 @@ class HomeScreen extends BaseView<HomeViewModel> {
 
   static Widget _viewAllButton(String coursesType) =>
       SelectorHelper<bool, HomeViewModel>().builder(
-          (_, HomeViewModel model) => model.takenViewAll,
+          (_, HomeViewModel model) => model.getViewAllStatus(coursesType),
           (BuildContext context, bool takenViewAll, _) => BaseText(
                 TextKeys.viewAll,
-                onClick: takenViewAll
-                    ? () async =>
-                        context.read<HomeViewModel>().viewAll(coursesType)
-                    : null,
+                onClick:
+                    context.read<HomeViewModel>().getViewAllStatus(coursesType)
+                        ? () async =>
+                            context.read<HomeViewModel>().viewAll(coursesType)
+                        : null,
               ));
 }

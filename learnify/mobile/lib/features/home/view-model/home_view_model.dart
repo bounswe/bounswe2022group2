@@ -100,4 +100,11 @@ class HomeViewModel extends BaseViewModel {
         data: <String, dynamic>{'courses': expectedCourses});
     return null;
   }
+
+  bool getViewAllStatus(String coursesType) {
+    if (coursesType == "Taken Courses") return _takenViewAll;
+    if (coursesType == "Friends Courses") return _friendViewAll;
+    if (coursesType == "Recommended Courses") return _recommendedViewAll;
+    return false;
+  }
 }
