@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { get_courses } from '../controllers/courses/index.js';
+import { get_courses } from '../controllers/learning_space/index.js';
 
 const router = Router();
 

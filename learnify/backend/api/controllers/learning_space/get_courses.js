@@ -1,6 +1,8 @@
 import {LearningSpace} from '../../../models/index.js';
 import jwt from "jsonwebtoken";
 
+
+//TODO: Remove this file after get learning space is implemented
 //Returns mock course data regarding ls
 export default async  (req, res) =>{
 
