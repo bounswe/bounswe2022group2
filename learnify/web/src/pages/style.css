@@ -8,10 +8,11 @@ body{
 }
 
 .notfound-page-logo{
-    display: 'flex';
-    flex-direction: 'row';
-    align-self: flex-start;
-    padding: 1%;
+    width: 100%;
+    padding-left: 1%;
+    padding-top: 1%;
+    float: left;
+    margin-bottom: -10px;
 }
 
 .login-page-logo{
@@ -38,11 +39,11 @@ body{
 
 .notfoundpage-text{
     color: #1746A2;
-    font-size: x-large;
+    font-size: 22px;
     font-family: 'Open Sans' sans-serif;
-    padding-left: 10%;
     font-weight: 600;
     align-self: center;
+    padding-bottom: 20px;
 }
 
 .bold-text{
@@ -132,8 +133,7 @@ body{
 
 .notFoundPageLayout{
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     color: #FFF7E9;
 }
 
@@ -275,6 +275,7 @@ body{
 }
 
 .btn-blue{
+    margin: auto;
     padding-left: 40px;
     background-color: #1746A2;
     border: 0;
@@ -283,11 +284,11 @@ body{
     color:#FFF7E9;
     cursor: pointer;
     font-family: 'Open Sans' sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 600;
     line-height: 40px;
     align-self: center;
-    width: 200px;
+    width: 150px;
     left: 20 px;
     padding: 5px;
     padding-left: 15px;
@@ -297,17 +298,11 @@ body{
 }
 
 h1 {
-	font-weight: 800;
-	color: dark;
-	text-align: center;
-	font-size: 2.5em;
-	padding-top: 20px;
-	
-	@media screen and (max-width: $break) {
-		padding-left: 20px;
-		padding-right: 20px;
-		font-size: 2em;
-  	}
+    font-family: 'Open Sans' sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: dark;
+    text-align: center;
 }
 
 .welcome-navigation{
@@ -315,12 +310,6 @@ h1 {
     justify-content: flex-start;
     margin-left: 7%;
     margin-top: 10%;
-}
-.welcomeNotFound{
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 1%;
-
 }
 
 .welcome-navigation-item{
