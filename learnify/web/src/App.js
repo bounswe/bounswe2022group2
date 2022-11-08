@@ -7,9 +7,12 @@ import HomePage from './pages/HomePage';
 import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
+import NavBar from './pages/NavBar'
 
 function App() {
   return (
+     
+    
     <div className="App">
       <BrowserRouter>
         <Routes>  
@@ -20,7 +23,10 @@ function App() {
           <Route path="/forget-password" element={<ForgetPassword/>}/>
         </Routes> 
       </BrowserRouter>
+
     </div>
+
+    
   );
 }
 
