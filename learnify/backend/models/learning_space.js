@@ -1,14 +1,23 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-// We can add additional fields if we enlarge the features of the app.
+import {chapterSchema} from './chapter.js'
+
 const lsSchema = new Schema({
   name: {
     type: String, required: true
   },
+  topic: {
+    type: String
+  },
   num_participants: {
     type: Number, required: true, default: 1
   },
+  creator: {type: mongoose.Types.ObjectId, required: true},
+  admins: [{
+    type: mongoose.Types.ObjectId, required: true
+  }],
+  chapters: {type: chapterSchema}
 },
   {
     timestamps: true,
