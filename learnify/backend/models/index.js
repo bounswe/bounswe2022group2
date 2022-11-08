@@ -1,5 +1,5 @@
 import userModel from './user.js';
-import courseModel from './course.js';
+import lsModel from './learning_space';
 
 export const User = userModel;
-export const Course = courseModel;
+export const LearningSpace = lsModel;
