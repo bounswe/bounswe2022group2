@@ -3,7 +3,7 @@ import './component_styles.css';
 import add_button_icon from '../images/add-btn.svg';
 import ls_create_illustration from '../images/create-ls.png';
 
-export default function CreateLearningSpaeButton() {
+export default function CreateLearningSpaceButton() {
     return (
         <div>
             <div className='create-ls-btn'>

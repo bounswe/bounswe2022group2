@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css'
 import LearningSpacePrev from '../components/LearningSpacePrev';
 import FeedItem from '../components/FeedItem';
-import CreateLearningSpaeButton from '../components/CreateLearningSpaceButton';
+import CreateLearningSpaceButton from '../components/CreateLearningSpaceButton';
 import Footer from '../components/Footer';
 import lslogo_13 from '../images/ls_icons/ls-icon-13.svg'
 import lslogo_6 from '../images/ls_icons/ls-icon-6.svg'
@@ -40,7 +40,7 @@ function HomePage() {
                             </ul>
                         </div>
                     </div>
-                    <CreateLearningSpaeButton />
+                    <CreateLearningSpaceButton />
                 </div>
                 <div className='space-30'></div>
             </div>
