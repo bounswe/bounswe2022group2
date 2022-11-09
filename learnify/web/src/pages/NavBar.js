@@ -5,25 +5,25 @@ export default function NavBar(){
         <a href="/"><img src={logo} alt="Learnify Logo" height={60} /></a>
         <ul>
             
-                <label className="navSearch">Search Bar </label>
+                <label className="navSearch"><input type="text" placeholder="Search.."  size={40}/> </label>
             
             <li>
-                <a href="/home-page"><img src={bell} alt="Learnify Logo" height={30} /></a>
+                <a href="/home" className='navBarText'><img src={bell} alt="Learnify Logo" height={30} /></a>
             </li>
             <li>
-                <a href="/home-page">Home</a>
+                <a href="/home" className='navBarText'>Home</a>
             </li>
             <li>
-                <a href="/home-page">Catagories</a>
+                <a href="/categories" className='navBarText'>Categories</a>
             </li>
             <li>
-                <a href="/home-page">About</a>
+                <a href="/about" className='navBarText'>About</a>
             </li>
             <li>
-                <a href="/home-page">Contact</a>
+                <a href="/contact" className='navBarText'>Contact</a>
             </li>
             <li>
-                <a href="/home-page">Profile</a>
+                <a href="/profile" className='navBarText'>Profile</a>
             </li>
         </ul>
     </nav>

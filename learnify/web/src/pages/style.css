@@ -57,7 +57,7 @@ body{
 
 .nav{
     background-color: #f3e1d2;
-    color: rgb(29, 7, 228);
+    color: #1746A2;
     display: flex;
     justify-content: space-between;
     align-items: stretch ;
@@ -84,9 +84,7 @@ body{
     gap: 2rem;
 }
 
-.nav li:hover{
-    background-color: #c9cdf8;
-}
+
 
 .navSearch{
     color: inherit;
@@ -315,7 +313,7 @@ body{
 }
 
 .welcome-navigation-item{
-    background-color:#FFF7E9;
+    background-color: #FFF7E9;
     color:#1746A2;
     padding-top: 6px;
     cursor: pointer;
@@ -341,6 +339,10 @@ body{
     font-size:.875em;
     color:#dc3545;
     padding-left: 10px;
+}
+
+.navBarText{
+    font-family: 'Open Sans' sans-serif;
 }
 
 .login-button-error{
