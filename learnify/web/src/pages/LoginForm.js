@@ -31,7 +31,7 @@ function LoginForm() {
     const [message, setMessage] = useState("");
 
     const loginUser = async (email, password) => {
-        await fetch("http://3.75.151.200:3000/auth/login", {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/auth/login`, {
             method: "POST",
             body: JSON.stringify({
                 email: email,
