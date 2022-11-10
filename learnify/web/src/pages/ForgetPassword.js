@@ -41,6 +41,7 @@ function ForgetPassword() {
             .then((response) => {
                 if (response.status === 200) {
                     localStorage.setItem("emailVerified", true);
+                    localStorage.setItem("comesFromForgetPassword", true);
                     navigate('/verify-email', {replace: true});
                     console.log("Password reset link has been sent to your email address!");
                 } else {
