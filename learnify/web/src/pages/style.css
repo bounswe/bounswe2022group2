@@ -182,6 +182,8 @@ body{
     display: flex;
     color: #FFF7E9;
     flex-direction: column;
+}
+
 .notFoundPageLayout{
     height: 100vh;
     display: grid;
