@@ -4,6 +4,7 @@ import LearningSpacePrev from '../components/LearningSpacePrev';
 import FeedItem from '../components/FeedItem';
 import CreateLearningSpaceButton from '../components/CreateLearningSpaceButton';
 import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';
 import lslogo_13 from '../images/ls_icons/ls-icon-13.svg'
 import lslogo_6 from '../images/ls_icons/ls-icon-6.svg'
 import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
@@ -17,6 +18,8 @@ function HomePage() {
 
   return(
     <div className='home'>
+        <NavBar />
+        <div className='space-8'></div>
         <div className='home-layout'>
             <div className='home-upper-left'>
                 <div className='home-main'>
