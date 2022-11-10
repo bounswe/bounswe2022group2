@@ -8,7 +8,7 @@ export default function NavBar(){
                 <label className="navSearch"><input type="text" placeholder="Search.."  size={30}/> </label>
             
             <li>
-                <a href="/home" className='navBarText'><img src={bell} alt="Learnify Logo" height={30} /></a>
+                <a href="/home" className='navBarText'><img src={bell} alt="Learnify Logo" height={20} /></a>
             </li>
             <li>
                 <a href="/home" className='navBarText'>Home</a>

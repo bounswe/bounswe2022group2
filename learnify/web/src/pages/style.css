@@ -78,8 +78,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: stretch ;
-    margin: 0 auto
-    
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .nav a{
