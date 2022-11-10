@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     background: #FFF7E9;
+    margin: 0;
 }
 
 .signup-page-logo{
@@ -67,6 +72,47 @@ body{
     margin: 0 10px 0 10px;
 }
 
+.nav{
+    background-color: #FFF7E9;
+    color: #1746A2;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch ;
+    margin: 0 auto
+    
+}
+
+.nav a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem
+
+}
+
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+.navSearch{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 300px;
+}
+
 .form-body > *{
     padding: 10px;
 }
@@ -131,6 +177,11 @@ body{
     color: #FFF7E9;
 }
 
+.homePageLayout{
+    height: 100vh;
+    display: flex;
+    color: #FFF7E9;
+    flex-direction: column;
 .notFoundPageLayout{
     height: 100vh;
     display: grid;
@@ -313,7 +364,7 @@ h1 {
 }
 
 .welcome-navigation-item{
-    background-color:#FFF7E9;
+    background-color: #FFF7E9;
     color:#1746A2;
     padding-top: 6px;
     cursor: pointer;
@@ -339,6 +390,10 @@ h1 {
     font-size:.875em;
     color:#dc3545;
     padding-left: 10px;
+}
+
+.navBarText{
+    font-family: 'Open Sans' sans-serif;
 }
 
 .login-button-error{
