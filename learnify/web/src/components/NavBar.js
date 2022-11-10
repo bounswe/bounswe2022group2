@@ -2,13 +2,13 @@ import logo from '../images/logo-dblue.png'
 import bell from '../images/notification-icon.svg'
 export default function NavBar(){
     return <nav className="nav">
-        <a href="/"><img src={logo} alt="Learnify Logo" height={60} /></a>
+        <a href="/home"><img src={logo} alt="Learnify Logo" height={60} /></a>
         <ul>
             
                 <label className="navSearch"><input type="text" placeholder="Search.."  size={30}/> </label>
             
             <li>
-                <a href="/home" className='navBarText'><img src={bell} alt="Learnify Logo" height={20} /></a>
+                <a href="/notifications" className='navBarText'><img src={bell} alt="Learnify Logo" height={20} /></a>
             </li>
             <li>
                 <a href="/home" className='navBarText'>Home</a>
