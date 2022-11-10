@@ -110,10 +110,14 @@
 }
 
 .footer-column-r {
+    display: flex;
+    flex-direction: column;
     align-self: flex-end;
     text-align: right;
 }
 
 .footer-item-bold {
     font-weight: 600;
+    color:#FFF7E9;
+    text-decoration: none;
 }

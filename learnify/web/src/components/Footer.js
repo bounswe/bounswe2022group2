@@ -14,19 +14,19 @@ export default function Footer() {
                         <div className='footer-item-reg'>is a learning space for everyone, where learning is <br></br> achieved through collaboration.</div>
                     </div>
                     <div className='footer-column-r'>
-                        <div className='footer-item-bold'>Home</div>
-                        <div className='footer-item-bold'>Categories</div>
-                        <div className='footer-item-bold'>Notifications</div>
+                        <a href="/home" className='footer-item-bold'>Home</a>
+                        <a href="/categories" className='footer-item-bold'>Categories</a>
+                        <a href="/notifications" className='footer-item-bold'>Notifications</a>
                     </div>
                     <div className='footer-column-r'>
-                        <div className='footer-item-bold'>Profile</div>
-                        <div className='footer-item-bold'>Contact</div>
-                        <div className='footer-item-bold'>About</div>
+                        <a href="/profile" className='footer-item-bold'>Profile</a>
+                        <a href="/contact" className='footer-item-bold'>Contact</a>
+                        <a href="/about" className='footer-item-bold'>About</a>
                     </div>
                     <div className='footer-column-r'>
-                        <div className='footer-item-bold'>My Learning Spaces</div>
-                        <div className='footer-item-bold'>Popular Learning Spaces</div>
-                        <div className='footer-item-bold'>Recommended Learning Spaces</div>
+                        <a href="/user/learning-spaces" className='footer-item-bold'>My Learning Spaces</a>
+                        <a href="/popular-learning-spaces" className='footer-item-bold'>Popular Learning Spaces</a>
+                        <a href="/recommended-learning-spaces" className='footer-item-bold'>Recommended Learning Spaces</a>
                     </div>
                     <div className='footer-column-r'>
                         {year} © Learnify Team. All rights reserved.
