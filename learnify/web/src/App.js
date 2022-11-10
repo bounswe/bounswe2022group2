@@ -7,7 +7,6 @@ import HomePage from './pages/HomePage';
 import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
-import NavBar from './pages/NavBar'
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
