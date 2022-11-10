@@ -12,6 +12,14 @@ body{
     padding: 6%;
 }
 
+.notfound-page-logo{
+    width: 100%;
+    padding-left: 1%;
+    padding-top: 1%;
+    float: left;
+    margin-bottom: -10px;
+}
+
 .login-page-logo{
     align-self: flex-start;
     padding: 6%;
@@ -32,6 +40,15 @@ body{
     color: #1746A2;
     font-size: x-large;
     font-weight: 300;
+}
+
+.notfoundpage-text{
+    color: #1746A2;
+    font-size: 22px;
+    font-family: 'Open Sans' sans-serif;
+    font-weight: 600;
+    align-self: center;
+    padding-bottom: 20px;
 }
 
 .bold-text{
@@ -138,7 +155,6 @@ body{
 }
 
 
-
 .additional-Nav-Text {
     align-items: left;
     color: #f45004;
@@ -166,6 +182,10 @@ body{
     display: flex;
     color: #FFF7E9;
     flex-direction: column;
+.notFoundPageLayout{
+    height: 100vh;
+    display: grid;
+    color: #FFF7E9;
 }
 
 .leftPart{
@@ -303,6 +323,37 @@ body{
     padding-right: 15px;
     touch-action: manipulation;
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.btn-blue{
+    margin: auto;
+    padding-left: 40px;
+    background-color: #1746A2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color:#FFF7E9;
+    cursor: pointer;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 40px;
+    align-self: center;
+    width: 150px;
+    left: 20 px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    touch-action: manipulation;
+    transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+h1 {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: dark;
+    text-align: center;
 }
 
 .welcome-navigation{
