@@ -15,7 +15,6 @@ function App() {
      
     
     <div className="App">
-      <NavBar/>
       <BrowserRouter>
         <Routes>  
           <Route path="/" element={<SignUpForm/>}/>
