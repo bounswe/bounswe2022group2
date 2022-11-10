@@ -8,11 +8,15 @@ import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
 import ChangePassword from './pages/ChangePassword';
+import NavBar from './pages/NavBar'
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
+     
+    
     <div className="App">
+      <NavBar/>
       <BrowserRouter>
         <Routes>  
           <Route path="/" element={<SignUpForm/>}/>
@@ -24,7 +28,10 @@ function App() {
           <Route path='*' element={<NotFoundPage/>} />
         </Routes> 
       </BrowserRouter>
+
     </div>
+
+    
   );
 }
 
