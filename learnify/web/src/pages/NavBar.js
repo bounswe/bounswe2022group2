@@ -1,5 +1,5 @@
 import logo from '../images/logo-dblue.png' 
-import bell from '../images/notification-icon (1).svg'
+import bell from '../images/notification-icon.svg'
 export default function NavBar(){
     return <nav className="nav">
         <a href="/"><img src={logo} alt="Learnify Logo" height={60} /></a>
