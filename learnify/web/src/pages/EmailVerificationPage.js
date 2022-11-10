@@ -41,7 +41,7 @@ function EmailVerificationPage() {
     const navigate = useNavigate();
     
     const verifyUser = async (email, verificationCode) => {
-        await fetch("http://3.75.151.200:3000/auth/verifyEmail", {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/auth/verifyEmail`, {
             method: "POST",
             body: JSON.stringify({
                 email: email,

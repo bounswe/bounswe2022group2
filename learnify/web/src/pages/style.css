@@ -1,10 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     background: #FFF7E9;
+    margin: 0;
 }
 
 .signup-page-logo{
     align-self: flex-start;
     padding: 6%;
+}
+
+.notfound-page-logo{
+    width: 100%;
+    padding-left: 1%;
+    padding-top: 1%;
+    float: left;
+    margin-bottom: -10px;
 }
 
 .login-page-logo{
@@ -29,6 +42,15 @@ body{
     font-weight: 300;
 }
 
+.notfoundpage-text{
+    color: #1746A2;
+    font-size: 22px;
+    font-family: 'Open Sans' sans-serif;
+    font-weight: 600;
+    align-self: center;
+    padding-bottom: 20px;
+}
+
 .bold-text{
     font-weight: 600;
 }
@@ -48,6 +70,47 @@ body{
 
 .navigate{
     margin: 0 10px 0 10px;
+}
+
+.nav{
+    background-color: #FFF7E9;
+    color: #1746A2;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch ;
+    margin: 0 auto
+    
+}
+
+.nav a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem
+
+}
+
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+.navSearch{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 300px;
 }
 
 .form-body > *{
@@ -92,7 +155,6 @@ body{
 }
 
 
-
 .additional-Nav-Text {
     align-items: left;
     color: #f45004;
@@ -112,6 +174,17 @@ body{
 .pageLayout{
     height: 100vh;
     display: flex;
+    color: #FFF7E9;
+}
+
+.homePageLayout{
+    height: 100vh;
+    display: flex;
+    color: #FFF7E9;
+    flex-direction: column;
+.notFoundPageLayout{
+    height: 100vh;
+    display: grid;
     color: #FFF7E9;
 }
 
@@ -264,6 +337,37 @@ body{
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
+.btn-blue{
+    margin: auto;
+    padding-left: 40px;
+    background-color: #1746A2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color:#FFF7E9;
+    cursor: pointer;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 40px;
+    align-self: center;
+    width: 150px;
+    left: 20 px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    touch-action: manipulation;
+    transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+h1 {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: dark;
+    text-align: center;
+}
+
 .welcome-navigation{
     display: flex;
     justify-content: flex-start;
@@ -272,7 +376,7 @@ body{
 }
 
 .welcome-navigation-item{
-    background-color:#FFF7E9;
+    background-color: #FFF7E9;
     color:#1746A2;
     padding-top: 6px;
     cursor: pointer;
@@ -298,6 +402,10 @@ body{
     font-size:.875em;
     color:#dc3545;
     padding-left: 10px;
+}
+
+.navBarText{
+    font-family: 'Open Sans' sans-serif;
 }
 
 .login-button-error{

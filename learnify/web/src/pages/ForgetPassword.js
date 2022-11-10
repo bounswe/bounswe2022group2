@@ -29,7 +29,7 @@ function ForgetPassword() {
 
 
     const forgetPassword = async (email) => {
-        await fetch("http://3.75.151.200:3000/auth/resend", {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/auth/resend`, {
             method: "POST",
             body: JSON.stringify({
                 email: email,
