@@ -19,91 +19,93 @@ function HomePage() {
   return(
     <div className='home'>
         <NavBar />
-        <div className='space-8'></div>
-        <div className='home-layout'>
-            <div className='home-upper-left'>
-                <div className='home-main'>
-                    <div className='ls-box-layout-3'>
-                        <div className='ls-box-header-layout'>
-                            <div className='ls-box-label'>
-                                <label>
-                                    My Learning Spaces
-                                </label>
+        <div className='home-content'>
+            <div className='space-8'></div>
+            <div className='home-layout'>
+                <div className='home-upper-left'>
+                    <div className='home-main'>
+                        <div className='ls-box-layout-3'>
+                            <div className='ls-box-header-layout'>
+                                <div className='ls-box-label'>
+                                    <label>
+                                        My Learning Spaces
+                                    </label>
+                                </div>
+                                <button className='ls-box-button'>
+                                    view all
+                                </button>
                             </div>
-                            <button className='ls-box-button'>
-                                view all
-                            </button>
+                            <div className='space-12'></div>
+                            <div>
+                                <ul role="list" className="ls-prev-list-3">
+                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_13} />
+                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_6} />
+                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_20} />
+                                </ul>
+                            </div>
                         </div>
-                        <div className='space-12'></div>
-                        <div>
-                            <ul role="list" className="ls-prev-list-3">
-                                <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_13} />
-                                <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_6} />
-                                <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_20} />
-                            </ul>
+                        <CreateLearningSpaceButton />
+                    </div>
+                    <div className='space-30'></div>
+                </div>
+                <div className='feed-box'>
+                    <label className='feed-title'>
+                        Feed
+                    </label>
+                    <div className='space-5'></div>
+                    <div className='feed-list-box'>
+                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                    </div>
+                </div>
+            </div>
+            <div className='space-8'></div>
+            <div className='home-layout'>
+                <div className='ls-box-layout-4'>
+                    <div className='ls-box-header-layout'>
+                        <div className='ls-box-label'>
+                            <label>
+                                Popular Learning Spaces
+                            </label>
                         </div>
+                        <button className='ls-box-button'>
+                            view all
+                        </button>
                     </div>
-                    <CreateLearningSpaceButton />
-                </div>
-                <div className='space-30'></div>
-            </div>
-            <div className='feed-box'>
-                <label className='feed-title'>
-                    Feed
-                </label>
-                <div className='space-5'></div>
-                <div className='feed-list-box'>
-                    <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                    <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                    <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                    <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                    <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                    <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                </div>
-            </div>
-        </div>
-        <div className='space-8'></div>
-        <div className='home-layout'>
-            <div className='ls-box-layout-4'>
-                <div className='ls-box-header-layout'>
-                    <div className='ls-box-label'>
-                        <label>
-                            Popular Learning Spaces
-                        </label>
+                    <div className='space-12'></div>
+                    <div>
+                        <ul role="list" className="ls-prev-list-4">
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
+                        </ul>
                     </div>
-                    <button className='ls-box-button'>
-                        view all
-                    </button>
                 </div>
-                <div className='space-12'></div>
-                <div>
-                    <ul role="list" className="ls-prev-list-4">
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
-                    </ul>
-                </div>
-            </div>
-            <div className='ls-box-layout-4'>
-                <div className='ls-box-header-layout'>
-                    <div className='ls-box-label'>
-                        <label>
-                            Recommended Learning Spaces
-                        </label>
+                <div className='ls-box-layout-4'>
+                    <div className='ls-box-header-layout'>
+                        <div className='ls-box-label'>
+                            <label>
+                                Recommended Learning Spaces
+                            </label>
+                        </div>
+                        <button className='ls-box-button'>
+                            view all
+                        </button>
                     </div>
-                    <button className='ls-box-button'>
-                        view all
-                    </button>
-                </div>
-                <div className='space-12'></div>
-                <div>
-                    <ul role="list" className="ls-prev-list-4">
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                        <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
-                    </ul>
+                    <div className='space-12'></div>
+                    <div>
+                        <ul role="list" className="ls-prev-list-4">
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
+                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

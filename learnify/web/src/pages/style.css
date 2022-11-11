@@ -497,11 +497,16 @@ h1 {
     margin: 0 auto;
 }
 
+.home-content {
+    min-height: calc(100vh - 190px);
+}
+
 .home-layout {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-right: 36px;
+    align-items: stretch;
 }
 
 .home-upper-left {
