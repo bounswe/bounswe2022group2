@@ -61,7 +61,7 @@ function EmailVerificationPage() {
                     if(isComeFrom === "true"){
                         navigate('/change-password', {replace: true});
                     } else {
-                        navigate('/home-page', {replace: true});
+                        navigate('/home', {replace: true});
                     }
                     return response.json();
                 } else {
