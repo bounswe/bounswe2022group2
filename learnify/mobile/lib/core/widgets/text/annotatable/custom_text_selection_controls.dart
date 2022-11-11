@@ -59,7 +59,7 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
       items ??
           <CustomAnnotatableItem>[
             CustomAnnotatableItem(controlType: SelectionControlType.copy),
-            CustomAnnotatableItem(controlType: SelectionControlType.paste),
+            // CustomAnnotatableItem(controlType: SelectionControlType.paste),
           ],
     );
 

@@ -64,7 +64,7 @@ class AnnotatableText extends StatelessWidget {
         selectionControls: CustomTextSelectionControls(
           items: <CustomAnnotatableItem>[
             CustomAnnotatableItem(controlType: SelectionControlType.copy),
-            CustomAnnotatableItem(controlType: SelectionControlType.paste),
+            // CustomAnnotatableItem(controlType: SelectionControlType.paste),
             CustomAnnotatableItem(
               controlType: SelectionControlType.other,
               label: annotateLabel,
