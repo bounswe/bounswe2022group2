@@ -1,0 +1,121 @@
+.learning-space-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 140px;
+    max-height: 200px;
+    width: 140px;
+    height: 200px;
+    background-color: #1746A2;
+    border-radius: 20px;
+    box-shadow: 0px 2px 8px 0px rgba(120,120,120,0.52);
+}
+
+.learning-space-icon {
+    border-radius: 20px;
+}
+
+.learning-space-title {
+    font-family: 'Open Sans' sans-serif;
+    font-weight: 500;
+    text-align: left;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    overflow: auto;
+}
+
+.feed-item-username {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.feed-item-action {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.create-ls-btn {
+    background-color: #FF731D;
+    max-width: 280px;
+    max-height: 200px;
+    width: 280px;
+    height: 200px;
+    margin-left: 30px;
+    margin-top: 58px;
+    border-radius: 20px;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100% 0%;
+}
+
+.ls-button-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    text-align: left;
+    overflow: visible;
+}
+
+.create-ls-btn-label {
+    font-family: 'Open Sans' sans-serif;
+    font-size: larger;
+    font-weight: 700;
+    color: #FFF7E9;
+}
+
+.add-button-icon {
+    display: block;
+    align-self:flex-start;
+}
+
+.ls-create-illustration {
+    align-self: flex-end;
+}
+
+.footer-parent-layout {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.4%;
+    background-color: #1746A2;
+    color:#FFF7E9;
+    font-size: small;
+    font-weight: 300;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 2px 8px 0px rgba(120,120,120,0.52);
+}
+
+.footer-container {
+    display: grid;
+    flex-direction: row;
+    width: 100%;
+    grid-template-columns: 3fr;
+}
+
+.footer-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-column-l {
+    align-self: flex-start;
+    text-align: left;
+}
+
+.footer-column-r {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.footer-item-bold {
+    font-weight: 600;
+    color:#FFF7E9;
+    text-decoration: none;
+}

@@ -56,7 +56,7 @@ function EmailVerificationPage() {
                 console.log(response.statusText);
                 if (response.ok) {
                     localStorage.setItem("token", response.json().token)
-                    navigate('/home-page', {replace: true});
+                    navigate('/home', {replace: true});
                     return response.json();
                 } else {
                     response.json().then( json => {

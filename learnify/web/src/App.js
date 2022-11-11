@@ -7,7 +7,6 @@ import HomePage from './pages/HomePage';
 import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
-import NavBar from './pages/NavBar'
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
           <Route path="/" element={<SignUpForm/>}/>
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
-          <Route path="/home-page" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
+          <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes> 
