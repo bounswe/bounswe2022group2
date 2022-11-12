@@ -54,6 +54,34 @@ describe('POST /learningspace', () => {
       done();
     });
 
+    it('should return 409 when title already exists', (done) => {
+      const title = "title1";
+      const description= "description1";
+      const token = "token"        
+      const username = "username"
+  
+    sinon.stub(jwt, "decode")
+    .onFirstCall().resolves(
+      {username}
+    );
+
+    sinon.stub(LearningSpace.prototype, "save")
+      .onFirstCall().resolves(
+        new LearningSpace({
+          title: title,
+          description: description
+        })
+      );
+    request(app)
+      .post(url)
+      .send({title, token }) //title is missing
+      .expect(409)
+      .end(async (err) => {
+        if (err) return done(err);
+        });
+        done();
+      });
+
 
   it('should create the endpoint', (done) => {
       const title = "title1";

@@ -6,7 +6,7 @@ import chapterSchema from './chapter.js'
 
 const lsSchema = new Schema({
   title: {
-    type: String, required: true
+    type: String, required: true, unique: true
   },
   description: {
     type: String, required: true
