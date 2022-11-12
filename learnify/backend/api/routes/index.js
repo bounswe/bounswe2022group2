@@ -5,7 +5,7 @@ import learning_space from './learning_space.js'
 const router = Router();
 
 router.use('/auth', auth);
-router.use('/lr', learning_space);
+router.use('/learningspace', learning_space);
 
 
 export default router;
