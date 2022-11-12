@@ -1,21 +1,24 @@
 import mongoose from 'mongoose';
+import {User} from './index.js'
 const { Schema, model } = mongoose;
 
-import {chapterSchema} from './chapter.js'
+import chapterSchema from './chapter.js'
 
 const lsSchema = new Schema({
-  name: {
+  title: {
     type: String, required: true
   },
-  topic: {
-    type: String
+  description: {
+    type: String, required: true
   },
   num_participants: {
     type: Number, required: true, default: 1
   },
-  creator: {type: mongoose.Types.ObjectId, required: true},
+  icon_id: {type: Number, required: true, default: 1},
+  categories: [{type: String}],
+  creator: {type: String, required: true},
   admins: [{
-    type: mongoose.Types.ObjectId, required: true
+    type: String, required: true
   }],
   chapters: {type: chapterSchema}
 },
@@ -23,6 +26,7 @@ const lsSchema = new Schema({
     timestamps: true,
     toJSON: {
       transform: function (doc, ret, options) {
+
         ret.id = ret._id;
         delete ret._id;
         return ret;
