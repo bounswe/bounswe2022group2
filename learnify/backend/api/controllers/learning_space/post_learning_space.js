@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { get } from "underscore";
 
 import { LearningSpace } from '../../../models/index.js';
 import { validateLS_init } from '../../validators/learning_space_init_validator.js';
@@ -10,8 +11,7 @@ export default async (req, res) => {
     return res.status(400).json({ "resultMessage": "Please check your inputs."});
   }
   
-  
-  const exists_ls = await LearningSpace.exists({ title: req.body.tit })
+  const exists_ls = await LearningSpace.exists({ title: req.body.title })
     .catch((err) => {
       console.log("Could not fetch users from mongoDB")
       console.log(err.message);
