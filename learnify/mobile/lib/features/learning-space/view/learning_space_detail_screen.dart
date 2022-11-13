@@ -208,7 +208,9 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
           ),
           floating: true,
           pinned: true,
-          expandedHeight: context.height * 55 + wsize.height,
+          expandedHeight: wsize.height == 0
+              ? context.maxPossibleHeight
+              : context.height * 55 + wsize.height,
           forceElevated: widget.innerBoxIsScrolled,
           bottom: TabBar(
             tabs: LearningSpaceConstants.tabKeys
