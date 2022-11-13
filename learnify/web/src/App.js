@@ -8,6 +8,7 @@ import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
 import NotFoundPage from './pages/NotFoundPage';
+import LearningSpace from './pages/LearningSpace';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
           <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
+          <Route path="/user/learning-spaces" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes> 
