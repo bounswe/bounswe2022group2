@@ -54,10 +54,14 @@ class ChapterItem extends StatelessWidget {
         _carouselSlider(viewModel),
         _sliderIndicator(viewModel),
         context.sizedH(1.4),
-        MultiLineText(
+        AnnotatableText(
+          key: PageStorageKey<String>(chapter.materialText ?? ''),
           '    ${chapter.materialText?.replaceAll('\n', '\n\n    ')}',
-          maxLines: 10000,
-          translated: false,
+          annotateLabel: context.tr(TextKeys.annotate),
+          annotateCallback: (String annotatedText) async {
+            await DialogBuilder(context)
+                .annotateDialog(annotatedText, viewModel.annotateText);
+          },
         ),
         ChapterList.createEditButton(context, TextKeys.editChapter,
             Icons.edit_outlined, viewModel.editChapter),
