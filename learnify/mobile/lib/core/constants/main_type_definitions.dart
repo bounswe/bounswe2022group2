@@ -23,8 +23,12 @@ typedef CheckboxCallback = void Function(bool value);
 /// index callback
 typedef IndexCallback = void Function(int index);
 
-/// id callback
-typedef IdCallback = void Function(String id);
+/// string callback
+typedef StringCallback = void Function(String id);
+
+/// annotation click callback
+typedef AnnotationClickCallback = void Function(
+    String id, String annotatedText);
 
 typedef AnnotateCallback = Future<String?> Function(
-    String annotatedText, String annotation);
+    int startIndex, int endIndex, String annotation, String? chapterId);

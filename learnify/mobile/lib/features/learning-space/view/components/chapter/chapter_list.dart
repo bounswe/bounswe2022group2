@@ -5,16 +5,14 @@ class ChapterList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Tuple2<List<Chapter>,
-        List<GlobalKey<CustomExpansionTileState>>> tuple = SelectorHelper<
-            Tuple2<List<Chapter>, List<GlobalKey<CustomExpansionTileState>>>,
-            LearningSpaceViewModel>()
-        .listenValue(
-            (LearningSpaceViewModel model) => Tuple2<List<Chapter>,
-                    List<GlobalKey<CustomExpansionTileState>>>(
-                model.chapters, model.expansionTileKeys),
-            context);
-    final List<Chapter> chapters = tuple.item1;
+    final Tuple2<int, List<GlobalKey<CustomExpansionTileState>>> tuple =
+        SelectorHelper<Tuple2<int, List<GlobalKey<CustomExpansionTileState>>>,
+                LearningSpaceViewModel>()
+            .listenValue(
+                (LearningSpaceViewModel model) =>
+                    Tuple2<int, List<GlobalKey<CustomExpansionTileState>>>(
+                        model.chapters.length, model.expansionTileKeys),
+                context);
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
       delegate: SliverChildBuilderDelegate(
@@ -32,7 +30,6 @@ class ChapterList extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(vertical: context.height * .3),
                     child: ChapterItem(
-                      chapter: chapters[i - 1],
                       itemIndex: i - 1,
                       callback: (int itemIndex) =>
                           updateExpansions(itemIndex, keys),
@@ -42,7 +39,7 @@ class ChapterList extends StatelessWidget {
                   const CustomDivider(),
                 ],
               ),
-        childCount: chapters.length + 1,
+        childCount: tuple.item1 + 1,
       ),
     );
   }

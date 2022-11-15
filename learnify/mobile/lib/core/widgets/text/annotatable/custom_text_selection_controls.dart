@@ -1,6 +1,9 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import '../../../../features/learning-space/models/annotation_model.dart';
+import '../../../../product/language/language_keys.dart';
 import '../../../../product/theme/dark_theme.dart';
 import '../../../extensions/context/context_extensions.dart';
 import '../../../extensions/context/theme_extensions.dart';
@@ -9,12 +12,14 @@ import '../base_text.dart';
 import 'custom_annotatable_item.dart';
 
 class CustomTextSelectionControls extends MaterialTextSelectionControls {
-  CustomTextSelectionControls({this.items, this.textStyles});
+  CustomTextSelectionControls(
+      {required this.annotations, this.items, this.textStyles});
   static const double _kToolbarContentDistanceBelow = 20;
   static const double _kToolbarContentDistance = 8;
 
   final List<CustomAnnotatableItem>? items;
   final List<TextStyle?>? textStyles;
+  final List<Annotation> annotations;
 
   @override
   Widget buildToolbar(
@@ -41,21 +46,40 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
           endTextSelectionPoint.point.dy +
           _kToolbarContentDistanceBelow,
     );
+    final int startIndex = delegate.textEditingValue.selection.start;
+    final int endIndex = delegate.textEditingValue.selection.end == 0
+        ? 0
+        : delegate.textEditingValue.selection.end - 1;
 
     final String selectionText = delegate.textEditingValue.text.substring(
-        delegate.textEditingValue.selection.start,
-        delegate.textEditingValue.selection.end);
+        startIndex == -1 ? 0 : startIndex, endIndex <= 0 ? 0 : endIndex + 1);
+
+    final List<CustomAnnotatableItem> finalItems =
+        List<CustomAnnotatableItem>.from(
+      items ??
+          <CustomAnnotatableItem>[
+            CustomAnnotatableItem(controlType: SelectionControlType.copy),
+            // CustomAnnotatableItem(controlType: SelectionControlType.paste),
+          ],
+    );
+
+    final Annotation? anyConflict = annotations.firstWhereOrNull(
+        (Annotation a) =>
+            (a.startIndex >= startIndex && endIndex >= a.startIndex) ||
+            (a.startIndex <= startIndex && startIndex <= a.endIndex));
+    if (anyConflict != null) {
+      finalItems.removeWhere((CustomAnnotatableItem i) =>
+          i.label == context.tr(TextKeys.annotate));
+    }
 
     return MyTextSelectionToolbar(
       anchorAbove: anchorAbove,
       anchorBelow: anchorBelow,
       clipboardStatus: clipboardStatus,
       textStyles: textStyles,
-      items: items ??
-          <CustomAnnotatableItem>[
-            CustomAnnotatableItem(controlType: SelectionControlType.copy),
-            CustomAnnotatableItem(controlType: SelectionControlType.paste),
-          ],
+      startIndex: startIndex,
+      endIndex: endIndex,
+      items: finalItems,
       selectionText: selectionText,
       handleCopy: () => handleCopy(delegate, clipboardStatus),
       handleCut: () => handleCut(delegate),
@@ -80,6 +104,8 @@ class MyTextSelectionToolbar extends StatefulWidget {
     required this.items,
     required this.selectionText,
     required this.callback,
+    required this.startIndex,
+    required this.endIndex,
     this.textStyles,
     this.clipboardStatus,
     this.handleCopy,
@@ -91,6 +117,8 @@ class MyTextSelectionToolbar extends StatefulWidget {
 
   final Offset anchorAbove;
   final Offset anchorBelow;
+  final int startIndex;
+  final int endIndex;
   final ClipboardStatusNotifier? clipboardStatus;
   final void Function()? handleCopy;
   final void Function()? handleCut;
@@ -155,6 +183,7 @@ class MyTextSelectionToolbarState extends State<MyTextSelectionToolbar> {
       SelectionControlType.paste: localizations.pasteButtonLabel,
       SelectionControlType.selectAll: localizations.selectAllButtonLabel,
     };
+
     return TextSelectionToolbar(
       anchorAbove: widget.anchorAbove,
       anchorBelow: widget.anchorBelow,
@@ -182,6 +211,9 @@ class MyTextSelectionToolbarState extends State<MyTextSelectionToolbar> {
             onPressed: () {
               if (widget.items[i].onPressed != null) {
                 widget.items[i].onPressed!(widget.selectionText);
+              } else if (widget.items[i].onPressedAnnotation != null) {
+                widget.items[i].onPressedAnnotation!(
+                    widget.startIndex, widget.endIndex);
               }
               selectorItem[widget.items[i].controlType]!();
             },

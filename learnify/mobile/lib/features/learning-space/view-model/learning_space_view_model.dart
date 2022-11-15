@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../core/extensions/string/string_extensions.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
 
 /// View model to manage the data on learning space screen.
@@ -66,9 +68,28 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> annotateText(String annotatedText, String annotation) async {
-    print(annotatedText);
-    print(annotation);
+  Future<String?> annotateText(int startIndex, int endIndex, String annotation,
+      String? chapterId) async {
+    final int itemIndex = _chapters.indexWhere(
+        (Chapter c) => c.id?.compareWithoutCase(chapterId) ?? false);
+    if (itemIndex == -1) return 'Chapter not found';
+    final Chapter oldChapter = _chapters[itemIndex];
+    final List<Annotation> newAnnotations =
+        List<Annotation>.from(oldChapter.annotations)
+          ..add(
+            Annotation(
+              content: annotation,
+              startIndex: startIndex,
+              endIndex: endIndex,
+              chapterId: oldChapter.id,
+              courseId: oldChapter.courseId,
+            ),
+          )
+          ..sort((Annotation a1, Annotation a2) =>
+              a1.startIndex.compareTo(a2.startIndex));
+    _chapters[itemIndex] =
+        _chapters[itemIndex].copyWith(annotations: newAnnotations);
+    notifyListeners();
     return null;
   }
 }

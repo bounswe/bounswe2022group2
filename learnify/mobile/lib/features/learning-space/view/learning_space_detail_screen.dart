@@ -19,6 +19,7 @@ import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../constants/learning_space_constants.dart';
+import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
 import '../view-model/learning_space_view_model.dart';
 

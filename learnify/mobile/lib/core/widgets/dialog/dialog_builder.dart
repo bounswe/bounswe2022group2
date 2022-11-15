@@ -31,13 +31,19 @@ class DialogBuilder {
       );
 
   /// Example text dialog
-  Future<void> textDialog(String text, String title,
-          {bool translate = false}) async =>
+  Future<void> textDialog(
+    String text,
+    String title, {
+    bool translate = false,
+    bool translateTitle = true,
+  }) async =>
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
           title: MultiLineText(title,
-              style: context.displaySmall, textAlign: TextAlign.center),
+              style: context.displaySmall,
+              textAlign: TextAlign.center,
+              translated: translateTitle),
           content: ConstrainedBox(
             constraints: BoxConstraints.loose(
                 Size(context.width * 60, context.height * 70)),
@@ -48,8 +54,8 @@ class DialogBuilder {
       );
 
   /// Annotate dialog
-  Future<void> annotateDialog(
-      String annotatedText, AnnotateCallback callback) async {
+  Future<void> annotateDialog(int startIndex, int endIndex, String? chapterId,
+      AnnotateCallback callback) async {
     String annotationText = '';
     await showDialog(
       context: context,
@@ -88,7 +94,7 @@ class DialogBuilder {
             _dialogActionButton(
               TextKeys.annotate,
               asyncCallback: () async =>
-                  callback(annotatedText, annotationText),
+                  callback(startIndex, endIndex, annotationText, chapterId),
               isAction: true,
               isActive: annotationText.length > 3,
             ),
