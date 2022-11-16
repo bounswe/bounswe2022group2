@@ -54,5 +54,7 @@
   "annotate_text": "Annotate the Text",
   "annotation_hint_text": "Write your annotation",
   "cancel": "Cancel",
-  "cannot_be_empty": "Cannot be empty!"
+  "cannot_be_empty": "Cannot be empty!",
+  "create_learning_space": "Create a Learning Space",
+  "edit": "edit"
 }
