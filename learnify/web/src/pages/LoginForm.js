@@ -46,6 +46,7 @@ function LoginForm() {
                 console.log(response.statusText);
                 if (response.ok) {
                     console.log("successfull")
+                    localStorage.setItem("token", response.json().token)
                     navigate('/home-page',{replace: true});
                     return response.json();
                 } else {
