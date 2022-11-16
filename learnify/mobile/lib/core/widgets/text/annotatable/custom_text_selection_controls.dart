@@ -1,9 +1,7 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import '../../../../features/learning-space/models/annotation_model.dart';
-import '../../../../product/language/language_keys.dart';
 import '../../../../product/theme/dark_theme.dart';
 import '../../../extensions/context/context_extensions.dart';
 import '../../../extensions/context/theme_extensions.dart';
@@ -47,9 +45,7 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
           _kToolbarContentDistanceBelow,
     );
     final int startIndex = delegate.textEditingValue.selection.start;
-    final int endIndex = delegate.textEditingValue.selection.end == 0
-        ? 0
-        : delegate.textEditingValue.selection.end - 1;
+    final int endIndex = delegate.textEditingValue.selection.end;
 
     final String selectionText = delegate.textEditingValue.text.substring(
         startIndex == -1 ? 0 : startIndex, endIndex <= 0 ? 0 : endIndex + 1);
@@ -62,15 +58,6 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
             CustomAnnotatableItem(controlType: SelectionControlType.paste),
           ],
     );
-
-    final Annotation? anyConflict = annotations.firstWhereOrNull(
-        (Annotation a) =>
-            (a.startIndex >= startIndex && endIndex >= a.startIndex) ||
-            (a.startIndex <= startIndex && startIndex <= a.endIndex));
-    if (anyConflict != null) {
-      finalItems.removeWhere((CustomAnnotatableItem i) =>
-          i.label == context.tr(TextKeys.annotate));
-    }
 
     return MyTextSelectionToolbar(
       anchorAbove: anchorAbove,
