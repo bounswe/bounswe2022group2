@@ -71,16 +71,6 @@ class LoginViewModel extends BaseViewModel {
   }
 
   Future<String?> _loginRequest() async {
-    // TODO:
-    const User user = User(id: '2313');
-    await localManager.setModel(user, StorageKeys.user);
-    await localManager.setString(StorageKeys.accessToken, 'toke');
-    await localManager.setInt(StorageKeys.accessTokenExpires,
-        DateTime.now().add(const Duration(days: 10)).millisecondsSinceEpoch);
-    await navigationManager.navigateToPageClear(
-        path: NavigationConstants.home,
-        data: <String, dynamic>{'user': user.toJson});
-    return null;
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid) {
       final LoginRequest requestModel = LoginRequest(
