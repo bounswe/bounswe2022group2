@@ -1,7 +1,11 @@
-import '../../../../core/base/model/base_model.dart';
+import 'package:flutter/material.dart';
 
+import '../../../../core/base/model/base_model.dart';
+import '../../../core/helpers/color_helpers.dart';
+
+// ignore: must_be_immutable
 class Annotation extends BaseModel<Annotation> {
-  const Annotation({
+  Annotation({
     this.id,
     this.courseId,
     this.ownerId,
@@ -13,7 +17,10 @@ class Annotation extends BaseModel<Annotation> {
     this.content,
     this.createdAt,
     this.updatedAt,
+    this.isAnnotation = true,
+    this.colorParam,
   });
+
   factory Annotation.dummy(int id, {int? startIndex, int? endIndex}) =>
       Annotation(
         id: id.toString(),
@@ -42,23 +49,34 @@ class Annotation extends BaseModel<Annotation> {
         upVote: BaseModel.getByType<int>(json['upvote']),
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
+        isAnnotation: BaseModel.getWithDefault<bool>(json['annotation'], false),
       );
 
-  Annotation copyWith(
-          {String? content, int? startIndex, int? endIndex, int? upVote}) =>
-      Annotation(
-        id: id,
-        courseId: courseId,
-        ownerId: ownerId,
-        categoryId: categoryId,
-        chapterId: chapterId,
-        startIndex: startIndex ?? this.startIndex,
-        endIndex: endIndex ?? this.endIndex,
-        upVote: upVote ?? this.upVote,
-        content: content ?? this.content,
-        createdAt: createdAt,
-        updatedAt: updatedAt,
-      );
+  Annotation copyWith({
+    String? content,
+    int? startIndex,
+    int? endIndex,
+    int? upVote,
+    Color? colorParam,
+    bool? isAnnotation,
+  }) {
+    final Annotation annotation = Annotation(
+      id: id,
+      courseId: courseId,
+      ownerId: ownerId,
+      categoryId: categoryId,
+      chapterId: chapterId,
+      startIndex: startIndex ?? this.startIndex,
+      endIndex: endIndex ?? this.endIndex,
+      upVote: upVote ?? this.upVote,
+      content: content ?? this.content,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+      isAnnotation: isAnnotation ?? this.isAnnotation,
+    );
+    annotation.color = colorParam ?? annotation.color;
+    return annotation;
+  }
 
   final String? id;
   final String? courseId;
@@ -71,6 +89,8 @@ class Annotation extends BaseModel<Annotation> {
   final int? upVote;
   final DateTime? createdAt;
   final DateTime? updatedAt;
+  final bool isAnnotation;
+  Color? colorParam;
 
   @override
   Annotation fromJson(Map<String, dynamic> json) => Annotation.fromJson(json);
@@ -88,6 +108,8 @@ class Annotation extends BaseModel<Annotation> {
         'upvote': upVote,
         'createdAt': BaseModel.primitiveToJson<DateTime>(createdAt),
         'updatedAt': BaseModel.primitiveToJson<DateTime>(updatedAt),
+        'isAnnotation': BaseModel.getByType<bool>(isAnnotation),
+        'color': BaseModel.primitiveToJson<Color>(color),
       };
 
   @override
@@ -102,6 +124,15 @@ class Annotation extends BaseModel<Annotation> {
         endIndex,
         upVote,
         createdAt,
-        updatedAt
+        updatedAt,
+        isAnnotation,
+        color,
       ];
+
+  Color get color {
+    if (colorParam != null) return colorParam!;
+    return colorParam = ColorHelpers.lightRandomColor;
+  }
+
+  set color(Color newColor) => colorParam = newColor;
 }

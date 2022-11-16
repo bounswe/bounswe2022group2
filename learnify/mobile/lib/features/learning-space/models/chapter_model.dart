@@ -24,10 +24,6 @@ class Chapter extends BaseModel<Chapter> {
           'https://picsum.photos/id/2/700/400',
           'https://picsum.photos/id/3/700/400'
         ],
-        annotations: <Annotation>[
-          Annotation.dummy(id),
-          Annotation.dummy(id + 1, startIndex: 87, endIndex: 124)
-        ],
         createdAt: DateTime.now().subtract(const Duration(days: 1)),
         updatedAt: DateTime.now(),
       );
@@ -39,7 +35,7 @@ class Chapter extends BaseModel<Chapter> {
         materialText: BaseModel.getByType<String>(json['material_text']),
         materialVisual: BaseModel.getList<String>(json['material_visual']),
         annotations: BaseModel.embeddedListFromJson<Annotation>(
-            json['annotations'], const Annotation()),
+            json['annotations'], Annotation()),
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
       );
