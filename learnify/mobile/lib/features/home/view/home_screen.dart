@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/base/view/base_view.dart';
-import '../../../core/constants/main_type_definitions.dart';
+import '../../../../core/managers/navigation/navigation_manager.dart';
+import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
-import '../../learning-space/view-model/create_learning_space_view_model.dart';
 import '../model/course_model.dart';
 import '../view-model/home_view_model.dart';
+
 part '../components/course_preview.dart';
 
 class HomeScreen extends BaseView<HomeViewModel> {
@@ -30,12 +31,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
         child: Column(
           children: <Widget>[
             _createEditButton(
-                context,
-                TextKeys.createLearningSpace,
-                Icons.add_outlined,
-                context
-                    .read<CreateLearningSpaceViewModel>()
-                    .createLearningSpace),
+                context, TextKeys.createLearningSpace, Icons.add_outlined),
             context.sizedH(2),
             SizedBox(
               height: 185,
@@ -80,8 +76,8 @@ class HomeScreen extends BaseView<HomeViewModel> {
         ],
       );
 
-  static Widget _createEditButton(BuildContext context, String textKey,
-          IconData icon, ErrorHelper callback) =>
+  static Widget _createEditButton(
+          BuildContext context, String textKey, IconData icon) =>
       Padding(
           padding: EdgeInsets.only(
             top: context.height * 1.7,
@@ -96,6 +92,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
             padding: EdgeInsets.symmetric(
                 horizontal: context.responsiveSize * 2.8,
                 vertical: context.responsiveSize * 1.4),
-            onPressedError: callback,
+            onPressed: () async => NavigationManager.instance.navigateToPage(
+                path: NavigationConstants.createEditLearningSpace),
           ));
 }

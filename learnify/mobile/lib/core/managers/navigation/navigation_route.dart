@@ -5,6 +5,7 @@ import '../../../features/auth/login/view/login_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 
@@ -35,7 +36,8 @@ class NavigationRoute {
         return normalNavigate(HomeWrapper(initialIndex: 3));
       case NavigationConstants.learningSpace:
         return normalNavigate(const LearningSpaceDetailScreen());
-
+      case NavigationConstants.createEditLearningSpace:
+        return normalNavigate(const CreateLearningSpaceScreen());
       default:
         return normalNavigate(const SignupScreen());
     }

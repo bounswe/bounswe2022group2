@@ -57,4 +57,5 @@ class TextKeys {
   static const String cannotBeEmpty = "cannot_be_empty";
   static const String createLearningSpace = "create_learning_space";
   static const String edit = "edit";
+  static const String titleHint = "title_hint";
 }

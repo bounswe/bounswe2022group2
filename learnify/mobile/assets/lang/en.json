@@ -56,5 +56,6 @@
   "cancel": "Cancel",
   "cannot_be_empty": "Cannot be empty!",
   "create_learning_space": "Create a Learning Space",
-  "edit": "edit"
+  "edit": "edit",
+  "title_hint": "title"
 }
