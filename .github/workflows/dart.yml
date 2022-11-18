@@ -25,11 +25,11 @@ jobs:
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
 
       - name: Install dependencies
-        working-directory: ./mobile
+        working-directory: ./learnify/mobile
         run: dart pub get
 
       - name: Analyze project source
-        working-directory: ./mobile
+        working-directory: ./learnify/mobile
         run: dart analyze
 
       - uses: actions/setup-java@v2
@@ -41,14 +41,14 @@ jobs:
           channel: 'stable'
           architecture: x64
       - name: Clean the previous built
-        working-directory: ./mobile
+        working-directory: ./learnify/mobile
         run: flutter clean
       - name: Get the Flutter dependencies
-        working-directory: ./mobile
+        working-directory: ./learnify/mobile
         run: flutter pub get
       - name: Run the tests
-        working-directory: ./mobile
+        working-directory: ./learnify/mobile
         run: flutter test
       - name: Build the APK
-        working-directory: ./mobile
+        working-directory: ./learnify/mobile
         run: flutter build apk --split-per-abi
