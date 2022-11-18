@@ -95,6 +95,7 @@ class AnnotatableText extends StatelessWidget {
       final String text = content.substring(startIndex, endIndex);
       final List<Annotation> foundAnnotations = <Annotation>[];
       for (final Annotation a in annotations) {
+        if (a.startIndex > endIndex) break;
         final String aText = content.substring(a.startIndex, a.endIndex);
         if (aText.contains(text)) foundAnnotations.add(a);
       }
