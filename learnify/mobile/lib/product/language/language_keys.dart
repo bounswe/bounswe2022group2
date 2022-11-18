@@ -58,4 +58,7 @@ class TextKeys {
   static const String cannotBeEmpty = "cannot_be_empty";
   static const String selectAnnotatedDialogTitle =
       "select_annotated_dialog_title";
+  static const String takenCourses = "taken_courses";
+  static const String friendCourses = "friend_courses";
+  static const String recommendedCourses = "recommended_courses";
 }

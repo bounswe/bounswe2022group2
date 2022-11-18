@@ -3,6 +3,7 @@ import 'package:async/async.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/navigation_constants.dart';
+import '../../../product/language/language_keys.dart';
 import '../model/course_model.dart';
 import '../model/get_courses_response_model.dart';
 import '../service/I_home_service.dart';
@@ -80,31 +81,43 @@ class HomeViewModel extends BaseViewModel {
 
   Future<String?> viewAll(String coursesType) async {
     await operation?.cancel();
-    if (coursesType == "Taken Courses") {
-      operation = CancelableOperation<String?>.fromFuture(
-          _viewAllResponse(takenCourses));
-    } else if (coursesType == "Friends Courses") {
-      operation = CancelableOperation<String?>.fromFuture(
-          _viewAllResponse(friendCourses));
-    } else if (coursesType == "Recommended Courses") {
-      operation = CancelableOperation<String?>.fromFuture(
-          _viewAllResponse(recommendedCourses));
-    }
+    await _viewAllRequest(coursesType);
     final String? res = await operation?.valueOrCancellation();
     return res;
   }
 
-  Future<String?> _viewAllResponse(List<Course> expectedCourses) async {
+  Future<String?> _viewAllRequest(String coursesType) async {
+    List<Course> expectedCourses;
+    final IResponseModel<GetCoursesResponse> resp =
+        await _homeService.getCourses();
+    final GetCoursesResponse? respData = resp.data;
+    if (resp.hasError || respData == null) {
+      //return resp.error?.errorMessage;
+      expectedCourses = takenCourses;
+    } else {
+      if (coursesType == TextKeys.takenCourses) {
+        expectedCourses = respData.takenCourses;
+      } else if (coursesType == TextKeys.friendCourses) {
+        expectedCourses = respData.friendCourses;
+      } else if (coursesType == TextKeys.recommendedCourses) {
+        expectedCourses = respData.recommendedCourses;
+      } else {
+        return "Requested type of list of courses not found!";
+      }
+    }
     await navigationManager.navigateToPage(
         path: NavigationConstants.viewall,
-        data: <String, dynamic>{'courses': expectedCourses});
+        data: <String, dynamic>{
+          'listOfCourses': expectedCourses,
+          'courseType': coursesType
+        });
     return null;
   }
 
   bool getViewAllStatus(String coursesType) {
-    if (coursesType == "Taken Courses") return _takenViewAll;
-    if (coursesType == "Friends Courses") return _friendViewAll;
-    if (coursesType == "Recommended Courses") return _recommendedViewAll;
+    if (coursesType == TextKeys.takenCourses) return _takenViewAll;
+    if (coursesType == TextKeys.friendCourses) return _friendViewAll;
+    if (coursesType == TextKeys.recommendedCourses) return _recommendedViewAll;
     return false;
   }
 }
