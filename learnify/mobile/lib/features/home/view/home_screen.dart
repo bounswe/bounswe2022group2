@@ -87,6 +87,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
                 TextKeys.viewAll,
                 fontWeight: FontWeight.bold,
                 onClick:
+                    //ToDo after the courses are initialized:
                     //context.read<HomeViewModel>().getViewAllStatus(coursesType)
                     true
                         ? () async =>

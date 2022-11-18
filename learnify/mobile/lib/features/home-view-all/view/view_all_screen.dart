@@ -53,25 +53,19 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
               ),
               padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
               shrinkWrap: true,
-
-              // ignore: prefer_expression_function_bodies
-              itemBuilder: (BuildContext context, int index) {
-                return const CoursePreview(
-                    textKey:
-                        "Learning Space" /*listOfCourses[index].name ?? ''*/,
-                    participantNumber:
-                        100) /*listOfCourses[index].numParticipants ?? 0)*/;
-              },
+              itemBuilder: (BuildContext context, int index) =>
+                  const CoursePreview(
+                      textKey: "Learning Space",
+                      //ToDo after the courses are initialized:
+                      //listOfCourses[index].name ?? ''
+                      participantNumber: 100
+                      //ToDo after the courses are initialized:
+                      //listOfCourses[index].numParticipants ?? 0
+                      ),
             ),
           ),
         ],
       );
-
-  static Widget _title(BuildContext context, String key, {Color? color}) =>
-      BaseText(key,
-          style: context.titleMedium,
-          color: color,
-          fontWeight: FontWeight.bold);
 
   static DefaultAppBar _appBarBuilder(BuildContext context, String title) =>
       DefaultAppBar(
