@@ -10,6 +10,7 @@ import '../indicators/custom_loading_indicator.dart';
 import '../text-field/custom_text_form_field.dart';
 import '../text/base_text.dart';
 import '../text/multiline_text.dart';
+import 'single_choose_dialog.dart';
 
 /// Builds various dialogs with different methods.
 class DialogBuilder {
@@ -149,4 +150,13 @@ class DialogBuilder {
       left: context.width * 4,
       right: context.width * 4,
       bottom: context.height * 1);
+
+  /// Shows a dialog with single selection option.
+  Future<T?> singleSelectDialog<T>(
+          String title, List<T> elements, T? initialValue) async =>
+      showDialog<T?>(
+        context: context,
+        builder: (BuildContext context) => SingleChooseDialog<T>(
+            title: title, elements: elements, initialValue: initialValue),
+      );
 }

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +80,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         List<Annotation>.from(oldChapter.annotations)
           ..add(
             Annotation(
+              id: (startIndex * endIndex + Random().nextInt(490)).toString(),
               content: annotation,
               startIndex: startIndex,
               endIndex: endIndex,

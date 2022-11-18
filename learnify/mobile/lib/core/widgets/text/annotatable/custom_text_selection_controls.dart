@@ -48,7 +48,7 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
     final int endIndex = delegate.textEditingValue.selection.end;
 
     final String selectionText = delegate.textEditingValue.text.substring(
-        startIndex == -1 ? 0 : startIndex, endIndex <= 0 ? 0 : endIndex + 1);
+        startIndex == -1 ? 0 : startIndex, endIndex <= 0 ? 0 : endIndex);
 
     final List<CustomAnnotatableItem> finalItems =
         List<CustomAnnotatableItem>.from(
