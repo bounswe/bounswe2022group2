@@ -1,6 +1,6 @@
 import { validateLogin } from '../../validators/user_validator.js';
 import bcrypt from 'bcryptjs';
-import jwt from "jsonwebtoken";
+import createToken from "../../../utils/auth/prepare_jwt_token.js";
 import { User } from '../../../models/index.js';
 
 export default async (req,res) => {
@@ -42,13 +42,7 @@ export default async (req,res) => {
         });
     }
     
-    const token = jwt.sign(
-        { user_id: user._id, email },
-        process.env.JWT_KEY,
-        {
-            expiresIn: "24h",
-        }
-        );
+    const token = createToken(user);
         
     return res.status(200).json({
         resultMessage: "Successfully logged in.",
