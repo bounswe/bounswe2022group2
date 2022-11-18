@@ -55,4 +55,6 @@ class TextKeys {
   static const String annotationHintText = "annotation_hint_text";
   static const String cancel = "cancel";
   static const String cannotBeEmpty = "cannot_be_empty";
+  static const String selectAnnotatedDialogTitle =
+      "select_annotated_dialog_title";
 }
