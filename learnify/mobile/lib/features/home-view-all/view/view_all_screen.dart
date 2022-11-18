@@ -93,7 +93,7 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
           ),
           BaseIconButton(
             onPressed: () async => NavigationManager.instance
-                .navigateToPage(path: NavigationConstants.home),
+                .navigateToPageClear(path: NavigationConstants.home),
             icon: Icons.arrow_back_outlined,
             color: context.lightActiveColor,
           ),
