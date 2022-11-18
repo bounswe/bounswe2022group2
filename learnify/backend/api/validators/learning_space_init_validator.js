@@ -6,7 +6,7 @@ export function validateLS_init(body) {
     description: Joi.string().min(6).max(2000).required(),
     token: Joi.string().required(),
     icon: Joi.number().min(0).max(20),
-    categories: Joi.array()
+    categories: Joi.array().required()
   });
   return schema.validate(body);
 }
