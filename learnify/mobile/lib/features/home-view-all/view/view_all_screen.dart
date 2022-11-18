@@ -27,7 +27,8 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
       : super(
           builder: (BuildContext context) =>
               _builder(context, listOfCourses, coursesType),
-          appBar: _appBarBuilder,
+          appBar: (BuildContext context) =>
+              _appBarBuilder(context, coursesType),
           scrollable: true,
           key: key,
         );
@@ -40,40 +41,28 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
           Padding(
             padding: EdgeInsets.only(
                 left: context.width * 4,
-                top: context.height * 3,
-                bottom: context.height * 3,
-                right: context.width * 1),
-            child: _title(context, coursesType),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: context.width * 4,
                 bottom: context.height * 3,
                 right: context.width * 1),
             child: GridView.builder(
-                physics: const ScrollPhysics(),
-                itemCount: 15,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15,
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
-                shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemCount: 15,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
+              shrinkWrap: true,
 
-                // ignore: prefer_expression_function_bodies
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    color: context.activeColor,
-                    child: const Center(
-                      child: Text("data"),
-                    ),
-                  );
-                } /*CoursePreview(
-                textKey: listOfCourses[index].name ?? '',
-                participantNumber: listOfCourses[index].numParticipants ?? 0), */
-                ),
+              // ignore: prefer_expression_function_bodies
+              itemBuilder: (BuildContext context, int index) {
+                return const CoursePreview(
+                    textKey:
+                        "Learning Space" /*listOfCourses[index].name ?? ''*/,
+                    participantNumber:
+                        100) /*listOfCourses[index].numParticipants ?? 0)*/;
+              },
+            ),
           ),
         ],
       );
@@ -84,7 +73,8 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
           color: color,
           fontWeight: FontWeight.bold);
 
-  static DefaultAppBar _appBarBuilder(BuildContext context) => DefaultAppBar(
+  static DefaultAppBar _appBarBuilder(BuildContext context, String title) =>
+      DefaultAppBar(
         size: context.height * 6,
         color: context.lightActiveColor,
         actionsList: <Widget>[
@@ -96,6 +86,15 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
                 .navigateToPageClear(path: NavigationConstants.home),
             icon: Icons.arrow_back_outlined,
             color: context.lightActiveColor,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: context.width * 4),
+            child: BaseText(
+              title,
+              style: context.titleSmall,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ],
         padding: EdgeInsets.symmetric(
