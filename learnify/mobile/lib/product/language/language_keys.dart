@@ -67,4 +67,6 @@ class TextKeys {
   static const String categories = "categories";
   static const String createLearningSpacePageTitle = "create_space_page_title";
   static const String addCategoriesHint = "add_categories_hint";
+  static const String selectAnnotatedDialogTitle =
+      "select_annotated_dialog_title";
 }

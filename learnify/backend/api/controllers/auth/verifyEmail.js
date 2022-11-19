@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import createToken from "../../../utils/auth/prepare_jwt_token.js";
 import { User } from '../../../models/index.js';
 import { validateVerifyEmail } from '../../validators/user_validator.js';
 
@@ -38,13 +38,7 @@ export default async (req, res) => {
     if (!codeCheck)
         return res.status(400).json({ "resultMessage": "Wrong code." });
 
-    const token = jwt.sign(
-        { user_id: user._id, email },
-        process.env.JWT_KEY,
-        {
-            expiresIn: 600,
-        }
-        );
+        const token = createToken(user);
     user.is_verified = true
     user = await user.save().catch((err) =>{
         console.log("Could not save user to DB")
