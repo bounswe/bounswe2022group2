@@ -18,10 +18,8 @@ import '../constants/widget_keys.dart';
 import '../models/learning_space_model.dart';
 import '../view-model/create_learning_space_view_model.dart';
 
-part './components/create/learning_space_form.dart';
 part './components/create/add_categories.dart';
-
-final List<String> _selectedCategories = <String>[];
+part './components/create/learning_space_form.dart';
 
 class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
   CreateLearningSpaceScreen(

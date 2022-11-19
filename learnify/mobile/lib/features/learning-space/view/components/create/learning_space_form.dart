@@ -17,7 +17,7 @@ class _LearningSpaceForm extends StatelessWidget {
           Flexible(child: _descriptionField(model.descriptionController)),
           context.sizedH(.5),
           Flexible(child: _participantsField(model.participantsController)),
-          Flexible(child: _addedCategories(context, _selectedCategories)),
+          Flexible(child: _addedCategories(context)),
           context.sizedH(1.5),
         ],
       ),
@@ -56,7 +56,7 @@ class _LearningSpaceForm extends StatelessWidget {
         padding: const EdgeInsets.all(10),
       );
 
-  Widget _addedCategories(BuildContext context, List<String> tagList) => Align(
+  Widget _addedCategories(BuildContext context) => Align(
       alignment: Alignment.topLeft,
       child: Wrap(
         children: <Widget>[
@@ -66,21 +66,26 @@ class _LearningSpaceForm extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-          Wrap(
-              runSpacing: 5,
-              spacing: 5,
-              children: tagList
-                  .map((String tag) => Chip(
-                        label: Text(tag),
-                        labelPadding: EdgeInsets.zero,
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        labelStyle: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 12),
-                        backgroundColor: context.primary,
-                      ))
-                  .toList())
+          SelectorHelper<List<String>, CreateLearningSpaceViewModel>().builder(
+            (_, CreateLearningSpaceViewModel model) =>
+                model.selectedCategoryNames,
+            (BuildContext context, List<String> tagList, _) => Wrap(
+                runSpacing: 5,
+                spacing: 5,
+                children: tagList
+                    .map((String tag) => Chip(
+                          label: Text(tag),
+                          labelPadding: EdgeInsets.zero,
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          labelStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 12),
+                          backgroundColor: context.primary,
+                        ))
+                    .toList()),
+          )
         ],
       ));
 }

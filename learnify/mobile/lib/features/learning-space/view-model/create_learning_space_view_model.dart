@@ -4,11 +4,42 @@ import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../product/constants/navigation_constants.dart';
-import '../../../product/language/language_keys.dart';
+import '../view/create_learning_space_screen.dart';
 
 class CreateLearningSpaceViewModel extends BaseViewModel {
+  static final List<Category> categoryOptions = <Category>[
+    Category(categoryName: "Art"),
+    Category(categoryName: "Music"),
+    Category(categoryName: "Dance"),
+    Category(categoryName: "Cooking"),
+    Category(categoryName: "Programming"),
+    Category(categoryName: "Technology"),
+    Category(categoryName: "Knitting"),
+    Category(categoryName: "Science"),
+    Category(categoryName: "Math"),
+    Category(categoryName: "Coffee"),
+    Category(categoryName: "Yoga"),
+    Category(categoryName: "Sports"),
+    Category(categoryName: "Acting"),
+    Category(categoryName: "Writing"),
+    Category(categoryName: "Board Games"),
+    Category(categoryName: "Esports"),
+    Category(categoryName: "Chess"),
+    Category(categoryName: "Bartending"),
+    Category(categoryName: "Baking"),
+    Category(categoryName: "Magic"),
+    Category(categoryName: "Astronomy"),
+    Category(categoryName: "Fishing"),
+    Category(categoryName: "Gardening"),
+    Category(categoryName: "Hobbies"),
+    Category(categoryName: "Outdoors"),
+    Category(categoryName: "Educational"),
+    Category(categoryName: "Photography"),
+  ];
+
   late TextEditingController _titleController;
   TextEditingController get titleController => _titleController;
   String? _initialTitle;
@@ -25,6 +56,8 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   GlobalKey<FormState> get formKey => _formKey;
 
   late final ImagePicker _picker;
+  List<String> _selectedCategories = <String>[];
+  List<String> get selectedCategoryNames => _selectedCategories;
 
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
@@ -113,5 +146,25 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
       notifyListeners();
     }
     return null;
+  }
+
+  void addCategory(String cName) {
+    final int indexOfItem =
+        _selectedCategories.indexWhere((String c) => c == cName);
+    if (indexOfItem != -1) return;
+    final List<String> newSelectedCategories =
+        List<String>.from(_selectedCategories)..add(cName);
+    _selectedCategories = newSelectedCategories;
+    notifyListeners();
+  }
+
+  void removeCategory(String cName) {
+    final int indexOfItem =
+        _selectedCategories.indexWhere((String c) => c == cName);
+    if (indexOfItem == -1) return;
+    final List<String> newSelectedCategories =
+        List<String>.from(_selectedCategories)..remove(cName);
+    _selectedCategories = newSelectedCategories;
+    notifyListeners();
   }
 }
