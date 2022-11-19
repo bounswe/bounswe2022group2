@@ -21,6 +21,8 @@ import '../view-model/create_learning_space_view_model.dart';
 part './components/create/learning_space_form.dart';
 part './components/create/add_categories.dart';
 
+final List<String> _selectedCategories = <String>[];
+
 class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
   CreateLearningSpaceScreen(
       {required bool isCreate, LearningSpace? learningSpace, Key? key})
@@ -38,7 +40,7 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           context.sizedH(2.6),
-          _LearningSpaceForm(),
+          const _LearningSpaceForm(),
           const _AddCategories(),
           context.sizedH(.8),
           _doneButton

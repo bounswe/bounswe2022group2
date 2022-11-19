@@ -1,9 +1,7 @@
 part of '../../create_learning_space_screen.dart';
 
 class _LearningSpaceForm extends StatelessWidget {
-  _LearningSpaceForm({Key? key}) : super(key: key);
-
-  final List<String> _categories = <String>[];
+  const _LearningSpaceForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class _LearningSpaceForm extends StatelessWidget {
           Flexible(child: _descriptionField(model.descriptionController)),
           context.sizedH(.5),
           Flexible(child: _participantsField(model.participantsController)),
-          Flexible(child: _addedCategories(context, _categories)),
+          Flexible(child: _addedCategories(context, _selectedCategories)),
           context.sizedH(1.5),
         ],
       ),
@@ -58,10 +56,16 @@ class _LearningSpaceForm extends StatelessWidget {
         padding: const EdgeInsets.all(10),
       );
 
-  Widget _addedCategories(BuildContext context, List<String> tagList) => Row(
-        children: [
+  Widget _addedCategories(BuildContext context, List<String> tagList) => Align(
+      alignment: Alignment.topLeft,
+      child: Wrap(
+        children: <Widget>[
           const Padding(padding: EdgeInsets.symmetric(horizontal: 20)),
-          const BaseText(TextKeys.categories),
+          const BaseText(
+            TextKeys.categories,
+            textAlign: TextAlign.left,
+          ),
+          const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
           Wrap(
               runSpacing: 5,
               spacing: 5,
@@ -75,9 +79,8 @@ class _LearningSpaceForm extends StatelessWidget {
                             color: Colors.white,
                             fontSize: 12),
                         backgroundColor: context.primary,
-                        onDeleted: () {},
                       ))
                   .toList())
         ],
-      );
+      ));
 }

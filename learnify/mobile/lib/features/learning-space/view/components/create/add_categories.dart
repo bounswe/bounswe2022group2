@@ -60,6 +60,11 @@ class _AddCategoriesWidgetState extends State<_AddCategories> {
                         onChanged: (bool newValue) {
                           setState(() {
                             category.isChecked = newValue;
+                            if (category.isChecked) {
+                              _selectedCategories.add(category.categoryName);
+                            } else {
+                              _selectedCategories.remove(category.categoryName);
+                            }
                           });
                         },
                       ))
