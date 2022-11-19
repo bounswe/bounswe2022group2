@@ -1,67 +1,93 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tuple/tuple.dart';
 
 import '../../../../core/base/view/base_view.dart';
-import '../../../core/constants/main_type_definitions.dart';
+import '../../../../core/helpers/validators.dart';
+import '../../../../core/widgets/text-field/custom_text_form_field.dart';
+import '../../../../core/widgets/text/base_text.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
-import '../../../core/widgets/base-icon/base_icon.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
+import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/action_button.dart';
-import '../../../core/widgets/dialog/dialog_builder.dart';
-import '../../../core/widgets/divider/custom_divider.dart';
-import '../../../core/widgets/image/custom_network_image.dart';
-import '../../../core/widgets/list/custom_expansion_tile.dart';
-import '../../../core/widgets/text/multiline_text.dart';
-import '../../../product/constants/icon_keys.dart';
+import '../../../core/widgets/buttons/base_icon_button.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
-import '../constants/learning_space_constants.dart';
-import '../view-model/create_learning_space_view_model.dart';
-import '../view-model/learning_space_view_model.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../core/base/view/base_view.dart';
-import '../../../../core/extensions/context/context_extensions.dart';
-import '../../../../core/extensions/context/theme_extensions.dart';
-import '../../../../core/helpers/selector_helper.dart';
-import '../../../../core/helpers/url_launcher_helper.dart';
-import '../../../../core/helpers/validators.dart';
-import '../../../../core/managers/navigation/navigation_manager.dart';
-import '../../../../core/widgets/buttons/action_button.dart';
-import '../../../../core/widgets/checkbox/custom_checkbox_tile.dart';
-import '../../../../core/widgets/text-field/custom_text_form_field.dart';
-import '../../../../core/widgets/text-field/obscured_text_form_field.dart';
-import '../../../../core/widgets/text/base_text.dart';
-import '../../../../product/constants/icon_keys.dart';
-import '../../../../product/constants/link_keys.dart';
-import '../../../../product/constants/navigation_constants.dart';
-import '../../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
+import '../models/learning_space_model.dart';
+import '../view-model/create_learning_space_view_model.dart';
 
 part './components/create/learning_space_form.dart';
+part './components/create/add_categories.dart';
 
 class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
-  const CreateLearningSpaceScreen({Key? key})
+  CreateLearningSpaceScreen(
+      {required bool isCreate, LearningSpace? learningSpace, Key? key})
       : super(
-          builder: _builder,
-          resizeToAvoidBottomInset: false,
+          builder: (BuildContext context) =>
+              _builder(context, isCreate, learningSpace),
+          appBar: (BuildContext context) => _appBarBuilder(context, isCreate),
           key: key,
+          scrollable: true,
         );
 
-  static Widget _builder(BuildContext context) => Column(
+  static Widget _builder(
+          BuildContext context, bool isCreate, LearningSpace? learningSpace) =>
+      Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          _title(context, TextKeys.createLearningSpace),
           context.sizedH(2.6),
-          const _LearningSpaceForm(),
+          _LearningSpaceForm(),
+          const _AddCategories(),
           context.sizedH(.8),
-          //_actionButton
+          _doneButton
         ],
       );
 
-  static Widget _title(BuildContext context, String key, {Color? color}) =>
-      BaseText(key, style: context.displayLarge, color: color);
+  static Widget get _doneButton =>
+      SelectorHelper<bool, CreateLearningSpaceViewModel>().builder(
+          (_, CreateLearningSpaceViewModel model) => model.canUpdate,
+          (BuildContext context, bool canUpdate, _) => ActionButton(
+                text: TextKeys.done,
+                padding: EdgeInsets.symmetric(
+                    horizontal: context.responsiveSize * 2.8,
+                    vertical: context.responsiveSize * 1.4),
+                capitalizeAll: true,
+                isActive: canUpdate,
+                onPressedError: context
+                    .read<CreateLearningSpaceViewModel>()
+                    .createLearningSpace,
+              ));
+
+  static DefaultAppBar _appBarBuilder(BuildContext context, bool isCreate) =>
+      DefaultAppBar(
+        size: context.height * 6,
+        color: context.lightActiveColor,
+        actionsList: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(context.responsiveSize * .6),
+          ),
+          BaseIconButton(
+            onPressed: () async => NavigationManager.instance
+                .navigateToPageClear(path: NavigationConstants.home),
+            icon: Icons.arrow_back_outlined,
+            color: context.lightActiveColor,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: context.width * 4),
+            child: BaseText(
+              isCreate
+                  ? TextKeys.createLearningSpace
+                  : TextKeys.editLearningSpace,
+              style: context.titleMedium,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ],
+        padding: EdgeInsets.symmetric(
+            horizontal: context.responsiveSize * 3,
+            vertical: context.responsiveSize * 2.5),
+      );
 }

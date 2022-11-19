@@ -1,7 +1,9 @@
 part of '../../create_learning_space_screen.dart';
 
 class _LearningSpaceForm extends StatelessWidget {
-  const _LearningSpaceForm({Key? key}) : super(key: key);
+  _LearningSpaceForm({Key? key}) : super(key: key);
+
+  final List<String> _categories = <String>[];
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,11 @@ class _LearningSpaceForm extends StatelessWidget {
         children: <Widget>[
           Flexible(child: _titleField(model.titleController)),
           context.sizedH(.5),
-          // Flexible(child: _descriptionField(model.descriptionController)),
+          Flexible(child: _descriptionField(model.descriptionController)),
           context.sizedH(.5),
-          // Flexible(child: _passwordField(context, model.passwordController)),
+          Flexible(child: _participantsField(model.participantsController)),
+          Flexible(child: _addedCategories(context, _categories)),
+          context.sizedH(1.5),
         ],
       ),
     );
@@ -25,12 +29,55 @@ class _LearningSpaceForm extends StatelessWidget {
   Widget _titleField(TextEditingController controller) => CustomTextFormField(
         key: CreateLearningSpaceKeys.titleField,
         controller: controller,
-        hintText: TextKeys.titleHint,
-        labelText: TextKeys.emailLabel,
-        prefixIcon: Icons.email_outlined,
-        validator: Validators.email,
+        hintText: TextKeys.spaceTitleHint,
+        labelText: TextKeys.spaceTitleLabel,
+        validator: Validators.name,
         textInputAction: TextInputAction.next,
-        autofillHints: const <String>[AutofillHints.email],
-        textInputType: TextInputType.emailAddress,
+        textInputType: TextInputType.name,
+        padding: const EdgeInsets.all(10),
+      );
+
+  Widget _descriptionField(TextEditingController controller) =>
+      CustomTextFormField(
+        key: CreateLearningSpaceKeys.titleField,
+        controller: controller,
+        hintText: TextKeys.spaceDescriptionHint,
+        labelText: TextKeys.spaceDescriptionLabel,
+        textInputAction: TextInputAction.newline,
+        textInputType: TextInputType.multiline,
+        padding: const EdgeInsets.all(10),
+      );
+
+  Widget _participantsField(TextEditingController controller) =>
+      CustomTextFormField(
+        key: CreateLearningSpaceKeys.participantsField,
+        labelText: TextKeys.participantLimit,
+        textInputType: TextInputType.number,
+        controller: controller,
+        maxLength: 3,
+        padding: const EdgeInsets.all(10),
+      );
+
+  Widget _addedCategories(BuildContext context, List<String> tagList) => Row(
+        children: [
+          const Padding(padding: EdgeInsets.symmetric(horizontal: 20)),
+          const BaseText(TextKeys.categories),
+          Wrap(
+              runSpacing: 5,
+              spacing: 5,
+              children: tagList
+                  .map((String tag) => Chip(
+                        label: Text(tag),
+                        labelPadding: EdgeInsets.zero,
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        labelStyle: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 12),
+                        backgroundColor: context.primary,
+                        onDeleted: () {},
+                      ))
+                  .toList())
+        ],
       );
 }

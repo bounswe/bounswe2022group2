@@ -37,7 +37,9 @@ class NavigationRoute {
       case NavigationConstants.learningSpace:
         return normalNavigate(const LearningSpaceDetailScreen());
       case NavigationConstants.createEditLearningSpace:
-        return normalNavigate(const CreateLearningSpaceScreen());
+        return normalNavigate(CreateLearningSpaceScreen(
+            isCreate: arguments['isCreate'],
+            learningSpace: arguments['learningSpace']));
       default:
         return normalNavigate(const SignupScreen());
     }

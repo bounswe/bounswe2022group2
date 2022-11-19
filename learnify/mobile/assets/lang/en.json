@@ -56,6 +56,15 @@
   "cancel": "Cancel",
   "cannot_be_empty": "Cannot be empty!",
   "create_learning_space": "Create a Learning Space",
+  "edit_learning_sapce": "Edit Learning Space",
   "edit": "edit",
-  "title_hint": "title"
+  "title_hint": "Learning Space Name",
+  "title_label": "Title",
+  "description_hint": "Optional Description",
+  "description_label": "Description",
+  "done":"Done",
+  "create_space_page_title" : "Create Learning Space",
+  "participant_limit": "Participant Limit",
+  "categories":"Categories: ",
+  "add_categories_hint":"Choose from many available categories!"
 }

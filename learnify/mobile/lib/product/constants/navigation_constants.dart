@@ -9,5 +9,5 @@ class NavigationConstants {
   static const String verify = '/verify';
   static const String learningSpace = '/learning-space';
   static const String createEditChapter = '/create-edit-chapter';
-  static const String createEditLearningSpace = 'create-edit-space';
+  static const String createEditLearningSpace = '/create-edit-space';
 }

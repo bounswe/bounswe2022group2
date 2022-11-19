@@ -30,7 +30,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
         padding: EdgeInsets.all(context.width * 5),
         child: Column(
           children: <Widget>[
-            _createEditButton(
+            _createSpaceButton(
                 context, TextKeys.createLearningSpace, Icons.add_outlined),
             context.sizedH(2),
             SizedBox(
@@ -76,7 +76,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
         ],
       );
 
-  static Widget _createEditButton(
+  static Widget _createSpaceButton(
           BuildContext context, String textKey, IconData icon) =>
       Padding(
           padding: EdgeInsets.only(
@@ -93,6 +93,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
                 horizontal: context.responsiveSize * 2.8,
                 vertical: context.responsiveSize * 1.4),
             onPressed: () async => NavigationManager.instance.navigateToPage(
-                path: NavigationConstants.createEditLearningSpace),
+                path: NavigationConstants.createEditLearningSpace,
+                data: <String, dynamic>{'isCreate': true}),
           ));
 }

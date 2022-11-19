@@ -56,6 +56,15 @@ class TextKeys {
   static const String cancel = "cancel";
   static const String cannotBeEmpty = "cannot_be_empty";
   static const String createLearningSpace = "create_learning_space";
+  static const String editLearningSpace = "edit_learning_space";
   static const String edit = "edit";
-  static const String titleHint = "title_hint";
+  static const String spaceTitleHint = "title_hint";
+  static const String spaceTitleLabel = "title_label";
+  static const String spaceDescriptionHint = "description_hint";
+  static const String spaceDescriptionLabel = "description_label";
+  static const String done = "done";
+  static const String participantLimit = "participant_limit";
+  static const String categories = "categories";
+  static const String createLearningSpacePageTitle = "create_space_page_title";
+  static const String addCategoriesHint = "add_categories_hint";
 }
