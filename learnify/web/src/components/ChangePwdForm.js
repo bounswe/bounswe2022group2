@@ -38,7 +38,7 @@ export default function ChangePwdForm(props) {
         console.log(email)
         console.log(password)
         setMessage("Loading...");
-        navigate("/home-page");
+        navigate("/home");
         
     };
 
@@ -63,7 +63,7 @@ export default function ChangePwdForm(props) {
                                     className={`form-control ${errors.password ? 'is-invalid' : ''}`}
                                     type="password"
                                     data-testid="password"
-                                    placeholder="Password"
+                                    placeholder="New Password"
                                     {...register('password')}
                                 />
                                 <div className="invalid-feedback" data-testid="password-error">{errors.password?.message}</div>
@@ -77,7 +77,7 @@ export default function ChangePwdForm(props) {
                                     className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
                                     type="password"
                                     data-testid="confirmPassword"
-                                    placeholder="Confirm Password"
+                                    placeholder="Confirm New Password"
                                     {...register('confirmPassword')}
                                 />
                                 <div className="invalid-feedback" data-testid="cfpassword-error">{errors.confirmPassword?.message}</div>
