@@ -2,34 +2,38 @@ part of '../../learning_space_detail_screen.dart';
 
 class ChapterItem extends StatelessWidget {
   const ChapterItem({
-    required this.chapter,
     required this.callback,
     required this.itemIndex,
     required this.expansionTileKey,
     Key? key,
   }) : super(key: key);
-  final Chapter chapter;
   final int itemIndex;
   final IndexCallback callback;
   final GlobalKey<CustomExpansionTileState> expansionTileKey;
 
   @override
-  Widget build(BuildContext context) => Theme(
-        data: Theme.of(context).copyWith(
-          dividerColor: Colors.transparent,
-          highlightColor: context.primary.withOpacity(.15),
-          hoverColor: context.primary,
-        ),
-        child: ListTileTheme(
-          contentPadding: EdgeInsets.zero,
-          minLeadingWidth: 0,
-          minVerticalPadding: 0,
-          dense: true,
-          child: _expansionTile(context),
-        ),
-      );
+  Widget build(BuildContext context) {
+    final Chapter chapter = SelectorHelper<Chapter, LearningSpaceViewModel>()
+        .listenValue(
+            (LearningSpaceViewModel model) => model.chapters[itemIndex],
+            context);
+    return Theme(
+      data: Theme.of(context).copyWith(
+        dividerColor: Colors.transparent,
+        highlightColor: context.primary.withOpacity(.15),
+        hoverColor: context.primary,
+      ),
+      child: ListTileTheme(
+        contentPadding: EdgeInsets.zero,
+        minLeadingWidth: 0,
+        minVerticalPadding: 0,
+        dense: true,
+        child: _expansionTile(context, chapter),
+      ),
+    );
+  }
 
-  Widget _expansionTile(BuildContext context) {
+  Widget _expansionTile(BuildContext context, Chapter chapter) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
     return CustomExpansionTile(
@@ -51,13 +55,24 @@ class ChapterItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        _carouselSlider(viewModel),
-        _sliderIndicator(viewModel),
+        _carouselSlider(viewModel, chapter),
+        _sliderIndicator(viewModel, chapter),
         context.sizedH(1.4),
-        MultiLineText(
-          '    ${chapter.materialText?.replaceAll('\n', '\n\n    ')}',
-          maxLines: 10000,
-          translated: false,
+        AnnotatableText(
+          key: PageStorageKey<String>(chapter.materialText ?? ''),
+          content: chapter.materialText ?? '',
+          annotateLabel: context.tr(TextKeys.annotate),
+          annotateCallback: (int startIndex, int endIndex) async {
+            await DialogBuilder(context).annotateDialog(
+                startIndex, endIndex, chapter.id, viewModel.annotateText);
+          },
+          annotations: chapter.annotations,
+          onAnnotationClick:
+              (String annotationId, String annotationText) async {
+            await DialogBuilder(context).textDialog(
+                annotationText, 'Clicked Annotation:',
+                translateTitle: false);
+          },
         ),
         ChapterList.createEditButton(context, TextKeys.editChapter,
             Icons.edit_outlined, viewModel.editChapter),
@@ -65,7 +80,8 @@ class ChapterItem extends StatelessWidget {
     );
   }
 
-  CarouselSlider _carouselSlider(LearningSpaceViewModel viewModel) {
+  CarouselSlider _carouselSlider(
+      LearningSpaceViewModel viewModel, Chapter chapter) {
     final List<String> images = chapter.materialVisual;
     return CarouselSlider.builder(
       key: PageStorageKey<String>(chapter.id ?? ''),
@@ -87,7 +103,8 @@ class ChapterItem extends StatelessWidget {
     );
   }
 
-  Widget _sliderIndicator(LearningSpaceViewModel viewModel) => Row(
+  Widget _sliderIndicator(LearningSpaceViewModel viewModel, Chapter chapter) =>
+      Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List<Widget>.generate(
           chapter.materialVisual.length,

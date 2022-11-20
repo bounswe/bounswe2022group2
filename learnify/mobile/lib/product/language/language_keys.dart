@@ -53,4 +53,11 @@ class TextKeys {
   static const String takenCourses = "taken_courses";
   static const String friendCourses = "friend_courses";
   static const String recommendedCourses = "recommended_courses";
+  static const String annotate = "annotate";
+  static const String annotateText = "annotate_text";
+  static const String annotationHintText = "annotation_hint_text";
+  static const String cancel = "cancel";
+  static const String cannotBeEmpty = "cannot_be_empty";
+  static const String selectAnnotatedDialogTitle =
+      "select_annotated_dialog_title";
 }

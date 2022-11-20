@@ -53,4 +53,10 @@
   "taken_courses": "Taken Courses",
   "friend_courses": "Friends' Courses",
   "recommended_courses": "Recommended Courses"
+  "annotate": "Annotate",
+  "annotate_text": "Annotate the Text",
+  "annotation_hint_text": "Write your annotation",
+  "cancel": "Cancel",
+  "cannot_be_empty": "Cannot be empty!",
+  "select_annotated_dialog_title": "Select a Text to See Annotations"
 }

@@ -51,10 +51,10 @@ class SignupViewModel extends BaseViewModel {
 
   @override
   void disposeView() {
+    _setDefault();
     _emailController.dispose();
     _passwordController.dispose();
     _usernameController.dispose();
-    _setDefault();
     super.disposeView();
   }
 
