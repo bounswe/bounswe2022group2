@@ -7,7 +7,7 @@ import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
-import '../model/course_model.dart';
+import '../model/learning_space_model.dart';
 import '../view-model/home_view_model.dart';
 
 part '../components/course_preview.dart';
@@ -19,7 +19,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
           scrollable: true,
           hasScaffold: false,
           futureInit: (BuildContext context) =>
-              context.read<HomeViewModel>().fetchInitialCourses(),
+              context.read<HomeViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
 
@@ -35,13 +35,13 @@ class HomeScreen extends BaseView<HomeViewModel> {
             SizedBox(
               height: context.height * 23,
               child: _coursePreviewList(context, TextKeys.takenLearnifies,
-                  context.read<HomeViewModel>().takenCourses),
+                  context.read<HomeViewModel>().takenLearningSpaces),
             ),
             context.sizedH(3),
             SizedBox(
               height: context.height * 23,
               child: _coursePreviewList(context, TextKeys.friendLearnifies,
-                  context.read<HomeViewModel>().friendCourses),
+                  context.read<HomeViewModel>().friendLearningSpaces),
             ),
             context.sizedH(3),
             SizedBox(
@@ -49,13 +49,13 @@ class HomeScreen extends BaseView<HomeViewModel> {
                 child: _coursePreviewList(
                     context,
                     TextKeys.recommendedLearnifies,
-                    context.read<HomeViewModel>().recommendedCourses)),
+                    context.read<HomeViewModel>().recommendedLearningSpaces)),
           ],
         ),
       );
 
-  static Widget _coursePreviewList(
-          BuildContext context, String coursesType, List<Course> courseList) =>
+  static Widget _coursePreviewList(BuildContext context, String coursesType,
+          List<LearningSpace> courseList) =>
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
