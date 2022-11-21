@@ -34,19 +34,21 @@ class HomeScreen extends BaseView<HomeViewModel> {
           children: <Widget>[
             SizedBox(
               height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.takenCourses,
+              child: _coursePreviewList(context, TextKeys.takenLearnifies,
                   context.read<HomeViewModel>().takenCourses),
             ),
             context.sizedH(3),
             SizedBox(
               height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.friendCourses,
+              child: _coursePreviewList(context, TextKeys.friendLearnifies,
                   context.read<HomeViewModel>().friendCourses),
             ),
             context.sizedH(3),
             SizedBox(
                 height: context.height * 23,
-                child: _coursePreviewList(context, TextKeys.recommendedCourses,
+                child: _coursePreviewList(
+                    context,
+                    TextKeys.recommendedLearnifies,
                     context.read<HomeViewModel>().recommendedCourses)),
           ],
         ),

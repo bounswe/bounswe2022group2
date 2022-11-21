@@ -50,9 +50,9 @@ class TextKeys {
   static const String forum = "forum";
   static const String createChapter = "create_chapter";
   static const String editChapter = "edit_chapter";
-  static const String takenCourses = "taken_courses";
-  static const String friendCourses = "friend_courses";
-  static const String recommendedCourses = "recommended_courses";
+  static const String takenLearnifies = "taken_learnifies";
+  static const String friendLearnifies = "friend_learnifies";
+  static const String recommendedLearnifies = "recommended_learnifies";
   static const String annotate = "annotate";
   static const String annotateText = "annotate_text";
   static const String annotationHintText = "annotation_hint_text";
