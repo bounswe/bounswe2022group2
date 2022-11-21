@@ -31,6 +31,7 @@ dependencies:
   fl_chart: ^0.55.2
   carousel_slider: ^4.1.1
   cached_network_image: ^3.2.2
+  flutter_native_splash: ^2.2.14
 
   # Model
   equatable: ^2.0.5
@@ -61,3 +62,15 @@ flutter:
   assets:
     - assets/lang/
     - assets/images/
+
+
+flutter_native_splash:
+  color: "#5F9DF7"
+  image: assets/images/logo-dblue.png
+  color_dark: "#1746A2"
+  image_dark: assets/images/logo-lblue.png
+  # android_12:
+  #   image: assets/android12splash.png
+  #   color: "#5F9DF7"
+  #   icon_background_color: "#eeeeee"
+  fullscreen: true
