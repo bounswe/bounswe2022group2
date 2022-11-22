@@ -82,12 +82,12 @@ describe('POST /learningspace', () => {
         done();
       });
 
-
-  it('should create the endpoint', (done) => {
+    it('should check for unavailable categories', (done) => {
       const title = "title1";
       const description= "description1";
       const token = "token"        
       const username = "username"
+      const categories = ["Music", "Sps"]
 
     sinon.stub(jwt, "decode")
     .onFirstCall().resolves(
@@ -95,7 +95,35 @@ describe('POST /learningspace', () => {
     );
     request(app)
       .post(url)
-      .send({ title, description, token })
+      .send({ title, description, token, categories })
+      .expect(200)
+      .end(async (err) => {
+        if (err) return done(err);
+        });
+
+      LearningSpace.findOne({ title }).then((ls) => {
+        expect(ls.title).toBe(title);
+        expect(ls.description).toBe(description);
+        expect(ls.creator).toBe(username);
+        done();
+      });
+  });
+
+
+  it('should create the endpoint', (done) => {
+      const title = "title1";
+      const description= "description1";
+      const token = "token"        
+      const username = "username"
+      const categories = ["Music", "Sports"]
+
+    sinon.stub(jwt, "decode")
+    .onFirstCall().resolves(
+      {username}
+    );
+    request(app)
+      .post(url)
+      .send({ title, description, token, categories })
       .expect(200)
       .end(async (err) => {
         if (err) return done(err);
