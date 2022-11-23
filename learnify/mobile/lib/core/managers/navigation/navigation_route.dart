@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../features/auth/forget-password/view/forget_password_screen.dart';
 import '../../../features/auth/login/view/login_screen.dart';
@@ -8,6 +9,7 @@ import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
+import '../../extensions/string/string_extensions.dart';
 
 class NavigationRoute {
   factory NavigationRoute() => _instance;
@@ -19,34 +21,45 @@ class NavigationRoute {
     final Map<String, dynamic> arguments = getArguments(args);
     switch (args.name) {
       case NavigationConstants.signup:
-        return normalNavigate(const SignupScreen());
+        return normalNavigate(const SignupScreen(), args);
       case NavigationConstants.forgetpass:
-        return normalNavigate(const ForgetPasswordScreen());
+        return normalNavigate(const ForgetPasswordScreen(), args);
       case NavigationConstants.verify:
-        return normalNavigate(VerificationScreen(email: arguments['email']));
+        return normalNavigate(
+            VerificationScreen(email: arguments['email']), args);
       case NavigationConstants.login:
-        return normalNavigate(const LoginScreen());
+        return normalNavigate(const LoginScreen(), args);
       case NavigationConstants.home:
-        return normalNavigate(HomeWrapper());
+        return normalNavigate(HomeWrapper(), args);
       case NavigationConstants.search:
-        return normalNavigate(HomeWrapper(initialIndex: 1));
+        return normalNavigate(HomeWrapper(initialIndex: 1), args);
       case NavigationConstants.courses:
-        return normalNavigate(HomeWrapper(initialIndex: 2));
+        return normalNavigate(HomeWrapper(initialIndex: 2), args);
       case NavigationConstants.profile:
-        return normalNavigate(HomeWrapper(initialIndex: 3));
+        return normalNavigate(HomeWrapper(initialIndex: 3), args);
       case NavigationConstants.learningSpace:
-        return normalNavigate(const LearningSpaceDetailScreen());
+        return normalNavigate(const LearningSpaceDetailScreen(), args);
       case NavigationConstants.createEditLearningSpace:
         return normalNavigate(CreateLearningSpaceScreen(
             isCreate: arguments['isCreate'],
-            learningSpace: arguments['learningSpace']));
+            learningSpace: arguments['learningSpace']), args);
       default:
-        return normalNavigate(const SignupScreen());
+        return normalNavigate(const SignupScreen(), args);
     }
   }
 
-  MaterialPageRoute<Widget> normalNavigate(Widget widget) =>
-      MaterialPageRoute<Widget>(builder: (BuildContext context) => widget);
+  PageTransition<Widget> normalNavigate(Widget widget, RouteSettings args,
+      {PageTransitionType? animationType}) {
+    final PageTransitionType defaultType =
+        MyNavigatorObserver.isPrevious(args.name)
+            ? PageTransitionType.leftToRight
+            : PageTransitionType.rightToLeft;
+    return PageTransition<Widget>(
+      child: widget,
+      type: animationType ?? defaultType,
+      settings: args,
+    );
+  }
 
   Map<String, dynamic> getArguments(RouteSettings args) {
     Map<String, dynamic> arguments;
@@ -58,4 +71,43 @@ class NavigationRoute {
     }
     return arguments;
   }
+}
+
+class MyNavigatorObserver extends NavigatorObserver {
+  static List<Route<dynamic>> routeStack = <Route<dynamic>>[];
+
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    routeStack.add(route);
+  }
+
+  @override
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    routeStack.removeLast();
+  }
+
+  @override
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    final int index = routeStack.indexOf(route);
+    if (index != -1) routeStack.removeAt(index);
+  }
+
+  @override
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
+    routeStack.removeLast();
+    if (newRoute != null) routeStack.add(newRoute);
+  }
+
+  static bool isPrevious(String? key) =>
+      routeStack.length >= 2 &&
+      (routeStack[routeStack.length - 1]
+              .settings
+              .name
+              ?.compareWithoutCase(key) ??
+          false);
+
+  static bool hasVisited(String? key) =>
+      routeStack.indexWhere((Route<dynamic> element) =>
+          element.settings.name.compareWithoutCase(key)) !=
+      -1;
 }
