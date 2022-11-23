@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
 
@@ -93,6 +94,14 @@ class LearningSpaceViewModel extends BaseViewModel {
     _chapters[itemIndex] =
         _chapters[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
+    return null;
+  }
+
+  Future<String?> viewAnnotations(
+      String annotationId, String annotationText) async {
+    await navigationManager.navigateToPage(
+        path: NavigationConstants.annotations,
+        data: <String, dynamic>{'annotatedText': annotationText});
     return null;
   }
 }
