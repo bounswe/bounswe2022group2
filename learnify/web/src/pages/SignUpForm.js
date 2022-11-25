@@ -62,6 +62,7 @@ function SignUpForm() {
                 console.log(response.statusText);
                 if (response.ok) {
                     localStorage.setItem("emailVerified", true);
+                    localStorage.setItem("comesFromForgetPassword", false);
                     navigate('/verify-email', {replace: true});
                     return response.json();
                 } else {
