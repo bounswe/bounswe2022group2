@@ -101,7 +101,7 @@ class SignupScreen extends BaseView<SignupViewModel> {
           ReplaceValue(
             TextKeys.login,
             onClick: () async => NavigationManager.instance
-                .navigateToPage(path: NavigationConstants.login),
+                .navigateToPage(path: NavigationConstants.login, checkHistory: true),
             color: context.primary,
           )
         ],
