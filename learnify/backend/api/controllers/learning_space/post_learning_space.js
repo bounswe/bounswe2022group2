@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { get } from "underscore";
 
-import { LearningSpace } from '../../../models/index.js';
+import { LearningSpace , Categories} from '../../../models/index.js';
 import { validateLS_init } from '../../validators/learning_space_init_validator.js';
 
 export default async (req, res) => {
@@ -9,6 +9,14 @@ export default async (req, res) => {
   if (error) {
     console.log(error);
     return res.status(400).json({ "resultMessage": "Please check your inputs."});
+  }
+  if ("categories" in req.body){
+    const enum_check = req.body.categories.every(val => Categories.includes(val));
+    
+    if(!enum_check){
+      console.log("Category mismatch");
+      return res.status(400).json({ "resultMessage": "Please check your categories."});
+    }
   }
   
   const exists_ls = await LearningSpace.exists({ title: req.body.title })

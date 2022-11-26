@@ -63,7 +63,7 @@ void main() {
     late DioAdapter dioAdapter;
 
     Response<dynamic> resp;
-    const String baseUrl = NetworkConstants.baseUrl;
+    const String baseUrl = NetworkConstants.localhostUrl;
     const String route = '/auth/login';
 
     final Map<String, dynamic> correctLogin = <String, dynamic>{
