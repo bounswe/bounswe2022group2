@@ -20,6 +20,7 @@ class TextKeys {
   static const String verifyEmail = 'verify_email';
   static const String backToLogin = 'back_to_login';
   static const String home = 'home';
+  static const String viewAll = 'view_all';
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
@@ -57,4 +58,7 @@ class TextKeys {
   static const String cannotBeEmpty = "cannot_be_empty";
   static const String selectAnnotatedDialogTitle =
       "select_annotated_dialog_title";
+  static const String takenCourses = "taken_courses";
+  static const String friendCourses = "friend_courses";
+  static const String recommendedCourses = "recommended_courses";
 }
