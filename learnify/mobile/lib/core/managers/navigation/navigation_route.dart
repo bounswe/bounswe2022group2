@@ -33,9 +33,11 @@ class NavigationRoute {
       case NavigationConstants.home:
         return normalNavigate(HomeWrapper(), args);
       case NavigationConstants.viewall:
-        return normalNavigate(ViewAllScreen(
-            listOfCourses: arguments['listOfCourses'],
-            coursesType: arguments['courseType']));
+        return normalNavigate(
+            ViewAllScreen(
+                listOfCourses: arguments['listOfCourses'],
+                coursesType: arguments['courseType']),
+            args);
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1), args);
       case NavigationConstants.courses:
@@ -45,9 +47,11 @@ class NavigationRoute {
       case NavigationConstants.learningSpace:
         return normalNavigate(const LearningSpaceDetailScreen(), args);
       case NavigationConstants.createEditLearningSpace:
-        return normalNavigate(CreateLearningSpaceScreen(
-            isCreate: arguments['isCreate'],
-            learningSpace: arguments['learningSpace']), args);
+        return normalNavigate(
+            CreateLearningSpaceScreen(
+                isCreate: arguments['isCreate'],
+                learningSpace: arguments['learningSpace']),
+            args);
       default:
         return normalNavigate(const SignupScreen(), args);
     }
