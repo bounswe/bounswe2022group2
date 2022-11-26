@@ -9,6 +9,7 @@ import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
 import ChangePassword from './pages/ChangePassword';
 import NotFoundPage from './pages/NotFoundPage';
+import CreateLS from './pages/CreateLS';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
           <Route path="/change-password" element={<ChangePassword/>}/>
+          <Route path="/create-ls" element={<PrivateRoutes> <CreateLS /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes> 
       </BrowserRouter>
