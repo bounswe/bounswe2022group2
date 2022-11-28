@@ -41,11 +41,11 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
           const _LearningSpaceForm(),
           const _AddCategories(),
           context.sizedH(.8),
-          _doneButton
+          _doneButton(isCreate),
         ],
       );
 
-  static Widget get _doneButton =>
+  static Widget _doneButton(bool isCreate) =>
       SelectorHelper<bool, CreateLearningSpaceViewModel>().builder(
           (_, CreateLearningSpaceViewModel model) => model.canUpdate,
           (BuildContext context, bool canUpdate, _) => ActionButton(
@@ -55,9 +55,13 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
                     vertical: context.responsiveSize * 1.4),
                 capitalizeAll: true,
                 isActive: canUpdate,
-                onPressedError: context
-                    .read<CreateLearningSpaceViewModel>()
-                    .createLearningSpace,
+                onPressedError: isCreate
+                    ? context
+                        .read<CreateLearningSpaceViewModel>()
+                        .createLearningSpace
+                    : context
+                        .read<CreateLearningSpaceViewModel>()
+                        .editLearningSpace,
               ));
 
   static DefaultAppBar _appBarBuilder(BuildContext context, bool isCreate) =>

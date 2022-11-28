@@ -7,9 +7,17 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../../core/managers/network/models/l_response_model.dart';
+import '../../../product/constants/storage_keys.dart';
+import '../models/create_ls_request_model.dart';
+import '../models/create_ls_response_model.dart';
+import '../models/learning_space_model.dart';
+import '../service/l_ls_service.dart';
+import '../service/ls_service.dart';
 import '../view/create_learning_space_screen.dart';
 
 class CreateLearningSpaceViewModel extends BaseViewModel {
+  late final ILSService _lsService;
   static final List<Category> categoryOptions = <Category>[
     Category(categoryName: "Art"),
     Category(categoryName: "Music"),
@@ -64,6 +72,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initViewModel() {
+    _lsService = LSService.instance;
     _picker = ImagePicker();
   }
 
@@ -104,7 +113,9 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void _setDefault() {}
+  void _setDefault() {
+    _canUpdate = false;
+  }
 
   Future<String?> createLearningSpace() async {
     await operation?.cancel();
@@ -125,7 +136,16 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   Future<String?> _createLearningSpaceRequest() async {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid) {
-      //post request
+      final CreateLSRequest request = CreateLSRequest(
+        token: localManager.getString(StorageKeys.accessToken),
+        title: _titleController.text,
+        description: _descriptionController.text,
+      );
+      final IResponseModel<CreateLSResponse> response =
+          await _lsService.createLS(request);
+      if (response.hasError) return response.error?.errorMessage;
+      final LearningSpace? ls = response.data?.learningSpace;
+      if (ls == null) return "Learning Space not created";
       await navigationManager.navigateToPage(
         path: NavigationConstants.learningSpace,
       );
