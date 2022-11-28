@@ -41,6 +41,7 @@ function ForgetPassword() {
             .then((response) => {
                 if (response.status === 200) {
                     localStorage.setItem("emailVerified", true);
+                    localStorage.setItem("comesFromForgetPassword", true);
                     navigate('/verify-email', {replace: true});
                     console.log("Password reset link has been sent to your email address!");
                 } else {
@@ -87,6 +88,7 @@ function ForgetPassword() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="email">
+                        <div className='space-20'/>
                             <label className="form__label" htmlFor="email"> RESET PASSWORD  </label>
     
                            <div className='form-note'>
