@@ -23,172 +23,207 @@ import lslogo_20 from '../images/ls_icons/ls-icon-20.svg';
 
 
 export default function SelectIconGrid(props) {
-    const [selectedIcon, setSelectedIcon] = React.useState(null);
-    const [selectedIconName, setSelectedIconName] = React.useState(null);
-    const [selectedIconPath, setSelectedIconPath] = React.useState(null);
-    const [selectedIconId, setSelectedIconId] = React.useState(null);
+    const [value, setValue] = React.useState(null);
 
     const handleIconClick = (e) => {
-        setSelectedIcon(e.target.src);
-        setSelectedIconName(e.target.name);
-        setSelectedIconPath(e.target.src);
-        setSelectedIconId(e.target.id);
+        setValue(e.target.value);
+        console.log(e.target.value);
         
     }
 
     const handleIconSubmit = () => {
-        props.handleIconSubmit(selectedIcon, selectedIconName, selectedIconPath, selectedIconId);
+       // props.handleIconSubmit(selectedIcon, selectedIconName, selectedIconPath, selectedIconId);
     }
 
     return (
         <div className='select-icon-grid'>
             <div className='select-icon-grid-row'>
+                <label>
+                <input type='radio' value="lslogo_1" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_1}
                     name='lslogo_1'
                     id='1'
-                    className= {selectedIcon === lslogo_1 ? 'select-icon-grid-img-selected' : 'select-icon-grid-img'}
+                    className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_2" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_2}
                     name='lslogo_2'
                     id='2'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_3" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_3}
                     name='lslogo_3'
                     id='3'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_4" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_4}
                     name='lslogo_4'
                     id='4'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_5" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_5}
                     name='lslogo_5'
                     id='5'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
             </div>
             <div className='select-icon-grid-row'>
+                <label>
+                <input type='radio' value="lslogo_6" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_6}
                     name='lslogo_6'
                     id='6'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_7" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_7}
                     name='lslogo_7'
                     id='7'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_8" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_8}
                     name='lslogo_8'
                     id='8'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
-                />
+                /> 
+                </label>
+                <label>
+                <input type='radio' value="lslogo_9" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_9}
                     name='lslogo_9'
                     id='9'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_10" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_10}
                     name='lslogo_10'
                     id='10'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
             </div>
             <div className='select-icon-grid-row'>
+                <label>
+                <input type='radio' value="lslogo_11" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_11}
                     name='lslogo_11'
                     id='11'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_12" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_12}
                     name='lslogo_12'
                     id='12'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_13" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_13}
                     name='lslogo_13'
                     id='13'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_14" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_14}
                     name='lslogo_14'
                     id='14'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_15" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_15}
                     name='lslogo_15'
                     id='15'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
             </div>
             <div className='select-icon-grid-row'>
-            <img src={lslogo_16}
+                <label>
+                <input type='radio' value="lslogo_16" name="iconSelect" onClick={handleIconClick} />
+                <img src={lslogo_16}
                     name='lslogo_16'
                     id='16'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_17" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_17}
                     name='lslogo_17'
                     id='17'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_18" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_18}
                     name='lslogo_18'
                     id='18'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_19" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_19}
                     name='lslogo_19'
                     id='19'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
+                <label>
+                <input type='radio' value="lslogo_20" name="iconSelect" onClick={handleIconClick} />
                 <img src={lslogo_20}
                     name='lslogo_20'
                     id='20'
                     className='select-icon-grid-img'
                     height={200}
-                    onClick={handleIconClick}
                 />
+                </label>
             </div>
         </div>
     )

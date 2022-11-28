@@ -13,12 +13,29 @@ function CreateLS() {
              <NavBar />
             <div className='home'>
                 <label className='ls-box-label'> Create a Learning Space </label>
+                <div className='space-20' />
+                <label className='ls-box-label'> Learning Space Name </label>
+                <div className='space-5' />
+                <label>
+                    <input type='text' className='name-box' placeholder='Learning Space Name' />
+                </label>
+                
+                <div className='space-20' />
+                <label className='ls-box-label'> Learning Space Description </label>
+                <div className='space-5' />
+                <label>
+                    <input type='text' className='details-box' placeholder='Learning Space Description' />
+                </label>
 
                 <div className='space-20' />
                 <label className='ls-box-label'> Select Category</label>
                 <Dropdown/>
                 <label className='ls-box-label'> Select an Icon</label>
                 <SelectIconGrid/>
+                <div className='space-20' />
+                <label>
+                    <input type='submit' className='ls-create-btn' value='Create Learning Space' />
+                </label>
 
             </div>
         </div>
