@@ -44,6 +44,7 @@ class _LearningSpaceForm extends StatelessWidget {
         textInputAction: TextInputAction.newline,
         textInputType: TextInputType.multiline,
         padding: const EdgeInsets.all(10),
+        validator: Validators.description,
       );
 
   Widget _participantsField(TextEditingController controller) =>
