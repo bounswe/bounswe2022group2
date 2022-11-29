@@ -71,7 +71,7 @@
   "participant_limit": "Participant Limit",
   "categories":"Categories: ",
   "add_categories_hint":"Choose from many available categories!",
-  "select_annotated_dialog_title": "Select a Text to See Annotations"
+  "select_annotated_dialog_title": "Select a Text to See Annotations",
   "taken_courses": "Taken Courses",
   "friend_courses": "Friends' Courses",
   "recommended_courses": "Recommended Courses"

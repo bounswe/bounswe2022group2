@@ -35,8 +35,8 @@ class NavigationRoute {
       case NavigationConstants.viewall:
         return normalNavigate(
             ViewAllScreen(
-                listOfCourses: arguments['listOfCourses'],
-                coursesType: arguments['courseType']),
+                listOfLearningSpaces: arguments['listOfLearningSpaces'],
+                learningSpacesType: arguments['learningSpacesType']),
             args);
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1), args);

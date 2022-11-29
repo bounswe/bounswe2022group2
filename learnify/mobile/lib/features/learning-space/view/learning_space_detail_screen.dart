@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:measured_size/measured_size.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
-import 'package:measured_size/measured_size.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/constants/main_type_definitions.dart';
@@ -20,7 +20,6 @@ import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../constants/learning_space_constants.dart';
-import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
 import '../view-model/learning_space_view_model.dart';
 
@@ -94,11 +93,12 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
       runSpacing: 5,
       spacing: 5,
       children: tagList
-          .map((tag) => Chip(
+          .map((String tag) => Chip(
                 label: Text(tag),
-                labelPadding: EdgeInsets.zero,
+                labelPadding: EdgeInsets.symmetric(
+                    horizontal: context.responsiveSize * 1.4),
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 12),
@@ -108,16 +108,18 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
 }
 
 class MySliverOverlayAbsorber extends StatefulWidget {
+  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled});
   final bool innerBoxIsScrolled;
-  MySliverOverlayAbsorber({required this.innerBoxIsScrolled});
+  @override
   State<MySliverOverlayAbsorber> createState() =>
       _MySliverOverlayAbsorberState();
 }
 
 class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
-  Size wsize = Size.zero;
+  late Size wsize = Size.fromHeight(context.responsiveSize * 2);
 
-  Widget build(BuildContext) => SliverOverlapAbsorber(
+  @override
+  Widget build(BuildContext context) => SliverOverlapAbsorber(
         handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         sliver: SliverAppBar(
           flexibleSpace: FlexibleSpaceBar(
@@ -125,31 +127,17 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
             background: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(Icons.arrow_back)),
-                      IconButton(
-                          onPressed: () {
-                            //TODO: Navigate to edit learning space screen
-                          },
-                          icon: Icon(Icons.edit)),
-                    ]),
                 Image.asset(IconKeys.learnIllustration,
                     width: context.width * 60),
                 context.sizedH(1),
                 Container(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   width: double.infinity,
                   color: Colors.white,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "Placeholder Learning Space",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -157,7 +145,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             fontSize: 18),
                       ),
                       context.sizedH(2),
-                      Text(
+                      const Text(
                         "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
                         style: TextStyle(
                           color: Colors.grey,
@@ -193,7 +181,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                       context.sizedH(1),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
+                        children: const <Widget>[
                           Expanded(
                             child: Text(
                               "Created by: placeholder_username",
@@ -202,9 +190,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             ),
                           ),
                           Icon(Icons.people_alt_outlined, size: 20),
-                          Text(
-                            "100",
-                          )
+                          Text("100")
                         ],
                       )
                     ],
@@ -215,15 +201,33 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
           ),
           floating: true,
           pinned: true,
-          expandedHeight: wsize.height == 0
-              ? context.maxPossibleHeight
-              : context.height * 55 + wsize.height,
+          expandedHeight: context.height * 46 + wsize.height,
           forceElevated: widget.innerBoxIsScrolled,
-          bottom: TabBar(
-            tabs: LearningSpaceConstants.tabKeys
-                .map((String key) => Tab(text: context.tr(key)))
-                .toList(),
+          bottom: ColoredTabBar(
+            color: context.primary,
+            tabBar: TabBar(
+              tabs: LearningSpaceConstants.tabKeys
+                  .map((String key) => Tab(text: context.tr(key)))
+                  .toList(),
+            ),
           ),
         ),
+      );
+}
+
+class ColoredTabBar extends Container implements PreferredSizeWidget {
+  ColoredTabBar({required this.color, required this.tabBar});
+
+  @override
+  final Color color;
+  final TabBar tabBar;
+
+  @override
+  Size get preferredSize => tabBar.preferredSize;
+
+  @override
+  Widget build(BuildContext context) => ColoredBox(
+        color: color,
+        child: tabBar,
       );
 }

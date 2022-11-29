@@ -5,9 +5,9 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/extensions/context/context_extensions.dart';
+import '../../../core/helpers/selector_helper.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
-import '../../../core/helpers/selector_helper.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
@@ -81,7 +81,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
               shrinkWrap: true,
               separatorBuilder: (BuildContext context, _) =>
                   SizedBox(width: context.width * 3),
-              itemBuilder: (BuildContext context, int index) => _CoursePreview(
+              itemBuilder: (BuildContext context, int index) => CoursePreview(
                   textKey: courseList[index].name ?? '',
                   participantNumber: courseList[index].numParticipants ?? 0),
             ),
@@ -109,7 +109,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
                 path: NavigationConstants.createEditLearningSpace,
                 data: <String, dynamic>{'isCreate': true}),
           ));
-          
+
   static Widget _viewAllButton(String coursesType) =>
       SelectorHelper<bool, HomeViewModel>().builder(
           (_, HomeViewModel model) => model.getViewAllStatus(coursesType),
