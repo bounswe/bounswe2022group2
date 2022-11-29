@@ -1,14 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:learnify/features/home-wrapper/view/home_wrapper_screen.dart';
-
-import 'test_helpers.dart';
 
 void main() {
   testWidgets(
     "Test chapter list and item widgets.",
     (WidgetTester tester) async {
-      final HomeWrapper homeWrapper = HomeWrapper(initialIndex: 2);
-      await tester.pumpWidget(TestHelpers.appWidget(homeWrapper));
+      // final HomeWrapper homeWrapper = HomeWrapper(initialIndex: 2);
+      // await tester.pumpWidget(TestHelpers.appWidget(homeWrapper));
 
       // final Finder detailFinder = find.descendant(
       //     of: find.byWidget(homeWrapper),
