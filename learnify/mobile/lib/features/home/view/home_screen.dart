@@ -6,8 +6,6 @@ import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
-import '../../../core/widgets/base-icon/base_icon.dart';
-import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
@@ -36,9 +34,6 @@ class HomeScreen extends BaseView<HomeViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            _createSpaceButton(
-                context, TextKeys.createLearningSpace, Icons.add_outlined),
-            context.sizedH(2),
             SizedBox(
               height: context.height * 23,
               child: _coursePreviewList(context, TextKeys.takenLearnifies,
@@ -88,27 +83,6 @@ class HomeScreen extends BaseView<HomeViewModel> {
           )
         ],
       );
-
-  static Widget _createSpaceButton(
-          BuildContext context, String textKey, IconData icon) =>
-      Padding(
-          padding: EdgeInsets.only(
-            top: context.height * 1.7,
-            bottom: context.height * .3,
-            left: context.width * 20,
-            right: context.width * 20,
-          ),
-          child: ActionButton(
-            icon: BaseIcon(context, icon),
-            text: textKey,
-            height: context.height * 4.8,
-            padding: EdgeInsets.symmetric(
-                horizontal: context.responsiveSize * 2.8,
-                vertical: context.responsiveSize * 1.4),
-            onPressed: () async => NavigationManager.instance.navigateToPage(
-                path: NavigationConstants.createEditLearningSpace,
-                data: <String, dynamic>{'isCreate': true}),
-          ));
 
   static Widget _viewAllButton(String coursesType) =>
       SelectorHelper<bool, HomeViewModel>().builder(

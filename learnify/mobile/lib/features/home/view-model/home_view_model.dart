@@ -88,7 +88,7 @@ class HomeViewModel extends BaseViewModel {
     return res;
   }
 
-  Future<String?> _viewAllRequest(String LearningSpacesType) async {
+  Future<String?> _viewAllRequest(String learningSpacesType) async {
     List<LearningSpace> expectedLearningSpaces;
     final IResponseModel<GetLearningSpacesResponse> resp =
         await _homeService.getLearningSpaces();
@@ -97,11 +97,11 @@ class HomeViewModel extends BaseViewModel {
       //return resp.error?.errorMessage;
       expectedLearningSpaces = takenLearningSpaces;
     } else {
-      if (LearningSpacesType == TextKeys.takenLearnifies) {
+      if (learningSpacesType == TextKeys.takenLearnifies) {
         expectedLearningSpaces = respData.takenLearningSpaces;
-      } else if (LearningSpacesType == TextKeys.friendLearnifies) {
+      } else if (learningSpacesType == TextKeys.friendLearnifies) {
         expectedLearningSpaces = respData.friendLearningSpaces;
-      } else if (LearningSpacesType == TextKeys.recommendedLearnifies) {
+      } else if (learningSpacesType == TextKeys.recommendedLearnifies) {
         expectedLearningSpaces = respData.recommendedLearningSpaces;
       } else {
         return "Requested type of list of LearningSpaces not found!";
@@ -111,7 +111,7 @@ class HomeViewModel extends BaseViewModel {
         path: NavigationConstants.viewall,
         data: <String, dynamic>{
           'listOfLearningSpaces': expectedLearningSpaces,
-          'learningSpacesType': LearningSpacesType
+          'learningSpacesType': learningSpacesType
         });
     return null;
   }

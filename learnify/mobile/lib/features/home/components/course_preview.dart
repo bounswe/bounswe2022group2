@@ -20,7 +20,8 @@ class CoursePreview extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           splashColor: DarkAppTheme.lightBlue,
-          onTap: () {},
+          onTap: () async => NavigationManager.instance
+              .navigateToPage(path: NavigationConstants.learningSpace),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
