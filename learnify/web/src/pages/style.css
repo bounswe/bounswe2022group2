@@ -547,3 +547,31 @@ h1 {
     height: 80%;
     overflow: scroll;
 }
+
+.categories-banner {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 30px;
+}
+
+.categories-heading {
+    text-align: left;
+    padding-left: 70px;
+    padding-top: 70px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #FF731D;
+}
+
+.categories-phrase {
+    text-align: left;
+    padding-left: 70px;
+    padding-top: 40px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #1746A2;
+}
+
+.categories-page-content {
+    min-height: calc(100vh - 190px);
+}
