@@ -64,7 +64,7 @@ def encode_learning_space(request:Request, ls: LS):
 
     return 200
 
-@app.get('/search/{title}')
+@app.get('/search/{querry}')
 def encode_learning_space(request:Request, querry: str):
 
     
