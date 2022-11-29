@@ -11,7 +11,10 @@ export default async (req, res) => {
     
     var titles = response.data.titles;
 
-    var ls = await LearningSpace.find({"title" : titles})
+    var ls = await LearningSpace.find({"title" : titles}).catch((err) =>{
+        console.log(err.message)
+        return res.status(500).json({ "resultMessage": "Could not find returned learning spaces in the DB" });
+      });
 
     return res.status(200).json({learning_spaces : ls})
 
