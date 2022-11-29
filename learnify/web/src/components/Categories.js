@@ -10,8 +10,8 @@ const Categories = () => {
     useEffect(() => {
         const getCategory = async () => {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}categories`)
-            setCategories(res.data)
-            console.log(categories)
+            setCategories(res.data.Categories)
+            console.log(res.data.Categories)
         }
         getCategory()
     }, [])
