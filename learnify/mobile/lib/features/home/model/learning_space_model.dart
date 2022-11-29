@@ -1,13 +1,13 @@
 import '../../../core/base/model/base_model.dart';
 
-class Course extends BaseModel<Course> {
-  const Course({this.name, this.numParticipants});
+class LearningSpace extends BaseModel<LearningSpace> {
+  const LearningSpace({this.name, this.numParticipants});
 
-  factory Course.fromJson(Map<String, dynamic> json) => Course(
+  factory LearningSpace.fromJson(Map<String, dynamic> json) => LearningSpace(
       name: BaseModel.getByType<String>(json['name']),
       numParticipants: BaseModel.getByType<int>(json['num_participants']));
 
-  Course copyWith(String? name, int? numParticipants) => Course(
+  LearningSpace copyWith(String? name, int? numParticipants) => LearningSpace(
       name: name ?? this.name,
       numParticipants: numParticipants ?? this.numParticipants);
 
@@ -15,7 +15,8 @@ class Course extends BaseModel<Course> {
   final int? numParticipants;
 
   @override
-  Course fromJson(Map<String, dynamic> json) => Course.fromJson(json);
+  LearningSpace fromJson(Map<String, dynamic> json) =>
+      LearningSpace.fromJson(json);
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{

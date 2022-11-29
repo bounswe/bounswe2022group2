@@ -1,7 +1,7 @@
 import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
-import '../model/course_model.dart';
-import '../model/get_courses_response_model.dart';
+import '../model/learning_space_model.dart';
+import '../model/get_learning_spaces_response_model.dart';
 import 'I_home_service.dart';
 
 /// Service for network request of home view-model.
@@ -18,9 +18,9 @@ class HomeService extends IHomeService {
   static const String _courses = '/courses';
 
   @override
-  Future<IResponseModel<GetCoursesResponse>> getCourses() async =>
-      networkManager.send<Course, GetCoursesResponse>(_courses,
-          parseModel: const GetCoursesResponse(),
+  Future<IResponseModel<GetLearningSpacesResponse>> getLearningSpaces() async =>
+      networkManager.send<LearningSpace, GetLearningSpacesResponse>(_courses,
+          parseModel: const GetLearningSpacesResponse(),
           type: RequestTypes.get,
           requireAuth: false);
 }

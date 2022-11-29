@@ -5,14 +5,12 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/extensions/context/context_extensions.dart';
-import '../../../core/widgets/base-icon/base_icon.dart';
-import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
-import '../model/course_model.dart';
+import '../model/learning_space_model.dart';
 import '../view-model/home_view_model.dart';
 
 part '../components/course_preview.dart';
@@ -24,7 +22,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
           scrollable: true,
           hasScaffold: false,
           futureInit: (BuildContext context) =>
-              context.read<HomeViewModel>().fetchInitialCourses(),
+              context.read<HomeViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
   static Widget _builder(BuildContext context) => Padding(
@@ -38,26 +36,28 @@ class HomeScreen extends BaseView<HomeViewModel> {
           children: <Widget>[
             SizedBox(
               height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.takenCourses,
-                  context.read<HomeViewModel>().takenCourses),
+              child: _coursePreviewList(context, TextKeys.takenLearnifies,
+                  context.read<HomeViewModel>().takenLearningSpaces),
             ),
             context.sizedH(3),
             SizedBox(
               height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.friendCourses,
-                  context.read<HomeViewModel>().friendCourses),
+              child: _coursePreviewList(context, TextKeys.friendLearnifies,
+                  context.read<HomeViewModel>().friendLearningSpaces),
             ),
             context.sizedH(3),
             SizedBox(
                 height: context.height * 23,
-                child: _coursePreviewList(context, TextKeys.recommendedCourses,
-                    context.read<HomeViewModel>().recommendedCourses)),
+                child: _coursePreviewList(
+                    context,
+                    TextKeys.recommendedLearnifies,
+                    context.read<HomeViewModel>().recommendedLearningSpaces)),
           ],
         ),
       );
 
-  static Widget _coursePreviewList(
-          BuildContext context, String coursesType, List<Course> courseList) =>
+  static Widget _coursePreviewList(BuildContext context, String coursesType,
+          List<LearningSpace> courseList) =>
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

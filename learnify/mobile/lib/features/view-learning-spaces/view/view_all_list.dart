@@ -7,24 +7,24 @@ import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
-import '../../home/model/course_model.dart';
+import '../../home/model/learning_space_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../../home/view/home_screen.dart';
 
 class ViewAllList extends BaseView<HomeViewModel> {
   ViewAllList(
-      {required List<Course> listOfCourses,
+      {required List<LearningSpace> listOfLearningSpaces,
       required bool buttonExist,
       Key? key})
       : super(
           builder: (BuildContext context) =>
-              _builder(context, listOfCourses, buttonExist),
+              _builder(context, listOfLearningSpaces, buttonExist),
           scrollable: true,
           key: key,
         );
 
-  static Widget _builder(
-          BuildContext context, List<Course> listOfCourses, bool buttonExist) =>
+  static Widget _builder(BuildContext context,
+          List<LearningSpace> listOfLearningSpaces, bool buttonExist) =>
       Padding(
         padding: EdgeInsets.only(
             left: context.width * 4,
@@ -49,11 +49,11 @@ class ViewAllList extends BaseView<HomeViewModel> {
               itemBuilder: (BuildContext context, int index) =>
                   const CoursePreview(
                       textKey: "Learning Space",
-                      //ToDo after the courses are initialized:
-                      //listOfCourses[index].name ?? ''
+                      //ToDo after the LearningSpaces are initialized:
+                      //listOfLearningSpaces[index].name ?? ''
                       participantNumber: 100
-                      //ToDo after the courses are initialized:
-                      //listOfCourses[index].numParticipants ?? 0
+                      //ToDo after the LearningSpaces are initialized:
+                      //listOfLearningSpaces[index].numParticipants ?? 0
                       ),
             ),
           ],

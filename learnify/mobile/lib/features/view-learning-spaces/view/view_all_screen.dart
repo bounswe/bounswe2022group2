@@ -8,28 +8,29 @@ import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/navigation_constants.dart';
-import '../../home/model/course_model.dart';
+import '../../home/model/learning_space_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import 'view_all_list.dart';
 
 class ViewAllScreen extends BaseView<HomeViewModel> {
   ViewAllScreen(
-      {required List<Course> listOfCourses,
-      required String coursesType,
+      {required List<LearningSpace> listOfLearningSpaces,
+      required String learningSpacesType,
       Key? key})
       : super(
-          builder: (BuildContext context) => _builder(context, listOfCourses),
+          builder: (BuildContext context) =>
+              _builder(context, listOfLearningSpaces),
           appBar: (BuildContext context) =>
-              _appBarBuilder(context, coursesType),
+              _appBarBuilder(context, learningSpacesType),
           key: key,
         );
 
-  static Widget _builder(BuildContext context, List<Course> listOfCourses) =>
+  static Widget _builder(
+          BuildContext context, List<LearningSpace> listOfLearningSpaces) =>
       ViewAllList(
-        listOfCourses: listOfCourses,
+        listOfLearningSpaces: listOfLearningSpaces,
         buttonExist: false,
       );
-
   static DefaultAppBar _appBarBuilder(BuildContext context, String title) =>
       DefaultAppBar(
         size: context.height * 6,
