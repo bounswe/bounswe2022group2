@@ -92,19 +92,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
   static Widget _tagWidget(BuildContext context, List<String> tagList) => Wrap(
       runSpacing: 5,
       spacing: 5,
-      children: tagList
-          .map((String tag) => Chip(
-                label: Text(tag),
-                labelPadding: EdgeInsets.symmetric(
-                    horizontal: context.responsiveSize * 1.4),
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                labelStyle: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 12),
-                backgroundColor: context.primary,
-              ))
-          .toList());
+      children: tagList.map((String tag) => CustomizedChip(tag: tag)).toList());
 }
 
 class MySliverOverlayAbsorber extends StatefulWidget {
@@ -122,6 +110,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
   Widget build(BuildContext context) => SliverOverlapAbsorber(
         handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         sliver: SliverAppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
           flexibleSpace: FlexibleSpaceBar(
             centerTitle: true,
             background: Column(
@@ -229,5 +218,21 @@ class ColoredTabBar extends Container implements PreferredSizeWidget {
   Widget build(BuildContext context) => ColoredBox(
         color: color,
         child: tabBar,
+      );
+}
+
+class CustomizedChip extends StatelessWidget {
+  const CustomizedChip({required this.tag, Key? key}) : super(key: key);
+  final String tag;
+
+  @override
+  Widget build(BuildContext context) => Chip(
+        label: Text(tag),
+        labelPadding:
+            EdgeInsets.symmetric(horizontal: context.responsiveSize * 1.4),
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        labelStyle: const TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12),
+        backgroundColor: context.primary,
       );
 }
