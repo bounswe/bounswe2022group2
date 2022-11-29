@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../product/theme/light_theme.dart';
 
 class CustomVerticalDivider extends VerticalDivider {
-  const CustomVerticalDivider({Color? color, Key? key})
+  const CustomVerticalDivider(
+      {Color? color,
+      double? thickness,
+      double? width,
+      double? indent,
+      Key? key})
       : super(
           key: key,
-          color: color ?? LightAppTheme.orange,
-          thickness: 1,
-          width: 1,
-          indent: 1,
-          endIndent: 1,
+          color: color ?? LightAppTheme.lightBlue,
+          thickness: thickness ?? 1,
+          width: width ?? 1,
+          indent: indent ?? 1,
+          endIndent: indent ?? 1,
         );
 }

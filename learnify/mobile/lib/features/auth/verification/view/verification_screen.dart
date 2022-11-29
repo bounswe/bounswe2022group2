@@ -105,7 +105,7 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
   }
 
   @override
-  Widget build(BuildContext context) => Column(children: [
+  Widget build(BuildContext context) => Column(children: <Widget>[
         BaseText(
           TextKeys.codeNotReceived,
           style: context.bodySmall,
@@ -123,7 +123,7 @@ class _VerificationCodeTimerState extends State<VerificationCodeTimer> {
         context.sizedH(2),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             BaseText(
               TextKeys.remainingTime,
               style: context.bodySmall,

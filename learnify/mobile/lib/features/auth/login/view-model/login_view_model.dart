@@ -77,7 +77,6 @@ class LoginViewModel extends BaseViewModel {
           email: _emailController.text, password: _passwordController.text);
       final IResponseModel<LoginResponse> res =
           await _authService.login(requestModel);
-
       if (res.error?.statusCode == 401) {
         final SendVerificationRequest requestModel =
             SendVerificationRequest(email: _emailController.text);
@@ -109,7 +108,8 @@ class LoginViewModel extends BaseViewModel {
   }
 
   Future<String?> _asyncDontHaveAccount() async {
-    await navigationManager.navigateToPage(path: NavigationConstants.signup);
+    await navigationManager.navigateToPage(
+        path: NavigationConstants.signup, checkHistory: true);
     return null;
   }
 

@@ -17,6 +17,7 @@ class BaseIconButton extends StatelessWidget {
     this.margin,
     this.splashRadius,
     this.sizeFactor,
+    this.iconPadding,
     Key? key,
   }) : super(key: key);
 
@@ -37,6 +38,9 @@ class BaseIconButton extends StatelessWidget {
 
   /// Padding around the icon.
   final EdgeInsets? padding;
+
+  /// Padding around the icon.
+  final EdgeInsets? iconPadding;
 
   /// Margin around the icon.
   final EdgeInsets? margin;
@@ -62,6 +66,7 @@ class BaseIconButton extends StatelessWidget {
               size: sizeFactor == null
                   ? null
                   : context.responsiveSize * sizeFactor!,
+              padding: iconPadding,
             ),
             splashRadius: splashRadius ??
                 (context.responsiveSize *

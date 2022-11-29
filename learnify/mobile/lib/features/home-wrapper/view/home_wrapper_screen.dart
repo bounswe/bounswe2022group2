@@ -16,10 +16,10 @@ import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/theme/light_theme.dart';
-import '../../courses/view/courses_screen.dart';
 import '../../home/view/home_screen.dart';
 import '../../profile/view/profile_screen.dart';
 import '../../search/view/search_screen.dart';
+import '../../view-learning-spaces/view/taken_ls_screen.dart';
 import '../constants/home_wrapper_constants.dart';
 import '../view-model/home_wrapper_view_model.dart';
 
@@ -43,7 +43,7 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
           case 1:
             return const SearchScreen();
           case 2:
-            return const CoursesScreen();
+            return TakenLsScreen();
           case 3:
             return const ProfileScreen();
           default:
@@ -64,21 +64,21 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
             (BuildContext context, int index, __) => BaseIconButton(
               onPressed: () {},
               icon: _appBarIcon(index),
-              padding: EdgeInsets.all(context.responsiveSize * .9),
               color: context.lightActiveColor,
+              iconPadding: EdgeInsets.all(context.width * .4),
+              padding: EdgeInsets.symmetric(horizontal: context.width * 1.8),
             ),
           ),
           SelectorHelper<int, HomeWrapperViewModel>().builder(
             (_, HomeWrapperViewModel model) => model.bottomNavBarIndex,
             (BuildContext context, int index, __) => Visibility(
               visible: index == 3,
-              child: Padding(
-                padding: EdgeInsets.only(left: context.width * 1.8),
-                child: BaseIconButton(
-                  onPressed: CustomInterceptors.navigateToLogin,
-                  icon: Icons.logout_outlined,
-                  color: context.lightActiveColor,
-                ),
+              child: BaseIconButton(
+                onPressed: CustomInterceptors.navigateToLogin,
+                icon: Icons.logout_outlined,
+                color: context.lightActiveColor,
+                iconPadding: EdgeInsets.all(context.width * .4),
+                padding: EdgeInsets.only(right: context.width * 1.5),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 
 import 'core/managers/local/local_manager.dart';
@@ -13,12 +14,15 @@ import 'product/constants/navigation_constants.dart';
 import 'product/constants/storage_keys.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  final WidgetsBinding widgetsBinding =
+      WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await LocalManager().initPreferences();
   final bool hasToken = CustomInterceptors.getStoredToken != null;
   final User user =
       await LocalManager.instance.getModel(const User(), StorageKeys.user);
   final bool hasAuth = hasToken && user.email != null;
+  FlutterNativeSplash.remove();
   runApp(InitialApp(hasAuth: hasAuth));
 }
 
@@ -28,7 +32,7 @@ class InitialApp extends StatefulWidget {
 
   @override
   State<InitialApp> createState() => InitialAppState();
-}
+} 
 
 class InitialAppState extends State<InitialApp> {
   @override
@@ -46,6 +50,7 @@ class _MaterialApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'Learnify',
         debugShowCheckedModeBanner: false,
+        navigatorObservers: <NavigatorObserver>[MyNavigatorObserver()],
         initialRoute:
             hasAuth ? NavigationConstants.home : NavigationConstants.signup,
         onGenerateRoute: NavigationRoute.instance.generateRoute,

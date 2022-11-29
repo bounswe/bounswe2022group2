@@ -19,3 +19,16 @@ typedef ErrorHelper = FutureOr<String?> Function();
 
 /// Callback of the checkbox.
 typedef CheckboxCallback = void Function(bool value);
+
+/// index callback
+typedef IndexCallback = void Function(int index);
+
+/// string callback
+typedef StringCallback = void Function(String id);
+
+/// annotation click callback
+typedef AnnotationClickCallback = void Function(
+    String id, String annotatedText);
+
+typedef AnnotateCallback = Future<String?> Function(
+    int startIndex, int endIndex, String annotation, String? chapterId);

@@ -129,10 +129,7 @@ class ActionButtonState extends State<ActionButton> {
             height: _buttonHeight,
             child: ElevatedButton.icon(
               onPressed: widget.isActive ? localOnPressed : null,
-              style: _buttonStyle(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: context.responsiveSize * 2,
-                      vertical: context.responsiveSize)),
+              style: _buttonStyle(),
               focusNode: widget.focusNode,
               label: _buttonChild,
               icon: widget.icon!,
@@ -145,7 +142,7 @@ class ActionButtonState extends State<ActionButton> {
       ButtonStyles(context).elevated(
         backgroundColor: widget.isActive
             ? (widget.backgroundColor ?? context.primary)
-            : context.activeColor.withAlpha(20),
+            : Colors.black,
         padding: padding ?? widget.padding,
         borderRadius: widget.borderRadius,
       );
@@ -157,9 +154,11 @@ class ActionButtonState extends State<ActionButton> {
             widget.clickedText == null
                 ? widget.text!
                 : (_clicked ? widget.clickedText! : widget.text!),
-            color: widget.isActive
-                ? context.activeColor
-                : context.inactiveTextColor,
+            color: widget.textStyle == null
+                ? (widget.isActive
+                    ? context.activeColor
+                    : context.inactiveTextColor)
+                : null,
             translated: widget.translated,
             style: widget.textStyle ?? context.titleSmall,
             capitalizeAll: widget.capitalizeAll,
