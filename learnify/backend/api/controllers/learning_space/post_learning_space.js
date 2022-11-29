@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { LearningSpace , Categories} from '../../../models/index.js';
 import { validateLS_init } from '../../validators/learning_space_init_validator.js';
+import { semantic_server } from "../../../config/index.js";
 
 export default async (req, res) => {
   const { error } = validateLS_init(req.body);
@@ -57,7 +58,7 @@ export default async (req, res) => {
     return res.status(500).json({ "resultMessage": "Could not save ls to DB" });
   });
 
-  axios.post(`http://localhost:8000/encode/`, {title : ls.title});
+  axios.post(semantic_server +':8000/encode/', {title : ls.title});
 
   return res.status(200).json({
     resultMessage: "Learning space is succesfully created.",

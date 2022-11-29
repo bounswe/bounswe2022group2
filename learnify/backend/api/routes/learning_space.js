@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { get_courses, post_learningSpace } from '../controllers/learning_space/index.js';
+import { get_courses, post_learningSpace, semanti_search_ls } from '../controllers/learning_space/index.js';
 
 const router = Router();
 
-router.get('/', get_courses);
 router.post('/', post_learningSpace)
+router.get('/', semanti_search_ls)
 
 
 export default router;

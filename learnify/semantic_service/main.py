@@ -52,19 +52,19 @@ def encode_learning_space(request:Request, ls: LS):
 
     return 200
 
-@app.get('/search/{querry}')
-def encode_learning_space(request:Request, querry: str):
+@app.get('/search/{query}')
+def encode_learning_space(request:Request, query: str):
 
     
     encoding = app.clip_client.encode(
         [
-            querry
+            query
         ]
     )
     encoding = np.array(encoding[0])
     encoding = encoding / np.linalg.norm(encoding)
 
-
+    print("Query is:", query)
     
     collection= app.database["learningspaces"]
 
@@ -72,7 +72,8 @@ def encode_learning_space(request:Request, querry: str):
     for ls in collection.find({}):
         if "BERT" in ls:
             similarity = np.array(ls["BERT"])  @ encoding 
-            if similarity > 0.80:
+            print(ls["title"], similarity)
+            if similarity > 0.75:
                 similarity_index[similarity] = ls["title"]
 
     
