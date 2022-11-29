@@ -1,7 +1,7 @@
 part of '../view/home_screen.dart';
 
-class _CoursePreview extends StatelessWidget {
-  const _CoursePreview({
+class CoursePreview extends StatelessWidget {
+  const CoursePreview({
     required this.textKey,
     required this.participantNumber,
     // ignore: unused_element
