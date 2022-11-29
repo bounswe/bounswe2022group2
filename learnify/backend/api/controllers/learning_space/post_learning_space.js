@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import { get } from "underscore";
+import axios from "axios";
 
 import { LearningSpace , Categories} from '../../../models/index.js';
 import { validateLS_init } from '../../validators/learning_space_init_validator.js';
@@ -55,6 +56,8 @@ export default async (req, res) => {
     console.log(err.message)
     return res.status(500).json({ "resultMessage": "Could not save ls to DB" });
   });
+
+  axios.post(`http://localhost:8000/encode/`, {title : ls.title});
 
   return res.status(200).json({
     resultMessage: "Learning space is succesfully created.",
