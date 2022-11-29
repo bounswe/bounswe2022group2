@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
+import ChangePassword from './pages/ChangePassword';
 import NotFoundPage from './pages/NotFoundPage';
 import CategoriesPage from './pages/CategoriesPage';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
           <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
+          <Route path="/change-password" element={<ChangePassword/>}/>
           <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes> 
