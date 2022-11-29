@@ -8,7 +8,6 @@ import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-view-all/view/view_all_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
-import '../../../features/learning-space/view/learning_space_detail_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../extensions/string/string_extensions.dart';
 
@@ -35,8 +34,8 @@ class NavigationRoute {
       case NavigationConstants.viewall:
         return normalNavigate(
             ViewAllScreen(
-                listOfCourses: arguments['listOfCourses'],
-                coursesType: arguments['courseType']),
+                listOfLearningSpaces: arguments['listOfLearningSpaces'],
+                learningSpacesType: arguments['learningSpacesType']),
             args);
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1), args);
@@ -44,8 +43,8 @@ class NavigationRoute {
         return normalNavigate(HomeWrapper(initialIndex: 2), args);
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3), args);
-      case NavigationConstants.learningSpace:
-        return normalNavigate(const LearningSpaceDetailScreen(), args);
+      // case NavigationConstants.learningSpace:
+      //   return normalNavigate(const LearningSpaceDetailScreen(), args);
       case NavigationConstants.createEditLearningSpace:
         return normalNavigate(
             CreateLearningSpaceScreen(

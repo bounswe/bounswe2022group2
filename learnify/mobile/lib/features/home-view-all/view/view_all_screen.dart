@@ -8,26 +8,28 @@ import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/navigation_constants.dart';
-import '../../home/model/course_model.dart';
+import '../../home/model/learning_space_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../../home/view/home_screen.dart';
 
 class ViewAllScreen extends BaseView<HomeViewModel> {
   ViewAllScreen(
-      {required List<Course> listOfCourses,
-      required String coursesType,
+      {required List<LearningSpace> listOfLearningSpaces,
+      required String learningSpacesType,
       Key? key})
       : super(
           builder: (BuildContext context) =>
-              _builder(context, listOfCourses, coursesType),
+              _builder(context, listOfLearningSpaces, learningSpacesType),
           appBar: (BuildContext context) =>
-              _appBarBuilder(context, coursesType),
+              _appBarBuilder(context, learningSpacesType),
           scrollable: true,
           key: key,
         );
 
-  static Widget _builder(BuildContext context, List<Course> listOfCourses,
-          String coursesType) =>
+  static Widget _builder(
+          BuildContext context,
+          List<LearningSpace> listOfLearningSpaces,
+          String learningSpacesType) =>
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -49,11 +51,11 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
               itemBuilder: (BuildContext context, int index) =>
                   const CoursePreview(
                       textKey: "Learning Space",
-                      //ToDo after the courses are initialized:
-                      //listOfCourses[index].name ?? ''
+                      //ToDo after the learningSpaces are initialized:
+                      //listOfLearningSpaces[index].name ?? ''
                       participantNumber: 100
-                      //ToDo after the courses are initialized:
-                      //listOfCourses[index].numParticipants ?? 0
+                      //ToDo after the learningSpaces are initialized:
+                      //listOfLearningSpaces[index].numParticipants ?? 0
                       ),
             ),
           ),
