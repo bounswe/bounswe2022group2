@@ -65,12 +65,12 @@ def encode_learning_space(request:Request, ls: LS):
     return 200
 
 @app.get('/search/{title}')
-def encode_learning_space(request:Request, title: str):
+def encode_learning_space(request:Request, querry: str):
 
     
     encoding = app.clip_client.encode(
         [
-            title
+            querry
         ]
     )
     encoding = np.array(encoding[0])
