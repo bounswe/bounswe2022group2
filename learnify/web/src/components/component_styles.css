@@ -50,6 +50,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100% 0%;
+    cursor: pointer;
 }
 
 .ls-button-left {
@@ -177,14 +178,15 @@
 .select-icon-grid {
     display: grid;
     grid-gap: 10px;
-    padding: 10px;
+    padding: 30px;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 .select-icon-grid-img {
+    margin: 10px;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 5px;
     border: 2px solid #1746A2;
     cursor: pointer;
 }
