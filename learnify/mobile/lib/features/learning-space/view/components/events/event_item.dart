@@ -49,10 +49,8 @@ class EventItem extends StatelessWidget {
             child:
                 BaseText('${itemIndex + 1}. ${event.title}', translated: false),
           ),
-          BaseText(
-              DateFormat('dd MMM - kk:mm').format(event.date ?? DateTime.now()),
-              translated: false,
-              style: context.bodyMedium),
+          BaseText(DateFormat('dd MMM - kk:mm').format(event.date),
+              translated: false, style: context.bodyMedium),
         ],
       ),
       expandedCrossAxisAlignment: CrossAxisAlignment.center,
@@ -71,10 +69,28 @@ class EventItem extends StatelessWidget {
           maxLines: 1000,
           style: context.bodySmall,
         ),
-        BaseText(TextKeys.eventDate),
+        context.sizedH(1.2),
+        _infoText(context, TextKeys.eventDate,
+            DateFormat('dd MMMM yyyy - kk:mm').format(event.date)),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
     );
   }
+
+  Widget _infoText(BuildContext context, String key, String value) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Expanded(
+              child: BaseText(key,
+                  style: context.bodySmall, textAlign: TextAlign.start)),
+          Expanded(
+              child: BaseText(
+            value,
+            style: context.bodySmall,
+            translated: false,
+            textAlign: TextAlign.start,
+          )),
+        ],
+      );
 }

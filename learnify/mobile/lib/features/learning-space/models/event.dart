@@ -4,8 +4,8 @@ import '../../../../core/base/model/base_model.dart';
 
 class Event extends BaseModel<Event> {
   const Event({
+    required this.date,
     this.id,
-    this.date,
     this.description,
     this.title,
     this.duration,
@@ -36,7 +36,7 @@ class Event extends BaseModel<Event> {
 
   factory Event.fromJson(Map<String, dynamic> json) => Event(
         id: BaseModel.getByType<String>(json['id']),
-        date: BaseModel.getByType<DateTime>(json['date']),
+        date: BaseModel.getWithDefault<DateTime>(json['date'], DateTime.now()),
         description: BaseModel.getByType<String>(json['description']),
         title: BaseModel.getByType<String>(json['title']),
         duration: BaseModel.getByType<int>(json['duration']),
@@ -84,7 +84,7 @@ class Event extends BaseModel<Event> {
       );
 
   final String? id;
-  final DateTime? date;
+  final DateTime date;
   final String? description;
   final int? duration;
   final int? participationLimit;
