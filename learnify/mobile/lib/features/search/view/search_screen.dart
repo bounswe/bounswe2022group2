@@ -19,8 +19,6 @@ class SearchScreen extends BaseView<SearchViewModel> {
       : super(
           builder: _builder,
           resizeToAvoidBottomInset: false,
-          futureInit: (BuildContext context) =>
-              context.read<SearchViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
 
@@ -49,7 +47,7 @@ class SearchScreen extends BaseView<SearchViewModel> {
 
   static List<Widget> _slivers(BuildContext context, String tabKey) {
     final List<LearningSpace> listOfLearningSpaces =
-        context.read<SearchViewModel>().takenLearningSpaces;
+        context.read<SearchViewModel>().resultLearningSpaces;
     return <Widget>[
       SliverOverlapInjector(
         handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
