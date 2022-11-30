@@ -70,33 +70,32 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> annotateText(int startIndex, int endIndex, String annotation,
-      String? chapterId) async {
+  Future<Annotation?> annotateText(int startIndex, int endIndex,
+      String annotation, String? chapterId) async {
     final int itemIndex = _chapters.indexWhere(
         (Chapter c) => c.id?.compareWithoutCase(chapterId) ?? false);
-    if (itemIndex == -1) return 'Chapter not found';
+    if (itemIndex == -1) return null;
     final Chapter oldChapter = _chapters[itemIndex];
+    final Annotation newAnnotation = Annotation(
+      id: (startIndex * endIndex + Random().nextInt(490)).toString(),
+      content: annotation,
+      startIndex: startIndex,
+      endIndex: endIndex,
+      chapterId: oldChapter.id,
+      courseId: oldChapter.courseId,
+    );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(oldChapter.annotations)
-          ..add(
-            Annotation(
-              id: (startIndex * endIndex + Random().nextInt(490)).toString(),
-              content: annotation,
-              startIndex: startIndex,
-              endIndex: endIndex,
-              chapterId: oldChapter.id,
-              courseId: oldChapter.courseId,
-            ),
-          )
+          ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
     _chapters[itemIndex] =
         _chapters[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
-    return null;
+    return newAnnotation;
   }
 
-  Future<String?> annotateImage(
+  Future<Annotation?> annotateImage(
       Offset startOffset,
       Offset endOffset,
       String annotation,
@@ -105,29 +104,27 @@ class LearningSpaceViewModel extends BaseViewModel {
       String? imageUrl) async {
     final int itemIndex = _chapters.indexWhere(
         (Chapter c) => c.id?.compareWithoutCase(chapterId) ?? false);
-    if (itemIndex == -1) return 'Chapter not found';
+    if (itemIndex == -1) return null;
     final Chapter oldChapter = _chapters[itemIndex];
+    final Annotation newAnnotation = Annotation(
+      id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
+      content: annotation,
+      startOffset: startOffset,
+      endOffset: endOffset,
+      chapterId: oldChapter.id,
+      courseId: oldChapter.courseId,
+      isImage: true,
+      colorParam: color,
+      imageUrl: imageUrl,
+    );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(oldChapter.annotations)
-          ..add(
-            Annotation(
-              id: (startOffset.dx * endOffset.dx + Random().nextInt(490))
-                  .toString(),
-              content: annotation,
-              startOffset: startOffset,
-              endOffset: endOffset,
-              chapterId: oldChapter.id,
-              courseId: oldChapter.courseId,
-              isImage: true,
-              colorParam: color,
-              imageUrl: imageUrl,
-            ),
-          )
+          ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
     _chapters[itemIndex] =
         _chapters[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
-    return null;
+    return newAnnotation;
   }
 }

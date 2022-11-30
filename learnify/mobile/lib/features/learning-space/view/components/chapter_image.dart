@@ -39,12 +39,14 @@ class ChapterImage extends StatelessWidget {
         child: AnnotatableImage.network(
           imageUrl,
           scalable: false,
+          clickable: true,
           initialColor: context.primary,
           initialPaintMode: PaintMode.rect,
           paintHistory:
               List<PaintInfo>.generate(imageAnnotations.length, (int i) {
             final Annotation a = imageAnnotations[i];
             return PaintInfo(
+              annotation: a,
               offset: <Offset>[a.startOffset, a.endOffset],
               painter: Paint()
                 ..color = a.color
@@ -53,16 +55,14 @@ class ChapterImage extends StatelessWidget {
             );
           }),
           annotateCallback: (Offset start, Offset end, Color color) async =>
-              await DialogBuilder(context).annotateDialog(
-                chapterId,
-                imageCallback:
-                    context.read<LearningSpaceViewModel>().annotateImage,
-                startOffset: start,
-                endOffset: end,
-                color: color,
-                imageUrl: imageUrl,
-              ) ??
-              false,
+              DialogBuilder(context).annotateDialog(
+            chapterId,
+            imageCallback: context.read<LearningSpaceViewModel>().annotateImage,
+            startOffset: start,
+            endOffset: end,
+            color: color,
+            imageUrl: imageUrl,
+          ),
         ),
       ),
     );
