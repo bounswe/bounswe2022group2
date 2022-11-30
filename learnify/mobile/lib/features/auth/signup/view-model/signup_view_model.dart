@@ -51,10 +51,10 @@ class SignupViewModel extends BaseViewModel {
 
   @override
   void disposeView() {
+    _setDefault();
     _emailController.dispose();
     _passwordController.dispose();
     _usernameController.dispose();
-    _setDefault();
     super.disposeView();
   }
 
@@ -99,7 +99,8 @@ class SignupViewModel extends BaseViewModel {
   }
 
   Future<String?> _asyncHaveAccount() async {
-    await navigationManager.navigateToPage(path: NavigationConstants.login);
+    await navigationManager.navigateToPage(
+        path: NavigationConstants.login, checkHistory: true);
     return null;
   }
 

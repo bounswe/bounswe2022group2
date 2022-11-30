@@ -11,12 +11,12 @@ function CreateLS() {
         <div>
              <NavBar />
             <div className='home'>
-                <label className='ls-box-lb-option'> Create a Learning Space </label>
+                <label className='ls-box-lb-option-large'> Create Learning Space </label>
                 <div className='space-20' />
                 <label className='ls-box-lb-option'> Learning Space Name </label>
                 <div className='space-5' />
                 <label>
-                    <input type='text' className='name-box' placeholder='Learning Space Name' />
+                <span className='details-box' role='textbox' contentEditable></span>
                 </label>
                 
                 <div className='space-20' />

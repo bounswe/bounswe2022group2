@@ -121,6 +121,44 @@
     text-decoration: none;
 }
 
+.category-button {
+    position: relative;
+    text-align: start;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: larger;
+    font-weight: 500;
+    color: darkblue;
+    font-family: 'Open Sans' sans-serif;
+    margin: 0 0 2em 0;
+    width: 25rem;
+    height: 4rem;
+    background-color: white;
+    border-style: solid;
+    border-color: #1746A2;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0.5em #1746A2;
+    transition-duration: 0;
+    transition-timing-function: ease-in;
+}
+
+.category-button:hover {
+    background-color: #FFF7E9;
+}
+
+.category-button:active {
+    background-color: #FFF7E9;
+    box-shadow: none;
+    transform: translateY(0.5em);
+}
+
+.category-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .dropdown {
     width: 400px;
     margin: 100px auto;

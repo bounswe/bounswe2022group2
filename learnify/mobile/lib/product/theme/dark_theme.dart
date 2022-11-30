@@ -9,7 +9,7 @@ mixin DarkAppTheme {
   static const Color darkBlue = Color(0xff1746A2);
   static const Color darkActiveColor = Colors.black87;
   static const Color lightActiveColor = Colors.white70;
-  static final Color? errorColor = Colors.red[600];
+  static final Color? errorColor = Colors.red[400];
 
   static ThemeData get darkTheme => ThemeData.dark().copyWith(
         primaryColor: lightBlue,
