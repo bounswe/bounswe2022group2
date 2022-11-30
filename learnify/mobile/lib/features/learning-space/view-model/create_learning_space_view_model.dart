@@ -87,6 +87,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     _titleController.dispose();
     _descriptionController.dispose();
     _participantsController.dispose();
+    _selectedCategories = <String>[];
     _setDefault();
     super.disposeView();
   }
@@ -111,6 +112,8 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     operation =
         CancelableOperation<String?>.fromFuture(_createLearningSpaceRequest());
     final String? res = await operation?.valueOrCancellation();
+    _canUpdate = false;
+    notifyListeners();
     return res;
   }
 
@@ -119,6 +122,8 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     operation =
         CancelableOperation<String?>.fromFuture(_editLearningSpaceRequest());
     final String? res = await operation?.valueOrCancellation();
+    _canUpdate = false;
+    notifyListeners();
     return res;
   }
 
@@ -155,6 +160,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     final List<String> newSelectedCategories =
         List<String>.from(_selectedCategories)..add(cName);
     _selectedCategories = newSelectedCategories;
+    _canUpdate = true;
     notifyListeners();
   }
 
@@ -165,6 +171,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     final List<String> newSelectedCategories =
         List<String>.from(_selectedCategories)..remove(cName);
     _selectedCategories = newSelectedCategories;
+    _canUpdate = true;
     notifyListeners();
   }
 }

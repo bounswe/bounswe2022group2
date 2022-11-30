@@ -30,5 +30,14 @@ typedef StringCallback = void Function(String id);
 typedef AnnotationClickCallback = void Function(
     String id, String annotatedText);
 
-typedef AnnotateCallback = Future<String?> Function(
+typedef AnnotateTextDialogCallback = Future<String?> Function(
     int startIndex, int endIndex, String annotation, String? chapterId);
+typedef AnnotateImageDialogCallback = Future<String?> Function(
+    Offset startOffset,
+    Offset endOffset,
+    String annotation,
+    String? chapterId,
+    Color color,
+    String imageUrl);
+typedef AnnotateImageCallback = Future<bool> Function(
+    Offset start, Offset end, Color color);

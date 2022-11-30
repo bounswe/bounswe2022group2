@@ -45,7 +45,7 @@ class ChapterItem extends StatelessWidget {
           .copyWith(bottom: context.height * 1.7),
       title: MultiLineText('${itemIndex + 1}. ${chapter.title}',
           translated: false),
-      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+      expandedCrossAxisAlignment: CrossAxisAlignment.center,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
       onExpansionChanged: (bool val) {
@@ -55,7 +55,9 @@ class ChapterItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        _carouselSlider(viewModel, chapter),
+        BaseText(TextKeys.clickToSeeImageAnnotations,
+            style: context.labelMedium),
+        _carouselSlider(viewModel, chapter, context),
         _sliderIndicator(viewModel, chapter),
         context.sizedH(1.4),
         AnnotatableText(
@@ -64,9 +66,13 @@ class ChapterItem extends StatelessWidget {
           annotateLabel: context.tr(TextKeys.annotate),
           annotateCallback: (int startIndex, int endIndex) async {
             await DialogBuilder(context).annotateDialog(
-                startIndex, endIndex, chapter.id, viewModel.annotateText);
+              chapter.id,
+              textCallback: viewModel.annotateText,
+              startIndex: startIndex,
+              endIndex: endIndex,
+            );
           },
-          annotations: chapter.annotations,
+          allAnnotations: chapter.annotations,
           onAnnotationClick:
               (String annotationId, String annotationText) async {
             await DialogBuilder(context).textDialog(
@@ -81,10 +87,11 @@ class ChapterItem extends StatelessWidget {
   }
 
   CarouselSlider _carouselSlider(
-      LearningSpaceViewModel viewModel, Chapter chapter) {
+      LearningSpaceViewModel viewModel, Chapter chapter, BuildContext context) {
     final List<String> images = chapter.materialVisual;
     return CarouselSlider.builder(
-      key: PageStorageKey<String>(chapter.id ?? ''),
+      key: PageStorageKey<String>(
+          '${chapter.id} - ${chapter.annotations.toList()}'),
       itemCount: images.length,
       carouselController: viewModel.carouselControllers[itemIndex],
       options: CarouselOptions(
@@ -96,10 +103,39 @@ class ChapterItem extends StatelessWidget {
         onPageChanged: (int newIndex, _) =>
             viewModel.setCarouselPageIndex(newIndex, itemIndex),
       ),
-      itemBuilder: (_, int i, __) => CustomNetworkImage(
-        images[i],
-        key: PageStorageKey<String>(images[i]),
-      ),
+      itemBuilder: (_, int i, __) {
+        final List<Annotation> imageAnnotations = chapter.annotations
+            .where((Annotation a) => a.isImage && a.imageUrl == images[i])
+            .toList();
+        return GestureDetector(
+          onTap: () => NavigationManager.instance.navigateToPage(
+              path: NavigationConstants.chapterImage,
+              data: <String, dynamic>{
+                'image': images[i],
+                'all_annotations': chapter.annotations,
+                'chapter_id': chapter.id,
+              }),
+          child: AnnotatableImage.network(
+            images[i],
+            annotateCallback: (Offset start, Offset end, Color color) async =>
+                false,
+            scalable: false,
+            initialColor: context.primary,
+            initialPaintMode: PaintMode.none,
+            paintHistory:
+                List<PaintInfo>.generate(imageAnnotations.length, (int i) {
+              final Annotation a = imageAnnotations[i];
+              return PaintInfo(
+                offset: <Offset>[a.startOffset, a.endOffset],
+                painter: Paint()
+                  ..color = a.color
+                  ..strokeWidth = 4
+                  ..style = PaintingStyle.stroke,
+              );
+            }),
+          ),
+        );
+      },
     );
   }
 

@@ -55,12 +55,21 @@ class DialogBuilder {
       );
 
   /// Annotate dialog
-  Future<void> annotateDialog(int startIndex, int endIndex, String? chapterId,
-      AnnotateCallback callback) async {
+  Future<bool?> annotateDialog(
+    String? chapterId, {
+    AnnotateTextDialogCallback? textCallback,
+    AnnotateImageDialogCallback? imageCallback,
+    int? startIndex,
+    int? endIndex,
+    Offset? startOffset,
+    Offset? endOffset,
+    Color? color,
+    String? imageUrl,
+  }) async {
     String annotationText = '';
-    await showDialog(
+    final bool? res = await showDialog(
       context: context,
-      barrierDismissible: false,
+      // barrierDismissible: false,
       builder: (BuildContext context) => StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) => AlertDialog(
           title: BaseText(TextKeys.annotateText, style: context.titleLarge),
@@ -90,12 +99,26 @@ class DialogBuilder {
           actions: <Widget>[
             _dialogActionButton(
               TextKeys.cancel,
-              callback: () => Navigator.of(context).pop(),
+              callback: () => Navigator.of(context).pop(false),
             ),
             _dialogActionButton(
               TextKeys.annotate,
-              asyncCallback: () async =>
-                  callback(startIndex, endIndex, annotationText, chapterId),
+              asyncCallback: () async {
+                if (textCallback != null) {
+                  await textCallback(startIndex ?? 0, endIndex ?? 0,
+                      annotationText, chapterId);
+                } else if (imageCallback != null && imageUrl != null) {
+                  await imageCallback(
+                    startOffset ?? Offset.zero,
+                    endOffset ?? Offset.zero,
+                    annotationText,
+                    chapterId,
+                    color ?? Colors.white,
+                    imageUrl,
+                  );
+                }
+                return null;
+              },
               isAction: true,
               isActive: annotationText.length > 3,
             ),
@@ -103,6 +126,7 @@ class DialogBuilder {
         ),
       ),
     );
+    return res;
   }
 
   Widget _dialogActionButton(
@@ -118,7 +142,7 @@ class DialogBuilder {
                 final NavigatorState navigator = Navigator.of(context);
                 final String? res =
                     asyncCallback == null ? null : await asyncCallback();
-                navigator.pop();
+                navigator.pop(res == null);
                 return res;
               },
               isActive: isActive,
