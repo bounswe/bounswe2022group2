@@ -118,7 +118,7 @@ class ChapterItem extends StatelessWidget {
           child: AnnotatableImage.network(
             images[i],
             annotateCallback: (Offset start, Offset end, Color color) async =>
-                false,
+                null,
             scalable: false,
             initialColor: context.primary,
             initialPaintMode: PaintMode.none,
@@ -126,6 +126,7 @@ class ChapterItem extends StatelessWidget {
                 List<PaintInfo>.generate(imageAnnotations.length, (int i) {
               final Annotation a = imageAnnotations[i];
               return PaintInfo(
+                annotation: a,
                 offset: <Offset>[a.startOffset, a.endOffset],
                 painter: Paint()
                   ..color = a.color

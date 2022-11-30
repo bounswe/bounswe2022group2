@@ -13,8 +13,10 @@ import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
+import '../../../features/learning-space/models/annotation_model.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../helpers/color_helpers.dart';
+import '../dialog/dialog_builder.dart';
 import 'image_painter.dart';
 import 'ported_interactive_viewer.dart';
 
@@ -46,6 +48,7 @@ class AnnotatableImage extends StatefulWidget {
     this.onColorChanged,
     this.onStrokeWidthChanged,
     this.onPaintModeChanged,
+    this.clickable = false,
     this.paintHistory = const <PaintInfo>[],
   }) : super(key: key);
 
@@ -66,6 +69,7 @@ class AnnotatableImage extends StatefulWidget {
     PaintMode? initialPaintMode,
     double? initialStrokeWidth,
     Color? initialColor,
+    bool? clickable,
     ValueChanged<PaintMode>? onPaintModeChanged,
     ValueChanged<Color>? onColorChanged,
     ValueChanged<double>? onStrokeWidthChanged,
@@ -93,6 +97,7 @@ class AnnotatableImage extends StatefulWidget {
         onStrokeWidthChanged: onStrokeWidthChanged,
         controlsAtTop: controlsAtTop ?? true,
         annotateCallback: annotateCallback,
+        clickable: clickable ?? false,
       );
 
   ///Constructor for loading image from assetPath.
@@ -330,6 +335,7 @@ class AnnotatableImage extends StatefulWidget {
   final List<PaintInfo> paintHistory;
 
   final AnnotateImageCallback annotateCallback;
+  final bool clickable;
 
   @override
   AnnotatableImageState createState() => AnnotatableImageState();
@@ -447,6 +453,30 @@ class AnnotatableImageState extends State<AnnotatableImage> {
     return imageInfo.image;
   }
 
+  Future<void> onTapDown(BuildContext context, TapDownDetails details) async {
+    final RenderBox? box = context.findRenderObject() as RenderBox?;
+    if (box == null) return;
+    final Offset localOffset = box.globalToLocal(details.globalPosition);
+    final List<Annotation> clickedAnnotations = <Annotation>[];
+    for (int i = 0; i < _paintHistory.length; i++) {
+      final PaintInfo info = _paintHistory[i];
+      if (info.offset == null || info.offset!.length < 2) continue;
+      final Offset start = info.offset![0] ?? Offset.zero;
+      final Offset end = info.offset![1] ?? Offset.zero;
+      if (Rect.fromPoints(start, end).contains(localOffset)) {
+        clickedAnnotations.add(info.annotation);
+      }
+    }
+    if (clickedAnnotations.isEmpty) return;
+    String annotations = '';
+    for (int i = 0; i < clickedAnnotations.length; i++) {
+      // ignore: use_string_buffers
+      annotations += '${clickedAnnotations[i].content ?? ''}\n';
+    }
+    await DialogBuilder(context)
+        .textDialog(annotations, 'Clicked Annotation:', translateTitle: false);
+  }
+
   @override
   Widget build(BuildContext context) => ValueListenableBuilder<bool>(
         valueListenable: _isLoaded,
@@ -474,17 +504,8 @@ class AnnotatableImageState extends State<AnnotatableImage> {
           child: ClipRect(
             child: ValueListenableBuilder<Controller>(
               valueListenable: _controller,
-              builder: (_, Controller controller, __) =>
-                  ImagePainterTransformer(
-                maxScale: 2.4,
-                minScale: 1,
-                panEnabled: false,
-                scaleEnabled: widget.isScalable!,
-                onInteractionUpdate: (ScaleUpdateDetails details) =>
-                    _scaleUpdateGesture(details, controller),
-                onInteractionEnd: (ScaleEndDetails details) =>
-                    _scaleEndGesture(details, controller),
-                child: CustomPaint(
+              builder: (BuildContext context, Controller controller, __) {
+                final CustomPaint image = CustomPaint(
                   size:
                       Size(_image!.width.toDouble(), _image!.height.toDouble()),
                   willChange: true,
@@ -500,8 +521,24 @@ class AnnotatableImageState extends State<AnnotatableImage> {
                         painter: _painter,
                         mode: controller.mode),
                   ),
-                ),
-              ),
+                );
+                return ImagePainterTransformer(
+                  maxScale: 2.4,
+                  minScale: 1,
+                  panEnabled: false,
+                  scaleEnabled: widget.isScalable!,
+                  onInteractionUpdate: (ScaleUpdateDetails details) =>
+                      _scaleUpdateGesture(details, controller),
+                  onInteractionEnd: (ScaleEndDetails details) =>
+                      _scaleEndGesture(details, controller),
+                  child: widget.clickable
+                      ? GestureDetector(
+                          onTapDown: (TapDownDetails details) =>
+                              onTapDown(context, details),
+                          child: image)
+                      : image,
+                );
+              },
             ),
           ),
         ),
@@ -601,11 +638,12 @@ class AnnotatableImageState extends State<AnnotatableImage> {
 
   Future<void> _addEndPoints() async {
     if (_start == null || _end == null) return;
-    final bool res =
+    final Annotation? res =
         await widget.annotateCallback(_start!, _end!, _painter.color);
-    if (res != true) return;
+    if (res == null) return;
     _addPaintHistory(
       PaintInfo(
+        annotation: res,
         offset: <Offset?>[_start, _end],
         painter: _painter,
         mode: _controller.value.mode,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../features/learning-space/models/annotation_model.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../constants/main_type_definitions.dart';
@@ -55,7 +56,7 @@ class DialogBuilder {
       );
 
   /// Annotate dialog
-  Future<bool?> annotateDialog(
+  Future<Annotation?> annotateDialog(
     String? chapterId, {
     AnnotateTextDialogCallback? textCallback,
     AnnotateImageDialogCallback? imageCallback,
@@ -67,7 +68,7 @@ class DialogBuilder {
     String? imageUrl,
   }) async {
     String annotationText = '';
-    final bool? res = await showDialog(
+    final Annotation? res = await showDialog(
       context: context,
       // barrierDismissible: false,
       builder: (BuildContext context) => StatefulBuilder(
@@ -99,16 +100,20 @@ class DialogBuilder {
           actions: <Widget>[
             _dialogActionButton(
               TextKeys.cancel,
-              callback: () => Navigator.of(context).pop(false),
+              callback: () => Navigator.of(context).pop(null),
             ),
             _dialogActionButton(
               TextKeys.annotate,
               asyncCallback: () async {
+                final NavigatorState navigator = Navigator.of(context);
+
                 if (textCallback != null) {
-                  await textCallback(startIndex ?? 0, endIndex ?? 0,
-                      annotationText, chapterId);
+                  final Annotation? a = await textCallback(startIndex ?? 0,
+                      endIndex ?? 0, annotationText, chapterId);
+                  navigator.pop(a);
+                  return null;
                 } else if (imageCallback != null && imageUrl != null) {
-                  await imageCallback(
+                  final Annotation? a = await imageCallback(
                     startOffset ?? Offset.zero,
                     endOffset ?? Offset.zero,
                     annotationText,
@@ -116,7 +121,10 @@ class DialogBuilder {
                     color ?? Colors.white,
                     imageUrl,
                   );
+                  navigator.pop(a);
+                  return null;
                 }
+                navigator.pop(null);
                 return null;
               },
               isAction: true,
@@ -139,10 +147,8 @@ class DialogBuilder {
       isAction
           ? ActionButton(
               onPressedError: () async {
-                final NavigatorState navigator = Navigator.of(context);
                 final String? res =
                     asyncCallback == null ? null : await asyncCallback();
-                navigator.pop(res == null);
                 return res;
               },
               isActive: isActive,
