@@ -71,6 +71,7 @@ class EventItem extends StatelessWidget {
           maxLines: 1000,
           style: context.bodySmall,
         ),
+        BaseText(TextKeys.eventDate),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
