@@ -1,3 +1,10 @@
+/// This code is inspired by and integrated from the following repository:
+/// https://github.com/yellowQ-software/yellowQ-Flutter-Image-Painter
+/// This code just integrates the features in the given repository into
+/// our project and configures the required places to allow more functionality.
+/// Given repository doesn't have anything related to the annotations.
+/// We implemented and integrated annotation feature ourselves.
+///
 import 'package:flutter/material.dart';
 
 import 'image_painter.dart';
