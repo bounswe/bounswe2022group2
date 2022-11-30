@@ -44,7 +44,7 @@ class ChapterList extends StatelessWidget {
     );
   }
 
-  void updateExpansions(
+  static void updateExpansions(
       int index, List<GlobalKey<CustomExpansionTileState>> keys) {
     for (int i = 0; i < keys.length; i++) {
       final CustomExpansionTileState? state = keys[i].currentState;

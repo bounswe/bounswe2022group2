@@ -7,6 +7,7 @@ class Event extends BaseModel<Event> {
     this.id,
     this.date,
     this.description,
+    this.title,
     this.duration,
     this.participationLimit,
     this.eventCreator,
@@ -22,6 +23,7 @@ class Event extends BaseModel<Event> {
         id: id.toString(),
         courseId: id.toString(),
         date: DateTime.now().add(Duration(days: Random().nextInt(20))),
+        title: "Let's Do This",
         description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         participationLimit: 100,
@@ -36,6 +38,7 @@ class Event extends BaseModel<Event> {
         id: BaseModel.getByType<String>(json['id']),
         date: BaseModel.getByType<DateTime>(json['date']),
         description: BaseModel.getByType<String>(json['description']),
+        title: BaseModel.getByType<String>(json['title']),
         duration: BaseModel.getByType<int>(json['duration']),
         participationLimit:
             BaseModel.getByType<int>(json['participationLimit']),
@@ -57,6 +60,7 @@ class Event extends BaseModel<Event> {
     int? participationLimit,
     String? eventCreator,
     double? geoLocationLat,
+    String? title,
     double? geoLocationLon,
     List<String>? participants,
     bool? isHappening,
@@ -70,6 +74,7 @@ class Event extends BaseModel<Event> {
         participationLimit: participationLimit ?? this.participationLimit,
         duration: duration ?? this.duration,
         courseId: courseId ?? this.courseId,
+        title: title ?? this.title,
         eventCreator: eventCreator ?? this.eventCreator,
         geoLocationLat: geoLocationLat ?? this.geoLocationLat,
         geoLocationLon: geoLocationLon ?? this.geoLocationLon,
@@ -90,6 +95,7 @@ class Event extends BaseModel<Event> {
   final bool isHappening;
   final String? courseId;
   final bool isCompleted;
+  final String? title;
 
   @override
   Event fromJson(Map<String, dynamic> json) => Event.fromJson(json);
@@ -108,11 +114,11 @@ class Event extends BaseModel<Event> {
         'isHappening': isHappening,
         'courseId': courseId,
         'isCompleted': isCompleted,
+        'title': title,
       };
 
   @override
   List<Object?> get props => <Object?>[
-        id,
         id,
         date,
         description,
@@ -125,5 +131,6 @@ class Event extends BaseModel<Event> {
         isHappening,
         courseId,
         isCompleted,
+        title
       ];
 }

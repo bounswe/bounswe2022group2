@@ -75,5 +75,7 @@
   "taken_courses": "Taken Courses",
   "friend_courses": "Friends' Courses",
   "recommended_courses": "Recommended Courses",
-  "click_image_annotations": "Click on image for annotations"
+  "click_image_annotations": "Click on image for annotations",
+  "create_event": "Create an Event",
+  "edit_event": "Edit the Event"
 }

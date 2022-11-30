@@ -26,10 +26,12 @@ import '../../../product/language/language_keys.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
+import '../models/event.dart';
 import '../view-model/learning_space_view_model.dart';
 
 part 'components/chapter/chapter_item.dart';
 part 'components/chapter/chapter_list.dart';
+part 'components/events/event_item.dart';
 part 'components/events/events_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
@@ -73,7 +75,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
               vertical: context.height * .6, horizontal: context.width * 2),
           sliver: tabKey == TextKeys.chapters
               ? const ChapterList()
-              : (tabKey == TextKeys.chapters
+              : (tabKey == TextKeys.events
                   ? const EventsList()
                   : SliverList(
                       delegate: SliverChildBuilderDelegate(

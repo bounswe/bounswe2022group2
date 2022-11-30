@@ -5,6 +5,8 @@ class EventsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LearningSpaceViewModel viewModel =
+        context.read<LearningSpaceViewModel>();
     final Tuple2<int, List<GlobalKey<CustomExpansionTileState>>> tuple =
         SelectorHelper<Tuple2<int, List<GlobalKey<CustomExpansionTileState>>>,
                 LearningSpaceViewModel>()
@@ -17,22 +19,18 @@ class EventsList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
-            ? createEditButton(
-                context,
-                TextKeys.createChapter,
-                Icons.add_outlined,
-                context.read<LearningSpaceViewModel>().createChapter,
-              )
+            ? ChapterList.createEditButton(context, TextKeys.createEvent,
+                Icons.event_available_outlined, viewModel.createEvent)
             : Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: context.height * .3),
-                    child: ChapterItem(
+                    child: EventItem(
                       itemIndex: i - 1,
                       callback: (int itemIndex) =>
-                          updateExpansions(itemIndex, keys),
+                          ChapterList.updateExpansions(itemIndex, keys),
                       expansionTileKey: keys[i - 1],
                     ),
                   ),
@@ -43,33 +41,4 @@ class EventsList extends StatelessWidget {
       ),
     );
   }
-
-  void updateExpansions(
-      int index, List<GlobalKey<CustomExpansionTileState>> keys) {
-    for (int i = 0; i < keys.length; i++) {
-      final CustomExpansionTileState? state = keys[i].currentState;
-      if (index == i) continue;
-      state?.setExpansion(false);
-    }
-  }
-
-  static Widget createEditButton(BuildContext context, String textKey,
-          IconData icon, ErrorHelper callback) =>
-      Padding(
-        padding: EdgeInsets.only(
-            top: context.height * 1.7,
-            bottom: context.height * .3,
-            left: context.width * 20,
-            right: context.width * 20),
-        child: ActionButton(
-          icon: BaseIcon(context, icon),
-          text: textKey,
-          height: context.height * 4.8,
-          backgroundColor: context.secondary,
-          padding: EdgeInsets.symmetric(
-              horizontal: context.responsiveSize * 2.8,
-              vertical: context.responsiveSize * 1.4),
-          onPressedError: callback,
-        ),
-      );
 }

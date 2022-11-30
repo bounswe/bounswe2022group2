@@ -81,6 +81,20 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
+  Future<String?> createEvent() async {
+    // TODO: Fix
+    // await navigationManager.navigateToPage(
+    //     path: NavigationConstants.createEditChapter);
+    return null;
+  }
+
+  Future<String?> editEvent() async {
+    // TODO: Fix
+    // await navigationManager.navigateToPage(
+    //     path: NavigationConstants.createEditChapter);
+    return null;
+  }
+
   Future<Annotation?> annotateText(int startIndex, int endIndex,
       String annotation, String? chapterId) async {
     final int itemIndex = _chapters.indexWhere(
