@@ -11,24 +11,31 @@ function CreateLS() {
         <div>
              <NavBar />
             <div className='home'>
-                <label className='ls-box-lb-option-large'> Create Learning Space </label>
+                    <label className='ls-box-lb-option-large'> Create Learning Space </label>
+                    <div className='space-20' />
+                <div className='home-container'>
+                    <div className='ls-box'>
+                    <label className='ls-box-lb-option'> Learning Space Name </label>
+                    <div className='space-5' />
+                    <label>
+                    <span className='details-box' role='textbox' contentEditable></span>
+                    </label>
+                    </div>
+                    <div className='ls-box'>
+                    <label className='ls-box-lb-option'> Learning Space Description </label>
+                    <div className='space-5' />
+                    <label>
+                    <span className='details-box' role='textbox' contentEditable></span>
+                    </label>
+                    </div>
+                    <div className='ls-box'>
+                    <label className='ls-box-lb-option'> Select Category</label>
+                    <div className='space-5' />
+                    <Dropdown/>
+                    </div>
+                </div>
+            
                 <div className='space-20' />
-                <label className='ls-box-lb-option'> Learning Space Name </label>
-                <div className='space-5' />
-                <label>
-                <span className='details-box' role='textbox' contentEditable></span>
-                </label>
-                
-                <div className='space-20' />
-                <label className='ls-box-lb-option'> Learning Space Description </label>
-                <div className='space-5' />
-                <label>
-                <span className='details-box' role='textbox' contentEditable></span>
-                </label>
-
-                <div className='space-20' />
-                <label className='ls-box-lb-option'> Select Category</label>
-                <Dropdown/>
                 <label className='ls-box-lb-option'> Select an Icon</label>
                 <SelectIconGrid/>
                 <div className='space-20' />

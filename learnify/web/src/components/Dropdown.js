@@ -22,7 +22,7 @@ export default function Dropdown(props) {
     const [selected, setSelected] = React.useState(null);
     return (
         <div className='dropdown'>
-            <div className='dropdown-btn'>
+            <div>
             <button 
             className='dropdown-btn'
              onClick={(e) => setIsActivated(!isActivated)}>

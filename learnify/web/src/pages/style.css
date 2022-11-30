@@ -484,6 +484,24 @@ h1 {
     font-size: 42px;
     font-weight: bold;
 }
+.home-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7E9;
+}
+.ls-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7E9;
+}
 
 .ls-box-button {
     height: 26px;
