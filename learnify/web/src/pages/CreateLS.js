@@ -14,21 +14,21 @@ function CreateLS() {
                     <label className='ls-box-lb-option-large'> Create Learning Space </label>
                     <div className='space-20' />
                 <div className='home-container'>
-                    <div className='ls-box'>
+                    <div className='ls-box-create'>
                     <label className='ls-box-lb-option'> Learning Space Name </label>
                     <div className='space-5' />
                     <label>
                     <span className='details-box' role='textbox' contentEditable></span>
                     </label>
                     </div>
-                    <div className='ls-box'>
+                    <div className='ls-box-create'>
                     <label className='ls-box-lb-option'> Learning Space Description </label>
                     <div className='space-5' />
                     <label>
                     <span className='details-box' role='textbox' contentEditable></span>
                     </label>
                     </div>
-                    <div className='ls-box'>
+                    <div className='ls-box-create'>
                     <label className='ls-box-lb-option'> Select Category</label>
                     <div className='space-5' />
                     <Dropdown/>

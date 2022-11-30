@@ -493,6 +493,15 @@ h1 {
     height: 100%;
     background-color: #FFF7E9;
 }
+.ls-box-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7E9;
+}
 .ls-box{
     display: flex;
     flex-direction: column;
