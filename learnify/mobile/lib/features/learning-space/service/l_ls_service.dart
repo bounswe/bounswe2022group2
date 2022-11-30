@@ -7,4 +7,5 @@ import '../models/create_ls_response_model.dart';
 abstract class ILSService extends BaseService {
   /// Creates a new learning space
   Future<IResponseModel<CreateLSResponse>> createLS(CreateLSRequest body);
+  Future<List<String>> getCategories();
 }
