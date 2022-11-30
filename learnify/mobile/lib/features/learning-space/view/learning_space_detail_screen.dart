@@ -15,7 +15,6 @@ import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
-import '../../../core/widgets/image/custom_network_image.dart';
 import '../../../core/widgets/image/image_painter.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
@@ -31,6 +30,7 @@ import '../view-model/learning_space_view_model.dart';
 
 part 'components/chapter/chapter_item.dart';
 part 'components/chapter/chapter_list.dart';
+part 'components/events/events_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
@@ -73,21 +73,23 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
               vertical: context.height * .6, horizontal: context.width * 2),
           sliver: tabKey == TextKeys.chapters
               ? const ChapterList()
-              : SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (_, int i) => Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: context.height * .3),
-                            child: const Text('i')),
-                        const CustomDivider(),
-                      ],
-                    ),
-                    childCount: 12,
-                  ),
-                ),
+              : (tabKey == TextKeys.chapters
+                  ? const EventsList()
+                  : SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (_, int i) => Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: context.height * .3),
+                                child: const Text('i')),
+                            const CustomDivider(),
+                          ],
+                        ),
+                        childCount: 12,
+                      ),
+                    )),
         ),
       ];
 

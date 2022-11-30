@@ -8,16 +8,23 @@ import '../../../core/extensions/string/string_extensions.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
+import '../models/event.dart';
 
 /// View model to manage the data on learning space screen.
 class LearningSpaceViewModel extends BaseViewModel {
   // TODO: Will be taken from the course model when Egemen created it
   List<Chapter> _chapters = <Chapter>[];
   List<Chapter> get chapters => _chapters;
+  List<Event> _events = <Event>[];
+  List<Event> get events => _events;
   List<GlobalKey<CustomExpansionTileState>> _expansionTileKeys =
       <GlobalKey<CustomExpansionTileState>>[];
   List<GlobalKey<CustomExpansionTileState>> get expansionTileKeys =>
       _expansionTileKeys;
+  List<GlobalKey<CustomExpansionTileState>> _eventsExpansionTileKeys =
+      <GlobalKey<CustomExpansionTileState>>[];
+  List<GlobalKey<CustomExpansionTileState>> get eventsExpansionTileKeys =>
+      _eventsExpansionTileKeys;
 
   List<CarouselController> _carouselControllers = <CarouselController>[];
   List<CarouselController> get carouselControllers => _carouselControllers;
@@ -28,6 +35,7 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _chapters = List<Chapter>.generate(20, Chapter.dummy);
+    _events = List<Event>.generate(20, Event.dummy);
   }
 
   @override
@@ -37,6 +45,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   void initView() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
         _chapters.length, (_) => GlobalKey<CustomExpansionTileState>());
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            _events.length, (_) => GlobalKey<CustomExpansionTileState>());
     _carouselControllers = List<CarouselController>.generate(
         _chapters.length, (_) => CarouselController());
     _carouselPageIndexes = List<int>.generate(_chapters.length, (_) => 0);
