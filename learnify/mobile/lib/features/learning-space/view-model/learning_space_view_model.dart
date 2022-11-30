@@ -95,4 +95,39 @@ class LearningSpaceViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+
+  Future<String?> annotateImage(
+      Offset startOffset,
+      Offset endOffset,
+      String annotation,
+      String? chapterId,
+      Color color,
+      String? imageUrl) async {
+    final int itemIndex = _chapters.indexWhere(
+        (Chapter c) => c.id?.compareWithoutCase(chapterId) ?? false);
+    if (itemIndex == -1) return 'Chapter not found';
+    final Chapter oldChapter = _chapters[itemIndex];
+    final List<Annotation> newAnnotations =
+        List<Annotation>.from(oldChapter.annotations)
+          ..add(
+            Annotation(
+              id: (startOffset.dx * endOffset.dx + Random().nextInt(490))
+                  .toString(),
+              content: annotation,
+              startOffset: startOffset,
+              endOffset: endOffset,
+              chapterId: oldChapter.id,
+              courseId: oldChapter.courseId,
+              isImage: true,
+              colorParam: color,
+              imageUrl: imageUrl,
+            ),
+          )
+          ..sort((Annotation a1, Annotation a2) =>
+              a1.startIndex.compareTo(a2.startIndex));
+    _chapters[itemIndex] =
+        _chapters[itemIndex].copyWith(annotations: newAnnotations);
+    notifyListeners();
+    return null;
+  }
 }

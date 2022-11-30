@@ -27,6 +27,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
               context.read<HomeViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
+        
   static Widget _builder(BuildContext context) => Padding(
         padding: EdgeInsets.only(
             left: context.width * 4,
