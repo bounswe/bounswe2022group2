@@ -40,8 +40,7 @@ class ViewAllScreen extends BaseView<HomeViewModel> {
             padding: EdgeInsets.all(context.responsiveSize * .6),
           ),
           BaseIconButton(
-            onPressed: () async => NavigationManager.instance
-                .navigateToPageClear(path: NavigationConstants.home),
+            onPressed: () => Navigator.of(context).pop(),
             icon: Icons.arrow_back_outlined,
             color: context.lightActiveColor,
           ),

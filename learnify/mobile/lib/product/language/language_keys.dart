@@ -24,6 +24,8 @@ class TextKeys {
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
+  static const String learnifies = 'learnifies';
+  static const String users = 'users';
   static const String forgetDesc = 'forget_desc';
   static const String takePhoto = 'take_photo';
   static const String chooseFromGallery = 'choose_from_gallery';
