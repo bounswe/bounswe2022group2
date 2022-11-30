@@ -40,10 +40,21 @@ class EventItem extends StatelessWidget {
       collapsedTextColor: context.inactiveTextColor,
       collapsedIconColor: context.inactiveTextColor,
       tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 5)
+      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
           .copyWith(bottom: context.height * 1.7),
-      title:
-          MultiLineText('${itemIndex + 1}. ${event.title}', translated: false),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Flexible(
+            child:
+                BaseText('${itemIndex + 1}. ${event.title}', translated: false),
+          ),
+          BaseText(
+              DateFormat('dd MMM - kk:mm').format(event.date ?? DateTime.now()),
+              translated: false,
+              style: context.bodyMedium),
+        ],
+      ),
       expandedCrossAxisAlignment: CrossAxisAlignment.center,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
@@ -54,91 +65,15 @@ class EventItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        BaseText(TextKeys.clickToSeeImageAnnotations,
-            style: context.labelMedium),
+        MultiLineText(
+          event.description ?? '',
+          translated: false,
+          maxLines: 1000,
+          style: context.bodySmall,
+        ),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
     );
   }
-
-  CarouselSlider _carouselSlider(
-      LearningSpaceViewModel viewModel, Chapter chapter, BuildContext context) {
-    final List<String> images = chapter.materialVisual;
-    return CarouselSlider.builder(
-      key: PageStorageKey<String>(
-          '${chapter.id} - ${chapter.annotations.toList()}'),
-      itemCount: images.length,
-      carouselController: viewModel.carouselControllers[itemIndex],
-      options: CarouselOptions(
-        aspectRatio: 20 / 9,
-        viewportFraction: 0.75,
-        enlargeCenterPage: true,
-        autoPlay: true,
-        enableInfiniteScroll: false,
-        onPageChanged: (int newIndex, _) =>
-            viewModel.setCarouselPageIndex(newIndex, itemIndex),
-      ),
-      itemBuilder: (_, int i, __) {
-        final List<Annotation> imageAnnotations = chapter.annotations
-            .where((Annotation a) => a.isImage && a.imageUrl == images[i])
-            .toList();
-        return GestureDetector(
-          onTap: () => NavigationManager.instance.navigateToPage(
-              path: NavigationConstants.chapterImage,
-              data: <String, dynamic>{
-                'image': images[i],
-                'all_annotations': chapter.annotations,
-                'chapter_id': chapter.id,
-              }),
-          child: AnnotatableImage.network(
-            images[i],
-            annotateCallback: (Offset start, Offset end, Color color) async =>
-                null,
-            scalable: false,
-            initialColor: context.primary,
-            initialPaintMode: PaintMode.none,
-            paintHistory:
-                List<PaintInfo>.generate(imageAnnotations.length, (int i) {
-              final Annotation a = imageAnnotations[i];
-              return PaintInfo(
-                annotation: a,
-                offset: <Offset>[a.startOffset, a.endOffset],
-                painter: Paint()
-                  ..color = a.color
-                  ..strokeWidth = 4
-                  ..style = PaintingStyle.stroke,
-              );
-            }),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _sliderIndicator(LearningSpaceViewModel viewModel, Chapter chapter) =>
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List<Widget>.generate(
-          chapter.materialVisual.length,
-          (int i) => GestureDetector(
-            onTap: () =>
-                viewModel.carouselControllers[itemIndex].animateToPage(i),
-            child: SelectorHelper<int, LearningSpaceViewModel>().builder(
-              (_, LearningSpaceViewModel model) =>
-                  model.carouselPageIndexes[itemIndex],
-              (BuildContext context, int index, _) => Container(
-                width: context.width * 2.5,
-                height: context.width * 2.5,
-                margin: EdgeInsets.symmetric(
-                    vertical: context.height, horizontal: context.width),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: context.primary.withOpacity(index == i ? 0.9 : 0.4),
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
 }

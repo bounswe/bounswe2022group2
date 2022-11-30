@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:measured_size/measured_size.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';

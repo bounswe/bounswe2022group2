@@ -25,7 +25,7 @@ class Event extends BaseModel<Event> {
         date: DateTime.now().add(Duration(days: Random().nextInt(20))),
         title: "Let's Do This",
         description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
         participationLimit: 100,
         duration: Random().nextInt(15) * 60,
         eventCreator: 'eventCreator',
