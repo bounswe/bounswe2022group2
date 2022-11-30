@@ -16,7 +16,7 @@ import 'custom_text_selection_controls.dart';
 class AnnotatableText extends StatelessWidget {
   const AnnotatableText({
     required this.content,
-    required this.annotations,
+    required this.allAnnotations,
     required this.onAnnotationClick,
     required this.annotateLabel,
     required this.annotateCallback,
@@ -29,7 +29,7 @@ class AnnotatableText extends StatelessWidget {
 
   final List<CustomAnnotatableItem>? items;
 
-  final List<Annotation> annotations;
+  final List<Annotation> allAnnotations;
 
   final List<TextStyle?>? textStyles;
 
@@ -41,7 +41,10 @@ class AnnotatableText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<_AnnotatableTextItem> mergedAnnotations = _mergeAnnotations;
+    final List<Annotation> annotations =
+        allAnnotations.where((Annotation e) => !e.isImage).toList();
+    final List<_AnnotatableTextItem> mergedAnnotations =
+        _mergeAnnotations(annotations);
     return SelectableText.rich(
       TextSpan(
         style: context.bodyMedium,
@@ -87,7 +90,7 @@ class AnnotatableText extends StatelessWidget {
     );
   }
 
-  List<_AnnotatableTextItem> get _mergeAnnotations {
+  List<_AnnotatableTextItem> _mergeAnnotations(List<Annotation> annotations) {
     final SplayTreeSet<int> indexes =
         SplayTreeSet<int>.from(<int>{0}..add(content.length - 1));
     for (final Annotation a in annotations) {

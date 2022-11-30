@@ -76,4 +76,5 @@ class TextKeys {
   static const String takenCourses = "taken_courses";
   static const String friendCourses = "friend_courses";
   static const String recommendedCourses = "recommended_courses";
+  static const String clickToSeeImageAnnotations = "click_image_annotations";
 }
