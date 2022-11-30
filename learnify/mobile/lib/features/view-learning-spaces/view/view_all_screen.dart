@@ -8,58 +8,29 @@ import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/navigation_constants.dart';
-import '../../home/model/course_model.dart';
+import '../../home/model/learning_space_model.dart';
 import '../../home/view-model/home_view_model.dart';
-import '../../home/view/home_screen.dart';
+import 'view_all_list.dart';
 
 class ViewAllScreen extends BaseView<HomeViewModel> {
   ViewAllScreen(
-      {required List<Course> listOfCourses,
-      required String coursesType,
+      {required List<LearningSpace> listOfLearningSpaces,
+      required String learningSpacesType,
       Key? key})
       : super(
           builder: (BuildContext context) =>
-              _builder(context, listOfCourses, coursesType),
+              _builder(context, listOfLearningSpaces),
           appBar: (BuildContext context) =>
-              _appBarBuilder(context, coursesType),
-          scrollable: true,
+              _appBarBuilder(context, learningSpacesType),
           key: key,
         );
 
-  static Widget _builder(BuildContext context, List<Course> listOfCourses,
-          String coursesType) =>
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(
-                left: context.width * 4,
-                bottom: context.height * 3,
-                right: context.width * 1),
-            child: GridView.builder(
-              physics: const ScrollPhysics(),
-              itemCount: 15,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) =>
-                  const CoursePreview(
-                      textKey: "Learning Space",
-                      //ToDo after the courses are initialized:
-                      //listOfCourses[index].name ?? ''
-                      participantNumber: 100
-                      //ToDo after the courses are initialized:
-                      //listOfCourses[index].numParticipants ?? 0
-                      ),
-            ),
-          ),
-        ],
+  static Widget _builder(
+          BuildContext context, List<LearningSpace> listOfLearningSpaces) =>
+      ViewAllList(
+        listOfLearningSpaces: listOfLearningSpaces,
+        buttonExist: false,
       );
-
   static DefaultAppBar _appBarBuilder(BuildContext context, String title) =>
       DefaultAppBar(
         size: context.height * 6,

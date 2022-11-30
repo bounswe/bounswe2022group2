@@ -4,8 +4,8 @@ import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
-import '../model/course_model.dart';
-import '../model/get_courses_response_model.dart';
+import '../model/get_learning_spaces_response_model.dart';
+import '../model/learning_space_model.dart';
 import '../service/I_home_service.dart';
 import '../service/home_service.dart';
 
@@ -13,14 +13,15 @@ import '../service/home_service.dart';
 class HomeViewModel extends BaseViewModel {
   late final IHomeService _homeService;
 
-  List<Course> _takenCourses = <Course>[];
-  List<Course> get takenCourses => _takenCourses;
+  List<LearningSpace> _takenLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> get takenLearningSpaces => _takenLearningSpaces;
 
-  List<Course> _friendCourses = <Course>[];
-  List<Course> get friendCourses => _friendCourses;
+  List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> get friendLearningSpaces => _friendLearningSpaces;
 
-  List<Course> _recommendedCourses = <Course>[];
-  List<Course> get recommendedCourses => _recommendedCourses;
+  List<LearningSpace> _recommendedLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> get recommendedLearningSpaces =>
+      _recommendedLearningSpaces;
 
   bool _takenViewAll = false;
   bool get takenViewAll => _takenViewAll;
@@ -38,9 +39,9 @@ class HomeViewModel extends BaseViewModel {
 
   @override
   void disposeViewModel() {
-    _takenCourses.clear();
-    _friendCourses.clear();
-    _recommendedCourses.clear();
+    _takenLearningSpaces.clear();
+    _friendLearningSpaces.clear();
+    _recommendedLearningSpaces.clear();
   }
 
   @override
@@ -51,73 +52,80 @@ class HomeViewModel extends BaseViewModel {
 
   void _setDefault() {}
 
-  Future<void> fetchInitialCourses() async {
-    if (_takenCourses.isNotEmpty ||
-        _friendCourses.isNotEmpty ||
-        _recommendedCourses.isNotEmpty) return;
-    await _getCourses();
+  Future<void> fetchInitialLearningSpaces() async {
+    if (_takenLearningSpaces.isNotEmpty ||
+        _friendLearningSpaces.isNotEmpty ||
+        _recommendedLearningSpaces.isNotEmpty) return;
+    await _getLearningSpaces();
   }
 
-  Future<String?> _getCourses() async {
+  Future<String?> _getLearningSpaces() async {
     await operation?.cancel();
-    operation = CancelableOperation<String?>.fromFuture(_getCoursesRequest());
+    operation =
+        CancelableOperation<String?>.fromFuture(_getLearningSpacesRequest());
     final String? res = await operation?.valueOrCancellation();
     return res;
   }
 
-  Future<String?> _getCoursesRequest() async {
-    final IResponseModel<GetCoursesResponse> resp =
-        await _homeService.getCourses();
-    final GetCoursesResponse? respData = resp.data;
+  Future<String?> _getLearningSpacesRequest() async {
+    final IResponseModel<GetLearningSpacesResponse> resp =
+        await _homeService.getLearningSpaces();
+    final GetLearningSpacesResponse? respData = resp.data;
     if (resp.hasError || respData == null) return resp.error?.errorMessage;
-    _takenCourses = respData.takenCourses;
-    _friendCourses = respData.friendCourses;
-    _recommendedCourses = respData.recommendedCourses;
-    if (_takenCourses.length > 8) _takenViewAll = true;
-    if (_friendCourses.length > 8) _friendViewAll = true;
-    if (_recommendedCourses.length > 8) _recommendedViewAll = true;
+    _takenLearningSpaces = respData.takenLearningSpaces;
+    _friendLearningSpaces = respData.friendLearningSpaces;
+    _recommendedLearningSpaces = respData.recommendedLearningSpaces;
+    if (_takenLearningSpaces.length > 8) _takenViewAll = true;
+    if (_friendLearningSpaces.length > 8) _friendViewAll = true;
+    if (_recommendedLearningSpaces.length > 8) _recommendedViewAll = true;
     return null;
   }
 
-  Future<String?> viewAll(String coursesType) async {
+  Future<String?> viewAll(String LearningSpacesType) async {
     await operation?.cancel();
-    await _viewAllRequest(coursesType);
+    await _viewAllRequest(LearningSpacesType);
     final String? res = await operation?.valueOrCancellation();
     return res;
   }
 
-  Future<String?> _viewAllRequest(String coursesType) async {
-    List<Course> expectedCourses;
-    final IResponseModel<GetCoursesResponse> resp =
-        await _homeService.getCourses();
-    final GetCoursesResponse? respData = resp.data;
+  Future<String?> _viewAllRequest(String learningSpacesType) async {
+    List<LearningSpace> expectedLearningSpaces;
+    final IResponseModel<GetLearningSpacesResponse> resp =
+        await _homeService.getLearningSpaces();
+    final GetLearningSpacesResponse? respData = resp.data;
     if (resp.hasError || respData == null) {
       //return resp.error?.errorMessage;
-      expectedCourses = takenCourses;
+      expectedLearningSpaces = takenLearningSpaces;
     } else {
-      if (coursesType == TextKeys.takenCourses) {
-        expectedCourses = respData.takenCourses;
-      } else if (coursesType == TextKeys.friendCourses) {
-        expectedCourses = respData.friendCourses;
-      } else if (coursesType == TextKeys.recommendedCourses) {
-        expectedCourses = respData.recommendedCourses;
+      if (learningSpacesType == TextKeys.takenLearnifies) {
+        expectedLearningSpaces = respData.takenLearningSpaces;
+      } else if (learningSpacesType == TextKeys.friendLearnifies) {
+        expectedLearningSpaces = respData.friendLearningSpaces;
+      } else if (learningSpacesType == TextKeys.recommendedLearnifies) {
+        expectedLearningSpaces = respData.recommendedLearningSpaces;
       } else {
-        return "Requested type of list of courses not found!";
+        return "Requested type of list of LearningSpaces not found!";
       }
     }
     await navigationManager.navigateToPage(
         path: NavigationConstants.viewall,
         data: <String, dynamic>{
-          'listOfCourses': expectedCourses,
-          'courseType': coursesType
+          'listOfLearningSpaces': expectedLearningSpaces,
+          'learningSpacesType': learningSpacesType
         });
     return null;
   }
 
-  bool getViewAllStatus(String coursesType) {
-    if (coursesType == TextKeys.takenCourses) return _takenViewAll;
-    if (coursesType == TextKeys.friendCourses) return _friendViewAll;
-    if (coursesType == TextKeys.recommendedCourses) return _recommendedViewAll;
+  bool getViewAllStatus(String learningSpacesType) {
+    if (learningSpacesType == TextKeys.takenLearnifies) {
+      return _takenViewAll;
+    }
+    if (learningSpacesType == TextKeys.friendLearnifies) {
+      return _friendViewAll;
+    }
+    if (learningSpacesType == TextKeys.recommendedLearnifies) {
+      return _recommendedViewAll;
+    }
     return false;
   }
 }
