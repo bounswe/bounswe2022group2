@@ -15,6 +15,7 @@ import '../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
 import '../models/learning_space_model.dart';
 import '../view-model/create_learning_space_view_model.dart';
+import 'learning_space_detail_screen.dart';
 
 part './components/create/add_categories.dart';
 part './components/create/learning_space_form.dart';
