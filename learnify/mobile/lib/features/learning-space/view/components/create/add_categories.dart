@@ -42,11 +42,11 @@ class _AddCategories extends StatelessWidget {
 
 class LabeledCheckbox extends StatelessWidget {
   const LabeledCheckbox({
-    super.key,
     required this.label,
     required this.padding,
     required this.value,
     required this.onChanged,
+    super.key,
   });
 
   final String label;
@@ -77,6 +77,6 @@ class LabeledCheckbox extends StatelessWidget {
 }
 
 class Category {
-  Category({required this.categoryName});
-  String categoryName;
+  const Category({required this.categoryName});
+  final String categoryName;
 }

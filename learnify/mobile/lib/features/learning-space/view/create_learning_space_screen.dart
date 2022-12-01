@@ -5,6 +5,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
+import '../../../core/base/model/base_model.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
@@ -28,6 +29,9 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
               _builder(context, isCreate, learningSpace),
           appBar: (BuildContext context) => _appBarBuilder(context, isCreate),
           key: key,
+          futureInit: (BuildContext context) => context
+              .read<CreateLearningSpaceViewModel>()
+              .fetchInitialCategories(),
           scrollable: true,
         );
 
