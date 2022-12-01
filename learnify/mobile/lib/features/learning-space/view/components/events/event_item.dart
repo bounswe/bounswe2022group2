@@ -72,6 +72,9 @@ class EventItem extends StatelessWidget {
         context.sizedH(1.2),
         _infoText(context, TextKeys.eventDate,
             DateFormat('dd MMMM yyyy - kk:mm').format(event.date)),
+        context.sizedH(.6),
+        _infoText(
+            context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
@@ -82,8 +85,10 @@ class EventItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
-              child: BaseText(key,
-                  style: context.bodySmall, textAlign: TextAlign.start)),
+              child: BaseText('${context.tr(key)}:',
+                  translated: false,
+                  style: context.bodySmall,
+                  textAlign: TextAlign.start)),
           Expanded(
               child: BaseText(
             value,

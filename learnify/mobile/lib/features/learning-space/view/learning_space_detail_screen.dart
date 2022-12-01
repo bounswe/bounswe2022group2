@@ -9,6 +9,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../core/constants/main_type_definitions.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
+import '../../../core/extensions/number/number_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
