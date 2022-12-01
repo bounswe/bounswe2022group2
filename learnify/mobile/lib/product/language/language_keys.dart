@@ -84,4 +84,6 @@ class TextKeys {
   static const String eventParticipationLimit = "event_participation_limit";
   static const String eventCreator = "event_creator";
   static const String eventParticipants = "event_participants";
+  static const String passedEvent = "passed_event";
+  
 }

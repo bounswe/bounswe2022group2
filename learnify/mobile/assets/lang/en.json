@@ -82,5 +82,6 @@
   "event_duration": "Duration",
   "event_participation_limit": "Participation Limit",
   "event_creator": "Event Creator",
-  "event_participants": "Participants"
+  "event_participants": "Participants",
+  "passed_event": "Event has Passed"
 }

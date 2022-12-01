@@ -26,6 +26,7 @@ class EventItem extends StatelessWidget {
         contentPadding: EdgeInsets.zero,
         minLeadingWidth: 0,
         minVerticalPadding: 0,
+        horizontalTitleGap: 0,
         dense: true,
         child: _expansionTile(context, event),
       ),
@@ -44,6 +45,7 @@ class EventItem extends StatelessWidget {
         .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
         .toList();
     final Map<String, dynamic> userName = userList.last['name'];
+    final bool isPassed = event.date.isBefore(DateTime.now());
     return CustomExpansionTile(
       key: expansionTileKey,
       collapsedTextColor: context.inactiveTextColor,
@@ -62,6 +64,8 @@ class EventItem extends StatelessWidget {
               translated: false, style: context.bodyMedium),
         ],
       ),
+      collapsedBackgroundColor: isPassed ? Colors.red[300] : null,
+      backgroundColor: isPassed ? Colors.red[300] : null,
       expandedCrossAxisAlignment: CrossAxisAlignment.center,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
@@ -101,8 +105,12 @@ class EventItem extends StatelessWidget {
               translated: false,
               style: context.bodySmall,
             )),
-        ChapterList.createEditButton(context, TextKeys.editEvent,
-            Icons.edit_outlined, viewModel.editEvent),
+        ChapterList.createEditButton(
+          context,
+          isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
+          isPassed ? Icons.timer_off_outlined :Icons.edit_outlined,
+          isPassed ? null : viewModel.editEvent,
+        ),
       ],
     );
   }

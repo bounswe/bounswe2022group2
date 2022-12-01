@@ -22,7 +22,9 @@ class Event extends BaseModel<Event> {
   factory Event.dummy(int? id) => Event(
         id: id.toString(),
         courseId: id.toString(),
-        date: DateTime.now().add(Duration(days: Random().nextInt(20))),
+        date: (id ?? 0) % 3 == 0
+            ? DateTime.now().subtract(Duration(days: Random().nextInt(20)))
+            : DateTime.now().add(Duration(days: Random().nextInt(20))),
         title: "Let's Do This",
         description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",

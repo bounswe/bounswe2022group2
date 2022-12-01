@@ -54,7 +54,7 @@ class ChapterList extends StatelessWidget {
   }
 
   static Widget createEditButton(BuildContext context, String textKey,
-          IconData icon, ErrorHelper callback) =>
+          IconData icon, ErrorHelper? callback) =>
       Padding(
         padding: EdgeInsets.only(
             top: context.height * 1.7,
@@ -69,7 +69,11 @@ class ChapterList extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
               vertical: context.responsiveSize * 1.4),
-          onPressedError: callback,
+          isActive: callback != null,
+          onPressedError: () async {
+            if (callback != null) return await callback();
+            return null;
+          },
         ),
       );
 }
