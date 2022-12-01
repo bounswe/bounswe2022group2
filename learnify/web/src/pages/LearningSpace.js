@@ -43,13 +43,13 @@ function LearningSpace() {
                 </div>
                     <div className='ls-buttons'>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Category_A</button>
+                            <button className="btn-orange" data-testid="forgotPassword">Posts</button>
                         </div>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Category_B</button>
+                            <button className="btn-orange" data-testid="forgotPassword">Discussion</button>
                         </div>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Category_C</button>
+                            <button className="btn-orange" data-testid="forgotPassword">Notes</button>
                         </div>
                         <div className='ls-button-container-alt'>
                             <button className="btn-lightBlue" data-testid="forgotPassword">Add Post</button>
@@ -57,64 +57,100 @@ function LearningSpace() {
                        
                      </div>
                      <div className='space-8'></div>
+                <div className='ls-mid-entries'>
                     <div className='ls-box-mid'>
                         <label className='feed-title'>
-                            Learning-Space-Z
+                            Entry Title
                         </label>
                         <div className='space-5'></div>
-                             <div>element element element element element element</div>
-                            <div>element</div>
-                            <div>element</div>
-                            <div>element</div>
-                            <div>element</div>
+                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
+                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
+                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
+                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
+                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
                     </div>
                     <div className='ls-box-mid'>
                         <label className='feed-title'>
-                            Learning-Space-X
+                            Entry Title
                         </label>
                         <div className='space-5'></div>
-                             <div>element element element element element element</div>
-                            <div>element</div>
-                            <div>element</div>
-                            <div>element</div>
-                            <div>element</div>
+                             <div>Ac ut consequat semper viverra</div>
+                            <div>nam libero justo.</div>
+                            <div>Eget sit amet tellus cras adipiscing</div>
+                            <div>Pellentesque nec nam</div>
+                            <div>lorem mollis</div>
                     </div>
                     <div className='ls-box-mid'>
                         <label className='feed-title'>
-                            Learning-Space-A
+                            Entry Title
                         </label>
                         <div className='space-5'></div>
-                             <div>element element element element element element</div>
-                            <div>element</div>
-                            <div>element</div>
-                            <div>element</div>
-                            <div>element</div>
+                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
+                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
+                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
+                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
+                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
                     </div>
+                    <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                            Entry Title
+                        </label>
+                        <div className='space-5'></div>
+                             <div>Ac ut consequat semper viverra</div>
+                            <div>nam libero justo.</div>
+                            <div>Eget sit amet tellus cras adipiscing</div>
+                            <div>Pellentesque nec nam</div>
+                            <div>lorem mollis</div>
+                    </div>
+                    <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                            Entry Title
+                        </label>
+                        <div className='space-5'></div>
+                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
+                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
+                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
+                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
+                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
+                    </div>
+                    <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                            Entry Title
+                        </label>
+                        <div className='space-5'></div>
+                             <div>Ac ut consequat semper viverra</div>
+                            <div>nam libero justo.</div>
+                            <div>Eget sit amet tellus cras adipiscing</div>
+                            <div>Pellentesque nec nam</div>
+                            <div>lorem mollis</div>
+                    </div>
+                </div>
             </div>
 
             <div className='learning-space-right'>
                 <div className='space-5'></div>
                 <div className='ls-box'>
                     <label className='feed-title'>
-                        Side-Box
+                        Contributing Users
                     </label>
                     <div className='space-5'></div>
-                        <div>element element element element element element</div>
-                        <div>element</div>
-                        <div>element</div>
-                        <div>element</div>
-                        <div>element</div>
+                        <div>UserB</div>
+                        <div>Enes</div>
+                        <div>Koray</div>
+                        <div>Altay</div>
+                        <div>StudentA</div>
+                        <div>Gokay</div>
                 </div>
                 <div className='ls-box-org'>
                     <label className='feed-title'>
-                        Side-Box
+                        Events
                     </label>
                     <div className='space-5'></div>
-                        <div>element element element element element element</div>
-                        <div>element</div>
-                        <div>element</div>
-                        <div>element</div>
-                        <div>element</div>
+                        <div>event-1</div>
+                        <div>event-2</div>
+                        <div>event-3</div>
+                        <div>event-4</div>
+                        <div>event-5</div>
                 </div>
             </div>
 

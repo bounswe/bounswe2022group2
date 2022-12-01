@@ -667,7 +667,12 @@ h1 {
 }
 
 .ls-button-container-alt {
-   margin-left: 18em;
+   margin-left: 24em;
+}
+
+.ls-mid-entries{
+    max-height: 700px;
+    overflow-y: scroll;
 }
 
 .ls-buttons {
