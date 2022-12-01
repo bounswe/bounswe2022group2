@@ -4,7 +4,7 @@ const { Schema, model } = mongoose;
 // We can add additional fields if we enlarge the features of the app.
 
 const postSchema = new Schema({
-  name: {
+  title: {
     type: String, required: true
   },
   creator: {

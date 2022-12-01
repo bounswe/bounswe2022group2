@@ -28,7 +28,7 @@ if(!ls){
 var {username} = jwt.decode(req.body.token);
 
 let post = new Post({
-    name: req.body.name,
+    title: req.body.title,
     content: req.body.content,
     creator: username,
     images: [],
