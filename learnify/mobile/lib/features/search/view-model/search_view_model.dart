@@ -37,13 +37,12 @@ class SearchViewModel extends BaseViewModel {
   @override
   void disposeView() {
     _searchController.dispose();
+    _resultLearningSpaces = <LearningSpace>[];
     _setDefault();
     super.disposeView();
   }
 
-  void _setDefault() {
-    _resultLearningSpaces.clear();
-  }
+  void _setDefault() {}
 
   Future<void> _controllerListener() async {
     if (searchController.text.isEmpty) return;
@@ -69,6 +68,7 @@ class SearchViewModel extends BaseViewModel {
       final SearchResponse? respData = resp.data;
       if (resp.hasError || respData == null) return resp.error?.errorMessage;
       _resultLearningSpaces = respData.resultLearningSpaces;
+      notifyListeners();
     }
     return null;
   }

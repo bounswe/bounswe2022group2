@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../home/model/learning_space_model.dart';
+import '../../learning-space/view/learning_space_detail_screen.dart';
 import '../../view-learning-spaces/view/view_all_list.dart';
 import '/../../product/theme/light_theme.dart';
 import '../../../../core/base/view/base_view.dart';
@@ -15,7 +16,7 @@ import '../view-model/search_view_model.dart';
 part 'components/search_widget.dart';
 
 class SearchScreen extends BaseView<SearchViewModel> {
-  SearchScreen({Key? key})
+  const SearchScreen({Key? key})
       : super(
           builder: _builder,
           resizeToAvoidBottomInset: false,
@@ -55,9 +56,12 @@ class SearchScreen extends BaseView<SearchViewModel> {
       SliverPadding(
         padding: EdgeInsets.symmetric(
             vertical: context.height * .6, horizontal: context.width * 2),
-        sliver: tabKey == TextKeys.learnifies
-            ? ViewAllList(
-                listOfLearningSpaces: listOfLearningSpaces, buttonExist: false)
+        sliver: tabKey == TextKeys.learnifies && listOfLearningSpaces.isNotEmpty
+            ? //ViewAllList(
+            // listOfLearningSpaces:
+            //   context.read<SearchViewModel>().resultLearningSpaces,
+            //buttonExist: false)
+            const Text("i have found something!")
             : SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (_, int i) => Column(
@@ -77,7 +81,41 @@ class SearchScreen extends BaseView<SearchViewModel> {
     ];
   }
 
-  static Widget exCourses() => Column(
+  static List<Widget> _headerSliverBuilder(
+          BuildContext context, bool innerBoxIsScrolled) =>
+      <Widget>[
+        SliverOverlapAbsorber(
+          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+          sliver: SliverAppBar(
+            automaticallyImplyLeading: false,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              background: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: const <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 12),
+                    child: SearchWidget(),
+                  ),
+                ],
+              ),
+            ),
+            floating: true,
+            pinned: true,
+            expandedHeight: context.height * 18,
+            forceElevated: innerBoxIsScrolled,
+            bottom: TabBar(
+              unselectedLabelColor: Colors.white30,
+              indicatorColor: Colors.black,
+              tabs: SearchScreenConstants.tabKeys
+                  .map((String key) => Tab(text: context.tr(key)))
+                  .toList(),
+            ),
+          ),
+        ),
+      ];
+
+  static Widget exCourses(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           GridView.builder(
@@ -101,52 +139,5 @@ class SearchScreen extends BaseView<SearchViewModel> {
                     ),
           ),
         ],
-      );
-
-  static List<Widget> _headerSliverBuilder(
-          BuildContext context, bool innerBoxIsScrolled) =>
-      <Widget>[MySliverOverlayAbsorber(innerBoxIsScrolled: innerBoxIsScrolled)];
-}
-
-class MySliverOverlayAbsorber extends StatefulWidget {
-  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled, super.key});
-  final bool innerBoxIsScrolled;
-  @override
-  State<MySliverOverlayAbsorber> createState() =>
-      _MySliverOverlayAbsorberState();
-}
-
-class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
-  late Size wsize = Size.fromHeight(context.responsiveSize * 2);
-
-  @override
-  Widget build(BuildContext context) => SliverOverlapAbsorber(
-        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-        sliver: SliverAppBar(
-          automaticallyImplyLeading: false,
-          flexibleSpace: FlexibleSpaceBar(
-            centerTitle: true,
-            background: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: const <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 12),
-                  child: SearchWidget(),
-                ),
-              ],
-            ),
-          ),
-          floating: true,
-          pinned: true,
-          expandedHeight: context.height * 18,
-          forceElevated: widget.innerBoxIsScrolled,
-          bottom: TabBar(
-            unselectedLabelColor: Colors.white30,
-            indicatorColor: Colors.black,
-            tabs: SearchScreenConstants.tabKeys
-                .map((String key) => Tab(text: context.tr(key)))
-                .toList(),
-          ),
-        ),
       );
 }

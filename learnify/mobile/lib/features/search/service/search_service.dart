@@ -1,6 +1,5 @@
 import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
-import '../../home/model/learning_space_model.dart';
 import '../model/search_request_model.dart';
 import '../model/search_response_model.dart';
 import 'i_search_service.dart';
@@ -18,8 +17,9 @@ class SearchService extends ISearchService {
 
   @override
   Future<IResponseModel<SearchResponse>> search(SearchRequest body) async =>
-      networkManager.send<LearningSpace, SearchResponse>(_search,
+      networkManager.send<SearchRequest, SearchResponse>(_search,
           parseModel: const SearchResponse(),
-          type: RequestTypes.get,
+          type: RequestTypes.post,
+          body: body,
           requireAuth: false);
 }

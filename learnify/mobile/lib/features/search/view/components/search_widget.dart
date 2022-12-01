@@ -1,7 +1,7 @@
 part of '../search_screen.dart';
 
 class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key});
+  const SearchWidget({Key? key}) : super(key: key);
 
   @override
   State<SearchWidget> createState() => _SearchInputState();
