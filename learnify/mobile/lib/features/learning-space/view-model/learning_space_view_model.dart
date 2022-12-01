@@ -36,8 +36,7 @@ class LearningSpaceViewModel extends BaseViewModel {
   void initViewModel() {
     _chapters = List<Chapter>.generate(20, Chapter.dummy);
     _events = List<Event>.generate(20, Event.dummy);
-    _events.sort((Event e1, Event e2) =>
-        e1.date?.compareTo(e2.date ?? DateTime.now()) ?? 0);
+    _events.sort((Event e1, Event e2) => e1.date.compareTo(e2.date));
   }
 
   @override

@@ -75,13 +75,24 @@ class EventItem extends StatelessWidget {
         context.sizedH(.6),
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
+        context.sizedH(.6),
+        _infoText(
+          context,
+          TextKeys.eventParticipants,
+          '',
+          customWidget: Row(
+            children: <Widget>[],
+          ),
+        ),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
     );
   }
 
-  Widget _infoText(BuildContext context, String key, String value) => Row(
+  Widget _infoText(BuildContext context, String key, String value,
+          {Widget? customWidget}) =>
+      Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
@@ -90,12 +101,15 @@ class EventItem extends StatelessWidget {
                   style: context.bodySmall,
                   textAlign: TextAlign.start)),
           Expanded(
-              child: BaseText(
-            value,
-            style: context.bodySmall,
-            translated: false,
-            textAlign: TextAlign.start,
-          )),
+            flex: 2,
+            child: customWidget ??
+                BaseText(
+                  value,
+                  style: context.bodySmall,
+                  translated: false,
+                  textAlign: TextAlign.start,
+                ),
+          ),
         ],
       );
 }
