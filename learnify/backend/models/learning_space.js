@@ -23,7 +23,7 @@ const lsSchema = new Schema({
   admins: [{
     type: String, required: true
   }],
-  chapters: {type: chapterSchema},
+  chapters: [{type: chapterSchema}],
   categories: [{type: String, enum: categories}]
 },
   {

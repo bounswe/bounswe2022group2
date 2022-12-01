@@ -10,3 +10,12 @@ export function validateLS_init(body) {
   });
   return schema.validate(body);
 }
+export function validateAnnotation_init(body) {
+  const schema = Joi.object({
+    ls_title: Joi.string().min(3).required(),
+    chapterName: Joi.string().min(6).max(2000).required(),
+    body: Joi.string().required(),
+    target: Joi.object().required(),
+  });
+  return schema.validate(body);
+}
