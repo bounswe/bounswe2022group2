@@ -35,13 +35,15 @@ class EventItem extends StatelessWidget {
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    final List<String> userPhotos = context
+    final List<Map<String, dynamic>> userList = context
         .read<HomeViewModel>()
         .randomUsers
-        .sublist(0, Random().nextInt(34) + 15)
+        .sublist(0, Random().nextInt(34) + 15);
+    final List<String> userPhotos = userList
         // ignore: avoid_dynamic_calls
         .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
         .toList();
+    final Map<String, dynamic> userName = userList.last['name'];
     return CustomExpansionTile(
       key: expansionTileKey,
       collapsedTextColor: context.inactiveTextColor,
@@ -70,6 +72,15 @@ class EventItem extends StatelessWidget {
         }
       },
       children: <Widget>[
+        Row(children: <Widget>[
+          CircleAvatar(
+              foregroundImage: NetworkImage(userPhotos.last), radius: 14),
+          context.sizedW(2),
+          // ignore: avoid_dynamic_calls
+          BaseText(userName['first'] + ' ' + userName['last'],
+              translated: false, style: context.bodySmall)
+        ]),
+        context.sizedH(1),
         MultiLineText(
           event.description ?? '',
           translated: false,
@@ -132,22 +143,17 @@ class EventItem extends StatelessWidget {
           numOfPhotos + 1,
           (int i) => Align(
             widthFactor: 0.8,
-            child: ClipOval(
-              child: Container(
-                color: Colors.white,
-                child: CircleAvatar(
-                  backgroundColor: context.primary,
-                  foregroundImage:
-                      i == numOfPhotos ? null : NetworkImage(userPhotos[i]),
-                  radius: 14,
-                  child: i == numOfPhotos
-                      ? BaseText('+${userPhotos.length - numOfPhotos}',
-                          translated: false,
-                          color: Colors.white,
-                          style: context.labelLarge)
-                      : null,
-                ),
-              ),
+            child: CircleAvatar(
+              backgroundColor: context.primary,
+              foregroundImage:
+                  i == numOfPhotos ? null : NetworkImage(userPhotos[i]),
+              radius: 14,
+              child: i == numOfPhotos
+                  ? BaseText('+${userPhotos.length - numOfPhotos}',
+                      translated: false,
+                      color: Colors.white,
+                      style: context.labelLarge)
+                  : null,
             ),
           ),
         ),
