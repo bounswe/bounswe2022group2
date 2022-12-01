@@ -54,10 +54,6 @@ void main() {
       final ChapterItem firstChapter =
           tester.widget(chapterFinder.first) as ChapterItem;
       expect(firstChapter.itemIndex, 0);
-      expect(firstChapter.chapter.id, '0');
-      expect(firstChapter.chapter.materialText?.isNotEmpty, true);
-      expect(firstChapter.chapter.materialVisual.isNotEmpty, true);
-      expect(firstChapter.chapter.title?.isNotEmpty, true);
 
       final Finder expansionTileFinder =
           TestHelpers.descendantFinder(firstChapter, CustomExpansionTile);

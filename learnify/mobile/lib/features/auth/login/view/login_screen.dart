@@ -69,7 +69,7 @@ class LoginScreen extends BaseView<LoginViewModel> {
           ReplaceValue(
             TextKeys.signup,
             onClick: () async => NavigationManager.instance
-                .navigateToPage(path: NavigationConstants.signup),
+                .navigateToPage(path: NavigationConstants.signup, checkHistory: true),
             color: context.primary,
           )
         ],
@@ -79,7 +79,7 @@ class LoginScreen extends BaseView<LoginViewModel> {
         TextKeys.forgetPassword,
         style: context.bodySmall,
         onClick: () async => NavigationManager.instance
-            .navigateToPage(path: NavigationConstants.forgetpass),
+            .navigateToPage(path: NavigationConstants.forgetpass, checkHistory: true),
         color: context.primary,
       );
 }

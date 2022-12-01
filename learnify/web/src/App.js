@@ -7,8 +7,11 @@ import HomePage from './pages/HomePage';
 import SignUpForm from './pages/SignUpForm';
 import PrivateRoutes from './pages/PrivateRoutes';
 import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
+import ChangePassword from './pages/ChangePassword';
 import NotFoundPage from './pages/NotFoundPage';
 import LearningSpace from './pages/LearningSpace';
+import CategoriesPage from './pages/CategoriesPage';
+
 
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
           <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
           <Route path="/user/learning-spaces" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
+          <Route path="/change-password" element={<ChangePassword/>}/>
+          <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes> 
       </BrowserRouter>
