@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -25,6 +27,7 @@ import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
+import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';

@@ -72,21 +72,50 @@ class EventItem extends StatelessWidget {
         context.sizedH(1.2),
         _infoText(context, TextKeys.eventDate,
             DateFormat('dd MMMM yyyy - kk:mm').format(event.date)),
-        context.sizedH(.6),
+        context.sizedH(.9),
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
-        context.sizedH(.6),
-        _infoText(
-          context,
-          TextKeys.eventParticipants,
-          '',
-          customWidget: Row(
-            children: <Widget>[],
-          ),
-        ),
+        context.sizedH(.9),
+        _infoText(context, TextKeys.eventParticipants, '',
+            customWidget: _participantsRow(context)),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
+    );
+  }
+
+  Widget _participantsRow(BuildContext context) {
+    final List<String> userPhotos = context
+        .read<HomeViewModel>()
+        .randomUsers
+        // ignore: avoid_dynamic_calls
+        .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
+        .toList();
+    final int participantNumber = Random().nextInt(4) + 2;
+    return Row(
+      children: List<Widget>.generate(
+        participantNumber + 1,
+        (int i) => Align(
+          widthFactor: 0.8,
+          child: ClipOval(
+            child: Container(
+              color: Colors.white,
+              child: CircleAvatar(
+                backgroundColor: context.primary,
+                foregroundImage:
+                    i == participantNumber ? null : NetworkImage(userPhotos[i]),
+                radius: 14,
+                child: i == participantNumber
+                    ? BaseText('+${userPhotos.length - participantNumber}',
+                        translated: false,
+                        color: Colors.white,
+                        style: context.labelLarge)
+                    : null,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -96,10 +125,13 @@ class EventItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
-              child: BaseText('${context.tr(key)}:',
-                  translated: false,
-                  style: context.bodySmall,
-                  textAlign: TextAlign.start)),
+            child: BaseText(
+              '${context.tr(key)}:',
+              translated: false,
+              style: context.bodySmall,
+              textAlign: TextAlign.start,
+            ),
+          ),
           Expanded(
             flex: 2,
             child: customWidget ??
