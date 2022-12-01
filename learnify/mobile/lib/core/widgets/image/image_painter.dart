@@ -9,6 +9,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart' hide Image;
 
+import '../../../features/learning-space/models/annotation_model.dart';
+
 ///Handles all the painting ongoing on the canvas.
 class DrawImage extends CustomPainter {
   ///Constructor for the canvas
@@ -102,7 +104,11 @@ enum PaintMode {
 class PaintInfo {
   ///In case of string, it is used to save string value entered.
   PaintInfo(
-      {required this.offset, required this.painter, this.text, this.mode});
+      {required this.offset,
+      required this.painter,
+      this.text,
+      this.mode,
+      required this.annotation});
 
   ///Mode of the paint method.
   PaintMode? mode;
@@ -116,6 +122,8 @@ class PaintInfo {
 
   ///Used to save text in case of text type.
   String? text;
+
+  Annotation annotation;
 }
 
 @immutable

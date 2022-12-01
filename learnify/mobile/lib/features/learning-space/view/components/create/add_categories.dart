@@ -17,20 +17,20 @@ class _AddCategories extends StatelessWidget {
                     runSpacing: 5,
                     spacing: 5,
                     children: CreateLearningSpaceViewModel.categoryOptions
-                        .map((Category category) {
+                        .map((String category) {
                       final bool isChecked =
-                          selectedCategories.contains(category.categoryName);
+                          selectedCategories.contains(category);
                       return LabeledCheckbox(
-                        label: category.categoryName,
+                        label: category,
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         value: isChecked,
                         onChanged: (bool newValue) {
                           final CreateLearningSpaceViewModel model =
                               context.read<CreateLearningSpaceViewModel>();
                           if (newValue) {
-                            model.addCategory(category.categoryName);
+                            model.addCategory(category);
                           } else {
-                            model.removeCategory(category.categoryName);
+                            model.removeCategory(category);
                           }
                         },
                       );
@@ -42,11 +42,11 @@ class _AddCategories extends StatelessWidget {
 
 class LabeledCheckbox extends StatelessWidget {
   const LabeledCheckbox({
-    super.key,
     required this.label,
     required this.padding,
     required this.value,
     required this.onChanged,
+    super.key,
   });
 
   final String label;
@@ -77,6 +77,6 @@ class LabeledCheckbox extends StatelessWidget {
 }
 
 class Category {
-  Category({required this.categoryName});
-  String categoryName;
+  const Category({required this.categoryName});
+  final String categoryName;
 }
