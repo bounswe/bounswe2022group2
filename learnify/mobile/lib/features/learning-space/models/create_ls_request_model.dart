@@ -5,6 +5,7 @@ class CreateLSRequest extends BaseModel<CreateLSRequest> {
     this.token,
     this.title,
     this.description,
+    this.categories,
   });
 
   factory CreateLSRequest.fromJson(Map<String, dynamic> json) =>
@@ -12,11 +13,13 @@ class CreateLSRequest extends BaseModel<CreateLSRequest> {
         token: BaseModel.getByType<String>(json['token']),
         title: BaseModel.getByType<String>(json['title']),
         description: BaseModel.getByType<String>(json['description']),
+        categories: BaseModel.getList(json['categories']),
       );
 
   final String? token;
   final String? title;
   final String? description;
+  final List<String>? categories;
 
   @override
   CreateLSRequest fromJson(Map<String, dynamic> json) =>
@@ -27,8 +30,9 @@ class CreateLSRequest extends BaseModel<CreateLSRequest> {
         'token': token,
         'title': title,
         'description': description,
+        'categories': categories,
       };
 
   @override
-  List<Object?> get props => <Object?>[token, title, description];
+  List<Object?> get props => <Object?>[token, title, description, categories];
 }

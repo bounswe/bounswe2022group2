@@ -18,8 +18,12 @@ import '../service/ls_service.dart';
 import '../view/create_learning_space_screen.dart';
 
 class CreateLearningSpaceViewModel extends BaseViewModel {
+  //CreateLearningSpaceViewModel(this._learningSpace);
+
+  LearningSpace? _learningSpace;
+
   late final ILSService _lsService;
-  static List<Category> categoryOptions = <Category>[];
+  static List<String> categoryOptions = <String>[];
 
   late TextEditingController _titleController;
   TextEditingController get titleController => _titleController;
@@ -37,6 +41,9 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   GlobalKey<FormState> get formKey => _formKey;
 
   late final ImagePicker _picker;
+  int? _selectedImage;
+  int? get selectedImage => _selectedImage;
+
   List<String> _selectedCategories = <String>[];
   List<String> get selectedCategoryNames => _selectedCategories;
 
@@ -54,10 +61,11 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initView() {
+    _formKey = GlobalKey<FormState>();
+    //_setLSData();
     _titleController = TextEditingController(text: _initialTitle);
     _descriptionController = TextEditingController(text: _initialDescription);
     _participantsController = TextEditingController(text: _initialparticipants);
-    _formKey = GlobalKey<FormState>();
     _titleController.addListener(_controllerListener);
     _descriptionController.addListener(_controllerListener);
     _participantsController.addListener(_controllerListener);
@@ -123,6 +131,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
         token: localManager.getString(StorageKeys.accessToken),
         title: _titleController.text,
         description: _descriptionController.text,
+        categories: _selectedCategories,
       );
       final IResponseModel<CreateLSResponse> response =
           await _lsService.createLS(request);
@@ -182,4 +191,13 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+/*
+  void _setLSData() {
+    _initialTitle = _learningSpace?.title;
+    _initialDescription = _learningSpace?.description;
+    _selectedCategories =
+        _learningSpace == null ? _learningSpace!.categories : <String>[];
+    _selectedImage = _learningSpace?.iconId;
+  }
+  */
 }
