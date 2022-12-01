@@ -24,6 +24,7 @@ import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
+import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
@@ -134,84 +135,92 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
               Image.asset(IconKeys.learnIllustration,
                   width: context.width * 60),
               context.sizedH(1),
-              Container(
-                padding: const EdgeInsets.all(15),
-                width: double.infinity,
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      tempLearningSpace?.title ??
-                          "Placeholder Learning Space Title",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          overflow: TextOverflow.ellipsis,
-                          fontSize: 18),
-                    ),
-                    context.sizedH(2),
-                    Text(
-                      tempLearningSpace?.description ??
-                          "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                      ),
-                    ),
-                    context.sizedH(1),
-                    MeasuredSize(
-                      onChange: (Size size) {
-                        setState(() {
-                          wsize = size;
-                        });
-                      },
-                      child: LearningSpaceDetailScreen._tagWidget(
-                          context,
-                          tempLearningSpace?.categories ??
-                              [
-                                "flutter",
-                                "react.js",
-                                "node.js",
-                                "mongodb",
-                                "aws",
-                                "docker",
-                                "git",
-                                "jenkins",
-                                "flutter",
-                                "react.js",
-                                "node.js",
-                                "mongodb",
-                                "aws",
-                                "docker",
-                                "git",
-                                "jenkins"
-                              ]),
-                    ),
-                    context.sizedH(1),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              MeasuredSize(
+                  onChange: (Size size) {
+                    setState(() {
+                      wsize = size;
+                    });
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(15),
+                    width: double.infinity,
+                    color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Expanded(
-                          child: Text(
-                            "Created by: ${tempLearningSpace?.creator ?? "placeholder_username"}",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(overflow: TextOverflow.ellipsis),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              tempLearningSpace?.title ??
+                                  "Placeholder Learning Space Title",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  overflow: TextOverflow.ellipsis,
+                                  fontSize: 18),
+                            ),
+                            ElevatedButton(
+                                onPressed: () {}, child: Text("Enroll")),
+                          ],
+                        ),
+                        context.sizedH(2),
+                        Text(
+                          tempLearningSpace?.description ??
+                              "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
                           ),
                         ),
-                        Icon(Icons.people_alt_outlined, size: 20),
-                        Text(tempLearningSpace?.numParticipants.toString() ??
-                            "100")
+                        context.sizedH(1),
+                        LearningSpaceDetailScreen._tagWidget(
+                            context,
+                            tempLearningSpace?.categories ??
+                                [
+                                  "flutter",
+                                  "react.js",
+                                  "node.js",
+                                  "mongodb",
+                                  "aws",
+                                  "docker",
+                                  "git",
+                                  "jenkins",
+                                  "flutter",
+                                  "react.js",
+                                  "node.js",
+                                  "mongodb",
+                                  "aws",
+                                  "docker",
+                                  "git",
+                                  "jenkins"
+                                ]),
+                        context.sizedH(1),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                "Created by: ${tempLearningSpace?.creator ?? "placeholder_username"}",
+                                textAlign: TextAlign.left,
+                                style:
+                                    TextStyle(overflow: TextOverflow.ellipsis),
+                              ),
+                            ),
+                            Icon(Icons.people_alt_outlined, size: 20),
+                            Text(
+                                tempLearningSpace?.numParticipants.toString() ??
+                                    "100")
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                ),
-              )
+                    ),
+                  ))
             ],
           ),
         ),
         floating: true,
         pinned: true,
-        expandedHeight: context.height * 46 + wsize.height,
+        expandedHeight: context.height * 27 + wsize.height,
         forceElevated: widget.innerBoxIsScrolled,
         bottom: ColoredTabBar(
           color: context.primary,
