@@ -128,4 +128,13 @@ class HomeViewModel extends BaseViewModel {
     }
     return false;
   }
+
+  bool getIsEnrolled(String id) {
+    for (int i = 0; i < _takenLearningSpaces.length; i++) {
+      if (_takenLearningSpaces[i].id == id) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

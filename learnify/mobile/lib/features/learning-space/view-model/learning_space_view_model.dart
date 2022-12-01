@@ -8,10 +8,13 @@ import '../../../core/extensions/string/string_extensions.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
+import '../models/learning_space_model.dart';
 
 /// View model to manage the data on learning space screen.
 class LearningSpaceViewModel extends BaseViewModel {
   // TODO: Will be taken from the course model when Egemen created it
+  LearningSpace? learningSpace = LearningSpace();
+
   List<Chapter> _chapters = <Chapter>[];
   List<Chapter> get chapters => _chapters;
   List<GlobalKey<CustomExpansionTileState>> _expansionTileKeys =
