@@ -5,6 +5,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
+import '../../../core/base/model/base_model.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
@@ -28,6 +29,9 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
               _builder(context, isCreate, learningSpace),
           appBar: (BuildContext context) => _appBarBuilder(context, isCreate),
           key: key,
+          futureInit: (BuildContext context) => context
+              .read<CreateLearningSpaceViewModel>()
+              .fetchInitialCategories(),
           scrollable: true,
         );
 
@@ -40,11 +44,11 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
           const _LearningSpaceForm(),
           const _AddCategories(),
           context.sizedH(.8),
-          _doneButton
+          _doneButton(isCreate),
         ],
       );
 
-  static Widget get _doneButton =>
+  static Widget _doneButton(bool isCreate) =>
       SelectorHelper<bool, CreateLearningSpaceViewModel>().builder(
           (_, CreateLearningSpaceViewModel model) => model.canUpdate,
           (BuildContext context, bool canUpdate, _) => ActionButton(
@@ -54,9 +58,13 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
                     vertical: context.responsiveSize * 1.4),
                 capitalizeAll: true,
                 isActive: canUpdate,
-                onPressedError: context
-                    .read<CreateLearningSpaceViewModel>()
-                    .createLearningSpace,
+                onPressedError: isCreate
+                    ? context
+                        .read<CreateLearningSpaceViewModel>()
+                        .createLearningSpace
+                    : context
+                        .read<CreateLearningSpaceViewModel>()
+                        .editLearningSpace,
               ));
 
   static DefaultAppBar _appBarBuilder(BuildContext context, bool isCreate) =>
