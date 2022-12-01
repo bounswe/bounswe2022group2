@@ -15,11 +15,12 @@ class HomeService extends IHomeService {
   /// Static instance getter of [HomeService].
   static HomeService get instance => _instance;
 
-  static const String _courses = '/courses';
+  static const String _learningspaces = '/learningspace';
 
   @override
   Future<IResponseModel<GetLearningSpacesResponse>> getLearningSpaces() async =>
-      networkManager.send<LearningSpace, GetLearningSpacesResponse>(_courses,
+      networkManager.send<LearningSpace, GetLearningSpacesResponse>(
+          _learningspaces,
           parseModel: const GetLearningSpacesResponse(),
           type: RequestTypes.get,
           requireAuth: false);
