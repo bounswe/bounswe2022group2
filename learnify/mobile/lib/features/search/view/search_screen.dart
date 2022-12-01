@@ -56,12 +56,38 @@ class SearchScreen extends BaseView<SearchViewModel> {
       SliverPadding(
         padding: EdgeInsets.symmetric(
             vertical: context.height * .6, horizontal: context.width * 2),
-        sliver: tabKey == TextKeys.learnifies && listOfLearningSpaces.isNotEmpty
+        sliver: tabKey == TextKeys.learnifies
             ? //ViewAllList(
             // listOfLearningSpaces:
             //   context.read<SearchViewModel>().resultLearningSpaces,
             //buttonExist: false)
-            const Text("i have found something!")
+            SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (_, int i) => GridView.builder(
+                    physics: const ScrollPhysics(),
+                    itemCount: 2,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                    ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) =>
+                        const CoursePreview(
+                            textKey: "Learning Space",
+                            //ToDo after the LearningSpaces are initialized:
+                            //listOfLearningSpaces[index].name ?? ''
+                            participantNumber: 100
+                            //ToDo after the LearningSpaces are initialized:
+                            //listOfLearningSpaces[index].numParticipants ?? 0
+                            ),
+                  ),
+                  childCount: 1,
+                ),
+              )
             : SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (_, int i) => Column(

@@ -13,7 +13,7 @@ class SearchService extends ISearchService {
   /// Static instance getter of [SearchService].
   static SearchService get instance => _instance;
 
-  static const String _search = '/search';
+  static const String _search = '/learningspace';
 
   @override
   Future<IResponseModel<SearchResponse>> search(SearchRequest body) async =>
