@@ -35,6 +35,13 @@ class EventItem extends StatelessWidget {
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
+    final List<String> userPhotos = context
+        .read<HomeViewModel>()
+        .randomUsers
+        .sublist(0, Random().nextInt(34) + 15)
+        // ignore: avoid_dynamic_calls
+        .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
+        .toList();
     return CustomExpansionTile(
       key: expansionTileKey,
       collapsedTextColor: context.inactiveTextColor,
@@ -72,55 +79,25 @@ class EventItem extends StatelessWidget {
         context.sizedH(1.2),
         _infoText(context, TextKeys.eventDate,
             DateFormat('dd MMMM yyyy - kk:mm').format(event.date)),
-        context.sizedH(.9),
+        context.sizedH(.8),
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
-        context.sizedH(.9),
+        context.sizedH(.8),
         _infoText(context, TextKeys.eventParticipants, '',
-            customWidget: _participantsRow(context)),
+            customWidget: _participantsRow(context, userPhotos),
+            lastChild: BaseText(
+              '${userPhotos.length}/${event.participationLimit}',
+              translated: false,
+              style: context.bodySmall,
+            )),
         ChapterList.createEditButton(context, TextKeys.editEvent,
             Icons.edit_outlined, viewModel.editEvent),
       ],
     );
   }
 
-  Widget _participantsRow(BuildContext context) {
-    final List<String> userPhotos = context
-        .read<HomeViewModel>()
-        .randomUsers
-        // ignore: avoid_dynamic_calls
-        .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
-        .toList();
-    final int participantNumber = Random().nextInt(4) + 2;
-    return Row(
-      children: List<Widget>.generate(
-        participantNumber + 1,
-        (int i) => Align(
-          widthFactor: 0.8,
-          child: ClipOval(
-            child: Container(
-              color: Colors.white,
-              child: CircleAvatar(
-                backgroundColor: context.primary,
-                foregroundImage:
-                    i == participantNumber ? null : NetworkImage(userPhotos[i]),
-                radius: 14,
-                child: i == participantNumber
-                    ? BaseText('+${userPhotos.length - participantNumber}',
-                        translated: false,
-                        color: Colors.white,
-                        style: context.labelLarge)
-                    : null,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _infoText(BuildContext context, String key, String value,
-          {Widget? customWidget}) =>
+          {Widget? customWidget, Widget? lastChild}) =>
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -142,6 +119,39 @@ class EventItem extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
           ),
+          if (lastChild != null) lastChild,
         ],
       );
+
+  Widget _participantsRow(BuildContext context, List<String> userPhotos) {
+    final int numOfPhotos = min(5, userPhotos.length);
+    return Padding(
+      padding: EdgeInsets.only(left: context.width * 3),
+      child: Row(
+        children: List<Widget>.generate(
+          numOfPhotos + 1,
+          (int i) => Align(
+            widthFactor: 0.8,
+            child: ClipOval(
+              child: Container(
+                color: Colors.white,
+                child: CircleAvatar(
+                  backgroundColor: context.primary,
+                  foregroundImage:
+                      i == numOfPhotos ? null : NetworkImage(userPhotos[i]),
+                  radius: 14,
+                  child: i == numOfPhotos
+                      ? BaseText('+${userPhotos.length - numOfPhotos}',
+                          translated: false,
+                          color: Colors.white,
+                          style: context.labelLarge)
+                      : null,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
