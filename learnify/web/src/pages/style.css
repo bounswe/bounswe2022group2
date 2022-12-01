@@ -497,16 +497,16 @@ h1 {
     font-size: 35px;
     font-weight: bold;
     text-align: left;
-    margin-left: 36px;
 }
 .ls-box-text {
     color: #1746A2;
     font-family: 'Open Sans' sans-serif;
     font-size: 15px;
-    max-width: 70%;
+    max-width: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
     font-weight: bold;
     text-align: left;
-    margin-left: 36px;
 }
 
 .ls-box-button {
@@ -542,18 +542,24 @@ h1 {
 }
 
 .learning-space-left {
+    margin-left: 1em;
+    margin-right: 1em;
     align-content: left;
     width: 20%;
     background-color: #FFF7E9;
   }
   
   .learning-space-middle {
+    margin-left: 1em;
+    margin-right: 1em;
     align-content: center;
     width: 60%;
     background-color: #FFF7E9;
   }
 
   .learning-space-right{
+    margin-left: 1em;
+    margin-right: 1em;
     align-content: right;
     width: 20%;
     background-color: #FFF7E9;
@@ -656,9 +662,19 @@ h1 {
     mask-border: linear-gradient(to top, rgba(0, 40, 220, 0.855) 0%, rgb(0, 0, 0) 8%);
 }
 
-.ls-buttons{
-    padding-left: 20px;
+.ls-button-container {
+    margin-right: 1.5em;
+}
+
+.ls-button-container-alt {
+   margin-left: 18em;
+}
+
+.ls-buttons {
+    padding-left: 2px;
     text-align: left;
+    display: flex;
+    flex-direction: row;
 }
 
 
