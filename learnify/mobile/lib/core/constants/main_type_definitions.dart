@@ -45,3 +45,5 @@ typedef AnnotateImageDialogCallback
         String imageUrl);
 typedef AnnotateImageCallback = Future<Annotation?> Function(
     Offset start, Offset end, Color color);
+
+typedef AnnotateCallback = Future<void> Function(int startIndex, int endIndex);
