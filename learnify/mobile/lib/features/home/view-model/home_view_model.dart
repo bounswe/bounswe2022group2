@@ -5,9 +5,9 @@ import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../../learning-space/service/ls_service.dart';
 import '../model/get_learning_spaces_response_model.dart';
-import '../model/learning_space_model.dart';
 import '../service/I_home_service.dart';
 import '../service/home_service.dart';
 

@@ -137,110 +137,112 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
         iconTheme: const IconThemeData(color: Colors.white),
         flexibleSpace: FlexibleSpaceBar(
           centerTitle: true,
-          background: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Image.asset(IconKeys.learnIllustration,
-                  width: context.width * 60),
-              context.sizedH(1),
-              MeasuredSize(
-                  onChange: (Size size) {
-                    if (!mounted) return;
-                    setState(() {
-                      wsize = size;
-                    });
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              tempLearningSpace?.title ??
-                                  "Placeholder Learning Space",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  overflow: TextOverflow.ellipsis,
-                                  fontSize: 18),
-                            ),
-                            ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .secondary),
-                                onPressed: () {
-                                  context
-                                      .read<LearningSpaceViewModel>()
-                                      .enrollLearningSpace();
-                                },
-                                child: Text(
-                                  'Enroll',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ))
-                          ],
-                        ),
-                        context.sizedH(2),
-                        Text(
-                          tempLearningSpace?.description ??
-                              "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14,
-                          ),
-                        ),
-                        context.sizedH(1),
-                        LearningSpaceDetailScreen._tagWidget(
-                            context,
-                            tempLearningSpace?.categories ??
-                                [
-                                  "flutter",
-                                  "react.js",
-                                  "node.js",
-                                  "mongodb",
-                                  "aws",
-                                  "docker",
-                                  "git",
-                                  "jenkins",
-                                  "flutter",
-                                  "react.js",
-                                  "node.js",
-                                  "mongodb",
-                                  "aws",
-                                  "docker",
-                                  "git",
-                                  "jenkins"
-                                ]),
-                        context.sizedH(1),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Expanded(
-                              child: Text(
-                                tempLearningSpace?.creator ??
-                                    "Created by: placeholder_username",
-                                textAlign: TextAlign.left,
-                                style:
-                                    TextStyle(overflow: TextOverflow.ellipsis),
+          background: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Image.asset(IconKeys.learnIllustration,
+                    width: context.width * 60),
+                context.sizedH(1),
+                MeasuredSize(
+                    onChange: (Size size) {
+                      if (!mounted) return;
+                      setState(() {
+                        wsize = size;
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(15),
+                      width: double.infinity,
+                      color: Colors.white,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                tempLearningSpace?.title ??
+                                    "Placeholder Learning Space",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: 18),
                               ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Theme.of(context)
+                                          .colorScheme
+                                          .secondary),
+                                  onPressed: () {
+                                    context
+                                        .read<LearningSpaceViewModel>()
+                                        .enrollLearningSpace();
+                                  },
+                                  child: const Text(
+                                    'Enroll',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ))
+                            ],
+                          ),
+                          context.sizedH(2),
+                          Text(
+                            tempLearningSpace?.description ??
+                                "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 14,
                             ),
-                            Icon(Icons.people_alt_outlined, size: 20),
-                            Text(
-                                tempLearningSpace?.numParticipants.toString() ??
-                                    "100")
-                          ],
-                        )
-                      ],
-                    ),
-                  )),
-            ],
+                          ),
+                          context.sizedH(1),
+                          LearningSpaceDetailScreen._tagWidget(
+                              context,
+                              tempLearningSpace?.categories ??
+                                  [
+                                    "flutter",
+                                    "react.js",
+                                    "node.js",
+                                    "mongodb",
+                                    "aws",
+                                    "docker",
+                                    "git",
+                                    "jenkins",
+                                    "flutter",
+                                    "react.js",
+                                    "node.js",
+                                    "mongodb",
+                                    "aws",
+                                    "docker",
+                                    "git",
+                                    "jenkins"
+                                  ]),
+                          context.sizedH(1),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Expanded(
+                                child: Text(
+                                  tempLearningSpace?.creator ??
+                                      "Created by: placeholder_username",
+                                  textAlign: TextAlign.left,
+                                  style: const TextStyle(
+                                      overflow: TextOverflow.ellipsis),
+                                ),
+                              ),
+                              const Icon(Icons.people_alt_outlined, size: 20),
+                              Text(tempLearningSpace?.numParticipants
+                                      .toString() ??
+                                  "100")
+                            ],
+                          )
+                        ],
+                      ),
+                    )),
+              ],
+            ),
           ),
         ),
         floating: true,

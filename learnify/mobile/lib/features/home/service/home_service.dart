@@ -1,6 +1,6 @@
 import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
-import '../model/learning_space_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../model/get_learning_spaces_response_model.dart';
 import 'I_home_service.dart';
 

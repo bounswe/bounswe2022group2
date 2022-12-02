@@ -7,9 +7,9 @@ import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
-import '../../home/model/learning_space_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../../home/view/home_screen.dart';
+import '../../learning-space/models/learning_space_model.dart';
 
 class ViewAllList extends BaseView<HomeViewModel> {
   ViewAllList(

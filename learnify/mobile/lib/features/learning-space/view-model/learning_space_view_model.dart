@@ -15,16 +15,15 @@ import '../models/annotation/create_annotation_request.dart';
 import '../models/chapter_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
-import '../models/learning_space_model.dart';
 import '../models/event.dart';
-import '../service/l_ls_service.dart';
+import '../models/learning_space_model.dart';
 import '../service/ls_service.dart';
 
 /// View model to manage the data on learning space screen.
 class LearningSpaceViewModel extends BaseViewModel {
   late final LSService _lsService;
   // TODO: Will be taken from the course model when Egemen created it
-  LearningSpace? learningSpace = LearningSpace();
+  LearningSpace? learningSpace = const LearningSpace();
 
   List<Chapter> _chapters = <Chapter>[];
   List<Chapter> get chapters => _chapters;
@@ -225,8 +224,9 @@ class LearningSpaceViewModel extends BaseViewModel {
       final IResponseModel<EnrollLSResponse> response =
           await _lsService.enrollLS(request);
       final EnrollLSResponse? respData = response.data;
-      if (response.hasError || respData == null)
+      if (response.hasError || respData == null) {
         return response.error?.errorMessage;
+      }
       final LearningSpace? ls = response.data?.learningSpace;
       print(ls?.title);
       if (ls == null) {

@@ -5,6 +5,7 @@ import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/annotatable/annotatable_text.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
+import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 import 'package:learnify/product/language/language_keys.dart';
 
@@ -14,8 +15,9 @@ void main() {
   testWidgets(
     "Test chapter list and item widgets.",
     (WidgetTester tester) async {
-      const LearningSpaceDetailScreen detailScreen =
-          LearningSpaceDetailScreen();
+      const LearningSpace dummyLearningSpace = LearningSpace();
+      final LearningSpaceDetailScreen detailScreen =
+          LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
       await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
 
       final Finder tabFinder =
