@@ -32,7 +32,7 @@ class CoursePreview extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: context.width * 4),
                     image: AssetImage(courseImage),
-                    height: context.height * 10,
+                    height: context.height * 12,
                     width: context.width * 30,
                     fit: BoxFit.cover,
                   )),
