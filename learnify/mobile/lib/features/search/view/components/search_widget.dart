@@ -14,6 +14,9 @@ class _SearchInputState extends State<SearchWidget> {
         height: context.height * 7.5,
         child: TextField(
           controller: context.read<SearchViewModel>().searchController,
+          textInputAction: TextInputAction.search,
+          onSubmitted: (String useless) async =>
+              context.read<SearchViewModel>().search(),
           style: const TextStyle(
               fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
           cursorColor: Colors.black,

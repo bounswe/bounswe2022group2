@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/widgets/image/annotatable_image.dart';
 import '../../home/model/learning_space_model.dart';
 import '../../learning-space/view/learning_space_detail_screen.dart';
 import '../../view-learning-spaces/view/view_all_list.dart';
@@ -57,37 +58,8 @@ class SearchScreen extends BaseView<SearchViewModel> {
         padding: EdgeInsets.symmetric(
             vertical: context.height * .6, horizontal: context.width * 2),
         sliver: tabKey == TextKeys.learnifies
-            ? //ViewAllList(
-            // listOfLearningSpaces:
-            //   context.read<SearchViewModel>().resultLearningSpaces,
-            //buttonExist: false)
-            SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (_, int i) => GridView.builder(
-                    physics: const ScrollPhysics(),
-                    itemCount: 2,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 15,
-                      mainAxisSpacing: 15,
-                    ),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int index) =>
-                        const CoursePreview(
-                            textKey: "Learning Space",
-                            //ToDo after the LearningSpaces are initialized:
-                            //listOfLearningSpaces[index].name ?? ''
-                            participantNumber: 100
-                            //ToDo after the LearningSpaces are initialized:
-                            //listOfLearningSpaces[index].numParticipants ?? 0
-                            ),
-                  ),
-                  childCount: 1,
-                ),
-              )
+            ? listLearningSpaces(
+                context, context.read<SearchViewModel>().resultLearningSpaces)
             : SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (_, int i) => Column(
@@ -141,12 +113,13 @@ class SearchScreen extends BaseView<SearchViewModel> {
         ),
       ];
 
-  static Widget exCourses(BuildContext context) => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          GridView.builder(
+  static Widget listLearningSpaces(
+          BuildContext context, List<LearningSpace> list) =>
+      SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (_, int i) => GridView.builder(
             physics: const ScrollPhysics(),
-            itemCount: 15,
+            itemCount: list.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 15,
@@ -154,16 +127,12 @@ class SearchScreen extends BaseView<SearchViewModel> {
             ),
             padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
             shrinkWrap: true,
-            itemBuilder: (BuildContext context, int index) =>
-                const CoursePreview(
-                    textKey: "Learning Space",
-                    //ToDo after the courses are initialized:
-                    //listOfCourses[index].name ?? ''
-                    participantNumber: 100
-                    //ToDo after the courses are initialized:
-                    //listOfCourses[index].numParticipants ?? 0
-                    ),
+            itemBuilder: (BuildContext context, int index) => CoursePreview(
+              textKey: list[index].name ?? '',
+              participantNumber: list[index].numParticipants ?? 0,
+            ),
           ),
-        ],
+          childCount: 1,
+        ),
       );
 }

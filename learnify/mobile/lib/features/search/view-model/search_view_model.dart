@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../home/model/learning_space_model.dart';
-import '../model/search_request_model.dart';
 import '../model/search_response_model.dart';
 import '../service/i_search_service.dart';
 import '../service/search_service.dart';
@@ -18,9 +17,6 @@ class SearchViewModel extends BaseViewModel {
 
   late List<LearningSpace> _resultLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get resultLearningSpaces => _resultLearningSpaces;
-
-  late GlobalKey<FormState> _formKey;
-  GlobalKey<FormState> get formKey => _formKey;
 
   @override
   void initViewModel() {
@@ -57,19 +53,13 @@ class SearchViewModel extends BaseViewModel {
   }
 
   Future<String?> _searchRequest() async {
-    final bool isValid = formKey.currentState?.validate() ?? false;
-    if (isValid) {
-      final SearchRequest requestModel =
-          SearchRequest(searchedItem: _searchController.text);
+    final IResponseModel<SearchResponse> resp =
+        await _searchService.search(_searchController.text);
 
-      final IResponseModel<SearchResponse> resp =
-          await _searchService.search(requestModel);
-
-      final SearchResponse? respData = resp.data;
-      if (resp.hasError || respData == null) return resp.error?.errorMessage;
-      _resultLearningSpaces = respData.resultLearningSpaces;
-      notifyListeners();
-    }
+    final SearchResponse? respData = resp.data;
+    if (resp.hasError || respData == null) return resp.error?.errorMessage;
+    _resultLearningSpaces = respData.resultLearningSpaces;
+    notifyListeners();
     return null;
   }
 }
