@@ -37,7 +37,7 @@ class AnnotatableText extends StatelessWidget {
 
   final String? annotateLabel;
 
-  final Function(int startIndex, int endIndex)? annotateCallback;
+  final AnnotateCallback? annotateCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -76,14 +76,15 @@ class AnnotatableText extends StatelessWidget {
               ),
       ),
       selectionControls: CustomTextSelectionControls(
-        items: <CustomAnnotatableItem>[
-          CustomAnnotatableItem(controlType: SelectionControlType.copy),
-          CustomAnnotatableItem(
-            controlType: SelectionControlType.other,
-            label: annotateLabel,
-            onPressedAnnotation: annotateCallback,
-          ),
-        ],
+        items: items ??
+            <CustomAnnotatableItem>[
+              CustomAnnotatableItem(controlType: SelectionControlType.copy),
+              CustomAnnotatableItem(
+                controlType: SelectionControlType.other,
+                label: annotateLabel,
+                onPressedAnnotation: annotateCallback,
+              ),
+            ],
         annotations: annotations,
         textStyles: textStyles,
       ),
