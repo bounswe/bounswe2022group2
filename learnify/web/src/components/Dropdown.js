@@ -3,23 +3,10 @@ import './component_styles.css';
 
 export default function Dropdown(props) {
     const [isActivated, setIsActivated] = React.useState(false);
-    const options = [    "Math and Logic",
-    "Physical Sciences and Engineering",
-    "Social Sciences",
-    "Programming",
-    "Visual Arts",
-    "Music",
-    "Gastronomy and Culinary",
-    "Business",
-    "Sports",
-    "Performance Arts",
-    "Information Technologies",
-    "Personal Development",
-    "Language Learning",
-    "Home Economics",
-    "Parenting",
-    "Lifestyle"];
+    const options = props.options;
     const [selected, setSelected] = React.useState(null);
+
+
     return (
         <div className='dropdown'>
             <div>
@@ -37,6 +24,7 @@ export default function Dropdown(props) {
                             onClick={(e) => {
                                 setSelected(option);
                                 setIsActivated(false);
+                                props.onSelect(option);
                             }}
                         >
                             {option}

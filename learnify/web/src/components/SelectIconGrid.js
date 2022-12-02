@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import * as React from 'react';
 import './component_styles.css';
 import lslogo_1 from '../images/ls_icons/ls-icon-1.svg';
@@ -23,23 +24,15 @@ import lslogo_20 from '../images/ls_icons/ls-icon-20.svg';
 
 
 export default function SelectIconGrid(props) {
-    const [value, setValue] = React.useState(null);
 
-    const handleIconClick = (e) => {
-        setValue(e.target.value);
-        console.log(e.target.value);
-        
-    }
-
-    const handleIconSubmit = () => {
-       // props.handleIconSubmit(selectedIcon, selectedIconName, selectedIconPath, selectedIconId);
-    }
 
     return (
         <div className='select-icon-grid'>
             <div className='select-icon-grid-row'>
                 <label>
-                <input type='radio' value="lslogo_1" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="1" name="iconSelect" 
+                onClick= {(e) => props.onSelect(e.target.value)}/>
+                    
                 <img src={lslogo_1}
                     name='lslogo_1'
                     id='1'
@@ -48,7 +41,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_2" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="2" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_2}
                     name='lslogo_2'
                     id='2'
@@ -57,7 +50,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_3" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="3" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_3}
                     name='lslogo_3'
                     id='3'
@@ -66,7 +59,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_4" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="4" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_4}
                     name='lslogo_4'
                     id='4'
@@ -75,7 +68,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_5" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="5" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_5}
                     name='lslogo_5'
                     id='5'
@@ -86,7 +79,7 @@ export default function SelectIconGrid(props) {
             </div>
             <div className='select-icon-grid-row'>
                 <label>
-                <input type='radio' value="lslogo_6" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="6" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_6}
                     name='lslogo_6'
                     id='6'
@@ -95,7 +88,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_7" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="7" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_7}
                     name='lslogo_7'
                     id='7'
@@ -104,7 +97,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_8" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="8" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_8}
                     name='lslogo_8'
                     id='8'
@@ -113,7 +106,7 @@ export default function SelectIconGrid(props) {
                 /> 
                 </label>
                 <label>
-                <input type='radio' value="lslogo_9" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="9" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_9}
                     name='lslogo_9'
                     id='9'
@@ -122,7 +115,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_10" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="10" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_10}
                     name='lslogo_10'
                     id='10'
@@ -133,7 +126,7 @@ export default function SelectIconGrid(props) {
             </div>
             <div className='select-icon-grid-row'>
                 <label>
-                <input type='radio' value="lslogo_11" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="11" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_11}
                     name='lslogo_11'
                     id='11'
@@ -142,7 +135,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_12" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="12" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_12}
                     name='lslogo_12'
                     id='12'
@@ -151,7 +144,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_13" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="13" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_13}
                     name='lslogo_13'
                     id='13'
@@ -160,7 +153,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_14" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="14" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_14}
                     name='lslogo_14'
                     id='14'
@@ -169,7 +162,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_15" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="15" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_15}
                     name='lslogo_15'
                     id='15'
@@ -180,7 +173,7 @@ export default function SelectIconGrid(props) {
             </div>
             <div className='select-icon-grid-row'>
                 <label>
-                <input type='radio' value="lslogo_16" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="16" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_16}
                     name='lslogo_16'
                     id='16'
@@ -189,7 +182,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_17" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="17" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_17}
                     name='lslogo_17'
                     id='17'
@@ -198,7 +191,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_18" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="18" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_18}
                     name='lslogo_18'
                     id='18'
@@ -207,7 +200,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_19" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="19" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_19}
                     name='lslogo_19'
                     id='19'
@@ -216,7 +209,7 @@ export default function SelectIconGrid(props) {
                 />
                 </label>
                 <label>
-                <input type='radio' value="lslogo_20" name="iconSelect" onClick={handleIconClick} />
+                <input type='radio' value="20" name="iconSelect" onClick= {(e) => props.onSelect(e.target.value)} />
                 <img src={lslogo_20}
                     name='lslogo_20'
                     id='20'
