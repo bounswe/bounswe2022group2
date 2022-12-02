@@ -5,7 +5,7 @@ import categories from './categories.js';
 console.log(categories)
 const { Schema, model } = mongoose;
 
-import chapterSchema from './chapter.js'
+import postSchema from './post.js'
 
 const lsSchema = new Schema({
   title: {
@@ -24,7 +24,7 @@ const lsSchema = new Schema({
   admins: [{
     type: String, required: true
   }],
-  chapters: {type: chapterSchema},
+  posts: [{type: postSchema}],
   categories: [{type: String, enum: categories}]
 },
   {
