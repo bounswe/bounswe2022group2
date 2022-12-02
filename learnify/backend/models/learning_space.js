@@ -14,6 +14,7 @@ const lsSchema = new Schema({
   description: {
     type: String, required: true
   },
+  participants: [{type: String, required: true}],
   num_participants: {
     type: Number, required: true, default: 1
   },
