@@ -83,5 +83,6 @@
   "event_participation_limit": "Participation Limit",
   "event_creator": "Event Creator",
   "event_participants": "Participants",
-  "passed_event": "Event has Passed"
+  "passed_event": "Event has Passed",
+  "view_annotations": "View Annotations"
 }

@@ -85,5 +85,5 @@ class TextKeys {
   static const String eventCreator = "event_creator";
   static const String eventParticipants = "event_participants";
   static const String passedEvent = "passed_event";
-  
+  static const String viewAnnotations = "view_annotations";
 }
