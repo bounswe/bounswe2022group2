@@ -30,6 +30,8 @@ const user =
       const firstUser = new User(user).save();
       return Promise.all([firstUser])
     }).then(() => dummyDone());
+
+    sinon.stub(jwt, "decode").onFirstCall().resolves({username});
   };
 
   const addDummyLS = (dummyDone) => {
@@ -56,7 +58,8 @@ describe('POST /learningspace/enroll', () => {
     const username = "username"
     request(app)
       .post(url)
-      .send({username}) //title is missing
+      .set({ Authorization: token })
+      .send({}) //title is missing
       .expect(400)
       .end(async (err) => {
         if (err) return done(err);
@@ -66,12 +69,13 @@ describe('POST /learningspace/enroll', () => {
       });
 
 
-  it('should return 400 when username is missing', (done) => {
+  it('should return 401 when auth header is missing', (done) => {
     const title = "title1";   
   request(app)
     .post(url)
-    .send({title}) //username is missing
-    .expect(400)
+    .set({  })  //authorization is missing
+    .send({title})
+    .expect(401)
     .end(async (err) => {
       if (err) return done(err);
       });
@@ -83,7 +87,8 @@ describe('POST /learningspace/enroll', () => {
       const username = "ecenurke"
     request(app)
       .post(url)
-      .send({title, username})
+      .set({ Authorization: token })
+      .send({title})
       .expect(409)
       .end(async (err) => {
         if (err) return done(err);
@@ -96,7 +101,8 @@ describe('POST /learningspace/enroll', () => {
       const username = "ecenurkek"
     request(app)
       .post(url)
-      .send({title, username})
+      .set({ Authorization: token })
+      .send({title})
       .expect(409)
       .end(async (err) => {
         if (err) return done(err);
@@ -111,7 +117,8 @@ describe('POST /learningspace/enroll', () => {
 
     request(app)
       .post(url)
-      .send({ title:title, username:username })
+      .set({ Authorization: token })
+      .send({ title:title})
       .expect(200)
       .end(done);
     });
