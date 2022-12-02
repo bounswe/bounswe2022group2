@@ -18,7 +18,6 @@ export function validateAnnotation_init(body) {
   });
   return schema.validate(body);
 }
-
 export function validatePost_init(body) {
   const schema = Joi.object({
     ls_id: Joi.string().min(3).required(),
