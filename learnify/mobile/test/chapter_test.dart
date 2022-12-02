@@ -1,18 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
+
+import 'test_helpers.dart';
 
 void main() {
   testWidgets(
     "Test chapter list and item widgets.",
     (WidgetTester tester) async {
-      // final HomeWrapper homeWrapper = HomeWrapper(initialIndex: 2);
-      // await tester.pumpWidget(TestHelpers.appWidget(homeWrapper));
-
-      // final Finder detailFinder = find.descendant(
-      //     of: find.byWidget(homeWrapper),
-      //     matching: find.byType(LearningSpaceDetailScreen));
-      // final LearningSpaceDetailScreen detailScreen =
-      //     tester.widget(detailFinder) as LearningSpaceDetailScreen;
-      // expect(detailFinder, findsOneWidget);
+      const LearningSpaceDetailScreen detailScreen =
+          LearningSpaceDetailScreen();
+      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
 
       // final Finder tabFinder =
       //     TestHelpers.descendantFinder(detailScreen, DefaultTabController);
