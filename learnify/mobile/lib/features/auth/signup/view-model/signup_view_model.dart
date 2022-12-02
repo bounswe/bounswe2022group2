@@ -99,7 +99,8 @@ class SignupViewModel extends BaseViewModel {
   }
 
   Future<String?> _asyncHaveAccount() async {
-    await navigationManager.navigateToPage(path: NavigationConstants.login);
+    await navigationManager.navigateToPage(
+        path: NavigationConstants.login, checkHistory: true);
     return null;
   }
 

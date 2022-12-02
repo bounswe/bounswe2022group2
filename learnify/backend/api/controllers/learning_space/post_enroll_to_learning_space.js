@@ -1,15 +1,25 @@
 
 import { User } from '../../../models/index.js';
 import { LearningSpace } from '../../../models/index.js';
+import jwt from "jsonwebtoken";
 import { validateLSEnroll_init } from '../../validators/learning_space_init_validator.js';
 
 export default async (req, res) => {
+  var username;
+  console.log(req.headers);
+  try{
+    const authHeader = req.headers.authorization;
+    username = jwt.decode(authHeader).username;
+  }catch(e){
+    return res.status(401).json({ "resultMessage": "There is something wrong with your auth token."});
+  }
+
   const { error } = validateLSEnroll_init(req.body);
   if (error) {
     console.log(error);
     return res.status(400).json({ "resultMessage": "Please check your inputs."});
   }
-  const user = await User.exists({username: req.body.username });
+  const user = await User.exists({username: username });
   if(!user){
     const err = "The user with this username does not exist."
     console.log(err)
@@ -29,12 +39,12 @@ export default async (req, res) => {
     return res.status(409).json({ "resultMessage": err });
   }
   
-  if (ls.participants.includes(req.body.username)) {
+  if (ls.participants.includes(username)) {
     const err = "This user is already enrolled in this learning space"
     console.log(err)
     return res.status(409).json({ "resultMessage": err });
   }
-    ls.participants.push(req.body.username);
+    ls.participants.push(username);
     ls.num_participants += 1;
 
     ls = await ls.save().catch((err) =>{

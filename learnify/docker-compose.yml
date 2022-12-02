@@ -11,6 +11,17 @@ services:
       - data:/data/db
     networks:
       - mongo_net
+  semantic-server:
+    hostname: semantic
+    build: 
+      context: ./semantic_service
+      dockerfile: dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - mongo_net
+    depends_on:
+      - mongodb
   server:
     hostname: backend
     build: 

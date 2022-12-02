@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
-import {User} from './index.js'
+import categories from './categories.js';
+
+
+console.log(categories)
 const { Schema, model } = mongoose;
 
 import chapterSchema from './chapter.js'
@@ -21,7 +24,8 @@ const lsSchema = new Schema({
   admins: [{
     type: String, required: true
   }],
-  chapters: {type: chapterSchema}
+  chapters: {type: chapterSchema},
+  categories: [{type: String, enum: categories}]
 },
   {
     timestamps: true,
@@ -30,6 +34,7 @@ const lsSchema = new Schema({
 
         ret.id = ret._id;
         ret.title = ret._title;
+        delete ret.BERT;
         delete ret._id;
         return ret;
       },

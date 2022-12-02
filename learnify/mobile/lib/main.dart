@@ -50,6 +50,7 @@ class _MaterialApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'Learnify',
         debugShowCheckedModeBanner: false,
+        navigatorObservers: <NavigatorObserver>[MyNavigatorObserver()],
         initialRoute:
             hasAuth ? NavigationConstants.home : NavigationConstants.signup,
         onGenerateRoute: NavigationRoute.instance.generateRoute,
