@@ -13,7 +13,7 @@ import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
-import '../../../features/learning-space/models/annotation_model.dart';
+import '../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../helpers/color_helpers.dart';
 import '../dialog/dialog_builder.dart';

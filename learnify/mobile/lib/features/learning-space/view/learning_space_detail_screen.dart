@@ -29,7 +29,7 @@ import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
-import '../models/annotation_model.dart';
+import '../models/annotation/annotation_model.dart';
 import '../models/chapter_model.dart';
 import '../models/event.dart';
 import '../view-model/learning_space_view_model.dart';
