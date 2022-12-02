@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
+import '../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../constants/main_type_definitions.dart';
@@ -55,12 +57,21 @@ class DialogBuilder {
       );
 
   /// Annotate dialog
-  Future<void> annotateDialog(int startIndex, int endIndex, String? chapterId,
-      AnnotateCallback callback) async {
+  Future<Annotation?> annotateDialog(
+    String? chapterId, {
+    AnnotateTextDialogCallback? textCallback,
+    AnnotateImageDialogCallback? imageCallback,
+    int? startIndex,
+    int? endIndex,
+    Offset? startOffset,
+    Offset? endOffset,
+    Color? color,
+    String? imageUrl,
+  }) async {
     String annotationText = '';
-    await showDialog(
+    final Annotation? res = await showDialog(
       context: context,
-      barrierDismissible: false,
+      // barrierDismissible: false,
       builder: (BuildContext context) => StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) => AlertDialog(
           title: BaseText(TextKeys.annotateText, style: context.titleLarge),
@@ -90,12 +101,35 @@ class DialogBuilder {
           actions: <Widget>[
             _dialogActionButton(
               TextKeys.cancel,
-              callback: () => Navigator.of(context).pop(),
+              callback: () => Navigator.of(context).pop(null),
             ),
             _dialogActionButton(
               TextKeys.annotate,
-              asyncCallback: () async =>
-                  callback(startIndex, endIndex, annotationText, chapterId),
+              asyncCallback: () async {
+                final NavigatorState navigator = Navigator.of(context);
+                if (textCallback != null) {
+                  final Tuple2<Annotation?, String?> res = await textCallback(
+                      startIndex ?? 0,
+                      endIndex ?? 0,
+                      annotationText,
+                      chapterId);
+                  navigator.pop(res.item1);
+                  return res.item2;
+                } else if (imageCallback != null && imageUrl != null) {
+                  final Tuple2<Annotation?, String?> res = await imageCallback(
+                    startOffset ?? Offset.zero,
+                    endOffset ?? Offset.zero,
+                    annotationText,
+                    chapterId,
+                    color ?? Colors.white,
+                    imageUrl,
+                  );
+                  navigator.pop(res.item1);
+                  return res.item2;
+                }
+                navigator.pop(null);
+                return null;
+              },
               isAction: true,
               isActive: annotationText.length > 3,
             ),
@@ -103,6 +137,7 @@ class DialogBuilder {
         ),
       ),
     );
+    return res;
   }
 
   Widget _dialogActionButton(
@@ -115,10 +150,8 @@ class DialogBuilder {
       isAction
           ? ActionButton(
               onPressedError: () async {
-                final NavigatorState navigator = Navigator.of(context);
                 final String? res =
                     asyncCallback == null ? null : await asyncCallback();
-                navigator.pop();
                 return res;
               },
               isActive: isActive,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/base/model/base_model.dart';
-import '../../../core/helpers/color_helpers.dart';
+import '../../../../../core/base/model/base_model.dart';
+import '../../../../core/helpers/color_helpers.dart';
 
 // ignore: must_be_immutable
 class Annotation extends BaseModel<Annotation> {
@@ -13,15 +13,27 @@ class Annotation extends BaseModel<Annotation> {
     this.chapterId,
     this.startIndex = 0,
     this.endIndex = 0,
+    this.startOffset = Offset.zero,
+    this.endOffset = Offset.zero,
     this.upVote,
     this.content,
     this.createdAt,
     this.updatedAt,
     this.isAnnotation = true,
+    this.isImage = false,
     this.colorParam,
+    this.imageUrl,
   });
 
-  factory Annotation.dummy(int id, {int? startIndex, int? endIndex}) =>
+  factory Annotation.dummy(
+    int id, {
+    int? startIndex,
+    int? endIndex,
+    Offset? startOffset,
+    Offset? endOffset,
+    bool? isImage,
+    String? imageUrl,
+  }) =>
       Annotation(
         id: id.toString(),
         courseId: id.toString(),
@@ -35,6 +47,10 @@ class Annotation extends BaseModel<Annotation> {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         createdAt: DateTime.now().subtract(const Duration(days: 1)),
         updatedAt: DateTime.now(),
+        startOffset: startOffset ?? const Offset(71.9, 258.2),
+        endOffset: endOffset ?? const Offset(284.5, 337.3),
+        isImage: isImage ?? false,
+        imageUrl: imageUrl ?? 'asd',
       );
 
   factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
@@ -49,7 +65,12 @@ class Annotation extends BaseModel<Annotation> {
         upVote: BaseModel.getByType<int>(json['upvote']),
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
-        isAnnotation: BaseModel.getWithDefault<bool>(json['annotation'], false),
+        isAnnotation:
+            BaseModel.getWithDefault<bool>(json['is_annotation'], false),
+        isImage: BaseModel.getWithDefault<bool>(json['is_image'], false),
+        startOffset: json['start_offset'],
+        endOffset: json['end_offset'],
+        imageUrl: json['image_url'],
       );
 
   Annotation copyWith({
@@ -59,6 +80,10 @@ class Annotation extends BaseModel<Annotation> {
     int? upVote,
     Color? colorParam,
     bool? isAnnotation,
+    Offset? startOffset,
+    Offset? endOffset,
+    bool? isImage,
+    String? imageUrl,
   }) {
     final Annotation annotation = Annotation(
       id: id,
@@ -73,6 +98,10 @@ class Annotation extends BaseModel<Annotation> {
       createdAt: createdAt,
       updatedAt: updatedAt,
       isAnnotation: isAnnotation ?? this.isAnnotation,
+      isImage: isImage ?? this.isImage,
+      startOffset: startOffset ?? this.startOffset,
+      endOffset: endOffset ?? this.endOffset,
+      imageUrl: imageUrl ?? this.imageUrl,
     );
     annotation.color = colorParam ?? annotation.color;
     return annotation;
@@ -90,7 +119,11 @@ class Annotation extends BaseModel<Annotation> {
   final DateTime? createdAt;
   final DateTime? updatedAt;
   final bool isAnnotation;
+  final bool isImage;
+  final Offset startOffset;
+  final Offset endOffset;
   Color? colorParam;
+  final String? imageUrl;
 
   @override
   Annotation fromJson(Map<String, dynamic> json) => Annotation.fromJson(json);
@@ -108,8 +141,12 @@ class Annotation extends BaseModel<Annotation> {
         'upvote': upVote,
         'createdAt': BaseModel.primitiveToJson<DateTime>(createdAt),
         'updatedAt': BaseModel.primitiveToJson<DateTime>(updatedAt),
-        'isAnnotation': BaseModel.getByType<bool>(isAnnotation),
+        'is_annotation': BaseModel.getByType<bool>(isAnnotation),
         'color': BaseModel.primitiveToJson<Color>(color),
+        'is_image': isImage,
+        'start_offset': startOffset,
+        'end_offset': endOffset,
+        'image_url': imageUrl,
       };
 
   @override
@@ -127,6 +164,10 @@ class Annotation extends BaseModel<Annotation> {
         updatedAt,
         isAnnotation,
         color,
+        isImage,
+        startOffset,
+        endOffset,
+        imageUrl,
       ];
 
   Color get color {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../../../../features/learning-space/models/annotation_model.dart';
+import '../../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../../product/theme/dark_theme.dart';
 import '../../../extensions/context/context_extensions.dart';
 import '../../../extensions/context/theme_extensions.dart';
