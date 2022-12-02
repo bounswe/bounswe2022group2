@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:measured_size/measured_size.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -21,6 +20,7 @@ import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
 import '../../../core/widgets/image/image_painter.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
@@ -29,7 +29,7 @@ import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
-import '../models/annotation_model.dart';
+import '../models/annotation/annotation_model.dart';
 import '../models/chapter_model.dart';
 import '../models/event.dart';
 import '../view-model/learning_space_view_model.dart';
@@ -111,7 +111,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
 }
 
 class MySliverOverlayAbsorber extends StatefulWidget {
-  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled});
+  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled, super.key});
   final bool innerBoxIsScrolled;
   @override
   State<MySliverOverlayAbsorber> createState() =>
@@ -159,6 +159,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                       context.sizedH(1),
                       MeasuredSize(
                         onChange: (Size size) {
+                          if (!mounted) return;
                           setState(() {
                             wsize = size;
                           });
@@ -220,7 +221,11 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
 }
 
 class ColoredTabBar extends Container implements PreferredSizeWidget {
-  ColoredTabBar({required this.color, required this.tabBar});
+  ColoredTabBar({
+    required this.color,
+    required this.tabBar,
+    super.key,
+  });
 
   @override
   final Color color;

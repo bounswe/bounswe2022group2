@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/base/model/base_model.dart';
-import '../../../core/helpers/color_helpers.dart';
+import '../../../../../core/base/model/base_model.dart';
+import '../../../../core/helpers/color_helpers.dart';
 
 // ignore: must_be_immutable
 class Annotation extends BaseModel<Annotation> {

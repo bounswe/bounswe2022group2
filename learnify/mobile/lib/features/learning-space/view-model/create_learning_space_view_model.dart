@@ -15,7 +15,6 @@ import '../models/create_ls_response_model.dart';
 import '../models/learning_space_model.dart';
 import '../service/l_ls_service.dart';
 import '../service/ls_service.dart';
-import '../view/create_learning_space_screen.dart';
 
 class CreateLearningSpaceViewModel extends BaseViewModel {
   //CreateLearningSpaceViewModel(this._learningSpace);

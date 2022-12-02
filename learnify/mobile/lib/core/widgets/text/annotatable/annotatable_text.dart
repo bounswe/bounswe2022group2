@@ -4,7 +4,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../features/learning-space/models/annotation_model.dart';
+import '../../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../../product/language/language_keys.dart';
 import '../../../constants/main_type_definitions.dart';
 import '../../../extensions/context/theme_extensions.dart';

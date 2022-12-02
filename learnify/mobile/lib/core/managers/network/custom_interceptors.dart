@@ -62,7 +62,7 @@ class CustomInterceptors extends Interceptor {
       localHeaders.remove(authHeader);
       final String? token = _tokenCheck;
       if (token == null) return null;
-      localHeaders.addAll(<String, String>{'Authorization': 'Bearer $token'});
+      localHeaders.addAll(<String, String>{'Authorization': token});
     }
     return localHeaders;
   }
