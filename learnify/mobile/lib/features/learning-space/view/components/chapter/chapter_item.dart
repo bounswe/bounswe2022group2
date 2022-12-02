@@ -41,7 +41,7 @@ class ChapterItem extends StatelessWidget {
       collapsedTextColor: context.inactiveTextColor,
       collapsedIconColor: context.inactiveTextColor,
       tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 5)
+      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
           .copyWith(bottom: context.height * 1.7),
       title: MultiLineText('${itemIndex + 1}. ${chapter.title}',
           translated: false),

@@ -7,38 +7,23 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../product/constants/navigation_constants.dart';
+import '../../../core/managers/network/models/l_response_model.dart';
+import '../../../product/constants/storage_keys.dart';
+import '../models/categories_response_model.dart';
+import '../models/create_ls_request_model.dart';
+import '../models/create_ls_response_model.dart';
+import '../models/learning_space_model.dart';
+import '../service/l_ls_service.dart';
+import '../service/ls_service.dart';
 import '../view/create_learning_space_screen.dart';
 
 class CreateLearningSpaceViewModel extends BaseViewModel {
-  static final List<Category> categoryOptions = <Category>[
-    Category(categoryName: "Art"),
-    Category(categoryName: "Music"),
-    Category(categoryName: "Dance"),
-    Category(categoryName: "Cooking"),
-    Category(categoryName: "Programming"),
-    Category(categoryName: "Technology"),
-    Category(categoryName: "Knitting"),
-    Category(categoryName: "Science"),
-    Category(categoryName: "Math"),
-    Category(categoryName: "Coffee"),
-    Category(categoryName: "Yoga"),
-    Category(categoryName: "Sports"),
-    Category(categoryName: "Acting"),
-    Category(categoryName: "Writing"),
-    Category(categoryName: "Board Games"),
-    Category(categoryName: "Esports"),
-    Category(categoryName: "Chess"),
-    Category(categoryName: "Bartending"),
-    Category(categoryName: "Baking"),
-    Category(categoryName: "Magic"),
-    Category(categoryName: "Astronomy"),
-    Category(categoryName: "Fishing"),
-    Category(categoryName: "Gardening"),
-    Category(categoryName: "Hobbies"),
-    Category(categoryName: "Outdoors"),
-    Category(categoryName: "Educational"),
-    Category(categoryName: "Photography"),
-  ];
+  //CreateLearningSpaceViewModel(this._learningSpace);
+
+  LearningSpace? _learningSpace;
+
+  late final ILSService _lsService;
+  static List<String> categoryOptions = <String>[];
 
   late TextEditingController _titleController;
   TextEditingController get titleController => _titleController;
@@ -56,6 +41,9 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   GlobalKey<FormState> get formKey => _formKey;
 
   late final ImagePicker _picker;
+  int? _selectedImage;
+  int? get selectedImage => _selectedImage;
+
   List<String> _selectedCategories = <String>[];
   List<String> get selectedCategoryNames => _selectedCategories;
 
@@ -64,6 +52,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initViewModel() {
+    _lsService = LSService.instance;
     _picker = ImagePicker();
   }
 
@@ -72,10 +61,11 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initView() {
+    _formKey = GlobalKey<FormState>();
+    //_setLSData();
     _titleController = TextEditingController(text: _initialTitle);
     _descriptionController = TextEditingController(text: _initialDescription);
     _participantsController = TextEditingController(text: _initialparticipants);
-    _formKey = GlobalKey<FormState>();
     _titleController.addListener(_controllerListener);
     _descriptionController.addListener(_controllerListener);
     _participantsController.addListener(_controllerListener);
@@ -105,7 +95,9 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void _setDefault() {}
+  void _setDefault() {
+    _canUpdate = false;
+  }
 
   Future<String?> createLearningSpace() async {
     await operation?.cancel();
@@ -127,10 +119,25 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     return res;
   }
 
+  Future<void> fetchInitialCategories() async {
+    if (categoryOptions.isNotEmpty) return;
+    await _getCategories();
+  }
+
   Future<String?> _createLearningSpaceRequest() async {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid) {
-      //post request
+      final CreateLSRequest request = CreateLSRequest(
+        token: localManager.getString(StorageKeys.accessToken),
+        title: _titleController.text,
+        description: _descriptionController.text,
+        categories: _selectedCategories,
+      );
+      final IResponseModel<CreateLSResponse> response =
+          await _lsService.createLS(request);
+      if (response.hasError) return response.error?.errorMessage;
+      final LearningSpace? ls = response.data?.learningSpace;
+      if (ls == null) return "Learning Space not created";
       await navigationManager.navigateToPage(
         path: NavigationConstants.learningSpace,
       );
@@ -174,4 +181,23 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     _canUpdate = true;
     notifyListeners();
   }
+
+  Future<String?> _getCategories() async {
+    final IResponseModel<CategoriesResponse> response =
+        await _lsService.getCategories();
+    final CategoriesResponse? data = response.data;
+    if (response.hasError || data == null) return response.error?.errorMessage;
+    categoryOptions = data.categories;
+    notifyListeners();
+    return null;
+  }
+/*
+  void _setLSData() {
+    _initialTitle = _learningSpace?.title;
+    _initialDescription = _learningSpace?.description;
+    _selectedCategories =
+        _learningSpace == null ? _learningSpace!.categories : <String>[];
+    _selectedImage = _learningSpace?.iconId;
+  }
+  */
 }
