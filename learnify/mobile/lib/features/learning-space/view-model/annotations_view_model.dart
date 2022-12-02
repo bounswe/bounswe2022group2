@@ -1,5 +1,5 @@
 import '../../../../core/base/view-model/base_view_model.dart';
-import '../models/annotation_model.dart';
+import '../models/annotation/annotation_model.dart';
 
 class AnnotationsViewModel extends BaseViewModel {
   late String _annotationText;
