@@ -7,6 +7,8 @@ import '../../home/model/learning_space_model.dart';
 import '../models/categories_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
+import '../models/enroll_ls_request_model.dart';
+import '../models/enroll_ls_response_model.dart';
 import '../view/create_learning_space_screen.dart';
 import 'l_ls_service.dart';
 
@@ -23,6 +25,7 @@ class LSService extends ILSService {
 
   static const String _create = '/learningSpace';
   static const String _categories = '/categories';
+  static const String _enrollLS = '/learningspace/enroll';
 
   @override
   Future<IResponseModel<CreateLSResponse>> createLS(
@@ -40,4 +43,15 @@ class LSService extends ILSService {
           parseModel: const CategoriesResponse(),
           type: RequestTypes.get,
           requireAuth: false);
+
+  @override
+  Future<IResponseModel<EnrollLSResponse>> enrollLS(
+          EnrollLSRequest body) async =>
+      networkManager.send<EnrollLSRequest, EnrollLSResponse>(
+        _enrollLS,
+        parseModel: const EnrollLSResponse(),
+        type: RequestTypes.post,
+        body: body,
+        requireAuth: true,
+      );
 }

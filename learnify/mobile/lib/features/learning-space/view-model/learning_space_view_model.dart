@@ -1,18 +1,25 @@
 import 'dart:math';
 
+import 'package:async/async.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
+import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../models/annotation_model.dart';
 import '../models/chapter_model.dart';
+import '../models/enroll_ls_request_model.dart';
+import '../models/enroll_ls_response_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/event.dart';
+import '../service/l_ls_service.dart';
+import '../service/ls_service.dart';
 
 /// View model to manage the data on learning space screen.
 class LearningSpaceViewModel extends BaseViewModel {
+  late final ILSService _lsService;
   // TODO: Will be taken from the course model when Egemen created it
   LearningSpace? learningSpace = LearningSpace();
 
@@ -37,6 +44,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initViewModel() {
+    _lsService = LSService.instance;
     _chapters = List<Chapter>.generate(20, Chapter.dummy);
     _events = List<Event>.generate(20, Event.dummy);
     _events
@@ -157,5 +165,35 @@ class LearningSpaceViewModel extends BaseViewModel {
         _chapters[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
     return newAnnotation;
+  }
+
+  Future<String?> enrollLearningSpace() async {
+    await operation?.cancel();
+    operation =
+        CancelableOperation<String?>.fromFuture(_enrollLearningSpaceRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _enrollLearningSpaceRequest() async {
+    print("here");
+    if (learningSpace?.title != null) {
+      final EnrollLSRequest request = EnrollLSRequest(
+        title: learningSpace?.title ?? "",
+      );
+      final IResponseModel<EnrollLSResponse> response =
+          await _lsService.enrollLS(request);
+      final EnrollLSResponse? respData = response.data;
+      if (response.hasError || respData == null)
+        return response.error?.errorMessage;
+      final LearningSpace? ls = response.data?.learningSpace;
+      print(ls?.title);
+      if (ls == null) {
+        print("No courses");
+        return "Learning Space not found";
+      }
+    }
+
+    return null;
   }
 }

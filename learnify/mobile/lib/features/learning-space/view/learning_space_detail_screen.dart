@@ -168,7 +168,12 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                   fontSize: 18),
                             ),
                             ElevatedButton(
-                                onPressed: () {}, child: Text("Enroll")),
+                                onPressed: () {
+                                  context
+                                      .read<LearningSpaceViewModel>()
+                                      .enrollLearningSpace();
+                                },
+                                child: Text("Enroll")),
                           ],
                         ),
                         context.sizedH(2),
