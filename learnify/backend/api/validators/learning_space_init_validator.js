@@ -13,9 +13,8 @@ export function validateLS_init(body) {
 
 export function validatePost_init(body) {
   const schema = Joi.object({
-    ls_title: Joi.string().min(3).required(),
+    ls_id: Joi.string().min(3).required(),
     title: Joi.string().min(3).required(),
-    token: Joi.string().required(),
     content: Joi.string().min(6).required(),
   });
   return schema.validate(body);
