@@ -36,9 +36,9 @@ class ChapterImage extends StatelessWidget {
     return Scaffold(
       appBar: ChapterImage._appBar(context),
       body: Center(
-        child: AnnotatableImage.network(
-          imageUrl,
-          scalable: false,
+        child: AnnotatableImage(
+          networkUrl: imageUrl,
+          isScalable: false,
           clickable: true,
           initialColor: context.primary,
           initialPaintMode: PaintMode.rect,
