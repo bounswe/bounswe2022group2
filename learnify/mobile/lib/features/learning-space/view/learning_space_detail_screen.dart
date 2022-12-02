@@ -111,7 +111,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
 }
 
 class MySliverOverlayAbsorber extends StatefulWidget {
-  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled});
+  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled, super.key});
   final bool innerBoxIsScrolled;
   @override
   State<MySliverOverlayAbsorber> createState() =>
