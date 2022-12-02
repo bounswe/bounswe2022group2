@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
-import '../../../features/learning-space/models/annotation_model.dart';
+import '../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../constants/main_type_definitions.dart';
@@ -106,14 +107,16 @@ class DialogBuilder {
               TextKeys.annotate,
               asyncCallback: () async {
                 final NavigatorState navigator = Navigator.of(context);
-
                 if (textCallback != null) {
-                  final Annotation? a = await textCallback(startIndex ?? 0,
-                      endIndex ?? 0, annotationText, chapterId);
-                  navigator.pop(a);
-                  return null;
+                  final Tuple2<Annotation?, String?> res = await textCallback(
+                      startIndex ?? 0,
+                      endIndex ?? 0,
+                      annotationText,
+                      chapterId);
+                  navigator.pop(res.item1);
+                  return res.item2;
                 } else if (imageCallback != null && imageUrl != null) {
-                  final Annotation? a = await imageCallback(
+                  final Tuple2<Annotation?, String?> res = await imageCallback(
                     startOffset ?? Offset.zero,
                     endOffset ?? Offset.zero,
                     annotationText,
@@ -121,8 +124,8 @@ class DialogBuilder {
                     color ?? Colors.white,
                     imageUrl,
                   );
-                  navigator.pop(a);
-                  return null;
+                  navigator.pop(res.item1);
+                  return res.item2;
                 }
                 navigator.pop(null);
                 return null;

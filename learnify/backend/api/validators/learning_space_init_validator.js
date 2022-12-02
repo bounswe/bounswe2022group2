@@ -37,6 +37,13 @@ export function validatePost_init(body) {
   });
   return schema.validate(body);
 }
+export function validateEditPost_init(body) {
+  const schema = Joi.object({
+    ls_id: Joi.string().min(3).required(),
+    post_id: Joi.string().min(3).required(),
+  });
+  return schema.validate(body);
+}
 export function validateLSEnroll_init(body) {
   const schema = Joi.object({
     title: Joi.string().min(3).required()

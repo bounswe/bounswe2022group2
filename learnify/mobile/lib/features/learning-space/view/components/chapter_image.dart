@@ -7,7 +7,7 @@ import '../../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../../core/widgets/image/annotatable_image.dart';
 import '../../../../core/widgets/image/image_painter.dart';
-import '../../models/annotation_model.dart';
+import '../../models/annotation/annotation_model.dart';
 import '../../view-model/learning_space_view_model.dart';
 
 class ChapterImage extends StatelessWidget {
