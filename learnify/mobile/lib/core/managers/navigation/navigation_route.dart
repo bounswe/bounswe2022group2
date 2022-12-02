@@ -47,7 +47,10 @@ class NavigationRoute {
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3), args);
       case NavigationConstants.learningSpace:
-        return normalNavigate(const LearningSpaceDetailScreen(), args);
+        return normalNavigate(
+            LearningSpaceDetailScreen(
+                learningSpace: arguments['learningSpace']),
+            args);
       case NavigationConstants.annotations:
         return normalNavigate(
             AnnotationsScreen(annotatedText: arguments['annotatedText']), args);

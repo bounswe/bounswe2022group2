@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:async/async.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
@@ -13,13 +14,18 @@ import '../../../product/constants/navigation_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_request.dart';
 import '../models/chapter_model.dart';
+import '../models/enroll_ls_request_model.dart';
+import '../models/enroll_ls_response_model.dart';
 import '../models/event.dart';
+import '../models/learning_space_model.dart';
 import '../service/ls_service.dart';
 
 /// View model to manage the data on learning space screen.
 class LearningSpaceViewModel extends BaseViewModel {
   late final LSService _lsService;
   // TODO: Will be taken from the course model when Egemen created it
+  LearningSpace? learningSpace = const LearningSpace();
+
   List<Chapter> _chapters = <Chapter>[];
   List<Chapter> get chapters => _chapters;
   List<Event> _events = <Event>[];
@@ -208,6 +214,37 @@ class LearningSpaceViewModel extends BaseViewModel {
       );
       return Tuple2<Annotation?, String?>(newAnnotation, null);
     }
+  }
+
+  Future<String?> enrollLearningSpace() async {
+    await operation?.cancel();
+    operation =
+        CancelableOperation<String?>.fromFuture(_enrollLearningSpaceRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _enrollLearningSpaceRequest() async {
+    print("here");
+    if (learningSpace?.title != null) {
+      final EnrollLSRequest request = EnrollLSRequest(
+        title: learningSpace?.title ?? "",
+      );
+      final IResponseModel<EnrollLSResponse> response =
+          await _lsService.enrollLS(request);
+      final EnrollLSResponse? respData = response.data;
+      if (response.hasError || respData == null) {
+        return response.error?.errorMessage;
+      }
+      final LearningSpace? ls = response.data?.learningSpace;
+      print(ls?.title);
+      if (ls == null) {
+        print("No courses");
+        return "Learning Space not found";
+      }
+    }
+
+    return null;
   }
 
   Annotation createImageAnnotation(

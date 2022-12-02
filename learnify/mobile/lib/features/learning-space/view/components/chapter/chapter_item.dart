@@ -108,17 +108,19 @@ class ChapterItem extends StatelessWidget {
             .toList();
         return GestureDetector(
           onTap: () => NavigationManager.instance.navigateToPage(
-              path: NavigationConstants.chapterImage,
-              data: <String, dynamic>{
-                'image': images[i],
-                'all_annotations': chapter.annotations,
-                'chapter_id': chapter.id,
-              }),
-          child: AnnotatableImage.network(
-            images[i],
+            path: NavigationConstants.chapterImage,
+            data: <String, dynamic>{
+              'image': images[i],
+              'all_annotations': chapter.annotations,
+              'chapter_id': chapter.id,
+            },
+          ),
+          child: AnnotatableImage(
+            networkUrl: images[i],
             annotateCallback: (Offset start, Offset end, Color color) async =>
                 null,
-            scalable: false,
+            key: Key(images[i]),
+            isScalable: false,
             initialColor: context.primary,
             initialPaintMode: PaintMode.none,
             paintHistory:

@@ -1,7 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
-import 'package:learnify/core/widgets/text/annotatable/annotatable_text.dart';
 import 'package:learnify/features/learning-space/models/annotation/annotation_model.dart';
 import 'package:learnify/features/learning-space/models/chapter_model.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
@@ -42,28 +42,36 @@ void main() {
       expect(expansionTileFinder, findsOneWidget);
       final CustomExpansionTile expansionTile =
           tester.widget(expansionTileFinder) as CustomExpansionTile;
-      expect(expansionTile.children[4].runtimeType, AnnotatableText);
-      final AnnotatableText annotatableText =
-          expansionTile.children[4] as AnnotatableText;
-      expect(annotatableText.content, isNotNull);
-      expect(annotatableText.onAnnotationClick, isNotNull);
-      expect(annotatableText.annotateCallback, isNotNull);
-      expect(annotatableText.annotateLabel, isNotNull);
-      expect(annotatableText.allAnnotations, isEmpty);
+
+      final CarouselSlider carouselSlider =
+          expansionTile.children[1] as CarouselSlider;
+      expect(carouselSlider.itemCount, greaterThan(0));
+      expect(carouselSlider.options.autoPlay, true);
+      expect(carouselSlider.options.enlargeCenterPage, true);
+      expect(carouselSlider.options.enableInfiniteScroll, false);
       final BuildContext context = tester.element(find.byType(Container).first);
       final LearningSpaceViewModel viewModel =
           context.read<LearningSpaceViewModel>();
       final Chapter firstChapterModel = viewModel.chapters.first;
       const String annotationContent = 'This is a great annotation.';
-      final Annotation annotation = viewModel.createTextAnnotation(
-          3,
-          annotatableText.content.length - 5,
-          annotationContent,
-          firstChapterModel,
-          0);
+      const Offset startOffset = Offset(0, 12);
+      const Offset endOffset = Offset(98, 210);
+      const Color color = Colors.red;
+      const String imageUrl = 'https://picsum.photos/id/1/700/400';
+      final Annotation annotation = viewModel.createImageAnnotation(
+        startOffset,
+        endOffset,
+        color,
+        imageUrl,
+        annotationContent,
+        firstChapterModel,
+        0,
+      );
       expect(annotation.content, annotationContent);
-      expect(annotation.endIndex - annotation.startIndex,
-          annotatableText.content.length - 8);
+      expect(annotation.startOffset, startOffset);
+      expect(annotation.endOffset, endOffset);
+      expect(annotation.color, color);
+      expect(annotation.imageUrl, imageUrl);
       await tester.pumpAndSettle();
       final Chapter foundChapter = viewModel.chapters
           .where((Chapter c) => c.id == firstChapterModel.id)

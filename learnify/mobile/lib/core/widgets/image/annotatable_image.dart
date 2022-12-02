@@ -23,7 +23,7 @@ import 'ported_interactive_viewer.dart';
 ///[AnnotatableImage] widget.
 @immutable
 class AnnotatableImage extends StatefulWidget {
-  const AnnotatableImage._({
+  const AnnotatableImage({
     required this.annotateCallback,
     Key? key,
     this.assetPath,
@@ -52,54 +52,6 @@ class AnnotatableImage extends StatefulWidget {
     this.paintHistory = const <PaintInfo>[],
   }) : super(key: key);
 
-  ///Constructor for loading image from network url.
-  factory AnnotatableImage.network(
-    String url, {
-    required AnnotateImageCallback annotateCallback,
-    Key? key,
-    double? height,
-    double? width,
-    Widget? placeholderWidget,
-    bool? scalable,
-    List<Color>? colors,
-    Widget? brushIcon,
-    Widget? undoIcon,
-    Widget? clearAllIcon,
-    Widget? colorIcon,
-    PaintMode? initialPaintMode,
-    double? initialStrokeWidth,
-    Color? initialColor,
-    bool? clickable,
-    ValueChanged<PaintMode>? onPaintModeChanged,
-    ValueChanged<Color>? onColorChanged,
-    ValueChanged<double>? onStrokeWidthChanged,
-    bool? controlsAtTop,
-    List<PaintInfo>? paintHistory,
-  }) =>
-      AnnotatableImage._(
-        key: key,
-        networkUrl: url,
-        height: height,
-        width: width,
-        placeHolder: placeholderWidget,
-        isScalable: scalable,
-        paintHistory: paintHistory ?? <PaintInfo>[],
-        colors: colors,
-        brushIcon: brushIcon,
-        undoIcon: undoIcon,
-        colorIcon: colorIcon,
-        clearAllIcon: clearAllIcon,
-        initialPaintMode: initialPaintMode,
-        initialColor: initialColor,
-        initialStrokeWidth: initialStrokeWidth,
-        onPaintModeChanged: onPaintModeChanged,
-        onColorChanged: onColorChanged,
-        onStrokeWidthChanged: onStrokeWidthChanged,
-        controlsAtTop: controlsAtTop ?? true,
-        annotateCallback: annotateCallback,
-        clickable: clickable ?? false,
-      );
-
   ///Constructor for loading image from assetPath.
   factory AnnotatableImage.asset(
     String path, {
@@ -122,7 +74,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         assetPath: path,
         height: height,
@@ -166,7 +118,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         file: file,
         height: height,
@@ -210,7 +162,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         byteArray: byteArray,
         height: height,
@@ -249,7 +201,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         height: height,
         width: width,

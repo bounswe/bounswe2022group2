@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/base/view/base_view.dart';
-import '../../home/model/learning_space_model.dart';
 import '../../home/view-model/home_view_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import 'view_all_list.dart';
 
 class TakenLsScreen extends BaseView<HomeViewModel> {

@@ -1,87 +1,67 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
-import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
-import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
+import '../models/annotation/annotation_model.dart';
 import '../view-model/annotations_view_model.dart';
 
 part './components/text_item.dart';
 
 class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
-  AnnotationsScreen({required String annotatedText, Key? key})
+  AnnotationsScreen(
+      {List<Annotation> annotations = const <Annotation>[],
+      String? annotatedText,
+      Key? key})
       : super(
-            builder: (BuildContext context) => _builder(context, annotatedText),
-            appBar: _appBarBuilder,
-            scrollable: true,
-            key: key);
+          builder: (BuildContext context) =>
+              _builder(context, annotations, annotatedText),
+          appBar: _appBarBuilder,
+          scrollable: true,
+          key: key,
+        );
 
-  static Widget _builder(BuildContext context, String annotatedText) => Column(
+  static Widget _builder(BuildContext context, List<Annotation> annotations,
+          String? annotatedText) =>
+      Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           context.sizedH(2),
-          Padding(
-              padding: const EdgeInsets.symmetric(
+          if (annotations.isNotEmpty)
+            const Padding(
+              padding: EdgeInsets.symmetric(
                 horizontal: 15,
               ),
-              child: _targetText(context, annotatedText)),
+              // child: _targetText(context, annotations.first, annotatedText),
+            ),
           context.sizedH(2),
-          TextItem(
-            creator: StorageKeys.user.name,
-            content:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            upvotes: 10,
+          ...List<Widget>.generate(
+            annotations.length,
+            (int i) {
+              final Annotation a = annotations[i];
+              return TextItem(
+                creator: StorageKeys.user.name,
+                content: a.content ??
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+                upvotes: a.upVote ?? Random().nextInt(30),
+              );
+            },
           ),
-          const TextItem(
-            creator: "ezgi",
-            content:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            upvotes: 8,
-          ),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
-          const TextItem(
-              creator: "ezgi",
-              content:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
         ],
       );
 
-  static Widget _targetText(BuildContext context, String target,
-          {Color? color}) =>
-      Text(target, style: context.displayLarge);
+  // static Widget _targetText(
+  //         BuildContext context, Annotation a, String? annotatedText) =>
+  //     a.isImage
+  //         ? AnnotatableImage()
+  //         : Text(annotatedText ?? '', style: context.displayLarge);
 
   static DefaultAppBar _appBarBuilder(BuildContext context) => DefaultAppBar(
         size: context.height * 6,

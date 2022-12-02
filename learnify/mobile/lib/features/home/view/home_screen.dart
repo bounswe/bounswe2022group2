@@ -10,7 +10,7 @@ import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
-import '../model/learning_space_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../view-model/home_view_model.dart';
 
 part '../components/course_preview.dart';
@@ -25,7 +25,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
               context.read<HomeViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
-        
+
   static Widget _builder(BuildContext context) => Padding(
         padding: EdgeInsets.only(
             left: context.width * 4,
@@ -78,7 +78,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
               separatorBuilder: (BuildContext context, _) =>
                   SizedBox(width: context.width * 3),
               itemBuilder: (BuildContext context, int index) => CoursePreview(
-                  textKey: courseList[index].name ?? '',
+                  textKey: courseList[index].title ?? '',
                   participantNumber: courseList[index].numParticipants ?? 0),
             ),
           )

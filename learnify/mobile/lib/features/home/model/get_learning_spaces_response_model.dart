@@ -1,5 +1,5 @@
 import '../../../core/base/model/base_model.dart';
-import 'learning_space_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 
 class GetLearningSpacesResponse extends BaseModel<GetLearningSpacesResponse> {
   const GetLearningSpacesResponse(
