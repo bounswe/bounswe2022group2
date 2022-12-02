@@ -33,7 +33,6 @@ const lsSchema = new Schema({
       transform: function (doc, ret, options) {
 
         ret.id = ret._id;
-        ret.title = ret._title;
         delete ret.BERT;
         delete ret._id;
         return ret;

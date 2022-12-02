@@ -11,8 +11,8 @@ export function validateLS_init(body) {
 }
 export function validateAnnotation_init(body) {
   const schema = Joi.object({
-    ls_title: Joi.string().min(3).required(),
-    chapterName: Joi.string().min(6).max(2000).required(),
+    ls_id: Joi.string().min(3).required(),
+    post_id: Joi.string().min(6).max(2000).required(),
     body: Joi.string().required(),
     target: Joi.object().required(),
   });

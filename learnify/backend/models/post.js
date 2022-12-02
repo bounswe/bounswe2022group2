@@ -1,7 +1,5 @@
 import mongoose from 'mongoose';
-import Annotation from './annotation.js';
-import annotationSchema from './annotation.js';
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 
 
 // We can add additional fields if we enlarge the features of the app.
