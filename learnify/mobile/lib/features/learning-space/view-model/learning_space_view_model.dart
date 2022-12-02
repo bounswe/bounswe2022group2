@@ -136,24 +136,31 @@ class LearningSpaceViewModel extends BaseViewModel {
     if (res.hasError) {
       return Tuple2<Annotation?, String?>(null, res.error?.errorMessage);
     } else {
-      final Annotation newAnnotation = Annotation(
-        id: (startIndex * endIndex + Random().nextInt(490)).toString(),
-        content: annotation,
-        startIndex: startIndex,
-        endIndex: endIndex,
-        courseId: oldChapter.courseId,
-        chapterId: oldChapter.id,
-      );
-      final List<Annotation> newAnnotations =
-          List<Annotation>.from(oldChapter.annotations)
-            ..add(newAnnotation)
-            ..sort((Annotation a1, Annotation a2) =>
-                a1.startIndex.compareTo(a2.startIndex));
-      _chapters[itemIndex] =
-          _chapters[itemIndex].copyWith(annotations: newAnnotations);
-      notifyListeners();
+      final Annotation newAnnotation = createTextAnnotation(
+          startIndex, endIndex, annotation, oldChapter, itemIndex);
       return Tuple2<Annotation?, String?>(newAnnotation, null);
     }
+  }
+
+  Annotation createTextAnnotation(int startIndex, int endIndex,
+      String annotation, Chapter chapter, int itemIndex) {
+    final Annotation newAnnotation = Annotation(
+      id: (startIndex * endIndex + Random().nextInt(490)).toString(),
+      content: annotation,
+      startIndex: startIndex,
+      endIndex: endIndex,
+      courseId: chapter.courseId,
+      chapterId: chapter.id,
+    );
+    final List<Annotation> newAnnotations =
+        List<Annotation>.from(chapter.annotations)
+          ..add(newAnnotation)
+          ..sort((Annotation a1, Annotation a2) =>
+              a1.startIndex.compareTo(a2.startIndex));
+    _chapters[itemIndex] =
+        _chapters[itemIndex].copyWith(annotations: newAnnotations);
+    notifyListeners();
+    return newAnnotation;
   }
 
   Future<Tuple2<Annotation?, String?>> annotateImage(
@@ -188,25 +195,15 @@ class LearningSpaceViewModel extends BaseViewModel {
     if (res.hasError) {
       return Tuple2<Annotation?, String?>(null, res.error?.errorMessage);
     } else {
-      final Annotation newAnnotation = Annotation(
-        id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
-        content: annotation,
-        startOffset: startOffset,
-        endOffset: endOffset,
-        chapterId: oldChapter.id,
-        courseId: oldChapter.courseId,
-        isImage: true,
-        colorParam: color,
-        imageUrl: imageUrl,
+      final Annotation newAnnotation = createImageAnnotation(
+        startOffset,
+        endOffset,
+        color,
+        imageUrl,
+        annotation,
+        oldChapter,
+        itemIndex,
       );
-      final List<Annotation> newAnnotations =
-          List<Annotation>.from(oldChapter.annotations)
-            ..add(newAnnotation)
-            ..sort((Annotation a1, Annotation a2) =>
-                a1.startIndex.compareTo(a2.startIndex));
-      _chapters[itemIndex] =
-          _chapters[itemIndex].copyWith(annotations: newAnnotations);
-      notifyListeners();
       return Tuple2<Annotation?, String?>(newAnnotation, null);
     }
   }
@@ -239,5 +236,36 @@ class LearningSpaceViewModel extends BaseViewModel {
     }
 
     return null;
+  }
+
+  Annotation createImageAnnotation(
+    Offset startOffset,
+    Offset endOffset,
+    Color backgroundColor,
+    String? imageUrl,
+    String annotation,
+    Chapter chapter,
+    int itemIndex,
+  ) {
+    final Annotation newAnnotation = Annotation(
+      id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
+      content: annotation,
+      startOffset: startOffset,
+      endOffset: endOffset,
+      chapterId: chapter.id,
+      courseId: chapter.courseId,
+      isImage: true,
+      colorParam: backgroundColor,
+      imageUrl: imageUrl,
+    );
+    final List<Annotation> newAnnotations =
+        List<Annotation>.from(chapter.annotations)
+          ..add(newAnnotation)
+          ..sort((Annotation a1, Annotation a2) =>
+              a1.startIndex.compareTo(a2.startIndex));
+    _chapters[itemIndex] =
+        _chapters[itemIndex].copyWith(annotations: newAnnotations);
+    notifyListeners();
+    return newAnnotation;
   }
 }
