@@ -116,8 +116,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     final Chapter oldChapter = _chapters[itemIndex];
     final AnnotationSelector selector =
         AnnotationSelector(start: startIndex, end: endIndex);
+    // TODO: Fix
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
+      // lsId: '638a1ab3fe33867d12af3370',
+      // postId: '638a1adcfe33867d12af3373',
       lsId: oldChapter.courseId,
       postId: oldChapter.id,
       target: AnnotationTarget(selector: selector),
@@ -131,8 +134,8 @@ class LearningSpaceViewModel extends BaseViewModel {
         content: annotation,
         startIndex: startIndex,
         endIndex: endIndex,
-        chapterId: oldChapter.id,
         courseId: oldChapter.courseId,
+        chapterId: oldChapter.id,
       );
       final List<Annotation> newAnnotations =
           List<Annotation>.from(oldChapter.annotations)
@@ -168,6 +171,8 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h', format: 'image/jpeg');
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
+      // lsId: '638a1ab3fe33867d12af3370',
+      // postId: '638a1adcfe33867d12af3373',
       lsId: oldChapter.courseId,
       postId: oldChapter.id,
       target: target,
