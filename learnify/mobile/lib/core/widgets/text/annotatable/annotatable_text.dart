@@ -1,6 +1,5 @@
 import 'dart:collection';
 
-import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -159,13 +158,20 @@ class AnnotatableText extends StatelessWidget {
   Future<void> _annotationClick(
       _AnnotatableTextItem annotationItem, BuildContext context) async {
     final List<Annotation> annotations = annotationItem.annotations;
+    final List<Annotation> uniqueAnnotations = <Annotation>[];
+    for (final Annotation a in annotations) {
+      final int indexOfA = uniqueAnnotations.indexWhere((Annotation e) =>
+          e.startIndex == a.startIndex && a.endIndex == e.endIndex);
+      if (indexOfA != -1) continue;
+      uniqueAnnotations.add(a);
+    }
     if (annotations.isEmpty) return;
-    if (annotations.length == 1) {
+    if (uniqueAnnotations.length == 1) {
       final Annotation annotation = annotations[0];
       if (annotation.id == null) return;
       final String annotatedText =
           content.substring(annotation.startIndex, annotation.endIndex);
-      onAnnotationClick(annotation.id!, annotatedText);
+      onAnnotationClick(annotations, annotatedText);
     } else {
       final Set<String> annotatedTexts = <String>{};
       for (final Annotation a in annotations) {
@@ -176,13 +182,14 @@ class AnnotatableText extends StatelessWidget {
       final String? selectedText = await DialogBuilder(context)
           .singleSelectDialog(TextKeys.selectAnnotatedDialogTitle,
               annotatedTexts.toList(), null);
-      final Annotation? foundA = annotations.firstWhereOrNull((Annotation e) {
+      final List<Annotation> foundAnnotations =
+          annotations.where((Annotation e) {
         final String annotatedText =
             content.substring(e.startIndex, e.endIndex);
         return annotatedText.compareWithoutCase(selectedText);
-      });
-      if (foundA?.id == null || selectedText == null) return;
-      onAnnotationClick(foundA!.id!, selectedText);
+      }).toList();
+      if (foundAnnotations.isEmpty || selectedText == null) return;
+      onAnnotationClick(foundAnnotations, selectedText);
     }
   }
 }

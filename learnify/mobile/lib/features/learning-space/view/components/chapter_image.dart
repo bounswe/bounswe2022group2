@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -54,15 +56,21 @@ class ChapterImage extends StatelessWidget {
                 ..style = PaintingStyle.stroke,
             );
           }),
-          annotateCallback: (Offset start, Offset end, Color color) async =>
-              DialogBuilder(context).annotateDialog(
-            chapterId,
-            imageCallback: context.read<LearningSpaceViewModel>().annotateImage,
-            startOffset: start,
-            endOffset: end,
-            color: color,
-            imageUrl: imageUrl,
-          ),
+          annotateCallback: (Offset start, Offset end, Color color) async {
+            final Offset foundStart =
+                Offset(min(start.dx, end.dx), min(start.dy, end.dy));
+            final Offset foundEnd =
+                Offset(max(start.dx, end.dx), max(start.dy, end.dy));
+            return DialogBuilder(context).annotateDialog(
+              chapterId,
+              imageCallback:
+                  context.read<LearningSpaceViewModel>().annotateImage,
+              startOffset: foundStart,
+              endOffset: foundEnd,
+              color: color,
+              imageUrl: imageUrl,
+            );
+          },
         ),
       ),
     );

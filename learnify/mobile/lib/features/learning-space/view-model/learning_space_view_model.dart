@@ -106,10 +106,14 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> viewAnnotations(
-      String annotationId, String annotationText) async {
+      List<Annotation> annotations, String? annotationText) async {
     await navigationManager.navigateToPage(
-        path: NavigationConstants.annotations,
-        data: <String, dynamic>{'annotatedText': annotationText});
+      path: NavigationConstants.annotations,
+      data: <String, dynamic>{
+        if (annotationText != null) 'annotatedText': annotationText,
+        'annotations': annotations
+      },
+    );
     return null;
   }
 
@@ -134,10 +138,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     // TODO: Fix
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
-      // lsId: '638a1ab3fe33867d12af3370',
-      // postId: '638a1adcfe33867d12af3373',
-      lsId: oldChapter.courseId,
-      postId: oldChapter.id,
+      // TODO:
+      lsId: '638a1ab3fe33867d12af3370',
+      postId: '638a1adcfe33867d12af3373',
+      // lsId: oldChapter.courseId,
+      // postId: oldChapter.id,
       target: AnnotationTarget(selector: selector),
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -193,10 +198,11 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h', format: 'image/jpeg');
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
-      // lsId: '638a1ab3fe33867d12af3370',
-      // postId: '638a1adcfe33867d12af3373',
-      lsId: oldChapter.courseId,
-      postId: oldChapter.id,
+      // TODO: Fix
+      lsId: '638a1ab3fe33867d12af3370',
+      postId: '638a1adcfe33867d12af3373',
+      // lsId: oldChapter.courseId,
+      // postId: oldChapter.id,
       target: target,
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -256,11 +262,15 @@ class LearningSpaceViewModel extends BaseViewModel {
     Chapter chapter,
     int itemIndex,
   ) {
+    final Offset foundStart = Offset(
+        min(startOffset.dx, endOffset.dx), min(startOffset.dy, endOffset.dy));
+    final Offset foundEnd = Offset(
+        max(startOffset.dx, endOffset.dx), max(startOffset.dy, endOffset.dy));
     final Annotation newAnnotation = Annotation(
       id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
       content: annotation,
-      startOffset: startOffset,
-      endOffset: endOffset,
+      startOffset: foundStart,
+      endOffset: foundEnd,
       chapterId: chapter.id,
       courseId: chapter.courseId,
       isImage: true,

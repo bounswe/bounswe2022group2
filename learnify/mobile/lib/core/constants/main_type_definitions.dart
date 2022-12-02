@@ -30,7 +30,7 @@ typedef StringCallback = void Function(String id);
 
 /// annotation click callback
 typedef AnnotationClickCallback = void Function(
-    String id, String annotatedText);
+    List<Annotation> annotations, String annotatedText);
 
 typedef AnnotateTextDialogCallback
     = Future<Tuple2<Annotation?, String?>> Function(

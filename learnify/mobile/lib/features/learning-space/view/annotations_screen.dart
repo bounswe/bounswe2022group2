@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:math';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,8 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
+import '../../../core/widgets/image/cropped_image_painter.dart';
+import '../../../core/widgets/indicators/custom_loading_indicator.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
@@ -31,15 +35,14 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
   static Widget _builder(BuildContext context, List<Annotation> annotations,
           String? annotatedText) =>
       Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           context.sizedH(2),
           if (annotations.isNotEmpty)
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 15,
               ),
-              // child: _targetText(context, annotations.first, annotatedText),
+              child: _targetText(context, annotations, annotatedText),
             ),
           context.sizedH(2),
           ...List<Widget>.generate(
@@ -57,11 +60,44 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
         ],
       );
 
-  // static Widget _targetText(
-  //         BuildContext context, Annotation a, String? annotatedText) =>
-  //     a.isImage
-  //         ? AnnotatableImage()
-  //         : Text(annotatedText ?? '', style: context.displayLarge);
+  static Future<ui.Image> getImage(String path) async {
+    final Completer<ImageInfo> completer = Completer<ImageInfo>();
+    final NetworkImage img = NetworkImage(path);
+    img
+        .resolve(ImageConfiguration.empty)
+        .addListener(ImageStreamListener((ImageInfo info, bool _) {
+      completer.complete(info);
+    }));
+    final ImageInfo imageInfo = await completer.future;
+    return imageInfo.image;
+  }
+
+  static Widget _targetText(BuildContext context, List<Annotation> annotations,
+      String? annotatedText) {
+    final Annotation a = annotations.first;
+    Rect rect = Rect.fromPoints(a.startOffset, a.endOffset);
+    for (final Annotation annotation in annotations) {
+      rect = rect.intersect(
+          Rect.fromPoints(annotation.startOffset, annotation.endOffset));
+    }
+    return a.isImage
+        ? FutureBuilder<ui.Image>(
+            future: getImage(a.imageUrl ?? ''),
+            builder: (BuildContext context, AsyncSnapshot<ui.Image> snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return CustomPaint(
+                  painter: CroppedImagePainter(snapshot.data, rect),
+                  child: SizedBox(
+                    width: a.endOffset.dx - a.startOffset.dx,
+                    height: a.endOffset.dy - a.startOffset.dy,
+                  ),
+                );
+              } else {
+                return CustomLoadingIndicator(context);
+              }
+            })
+        : Text(annotatedText ?? '', style: context.displayLarge);
+  }
 
   static DefaultAppBar _appBarBuilder(BuildContext context) => DefaultAppBar(
         size: context.height * 6,

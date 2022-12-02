@@ -53,7 +53,10 @@ class NavigationRoute {
             args);
       case NavigationConstants.annotations:
         return normalNavigate(
-            AnnotationsScreen(annotatedText: arguments['annotatedText']), args);
+            AnnotationsScreen(
+                annotations: arguments['annotations'],
+                annotatedText: arguments['annotatedText']),
+            args);
       case NavigationConstants.createEditLearningSpace:
         return normalNavigate(
             CreateLearningSpaceScreen(

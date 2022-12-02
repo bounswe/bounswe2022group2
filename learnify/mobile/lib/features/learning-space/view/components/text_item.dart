@@ -16,76 +16,75 @@ class TextItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
         color: Colors.white,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 8,
-                vertical: (creator == StorageKeys.user.name) ? 0 : 10,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    creator,
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                  if (creator == StorageKeys.user.name)
-                    Wrap(
-                      children: <Widget>[
-                        IconButton(
-                          alignment: Alignment.centerRight,
-                          iconSize: 20,
-                          padding: const EdgeInsets.only(left: 1),
-                          onPressed: () {},
-                          icon: const Icon(Icons.edit_sharp),
-                        ),
-                        IconButton(
-                          iconSize: 20,
-                          padding: const EdgeInsets.only(left: 5),
-                          onPressed: () {},
-                          icon: const Icon(Icons.delete),
-                        ),
-                      ],
-                    )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-              child: Wrap(
-                children: <Widget>[
-                  Text(
-                    content,
-                    textAlign: TextAlign.left,
-                  )
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                IconButton(
-                  iconSize: 20,
-                  padding: const EdgeInsets.only(left: 5),
-                  onPressed: () {
-                    //likeToggle = !likeToggle;
-                  },
-                  icon: const Icon(Icons.thumb_up_outlined),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: context.width, vertical: context.height * 1.3),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: (creator == StorageKeys.user.name) ? 0 : 6,
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      creator,
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    if (creator == StorageKeys.user.name)
+                      Wrap(
+                        children: <Widget>[
+                          BaseIconButton(
+                            padding: const EdgeInsets.only(left: 1),
+                            onPressed: () {},
+                            sizeFactor: 6.6,
+                            icon: Icons.edit_sharp,
+                          ),
+                          BaseIconButton(
+                            padding: const EdgeInsets.only(left: 5),
+                            onPressed: () {},
+                            sizeFactor: 6.6,
+                            icon: Icons.delete,
+                          ),
+                        ],
+                      )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                child: Text(content, textAlign: TextAlign.left),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  BaseIconButton(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: context.width * 1.6,
+                        vertical: context.height * 0.6),
+                    onPressed: () {
+                      //likeToggle = !likeToggle;
+                    },
+                    sizeFactor: 6.2,
+                    icon: Icons.thumb_up_outlined,
+                  ),
 
-                /*likeToggle
-                        ? const Icon(Icons.thumb_up_outlined)
-                        : const Icon(Icons.thumb_up)),
-                        */
-                Text(upvotes.toString(), textAlign: TextAlign.right),
-                const SizedBox(width: 8),
-              ],
-            ),
-          ],
+                  /*likeToggle
+                          ? const Icon(Icons.thumb_up_outlined)
+                          : const Icon(Icons.thumb_up)),
+                          */
+                  Text(upvotes.toString(), textAlign: TextAlign.right),
+                  SizedBox(width: context.width * 2.5),
+                ],
+              ),
+            ],
+          ),
         ),
       );
 }

@@ -74,9 +74,9 @@ class ChapterItem extends StatelessWidget {
           },
           allAnnotations: chapter.annotations,
           onAnnotationClick:
-              (String annotationId, String annotationText) async {
+              (List<Annotation> annotations, String annotationText) async {
             //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
-            await viewModel.viewAnnotations(annotationId, annotationText);
+            await viewModel.viewAnnotations(annotations, annotationText);
           },
         ),
         ChapterList.createEditButton(context, TextKeys.editChapter,
