@@ -12,8 +12,7 @@ export function validateLS_init(body) {
 
 export function validateLSEnroll_init(body) {
   const schema = Joi.object({
-    title: Joi.string().min(3).required(),
-    username: Joi.string().min(3).max(40).required()
+    title: Joi.string().min(3).required()
   });
   return schema.validate(body);
 }
