@@ -64,7 +64,7 @@
   "edit": "edit",
   "title_hint": "Learning Space Name",
   "title_label": "Title",
-  "description_hint": "Optional Description",
+  "description_hint": "Explain this Space",
   "description_label": "Description",
   "done":"Done",
   "create_space_page_title" : "Create Learning Space",
@@ -74,5 +74,14 @@
   "select_annotated_dialog_title": "Select a Text to See Annotations",
   "taken_courses": "Taken Courses",
   "friend_courses": "Friends' Courses",
-  "recommended_courses": "Recommended Courses"
+  "recommended_courses": "Recommended Courses",
+  "click_image_annotations": "Click on image for annotations",
+  "create_event": "Create an Event",
+  "edit_event": "Edit the Event",
+  "event_date": "Event Date",
+  "event_duration": "Duration",
+  "event_participation_limit": "Participation Limit",
+  "event_creator": "Event Creator",
+  "event_participants": "Participants",
+  "passed_event": "Event has Passed"
 }

@@ -70,6 +70,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: BaseIconButton(
           onPressed: NavigationManager.instance.pop,
           icon: Icons.chevron_left_outlined,
+          color: Colors.white,
         ),
       );
 

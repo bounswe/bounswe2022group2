@@ -14,6 +14,7 @@ const lsSchema = new Schema({
   description: {
     type: String, required: true
   },
+  participants: [{type: String, required: true}],
   num_participants: {
     type: Number, required: true, default: 1
   },
@@ -32,6 +33,7 @@ const lsSchema = new Schema({
       transform: function (doc, ret, options) {
 
         ret.id = ret._id;
+        ret.title = ret._title;
         delete ret.BERT;
         delete ret._id;
         return ret;

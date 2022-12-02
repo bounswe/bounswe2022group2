@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../features/learning-space/models/annotation_model.dart';
 import '../widgets/app-bar/default_app_bar.dart';
 
 /// FutureOr<void> function definition.
@@ -30,5 +31,14 @@ typedef StringCallback = void Function(String id);
 typedef AnnotationClickCallback = void Function(
     String id, String annotatedText);
 
-typedef AnnotateCallback = Future<String?> Function(
+typedef AnnotateTextDialogCallback = Future<Annotation?> Function(
     int startIndex, int endIndex, String annotation, String? chapterId);
+typedef AnnotateImageDialogCallback = Future<Annotation?> Function(
+    Offset startOffset,
+    Offset endOffset,
+    String annotation,
+    String? chapterId,
+    Color color,
+    String imageUrl);
+typedef AnnotateImageCallback = Future<Annotation?> Function(
+    Offset start, Offset end, Color color);
