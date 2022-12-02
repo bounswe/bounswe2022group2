@@ -63,6 +63,8 @@ export default async (req, res) => {
     categories: req.body.categories
   });
 
+  ls.participants.push(username);
+
   ls = await ls.save().catch((err) =>{
     console.log(err.message)
     return res.status(500).json({ "resultMessage": "Could not save ls to DB" });
