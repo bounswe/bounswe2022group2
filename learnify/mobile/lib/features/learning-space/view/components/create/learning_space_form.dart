@@ -44,6 +44,7 @@ class _LearningSpaceForm extends StatelessWidget {
         textInputAction: TextInputAction.newline,
         textInputType: TextInputType.multiline,
         padding: const EdgeInsets.all(10),
+        validator: Validators.description,
       );
 
   Widget _participantsField(TextEditingController controller) =>
@@ -61,30 +62,22 @@ class _LearningSpaceForm extends StatelessWidget {
       child: Wrap(
         children: <Widget>[
           const Padding(padding: EdgeInsets.symmetric(horizontal: 20)),
-          const BaseText(
-            TextKeys.categories,
-            textAlign: TextAlign.left,
-          ),
+          const BaseText(TextKeys.categories, textAlign: TextAlign.left),
           const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-          SelectorHelper<List<String>, CreateLearningSpaceViewModel>().builder(
-            (_, CreateLearningSpaceViewModel model) =>
-                model.selectedCategoryNames,
-            (BuildContext context, List<String> tagList, _) => Wrap(
-                runSpacing: 5,
-                spacing: 5,
-                children: tagList
-                    .map((String tag) => Chip(
-                          label: Text(tag),
-                          labelPadding: EdgeInsets.zero,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                          labelStyle: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 12),
-                          backgroundColor: context.primary,
-                        ))
-                    .toList()),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: context.width * 3, vertical: context.height),
+            child: SelectorHelper<List<String>, CreateLearningSpaceViewModel>()
+                .builder(
+              (_, CreateLearningSpaceViewModel model) =>
+                  model.selectedCategoryNames,
+              (BuildContext context, List<String> tagList, _) => Wrap(
+                  runSpacing: 5,
+                  spacing: 5,
+                  children: tagList
+                      .map((String tag) => CustomizedChip(tag: tag))
+                      .toList()),
+            ),
           )
         ],
       ));
