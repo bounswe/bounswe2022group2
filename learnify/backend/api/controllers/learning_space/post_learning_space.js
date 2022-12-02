@@ -5,6 +5,17 @@ import { LearningSpace , Categories} from '../../../models/index.js';
 import { validateLS_init } from '../../validators/learning_space_init_validator.js';
 
 export default async (req, res) => {
+  var token;
+  var username;
+  console.log(req.headers);
+  try{
+    const authHeader = req.headers.authorization;
+    username = jwt.decode(authHeader).username;
+  }catch(e){
+    return res.status(401).json({ "resultMessage": "There is something wrong with your auth token."});
+  }
+
+
   const { error } = validateLS_init(req.body);
   if (error) {
     console.log(error);
@@ -40,7 +51,6 @@ export default async (req, res) => {
   }else if(req.body.icon_id > 20 || req.body.icon_id <0){
     req.body.icon_id = Math.floor(Math.random() * num_icons);
   }
-  var {username} = jwt.decode(req.body.token)
 
   //does not check if user exists, this case will be handled by the jwt middleware in future
   let ls = new LearningSpace({
