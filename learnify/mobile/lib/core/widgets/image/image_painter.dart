@@ -9,7 +9,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart' hide Image;
 
-import '../../../features/learning-space/models/annotation_model.dart';
+import '../../../features/learning-space/models/annotation/annotation_model.dart';
 
 ///Handles all the painting ongoing on the canvas.
 class DrawImage extends CustomPainter {

@@ -5,7 +5,7 @@ import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
-import '../../learning-space/service/learning_space_service.dart';
+import '../../learning-space/service/ls_service.dart';
 import '../model/get_learning_spaces_response_model.dart';
 import '../model/learning_space_model.dart';
 import '../service/I_home_service.dart';
@@ -58,7 +58,7 @@ class HomeViewModel extends BaseViewModel {
   Future<void> fetchInitialLearningSpaces() async {
     if (randomUsers.isEmpty) {
       final IResponseModel<AnyModel> res =
-          await LearningSpaceService.instance.randomUsers();
+          await LSService.instance.randomUsers();
       if (res.data?.map != null) {
         for (final dynamic model in res.data?.map!['results']) {
           randomUsers.add(model as Map<String, dynamic>);

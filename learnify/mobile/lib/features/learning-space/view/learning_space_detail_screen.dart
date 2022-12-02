@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:measured_size/measured_size.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -21,6 +20,7 @@ import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
 import '../../../core/widgets/image/image_painter.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
@@ -29,7 +29,7 @@ import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
-import '../models/annotation_model.dart';
+import '../models/annotation/annotation_model.dart';
 import '../models/chapter_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/event.dart';
@@ -116,7 +116,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
 }
 
 class MySliverOverlayAbsorber extends StatefulWidget {
-  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled});
+  const MySliverOverlayAbsorber({required this.innerBoxIsScrolled, super.key});
   final bool innerBoxIsScrolled;
   @override
   State<MySliverOverlayAbsorber> createState() =>
@@ -127,45 +127,76 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
   late Size wsize = Size.fromHeight(context.responsiveSize * 2);
 
   @override
-  Widget build(BuildContext context) {
-    final LearningSpace? tempLearningSpace =
-        context.read<LearningSpaceViewModel>().learningSpace;
-
-    return SliverOverlapAbsorber(
-      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-      sliver: SliverAppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        flexibleSpace: FlexibleSpaceBar(
-          centerTitle: true,
-          background: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Image.asset(IconKeys.learnIllustration,
-                  width: context.width * 60),
-              context.sizedH(1),
-              MeasuredSize(
-                  onChange: (Size size) {
-                    setState(() {
-                      wsize = size;
-                    });
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              tempLearningSpace?.title ??
-                                  "Placeholder Learning Space Title",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  overflow: TextOverflow.ellipsis,
-                                  fontSize: 18),
+  Widget build(BuildContext context) => SliverOverlapAbsorber(
+        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+        sliver: SliverAppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
+          flexibleSpace: FlexibleSpaceBar(
+            centerTitle: true,
+            background: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Image.asset(IconKeys.learnIllustration,
+                    width: context.width * 60),
+                context.sizedH(1),
+                Container(
+                  padding: const EdgeInsets.all(15),
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      const Text(
+                        "Placeholder Learning Space",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: 18),
+                      ),
+                      context.sizedH(2),
+                      const Text(
+                        "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                        ),
+                      ),
+                      context.sizedH(1),
+                      MeasuredSize(
+                        onChange: (Size size) {
+                          if (!mounted) return;
+                          setState(() {
+                            wsize = size;
+                          });
+                        },
+                        child: LearningSpaceDetailScreen._tagWidget(context, [
+                          "flutter",
+                          "react.js",
+                          "node.js",
+                          "mongodb",
+                          "aws",
+                          "docker",
+                          "git",
+                          "jenkins",
+                          "flutter",
+                          "react.js",
+                          "node.js",
+                          "mongodb",
+                          "aws",
+                          "docker",
+                          "git",
+                          "jenkins"
+                        ]),
+                      ),
+                      context.sizedH(1),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const <Widget>[
+                          Expanded(
+                            child: Text(
+                              "Created by: placeholder_username",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(overflow: TextOverflow.ellipsis),
                             ),
                             ElevatedButton(
                                 onPressed: () {
@@ -249,7 +280,11 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
 }
 
 class ColoredTabBar extends Container implements PreferredSizeWidget {
-  ColoredTabBar({required this.color, required this.tabBar});
+  ColoredTabBar({
+    required this.color,
+    required this.tabBar,
+    super.key,
+  });
 
   @override
   final Color color;
