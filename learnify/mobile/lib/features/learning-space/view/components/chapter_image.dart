@@ -9,6 +9,7 @@ import '../../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../../core/widgets/image/annotatable_image.dart';
 import '../../../../core/widgets/image/image_painter.dart';
+import '../../../../product/language/language_keys.dart';
 import '../../models/annotation/annotation_model.dart';
 import '../../view-model/learning_space_view_model.dart';
 
@@ -25,6 +26,7 @@ class ChapterImage extends StatelessWidget {
   static DefaultAppBar _appBar(BuildContext context) => DefaultAppBar(
         size: context.height * 6,
         showBack: true,
+        titleText: TextKeys.annotateImage,
         padding: EdgeInsets.symmetric(
             horizontal: context.responsiveSize * 3,
             vertical: context.responsiveSize * 2.5),

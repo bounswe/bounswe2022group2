@@ -84,5 +84,6 @@
   "event_creator": "Event Creator",
   "event_participants": "Participants",
   "passed_event": "Event has Passed",
-  "view_annotations": "View Annotations"
+  "view_annotations": "View Annotations",
+  "annotate_image": "Annotate or See the Annotations"
 }
