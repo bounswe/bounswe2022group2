@@ -18,6 +18,7 @@ function CreateLS() {
 
     const token = localStorage.getItem("token");
 
+
     useEffect(() => {
         const getCategory = async () => {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}categories`)
@@ -43,7 +44,6 @@ function CreateLS() {
         await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace`, {
             method: "POST",
             body: JSON.stringify({
-                token: token,
                 title: name,
                 description: description,
                 categories: [category],
@@ -51,6 +51,7 @@ function CreateLS() {
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `${token}` , 
             },
         })
             .then((response) => {
