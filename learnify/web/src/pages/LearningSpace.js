@@ -10,8 +10,10 @@ function LearningSpace() {
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
     const location = useLocation();
-    const lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
-
+    var lsid = "638b318f3d70ded23d570220";
+    if(location.state!==null){
+    lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
+    }
     useEffect(() => {
         const getLearningSpace = async () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/${lsid}`, {
@@ -38,7 +40,9 @@ function LearningSpace() {
                 console.log(error.message);
             })
             }
+            if(location.state!==null){
         console.log(location.state.lsid)
+            }
         getLearningSpace();
     }, []);
 
