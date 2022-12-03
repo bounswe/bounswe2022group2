@@ -139,8 +139,8 @@ class LearningSpaceViewModel extends BaseViewModel {
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
       // TODO:
-      lsId: '638a1ab3fe33867d12af3370',
-      postId: '638a1adcfe33867d12af3373',
+      lsId: '638b2038a0a7908cbfdba928',
+      postId: '638b20bea0a7908cbfdba92d',
       // lsId: oldChapter.courseId,
       // postId: oldChapter.id,
       target: AnnotationTarget(selector: selector),
@@ -199,8 +199,8 @@ class LearningSpaceViewModel extends BaseViewModel {
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
       // TODO: Fix
-      lsId: '638a1ab3fe33867d12af3370',
-      postId: '638a1adcfe33867d12af3373',
+      lsId: '638b2038a0a7908cbfdba928',
+      postId: '638b20bea0a7908cbfdba92d',
       // lsId: oldChapter.courseId,
       // postId: oldChapter.id,
       target: target,
@@ -231,7 +231,6 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> _enrollLearningSpaceRequest() async {
-    print("here");
     if (learningSpace?.title != null) {
       final EnrollLSRequest request = EnrollLSRequest(
         title: learningSpace?.title ?? "",
@@ -243,9 +242,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         return response.error?.errorMessage;
       }
       final LearningSpace? ls = response.data?.learningSpace;
-      print(ls?.title);
       if (ls == null) {
-        print("No courses");
         return "Learning Space not found";
       }
     }

@@ -26,7 +26,12 @@ class TextItem extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 8,
-                  vertical: (creator == StorageKeys.user.name) ? 0 : 6,
+                  vertical: (creator ==
+                          LocalManager.instance
+                              .getModel(const User(), StorageKeys.user)
+                              .username)
+                      ? 0
+                      : 6,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,7 +42,10 @@ class TextItem extends StatelessWidget {
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
-                    if (creator == StorageKeys.user.name)
+                    if (creator ==
+                        LocalManager.instance
+                            .getModel(const User(), StorageKeys.user)
+                            .username)
                       Wrap(
                         children: <Widget>[
                           BaseIconButton(

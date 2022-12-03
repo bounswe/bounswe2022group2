@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
+import '../../../core/managers/local/local_manager.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/image/cropped_image_painter.dart';
@@ -14,6 +15,7 @@ import '../../../core/widgets/indicators/custom_loading_indicator.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
+import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
 import '../view-model/annotations_view_model.dart';
 
@@ -50,7 +52,7 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
             (int i) {
               final Annotation a = annotations[i];
               return TextItem(
-                creator: StorageKeys.user.name,
+                creator: a.creator ?? "ezgi ezgi",
                 content: a.content ??
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
                 upvotes: a.upVote ?? Random().nextInt(30),
