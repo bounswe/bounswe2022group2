@@ -70,7 +70,7 @@ export default async (req, res) => {
     return res.status(500).json({ "resultMessage": "Could not save ls to DB" });
   });
 
-  axios.post(semantic_server +':8000/encode/', {title : ls.title});
+  axios.post(semantic_server +'/encode/', {title : ls.title});
 
   return res.status(200).json({
     resultMessage: "Learning space is succesfully created.",
