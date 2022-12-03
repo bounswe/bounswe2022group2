@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.css'
 import {NavLink, useNavigate} from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import elipse from '../images/learning-space-illustration.svg'
-import FeedItem from '../components/FeedItem';
 
-function LearningSpace() {
+function LearningSpace(props) {
+    const [title, setTitle] = React.useState("");
+    const [description, setDescription] = React.useState("");
+    const token = localStorage.getItem("token");
+    const lsid = props.lsid ? props.lsid : "638b318f3d70ded23d570220"; 
+
+    useEffect(() => {
+        const getLearningSpace = async () => {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/${lsid}`, {
+                method: "GET",
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+            }).then((response) => {
+                console.log(response.status);
+                console.log(response.statusText);
+                if (response.ok) {
+                    console.log("successfull")
+                    response.json().then( json => {
+                        setTitle(json.learning_spaces[0].title);
+                        console.log(json.title);
+                        setDescription(json.learning_spaces[0].description);
+                        console.log(json.description);
+                    });
+                    
+                    return response.json();
+                } 
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
+            }
+        getLearningSpace();
+    }, []);
 
   return(
     <div className='learning-space-layout'>
@@ -17,13 +49,13 @@ function LearningSpace() {
                 <div className='ls-box-title'>
                     <div className='space-5'></div>
                     <label>
-                        Learning Space Title
+                        <h1>{title}</h1>
                     </label>
                 </div>
                 <div className='ls-box-text'>
                     <div className='space-3'></div>
                     <label>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                        <p>{description}</p>
                     </label>
                     <div className='space-12'></div>
                     <button className="btn-orange" data-testid="forgotPassword">JOIN</button>
