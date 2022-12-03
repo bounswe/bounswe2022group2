@@ -3,13 +3,14 @@ import './style.css'
 import {NavLink, useNavigate} from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
-import elipse from '../images/learning-space-illustration.svg'
+import elipse from '../images/learning-space-illustration.svg';
+import {useLocation} from 'react-router-dom';
 
-function LearningSpace(props) {
+function LearningSpace() {
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
-    const token = localStorage.getItem("token");
-    const lsid = props.lsid ? props.lsid : "638b318f3d70ded23d570220"; 
+    const location = useLocation();
+    const lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
 
     useEffect(() => {
         const getLearningSpace = async () => {
@@ -25,9 +26,9 @@ function LearningSpace(props) {
                     console.log("successfull")
                     response.json().then( json => {
                         setTitle(json.learning_spaces[0].title);
-                        console.log(json.title);
+                        console.log(json.learning_spaces[0].title);
                         setDescription(json.learning_spaces[0].description);
-                        console.log(json.description);
+                        console.log(json.learning_spaces[0].description);
                     });
                     
                     return response.json();
@@ -37,6 +38,7 @@ function LearningSpace(props) {
                 console.log(error.message);
             })
             }
+        console.log(location.state.lsid)
         getLearningSpace();
     }, []);
 

@@ -3,11 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 import Dropdown from '../components/Dropdown';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 import SelectIconGrid from '../components/SelectIconGrid';
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom';
 
 function CreateLS() {
-
+    const navigate = useNavigate();
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -15,6 +17,7 @@ function CreateLS() {
     const [category, setCategory] = useState("");
 
     const [categories, setCategories] = useState([]);
+    const [message, setMessage] = useState("");
 
     const token = localStorage.getItem("token");
 
@@ -56,9 +59,15 @@ function CreateLS() {
         })
             .then((response) => {
                 if (response.status === 200) {
+                    console.log("successfull")
+                    
+                    response.json().then( json => {
+                        console.log(json.learningSpace.id)
+                        navigate('/user/learning-spaces', {state:{lsid: json.learningSpace.id}});
+                    });
                     console.log("Learning Space created successfully!");
                 } else {
-                    console.log("Error creating Learning Space!");
+                    setMessage("This Learning Space already exists!");
                 }
             }
             )
@@ -115,7 +124,11 @@ function CreateLS() {
                      />
                 </label>
 
+                <div className='space-20' />
+                <label><div className="login-button-error">{message ? <p>{message}</p> : null}</div> </label>
+                <div className='space-20' />
             </div>
+            <Footer />
         </div>
     )       
 }
