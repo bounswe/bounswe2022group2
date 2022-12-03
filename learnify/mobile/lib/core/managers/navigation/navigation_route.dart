@@ -6,6 +6,7 @@ import '../../../features/auth/login/view/login_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/learning-space/view/annotations_screen.dart';
 import '../../../features/learning-space/view/components/chapter_image.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
@@ -49,6 +50,12 @@ class NavigationRoute {
         return normalNavigate(
             LearningSpaceDetailScreen(
                 learningSpace: arguments['learningSpace']),
+            args);
+      case NavigationConstants.annotations:
+        return normalNavigate(
+            AnnotationsScreen(
+                annotations: arguments['annotations'],
+                annotatedText: arguments['annotatedText']),
             args);
       case NavigationConstants.createEditLearningSpace:
         return normalNavigate(

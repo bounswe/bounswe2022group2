@@ -12,11 +12,12 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 import '../../../features/learning-space/models/annotation/annotation_model.dart';
+import '../../../features/learning-space/view-model/learning_space_view_model.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../helpers/color_helpers.dart';
-import '../dialog/dialog_builder.dart';
 import 'image_painter.dart';
 import 'ported_interactive_viewer.dart';
 
@@ -420,13 +421,11 @@ class AnnotatableImageState extends State<AnnotatableImage> {
       }
     }
     if (clickedAnnotations.isEmpty) return;
-    String annotations = '';
-    for (int i = 0; i < clickedAnnotations.length; i++) {
-      // ignore: use_string_buffers
-      annotations += '${clickedAnnotations[i].content ?? ''}\n';
-    }
-    await DialogBuilder(context)
-        .textDialog(annotations, 'Clicked Annotation:', translateTitle: false);
+    // await DialogBuilder(context)
+    //     .textDialog(annotations, 'Clicked Annotation:', translateTitle: false);
+    await context
+        .read<LearningSpaceViewModel>()
+        .viewAnnotations(clickedAnnotations, null);
   }
 
   @override

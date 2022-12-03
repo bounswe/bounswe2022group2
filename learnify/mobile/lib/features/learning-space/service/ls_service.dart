@@ -23,7 +23,7 @@ class LSService extends ILSService {
   /// Static instance getter of [LSService].
   static LSService get instance => _instance;
 
-  static const String _create = '/learningSpace';
+  static const String _create = '/learningspace';
   static const String _categories = '/categories';
   static const String _enrollLS = '/learningspace/enroll';
   static const String _createAnnotation = '/learningspace/annotation';

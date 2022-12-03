@@ -8,7 +8,7 @@ class Annotation extends BaseModel<Annotation> {
   Annotation({
     this.id,
     this.courseId,
-    this.ownerId,
+    this.creator,
     this.categoryId,
     this.chapterId,
     this.startIndex = 0,
@@ -37,7 +37,7 @@ class Annotation extends BaseModel<Annotation> {
       Annotation(
         id: id.toString(),
         courseId: id.toString(),
-        ownerId: id.toString(),
+        creator: id.toString(),
         categoryId: id.toString(),
         chapterId: id.toString(),
         startIndex: startIndex ?? 12,
@@ -56,7 +56,7 @@ class Annotation extends BaseModel<Annotation> {
   factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
         id: BaseModel.getByType<String>(json['id']),
         courseId: BaseModel.getByType<String>(json['course_id']),
-        ownerId: BaseModel.getByType<String>(json['owner_id']),
+        creator: BaseModel.getByType<String>(json['creator']),
         categoryId: BaseModel.getByType<String>(json['category_id']),
         chapterId: BaseModel.getByType<String>(json['chapter_id']),
         content: BaseModel.getByType<String>(json['content']),
@@ -88,7 +88,7 @@ class Annotation extends BaseModel<Annotation> {
     final Annotation annotation = Annotation(
       id: id,
       courseId: courseId,
-      ownerId: ownerId,
+      creator: creator,
       categoryId: categoryId,
       chapterId: chapterId,
       startIndex: startIndex ?? this.startIndex,
@@ -109,7 +109,7 @@ class Annotation extends BaseModel<Annotation> {
 
   final String? id;
   final String? courseId;
-  final String? ownerId;
+  final String? creator;
   final String? categoryId;
   final String? chapterId;
   final String? content;
@@ -132,7 +132,7 @@ class Annotation extends BaseModel<Annotation> {
   Map<String, dynamic> get toJson => <String, dynamic>{
         'id': id,
         'course_id': courseId,
-        'owner_id': ownerId,
+        'creator': creator,
         'category_id': categoryId,
         'chapter_id': chapterId,
         'content': content,
@@ -153,7 +153,7 @@ class Annotation extends BaseModel<Annotation> {
   List<Object?> get props => <Object?>[
         id,
         courseId,
-        ownerId,
+        creator,
         categoryId,
         chapterId,
         content,
