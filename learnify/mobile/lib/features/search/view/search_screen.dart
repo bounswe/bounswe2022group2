@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../../learning-space/view/learning_space_detail_screen.dart';
@@ -15,6 +16,7 @@ import '../constants/search_screen_constants.dart';
 import '../view-model/search_view_model.dart';
 
 part 'components/search_widget.dart';
+part 'components/search_result_widget.dart';
 
 class SearchScreen extends BaseView<SearchViewModel> {
   const SearchScreen({Key? key})
@@ -48,8 +50,7 @@ class SearchScreen extends BaseView<SearchViewModel> {
       );
 
   static List<Widget> _slivers(BuildContext context, String tabKey) {
-    final List<LearningSpace> listOfLearningSpaces =
-        context.read<SearchViewModel>().resultLearningSpaces;
+    final SearchViewModel model = context.read<SearchViewModel>();
     return <Widget>[
       SliverOverlapInjector(
         handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
@@ -58,8 +59,7 @@ class SearchScreen extends BaseView<SearchViewModel> {
         padding: EdgeInsets.symmetric(
             vertical: context.height * .6, horizontal: context.width * 2),
         sliver: tabKey == TextKeys.learnifies
-            ? listLearningSpaces(
-                context, context.read<SearchViewModel>().resultLearningSpaces)
+            ? const SearchResultWidget() //listResults(context, ValueKey(model.resultLearningSpaces))
             : SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (_, int i) => Column(
@@ -113,13 +113,12 @@ class SearchScreen extends BaseView<SearchViewModel> {
         ),
       ];
 
-  static Widget listLearningSpaces(
-          BuildContext context, List<LearningSpace> list) =>
-      SliverList(
+  static Widget listResults(BuildContext context, Key key) => SliverList(
         delegate: SliverChildBuilderDelegate(
           (_, int i) => GridView.builder(
             physics: const ScrollPhysics(),
-            itemCount: list.length,
+            itemCount:
+                context.read<SearchViewModel>().resultLearningSpaces.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 15,
@@ -128,8 +127,16 @@ class SearchScreen extends BaseView<SearchViewModel> {
             padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
             shrinkWrap: true,
             itemBuilder: (BuildContext context, int index) => CoursePreview(
-              textKey: list[index].title ?? '',
-              participantNumber: list[index].numParticipants ?? 0,
+              textKey: context
+                      .read<SearchViewModel>()
+                      .resultLearningSpaces[index]
+                      .title ??
+                  '',
+              participantNumber: context
+                      .read<SearchViewModel>()
+                      .resultLearningSpaces[index]
+                      .numParticipants ??
+                  0,
             ),
           ),
           childCount: 1,
