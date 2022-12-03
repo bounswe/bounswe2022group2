@@ -24,7 +24,7 @@ services:
       - mongodb
   server:
     hostname: backend
-    build: 
+    build:
       context: ./backend
       dockerfile: dockerfile
     ports:
@@ -33,15 +33,6 @@ services:
       - mongo_net
     depends_on:
       - mongodb
-  frontend:
-    hostname: frontend
-    build:
-      context: ./web
-      dockerfile: dockerfile
-    ports:
-      - "9000:3000"
-    depends_on:
-      - server
 
 networks:
   mongo_net:
