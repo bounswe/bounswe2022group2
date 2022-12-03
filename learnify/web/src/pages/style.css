@@ -430,6 +430,11 @@ h1 {
     font-family: 'Open Sans' sans-serif;
 }
 
+.navBarText2{	
+    font-family: 'Open Sans' sans-serif;	
+    margin-left: 2.7723em;	
+}
+
 .login-button-error{
     width:100%;
     margin-top:.25rem;
@@ -751,8 +756,22 @@ h1 {
     margin-right: 1.5em;
 }
 
+.ls-button-container2 {	
+    margin-right: 0.5em;	
+}
+
 .ls-button-container-alt {
    margin-left: 24em;
+}
+
+.ls-button-container-alt2 {	
+    margin-left: 1.5em;	
+ }	
+.ls-button-container-alt3 {	
+    margin-left: 28em;	
+}	
+.ls-button-container-alt4 {	
+    margin-left: 50em;	
 }
 
 .ls-mid-entries{
@@ -767,6 +786,10 @@ h1 {
     flex-direction: row;
 }
 
+.ls-button{	
+    border: none;	
+    color: #f8f6f4;	
+}
 
 .feed-title {
     font-family: 'Open Sans' sans-serif;
@@ -825,4 +848,9 @@ h1 {
 
 .categories-page-content {
     min-height: calc(100vh - 190px);
+}
+
+.counter__output {	
+    font-size: 20px;	
+    color: #000000;	
 }
