@@ -1,5 +1,5 @@
 import '../../../../core/base/model/base_model.dart';
-import 'annotation_model.dart';
+import 'annotation/annotation_model.dart';
 
 class Chapter extends BaseModel<Chapter> {
   const Chapter({

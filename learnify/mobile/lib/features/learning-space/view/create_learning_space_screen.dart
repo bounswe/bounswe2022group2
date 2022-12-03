@@ -5,7 +5,6 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../../core/widgets/text/base_text.dart';
-import '../../../core/base/model/base_model.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
