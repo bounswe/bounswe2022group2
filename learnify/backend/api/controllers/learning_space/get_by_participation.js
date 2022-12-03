@@ -1,4 +1,6 @@
 import { LearningSpace } from '../../../models/index.js';
+import jwt from "jsonwebtoken";
+
 export default async (req, res) => {
 
     var username;
@@ -9,8 +11,8 @@ export default async (req, res) => {
     }catch(e){
       return res.status(401).json({ "resultMessage": "There is something wrong with your auth token."});
     }
-
-    var ls = await LearningSpace.find({"participants" :{"$in": [username]}}).catch((err) =>{
+    console.log(username);
+    var ls = await LearningSpace.find({"participants" :{"$all": [username]}}).catch((err) =>{
         console.log(err.message)
         return res.status(500).json({ "resultMessage": "Error connecting to the DB" });
       });

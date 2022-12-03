@@ -25,7 +25,7 @@ router.put('/edit/annotation', put_edit_annotation)
 router.post('/post', post_create_post)
 router.put('/edit/post', put_edit_post)
 router.get('/', semanti_search_ls)
-router.get('/participated', get_by_participation)
+router.get('/user/participated', get_by_participation)
 
 
 export default router;
