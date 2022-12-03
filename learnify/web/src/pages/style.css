@@ -491,6 +491,47 @@ h1 {
     margin-left: 36px;
 }
 
+
+.ls-box-lb-option {
+    color: #1746A2;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ls-box-lb-option-large {
+    color: #1746A2;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+}
+.home-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7E9;
+}
+.ls-box-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7E9;
+}
+.ls-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7E9;
+
 .ls-box-title {
     color: #1746A2;
     font-family: 'Open Sans' sans-serif;
@@ -507,6 +548,7 @@ h1 {
     padding-right: 2px;
     font-weight: bold;
     text-align: left;
+
 }
 
 .ls-box-button {
@@ -527,6 +569,34 @@ h1 {
     padding-right: 15px;
     text-align: center;
     touch-action: manipulation;
+}
+
+.name-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #FFF7E9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: #1746A2;
+}
+
+.details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 200%;
+    padding: 20px;
+    background-color: #FFF7E9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    color: #1746A2;
+    outline: none;
+
 }
 
 .home {
@@ -693,6 +763,25 @@ h1 {
     width: 100%;
     height: 80%;
     overflow: scroll;
+}
+.ls-create-btn {
+    width: 100%;
+    height: 40px;
+    background-color: #1746A2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #FFF7E9;
+    cursor: pointer;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    touch-action: manipulation;
 }
 
 .categories-banner {
