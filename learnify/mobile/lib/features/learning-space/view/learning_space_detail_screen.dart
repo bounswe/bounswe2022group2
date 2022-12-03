@@ -180,7 +180,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                         .enrollLearningSpace();
                                   },
                                   child: const Text(
-                                    'Enroll',
+                                    TextKeys.enroll,
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 15,

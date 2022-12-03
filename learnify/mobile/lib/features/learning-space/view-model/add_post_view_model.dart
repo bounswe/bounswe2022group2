@@ -4,7 +4,7 @@ import '../../../core/base/view-model/base_view_model.dart';
 import '../models/post_model.dart';
 
 class AddPostViewModel extends BaseViewModel {
-  late Post? post;
+  Post? post;
 
   late TextEditingController _titleController;
   TextEditingController get titleController => _titleController;
