@@ -10,6 +10,7 @@ import '../../../core/extensions/string/string_extensions.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_request.dart';
 import '../models/chapter_model.dart';
@@ -104,6 +105,18 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
+  Future<String?> viewAnnotations(
+      List<Annotation> annotations, String? annotationText) async {
+    await navigationManager.navigateToPage(
+      path: NavigationConstants.annotations,
+      data: <String, dynamic>{
+        if (annotationText != null) 'annotatedText': annotationText,
+        'annotations': annotations
+      },
+    );
+    return null;
+  }
+
   Future<String?> editEvent() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
@@ -125,10 +138,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     // TODO: Fix
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
-      // lsId: '638a1ab3fe33867d12af3370',
-      // postId: '638a1adcfe33867d12af3373',
-      lsId: oldChapter.courseId,
-      postId: oldChapter.id,
+      // TODO:
+      lsId: '638b2038a0a7908cbfdba928',
+      postId: '638b20bea0a7908cbfdba92d',
+      // lsId: oldChapter.courseId,
+      // postId: oldChapter.id,
       target: AnnotationTarget(selector: selector),
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -184,10 +198,11 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h', format: 'image/jpeg');
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
-      // lsId: '638a1ab3fe33867d12af3370',
-      // postId: '638a1adcfe33867d12af3373',
-      lsId: oldChapter.courseId,
-      postId: oldChapter.id,
+      // TODO: Fix
+      lsId: '638b2038a0a7908cbfdba928',
+      postId: '638b20bea0a7908cbfdba92d',
+      // lsId: oldChapter.courseId,
+      // postId: oldChapter.id,
       target: target,
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -216,7 +231,6 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> _enrollLearningSpaceRequest() async {
-    print("here");
     if (learningSpace?.title != null) {
       final EnrollLSRequest request = EnrollLSRequest(
         title: learningSpace?.title ?? "",
@@ -228,9 +242,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         return response.error?.errorMessage;
       }
       final LearningSpace? ls = response.data?.learningSpace;
-      print(ls?.title);
       if (ls == null) {
-        print("No courses");
         return "Learning Space not found";
       }
     }
@@ -247,11 +259,15 @@ class LearningSpaceViewModel extends BaseViewModel {
     Chapter chapter,
     int itemIndex,
   ) {
+    final Offset foundStart = Offset(
+        min(startOffset.dx, endOffset.dx), min(startOffset.dy, endOffset.dy));
+    final Offset foundEnd = Offset(
+        max(startOffset.dx, endOffset.dx), max(startOffset.dy, endOffset.dy));
     final Annotation newAnnotation = Annotation(
       id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
       content: annotation,
-      startOffset: startOffset,
-      endOffset: endOffset,
+      startOffset: foundStart,
+      endOffset: foundEnd,
       chapterId: chapter.id,
       courseId: chapter.courseId,
       isImage: true,
