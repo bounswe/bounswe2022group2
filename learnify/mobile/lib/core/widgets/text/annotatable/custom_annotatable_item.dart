@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 
+import '../../../constants/main_type_definitions.dart';
+
 enum SelectionControlType { copy, selectAll, cut, paste, other }
 
 class CustomAnnotatableItem {
@@ -7,7 +9,7 @@ class CustomAnnotatableItem {
     required SelectionControlType controlType,
     String? label,
     Function(String)? onPressed,
-    Function(int startIndex, int endIndex)? onPressedAnnotation,
+    AnnotateCallback? onPressedAnnotation,
   }) : this._(
           label: label,
           onPressed: onPressed,
@@ -18,7 +20,7 @@ class CustomAnnotatableItem {
   CustomAnnotatableItem.icon({
     required Widget icon,
     Function(String)? onPressed,
-    Function(int startIndex, int endIndex)? onPressedAnnotation,
+    AnnotateCallback? onPressedAnnotation,
     SelectionControlType controlType = SelectionControlType.other,
   }) : this._(
             controlType: controlType,
@@ -42,7 +44,7 @@ class CustomAnnotatableItem {
   final String? label;
 
   final Function(String)? onPressed;
-  final Function(int startIndex, int endIndex)? onPressedAnnotation;
+  final AnnotateCallback? onPressedAnnotation;
 
   /// Control type to manipulate the selection of text
   final SelectionControlType controlType;

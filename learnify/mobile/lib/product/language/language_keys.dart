@@ -79,4 +79,14 @@ class TextKeys {
   static const String friendCourses = "friend_courses";
   static const String recommendedCourses = "recommended_courses";
   static const String clickToSeeImageAnnotations = "click_image_annotations";
+  static const String createEvent = "create_event";
+  static const String editEvent = "edit_event";
+  static const String eventDate = "event_date";
+  static const String eventDuration = "event_duration";
+  static const String eventParticipationLimit = "event_participation_limit";
+  static const String eventCreator = "event_creator";
+  static const String eventParticipants = "event_participants";
+  static const String passedEvent = "passed_event";
+  static const String viewAnnotations = "view_annotations";
+  static const String annotateImage = 'annotate_image';
 }

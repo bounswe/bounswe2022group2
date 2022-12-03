@@ -12,18 +12,19 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
-import '../../../features/learning-space/models/annotation_model.dart';
+import '../../../features/learning-space/models/annotation/annotation_model.dart';
+import '../../../features/learning-space/view-model/learning_space_view_model.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../helpers/color_helpers.dart';
-import '../dialog/dialog_builder.dart';
 import 'image_painter.dart';
 import 'ported_interactive_viewer.dart';
 
 ///[AnnotatableImage] widget.
 @immutable
 class AnnotatableImage extends StatefulWidget {
-  const AnnotatableImage._({
+  const AnnotatableImage({
     required this.annotateCallback,
     Key? key,
     this.assetPath,
@@ -52,54 +53,6 @@ class AnnotatableImage extends StatefulWidget {
     this.paintHistory = const <PaintInfo>[],
   }) : super(key: key);
 
-  ///Constructor for loading image from network url.
-  factory AnnotatableImage.network(
-    String url, {
-    required AnnotateImageCallback annotateCallback,
-    Key? key,
-    double? height,
-    double? width,
-    Widget? placeholderWidget,
-    bool? scalable,
-    List<Color>? colors,
-    Widget? brushIcon,
-    Widget? undoIcon,
-    Widget? clearAllIcon,
-    Widget? colorIcon,
-    PaintMode? initialPaintMode,
-    double? initialStrokeWidth,
-    Color? initialColor,
-    bool? clickable,
-    ValueChanged<PaintMode>? onPaintModeChanged,
-    ValueChanged<Color>? onColorChanged,
-    ValueChanged<double>? onStrokeWidthChanged,
-    bool? controlsAtTop,
-    List<PaintInfo>? paintHistory,
-  }) =>
-      AnnotatableImage._(
-        key: key,
-        networkUrl: url,
-        height: height,
-        width: width,
-        placeHolder: placeholderWidget,
-        isScalable: scalable,
-        paintHistory: paintHistory ?? <PaintInfo>[],
-        colors: colors,
-        brushIcon: brushIcon,
-        undoIcon: undoIcon,
-        colorIcon: colorIcon,
-        clearAllIcon: clearAllIcon,
-        initialPaintMode: initialPaintMode,
-        initialColor: initialColor,
-        initialStrokeWidth: initialStrokeWidth,
-        onPaintModeChanged: onPaintModeChanged,
-        onColorChanged: onColorChanged,
-        onStrokeWidthChanged: onStrokeWidthChanged,
-        controlsAtTop: controlsAtTop ?? true,
-        annotateCallback: annotateCallback,
-        clickable: clickable ?? false,
-      );
-
   ///Constructor for loading image from assetPath.
   factory AnnotatableImage.asset(
     String path, {
@@ -122,7 +75,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         assetPath: path,
         height: height,
@@ -166,7 +119,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         file: file,
         height: height,
@@ -210,7 +163,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         byteArray: byteArray,
         height: height,
@@ -249,7 +202,7 @@ class AnnotatableImage extends StatefulWidget {
     ValueChanged<double>? onStrokeWidthChanged,
     bool? controlsAtTop,
   }) =>
-      AnnotatableImage._(
+      AnnotatableImage(
         key: key,
         height: height,
         width: width,
@@ -468,13 +421,11 @@ class AnnotatableImageState extends State<AnnotatableImage> {
       }
     }
     if (clickedAnnotations.isEmpty) return;
-    String annotations = '';
-    for (int i = 0; i < clickedAnnotations.length; i++) {
-      // ignore: use_string_buffers
-      annotations += '${clickedAnnotations[i].content ?? ''}\n';
-    }
-    await DialogBuilder(context)
-        .textDialog(annotations, 'Clicked Annotation:', translateTitle: false);
+    // await DialogBuilder(context)
+    //     .textDialog(annotations, 'Clicked Annotation:', translateTitle: false);
+    await context
+        .read<LearningSpaceViewModel>()
+        .viewAnnotations(clickedAnnotations, null);
   }
 
   @override

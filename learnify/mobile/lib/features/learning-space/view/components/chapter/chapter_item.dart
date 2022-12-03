@@ -41,7 +41,7 @@ class ChapterItem extends StatelessWidget {
       collapsedTextColor: context.inactiveTextColor,
       collapsedIconColor: context.inactiveTextColor,
       tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 5)
+      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
           .copyWith(bottom: context.height * 1.7),
       title: MultiLineText('${itemIndex + 1}. ${chapter.title}',
           translated: false),
@@ -74,10 +74,9 @@ class ChapterItem extends StatelessWidget {
           },
           allAnnotations: chapter.annotations,
           onAnnotationClick:
-              (String annotationId, String annotationText) async {
-            await DialogBuilder(context).textDialog(
-                annotationText, 'Clicked Annotation:',
-                translateTitle: false);
+              (List<Annotation> annotations, String annotationText) async {
+            //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
+            await viewModel.viewAnnotations(annotations, annotationText);
           },
         ),
         ChapterList.createEditButton(context, TextKeys.editChapter,
@@ -109,17 +108,19 @@ class ChapterItem extends StatelessWidget {
             .toList();
         return GestureDetector(
           onTap: () => NavigationManager.instance.navigateToPage(
-              path: NavigationConstants.chapterImage,
-              data: <String, dynamic>{
-                'image': images[i],
-                'all_annotations': chapter.annotations,
-                'chapter_id': chapter.id,
-              }),
-          child: AnnotatableImage.network(
-            images[i],
+            path: NavigationConstants.chapterImage,
+            data: <String, dynamic>{
+              'image': images[i],
+              'all_annotations': chapter.annotations,
+              'chapter_id': chapter.id,
+            },
+          ),
+          child: AnnotatableImage(
+            networkUrl: images[i],
             annotateCallback: (Offset start, Offset end, Color color) async =>
                 null,
-            scalable: false,
+            key: Key(images[i]),
+            isScalable: false,
             initialColor: context.primary,
             initialPaintMode: PaintMode.none,
             paintHistory:
