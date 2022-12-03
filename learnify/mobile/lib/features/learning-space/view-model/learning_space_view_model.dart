@@ -124,6 +124,13 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
+  Future<String?> createDiscussion() async {
+    // TODO: Fix
+    // await navigationManager.navigateToPage(
+    //     path: NavigationConstants.createEditChapter);
+    return null;
+  }
+
   Future<Tuple2<Annotation?, String?>> annotateText(int startIndex,
       int endIndex, String annotation, String? chapterId) async {
     final int itemIndex = _chapters.indexWhere(
