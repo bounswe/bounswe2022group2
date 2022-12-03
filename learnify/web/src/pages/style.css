@@ -610,6 +610,21 @@ h1 {
     align-content: center;
     margin: 0 auto;
 }
+.ls-box3 {
+    background-color: #1746A2;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px 0px rgba(120,120,120,0.52);
+    color:#FFF7E9;
+    text-align: left;
+    padding: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+    max-height: 400px;
+    mask-border: linear-gradient(to top, rgba(0, 40, 220, 0.855) 0%, rgb(0, 0, 0) 8%);
+}
 
 .learning-space-left {
     margin-left: 1em;

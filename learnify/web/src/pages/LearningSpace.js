@@ -129,7 +129,7 @@ function LearningSpace() {
 
             <div className='learning-space-right'>
                 <div className='space-5'></div>
-                <div className='ls-box'>
+                <div className='ls-box3'>
                     <label className='feed-title'>
                         Contributing Users
                     </label>
