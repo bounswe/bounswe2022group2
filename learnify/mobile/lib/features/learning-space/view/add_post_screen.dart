@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/base/view/base_view.dart';
@@ -22,6 +24,8 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
       : super(
             builder: (BuildContext context) => _builder(context, isAdd, post),
             appBar: (BuildContext context) => _appBarBuilder(context, isAdd),
+            voidInit: (BuildContext context) =>
+                context.read<AddPostViewModel>().post = post,
             key: key,
             scrollable: true);
 
