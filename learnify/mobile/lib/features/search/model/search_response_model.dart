@@ -1,5 +1,5 @@
 import '../../../core/base/model/base_model.dart';
-import '../../home/model/learning_space_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 
 class SearchResponse extends BaseModel<SearchResponse> {
   const SearchResponse(

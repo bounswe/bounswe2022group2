@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/widgets/image/annotatable_image.dart';
-import '../../home/model/learning_space_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../../learning-space/view/learning_space_detail_screen.dart';
 import '../../view-learning-spaces/view/view_all_list.dart';
 import '/../../product/theme/light_theme.dart';
@@ -128,7 +128,7 @@ class SearchScreen extends BaseView<SearchViewModel> {
             padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
             shrinkWrap: true,
             itemBuilder: (BuildContext context, int index) => CoursePreview(
-              textKey: list[index].name ?? '',
+              textKey: list[index].title ?? '',
               participantNumber: list[index].numParticipants ?? 0,
             ),
           ),

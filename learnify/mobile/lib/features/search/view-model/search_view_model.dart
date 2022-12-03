@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
-import '../../home/model/learning_space_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../model/search_response_model.dart';
 import '../service/i_search_service.dart';
 import '../service/search_service.dart';
