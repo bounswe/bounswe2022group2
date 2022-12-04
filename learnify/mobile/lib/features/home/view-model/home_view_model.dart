@@ -69,6 +69,7 @@ class HomeViewModel extends BaseViewModel {
         _friendLearningSpaces.isNotEmpty ||
         _recommendedLearningSpaces.isNotEmpty) return;
     await _getLearningSpaces();
+    await _getTakenLearningSpaces();
   }
 
   Future<String?> _getLearningSpaces() async {
@@ -146,5 +147,23 @@ class HomeViewModel extends BaseViewModel {
       }
     }
     return false;
+  }
+
+  Future<String?> _getTakenLearningSpaces() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(
+        _getTakenLearningSpacesRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _getTakenLearningSpacesRequest() async {
+    final IResponseModel<GetLearningSpacesResponse> resp =
+        await _homeService.getTakenLearningSpaces();
+    final GetLearningSpacesResponse? respData = resp.data;
+    if (resp.hasError || respData == null) return resp.error?.errorMessage;
+    _takenLearningSpaces = respData.learningSpaces;
+    if (_takenLearningSpaces.length > 8) _takenViewAll = true;
+    return null;
   }
 }

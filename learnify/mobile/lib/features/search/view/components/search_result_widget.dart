@@ -24,9 +24,7 @@ class SearchResultWidget extends StatelessWidget {
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) =>
                           CoursePreview(
-                        textKey: resultLearningSpaces[index].title ?? '',
-                        participantNumber:
-                            resultLearningSpaces[index].numParticipants ?? 0,
+                        learningSpace: resultLearningSpaces[index],
                       ),
                     )
                   : const Center(

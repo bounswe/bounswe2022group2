@@ -1,4 +1,4 @@
-import '../../../core/base/model/base_model.dart';
+import '../../../../core/base/model/base_model.dart';
 import 'learning_space_model.dart';
 
 class EnrollLSResponse extends BaseModel<EnrollLSResponse> {

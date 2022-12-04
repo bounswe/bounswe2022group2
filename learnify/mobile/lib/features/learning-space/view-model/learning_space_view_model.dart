@@ -238,22 +238,18 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> _enrollLearningSpaceRequest() async {
-    if (learningSpace?.title != null) {
-      final EnrollLSRequest request = EnrollLSRequest(
-        title: learningSpace?.title ?? "",
-      );
-      final IResponseModel<EnrollLSResponse> response =
-          await _lsService.enrollLS(request);
-      final EnrollLSResponse? respData = response.data;
-      if (response.hasError || respData == null) {
-        return response.error?.errorMessage;
-      }
-      final LearningSpace? ls = response.data?.learningSpace;
-      if (ls == null) {
-        return "Learning Space not found";
-      }
+    final EnrollLSRequest request = EnrollLSRequest(
+      title: learningSpace?.title ?? "",
+    );
+    final IResponseModel<EnrollLSResponse> response =
+        await _lsService.enrollLS(request);
+    if (response.hasError) {
+      return response.error?.errorMessage;
     }
-
+    final LearningSpace? ls = response.data?.learningSpace;
+    if (ls == null) {
+      return "Learning Space not found";
+    }
     return null;
   }
 
