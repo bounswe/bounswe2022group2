@@ -1,4 +1,4 @@
-import '../../../core/base/model/base_model.dart';
+import '../../../../core/base/model/base_model.dart';
 import 'learning_space_model.dart';
 
 class EnrollLSResponse extends BaseModel<EnrollLSResponse> {
@@ -15,7 +15,7 @@ class EnrollLSResponse extends BaseModel<EnrollLSResponse> {
 
   @override
   EnrollLSResponse fromJson(Map<String, dynamic> json) =>
-      EnrollLSResponse().fromJson(json);
+      EnrollLSResponse.fromJson(json);
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
