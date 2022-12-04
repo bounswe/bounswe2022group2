@@ -38,7 +38,7 @@ class ViewAllList extends BaseView<HomeViewModel> {
             if (buttonExist) context.sizedH(3),
             GridView.builder(
               physics: const ScrollPhysics(),
-              itemCount: 15,
+              itemCount: listOfLearningSpaces.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 15,
@@ -46,15 +46,11 @@ class ViewAllList extends BaseView<HomeViewModel> {
               ),
               padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
               shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) =>
-                  const CoursePreview(
-                      textKey: "Learning Space",
-                      //ToDo after the LearningSpaces are initialized:
-                      //listOfLearningSpaces[index].name ?? ''
-                      participantNumber: 100
-                      //ToDo after the LearningSpaces are initialized:
-                      //listOfLearningSpaces[index].numParticipants ?? 0
-                      ),
+              itemBuilder: (BuildContext context, int index) => CoursePreview(
+                learningSpace: listOfLearningSpaces[index],
+                //ToDo after the LearningSpaces are initialized:
+                //listOfLearningSpaces[index].numParticipants ?? 0
+              ),
             ),
           ],
         ),

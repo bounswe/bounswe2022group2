@@ -2,16 +2,11 @@ part of '../view/home_screen.dart';
 
 class CoursePreview extends StatelessWidget {
   const CoursePreview({
-    required this.textKey,
-    required this.participantNumber,
-    // ignore: unused_element
-    this.courseImage = IconKeys.learnIllustration,
+    required this.learningSpace,
     Key? key,
   }) : super(key: key);
 
-  final String textKey;
-  final int participantNumber;
-  final String courseImage;
+  final LearningSpace? learningSpace;
 
   @override
   Widget build(BuildContext context) => Material(
@@ -20,8 +15,9 @@ class CoursePreview extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           splashColor: DarkAppTheme.lightBlue,
-          onTap: () async => NavigationManager.instance
-              .navigateToPage(path: NavigationConstants.learningSpace),
+          onTap: () async => NavigationManager.instance.navigateToPage(
+              path: NavigationConstants.learningSpace,
+              data: {'learningSpace': learningSpace}),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +27,8 @@ class CoursePreview extends StatelessWidget {
                   child: Ink.image(
                     padding:
                         EdgeInsets.symmetric(horizontal: context.width * 4),
-                    image: AssetImage(courseImage),
+                    image: AssetImage(
+                        IconKeys.lsIcons[learningSpace?.iconId ?? 0]),
                     height: context.height * 12,
                     width: context.width * 30,
                     fit: BoxFit.cover,
@@ -51,14 +48,15 @@ class CoursePreview extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 10,
-            child: Text(textKey,
+            child: Text(learningSpace?.title ?? "",
                 textAlign: TextAlign.left,
                 style: const TextStyle(fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis),
           ),
           const Spacer(),
           const Icon(Icons.people_alt_outlined, size: 15),
-          Text(participantNumber.toString(), textAlign: TextAlign.right)
+          Text(learningSpace?.numParticipants.toString() ?? "",
+              textAlign: TextAlign.right)
         ],
       ));
 }

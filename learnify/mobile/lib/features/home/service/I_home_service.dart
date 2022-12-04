@@ -6,4 +6,5 @@ import '../model/get_learning_spaces_response_model.dart';
 abstract class IHomeService extends BaseService {
   /// Gets the courses
   Future<IResponseModel<GetLearningSpacesResponse>> getLearningSpaces();
+  Future<IResponseModel<GetLearningSpacesResponse>> getTakenLearningSpaces();
 }

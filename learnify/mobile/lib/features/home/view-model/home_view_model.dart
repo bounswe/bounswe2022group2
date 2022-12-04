@@ -69,6 +69,7 @@ class HomeViewModel extends BaseViewModel {
         _friendLearningSpaces.isNotEmpty ||
         _recommendedLearningSpaces.isNotEmpty) return;
     await _getLearningSpaces();
+    await _getTakenLearningSpaces();
   }
 
   Future<String?> _getLearningSpaces() async {
@@ -84,9 +85,7 @@ class HomeViewModel extends BaseViewModel {
         await _homeService.getLearningSpaces();
     final GetLearningSpacesResponse? respData = resp.data;
     if (resp.hasError || respData == null) return resp.error?.errorMessage;
-    _takenLearningSpaces = respData.takenLearningSpaces;
-    _friendLearningSpaces = respData.friendLearningSpaces;
-    _recommendedLearningSpaces = respData.recommendedLearningSpaces;
+    _recommendedLearningSpaces = respData.learningSpaces;
     if (_takenLearningSpaces.length > 8) _takenViewAll = true;
     if (_friendLearningSpaces.length > 8) _friendViewAll = true;
     if (_recommendedLearningSpaces.length > 8) _recommendedViewAll = true;
@@ -110,11 +109,11 @@ class HomeViewModel extends BaseViewModel {
       expectedLearningSpaces = takenLearningSpaces;
     } else {
       if (learningSpacesType == TextKeys.takenLearnifies) {
-        expectedLearningSpaces = respData.takenLearningSpaces;
+        expectedLearningSpaces = _takenLearningSpaces;
       } else if (learningSpacesType == TextKeys.friendLearnifies) {
-        expectedLearningSpaces = respData.friendLearningSpaces;
+        expectedLearningSpaces = _friendLearningSpaces;
       } else if (learningSpacesType == TextKeys.recommendedLearnifies) {
-        expectedLearningSpaces = respData.recommendedLearningSpaces;
+        expectedLearningSpaces = _recommendedLearningSpaces;
       } else {
         return "Requested type of list of LearningSpaces not found!";
       }
@@ -148,5 +147,29 @@ class HomeViewModel extends BaseViewModel {
       }
     }
     return false;
+  }
+
+  Future<String?> _getTakenLearningSpaces() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(
+        _getTakenLearningSpacesRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _getTakenLearningSpacesRequest() async {
+    final IResponseModel<GetLearningSpacesResponse> resp =
+        await _homeService.getTakenLearningSpaces();
+    final GetLearningSpacesResponse? respData = resp.data;
+    if (resp.hasError || respData == null) return resp.error?.errorMessage;
+    _takenLearningSpaces = respData.learningSpaces;
+    if (_takenLearningSpaces.length > 8) _takenViewAll = true;
+    return null;
+  }
+
+  void addToTakenLearningSpaces(LearningSpace? learningSpace) {
+    if (learningSpace != null) {
+      _takenLearningSpaces.add(learningSpace);
+    }
   }
 }

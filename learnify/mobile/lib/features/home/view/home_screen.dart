@@ -78,8 +78,8 @@ class HomeScreen extends BaseView<HomeViewModel> {
               separatorBuilder: (BuildContext context, _) =>
                   SizedBox(width: context.width * 3),
               itemBuilder: (BuildContext context, int index) => CoursePreview(
-                  textKey: courseList[index].title ?? '',
-                  participantNumber: courseList[index].numParticipants ?? 0),
+                learningSpace: courseList[index],
+              ),
             ),
           )
         ],
