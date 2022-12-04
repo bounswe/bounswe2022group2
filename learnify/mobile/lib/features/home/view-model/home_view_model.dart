@@ -166,4 +166,10 @@ class HomeViewModel extends BaseViewModel {
     if (_takenLearningSpaces.length > 8) _takenViewAll = true;
     return null;
   }
+
+  void addToTakenLearningSpaces(LearningSpace? learningSpace) {
+    if (learningSpace != null) {
+      _takenLearningSpaces.add(learningSpace);
+    }
+  }
 }

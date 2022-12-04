@@ -175,6 +175,10 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                     context
                                         .read<LearningSpaceViewModel>()
                                         .enrollLearningSpace();
+                                    context
+                                        .read<HomeViewModel>()
+                                        .addToTakenLearningSpaces(
+                                            tempLearningSpace);
                                   },
                                   child: const Text(
                                     TextKeys.enroll,
