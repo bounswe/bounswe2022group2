@@ -44,9 +44,9 @@ function App() {
     <Route path={`/categories/${category.toLowerCase().replace(/\s+/g, '-')}`} element={<PrivateRoutesVerify> <LSbyCategoryPage title={category}/> </PrivateRoutesVerify>}/>
   ));
 
-  // const lsRoutes = learningspaces.map(ls => (
-  //   <Route path={`/${ls._id}`} element={<PrivateRoutesVerify> <LearningSpacePage id={ls._id}/> </PrivateRoutesVerify>}/>
-  // ));
+   const lsRoutes = learningspaces.map(ls => (
+     <Route path={`/${ls._id}`} element={<PrivateRoutesVerify> <LearningSpace id={ls._id}/> </PrivateRoutesVerify>}/>
+   ));
 
   return (
     
@@ -57,14 +57,13 @@ function App() {
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
           <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
-          <Route path="/user/learning-spaces" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
           <Route path="/change-password" element={<ChangePassword/>}/>
           <Route path="/create-ls" element={<PrivateRoutes> <CreateLS /> </PrivateRoutes>}/>
           <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
           {categoryRoutes}
-          {/* {lsRoutes} */}
+          {lsRoutes}
         </Routes>
       </BrowserRouter>
 
