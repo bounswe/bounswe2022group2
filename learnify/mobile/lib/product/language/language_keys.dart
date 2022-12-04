@@ -87,6 +87,7 @@ class TextKeys {
   static const String passedEvent = "passed_event";
   static const String viewAnnotations = "view_annotations";
   static const String annotateImage = 'annotate_image';
+  static const String addDiscussion = "add_discussion";
   static const String addPost = 'add_post';
   static const String editPost = 'edit_post';
   static const String addPostTitleHint = "add_post_title_hint";
