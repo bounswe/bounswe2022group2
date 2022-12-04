@@ -42,7 +42,7 @@ class UserSearchResultWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 17,
             )),
       );
 }

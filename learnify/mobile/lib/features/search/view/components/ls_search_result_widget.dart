@@ -9,21 +9,53 @@ class LSSearchResultWidget extends StatelessWidget {
           (_, SearchViewModel model) => model.resultLearningSpaces,
           (BuildContext context, List<LearningSpace> resultLearningSpaces,
                   Widget? child) =>
-              GridView.builder(
-                physics: const ScrollPhysics(),
-                itemCount: resultLearningSpaces.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15,
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
-                shrinkWrap: true,
-                itemBuilder: (BuildContext context, int index) => CoursePreview(
-                  textKey: resultLearningSpaces[index].title ?? '',
-                  participantNumber:
-                      resultLearningSpaces[index].numParticipants ?? 0,
-                ),
-              ));
+              Padding(
+                  padding: EdgeInsets.only(
+                      left: context.width * 1,
+                      top: context.height * 2,
+                      bottom: context.height * 3,
+                      right: context.width * 1),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        if (resultLearningSpaces.length ==
+                            context
+                                .read<SearchViewModel>()
+                                .recommendedLearningSpaces
+                                .length)
+                          _recommendedMessage(context),
+                        if (resultLearningSpaces.length ==
+                            context
+                                .read<SearchViewModel>()
+                                .recommendedLearningSpaces
+                                .length)
+                          context.sizedH(.8),
+                        GridView.builder(
+                          physics: const ScrollPhysics(),
+                          itemCount: resultLearningSpaces.length,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 15,
+                            mainAxisSpacing: 15,
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 3, vertical: 10),
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) =>
+                              CoursePreview(
+                            learningSpace: resultLearningSpaces[index],
+                          ),
+                        )
+                      ])));
+
+  static Widget _recommendedMessage(BuildContext context) => const Center(
+        child: Text(
+            "Recommended Learning Spaces", //TextKeys.recommendedLearningSpaces,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+            )),
+      );
 }
