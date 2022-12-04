@@ -2,17 +2,16 @@ import React, { useEffect , useState } from 'react';
 import './style.css'
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import {useNavigate} from 'react-router-dom';
 import elipse from '../images/learning-space-illustration.svg';
 import {useLocation} from 'react-router-dom';
-import up from '../images/chevron-up-solid.svg';
-import down from '../images/chevron-down-solid.svg';
-import comment from '../images/comment-regular.svg';
-import edit from '../images/pen-to-square-regular.svg';
-import trash from '../images/trash-can-regular.svg';
 import event from '../images/event.png';
 import people from '../images/download.png';
 import creator from '../images/creator.png';
 import geolocation from '../images/location.png';
+import MDEditor from "@uiw/react-md-editor";
+import Post from '../components/Post';
+
 
 function LearningSpace() {
     const [title, setTitle] = React.useState("");
@@ -23,83 +22,106 @@ function LearningSpace() {
     lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
     }
 
-    const [upCounter, setUpCounter] = useState(0);
-    const [upCounter2, setUpCounter2] = useState(0);
-    const [upCounter3, setUpCounter3] = useState(0);
-    const [upCounter4, setUpCounter4] = useState(0);
-    const [upCounter5, setUpCounter5] = useState(0);
-    const [upCounter6, setUpCounter6] = useState(0);
+    const [value, setValue] = React.useState("");
 
-    const [downCounter, setDownCounter] = useState(0);
-    const [downCounter2, setDownCounter2] = useState(0);
-    const [downCounter3, setDownCounter3] = useState(0);
-    const [downCounter4, setDownCounter4] = useState(0);
-    const [downCounter5, setDownCounter5] = useState(0);
-    const [downCounter6, setDownCounter6] = useState(0);
+    const [final, setFinal] = React.useState(value);
 
-    const [deletePost, setDeletePost] = useState(false);
-    const [deletePost2, setDeletePost2] = useState(false);
-    const [deletePost3, setDeletePost3] = useState(false);
-    const [deletePost4, setDeletePost4] = useState(false);
-    const [deletePost5, setDeletePost5] = useState(false);
-    const [deletePost6, setDeletePost6] = useState(false);
+    const postArray= [{
+        "title": "To The Space We Go",
+        "creator": "Elon Musk",
+        "content": "Space Exploration Technologies Corp. (SpaceX) is an American spacecraft manufacturer, launcher, and a satellite communications corporation headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the stated goal of reducing space transportation costs to enable the colonization of Mars. The company manufactures the Falcon 9, Falcon Heavy, and Starship launch vehicles, several rocket engines, Cargo Dragon and Crew Dragon spacecraft, and Starlink communications satellites.",
+        "images": ["http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/back01.jpg"],
+        "_id": "6389d82c5f239536c41eb68c" },{
+            "title": "NASA's Artemis I Cameras to Offer New Views of Orion, Earth, Moon",
+            "creator": "NASA",
+            "content": "During Artemis I, NASA’s Space Launch System (SLS) rocket will send the agency’s Orion spacecraft on a trek 40,000 miles beyond the Moon before returning to Earth. To capture the journey, the rocket and spacecraft are equipped with cameras that will collect valuable engineering data and share a unique perspective of humanity’s return to the Moon. There are 24 cameras on the rocket and spacecraft – eight on SLS and 16 on Orion – to document essential mission events including liftoff, ascent, solar array deployment, external rocket inspections, landing and recovery, and capture images of Earth and the Moon.",
+            "images": ["https://www.al.com/resizer/wLVzcHPj6DZirHUuBJiZdxoxnCc=/800x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/FMRMS5ISUZBMHLWIWGXJFZ43AQ.jpg"],
+            "_id": "6389d82c5f239536c41eb68c"}, {
+                "title": "James Webb Space Telescope",
+                "creator": "Northrop Grumman",
+                "content": "The James Webb Space Telescope (JWST) is a space telescope which conducts infrared astronomy. As the largest optical telescope in space, its high resolution and sensitivity allow it to view objects too old, distant, or faint for the Hubble Space Telescope. This will enable investigations across many fields of astronomy and cosmology, such as observation of the first stars, the formation of the first galaxies, and detailed atmospheric characterization of potentially habitable exoplanets.",
+                "images": ["https://upload.wikimedia.org/wikipedia/commons/2/2a/JWST_spacecraft_model_3.png"],
+                "_id": "6389d82c5f239536c41eb68c"}];
 
-    const increaseUp = () => {
-        setUpCounter(count => count + 1);
-    };
-    const increaseUp2 = () => {
-        setUpCounter2(count => count + 1);
-    };
-    const increaseUp3 = () => {
-        setUpCounter3(count => count + 1);
-    };
-    const increaseUp4 = () => {
-        setUpCounter4(count => count + 1);
-    };
-    const increaseUp5 = () => {
-        setUpCounter5(count => count + 1);
-    };
-    const increaseUp6 = () => {
-        setUpCounter6(count => count + 1);
-    };
+    const [postTitle, setPostTitle] = useState("");
 
-    const increaseDown = () => {
-        setDownCounter(count => count + 1);
-    };
-    const increaseDown2 = () => {
-        setDownCounter2(count => count + 1);
-    };
-    const increaseDown3 = () => {
-        setDownCounter3(count => count + 1);
-    };
-    const increaseDown4 = () => {
-        setDownCounter4(count => count + 1);
-    };
-    const increaseDown5 = () => {
-        setDownCounter5(count => count + 1);
-    };
-    const increaseDown6 = () => {
-        setDownCounter6(count => count + 1);
-    };
+    const [imageUrl, setImageUrl] = useState("");
 
-    const deleteThePost = () => {
-        setDeletePost(current => !current);
-    };
-    const deleteThePost2 = () => {
-        setDeletePost2(current => !current);
-    };
-    const deleteThePost3 = () => {
-        setDeletePost3(current => !current);
-    };
-    const deleteThePost4 = () => {
-        setDeletePost4(current => !current);
-    };
-    const deleteThePost5 = () => {
-        setDeletePost5(current => !current);
-    };
-    const deleteThePost6 = () => {
-        setDeletePost6(current => !current);
-    };
+    const token = localStorage.getItem("token");
+
+    const navigate = useNavigate();
+
+    const [forum, setForum]= useState(false);
+    const [white, setWhite] = useState(false);
+    const [mainPage, setMainPage]= useState(true);
+    const [mainPageWhite, setMainPageWhite] = useState(true);
+    const [notes, setNotes]= useState(false);
+    const [notesWhite, setNotesWhite] = useState(false);
+    const [post, setPost]= useState(false);
+    const [postWhite, setPostWhite] = useState(false);
+    const [discussion, setDiscussion]= useState(false);
+    const [discussionWhite, setDiscussionWhite] = useState(false);
+    const [addNote, setAddNote]= useState(false);
+    const [addNoteWhite, setAddNoteWhite] = useState(false);
+    
+
+    const handleSubmitForum  = () => {
+        if(!forum){
+        setMainPage(current => false);
+        setMainPageWhite(current => false);
+        setNotes(current => false);
+        setNotesWhite(current => false);
+        setPost(current => false);
+        setPostWhite(current => false);
+        setAddNote(current => false);
+        setAddNoteWhite(current => false);
+        setForum(current => !current);
+        setWhite(current => !current);
+        }
+    }
+    const handleSubmitNotes  = () => {
+        if(!notes){
+        setForum(current => false);
+        setWhite(current => false);
+        setMainPage(current => false);
+        setMainPageWhite(current => false);
+        setDiscussion(current => false);
+        setDiscussionWhite(current => false);
+        setPost(current => false);
+        setPostWhite(current => false);
+        setNotes(current => !current);
+        setNotesWhite(current => !current);
+        }
+    }
+    const handleSubmitMain  = () => {
+        if(!mainPage){
+        setForum(current => false);
+        setWhite(current => false);
+        setNotes(current => false);
+        setNotesWhite(current => false);
+        setDiscussion(current => false);
+        setDiscussionWhite(current => false);
+        setAddNote(current => false);
+        setAddNoteWhite(current => false);
+        setMainPage(current => !current);
+        setMainPageWhite(current => !current);
+        }
+    }
+    const handleSubmitPost  = () => {
+        setPost(current => !current);
+        setPostWhite(current => !current);
+    }
+    const handleSubmitDiscussion  = () => {
+        setDiscussion(current => !current);
+        setDiscussionWhite(current => !current);
+    }
+    const handleSubmitAddNote  = () => {
+        setAddNote(current => !current);
+        setAddNoteWhite(current => !current);
+    }
+    const handleSubmitFinal  = () => {
+        setFinal(value);
+    }
 
     useEffect(() => {
         const getLearningSpace = async () => {
@@ -162,288 +184,82 @@ function LearningSpace() {
                 <div className='ls-box-title'>
                     <div className='space-5'></div>
                     <label>
-                        Content
+                        Space
                     </label>
                     <div className='space-8'></div>
                 </div>
                     <div className='ls-buttons'>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Posts</button>
+                            <button className={mainPageWhite ? "btn-white2" : "btn-orange"} data-testid="forgotPassword" onClick={()=>handleSubmitMain()}>Posts</button>
                         </div>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Discussion</button>
+                        <button className={white ? "btn-white2" : "btn-orange"} data-testid="forgotPassword" onClick={()=>handleSubmitForum()}>Discussion</button>
                         </div>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Notes</button>
+                            <button className={notesWhite ? "btn-white2" : "btn-orange"} data-testid="forgotPassword" onClick={()=>handleSubmitNotes()}>Notes</button>
                         </div>
                         <div className='ls-button-container-alt'>
-                            <button className="btn-lightBlue" data-testid="forgotPassword">Add Post</button>
+                            <button className={!mainPage ? !forum ? addNoteWhite ?  "btn-white2" : "btn-lightBlue" : discussionWhite ? "btn-white2" : "btn-lightBlue": postWhite ? "btn-white2" : "btn-lightBlue"} data-testid="forgotPassword" onClick={()=>mainPage? handleSubmitPost(): !forum ? handleSubmitAddNote(): handleSubmitDiscussion()}>{notes && <span>Add Note</span>}{mainPage && <span>Add Post</span>}{forum && <span>Add Discussion</span>}</button>
                         </div>
-                       
                      </div>
                      <div className='space-8'></div>
+                     {forum && <div className='ls-mid-entries'> <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                        This is discussion forum!
+                        </label>
+                        </div>
+                        {discussion &&
+                    <div className='add-post-box-mid'>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword">Submit</button>
+                    </div> 
+                    </div>
+                    }
+                    </div>}
+                    {notes && <div className='ls-mid-entries'> <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                        This is note section!
+                        </label>
+                        </div>
+                        {addNote && 
+                    <div className='add-post-box-mid'>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword">Submit</button>
+                    </div>
+                    </div>
+                    }
+                    </div>}
+                    {mainPage && 
                 <div className='ls-mid-entries'>
-                    {!deletePost && 
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
-                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
-                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
+                    {post && 
+                    <div className='add-post-box-mid'>
+                            <label className="form__label" htmlFor="title">Post Title </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setPostTitle(e.target.textContent)}></span>
                             <div className='space-5'></div>
-                            <div className='ls-buttons'>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{upCounter}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{downCounter}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{0}</label>
-                            </div>
-                            <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
-                            </div>
-                            <div className='ls-button-container-alt3'>
-                            <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container-alt2'>
-                            <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost}/> </button>
-                            </div>
-                            </div>
+                            <label className="form__label" htmlFor="imageLink">Image Link </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setImageUrl(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="postContent">Post Contents </label>
+                            <div className='space-3'></div>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitFinal()}}>Submit</button>
+                    </div>
                     </div>
                     }
-                    {!deletePost2 && 
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Ac ut consequat semper viverra</div>
-                            <div>nam libero justo.</div>
-                            <div>Eget sit amet tellus cras adipiscing</div>
-                            <div>Pellentesque nec nam</div>
-                            <div>lorem mollis</div>
-                            <div className='space-5'></div>
-                            <div className='ls-buttons'>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp2}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{upCounter2}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown2}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{downCounter2}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{0}</label>
-                            </div>
-                            <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
-                            </div>
-                            <div className='ls-button-container-alt3'>
-                            <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container-alt2'>
-                            <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost2}/> </button>
-                            </div>
-                            </div>
-                    </div>
-                    }
-                    {!deletePost3 && 
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
-                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
-                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
-                            <div className='space-5'></div>
-                            <div className='ls-buttons'>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp3}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{upCounter3}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown3}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{downCounter3}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{0}</label>
-                            </div>
-                            <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
-                            </div>
-                            <div className='ls-button-container-alt3'>
-                            <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container-alt2'>
-                            <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost3}/> </button>
-                            </div>
-                            </div>
-                    </div>
-                    }   
-                    {!deletePost4 && 
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Ac ut consequat semper viverra</div>
-                            <div>nam libero justo.</div>
-                            <div>Eget sit amet tellus cras adipiscing</div>
-                            <div>Pellentesque nec nam</div>
-                            <div>lorem mollis</div>
-                            <div className='space-5'></div>
-                            <div className='ls-buttons'>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp4}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{upCounter4}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown4}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{downCounter4}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{0}</label>
-                            </div>
-                            <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
-                            </div>
-                            <div className='ls-button-container-alt3'>
-                            <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container-alt2'>
-                            <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost4}/> </button>
-                            </div>
-                            </div>
-                    </div>
-                    }
-                    {!deletePost5 && 
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
-                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
-                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
-                            <div className='space-5'></div>
-                            <div className='ls-buttons'>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp5}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{upCounter5}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown5}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{downCounter5}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{0}</label>
-                            </div>
-                            <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
-                            </div>
-                            <div className='ls-button-container-alt3'>
-                            <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container-alt2'>
-                            <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost5}/> </button>
-                            </div>
-                            </div>
-                    </div>
-                    }
-                    {!deletePost6 && 
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Ac ut consequat semper viverra</div>
-                            <div>nam libero justo.</div>
-                            <div>Eget sit amet tellus cras adipiscing</div>
-                            <div>Pellentesque nec nam</div>
-                            <div>lorem mollis</div>
-                            <div className='space-5'></div>
-                            <div className='ls-buttons'>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp6}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{upCounter6}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown6}/></button>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{downCounter6}</label>
-                            </div>
-                            <div className='ls-button-container2'>
-                            <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container'>
-                            <label className="counter__output">{0}</label>
-                            </div>
-                            <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
-                            </div>
-                            <div className='ls-button-container-alt3'>
-                            <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                            </div>
-                            <div className='ls-button-container-alt2'>
-                            <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost6}/> </button>
-                            </div>
-                            </div>
-                    </div>
-                    }
+                    <div className='space-5'></div>
+                    {postArray.map(myPost =>
+                                    <Post myPost = {myPost}/>)}
                 </div>
+                }
             </div>
-
             <div className='learning-space-right'>
                 <div className='space-5'></div>
                 <div className='ls-box3'>
@@ -471,8 +287,6 @@ function LearningSpace() {
                         <div>Baklava in the Making - CMPE B4</div>
                 </div>
             </div>
-
-
         </div>
         <Footer />
     </div>
