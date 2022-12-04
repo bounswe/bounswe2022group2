@@ -54,7 +54,7 @@ class SearchScreen extends BaseView<SearchViewModel> {
                 vertical: context.height * .6, horizontal: context.width * 2),
             sliver: SliverList(
                 delegate: SliverChildBuilderDelegate(
-              (_, int i) => tabKey == TextKeys.learnifies
+              (_, int i) => tabKey == TextKeys.learningSpaces
                   ? const SearchResultWidget()
                   : const Center(
                       child: Text("Static user search will be added"),

@@ -1,12 +1,8 @@
 part of '../search_screen.dart';
 
-class SearchBarWidget extends StatefulWidget {
-  const SearchBarWidget({Key? key}) : super(key: key);
-  @override
-  State<SearchBarWidget> createState() => _SearchInputState();
-}
+class SearchBarWidget extends StatelessWidget {
+  const SearchBarWidget({super.key});
 
-class _SearchInputState extends State<SearchBarWidget> {
   @override
   Widget build(BuildContext context) {
     final SearchViewModel model = context.read<SearchViewModel>();
@@ -35,7 +31,7 @@ class _SearchInputState extends State<SearchBarWidget> {
               color: LightAppTheme.cream,
             ),
           ),
-          labelText: "Search",
+          labelText: TextKeys.search,
           labelStyle: const TextStyle(
               color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
           prefixIcon: IconButton(

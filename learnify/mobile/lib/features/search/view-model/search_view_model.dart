@@ -9,7 +9,7 @@ import '../model/search_response_model.dart';
 import '../service/i_search_service.dart';
 import '../service/search_service.dart';
 
-/// View model to manage the data on home screen.
+/// View model to manage the data on search screen.
 class SearchViewModel extends BaseViewModel {
   late final ISearchService _searchService;
 

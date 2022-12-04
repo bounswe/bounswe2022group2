@@ -1,13 +1,8 @@
 part of '../search_screen.dart';
 
-class SearchResultWidget extends StatefulWidget {
+class SearchResultWidget extends StatelessWidget {
   const SearchResultWidget({Key? key}) : super(key: key);
 
-  @override
-  State<SearchResultWidget> createState() => _SearchResultState();
-}
-
-class _SearchResultState extends State<SearchResultWidget> {
   @override
   Widget build(BuildContext context) =>
       SelectorHelper<List<LearningSpace>, SearchViewModel>().builder(
@@ -35,6 +30,6 @@ class _SearchResultState extends State<SearchResultWidget> {
                       ),
                     )
                   : const Center(
-                      child: Text("Recommended courses will be added!"),
+                      child: Text("Recommended learning spaces will be added!"),
                     ));
 }
