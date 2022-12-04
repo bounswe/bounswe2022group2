@@ -131,11 +131,11 @@ class SearchViewModel extends BaseViewModel {
         await _searchService.search(_searchController.text);
     await _userSearchRequest(_searchController.text);
     final SearchResponse? respData = resp.data;
-    if (resp.hasError) {
+    if (resp.hasError || respData == null) {
       clearResults();
       return resp.error?.errorMessage;
     }
-    if (respData == null) {
+    if (respData.resultLearningSpaces.isEmpty) {
       _resultLearningSpaces = _recommendedLearningSpaces;
     } else {
       _resultLearningSpaces = respData.resultLearningSpaces;
