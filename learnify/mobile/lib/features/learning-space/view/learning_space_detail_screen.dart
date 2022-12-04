@@ -112,6 +112,7 @@ class MySliverOverlayAbsorber extends StatefulWidget {
 
 class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
   late Size wsize = Size.fromHeight(context.responsiveSize * 2);
+  late Size iconSize = Size.fromHeight(context.responsiveSize * 2);
 
   @override
   Widget build(BuildContext context) {
@@ -128,8 +129,17 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Image.asset(IconKeys.learnIllustration,
-                    width: context.width * 60),
+                MeasuredSize(
+                  onChange: (Size size) {
+                    if (!mounted) return;
+                    setState(() {
+                      iconSize = size;
+                    });
+                  },
+                  child: Image.asset(
+                      IconKeys.lsIcons[tempLearningSpace?.iconId ?? 0],
+                      width: context.width * 60),
+                ),
                 context.sizedH(1),
                 MeasuredSize(
                     onChange: (Size size) {
@@ -234,7 +244,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
         ),
         floating: true,
         pinned: true,
-        expandedHeight: context.height * 26 + wsize.height,
+        expandedHeight: context.height * 8 + iconSize.height + wsize.height,
         forceElevated: widget.innerBoxIsScrolled,
         bottom: ColoredTabBar(
           color: context.primary,

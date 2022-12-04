@@ -27,7 +27,8 @@ class CoursePreview extends StatelessWidget {
                   child: Ink.image(
                     padding:
                         EdgeInsets.symmetric(horizontal: context.width * 4),
-                    image: AssetImage(IconKeys.learnIllustration),
+                    image: AssetImage(
+                        IconKeys.lsIcons[learningSpace?.iconId ?? 0]),
                     height: context.height * 12,
                     width: context.width * 30,
                     fit: BoxFit.cover,
