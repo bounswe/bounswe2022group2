@@ -71,7 +71,16 @@ class ChapterList extends StatelessWidget {
               vertical: context.responsiveSize * 1.4),
           isActive: callback != null,
           onPressedError: () async {
-            if (callback != null) return await callback();
+            if (callback != null) {
+              await context
+                  .read<LearningSpaceViewModel>()
+                  .navigationManager
+                  .navigateToPage(
+                      path: NavigationConstants.addEditPost,
+                      data: <String, dynamic>{'isAdd': true});
+              return await callback();
+            }
+            ;
             return null;
           },
         ),

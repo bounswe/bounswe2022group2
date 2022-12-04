@@ -34,11 +34,13 @@ import '../models/chapter_model.dart';
 import '../models/event.dart';
 import '../models/learning_space_model.dart';
 import '../view-model/learning_space_view_model.dart';
+import 'annotations_screen.dart';
 
 part 'components/chapter/chapter_item.dart';
 part 'components/chapter/chapter_list.dart';
 part 'components/events/event_item.dart';
 part 'components/events/events_list.dart';
+part 'components/forum_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
@@ -81,28 +83,13 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(
-              vertical: context.height * .6, horizontal: context.width * 2),
-          sliver: tabKey == TextKeys.chapters
-              ? const ChapterList()
-              : (tabKey == TextKeys.events
-                  ? const EventsList()
-                  : SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (_, int i) => Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: context.height * .3),
-                                child: const Text('i')),
-                            const CustomDivider(),
-                          ],
-                        ),
-                        childCount: 12,
-                      ),
-                    )),
-        ),
+            padding: EdgeInsets.symmetric(
+                vertical: context.height * .6, horizontal: context.width * 2),
+            sliver: tabKey == TextKeys.chapters
+                ? const ChapterList()
+                : (tabKey == TextKeys.events
+                    ? const EventsList()
+                    : const ForumList())),
       ];
 
   static List<Widget> _headerSliverBuilder(
@@ -180,7 +167,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                         .enrollLearningSpace();
                                   },
                                   child: const Text(
-                                    'Enroll',
+                                    TextKeys.enroll,
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 15,
