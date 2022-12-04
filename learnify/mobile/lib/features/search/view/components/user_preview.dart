@@ -1,23 +1,23 @@
-part of '../view/home_screen.dart';
+part of '../search_screen.dart';
 
-class CoursePreview extends StatelessWidget {
-  const CoursePreview({
-    required this.learningSpace,
+class UserPreview extends StatelessWidget {
+  const UserPreview({
+    required this.userName,
+    required this.profilePhoto,
     Key? key,
   }) : super(key: key);
 
-  final LearningSpace? learningSpace;
+  final String userName;
+  final String profilePhoto;
 
   @override
   Widget build(BuildContext context) => Material(
-        borderRadius: BorderRadius.circular(10),
         elevation: 8,
+        borderRadius: BorderRadius.circular(10),
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           splashColor: DarkAppTheme.lightBlue,
-          onTap: () async => NavigationManager.instance.navigateToPage(
-              path: NavigationConstants.learningSpace,
-              data: {'learningSpace': learningSpace}),
+          onTap: () {},
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -27,10 +27,10 @@ class CoursePreview extends StatelessWidget {
                   child: Ink.image(
                     padding:
                         EdgeInsets.symmetric(horizontal: context.width * 4),
-                    image: AssetImage(IconKeys.learnIllustration),
-                    height: context.height * 12,
+                    image: AssetImage(profilePhoto),
+                    height: context.height * 15,
                     width: context.width * 30,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.scaleDown,
                   )),
               context.sizedH(.5),
               _courseDescription(context),
@@ -47,15 +47,11 @@ class CoursePreview extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 10,
-            child: Text(learningSpace?.title ?? "",
-                textAlign: TextAlign.left,
+            child: Text(userName,
+                textAlign: TextAlign.center,
                 style: const TextStyle(fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis),
           ),
-          const Spacer(),
-          const Icon(Icons.people_alt_outlined, size: 15),
-          Text(learningSpace?.numParticipants.toString() ?? "",
-              textAlign: TextAlign.right)
         ],
       ));
 }
