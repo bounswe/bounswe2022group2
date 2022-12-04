@@ -67,6 +67,7 @@ function LearningSpace() {
                     <button className="btn-orange" data-testid="forgotPassword">JOIN</button>
                     <div className='space-8'></div>
                     <a><img src={elipse} alt="elipse" height={360} /></a>
+                    <div className='space-8'></div>
                 </div>
                 
             </div>
