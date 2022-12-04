@@ -10,9 +10,9 @@ function LearningSpace() {
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
     const location = useLocation();
-    var lsid = "638b318f3d70ded23d570220";
+    var lsid = "638c631b5919a67a8119dcbe";
     if(location.state!==null){
-    lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
+    lsid = location.state.lsid ? location.state.lsid : "638c631b5919a67a8119dcbe"; 
     }
     useEffect(() => {
         const getLearningSpace = async () => {
