@@ -8,7 +8,6 @@ class TextKeys {
   static const String passwordLabel = 'password_label';
   static const String signupTo = 'signup_to';
   static const String loginTo = 'login_to';
-  static const String learnify = 'learnify';
   static const String errorTitle = 'error_title';
   static const String termsAgreementText = 'terms_agreement_text';
   static const String generalTerms = 'general_terms';
@@ -24,6 +23,8 @@ class TextKeys {
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
+  static const String learningSpaces = 'learning_spaces';
+  static const String users = 'users';
   static const String forgetDesc = 'forget_desc';
   static const String takePhoto = 'take_photo';
   static const String chooseFromGallery = 'choose_from_gallery';
@@ -87,4 +88,12 @@ class TextKeys {
   static const String passedEvent = "passed_event";
   static const String viewAnnotations = "view_annotations";
   static const String annotateImage = 'annotate_image';
+  static const String addDiscussion = "add_discussion";
+  static const String addPost = 'add_post';
+  static const String editPost = 'edit_post';
+  static const String addPostTitleHint = "add_post_title_hint";
+  static const String addPostTitleLabel = "add_post_title_label";
+  static const String addPostContentHint = "add_post_content_hint";
+  static const String addPostContentLabel = "add_post_content_label";
+  static const String enroll = "Enroll";
 }

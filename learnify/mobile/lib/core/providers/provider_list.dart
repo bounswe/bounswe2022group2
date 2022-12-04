@@ -8,6 +8,7 @@ import '../../features/auth/signup/view-model/signup_view_model.dart';
 import '../../features/auth/verification/view-model/verification_view_model.dart';
 import '../../features/home-wrapper/view-model/home_wrapper_view_model.dart';
 import '../../features/home/view-model/home_view_model.dart';
+import '../../features/learning-space/view-model/add_post_view_model.dart';
 import '../../features/learning-space/view-model/annotations_view_model.dart';
 import '../../features/learning-space/view-model/create_learning_space_view_model.dart';
 import '../../features/learning-space/view-model/learning_space_view_model.dart';
@@ -59,6 +60,10 @@ class ProviderList {
     ChangeNotifierProvider<CreateLearningSpaceViewModel>(
       lazy: true,
       create: (_) => CreateLearningSpaceViewModel(),
+    ),
+    ChangeNotifierProvider<AddPostViewModel>(
+      lazy: true,
+      create: (_) => AddPostViewModel(),
     ),
     ChangeNotifierProxyProvider<HomeWrapperViewModel, ProfileViewModel>(
       lazy: true,

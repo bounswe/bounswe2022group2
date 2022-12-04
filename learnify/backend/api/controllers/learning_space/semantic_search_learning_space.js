@@ -34,8 +34,6 @@ export default async (req, res) => {
             return res.status(500).json({ "resultMessage": "Could not find returned learning spaces in the DB" });
           });
 
-          ls = ls.slice(0,10);
-
     }
 
     return res.status(200).json({learning_spaces : ls})

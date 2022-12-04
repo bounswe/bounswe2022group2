@@ -1,5 +1,6 @@
 import '../../../../core/base/model/base_model.dart';
 import '../../auth/verification/model/user_model.dart';
+import 'post_model.dart';
 
 class LearningSpace extends BaseModel<LearningSpace> {
   const LearningSpace({
@@ -11,6 +12,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
     this.categories = const <String>[],
     this.creator,
     this.admins = const <User>[],
+    this.posts = const <Post>[],
     this.createdAt,
     this.updatedAt,
   });
@@ -38,6 +40,8 @@ class LearningSpace extends BaseModel<LearningSpace> {
         creator: BaseModel.getByType<String>(json['creator']),
         admins:
             BaseModel.embeddedListFromJson<User>(json['admins'], const User()),
+        posts:
+            BaseModel.embeddedListFromJson<Post>(json['posts'], const Post()),
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
       );
@@ -49,7 +53,8 @@ class LearningSpace extends BaseModel<LearningSpace> {
           int? iconId,
           List<String>? categories,
           String? creator,
-          List<User>? admins}) =>
+          List<User>? admins,
+          List<Post>? posts}) =>
       LearningSpace(
         id: id,
         title: title,
@@ -59,6 +64,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         categories: categories ?? this.categories,
         creator: creator,
         admins: admins ?? this.admins,
+        posts: posts ?? this.posts,
         createdAt: createdAt,
         updatedAt: updatedAt,
       );
@@ -70,6 +76,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
   final int? iconId;
   final List<String> categories;
   final List<User> admins;
+  final List<Post> posts;
   final String? creator;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -88,6 +95,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         'categories': categories,
         'creator': creator,
         'admins': BaseModel.embeddedListToJson<User>(admins),
+        'posts': BaseModel.embeddedListToJson<Post>(posts),
         'createdAt': BaseModel.primitiveToJson<DateTime>(createdAt),
         'updatedAt': BaseModel.primitiveToJson<DateTime>(updatedAt),
       };
@@ -102,6 +110,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         categories,
         creator,
         admins,
+        posts,
         createdAt,
         updatedAt
       ];

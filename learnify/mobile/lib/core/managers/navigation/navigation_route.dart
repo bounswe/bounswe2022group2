@@ -6,6 +6,7 @@ import '../../../features/auth/login/view/login_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/learning-space/view/add_post_screen.dart';
 import '../../../features/learning-space/view/annotations_screen.dart';
 import '../../../features/learning-space/view/components/chapter_image.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
@@ -70,6 +71,10 @@ class NavigationRoute {
               allAnnotations: arguments['all_annotations'],
               chapterId: arguments['chapter_id'],
             ),
+            args);
+      case NavigationConstants.addEditPost:
+        return normalNavigate(
+            AddPostScreen(isAdd: arguments['isAdd'], post: arguments['post']),
             args);
       default:
         return normalNavigate(const SignupScreen(), args);

@@ -43,6 +43,10 @@ export default async (req, res) => {
         images: [],
     });
 
+    if(req.body.images){
+        post.images = req.body.images;
+    }
+
     ls.posts.push(post);
     await ls.save().catch((err) => {
         console.log(err.message)
