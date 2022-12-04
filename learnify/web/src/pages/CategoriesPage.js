@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './style.css'
+import React from 'react';
+import './style.css';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import Categories from '../components/Categories';

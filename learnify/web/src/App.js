@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import EmailVerificationPage from './pages/EmailVerificationPage';
@@ -10,10 +12,38 @@ import PrivateRoutesVerify from './pages/PrivateRoutesVerify';
 import ChangePassword from './pages/ChangePassword';
 import NotFoundPage from './pages/NotFoundPage';
 import CategoriesPage from './pages/CategoriesPage';
+import LSbyCategoryPage from './pages/LSbyCategoryPage';
 
 function App() {
+
+  const [categories, setCategories] = useState([])
+  const [learningspaces, setLearningspaces] = useState([])
+
+  useEffect(() => {
+      const getCategory = async () => {
+          const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}categories`)
+          setCategories(res.data.Categories)
+      }
+      getCategory()
+  }, [])
+
+  useEffect(() => {
+      const getLearningSpaces = async () => {
+          const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace`)
+          setLearningspaces(res.data.learning_spaces)
+      }
+      getLearningSpaces()
+  }, [])
+
+  const categoryRoutes = categories.map(category => (
+    <Route path={`/categories/${category.toLowerCase().replace(/\s+/g, '-')}`} element={<PrivateRoutesVerify> <LSbyCategoryPage title={category}/> </PrivateRoutesVerify>}/>
+  ));
+
+  // const lsRoutes = learningspaces.map(ls => (
+  //   <Route path={`/${ls._id}`} element={<PrivateRoutesVerify> <LearningSpacePage id={ls._id}/> </PrivateRoutesVerify>}/>
+  // ));
+
   return (
-     
     
     <div className="App">
       <BrowserRouter>
@@ -26,7 +56,9 @@ function App() {
           <Route path="/change-password" element={<ChangePassword/>}/>
           <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
-        </Routes> 
+          {categoryRoutes}
+          {/* {lsRoutes} */}
+        </Routes>
       </BrowserRouter>
 
     </div>

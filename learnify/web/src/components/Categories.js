@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './component_styles.css';
-import axios from 'axios'
+import axios from 'axios';
 import CategoryButton from './CategoryButton';
 
 const Categories = () => {
@@ -19,7 +19,7 @@ const Categories = () => {
         <>
             <div className="category-wrapper">
                 {categories.map(category =>
-                    <CategoryButton key={Math.random()} name={category} url={category.replace(/\s+/g, '')}/>
+                    <CategoryButton key={Math.random()} name={category} url={category.toLowerCase().replace(/\s+/g, '-')}/>
                 )}
             </div>
         </>

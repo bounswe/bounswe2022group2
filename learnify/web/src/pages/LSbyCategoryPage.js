@@ -1,0 +1,47 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './style.css';
+import LearningSpaceDetailBox from '../components/LearningSpaceDetailBox';
+import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';
+
+function LSbyCategoryPage(props) {
+
+    const [learningspaces, setLearningspaces] = useState([])
+
+    useEffect(() => {
+        const getLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/category/${props.title}`)
+            setLearningspaces(res.data.learning_spaces)
+            console.log(res.data.learning_spaces)
+        }
+        getLearningSpaces()
+    }, [])
+
+    const lsBoxes = learningspaces.map(ls => (
+        <LearningSpaceDetailBox title={ls.title} description={ls.description} icon_id={ls.icon_id} num_participants={ls.num_participants} url={ls.id}/>
+    ));
+
+    return (
+        <div>
+            <NavBar/>
+            <div className="lsbycategorypage-container">
+                <div className="lsbycategorypage-wrapper">
+                    <div className="lsbycategorypage-title">
+                        <h1>Browsing the category:</h1>
+                    </div>
+                    <div className="lsbycategorypage-header">
+                        <h1>{props.title}</h1>
+                    </div>
+                </div>
+                <div className="lsbycategorypage-body">
+                    {lsBoxes}
+                </div>
+            </div>
+            <Footer/>
+        </div>
+    )
+
+}
+
+export default LSbyCategoryPage;
