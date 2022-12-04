@@ -1,19 +1,116 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import './style.css'
-import {NavLink, useNavigate} from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import {useNavigate} from 'react-router-dom';
 import elipse from '../images/learning-space-illustration.svg';
 import {useLocation} from 'react-router-dom';
+import event from '../images/event.png';
+import people from '../images/download.png';
+import creator from '../images/creator.png';
+import geolocation from '../images/location.png';
+import MDEditor from "@uiw/react-md-editor";
+import Post from '../components/Post';
+
 
 function LearningSpace() {
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
     const location = useLocation();
-    var lsid = "638c631b5919a67a8119dcbe";
+    var lsid = "638b318f3d70ded23d570220";
     if(location.state!==null){
-    lsid = location.state.lsid ? location.state.lsid : "638c631b5919a67a8119dcbe"; 
+    lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
     }
+
+    const [message, setMessage] = useState("");
+
+    const [value, setValue] = React.useState("");
+
+    const [final, setFinal] = React.useState(value);
+
+    const [postArray, setPostArray] = useState([]);
+
+    const [postTitle, setPostTitle] = useState("");
+
+    const [imageUrl, setImageUrl] = useState("");
+
+    const token = localStorage.getItem("token");
+
+    const navigate = useNavigate();
+
+    const [forum, setForum]= useState(false);
+    const [white, setWhite] = useState(false);
+    const [mainPage, setMainPage]= useState(true);
+    const [mainPageWhite, setMainPageWhite] = useState(true);
+    const [notes, setNotes]= useState(false);
+    const [notesWhite, setNotesWhite] = useState(false);
+    const [post, setPost]= useState(false);
+    const [postWhite, setPostWhite] = useState(false);
+    const [discussion, setDiscussion]= useState(false);
+    const [discussionWhite, setDiscussionWhite] = useState(false);
+    const [addNote, setAddNote]= useState(false);
+    const [addNoteWhite, setAddNoteWhite] = useState(false);
+    
+
+    const handleSubmitForum  = () => {
+        if(!forum){
+        setMainPage(current => false);
+        setMainPageWhite(current => false);
+        setNotes(current => false);
+        setNotesWhite(current => false);
+        setPost(current => false);
+        setPostWhite(current => false);
+        setAddNote(current => false);
+        setAddNoteWhite(current => false);
+        setForum(current => !current);
+        setWhite(current => !current);
+        }
+    }
+    const handleSubmitNotes  = () => {
+        if(!notes){
+        setForum(current => false);
+        setWhite(current => false);
+        setMainPage(current => false);
+        setMainPageWhite(current => false);
+        setDiscussion(current => false);
+        setDiscussionWhite(current => false);
+        setPost(current => false);
+        setPostWhite(current => false);
+        setNotes(current => !current);
+        setNotesWhite(current => !current);
+        }
+    }
+    const handleSubmitMain  = () => {
+        if(!mainPage){
+        setForum(current => false);
+        setWhite(current => false);
+        setNotes(current => false);
+        setNotesWhite(current => false);
+        setDiscussion(current => false);
+        setDiscussionWhite(current => false);
+        setAddNote(current => false);
+        setAddNoteWhite(current => false);
+        setMainPage(current => !current);
+        setMainPageWhite(current => !current);
+        }
+    }
+    const handleSubmitPost  = () => {
+        setPost(current => !current);
+        setPostWhite(current => !current);
+    }
+    const handleSubmitDiscussion  = () => {
+        setDiscussion(current => !current);
+        setDiscussionWhite(current => !current);
+    }
+    const handleSubmitAddNote  = () => {
+        setAddNote(current => !current);
+        setAddNoteWhite(current => !current);
+    }
+    const handleSubmitFinal  = () => {
+        setFinal(value);
+        createPost(lsid, postTitle, final, imageUrl);
+    }
+
     useEffect(() => {
         const getLearningSpace = async () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/${lsid}`, {
@@ -31,6 +128,7 @@ function LearningSpace() {
                         console.log(json.learning_spaces[0].title);
                         setDescription(json.learning_spaces[0].description);
                         console.log(json.learning_spaces[0].description);
+                        setPostArray(json.learning_spaces[0].posts);
                     });
                     
                     return response.json();
@@ -41,10 +139,48 @@ function LearningSpace() {
             })
             }
             if(location.state!==null){
-        console.log(location.state.lsid)
+                console.log(location.state.lsid)
             }
         getLearningSpace();
     }, []);
+
+    const createPost = async (lsid, postTitle, final, imageUrl) => {
+        console.log(lsid)
+        console.log(postTitle)
+        console.log(final)
+        console.log(imageUrl)
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/post`, {
+            method: "POST",
+            body: JSON.stringify({
+                ls_id: lsid,
+                title: postTitle,
+                content: final,
+                images: [imageUrl],
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `${token}` , 
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log("successfull")
+                    
+                    response.json().then( json => {
+                        console.log(json.learningSpace.id)
+                    });
+                    console.log("Learning Space Post created successfully!");
+                    window.location.reload();
+                } else {
+                    setMessage("Post could not be created!");
+                }
+            }
+            )
+            .catch((error) => {
+                console.log(error);
+            }
+            );
+    };
 
   return(
     <div className='learning-space-layout'>
@@ -67,7 +203,6 @@ function LearningSpace() {
                     <button className="btn-orange" data-testid="forgotPassword">JOIN</button>
                     <div className='space-8'></div>
                     <a><img src={elipse} alt="elipse" height={360} /></a>
-                    <div className='space-8'></div>
                 </div>
                 
             </div>
@@ -76,124 +211,109 @@ function LearningSpace() {
                 <div className='ls-box-title'>
                     <div className='space-5'></div>
                     <label>
-                        Content
+                        Space
                     </label>
                     <div className='space-8'></div>
                 </div>
                     <div className='ls-buttons'>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Posts</button>
+                            <button className={mainPageWhite ? "btn-white2" : "btn-orange"} data-testid="forgotPassword" onClick={()=>handleSubmitMain()}>Posts</button>
                         </div>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Discussion</button>
+                        <button className={white ? "btn-white2" : "btn-orange"} data-testid="forgotPassword" onClick={()=>handleSubmitForum()}>Discussion</button>
                         </div>
                         <div className='ls-button-container'>
-                            <button className="btn-orange" data-testid="forgotPassword">Notes</button>
+                            <button className={notesWhite ? "btn-white2" : "btn-orange"} data-testid="forgotPassword" onClick={()=>handleSubmitNotes()}>Notes</button>
                         </div>
                         <div className='ls-button-container-alt'>
-                            <button className="btn-lightBlue" data-testid="forgotPassword">Add Post</button>
+                            <button className={!mainPage ? !forum ? addNoteWhite ?  "btn-white2" : "btn-lightBlue" : discussionWhite ? "btn-white2" : "btn-lightBlue": postWhite ? "btn-white2" : "btn-lightBlue"} data-testid="forgotPassword" onClick={()=>mainPage? handleSubmitPost(): !forum ? handleSubmitAddNote(): handleSubmitDiscussion()}>{notes && <span>Add Note</span>}{mainPage && <span>Add Post</span>}{forum && <span>Add Discussion</span>}</button>
                         </div>
-                       
                      </div>
                      <div className='space-8'></div>
+                     {forum && <div className='ls-mid-entries'> <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                        This is discussion forum!
+                        </label>
+                        </div>
+                        {discussion &&
+                    <div className='add-post-box-mid'>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword">Submit</button>
+                    </div> 
+                    </div>
+                    }
+                    </div>}
+                    {notes && <div className='ls-mid-entries'> <div className='ls-box-mid'>
+                        <label className='feed-title'>
+                        This is note section!
+                        </label>
+                        </div>
+                        {addNote && 
+                    <div className='add-post-box-mid'>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword">Submit</button>
+                    </div>
+                    </div>
+                    }
+                    </div>}
+                    {mainPage && 
                 <div className='ls-mid-entries'>
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
-                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
-                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
+                    {post && 
+                    <div className='add-post-box-mid'>
+                            <label className="form__label" htmlFor="title">Post Title </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setPostTitle(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="imageLink">Image Link </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setImageUrl(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="postContent">Post Contents </label>
+                            <div className='space-3'></div>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitFinal()}}>Submit</button>
                     </div>
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Ac ut consequat semper viverra</div>
-                            <div>nam libero justo.</div>
-                            <div>Eget sit amet tellus cras adipiscing</div>
-                            <div>Pellentesque nec nam</div>
-                            <div>lorem mollis</div>
                     </div>
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
-                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
-                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
-                    </div>
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Ac ut consequat semper viverra</div>
-                            <div>nam libero justo.</div>
-                            <div>Eget sit amet tellus cras adipiscing</div>
-                            <div>Pellentesque nec nam</div>
-                            <div>lorem mollis</div>
-                    </div>
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Nascetur ridiculus mus mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>scetur ridiculus mus mauris vitae ultricies leo integ</div>
-                            <div>iaculis at erat pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non diam.</div>
-                            <div>mauris vitae ultricies leo integer. Cursus mattis molestie a iaculis at erat pe</div>
-                            <div>pellentesque adipiscing commodo. Justo eget magna fermentum iaculis eu non</div>
-                    </div>
-                    <div className='ls-box-mid'>
-                        <label className='feed-title'>
-                            Entry Title
-                        </label>
-                        <div className='space-5'></div>
-                             <div>Ac ut consequat semper viverra</div>
-                            <div>nam libero justo.</div>
-                            <div>Eget sit amet tellus cras adipiscing</div>
-                            <div>Pellentesque nec nam</div>
-                            <div>lorem mollis</div>
-                    </div>
+                    }
+                    <div className='space-5'></div>
+                    {postArray.map(myPost =>
+                                    <Post myPost = {myPost}/>)}
                 </div>
+                }
             </div>
-
             <div className='learning-space-right'>
                 <div className='space-5'></div>
                 <div className='ls-box3'>
                     <label className='feed-title'>
+                    <label className='navBarText'><img src={people} alt="Learnify Logo" height={70} /></label>
                         Contributing Users
                     </label>
+                    <label className='navBarText'><img src={creator} alt="Learnify Logo" height={50} /> Altay Acar</label>
                     <div className='space-5'></div>
-                        <div>UserB</div>
-                        <div>Enes</div>
                         <div>Koray</div>
-                        <div>Altay</div>
-                        <div>StudentA</div>
                         <div>Gokay</div>
+                        <div>Enes</div>
                 </div>
                 <div className='ls-box-org'>
                     <label className='feed-title'>
+                    <label className='navBarText'><img src={event} alt="Learnify Logo" height={70} /></label>
                         Events
+                    <label className='navBarText2'> <img src={geolocation} alt="Learnify Logo" height={70} /></label>
                     </label>
                     <div className='space-5'></div>
-                        <div>event-1</div>
-                        <div>event-2</div>
-                        <div>event-3</div>
-                        <div>event-4</div>
-                        <div>event-5</div>
+                        <div>Preparing for Milestone - North Cafeteria</div>
+                        <div>Classical Music Concert - Albert Long Hall</div>
+                        <div>Watching Car Racing - CMPE HWLAB</div>
+                        <div>Pizza Party - CMPE Roof</div>
+                        <div>Baklava in the Making - CMPE B4</div>
                 </div>
             </div>
-
-
         </div>
         <Footer />
     </div>
