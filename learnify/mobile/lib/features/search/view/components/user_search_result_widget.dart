@@ -12,7 +12,7 @@ class UserSearchResultWidget extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.only(
                       left: context.width * 1,
-                      top: context.height * 1,
+                      top: context.height * 2,
                       bottom: context.height * 3,
                       right: context.width * 1),
                   child: Column(
@@ -20,7 +20,7 @@ class UserSearchResultWidget extends StatelessWidget {
                       children: <Widget>[
                         if (resultUsers.length != 1)
                           _recommendedMessage(context),
-                        if (resultUsers.length != 1) context.sizedH(1),
+                        if (resultUsers.length != 1) context.sizedH(.8),
                         GridView.builder(
                             physics: const ScrollPhysics(),
                             itemCount: resultUsers.length,
@@ -38,7 +38,7 @@ class UserSearchResultWidget extends StatelessWidget {
                       ])));
 
   static Widget _recommendedMessage(BuildContext context) => const Center(
-        child: Text("Recommended User", //TextKeys.recommendedUsers,
+        child: Text("Recommended Users", //TextKeys.recommendedUsers,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.bold,
