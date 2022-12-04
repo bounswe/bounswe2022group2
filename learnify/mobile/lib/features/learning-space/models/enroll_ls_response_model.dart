@@ -15,7 +15,7 @@ class EnrollLSResponse extends BaseModel<EnrollLSResponse> {
 
   @override
   EnrollLSResponse fromJson(Map<String, dynamic> json) =>
-      EnrollLSResponse().fromJson(json);
+      EnrollLSResponse.fromJson(json);
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
