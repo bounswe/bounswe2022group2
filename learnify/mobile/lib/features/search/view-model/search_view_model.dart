@@ -1,5 +1,6 @@
 import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
@@ -17,6 +18,8 @@ class SearchViewModel extends BaseViewModel {
 
   late List<LearningSpace> _resultLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get resultLearningSpaces => _resultLearningSpaces;
+
+  late bool didResultCome = false;
 
   @override
   void initViewModel() {
@@ -40,6 +43,11 @@ class SearchViewModel extends BaseViewModel {
 
   void _setDefault() {}
 
+  void clearResultLearningSpaces() {
+    _searchController.clear();
+    _resultLearningSpaces = <LearningSpace>[];
+  }
+
   Future<void> _controllerListener() async {
     if (searchController.text.isEmpty) return;
     notifyListeners();
@@ -59,6 +67,7 @@ class SearchViewModel extends BaseViewModel {
     final SearchResponse? respData = resp.data;
     if (resp.hasError || respData == null) return resp.error?.errorMessage;
     _resultLearningSpaces = respData.resultLearningSpaces;
+
     notifyListeners();
     return null;
   }

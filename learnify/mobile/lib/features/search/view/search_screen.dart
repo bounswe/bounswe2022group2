@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/widgets/buttons/base_icon_button.dart';
-import '../../../core/widgets/image/annotatable_image.dart';
-import '../../learning-space/models/learning_space_model.dart';
-import '../../learning-space/view/learning_space_detail_screen.dart';
-import '../../view-learning-spaces/view/view_all_list.dart';
 import '/../../product/theme/light_theme.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
-import '../../../core/widgets/divider/custom_divider.dart';
+import '../../../core/helpers/selector_helper.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view/home_screen.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../constants/search_screen_constants.dart';
 import '../view-model/search_view_model.dart';
 
-part 'components/search_widget.dart';
+part 'components/search_bar_widget.dart';
 part 'components/search_result_widget.dart';
 
 class SearchScreen extends BaseView<SearchViewModel> {
@@ -49,35 +45,23 @@ class SearchScreen extends BaseView<SearchViewModel> {
         ),
       );
 
-  static List<Widget> _slivers(BuildContext context, String tabKey) {
-    final SearchViewModel model = context.read<SearchViewModel>();
-    return <Widget>[
-      SliverOverlapInjector(
-        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-      ),
-      SliverPadding(
-        padding: EdgeInsets.symmetric(
-            vertical: context.height * .6, horizontal: context.width * 2),
-        sliver: tabKey == TextKeys.learnifies
-            ? const SearchResultWidget() //listResults(context, ValueKey(model.resultLearningSpaces))
-            : SliverList(
+  static List<Widget> _slivers(BuildContext context, String tabKey) => <Widget>[
+        SliverOverlapInjector(
+          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+        ),
+        SliverPadding(
+            padding: EdgeInsets.symmetric(
+                vertical: context.height * .6, horizontal: context.width * 2),
+            sliver: SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  (_, int i) => Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: context.height * .3),
-                          child: const Text('i')),
-                      const CustomDivider(),
-                    ],
-                  ),
-                  childCount: 12,
-                ),
-              ),
-      ),
-    ];
-  }
+              (_, int i) => tabKey == TextKeys.learnifies
+                  ? const SearchResultWidget()
+                  : const Center(
+                      child: Text("Static user search will be added"),
+                    ),
+              childCount: 1,
+            ))),
+      ];
 
   static List<Widget> _headerSliverBuilder(
           BuildContext context, bool innerBoxIsScrolled) =>
@@ -93,7 +77,7 @@ class SearchScreen extends BaseView<SearchViewModel> {
                 children: const <Widget>[
                   Padding(
                     padding: EdgeInsets.only(top: 12),
-                    child: SearchWidget(),
+                    child: SearchBarWidget(),
                   ),
                 ],
               ),
@@ -112,34 +96,4 @@ class SearchScreen extends BaseView<SearchViewModel> {
           ),
         ),
       ];
-
-  static Widget listResults(BuildContext context, Key key) => SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (_, int i) => GridView.builder(
-            physics: const ScrollPhysics(),
-            itemCount:
-                context.read<SearchViewModel>().resultLearningSpaces.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 15,
-              mainAxisSpacing: 15,
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
-            shrinkWrap: true,
-            itemBuilder: (BuildContext context, int index) => CoursePreview(
-              textKey: context
-                      .read<SearchViewModel>()
-                      .resultLearningSpaces[index]
-                      .title ??
-                  '',
-              participantNumber: context
-                      .read<SearchViewModel>()
-                      .resultLearningSpaces[index]
-                      .numParticipants ??
-                  0,
-            ),
-          ),
-          childCount: 1,
-        ),
-      );
 }
