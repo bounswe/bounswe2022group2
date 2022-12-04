@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import EmailVerificationPage from './pages/EmailVerificationPage';
 import ForgetPassword from './pages/ForgetPassword';
@@ -21,38 +21,11 @@ import LSbyCategoryPage from './pages/LSbyCategoryPage';
 
 function App() {
 
-  const [categories, setCategories] = useState([])
-  const [learningspaces, setLearningspaces] = useState([])
-
-  useEffect(() => {
-      const getCategory = async () => {
-          const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}categories`)
-          setCategories(res.data.Categories)
-      }
-      getCategory()
-  }, [])
-
-  useEffect(() => {
-      const getLearningSpaces = async () => {
-          const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace`)
-          setLearningspaces(res.data.learning_spaces)
-      }
-      getLearningSpaces()
-  }, [])
-
-  const categoryRoutes = categories.map(category => (
-    <Route path={`/categories/${category.toLowerCase().replace(/\s+/g, '-')}`} element={<PrivateRoutesVerify> <LSbyCategoryPage title={category}/> </PrivateRoutesVerify>}/>
-  ));
-
-   const lsRoutes = learningspaces.map(ls => (
-     <Route path={`/${ls._id}`} element={<PrivateRoutesVerify> <LearningSpace id={ls._id}/> </PrivateRoutesVerify>}/>
-   ));
-
   return (
     
     <div className="App">
       <BrowserRouter>
-        <Routes>  
+        <Routes>
           <Route path="/" element={<SignUpForm/>}/>
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
@@ -61,9 +34,9 @@ function App() {
           <Route path="/change-password" element={<ChangePassword/>}/>
           <Route path="/create-ls" element={<PrivateRoutes> <CreateLS /> </PrivateRoutes>}/>
           <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
+          <Route path="/categories/:category" element={<PrivateRoutes> <LSbyCategoryPage /> </PrivateRoutes>}/>
+          <Route path="/:lsid" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
-          {categoryRoutes}
-          {lsRoutes}
         </Routes>
       </BrowserRouter>
 

@@ -651,9 +651,9 @@ h1 {
   }
 
 .learning-space {
-    height: 100vh;
     display: flex;
     color: #FFF7E9;
+    min-height: calc(100vh - 190px);
 }
 
 .ls-content {

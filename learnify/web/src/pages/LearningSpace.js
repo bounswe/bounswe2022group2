@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react';
 import './style.css'
-import {NavLink, useNavigate} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import elipse from '../images/learning-space-illustration.svg';
-import {useLocation} from 'react-router-dom';
 
-function LearningSpace(props) {
+function LearningSpace() {
+
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
-   // const location = useLocation();
-    const lsid = props.id;
-    /*var lsid = "638c631b5919a67a8119dcbe";
-    if(location.state!==null){
-    lsid = location.state.lsid ? location.state.lsid : "638c631b5919a67a8119dcbe"; 
-    }*/
+
+    const { lsid } = useParams();
+
     useEffect(() => {
         const getLearningSpace = async () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/${lsid}`, {
@@ -41,9 +38,6 @@ function LearningSpace(props) {
                 console.log(error.message);
             })
             }
-            /*if(location.state!==null){
-        console.log(location.state.lsid)
-            }*/
         getLearningSpace();
     }, []);
 
@@ -68,6 +62,7 @@ function LearningSpace(props) {
                     <button className="btn-orange" data-testid="forgotPassword">JOIN</button>
                     <div className='space-8'></div>
                     <a><img src={elipse} alt="elipse" height={360} /></a>
+                    <div className='space-8'></div>
                 </div>
                 
             </div>
