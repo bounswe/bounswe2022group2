@@ -17,7 +17,7 @@ import '../view-model/search_view_model.dart';
 part 'components/search_bar_widget.dart';
 part 'components/search_result_widget.dart';
 
-part '../components/user_preview.dart';
+part 'components/user_preview.dart';
 
 class SearchScreen extends BaseView<SearchViewModel> {
   const SearchScreen({Key? key})
@@ -62,7 +62,9 @@ class SearchScreen extends BaseView<SearchViewModel> {
               (_, int i) => tabKey == TextKeys.learningSpaces
                   ? const SearchResultWidget()
                   : const Center(
-                      child: Text("Static user search will be added"),
+                      child: UserPreview(
+                          userName: "Onur Karboncu",
+                          profilePhoto: IconKeys.profilePageOnur),
                     ),
               childCount: 1,
             ))),

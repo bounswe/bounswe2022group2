@@ -1,4 +1,4 @@
-part of '../view/search_screen.dart';
+part of '../search_screen.dart';
 
 class UserPreview extends StatelessWidget {
   const UserPreview({
