@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
+import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../models/categories_response_model.dart';
 import '../models/create_ls_request_model.dart';
@@ -39,7 +41,6 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   late GlobalKey<FormState> _formKey;
   GlobalKey<FormState> get formKey => _formKey;
 
-  late final ImagePicker _picker;
   int? _selectedImage;
   int? get selectedImage => _selectedImage;
 
@@ -52,7 +53,6 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _lsService = LSService.instance;
-    _picker = ImagePicker();
   }
 
   @override
@@ -62,6 +62,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   void initView() {
     _formKey = GlobalKey<FormState>();
     //_setLSData();
+    _selectedImage = 5;
     _titleController = TextEditingController(text: _initialTitle);
     _descriptionController = TextEditingController(text: _initialDescription);
     _participantsController = TextEditingController(text: _initialparticipants);
@@ -127,10 +128,10 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid) {
       final CreateLSRequest request = CreateLSRequest(
-        title: _titleController.text,
-        description: _descriptionController.text,
-        categories: _selectedCategories,
-      );
+          title: _titleController.text,
+          description: _descriptionController.text,
+          categories: _selectedCategories,
+          iconId: _selectedImage);
       final IResponseModel<CreateLSResponse> response =
           await _lsService.createLS(request);
       if (response.hasError) return response.error?.errorMessage;
@@ -138,6 +139,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
       if (ls == null) return "Learning Space not created";
       await navigationManager.navigateToPage(
         path: NavigationConstants.learningSpace,
+        //data: <String, dynamic>{'learningSpace': ls.toJson},
       );
       _canUpdate = false;
       notifyListeners();
@@ -189,6 +191,13 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+
+  void pickIcon() {
+    _selectedImage = Random().nextInt(20);
+    _canUpdate = true;
+    notifyListeners();
+  }
+
 /*
   void _setLSData() {
     _initialTitle = _learningSpace?.title;
