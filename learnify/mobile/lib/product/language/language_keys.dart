@@ -8,7 +8,6 @@ class TextKeys {
   static const String passwordLabel = 'password_label';
   static const String signupTo = 'signup_to';
   static const String loginTo = 'login_to';
-  static const String learnify = 'learnify';
   static const String errorTitle = 'error_title';
   static const String termsAgreementText = 'terms_agreement_text';
   static const String generalTerms = 'general_terms';
@@ -24,6 +23,8 @@ class TextKeys {
   static const String profile = 'profile';
   static const String search = 'search';
   static const String courses = 'courses';
+  static const String learningSpaces = 'learning_spaces';
+  static const String users = 'users';
   static const String forgetDesc = 'forget_desc';
   static const String takePhoto = 'take_photo';
   static const String chooseFromGallery = 'choose_from_gallery';
