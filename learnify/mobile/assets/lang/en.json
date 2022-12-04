@@ -86,5 +86,12 @@
   "passed_event": "Event has Passed",
   "view_annotations": "View Annotations",
   "annotate_image": "Annotate or See the Annotations",
-  "add_discussion": "Add Discussion"
+  "add_discussion": "Add Discussion",
+  "add_post": "Add Post",
+  "edit_post": "Edit Post",
+  "add_post_title_hint": "Enter a title",
+  "add_post_title_label": "Title",
+  "add_post_content_hint": "Enter content of post",
+  "add_post_content_label": "Content",
+  "enroll": "Enroll"
 }

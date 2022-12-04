@@ -88,4 +88,11 @@ class TextKeys {
   static const String viewAnnotations = "view_annotations";
   static const String annotateImage = 'annotate_image';
   static const String addDiscussion = "add_discussion";
+  static const String addPost = 'add_post';
+  static const String editPost = 'edit_post';
+  static const String addPostTitleHint = "add_post_title_hint";
+  static const String addPostTitleLabel = "add_post_title_label";
+  static const String addPostContentHint = "add_post_content_hint";
+  static const String addPostContentLabel = "add_post_content_label";
+  static const String enroll = "Enroll";
 }
