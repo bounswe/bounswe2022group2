@@ -6,18 +6,16 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../product/language/language_keys.dart';
+import '../../../product/theme/dark_theme.dart';
 import '../../home/view/home_screen.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../constants/search_screen_constants.dart';
-import '../../../core/extensions/context/context_extensions.dart';
-import '../../../product/constants/icon_keys.dart';
-import '../../../product/theme/dark_theme.dart';
 import '../view-model/search_view_model.dart';
 
+part 'components/ls_search_result_widget.dart';
 part 'components/search_bar_widget.dart';
-part 'components/search_result_widget.dart';
-
 part 'components/user_preview.dart';
+part 'components/user_search_result_widget.dart';
 
 class SearchScreen extends BaseView<SearchViewModel> {
   const SearchScreen({Key? key})
@@ -60,14 +58,10 @@ class SearchScreen extends BaseView<SearchViewModel> {
             sliver: SliverList(
                 delegate: SliverChildBuilderDelegate(
               (_, int i) => tabKey == TextKeys.learningSpaces
-                  ? const SearchResultWidget()
-                  : const Center(
-                      child: UserPreview(
-                          userName: "Onur Karboncu",
-                          profilePhoto: IconKeys.profilePageOnur),
-                    ),
+                  ? const LSSearchResultWidget()
+                  : const UserSearchResultWidget(),
               childCount: 1,
-            ))),
+            )))
       ];
 
   static List<Widget> _headerSliverBuilder(

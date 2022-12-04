@@ -27,7 +27,7 @@ class ViewAllList extends BaseView<HomeViewModel> {
           List<LearningSpace> listOfLearningSpaces, bool buttonExist) =>
       Padding(
         padding: EdgeInsets.only(
-            left: context.width * 4,
+            left: context.width * 1,
             top: context.height * 1,
             bottom: context.height * 3,
             right: context.width * 1),

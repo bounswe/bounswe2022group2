@@ -55,6 +55,7 @@ class TextKeys {
   static const String takenLearnifies = "taken_learnifies";
   static const String friendLearnifies = "friend_learnifies";
   static const String recommendedLearnifies = "recommended_learnifies";
+  static const String recommendedUsers = "recommended_users";
   static const String annotate = "annotate";
   static const String annotateText = "annotate_text";
   static const String annotationHintText = "annotation_hint_text";
