@@ -63,7 +63,7 @@ function CreateLS() {
                     
                     response.json().then( json => {
                         console.log(json.learningSpace.id)
-                        navigate('/user/learning-spaces', {state:{lsid: json.learningSpace.id}});
+                        navigate(`/${json.learningSpace.id}`);
                     });
                     console.log("Learning Space created successfully!");
                 } else {

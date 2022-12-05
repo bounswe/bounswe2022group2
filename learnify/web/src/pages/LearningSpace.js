@@ -1,19 +1,17 @@
 import React, { useEffect } from 'react';
 import './style.css'
-import {NavLink, useNavigate} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import elipse from '../images/learning-space-illustration.svg';
-import {useLocation} from 'react-router-dom';
 
 function LearningSpace() {
+
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
-    const location = useLocation();
-    var lsid = "638c631b5919a67a8119dcbe";
-    if(location.state!==null){
-    lsid = location.state.lsid ? location.state.lsid : "638c631b5919a67a8119dcbe"; 
-    }
+
+    const { lsid } = useParams();
+
     useEffect(() => {
         const getLearningSpace = async () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/${lsid}`, {
@@ -39,9 +37,6 @@ function LearningSpace() {
             .catch((error) => {
                 console.log(error.message);
             })
-            }
-            if(location.state!==null){
-        console.log(location.state.lsid)
             }
         getLearningSpace();
     }, []);
