@@ -83,7 +83,7 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
                   context.read<AddPostViewModel>().addPost(
                       context.read<LearningSpaceViewModel>().learningSpace?.id);
                 } else {
-                  context.read<AddPostViewModel>().addPost(
+                  context.read<AddPostViewModel>().editPost(
                       context.read<LearningSpaceViewModel>().learningSpace?.id);
                 }
                 NavigationManager.instance.pop();
