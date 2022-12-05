@@ -60,10 +60,6 @@ function TextInterface({
       setAnno(annotorious);
       return () => {
         anno && anno.destroy();
-        console.log(
-          "contentRef.current.parentNode",
-          contentRef.current.parentNode
-        );
       };
     }, [classes, text]);
   
