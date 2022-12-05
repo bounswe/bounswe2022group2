@@ -7,6 +7,7 @@ import 'package:tuple/tuple.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
@@ -24,7 +25,8 @@ import '../service/ls_service.dart';
 class LearningSpaceViewModel extends BaseViewModel {
   late final LSService _lsService;
   // TODO: Will be taken from the course model when Egemen created it
-  LearningSpace? learningSpace = const LearningSpace();
+  LearningSpace? _learningSpace = const LearningSpace();
+  LearningSpace? get learningSpace => _learningSpace;
 
   List<Post> _posts = <Post>[];
   List<Post> get posts => _posts;
@@ -73,6 +75,7 @@ class LearningSpaceViewModel extends BaseViewModel {
   void setDefault() {}
 
   void setLearningSpace(LearningSpace? newSpace) {
+    _learningSpace = newSpace;
     _posts = newSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
     _events = List<Event>.generate(20, Event.dummy);
@@ -100,16 +103,16 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> createPost() async {
-    // TODO: Fix
-    // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditPost);
+    await NavigationManager.instance.navigateToPage(
+        path: NavigationConstants.addEditPost,
+        data: <String, dynamic>{'isAdd': true});
     return null;
   }
 
-  Future<String?> editPost() async {
-    // TODO: Fix
-    // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditPost);
+  Future<String?> editPost(Post post) async {
+    await NavigationManager.instance.navigateToPage(
+        path: NavigationConstants.addEditPost,
+        data: <String, dynamic>{'isAdd': false, 'post': post});
     return null;
   }
 

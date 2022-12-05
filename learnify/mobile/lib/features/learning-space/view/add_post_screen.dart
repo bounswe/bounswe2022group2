@@ -24,8 +24,9 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
       : super(
             builder: (BuildContext context) => _builder(context, isAdd, post),
             appBar: (BuildContext context) => _appBarBuilder(context, isAdd),
-            voidInit: (BuildContext context) =>
-                context.read<AddPostViewModel>().post = post,
+            voidInit: (BuildContext context) {
+              context.read<AddPostViewModel>().setPost(post);
+            },
             key: key,
             scrollable: true);
 

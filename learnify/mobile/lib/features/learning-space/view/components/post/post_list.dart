@@ -54,8 +54,7 @@ class PostList extends StatelessWidget {
   }
 
   static Widget createEditButton(BuildContext context, String textKey,
-          IconData icon, ErrorHelper? callback,
-          {bool isEdit = false}) =>
+          IconData icon, ErrorHelper? callback) =>
       Padding(
         padding: EdgeInsets.only(
             top: context.height * 1.7,
@@ -73,9 +72,6 @@ class PostList extends StatelessWidget {
           isActive: callback != null,
           onPressedError: () async {
             if (callback != null) {
-              await NavigationManager.instance.navigateToPage(
-                  path: NavigationConstants.addEditPost,
-                  data: <String, dynamic>{'isAdd': !isEdit});
               return await callback();
             }
             return null;

@@ -109,8 +109,7 @@ class EventItem extends StatelessWidget {
             context,
             isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
             isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
-            isPassed ? null : viewModel.editEvent,
-            isEdit: true),
+            isPassed ? null : viewModel.editEvent),
       ],
     );
   }

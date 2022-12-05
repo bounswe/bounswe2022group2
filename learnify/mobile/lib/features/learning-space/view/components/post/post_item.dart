@@ -81,7 +81,7 @@ class PostItem extends StatelessWidget {
           },
         ),
         PostList.createEditButton(context, TextKeys.editPost,
-            Icons.edit_outlined, viewModel.editPost, isEdit:true),
+            Icons.edit_outlined, () async => viewModel.editPost(post)),
       ],
     );
   }

@@ -12,7 +12,7 @@ import '../service/ls_service.dart';
 
 class AddPostViewModel extends BaseViewModel {
   late final LSService _lsService;
-  Post? post;
+  Post? _post;
 
   late TextEditingController _titleController;
   TextEditingController get titleController => _titleController;
@@ -37,8 +37,8 @@ class AddPostViewModel extends BaseViewModel {
   @override
   void initView() {
     _formKey = GlobalKey<FormState>();
-    _titleController = TextEditingController(text: post?.title ?? "");
-    _contentController = TextEditingController(text: post?.content ?? "");
+    _titleController = TextEditingController(text: _post?.title ?? "");
+    _contentController = TextEditingController(text: _post?.content ?? "");
     _titleController.addListener(_controllerListener);
     _contentController.addListener(_controllerListener);
     _setDefault();
@@ -59,6 +59,16 @@ class AddPostViewModel extends BaseViewModel {
     if (_canUpdate == infoUpdated) return;
     _canUpdate = infoUpdated;
     notifyListeners();
+  }
+
+  void setPost(Post? post) {
+    _post = post;
+    _titleController.removeListener(_controllerListener);
+    _contentController.removeListener(_controllerListener);
+    _titleController.text = post?.title ?? "";
+    _contentController.text = post?.content ?? "";
+    _titleController.addListener(_controllerListener);
+    _contentController.addListener(_controllerListener);
   }
 
   void _setDefault() {
@@ -84,6 +94,11 @@ class AddPostViewModel extends BaseViewModel {
       return response.error?.errorMessage;
     }
     final LearningSpace? ls = response.data?.learningSpace;
+    final Post post = (ls?.posts ?? <Post>[]).firstWhere((Post p) =>
+        p.title == _titleController.text &&
+        p.content == _contentController.text);
+    _post = post;
+    notifyListeners();
     if (ls == null) {
       return "Learning Space not found";
     }
@@ -100,7 +115,7 @@ class AddPostViewModel extends BaseViewModel {
   Future<String?> _editPostRequest(String? lsId) async {
     final EditPostRequestModel request = EditPostRequestModel(
       lsId: lsId,
-      postId: post?.id,
+      postId: _post?.id,
       title: _titleController.text,
       content: _contentController.text,
     );
@@ -110,6 +125,11 @@ class AddPostViewModel extends BaseViewModel {
       return response.error?.errorMessage;
     }
     final LearningSpace? ls = response.data?.learningSpace;
+    final Post post = (ls?.posts ?? <Post>[]).firstWhere((Post p) =>
+        p.title == _titleController.text &&
+        p.content == _contentController.text);
+    _post = post;
+    notifyListeners();
     if (ls == null) {
       return "Learning Space not found";
     }
