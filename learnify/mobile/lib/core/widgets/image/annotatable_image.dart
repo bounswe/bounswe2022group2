@@ -14,10 +14,13 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import '../../../features/auth/verification/model/user_model.dart';
 import '../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../features/learning-space/view-model/learning_space_view_model.dart';
+import '../../../product/constants/storage_keys.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../helpers/color_helpers.dart';
+import '../../managers/local/local_manager.dart';
 import 'image_painter.dart';
 import 'ported_interactive_viewer.dart';
 

@@ -57,9 +57,7 @@ class AnnotatableText extends StatelessWidget {
                   final bool isAnnotation =
                       annotationItem.annotations.isNotEmpty;
                   final String text = content.substring(
-                      annotationItem.startIndex,
-                      annotationItem.endIndex +
-                          (i == mergedAnnotations.length - 1 ? 1 : 0));
+                      annotationItem.startIndex, annotationItem.endIndex);
                   return TextSpan(
                     text: text,
                     style: TextStyle(
@@ -95,12 +93,11 @@ class AnnotatableText extends StatelessWidget {
 
   List<_AnnotatableTextItem> _mergeAnnotations(List<Annotation> annotations) {
     final SplayTreeSet<int> indexes =
-        SplayTreeSet<int>.from(<int>{0}..add(content.length - 1));
+        SplayTreeSet<int>.from(<int>{0, content.length - 1});
     for (final Annotation a in annotations) {
-      indexes
-        ..add(a.startIndex)
-        ..add(a.endIndex);
+      indexes.addAll(<int>[a.startIndex, a.endIndex]);
     }
+    print(indexes);
     final List<_AnnotatableTextItem> mergedAnnotations =
         <_AnnotatableTextItem>[];
     for (int i = 0; i < indexes.length - 1; i++) {
@@ -109,7 +106,6 @@ class AnnotatableText extends StatelessWidget {
       final String text = content.substring(startIndex, endIndex);
       final List<Annotation> foundAnnotations = <Annotation>[];
       for (final Annotation a in annotations) {
-        if (a.startIndex > endIndex) break;
         final String aText = content.substring(a.startIndex, a.endIndex);
         if (aText.contains(text)) foundAnnotations.add(a);
       }
@@ -155,6 +151,13 @@ class AnnotatableText extends StatelessWidget {
         mergedAnnotations.add(annotationItem);
       }
     }
+    for (final _AnnotatableTextItem a in mergedAnnotations) {
+      print(a.startIndex);
+      print(a.endIndex);
+      print(a.annotations);
+    }
+    // print(annotations.length);
+    // print(mergedAnnotations.length);
     return mergedAnnotations;
   }
 

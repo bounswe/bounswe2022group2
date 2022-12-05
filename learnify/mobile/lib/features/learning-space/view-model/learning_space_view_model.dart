@@ -128,6 +128,12 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   Future<String?> viewAnnotations(
       List<Annotation> annotations, String? annotationText) async {
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
+    annotations.sort((Annotation a1, Annotation a2) {
+      if (a1.creator == user.username) return -1;
+      return 1;
+    });
     unawaited(navigationManager.navigateToPage(
       path: NavigationConstants.annotations,
       data: <String, dynamic>{
