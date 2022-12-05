@@ -268,9 +268,6 @@ export default function Post(props){
             <div className='space-5'></div>
             <div>
       <div>
-        <button onClick={toggleTool}>
-          {tool === "rect" ? "RECTANGLE" : "POLYGON"}
-        </button>
       </div>
 
                 <img
@@ -314,7 +311,7 @@ export default function Post(props){
                     <label className="counter__output">{0}</label>
                 </div>
                 <div className='ls-button-container'>
-                    <button className="btn-orange" data-testid="forgotPassword">Annotations</button>
+                    <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
                 </div>
                 <div className='ls-button-container-alt3'>
                     <a href="/author" className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></a>
