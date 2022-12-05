@@ -1,12 +1,13 @@
 import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../home/service/I_home_service.dart';
-import '../../home/service/home_service.dart';
+
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../home/model/get_learning_spaces_response_model.dart';
+import '../../home/service/I_home_service.dart';
+import '../../home/service/home_service.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/search_response_model.dart';
 import '../service/i_search_service.dart';
@@ -28,7 +29,7 @@ class SearchViewModel extends BaseViewModel {
   List<LearningSpace> get recommendedLearningSpaces =>
       _recommendedLearningSpaces;
 
-  late final List<UserPreview> _allUsers = <UserPreview>[
+  late final List<UserPreview> allUsers = <UserPreview>[
     const UserPreview(
         userName: "Altay Akar", profilePhoto: IconKeys.profilePageAltay),
     const UserPreview(
@@ -54,7 +55,7 @@ class SearchViewModel extends BaseViewModel {
         userName: "Koray Tekçık", profilePhoto: IconKeys.profilePageKoray),
   ];
 
-  late List<UserPreview> _resultUsers = _allUsers;
+  late List<UserPreview> _resultUsers = allUsers;
   List<UserPreview> get resultUsers => _resultUsers;
 
   late bool didResultCome = false;
@@ -70,7 +71,6 @@ class SearchViewModel extends BaseViewModel {
     _searchController = TextEditingController();
     _searchController.addListener(_controllerListener);
     _getRecommendedLearningSpaces();
-    _setDefault();
   }
 
   @override
@@ -78,16 +78,13 @@ class SearchViewModel extends BaseViewModel {
     _searchController.dispose();
     _resultLearningSpaces = <LearningSpace>[];
     _recommendedLearningSpaces = <LearningSpace>[];
-    _setDefault();
     super.disposeView();
   }
-
-  void _setDefault() {}
 
   void clearResults() {
     _searchController.clear();
     _resultLearningSpaces = _recommendedLearningSpaces;
-    _resultUsers = _allUsers;
+    _resultUsers = allUsers;
     notifyListeners();
   }
 
@@ -143,17 +140,22 @@ class SearchViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+
   void setDefault() {
     _resultLearningSpaces = [];
     didResultCome = false;
-}
+  }
 
   Future<UserPreview?> _userSearchRequest(String name) async {
-    _resultUsers = _allUsers;
-    for (final UserPreview user in _allUsers) {
-      if (user.userName.split(" ")[0].toLowerCase() == name.toLowerCase()) {
-        _resultUsers = <UserPreview>[user];
+    _resultUsers = allUsers;
+    final List<UserPreview> newResultUsers = <UserPreview>[];
+    for (final UserPreview user in allUsers) {
+      if (user.userName.toLowerCase().contains(name.toLowerCase())) {
+        newResultUsers.add(user);
       }
+    }
+    if (newResultUsers.isNotEmpty) {
+      _resultUsers = newResultUsers;
     }
     return null;
   }

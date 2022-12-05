@@ -12,6 +12,7 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/extensions/number/number_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
@@ -26,7 +27,9 @@ import '../../../core/widgets/text/base_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
+import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
+import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
@@ -211,14 +214,16 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                               )
                             ],
                           ),
-                          context.sizedH(2),
-                          Text(
+                          context.sizedH(.8),
+                          MultiLineText(
                             tempLearningSpace?.description ??
                                 "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
                             style: const TextStyle(
                               color: Colors.grey,
                               fontSize: 14,
                             ),
+                            translated: false,
+                            maxLines: 15,
                           ),
                           context.sizedH(1),
                           LearningSpaceDetailScreen._tagWidget(

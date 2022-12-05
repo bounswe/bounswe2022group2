@@ -17,6 +17,7 @@ class EventsList extends StatelessWidget {
                 context);
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
+      key: const PageStorageKey<String>('EVENTS_LIST'),
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
             ? PostList.createEditButton(context, TextKeys.createEvent,

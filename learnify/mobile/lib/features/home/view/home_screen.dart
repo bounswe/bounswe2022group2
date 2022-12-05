@@ -11,7 +11,6 @@ import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../../learning-space/models/learning_space_model.dart';
-import '../../learning-space/view-model/learning_space_view_model.dart';
 import '../view-model/home_view_model.dart';
 
 part '../components/course_preview.dart';
@@ -36,24 +35,35 @@ class HomeScreen extends BaseView<HomeViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-              height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.takenLearnifies,
-                  context.read<HomeViewModel>().takenLearningSpaces),
-            ),
-            context.sizedH(3),
-            SizedBox(
-              height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.friendLearnifies,
-                  context.read<HomeViewModel>().friendLearningSpaces),
-            ),
-            context.sizedH(3),
-            SizedBox(
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.takenLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
                 height: context.height * 23,
                 child: _coursePreviewList(
-                    context,
-                    TextKeys.recommendedLearnifies,
-                    context.read<HomeViewModel>().recommendedLearningSpaces)),
+                    context, TextKeys.takenLearningSpaces, list),
+              ),
+            ),
+            context.sizedH(3),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.friendLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.friendLearningSpaces, list),
+              ),
+            ),
+            context.sizedH(3),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.recommendedLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.recommendedLearningSpaces, list),
+              ),
+            ),
           ],
         ),
       );

@@ -72,7 +72,6 @@ class EventItem extends StatelessWidget {
       onExpansionChanged: (bool val) {
         if (val) {
           callback(itemIndex);
-          viewModel.setDefault();
         }
       },
       children: <Widget>[

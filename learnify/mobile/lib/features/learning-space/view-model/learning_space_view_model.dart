@@ -49,11 +49,10 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
+
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
-    _eventsExpansionTileKeys = <GlobalKey<CustomExpansionTileState>>[];
-    _expansionTileKeys = <GlobalKey<CustomExpansionTileState>>[];
     _events = <Event>[];
     _posts = <Post>[];
     _learningSpace = null;
@@ -76,12 +75,6 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initView() {
     _initializeKeys();
-  }
-
-  @override
-  void disposeView() {
-    setDefault();
-    super.disposeView();
   }
 
   void setLearningSpace(LearningSpace? newSpace) {
@@ -135,6 +128,12 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   Future<String?> viewAnnotations(
       List<Annotation> annotations, String? annotationText) async {
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
+    annotations.sort((Annotation a1, Annotation a2) {
+      if (a1.creator == user.username) return -1;
+      return 1;
+    });
     unawaited(navigationManager.navigateToPage(
       path: NavigationConstants.annotations,
       data: <String, dynamic>{
@@ -191,6 +190,8 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   Tuple2<LearningSpace?, Annotation?> createTextAnnotation(int startIndex,
       int endIndex, String annotation, Post post, int itemIndex) {
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
       id: (startIndex * endIndex + Random().nextInt(490)).toString(),
       content: annotation,
@@ -198,6 +199,8 @@ class LearningSpaceViewModel extends BaseViewModel {
       endIndex: endIndex,
       courseId: learningSpace?.id,
       postId: post.id,
+      upVote: 0,
+      creator: user.username,
     );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)
@@ -298,16 +301,18 @@ class LearningSpaceViewModel extends BaseViewModel {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
-        id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
-        content: annotation,
-        startOffset: foundStart,
-        endOffset: foundEnd,
-        postId: post.id,
-        courseId: learningSpace?.id,
-        isImage: true,
-        colorParam: backgroundColor,
-        imageUrl: imageUrl,
-        creator: user.username);
+      id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
+      content: annotation,
+      startOffset: foundStart,
+      endOffset: foundEnd,
+      postId: post.id,
+      courseId: learningSpace?.id,
+      isImage: true,
+      colorParam: backgroundColor,
+      imageUrl: imageUrl,
+      upVote: 0,
+      creator: user.username,
+    );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)
           ..add(newAnnotation)

@@ -52,9 +52,9 @@ class TextKeys {
   static const String forum = "forum";
   static const String createPost = "create_post";
   static const String editPost = "edit_post";
-  static const String takenLearnifies = "taken_learnifies";
-  static const String friendLearnifies = "friend_learnifies";
-  static const String recommendedLearnifies = "recommended_learnifies";
+  static const String takenLearningSpaces = "taken_learning spaces";
+  static const String friendLearningSpaces = "friend_learning spaces";
+  static const String recommendedLearningSpaces = "recommended_learning spaces";
   static const String recommendedUsers = "recommended_users";
   static const String annotate = "annotate";
   static const String annotateText = "annotate_text";
@@ -75,9 +75,9 @@ class TextKeys {
   static const String addCategoriesHint = "add_categories_hint";
   static const String selectAnnotatedDialogTitle =
       "select_annotated_dialog_title";
-  static const String takenCourses = "taken_courses";
-  static const String friendCourses = "friend_courses";
-  static const String recommendedLearningSpaces = "recommended_learning_spaces";
+  static const String takenSpaces = "taken_courses";
+  static const String friendSpaces = "friend_courses";
+  static const String recommendedSpaces = "recommended_learning_spaces";
   static const String clickToSeeImageAnnotations = "click_image_annotations";
   static const String createEvent = "create_event";
   static const String editEvent = "edit_event";
