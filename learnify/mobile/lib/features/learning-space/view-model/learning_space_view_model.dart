@@ -184,6 +184,8 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   Tuple2<LearningSpace?, Annotation?> createTextAnnotation(int startIndex,
       int endIndex, String annotation, Post post, int itemIndex) {
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
       id: (startIndex * endIndex + Random().nextInt(490)).toString(),
       content: annotation,
@@ -191,6 +193,8 @@ class LearningSpaceViewModel extends BaseViewModel {
       endIndex: endIndex,
       courseId: learningSpace?.id,
       postId: post.id,
+      upVote: 0,
+      creator: user.username,
     );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)
@@ -291,16 +295,18 @@ class LearningSpaceViewModel extends BaseViewModel {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
-        id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
-        content: annotation,
-        startOffset: foundStart,
-        endOffset: foundEnd,
-        postId: post.id,
-        courseId: learningSpace?.id,
-        isImage: true,
-        colorParam: backgroundColor,
-        imageUrl: imageUrl,
-        creator: user.username);
+      id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
+      content: annotation,
+      startOffset: foundStart,
+      endOffset: foundEnd,
+      postId: post.id,
+      courseId: learningSpace?.id,
+      isImage: true,
+      colorParam: backgroundColor,
+      imageUrl: imageUrl,
+      upVote: 0,
+      creator: user.username,
+    );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)
           ..add(newAnnotation)

@@ -56,7 +56,6 @@ class Annotation extends BaseModel<Annotation> {
 
   factory Annotation.fromJson(Map<String, dynamic> json) {
     final bool containsTarget = json.containsKey('target');
-    print(json);
     bool isText = false;
     int? startIndex;
     int? endIndex;

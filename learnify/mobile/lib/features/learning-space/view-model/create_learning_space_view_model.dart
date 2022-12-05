@@ -144,13 +144,11 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
       final LearningSpace? ls = response.data?.learningSpace;
       if (ls == null) return "Learning Space not created";
       _learningSpace = ls;
-      print('BEF');
       unawaited(navigationManager.navigateToPageAndRemove(
         path: NavigationConstants.learningSpace,
         data: {'learningSpace': ls},
         //data: <String, dynamic>{'learningSpace': ls.toJson},
       ));
-      print('AFT');
       _canUpdate = false;
       notifyListeners();
     }
