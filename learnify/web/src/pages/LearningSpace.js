@@ -24,9 +24,7 @@ function LearningSpace() {
 
     const [message, setMessage] = useState("");
 
-    const [value, setValue] = React.useState("");
-
-    const [final, setFinal] = React.useState(value);
+    const [value, setValue] = useState("");
 
     const [postArray, setPostArray] = useState([]);
 
@@ -107,8 +105,7 @@ function LearningSpace() {
         setAddNoteWhite(current => !current);
     }
     const handleSubmitFinal  = () => {
-        setFinal(value);
-        createPost(lsid, postTitle, final, imageUrl);
+        createPost(lsid, postTitle, value, imageUrl);
     }
 
     useEffect(() => {
@@ -144,6 +141,7 @@ function LearningSpace() {
         getLearningSpace();
     }, []);
 
+    
     const createPost = async (lsid, postTitle, final, imageUrl) => {
         console.log(lsid)
         console.log(postTitle)
