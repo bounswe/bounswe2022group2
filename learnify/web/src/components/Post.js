@@ -291,37 +291,41 @@ export default function Post(props){
                 />
             </div>
             <div className='space-5'></div>
-            <div className='ls-buttons'>
-                <div className='ls-button-container2'>
-                    <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp}/></button>
-                </div>
-                <div className='ls-button-container'>
-                    <label className="counter__output">{upCounter}</label>
-                </div>
-                <div className='ls-button-container2'>
-                <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown}/></button>
-                </div>
-                <div className='ls-button-container'>
-                    <label className="counter__output">{downCounter}</label>
-                </div>
-                <div className='ls-button-container2'>
-                    <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                </div>
-                <div className='ls-button-container'>
-                    <label className="counter__output">{0}</label>
+            <div className='post-buttons-contaier'>
+                <div className='post-box-left'>
+                    <div className='ls-button-container2'>
+                        <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp}/></button>
+                    </div>
+                    <div className='ls-button-container'>
+                        <label className="counter__output">{upCounter}</label>
+                    </div>
+                    <div className='ls-button-container2'>
+                    <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown}/></button>
+                    </div>
+                    <div className='ls-button-container'>
+                        <label className="counter__output">{downCounter}</label>
+                    </div>
+                    <div className='ls-button-container2'>
+                        <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
+                    </div>
+                    <div className='ls-button-container'>
+                        <label className="counter__output">{0}</label>
+                    </div>
                 </div>
                 <div className='ls-button-container'>
                     <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
                 </div>
-                <div className='ls-button-container-alt3'>
-                    <label className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></label>
-                </div>
-                    {creator}
-                <div className='ls-button-container-alt2'>
-                    <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
-                </div>
-                <div className='ls-button-container-alt2'>
-                    <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost}/> </button>
+                <div className='post-box-right'>
+                    <div className='ls-button-container-alt3'>
+                        <label className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></label>
+                    </div>
+                        {creator}
+                    <div className='ls-button-container-alt2'>
+                        <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
+                    </div>
+                    <div className='ls-button-container-alt2'>
+                        <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost}/> </button>
+                    </div>
                 </div>
                 </div>
                 

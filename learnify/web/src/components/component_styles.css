@@ -337,3 +337,23 @@
     border: 2px solid #1746A2;
     cursor: pointer;
 }
+
+.post-box-left {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.post-box-right {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.post-buttons-contaier {
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
