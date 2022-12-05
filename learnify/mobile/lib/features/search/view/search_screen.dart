@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/widgets/text/base_text.dart';
 import '/../../product/theme/light_theme.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
