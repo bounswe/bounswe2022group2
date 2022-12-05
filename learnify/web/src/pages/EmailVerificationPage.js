@@ -59,6 +59,7 @@ function EmailVerificationPage() {
                 if (response.ok) {
                     response.json().then( json => {
                         localStorage.setItem("token",json.token);
+                        localStorage.setItem("username",json.user.username);
                     });
                     if(isComeFrom === "true"){
                         navigate('/change-password', {replace: true});

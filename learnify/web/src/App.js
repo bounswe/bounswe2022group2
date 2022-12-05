@@ -35,7 +35,7 @@ function App() {
           <Route path="/create-ls" element={<PrivateRoutes> <CreateLS /> </PrivateRoutes>}/>
           <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
           <Route path="/categories/:category" element={<PrivateRoutes> <LSbyCategoryPage /> </PrivateRoutes>}/>
-          <Route path="/:lsid" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
+          <Route path="/learningspace/:lsid" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
