@@ -472,13 +472,6 @@ h1 {
     text-align: left;
 }
 
-*:disabled {
-    background-color: dimgrey;
-    color: linen;
-    opacity: 1;
-    pointer-events: none;
-}
-
 .ls-prev-list-3 {
     width: 510px;
     display: flex;
