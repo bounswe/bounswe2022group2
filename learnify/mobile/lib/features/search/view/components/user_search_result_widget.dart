@@ -19,7 +19,8 @@ class UserSearchResultWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         if (resultUsers.length != 1)
-                          _recommendedMessage(context),
+                          _recommendedMessage(
+                              context, TextKeys.recommendedUsers),
                         if (resultUsers.length != 1) context.sizedH(.8),
                         GridView.builder(
                             physics: const ScrollPhysics(),
@@ -37,10 +38,9 @@ class UserSearchResultWidget extends StatelessWidget {
                                 resultUsers[index]),
                       ])));
 
-  static Widget _recommendedMessage(BuildContext context) => const Center(
-        child: Text("Recommended Users", //TextKeys.recommendedUsers,
-            textAlign: TextAlign.center,
-            style: TextStyle(
+  static Widget _recommendedMessage(BuildContext context, String key) => Center(
+        child: BaseText(key,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 17,
             )),
