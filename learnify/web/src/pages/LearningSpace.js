@@ -11,6 +11,7 @@ import creator from '../images/creator.png';
 import geolocation from '../images/location.png';
 import MDEditor from "@uiw/react-md-editor";
 import Post from '../components/Post';
+import Participants from '../components/Participants';
 
 
 function LearningSpace() {
@@ -25,6 +26,10 @@ function LearningSpace() {
     const [value, setValue] = useState("");
 
     const [postArray, setPostArray] = useState([]);
+
+    const [participants, setParticipants] = useState([]);
+    
+    const [lsCreator, setLsCreator] = useState("");
 
     const [postTitle, setPostTitle] = useState("");
 
@@ -124,6 +129,9 @@ function LearningSpace() {
                         setDescription(json.learning_spaces[0].description);
                         console.log(json.learning_spaces[0].description);
                         setPostArray(json.learning_spaces[0].posts);
+                        setLsCreator(json.learning_spaces[0].creator);
+                        setParticipants(json.learning_spaces[0].participants);
+                        setParticipants(participants.filter((item) => item !== lsCreator))
                     });
                     
                     return response.json();
@@ -288,11 +296,11 @@ function LearningSpace() {
                     <label className='navBarText'><img src={people} alt="Learnify Logo" height={70} /></label>
                         Contributing Users
                     </label>
-                    <label className='navBarText'><img src={creator} alt="Learnify Logo" height={50} /> Altay Acar</label>
+                    <label className='navBarText'><img src={creator} alt="Learnify Logo" height={50} /> {lsCreator} </label>
                     <div className='space-5'></div>
-                        <div>Koray</div>
-                        <div>Gokay</div>
-                        <div>Enes</div>
+                   
+                    {participants.map(participant =>
+                                    <Participants participant = {participant}/> )}
                 </div>
                 <div className='ls-box-org'>
                     <label className='feed-title'>
