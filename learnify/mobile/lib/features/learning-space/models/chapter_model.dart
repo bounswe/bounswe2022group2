@@ -29,7 +29,7 @@ class Chapter extends BaseModel<Chapter> {
       );
 
   factory Chapter.fromJson(Map<String, dynamic> json) => Chapter(
-        id: BaseModel.getByType<String>(json['id']),
+        id: BaseModel.getByType<String>(json['_id']),
         courseId: BaseModel.getByType<String>(json['course_id']),
         title: BaseModel.getByType<String>(json['title']),
         materialText: BaseModel.getByType<String>(json['material_text']),
@@ -71,7 +71,7 @@ class Chapter extends BaseModel<Chapter> {
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        'id': id,
+        '_id': id,
         'title': title,
         'course_id': courseId,
         'material_text': materialText,

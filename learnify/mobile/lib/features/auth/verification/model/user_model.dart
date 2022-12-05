@@ -18,7 +18,7 @@ class User extends BaseModel<User> {
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
         code: BaseModel.getByType<String>(json['code']),
-        id: BaseModel.getByType<String>(json['id']),
+        id: BaseModel.getByType<String>(json['_id']),
       );
 
   User copyWith({String? username}) => User(
@@ -50,7 +50,7 @@ class User extends BaseModel<User> {
         'updatedAt': BaseModel.primitiveToJson<DateTime>(updatedAt),
         'code': code,
         'username': username,
-        'id': id
+        '_id': id
       };
 
   @override
