@@ -80,7 +80,6 @@ class PostList extends StatelessWidget {
                       data: <String, dynamic>{'isAdd': true});
               return await callback();
             }
-            ;
             return null;
           },
         ),
