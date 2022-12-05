@@ -82,9 +82,9 @@ class Annotation extends BaseModel<Annotation> {
         if (hashIndex > 0) {
           exactImage = imageUrl.substring(0, hashIndex);
           String temp = imageUrl;
-          int nextComma = temp.indexOf('=');
+          int nextComma = temp.indexOf('#xywh=');
           if (nextComma < temp.length) {
-            temp = temp.substring(nextComma + 1);
+            temp = temp.substring(nextComma + 6);
             nextComma = temp.indexOf(',');
             final String x = temp.substring(0, nextComma);
             temp = temp.substring(nextComma + 1);
