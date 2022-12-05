@@ -23,7 +23,8 @@ class LSSearchResultWidget extends StatelessWidget {
                                 .read<SearchViewModel>()
                                 .recommendedLearningSpaces
                                 .length)
-                          _recommendedMessage(context),
+                          _recommendedMessage(
+                              context, TextKeys.recommendedLearningSpaces),
                         if (resultLearningSpaces.length ==
                             context
                                 .read<SearchViewModel>()
@@ -49,11 +50,9 @@ class LSSearchResultWidget extends StatelessWidget {
                         )
                       ])));
 
-  static Widget _recommendedMessage(BuildContext context) => const Center(
-        child: Text(
-            "Recommended Learning Spaces", //TextKeys.recommendedLearningSpaces,
-            textAlign: TextAlign.center,
-            style: TextStyle(
+  static Widget _recommendedMessage(BuildContext context, String key) => Center(
+        child: BaseText(key,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 17,
             )),
