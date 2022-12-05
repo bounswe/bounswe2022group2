@@ -52,7 +52,8 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
 
   factory AnnotationTarget.fromJson(Map<String, dynamic> json) =>
       AnnotationTarget(
-        id: BaseModel.getByType<String>(json['_id']),
+        id: BaseModel.getByType<String>(json['_id']) ??
+            BaseModel.getByType<String>(json['id']),
         type: BaseModel.getWithDefault<String>(json['type'], 'Image'),
         format: BaseModel.getByType<String>(json['format']),
         selector: BaseModel.embeddedModelFromJson<AnnotationSelector>(

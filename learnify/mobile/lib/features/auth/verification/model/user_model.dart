@@ -18,7 +18,8 @@ class User extends BaseModel<User> {
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
         code: BaseModel.getByType<String>(json['code']),
-        id: BaseModel.getByType<String>(json['_id']),
+        id: BaseModel.getByType<String>(json['_id']) ??
+            BaseModel.getByType<String>(json['id']),
       );
 
   User copyWith({String? username}) => User(

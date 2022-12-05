@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
-import '../../../core/helpers/validators.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/action_button.dart';
@@ -79,12 +79,14 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
               capitalizeAll: true,
               isActive: canUpdate,
               onPressedError: () {
+                final String? id =
+                    context.read<LearningSpaceViewModel>().learningSpace?.id;
+                final AddPostViewModel viewModel =
+                    context.read<AddPostViewModel>();
                 if (isAdd) {
-                  context.read<AddPostViewModel>().addPost(
-                      context.read<LearningSpaceViewModel>().learningSpace?.id);
+                  viewModel.addPost(id);
                 } else {
-                  context.read<AddPostViewModel>().editPost(
-                      context.read<LearningSpaceViewModel>().learningSpace?.id);
+                  viewModel.editPost(id);
                 }
                 NavigationManager.instance.pop();
                 return null;

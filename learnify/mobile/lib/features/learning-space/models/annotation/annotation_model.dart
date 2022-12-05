@@ -54,7 +54,8 @@ class Annotation extends BaseModel<Annotation> {
       );
 
   factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
-        id: BaseModel.getByType<String>(json['_id']),
+        id: BaseModel.getByType<String>(json['_id']) ??
+            BaseModel.getByType<String>(json['id']),
         courseId: BaseModel.getByType<String>(json['course_id']),
         creator: BaseModel.getByType<String>(json['creator']),
         categoryId: BaseModel.getByType<String>(json['category_id']),

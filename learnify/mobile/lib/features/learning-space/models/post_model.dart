@@ -14,7 +14,8 @@ class Post extends BaseModel<Post> {
   });
 
   factory Post.fromJson(Map<String, dynamic> json) => Post(
-      id: BaseModel.getByType<String>(json['_id']),
+      id: BaseModel.getByType<String>(json['_id']) ??
+          BaseModel.getByType<String>(json['id']),
       title: BaseModel.getByType<String>(json['title']),
       creator: BaseModel.getByType<String>(json['creator']),
       content: BaseModel.getByType<String>(json['content']),

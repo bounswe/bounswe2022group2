@@ -50,14 +50,14 @@ class ForumList extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(vertical: context.height * .3),
                     child: TextItem(
-                        creator: demoCreators[Random().nextInt(11)],
+                        creator: demoCreators[Random().nextInt(9) + 2],
                         content: demoContent[i],
                         upvotes: Random().nextInt(30)),
                   ),
                   const CustomDivider(),
                 ],
               ),
-        childCount: Random().nextInt(10),
+        childCount: Random().nextInt(8) + 2,
       ),
     );
   }

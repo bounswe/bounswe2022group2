@@ -31,7 +31,8 @@ class LearningSpace extends BaseModel<LearningSpace> {
       );
 
   factory LearningSpace.fromJson(Map<String, dynamic> json) => LearningSpace(
-        id: BaseModel.getByType<String>(json['_id']),
+        id: BaseModel.getByType<String>(json['_id']) ??
+            BaseModel.getByType<String>(json['id']),
         title: BaseModel.getByType<String>(json['title']),
         description: BaseModel.getByType<String>(json['description']),
         numParticipants: BaseModel.getByType<int>(json['num_participants']),
