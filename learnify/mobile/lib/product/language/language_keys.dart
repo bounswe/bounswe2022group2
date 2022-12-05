@@ -95,5 +95,5 @@ class TextKeys {
   static const String addPostTitleLabel = "add_post_title_label";
   static const String addPostContentHint = "add_post_content_hint";
   static const String addPostContentLabel = "add_post_content_label";
-  static const String enroll = "Enroll";
+  static const String enroll = "enroll";
 }

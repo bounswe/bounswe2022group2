@@ -158,35 +158,49 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Text(
-                                tempLearningSpace?.title ??
-                                    "Placeholder Learning Space",
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    overflow: TextOverflow.ellipsis,
-                                    fontSize: 18),
+                              Container(
+                                width: 270,
+                                child: Text(
+                                  softWrap: true,
+                                  tempLearningSpace?.title ??
+                                      "Placeholder Learning Space",
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                ),
                               ),
                               ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      backgroundColor: Theme.of(context)
-                                          .colorScheme
-                                          .secondary),
-                                  onPressed: () {
-                                    context
-                                        .read<LearningSpaceViewModel>()
-                                        .enrollLearningSpace();
-                                    context
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Theme.of(context)
+                                        .colorScheme
+                                        .secondary),
+                                onPressed: () {
+                                  context
+                                      .read<LearningSpaceViewModel>()
+                                      .enrollLearningSpace();
+                                  context
+                                      .read<HomeViewModel>()
+                                      .addToTakenLearningSpaces(
+                                          tempLearningSpace);
+                                },
+                                child: context
                                         .read<HomeViewModel>()
-                                        .addToTakenLearningSpaces(
-                                            tempLearningSpace);
-                                  },
-                                  child: const Text(
-                                    TextKeys.enroll,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ))
+                                        .getIsEnrolled(tempLearningSpace?.title)
+                                    ? BaseText(
+                                        TextKeys.enrolled,
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    : BaseText(
+                                        TextKeys.enroll,
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                              )
                             ],
                           ),
                           context.sizedH(2),

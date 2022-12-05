@@ -140,9 +140,9 @@ class HomeViewModel extends BaseViewModel {
     return false;
   }
 
-  bool getIsEnrolled(String id) {
+  bool getIsEnrolled(String? title) {
     for (int i = 0; i < _takenLearningSpaces.length; i++) {
-      if (_takenLearningSpaces[i].id == id) {
+      if (_takenLearningSpaces[i].title == title) {
         return true;
       }
     }
