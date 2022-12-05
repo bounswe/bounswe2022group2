@@ -97,7 +97,6 @@ class AnnotatableText extends StatelessWidget {
     for (final Annotation a in annotations) {
       indexes.addAll(<int>[a.startIndex, a.endIndex]);
     }
-    print(indexes);
     final List<_AnnotatableTextItem> mergedAnnotations =
         <_AnnotatableTextItem>[];
     for (int i = 0; i < indexes.length - 1; i++) {
@@ -151,13 +150,6 @@ class AnnotatableText extends StatelessWidget {
         mergedAnnotations.add(annotationItem);
       }
     }
-    for (final _AnnotatableTextItem a in mergedAnnotations) {
-      print(a.startIndex);
-      print(a.endIndex);
-      print(a.annotations);
-    }
-    // print(annotations.length);
-    // print(mergedAnnotations.length);
     return mergedAnnotations;
   }
 
