@@ -83,18 +83,18 @@ class LoginViewModel extends BaseViewModel {
         final IResponseModel<MessageResponse> resp =
             await _authService.sendVerification(requestModel);
         if (resp.hasError) return resp.error?.errorMessage;
-        await navigationManager.navigateToPage(
+        unawaited(navigationManager.navigateToPage(
             path: NavigationConstants.verify,
-            data: <String, dynamic>{'email': _emailController.text});
+            data: <String, dynamic>{'email': _emailController.text}));
       } else if (res.hasError) {
         return res.error?.errorMessage;
       } else {
         final User? user = res.data?.user;
         if (user == null) return "User couldn't fetch";
         await localManager.setModel(user, StorageKeys.user);
-        await navigationManager.navigateToPageClear(
+        unawaited(navigationManager.navigateToPageClear(
             path: NavigationConstants.home,
-            data: <String, dynamic>{'user': user.toJson});
+            data: <String, dynamic>{'user': user.toJson}));
       }
     }
     return null;

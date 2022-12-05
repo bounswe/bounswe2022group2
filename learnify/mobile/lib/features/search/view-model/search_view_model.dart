@@ -71,4 +71,9 @@ class SearchViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+
+  void setDefault() {
+    _resultLearningSpaces = [];
+    didResultCome = false;
+  }
 }

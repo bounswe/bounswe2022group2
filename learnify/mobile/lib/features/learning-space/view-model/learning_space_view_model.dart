@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:async/async.dart';
@@ -48,6 +49,15 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
+  void setDefault() {
+    _carouselPageIndexes = <int>[];
+    _carouselControllers = <CarouselController>[];
+    _eventsExpansionTileKeys = <GlobalKey<CustomExpansionTileState>>[];
+    _expansionTileKeys = <GlobalKey<CustomExpansionTileState>>[];
+    _events = <Event>[];
+    _posts = <Post>[];
+    _learningSpace = null;
+  }
 
   @override
   void initViewModel() {
@@ -73,8 +83,6 @@ class LearningSpaceViewModel extends BaseViewModel {
     setDefault();
     super.disposeView();
   }
-
-  void setDefault() {}
 
   void setLearningSpace(LearningSpace? newSpace) {
     _learningSpace = newSpace;
@@ -105,16 +113,16 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> createPost() async {
-    await NavigationManager.instance.navigateToPage(
+    unawaited(NavigationManager.instance.navigateToPage(
         path: NavigationConstants.addEditPost,
-        data: <String, dynamic>{'isAdd': true});
+        data: <String, dynamic>{'isAdd': true}));
     return null;
   }
 
   Future<String?> editPost(Post post) async {
-    await NavigationManager.instance.navigateToPage(
+    unawaited(NavigationManager.instance.navigateToPage(
         path: NavigationConstants.addEditPost,
-        data: <String, dynamic>{'isAdd': false, 'post': post});
+        data: <String, dynamic>{'isAdd': false, 'post': post}));
     return null;
   }
 
@@ -127,13 +135,13 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   Future<String?> viewAnnotations(
       List<Annotation> annotations, String? annotationText) async {
-    await navigationManager.navigateToPage(
+    unawaited(navigationManager.navigateToPage(
       path: NavigationConstants.annotations,
       data: <String, dynamic>{
         if (annotationText != null) 'annotatedText': annotationText,
         'annotations': annotations
       },
-    );
+    ));
     return null;
   }
 
@@ -151,12 +159,13 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<Tuple2<Annotation?, String?>> annotateText(
+  Future<Tuple3<LearningSpace?, Annotation?, String?>> annotateText(
       int startIndex, int endIndex, String annotation, String? postId) async {
     final int itemIndex = _posts
         .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
     if (itemIndex == -1) {
-      return const Tuple2<Annotation?, String?>(null, 'Post could not found.');
+      return const Tuple3<LearningSpace?, Annotation?, String?>(
+          null, null, 'Post could not found.');
     }
     final Post oldPost = _posts[itemIndex];
     final AnnotationSelector selector =
@@ -169,16 +178,19 @@ class LearningSpaceViewModel extends BaseViewModel {
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
     if (res.hasError) {
-      return Tuple2<Annotation?, String?>(null, res.error?.errorMessage);
+      return Tuple3<LearningSpace?, Annotation?, String?>(
+          null, null, res.error?.errorMessage);
     } else {
-      final Annotation newAnnotation = createTextAnnotation(
-          startIndex, endIndex, annotation, oldPost, itemIndex);
-      return Tuple2<Annotation?, String?>(newAnnotation, null);
+      final Tuple2<LearningSpace?, Annotation?> newAnnotation =
+          createTextAnnotation(
+              startIndex, endIndex, annotation, oldPost, itemIndex);
+      return Tuple3<LearningSpace?, Annotation?, String?>(
+          newAnnotation.item1, newAnnotation.item2, null);
     }
   }
 
-  Annotation createTextAnnotation(int startIndex, int endIndex,
-      String annotation, Post post, int itemIndex) {
+  Tuple2<LearningSpace?, Annotation?> createTextAnnotation(int startIndex,
+      int endIndex, String annotation, Post post, int itemIndex) {
     final Annotation newAnnotation = Annotation(
       id: (startIndex * endIndex + Random().nextInt(490)).toString(),
       content: annotation,
@@ -193,11 +205,12 @@ class LearningSpaceViewModel extends BaseViewModel {
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
     _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
+    _learningSpace = _learningSpace?.copyWith(posts: _posts);
     notifyListeners();
-    return newAnnotation;
+    return Tuple2<LearningSpace?, Annotation?>(_learningSpace, newAnnotation);
   }
 
-  Future<Tuple2<Annotation?, String?>> annotateImage(
+  Future<Tuple3<LearningSpace?, Annotation?, String?>> annotateImage(
       Offset startOffset,
       Offset endOffset,
       String annotation,
@@ -207,7 +220,8 @@ class LearningSpaceViewModel extends BaseViewModel {
     final int itemIndex = _posts
         .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
     if (itemIndex == -1) {
-      return const Tuple2<Annotation?, String?>(null, 'Post could not found.');
+      return const Tuple3<LearningSpace?, Annotation?, String?>(
+          null, null, 'Post could not found.');
     }
     final Post oldPost = _posts[itemIndex];
     final double x = startOffset.dx;
@@ -224,9 +238,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
     if (res.hasError) {
-      return Tuple2<Annotation?, String?>(null, res.error?.errorMessage);
+      return Tuple3<LearningSpace?, Annotation?, String?>(
+          null, null, res.error?.errorMessage);
     } else {
-      final Annotation newAnnotation = createImageAnnotation(
+      final Tuple2<LearningSpace?, Annotation> newAnnotation =
+          createImageAnnotation(
         startOffset,
         endOffset,
         color,
@@ -235,7 +251,8 @@ class LearningSpaceViewModel extends BaseViewModel {
         oldPost,
         itemIndex,
       );
-      return Tuple2<Annotation?, String?>(newAnnotation, null);
+      return Tuple3<LearningSpace?, Annotation?, String?>(
+          newAnnotation.item1, newAnnotation.item2, null);
     }
   }
 
@@ -260,10 +277,12 @@ class LearningSpaceViewModel extends BaseViewModel {
     if (ls == null) {
       return "Learning Space not found";
     }
+    _learningSpace = ls;
+    notifyListeners();
     return null;
   }
 
-  Annotation createImageAnnotation(
+  Tuple2<LearningSpace?, Annotation> createImageAnnotation(
     Offset startOffset,
     Offset endOffset,
     Color backgroundColor,
@@ -295,8 +314,9 @@ class LearningSpaceViewModel extends BaseViewModel {
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
     _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
+    _learningSpace = _learningSpace?.copyWith(posts: _posts);
     notifyListeners();
-    return newAnnotation;
+    return Tuple2<LearningSpace?, Annotation>(_learningSpace, newAnnotation);
   }
 
   LearningSpace? addEditPost(Post post) {

@@ -57,15 +57,17 @@ void main() {
       const Offset endOffset = Offset(98, 210);
       const Color color = Colors.red;
       const String imageUrl = 'https://picsum.photos/id/1/700/400';
-      final Annotation annotation = viewModel.createImageAnnotation(
-        startOffset,
-        endOffset,
-        color,
-        imageUrl,
-        annotationContent,
-        firstPostModel,
-        0,
-      );
+      final Annotation annotation = viewModel
+          .createImageAnnotation(
+            startOffset,
+            endOffset,
+            color,
+            imageUrl,
+            annotationContent,
+            firstPostModel,
+            0,
+          )
+          .item2;
       expect(annotation.content, annotationContent);
       expect(annotation.startOffset, startOffset);
       expect(annotation.endOffset, endOffset);

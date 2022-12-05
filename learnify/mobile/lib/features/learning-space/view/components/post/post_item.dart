@@ -68,7 +68,16 @@ class PostItem extends StatelessWidget {
           annotateCallback: (int startIndex, int endIndex) async {
             await DialogBuilder(context).annotateDialog(
               post.id,
-              textCallback: viewModel.annotateText,
+              textCallback: (int startIndex, int endIndex, String annotation,
+                  String? postId) async {
+                final HomeViewModel viewModel = context.read<HomeViewModel>();
+                final Tuple3<LearningSpace?, Annotation?, String?> res =
+                    await context
+                        .read<LearningSpaceViewModel>()
+                        .annotateText(startIndex, endIndex, annotation, postId);
+                viewModel.updateLs(res.item1);
+                return Tuple2<Annotation?, String?>(res.item2, res.item3);
+              },
               startIndex: startIndex,
               endIndex: endIndex,
             );

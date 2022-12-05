@@ -19,6 +19,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   //CreateLearningSpaceViewModel(this._learningSpace);
 
   LearningSpace? _learningSpace;
+  LearningSpace? get learningSpace => _learningSpace;
 
   late final ILSService _lsService;
   static List<String> categoryOptions = <String>[];
@@ -46,6 +47,14 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
 
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
+
+  void setDefault() {
+    _selectedCategories = <String>[];
+    _selectedImage = null;
+    _initialparticipants = null;
+    _initialDescription = null;
+    _learningSpace = null;
+  }
 
   @override
   void initViewModel() {
@@ -97,7 +106,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> createLearningSpace() async {
-    await operation?.cancel();
+    // await operation?.cancel();
     operation =
         CancelableOperation<String?>.fromFuture(_createLearningSpaceRequest());
     final String? res = await operation?.valueOrCancellation();
@@ -107,7 +116,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
   }
 
   Future<String?> editLearningSpace() async {
-    await operation?.cancel();
+    // await operation?.cancel();
     operation =
         CancelableOperation<String?>.fromFuture(_editLearningSpaceRequest());
     final String? res = await operation?.valueOrCancellation();
@@ -134,11 +143,14 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
       if (response.hasError) return response.error?.errorMessage;
       final LearningSpace? ls = response.data?.learningSpace;
       if (ls == null) return "Learning Space not created";
-      await navigationManager.navigateToPage(
+      _learningSpace = ls;
+      print('BEF');
+      unawaited(navigationManager.navigateToPageAndRemove(
         path: NavigationConstants.learningSpace,
         data: {'learningSpace': ls},
         //data: <String, dynamic>{'learningSpace': ls.toJson},
-      );
+      ));
+      print('AFT');
       _canUpdate = false;
       notifyListeners();
     }
@@ -149,9 +161,8 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
     final bool isValid = formKey.currentState?.validate() ?? false;
     if (isValid) {
       //patch? request
-      await navigationManager.navigateToPage(
-        path: NavigationConstants.learningSpace,
-      );
+      unawaited(navigationManager.navigateToPage(
+          path: NavigationConstants.learningSpace));
       _canUpdate = false;
       notifyListeners();
     }

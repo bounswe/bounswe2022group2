@@ -117,8 +117,8 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
   @override
   Widget build(BuildContext context) {
     final LearningSpace? tempLearningSpace =
-        context.read<LearningSpaceViewModel>().learningSpace;
-
+        SelectorHelper<LearningSpace?, LearningSpaceViewModel>().listenValue(
+            (LearningSpaceViewModel model) => model.learningSpace, context);
     return SliverOverlapAbsorber(
       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
       sliver: SliverAppBar(
@@ -174,32 +174,40 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                     backgroundColor: Theme.of(context)
                                         .colorScheme
                                         .secondary),
-                                onPressed: () {
-                                  context
-                                      .read<LearningSpaceViewModel>()
-                                      .enrollLearningSpace();
-                                  context
-                                      .read<HomeViewModel>()
-                                      .addToTakenLearningSpaces(
-                                          tempLearningSpace);
+                                onPressed: () async {
+                                  final LearningSpaceViewModel viewModel =
+                                      context.read<LearningSpaceViewModel>();
+                                  final HomeViewModel homeModel =
+                                      context.read<HomeViewModel>();
+                                  final String? res =
+                                      await viewModel.enrollLearningSpace();
+                                  if (res != null) return;
+                                  homeModel.addToTakenLearningSpaces(
+                                      viewModel.learningSpace);
+                                  homeModel.updateLs(viewModel.learningSpace);
                                 },
-                                child: context
-                                        .read<HomeViewModel>()
-                                        .getIsEnrolled(tempLearningSpace?.title)
-                                    ? const BaseText(
-                                        TextKeys.enrolled,
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold),
-                                      )
-                                    : const BaseText(
-                                        TextKeys.enroll,
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                child: SelectorHelper<bool, HomeViewModel>()
+                                    .builder(
+                                        (_, HomeViewModel model) =>
+                                            model.getIsEnrolled(
+                                                tempLearningSpace?.title),
+                                        (_, bool val, __) => val
+                                            ? const BaseText(
+                                                TextKeys.enrolled,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )
+                                            : const BaseText(
+                                                TextKeys.enroll,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
                               )
                             ],
                           ),

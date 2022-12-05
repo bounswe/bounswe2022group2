@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tuple/tuple.dart';
 
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
@@ -10,7 +11,9 @@ import '../../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../../core/widgets/image/annotatable_image.dart';
 import '../../../../core/widgets/image/image_painter.dart';
 import '../../../../product/language/language_keys.dart';
+import '../../../home/view-model/home_view_model.dart';
 import '../../models/annotation/annotation_model.dart';
+import '../../models/learning_space_model.dart';
 import '../../view-model/learning_space_view_model.dart';
 
 class PostImage extends StatelessWidget {
@@ -65,8 +68,25 @@ class PostImage extends StatelessWidget {
                 Offset(max(start.dx, end.dx), max(start.dy, end.dy));
             return DialogBuilder(context).annotateDialog(
               postId,
-              imageCallback:
-                  context.read<LearningSpaceViewModel>().annotateImage,
+              imageCallback: (Offset startOffset,
+                  Offset endOffset,
+                  String annotation,
+                  String? postId,
+                  Color color,
+                  String imageUrl) async {
+                final HomeViewModel viewModel = context.read<HomeViewModel>();
+                final Tuple3<LearningSpace?, Annotation?, String?> res =
+                    await context.read<LearningSpaceViewModel>().annotateImage(
+                          startOffset,
+                          endOffset,
+                          annotation,
+                          postId,
+                          color,
+                          imageUrl,
+                        );
+                viewModel.updateLs(res.item1);
+                return Tuple2<Annotation?, String?>(res.item2, res.item3);
+              },
               startOffset: foundStart,
               endOffset: foundEnd,
               color: color,
