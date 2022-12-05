@@ -5,6 +5,7 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/helpers/validators.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
@@ -14,6 +15,7 @@ import '../../../product/language/language_keys.dart';
 import '../constants/widget_keys.dart';
 import '../models/post_model.dart';
 import '../view-model/add_post_view_model.dart';
+import '../view-model/learning_space_view_model.dart';
 
 part 'components/create/post_form.dart';
 
@@ -76,5 +78,15 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
                   vertical: context.responsiveSize * 1.4),
               capitalizeAll: true,
               isActive: canUpdate,
-              onPressedError: () {}));
+              onPressedError: () {
+                if (isAdd) {
+                  context.read<AddPostViewModel>().addPost(
+                      context.read<LearningSpaceViewModel>().learningSpace?.id);
+                } else {
+                  context.read<AddPostViewModel>().addPost(
+                      context.read<LearningSpaceViewModel>().learningSpace?.id);
+                }
+                NavigationManager.instance.pop();
+                return null;
+              }));
 }

@@ -31,7 +31,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
       );
 
   factory LearningSpace.fromJson(Map<String, dynamic> json) => LearningSpace(
-        id: BaseModel.getByType<String>(json['id']),
+        id: BaseModel.getByType<String>(json['_id']),
         title: BaseModel.getByType<String>(json['title']),
         description: BaseModel.getByType<String>(json['description']),
         numParticipants: BaseModel.getByType<int>(json['num_participants']),
@@ -87,7 +87,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        'id': id,
+        '_id': id,
         'title': title,
         'description': description,
         'num_participants': numParticipants.toString(),

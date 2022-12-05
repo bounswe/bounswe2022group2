@@ -139,6 +139,7 @@ class CreateLearningSpaceViewModel extends BaseViewModel {
       if (ls == null) return "Learning Space not created";
       await navigationManager.navigateToPage(
         path: NavigationConstants.learningSpace,
+        data: {'learningSpace': ls},
         //data: <String, dynamic>{'learningSpace': ls.toJson},
       );
       _canUpdate = false;
