@@ -410,6 +410,14 @@ h1 {
     text-align: center;
 }
 
+.h-ls-custom {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: dark;
+    text-align: left;
+}
+
 .welcome-navigation{
     display: flex;
     justify-content: flex-start;

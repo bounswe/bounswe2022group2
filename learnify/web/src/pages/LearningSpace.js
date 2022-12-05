@@ -191,7 +191,7 @@ function LearningSpace() {
                 <div className='ls-box-title'>
                     <div className='space-5'></div>
                     <label>
-                        <h1>{title}</h1>
+                        <div className='h-ls-custom'>{title}</div>
                     </label>
                 </div>
                 <div className='ls-box-text'>
