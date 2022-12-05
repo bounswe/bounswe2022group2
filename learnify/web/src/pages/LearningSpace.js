@@ -149,7 +149,7 @@ function LearningSpace() {
         console.log(postTitle)
         console.log(final)
         console.log(imageUrl)
-        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/post`, {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/post`, {
             method: "POST",
             body: JSON.stringify({
                 ls_id: lsid,
