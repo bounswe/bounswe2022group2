@@ -57,7 +57,9 @@ class AnnotatableText extends StatelessWidget {
                   final bool isAnnotation =
                       annotationItem.annotations.isNotEmpty;
                   final String text = content.substring(
-                      annotationItem.startIndex, annotationItem.endIndex);
+                      annotationItem.startIndex,
+                      annotationItem.endIndex +
+                          (i == mergedAnnotations.length - 1 ? 1 : 0));
                   return TextSpan(
                     text: text,
                     style: TextStyle(

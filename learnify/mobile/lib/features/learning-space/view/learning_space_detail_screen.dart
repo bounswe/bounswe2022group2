@@ -211,14 +211,16 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                               )
                             ],
                           ),
-                          context.sizedH(2),
-                          Text(
+                          context.sizedH(.8),
+                          MultiLineText(
                             tempLearningSpace?.description ??
                                 "This is a placeholder summary of the placeholder learning space. After implementing the endpoint, real description of the learning space will take place here.",
                             style: const TextStyle(
                               color: Colors.grey,
                               fontSize: 14,
                             ),
+                            translated: false,
+                            maxLines: 15,
                           ),
                           context.sizedH(1),
                           LearningSpaceDetailScreen._tagWidget(

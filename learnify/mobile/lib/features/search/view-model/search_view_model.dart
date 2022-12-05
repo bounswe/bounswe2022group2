@@ -29,7 +29,7 @@ class SearchViewModel extends BaseViewModel {
   List<LearningSpace> get recommendedLearningSpaces =>
       _recommendedLearningSpaces;
 
-  late final List<UserPreview> _allUsers = <UserPreview>[
+  late final List<UserPreview> allUsers = <UserPreview>[
     const UserPreview(
         userName: "Altay Akar", profilePhoto: IconKeys.profilePageAltay),
     const UserPreview(
@@ -55,7 +55,7 @@ class SearchViewModel extends BaseViewModel {
         userName: "Koray Tekçık", profilePhoto: IconKeys.profilePageKoray),
   ];
 
-  late List<UserPreview> _resultUsers = _allUsers;
+  late List<UserPreview> _resultUsers = allUsers;
   List<UserPreview> get resultUsers => _resultUsers;
 
   late bool didResultCome = false;
@@ -84,7 +84,7 @@ class SearchViewModel extends BaseViewModel {
   void clearResults() {
     _searchController.clear();
     _resultLearningSpaces = _recommendedLearningSpaces;
-    _resultUsers = _allUsers;
+    _resultUsers = allUsers;
     notifyListeners();
   }
 
@@ -147,11 +147,15 @@ class SearchViewModel extends BaseViewModel {
   }
 
   Future<UserPreview?> _userSearchRequest(String name) async {
-    _resultUsers = _allUsers;
-    for (final UserPreview user in _allUsers) {
-      if (user.userName.split(" ")[0].toLowerCase() == name.toLowerCase()) {
-        _resultUsers = <UserPreview>[user];
+    _resultUsers = allUsers;
+    final List<UserPreview> newResultUsers = <UserPreview>[];
+    for (final UserPreview user in allUsers) {
+      if (user.userName.toLowerCase().contains(name.toLowerCase())) {
+        newResultUsers.add(user);
       }
+    }
+    if (newResultUsers.isNotEmpty) {
+      _resultUsers = newResultUsers;
     }
     return null;
   }
