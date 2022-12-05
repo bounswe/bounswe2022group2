@@ -64,12 +64,12 @@ class NavigationRoute {
                 isCreate: arguments['isCreate'],
                 learningSpace: arguments['learningSpace']),
             args);
-      case NavigationConstants.chapterImage:
+      case NavigationConstants.postImage:
         return normalNavigate(
-            ChapterImage(
+            PostImage(
               imageUrl: arguments['image'],
               allAnnotations: arguments['all_annotations'],
-              chapterId: arguments['chapter_id'],
+              postId: arguments['post_id'],
             ),
             args);
       case NavigationConstants.addEditPost:

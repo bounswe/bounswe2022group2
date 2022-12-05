@@ -13,11 +13,11 @@ import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_request.dart';
-import '../models/chapter_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../models/event.dart';
 import '../models/learning_space_model.dart';
+import '../models/post_model.dart';
 import '../service/ls_service.dart';
 
 /// View model to manage the data on learning space screen.
@@ -26,9 +26,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   // TODO: Will be taken from the course model when Egemen created it
   LearningSpace? learningSpace = const LearningSpace();
 
-  List<Chapter> _chapters = <Chapter>[];
-  List<Chapter> get chapters => _chapters;
-  List<Event> _events = <Event>[];
+  List<Post> _posts = <Post>[];
+  List<Post> get posts => _posts;
+  final List<Event> _events = <Event>[];
   List<Event> get events => _events;
   List<GlobalKey<CustomExpansionTileState>> _expansionTileKeys =
       <GlobalKey<CustomExpansionTileState>>[];
@@ -48,8 +48,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _lsService = LSService.instance;
-    _chapters = List<Chapter>.generate(20, Chapter.dummy);
-    _events = List<Event>.generate(20, Event.dummy);
+    _posts = learningSpace!.posts;
+    // _posts = List<Post>.generate(20, Post.dummy);
+    // _events = List<Event>.generate(20, Event.dummy);
     _events
       ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
       ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
@@ -61,13 +62,13 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initView() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
-        _chapters.length, (_) => GlobalKey<CustomExpansionTileState>());
+        _posts.length, (_) => GlobalKey<CustomExpansionTileState>());
     _eventsExpansionTileKeys =
         List<GlobalKey<CustomExpansionTileState>>.generate(
             _events.length, (_) => GlobalKey<CustomExpansionTileState>());
     _carouselControllers = List<CarouselController>.generate(
-        _chapters.length, (_) => CarouselController());
-    _carouselPageIndexes = List<int>.generate(_chapters.length, (_) => 0);
+        _posts.length, (_) => CarouselController());
+    _carouselPageIndexes = List<int>.generate(_posts.length, (_) => 0);
   }
 
   @override
@@ -84,24 +85,24 @@ class LearningSpaceViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  Future<String?> createChapter() async {
+  Future<String?> createPost() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditChapter);
+    //     path: NavigationConstants.createEditPost);
     return null;
   }
 
-  Future<String?> editChapter() async {
+  Future<String?> editPost() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditChapter);
+    //     path: NavigationConstants.createEditPost);
     return null;
   }
 
   Future<String?> createEvent() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditChapter);
+    //     path: NavigationConstants.createEditPost);
     return null;
   }
 
@@ -120,26 +121,25 @@ class LearningSpaceViewModel extends BaseViewModel {
   Future<String?> editEvent() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditChapter);
+    //     path: NavigationConstants.createEditPost);
     return null;
   }
 
   Future<String?> createDiscussion() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditChapter);
+    //     path: NavigationConstants.createEditPost);
     return null;
   }
 
-  Future<Tuple2<Annotation?, String?>> annotateText(int startIndex,
-      int endIndex, String annotation, String? chapterId) async {
-    final int itemIndex = _chapters.indexWhere(
-        (Chapter c) => c.id?.compareWithoutCase(chapterId) ?? false);
+  Future<Tuple2<Annotation?, String?>> annotateText(
+      int startIndex, int endIndex, String annotation, String? postId) async {
+    final int itemIndex = _posts
+        .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
     if (itemIndex == -1) {
-      return const Tuple2<Annotation?, String?>(
-          null, 'Chapter could not found.');
+      return const Tuple2<Annotation?, String?>(null, 'Post could not found.');
     }
-    final Chapter oldChapter = _chapters[itemIndex];
+    final Post oldPost = _posts[itemIndex];
     final AnnotationSelector selector =
         AnnotationSelector(start: startIndex, end: endIndex);
     // TODO: Fix
@@ -148,8 +148,8 @@ class LearningSpaceViewModel extends BaseViewModel {
       // TODO:
       lsId: '638b2038a0a7908cbfdba928',
       postId: '638b20bea0a7908cbfdba92d',
-      // lsId: oldChapter.courseId,
-      // postId: oldChapter.id,
+      // lsId: oldPost.courseId,
+      // postId: oldPost.id,
       target: AnnotationTarget(selector: selector),
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -157,28 +157,27 @@ class LearningSpaceViewModel extends BaseViewModel {
       return Tuple2<Annotation?, String?>(null, res.error?.errorMessage);
     } else {
       final Annotation newAnnotation = createTextAnnotation(
-          startIndex, endIndex, annotation, oldChapter, itemIndex);
+          startIndex, endIndex, annotation, oldPost, itemIndex);
       return Tuple2<Annotation?, String?>(newAnnotation, null);
     }
   }
 
   Annotation createTextAnnotation(int startIndex, int endIndex,
-      String annotation, Chapter chapter, int itemIndex) {
+      String annotation, Post post, int itemIndex) {
     final Annotation newAnnotation = Annotation(
       id: (startIndex * endIndex + Random().nextInt(490)).toString(),
       content: annotation,
       startIndex: startIndex,
       endIndex: endIndex,
-      courseId: chapter.courseId,
-      chapterId: chapter.id,
+      courseId: learningSpace?.id,
+      postId: post.id,
     );
     final List<Annotation> newAnnotations =
-        List<Annotation>.from(chapter.annotations)
+        List<Annotation>.from(post.annotations)
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
-    _chapters[itemIndex] =
-        _chapters[itemIndex].copyWith(annotations: newAnnotations);
+    _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
     return newAnnotation;
   }
@@ -187,16 +186,15 @@ class LearningSpaceViewModel extends BaseViewModel {
       Offset startOffset,
       Offset endOffset,
       String annotation,
-      String? chapterId,
+      String? postId,
       Color color,
       String? imageUrl) async {
-    final int itemIndex = _chapters.indexWhere(
-        (Chapter c) => c.id?.compareWithoutCase(chapterId) ?? false);
+    final int itemIndex = _posts
+        .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
     if (itemIndex == -1) {
-      return const Tuple2<Annotation?, String?>(
-          null, 'Chapter could not found.');
+      return const Tuple2<Annotation?, String?>(null, 'Post could not found.');
     }
-    final Chapter oldChapter = _chapters[itemIndex];
+    final Post oldPost = _posts[itemIndex];
     final double x = startOffset.dx;
     final double y = startOffset.dy;
     final double w = endOffset.dx - startOffset.dx;
@@ -208,8 +206,8 @@ class LearningSpaceViewModel extends BaseViewModel {
       // TODO: Fix
       lsId: '638b2038a0a7908cbfdba928',
       postId: '638b20bea0a7908cbfdba92d',
-      // lsId: oldChapter.courseId,
-      // postId: oldChapter.id,
+      // lsId: oldPost.courseId,
+      // postId: oldPost.id,
       target: target,
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -222,7 +220,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         color,
         imageUrl,
         annotation,
-        oldChapter,
+        oldPost,
         itemIndex,
       );
       return Tuple2<Annotation?, String?>(newAnnotation, null);
@@ -259,7 +257,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     Color backgroundColor,
     String? imageUrl,
     String annotation,
-    Chapter chapter,
+    Post post,
     int itemIndex,
   ) {
     final Offset foundStart = Offset(
@@ -271,19 +269,18 @@ class LearningSpaceViewModel extends BaseViewModel {
       content: annotation,
       startOffset: foundStart,
       endOffset: foundEnd,
-      chapterId: chapter.id,
-      courseId: chapter.courseId,
+      postId: post.id,
+      courseId: learningSpace?.id,
       isImage: true,
       colorParam: backgroundColor,
       imageUrl: imageUrl,
     );
     final List<Annotation> newAnnotations =
-        List<Annotation>.from(chapter.annotations)
+        List<Annotation>.from(post.annotations)
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
-    _chapters[itemIndex] =
-        _chapters[itemIndex].copyWith(annotations: newAnnotations);
+    _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
     return newAnnotation;
   }

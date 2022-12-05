@@ -47,11 +47,11 @@ class TextKeys {
   static const String requestAnotherCode = "request_another_code";
   static const String backToPreviousPage = "back_to_previous_page";
   static const String remainingTime = "remaining_time";
-  static const String chapters = "chapters";
+  static const String posts = "posts";
   static const String events = "events";
   static const String forum = "forum";
-  static const String createChapter = "create_chapter";
-  static const String editChapter = "edit_chapter";
+  static const String createPost = "create_post";
+  static const String editPost = "edit_post";
   static const String takenLearnifies = "taken_learnifies";
   static const String friendLearnifies = "friend_learnifies";
   static const String recommendedLearnifies = "recommended_learnifies";
@@ -90,7 +90,6 @@ class TextKeys {
   static const String annotateImage = 'annotate_image';
   static const String addDiscussion = "add_discussion";
   static const String addPost = 'add_post';
-  static const String editPost = 'edit_post';
   static const String addPostTitleHint = "add_post_title_hint";
   static const String addPostTitleLabel = "add_post_title_label";
   static const String addPostContentHint = "add_post_content_hint";

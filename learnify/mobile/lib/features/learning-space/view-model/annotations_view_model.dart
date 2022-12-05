@@ -9,7 +9,7 @@ class AnnotationsViewModel extends BaseViewModel {
 
   @override
   void initViewModel() {
-    _annotations = List<Annotation>.generate(5, Annotation.dummy);
+    // _annotations = List<Annotation>.generate(5, Annotation.dummy);
   }
 
   @override

@@ -37,7 +37,7 @@ class ForumList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
-            ? ChapterList.createEditButton(
+            ? PostList.createEditButton(
                 context,
                 TextKeys.addDiscussion,
                 Icons.create,

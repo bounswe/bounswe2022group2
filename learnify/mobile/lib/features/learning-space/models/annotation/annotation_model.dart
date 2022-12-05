@@ -10,7 +10,7 @@ class Annotation extends BaseModel<Annotation> {
     this.courseId,
     this.creator,
     this.categoryId,
-    this.chapterId,
+    this.postId,
     this.startIndex = 0,
     this.endIndex = 0,
     this.startOffset = Offset.zero,
@@ -39,7 +39,7 @@ class Annotation extends BaseModel<Annotation> {
         courseId: id.toString(),
         creator: id.toString(),
         categoryId: id.toString(),
-        chapterId: id.toString(),
+        postId: id.toString(),
         startIndex: startIndex ?? 12,
         endIndex: endIndex ?? 26,
         upVote: 2,
@@ -58,7 +58,7 @@ class Annotation extends BaseModel<Annotation> {
         courseId: BaseModel.getByType<String>(json['course_id']),
         creator: BaseModel.getByType<String>(json['creator']),
         categoryId: BaseModel.getByType<String>(json['category_id']),
-        chapterId: BaseModel.getByType<String>(json['chapter_id']),
+        postId: BaseModel.getByType<String>(json['post_id']),
         content: BaseModel.getByType<String>(json['content']),
         startIndex: BaseModel.getWithDefault<int>(json['start_index'], 0),
         endIndex: BaseModel.getWithDefault<int>(json['end_index'], 0),
@@ -90,7 +90,7 @@ class Annotation extends BaseModel<Annotation> {
       courseId: courseId,
       creator: creator,
       categoryId: categoryId,
-      chapterId: chapterId,
+      postId: postId,
       startIndex: startIndex ?? this.startIndex,
       endIndex: endIndex ?? this.endIndex,
       upVote: upVote ?? this.upVote,
@@ -111,7 +111,7 @@ class Annotation extends BaseModel<Annotation> {
   final String? courseId;
   final String? creator;
   final String? categoryId;
-  final String? chapterId;
+  final String? postId;
   final String? content;
   final int startIndex;
   final int endIndex;
@@ -134,7 +134,7 @@ class Annotation extends BaseModel<Annotation> {
         'course_id': courseId,
         'creator': creator,
         'category_id': categoryId,
-        'chapter_id': chapterId,
+        'post_id': postId,
         'content': content,
         'start_index': startIndex,
         'end_index': endIndex,
@@ -155,7 +155,7 @@ class Annotation extends BaseModel<Annotation> {
         courseId,
         creator,
         categoryId,
-        chapterId,
+        postId,
         content,
         startIndex,
         endIndex,

@@ -30,17 +30,17 @@ import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
-import '../models/chapter_model.dart';
 import '../models/event.dart';
 import '../models/learning_space_model.dart';
+import '../models/post_model.dart';
 import '../view-model/learning_space_view_model.dart';
 import 'annotations_screen.dart';
 
-part 'components/chapter/chapter_item.dart';
-part 'components/chapter/chapter_list.dart';
 part 'components/events/event_item.dart';
 part 'components/events/events_list.dart';
 part 'components/forum_list.dart';
+part 'components/post/post_item.dart';
+part 'components/post/post_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
@@ -85,8 +85,8 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
         SliverPadding(
             padding: EdgeInsets.symmetric(
                 vertical: context.height * .6, horizontal: context.width * 2),
-            sliver: tabKey == TextKeys.chapters
-                ? const ChapterList()
+            sliver: tabKey == TextKeys.posts
+                ? const PostList()
                 : (tabKey == TextKeys.events
                     ? const EventsList()
                     : const ForumList())),
@@ -158,7 +158,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Container(
+                              SizedBox(
                                 width: 270,
                                 child: Text(
                                   softWrap: true,
@@ -186,14 +186,14 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                 child: context
                                         .read<HomeViewModel>()
                                         .getIsEnrolled(tempLearningSpace?.title)
-                                    ? BaseText(
+                                    ? const BaseText(
                                         TextKeys.enrolled,
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold),
                                       )
-                                    : BaseText(
+                                    : const BaseText(
                                         TextKeys.enroll,
                                         style: TextStyle(
                                             color: Colors.black,

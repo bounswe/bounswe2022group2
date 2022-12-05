@@ -1,7 +1,7 @@
 part of '../../learning_space_detail_screen.dart';
 
-class ChapterItem extends StatelessWidget {
-  const ChapterItem({
+class PostItem extends StatelessWidget {
+  const PostItem({
     required this.callback,
     required this.itemIndex,
     required this.expansionTileKey,
@@ -13,10 +13,9 @@ class ChapterItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Chapter chapter = SelectorHelper<Chapter, LearningSpaceViewModel>()
+    final Post post = SelectorHelper<Post, LearningSpaceViewModel>()
         .listenValue(
-            (LearningSpaceViewModel model) => model.chapters[itemIndex],
-            context);
+            (LearningSpaceViewModel model) => model.posts[itemIndex], context);
     return Theme(
       data: Theme.of(context).copyWith(
         dividerColor: Colors.transparent,
@@ -28,12 +27,12 @@ class ChapterItem extends StatelessWidget {
         minLeadingWidth: 0,
         minVerticalPadding: 0,
         dense: true,
-        child: _expansionTile(context, chapter),
+        child: _expansionTile(context, post),
       ),
     );
   }
 
-  Widget _expansionTile(BuildContext context, Chapter chapter) {
+  Widget _expansionTile(BuildContext context, Post post) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
     return CustomExpansionTile(
@@ -43,8 +42,8 @@ class ChapterItem extends StatelessWidget {
       tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
       childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
           .copyWith(bottom: context.height * 1.7),
-      title: MultiLineText('${itemIndex + 1}. ${chapter.title}',
-          translated: false),
+      title:
+          MultiLineText('${itemIndex + 1}. ${post.title}', translated: false),
       expandedCrossAxisAlignment: CrossAxisAlignment.center,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
@@ -57,40 +56,39 @@ class ChapterItem extends StatelessWidget {
       children: <Widget>[
         BaseText(TextKeys.clickToSeeImageAnnotations,
             style: context.labelMedium),
-        _carouselSlider(viewModel, chapter, context),
-        _sliderIndicator(viewModel, chapter),
+        _carouselSlider(viewModel, post, context),
+        _sliderIndicator(viewModel, post),
         context.sizedH(1.4),
         AnnotatableText(
-          key: PageStorageKey<String>(chapter.materialText ?? ''),
-          content: chapter.materialText ?? '',
+          key: PageStorageKey<String>(post.content ?? ''),
+          content: post.content ?? '',
           annotateLabel: context.tr(TextKeys.annotate),
           annotateCallback: (int startIndex, int endIndex) async {
             await DialogBuilder(context).annotateDialog(
-              chapter.id,
+              post.id,
               textCallback: viewModel.annotateText,
               startIndex: startIndex,
               endIndex: endIndex,
             );
           },
-          allAnnotations: chapter.annotations,
+          allAnnotations: post.annotations,
           onAnnotationClick:
               (List<Annotation> annotations, String annotationText) async {
             //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
             await viewModel.viewAnnotations(annotations, annotationText);
           },
         ),
-        ChapterList.createEditButton(context, TextKeys.editChapter,
-            Icons.edit_outlined, viewModel.editChapter),
+        PostList.createEditButton(context, TextKeys.editPost,
+            Icons.edit_outlined, viewModel.editPost),
       ],
     );
   }
 
   CarouselSlider _carouselSlider(
-      LearningSpaceViewModel viewModel, Chapter chapter, BuildContext context) {
-    final List<String> images = chapter.materialVisual;
+      LearningSpaceViewModel viewModel, Post post, BuildContext context) {
+    final List<String> images = post.images;
     return CarouselSlider.builder(
-      key: PageStorageKey<String>(
-          '${chapter.id} - ${chapter.annotations.toList()}'),
+      key: PageStorageKey<String>('${post.id} - ${post.annotations.toList()}'),
       itemCount: images.length,
       carouselController: viewModel.carouselControllers[itemIndex],
       options: CarouselOptions(
@@ -103,16 +101,16 @@ class ChapterItem extends StatelessWidget {
             viewModel.setCarouselPageIndex(newIndex, itemIndex),
       ),
       itemBuilder: (_, int i, __) {
-        final List<Annotation> imageAnnotations = chapter.annotations
+        final List<Annotation> imageAnnotations = post.annotations
             .where((Annotation a) => a.isImage && a.imageUrl == images[i])
             .toList();
         return GestureDetector(
           onTap: () => NavigationManager.instance.navigateToPage(
-            path: NavigationConstants.chapterImage,
+            path: NavigationConstants.postImage,
             data: <String, dynamic>{
               'image': images[i],
-              'all_annotations': chapter.annotations,
-              'chapter_id': chapter.id,
+              'all_annotations': post.annotations,
+              'post_id': post.id,
             },
           ),
           child: AnnotatableImage(
@@ -141,11 +139,10 @@ class ChapterItem extends StatelessWidget {
     );
   }
 
-  Widget _sliderIndicator(LearningSpaceViewModel viewModel, Chapter chapter) =>
-      Row(
+  Widget _sliderIndicator(LearningSpaceViewModel viewModel, Post post) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List<Widget>.generate(
-          chapter.materialVisual.length,
+          post.images.length,
           (int i) => GestureDetector(
             onTap: () =>
                 viewModel.carouselControllers[itemIndex].animateToPage(i),

@@ -105,10 +105,10 @@ class EventItem extends StatelessWidget {
               translated: false,
               style: context.bodySmall,
             )),
-        ChapterList.createEditButton(
+        PostList.createEditButton(
           context,
           isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
-          isPassed ? Icons.timer_off_outlined :Icons.edit_outlined,
+          isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
           isPassed ? null : viewModel.editEvent,
         ),
       ],

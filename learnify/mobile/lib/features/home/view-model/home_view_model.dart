@@ -18,7 +18,7 @@ class HomeViewModel extends BaseViewModel {
   List<LearningSpace> _takenLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get takenLearningSpaces => _takenLearningSpaces;
 
-  List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
+  final List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get friendLearningSpaces => _friendLearningSpaces;
 
   List<LearningSpace> _recommendedLearningSpaces = <LearningSpace>[];
