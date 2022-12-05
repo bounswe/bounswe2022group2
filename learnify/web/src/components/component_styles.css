@@ -337,6 +337,16 @@
     border: 2px solid #1746A2;
     cursor: pointer;
 }
+.navBarText{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+}
+
+.navBarText2{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 30px;
+    margin-left: 2px;
+}
 
 .btn-orange{
     align-items: center;
