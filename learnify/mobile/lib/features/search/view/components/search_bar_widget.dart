@@ -46,7 +46,7 @@ class SearchBarWidget extends StatelessWidget {
             },
           ),
           suffixIcon: IconButton(
-            onPressed: model.clearResultLearningSpaces,
+            onPressed: model.clearResults,
             icon: const Icon(
               Icons.clear_outlined,
               color: Colors.white,
