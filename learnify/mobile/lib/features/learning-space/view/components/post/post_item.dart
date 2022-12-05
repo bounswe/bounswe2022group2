@@ -62,7 +62,7 @@ class PostItem extends StatelessWidget {
         _sliderIndicator(viewModel, post),
         context.sizedH(1.4),
         AnnotatableText(
-          key: PageStorageKey<String>(post.content ?? ''),
+          key: PageStorageKey<String>(post.content ?? 'asd'),
           content: post.content ?? '',
           annotateLabel: context.tr(TextKeys.annotate),
           annotateCallback: (int startIndex, int endIndex) async {

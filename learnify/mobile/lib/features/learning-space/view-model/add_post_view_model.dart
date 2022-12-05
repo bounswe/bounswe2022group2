@@ -13,6 +13,7 @@ import '../service/ls_service.dart';
 class AddPostViewModel extends BaseViewModel {
   late final LSService _lsService;
   Post? _post;
+  Post? get post => _post;
 
   late TextEditingController _titleController;
   TextEditingController get titleController => _titleController;

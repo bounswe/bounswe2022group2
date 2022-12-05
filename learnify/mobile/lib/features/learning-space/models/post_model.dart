@@ -56,10 +56,10 @@ class Post extends BaseModel<Post> {
           List<Annotation>? annotations,
           List<String>? images}) =>
       Post(
-          id: id,
-          title: title,
-          creator: creator,
-          content: content,
+          id: id ?? id,
+          title: title ?? this.title,
+          creator: creator ?? this.creator,
+          content: content ?? this.content,
           annotations: annotations ?? this.annotations,
           images: images ?? this.images,
           createdAt: createdAt,

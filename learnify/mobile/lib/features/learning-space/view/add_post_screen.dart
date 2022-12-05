@@ -12,7 +12,9 @@ import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/language/language_keys.dart';
+import '../../home/view-model/home_view_model.dart';
 import '../constants/widget_keys.dart';
+import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../view-model/add_post_view_model.dart';
 import '../view-model/learning_space_view_model.dart';
@@ -79,17 +81,24 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
                   vertical: context.responsiveSize * 1.4),
               capitalizeAll: true,
               isActive: canUpdate,
-              onPressedError: () {
-                final String? id =
-                    context.read<LearningSpaceViewModel>().learningSpace?.id;
+              onPressedError: () async {
+                final HomeViewModel homeViewModel =
+                    context.read<HomeViewModel>();
+                final LearningSpaceViewModel spaceViewModel =
+                    context.read<LearningSpaceViewModel>();
+                final String? id = spaceViewModel.learningSpace?.id;
                 final AddPostViewModel viewModel =
                     context.read<AddPostViewModel>();
-                if (isAdd) {
-                  viewModel.addPost(id);
-                } else {
-                  viewModel.editPost(id);
+                late final String? error;
+                error = await (isAdd
+                    ? viewModel.addPost(id)
+                    : viewModel.editPost(id));
+                if (error == null && viewModel.post != null) {
+                  final LearningSpace? ls =
+                      spaceViewModel.addEditPost(viewModel.post!);
+                  homeViewModel.updateLs(ls);
+                  NavigationManager.instance.pop();
                 }
-                NavigationManager.instance.pop();
-                return null;
+                return error;
               }));
 }

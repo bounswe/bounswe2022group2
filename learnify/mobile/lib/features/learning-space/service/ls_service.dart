@@ -11,7 +11,6 @@ import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
-import '../view/create_learning_space_screen.dart';
 import 'l_ls_service.dart';
 
 /// Service for network request of auth view-model.
@@ -67,7 +66,6 @@ class LSService extends ILSService {
         parseModel: const EnrollLSResponse(),
         type: RequestTypes.post,
         body: body,
-        requireAuth: true,
       );
 
   @override

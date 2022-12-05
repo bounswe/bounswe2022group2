@@ -7,11 +7,14 @@ import 'package:tuple/tuple.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
+import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../product/constants/navigation_constants.dart';
+import '../../../product/constants/storage_keys.dart';
+import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_request.dart';
 import '../models/enroll_ls_request_model.dart';
@@ -24,7 +27,6 @@ import '../service/ls_service.dart';
 /// View model to manage the data on learning space screen.
 class LearningSpaceViewModel extends BaseViewModel {
   late final LSService _lsService;
-  // TODO: Will be taken from the course model when Egemen created it
   LearningSpace? _learningSpace = const LearningSpace();
   LearningSpace? get learningSpace => _learningSpace;
 
@@ -159,14 +161,10 @@ class LearningSpaceViewModel extends BaseViewModel {
     final Post oldPost = _posts[itemIndex];
     final AnnotationSelector selector =
         AnnotationSelector(start: startIndex, end: endIndex);
-    // TODO: Fix
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
-      // TODO:
-      lsId: '638b2038a0a7908cbfdba928',
-      postId: '638b20bea0a7908cbfdba92d',
-      // lsId: oldPost.courseId,
-      // postId: oldPost.id,
+      lsId: _learningSpace?.id,
+      postId: oldPost.id,
       target: AnnotationTarget(selector: selector),
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -220,11 +218,8 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h', format: 'image/jpeg');
     final CreateAnnotationRequest req = CreateAnnotationRequest(
       body: annotation,
-      // TODO: Fix
-      lsId: '638b2038a0a7908cbfdba928',
-      postId: '638b20bea0a7908cbfdba92d',
-      // lsId: oldPost.courseId,
-      // postId: oldPost.id,
+      lsId: _learningSpace?.id,
+      postId: oldPost.id,
       target: target,
     );
     final IResponseModel<AnyModel> res = await _lsService.annotate(req);
@@ -281,17 +276,19 @@ class LearningSpaceViewModel extends BaseViewModel {
         min(startOffset.dx, endOffset.dx), min(startOffset.dy, endOffset.dy));
     final Offset foundEnd = Offset(
         max(startOffset.dx, endOffset.dx), max(startOffset.dy, endOffset.dy));
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
-      id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
-      content: annotation,
-      startOffset: foundStart,
-      endOffset: foundEnd,
-      postId: post.id,
-      courseId: learningSpace?.id,
-      isImage: true,
-      colorParam: backgroundColor,
-      imageUrl: imageUrl,
-    );
+        id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
+        content: annotation,
+        startOffset: foundStart,
+        endOffset: foundEnd,
+        postId: post.id,
+        courseId: learningSpace?.id,
+        isImage: true,
+        colorParam: backgroundColor,
+        imageUrl: imageUrl,
+        creator: user.username);
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)
           ..add(newAnnotation)
@@ -300,5 +297,20 @@ class LearningSpaceViewModel extends BaseViewModel {
     _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
     notifyListeners();
     return newAnnotation;
+  }
+
+  LearningSpace? addEditPost(Post post) {
+    final int index = _posts.indexWhere((Post p) => p.id == post.id);
+    final List<Post> newPosts = List<Post>.from(_posts);
+    if (index == -1) {
+      newPosts.add(post);
+    } else {
+      newPosts[index] = post;
+    }
+    _posts = newPosts;
+    _learningSpace = _learningSpace?.copyWith(posts: newPosts);
+    _initializeKeys();
+    notifyListeners();
+    return _learningSpace;
   }
 }

@@ -172,4 +172,24 @@ class HomeViewModel extends BaseViewModel {
       _takenLearningSpaces.add(learningSpace);
     }
   }
+
+  void updateLs(LearningSpace? ls) {
+    if (ls == null) return;
+    final int takenIndex =
+        _takenLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
+    if (takenIndex != -1) {
+      _takenLearningSpaces[takenIndex] = ls;
+    }
+    final int friendIndex =
+        _friendLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
+    if (friendIndex != -1) {
+      _takenLearningSpaces[friendIndex] = ls;
+    }
+    final int recommendedIndex = _recommendedLearningSpaces
+        .indexWhere((LearningSpace l) => l.id == ls.id);
+    if (recommendedIndex != -1) {
+      _takenLearningSpaces[recommendedIndex] = ls;
+    }
+    notifyListeners();
+  }
 }

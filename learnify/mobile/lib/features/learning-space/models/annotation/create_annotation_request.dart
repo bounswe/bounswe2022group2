@@ -73,7 +73,7 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        if (id != null) '_id': id,
+        if (id != null) 'id': id,
         if (format != null) 'type': 'Image',
         if (format != null) 'format': format,
         if (selector != null)
