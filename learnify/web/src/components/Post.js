@@ -123,7 +123,7 @@ export default function Post(props){
 
       annotorious.on("createSelection", function () {
         const defaultSuggestions =
-          "<p>Damian</p><p>Derek</p><p>Emmanuel</p><p>Ibukun</p><p>Tobi</p><p>Tolu</p>";
+          "<p>EasterEgg</p><p>Baklava</p><p>Netting</p><p>Altay</p><p>Enes</p><p>Gökay</p><p>Koray</p>";
         const commentWrapper = document.querySelector(".comment");
         const commentTextarea = document.querySelector(".comment > textarea");
         const commentSuggestion = document.createElement("div");
@@ -228,8 +228,7 @@ export default function Post(props){
   const [classes, setClasses] = useState(["class1", "class2"]);
 
   const urlList = [
-    "https://raw.githubusercontent.com/torchgan/torchgan/master/.readthedocs.yml \n <this should be in another line>",
-    "https://raw.githubusercontent.com/torchgan/torchgan/master/pyproject.toml"
+    ""
   ];
 
   useEffect(() => {
