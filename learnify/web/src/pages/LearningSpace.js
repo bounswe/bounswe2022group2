@@ -11,11 +11,10 @@ import creator from '../images/creator.png';
 import geolocation from '../images/location.png';
 import MDEditor from "@uiw/react-md-editor";
 import Post from '../components/Post';
-import Participants from '../components/Participants';
-import JoinLsButton from '../components/JoinLsButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Participants from '../components/Participants';	
+import JoinLsButton from '../components/JoinLsButton';	
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-
 
 function LearningSpace() {
 
@@ -30,8 +29,8 @@ function LearningSpace() {
 
     const [postArray, setPostArray] = useState([]);
 
-    const [participants, setParticipants] = useState([]);
-    
+    const [participants, setParticipants] = useState([]);	
+    	
     const [lsCreator, setLsCreator] = useState("");
 
     const [postTitle, setPostTitle] = useState("");
@@ -130,10 +129,9 @@ function LearningSpace() {
                         setDescription(json.learning_spaces[0].description);
                         console.log(json.learning_spaces[0].description);
                         setPostArray(json.learning_spaces[0].posts);
-                        setLsCreator(json.learning_spaces[0].creator);
-                        setParticipants(json.learning_spaces[0].participants);
-                        console.log(participants);
-
+                        setLsCreator(json.learning_spaces[0].creator);	
+                        setParticipants(json.learning_spaces[0].participants);	
+                        console.log(participants);	
                         //setParticipants(participants.filter((item) => item !== lsCreator))
                     });
                     
@@ -146,7 +144,7 @@ function LearningSpace() {
             }
         getLearningSpace();
     }, []);
-    console.log(participants);
+
     
     const createPost = async (lsid, postTitle, final, imageUrl) => {
         console.log(lsid)
@@ -204,7 +202,7 @@ function LearningSpace() {
                         <p>{description}</p>
                     </label>
                     <div className='space-12'></div>
-                    <JoinLsButton title = {title} participants = {participants}/>
+                        <JoinLsButton title = {title} participants = {participants}/>
                     <div className='space-8'></div>
                     <a><img src={elipse} alt="elipse" height={360} /></a>
                     <div className='space-8'></div>
@@ -288,7 +286,7 @@ function LearningSpace() {
                     }
                     <div className='space-5'></div>
                     {postArray.map(myPost =>
-                                    <Post myPost = {myPost}/>)}
+                                    <Post myPost = {myPost} my_lsid = {lsid}/>)}
                 </div>
                 }
             </div>
@@ -297,12 +295,9 @@ function LearningSpace() {
                 <div className='ls-box3'>
                     <label className='feed-title'>
                     <label className='navBarText2'><FontAwesomeIcon icon={solid('people-line') } /> Contributors</label>
-                       
                     </label>
-
                     <div className='space-5'></div>
-                   
-                    {participants.map(participant =>
+                    {participants.map(participant =>	
                                     <Participants participant = {participant} creator={lsCreator}/> )}
                 </div>
                 <div className='ls-box-org'>
