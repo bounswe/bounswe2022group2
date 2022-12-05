@@ -26,6 +26,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         iconId: 5,
         categories: const <String>['music', 'string-instruments'],
         creator: id.toString(),
+        posts: [Post.dummy(0), Post.dummy(1)],
         createdAt: DateTime.now().subtract(const Duration(days: 3)),
         updatedAt: DateTime.now(),
       );

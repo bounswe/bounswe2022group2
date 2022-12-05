@@ -15,7 +15,7 @@ void main() {
   testWidgets(
     "Test text annotation functionality.",
     (WidgetTester tester) async {
-      const LearningSpace dummyLearningSpace = LearningSpace();
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(0);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
       await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
@@ -74,7 +74,7 @@ void main() {
       await tester.pumpAndSettle();
       final Post foundPost =
           viewModel.posts.where((Post c) => c.id == firstPostModel.id).first;
-      expect(foundPost.annotations.length, 1);
+      expect(foundPost.annotations.length, greaterThanOrEqualTo(1));
       final Annotation foundAnnotation = foundPost.annotations.first;
       expect(foundAnnotation, annotation);
     },

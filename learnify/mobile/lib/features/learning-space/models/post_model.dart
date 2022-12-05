@@ -45,6 +45,8 @@ class Post extends BaseModel<Post> {
           'https://picsum.photos/id/2/700/400',
           'https://picsum.photos/id/3/700/400'
         ],
+        annotations: [Annotation.dummy(0), Annotation.dummy(1)],
+        creator: 'bahricanyesil',
         createdAt: DateTime.now().subtract(const Duration(days: 1)),
         updatedAt: DateTime.now(),
       );
