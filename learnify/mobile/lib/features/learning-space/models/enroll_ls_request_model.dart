@@ -10,7 +10,7 @@ class EnrollLSRequest extends BaseModel<EnrollLSRequest> {
 
   @override
   EnrollLSRequest fromJson(Map<String, dynamic> json) =>
-      EnrollLSRequest().fromJson(json);
+      EnrollLSRequest.fromJson(json);
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{'title': title};
