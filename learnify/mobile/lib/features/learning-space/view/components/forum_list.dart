@@ -35,6 +35,7 @@ class ForumList extends StatelessWidget {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
     return SliverList(
+      key: const PageStorageKey<String>('FORUM_LIST'),
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
             ? PostList.createEditButton(
