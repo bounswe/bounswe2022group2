@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import up from '../images/chevron-up-solid.svg';
-import down from '../images/chevron-down-solid.svg';
-import comment from '../images/comment-regular.svg';
-import edit from '../images/pen-to-square-regular.svg';
-import trash from '../images/trash-can-regular.svg';
-import author from '../images/create2.svg';
-import MDEditor from "@uiw/react-md-editor";
 import "@recogito/recogito-js/dist/recogito.min.css";
 import {useEffect, useRef } from "react";
 import { Recogito } from "@recogito/recogito-js";
 import { Annotorious } from "@recogito/annotorious";
 import "@recogito/annotorious/dist/annotorious.min.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 function TextInterface({
     classes,
@@ -294,37 +289,55 @@ export default function Post(props){
             <div className='post-buttons-contaier'>
                 <div className='post-box-left'>
                     <div className='ls-button-container2'>
-                        <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp}/></button>
+                        <button className='post-upvote-button'>
+                            <FontAwesomeIcon icon={solid('caret-up')} color="green" onClick={increaseUp}/>
+                        </button>
                     </div>
-                    <div className='ls-button-container'>
+                    <div className='post-container-display-item'>
                         <label className="counter__output">{upCounter}</label>
                     </div>
                     <div className='ls-button-container2'>
-                    <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown}/></button>
+                        <button className='post-downvote-button'>
+                            <FontAwesomeIcon icon={solid('caret-down')} color="red" onClick={increaseDown}/>
+                        </button>
                     </div>
-                    <div className='ls-button-container'>
+                    <div className='post-container-display-item'>
                         <label className="counter__output">{downCounter}</label>
                     </div>
                     <div className='ls-button-container2'>
-                        <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
+                        <div className='post-comment-button'>
+                            <a href="/reply">
+                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
+                            </a>
+                        </div>
                     </div>
-                    <div className='ls-button-container'>
+                    <div className='post-container-display-item'>
                         <label className="counter__output">{0}</label>
                     </div>
                 </div>
-                <div className='ls-button-container'>
+                <div className='annotation-selection-button'>
                     <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
                 </div>
                 <div className='post-box-right'>
                     <div className='ls-button-container-alt3'>
-                        <label className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></label>
+                        <label className='post-owner-icon-container'>
+                            <FontAwesomeIcon icon={solid('user-pen')} color="black"/>
+                        </label>
                     </div>
+                    <div className='post-owner-display-item'>
                         {creator}
-                    <div className='ls-button-container-alt2'>
-                        <a href="/edit" className='navBarText'><img src={edit} alt="Learnify Logo" height={20} /></a>
                     </div>
                     <div className='ls-button-container-alt2'>
-                        <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost}/> </button>
+                        <div className='post-edit-icon-container'>
+                            <a href="/edit">
+                                <FontAwesomeIcon icon={solid('edit')} color="black"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div className='ls-button-container-alt2'>
+                        <button className='post-delete-button'>
+                            <FontAwesomeIcon icon={solid('trash-can')} color="black"/>
+                        </button>
                     </div>
                 </div>
                 </div>
