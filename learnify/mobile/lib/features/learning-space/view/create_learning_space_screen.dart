@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
@@ -15,6 +14,7 @@ import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/light_theme.dart';
+import '../../home/view-model/home_view_model.dart';
 import '../constants/widget_keys.dart';
 import '../models/learning_space_model.dart';
 import '../view-model/create_learning_space_view_model.dart';
@@ -89,13 +89,16 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
                     vertical: context.responsiveSize * 1.4),
                 capitalizeAll: true,
                 isActive: canUpdate,
-                onPressedError: isCreate
-                    ? context
-                        .read<CreateLearningSpaceViewModel>()
-                        .createLearningSpace
-                    : context
-                        .read<CreateLearningSpaceViewModel>()
-                        .editLearningSpace,
+                onPressedError: () async {
+                  final CreateLearningSpaceViewModel viewModel =
+                      context.read<CreateLearningSpaceViewModel>();
+                  final HomeViewModel homeModel = context.read<HomeViewModel>();
+                  final String? res = await (isCreate
+                      ? viewModel.createLearningSpace()
+                      : viewModel.editLearningSpace());
+                  homeModel.addLs(viewModel.learningSpace);
+                  return res;
+                },
               ));
 
   static DefaultAppBar _appBarBuilder(BuildContext context, bool isCreate) =>

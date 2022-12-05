@@ -20,7 +20,7 @@ Future<void> main() async {
   await LocalManager().initPreferences();
   final bool hasToken = CustomInterceptors.getStoredToken != null;
   final User user =
-      await LocalManager.instance.getModel(const User(), StorageKeys.user);
+      LocalManager.instance.getModel(const User(), StorageKeys.user);
   final bool hasAuth = hasToken && user.email != null;
   FlutterNativeSplash.remove();
   runApp(InitialApp(hasAuth: hasAuth));

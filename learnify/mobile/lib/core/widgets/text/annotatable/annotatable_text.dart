@@ -74,6 +74,7 @@ class AnnotatableText extends StatelessWidget {
                 },
               ),
       ),
+      textAlign: TextAlign.start,
       selectionControls: CustomTextSelectionControls(
         items: items ??
             <CustomAnnotatableItem>[

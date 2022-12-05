@@ -15,7 +15,7 @@ void main() {
   testWidgets(
     "Test text annotation functionality.",
     (WidgetTester tester) async {
-      const LearningSpace dummyLearningSpace = LearningSpace();
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(0);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
       await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
@@ -57,15 +57,17 @@ void main() {
       const Offset endOffset = Offset(98, 210);
       const Color color = Colors.red;
       const String imageUrl = 'https://picsum.photos/id/1/700/400';
-      final Annotation annotation = viewModel.createImageAnnotation(
-        startOffset,
-        endOffset,
-        color,
-        imageUrl,
-        annotationContent,
-        firstPostModel,
-        0,
-      );
+      final Annotation annotation = viewModel
+          .createImageAnnotation(
+            startOffset,
+            endOffset,
+            color,
+            imageUrl,
+            annotationContent,
+            firstPostModel,
+            0,
+          )
+          .item2;
       expect(annotation.content, annotationContent);
       expect(annotation.startOffset, startOffset);
       expect(annotation.endOffset, endOffset);
@@ -74,7 +76,7 @@ void main() {
       await tester.pumpAndSettle();
       final Post foundPost =
           viewModel.posts.where((Post c) => c.id == firstPostModel.id).first;
-      expect(foundPost.annotations.length, 1);
+      expect(foundPost.annotations.length, greaterThanOrEqualTo(1));
       final Annotation foundAnnotation = foundPost.annotations.first;
       expect(foundAnnotation, annotation);
     },

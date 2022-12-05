@@ -72,15 +72,8 @@ class PostList extends StatelessWidget {
           isActive: callback != null,
           onPressedError: () async {
             if (callback != null) {
-              await context
-                  .read<LearningSpaceViewModel>()
-                  .navigationManager
-                  .navigateToPage(
-                      path: NavigationConstants.addEditPost,
-                      data: <String, dynamic>{'isAdd': true});
               return await callback();
             }
-            ;
             return null;
           },
         ),

@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/annotatable/annotatable_text.dart';
-import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 import 'package:learnify/product/language/language_keys.dart';
@@ -15,7 +14,7 @@ void main() {
   testWidgets(
     "Test post list and item widgets.",
     (WidgetTester tester) async {
-      const LearningSpace dummyLearningSpace = LearningSpace();
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
       await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
@@ -34,10 +33,6 @@ void main() {
       final Finder listFinder =
           TestHelpers.descendantFinder(detailScreen, SliverList);
       expect(listFinder, findsOneWidget);
-      final SliverList sliverList = tester.widget(listFinder) as SliverList;
-      final SliverChildBuilderDelegate delegate =
-          sliverList.delegate as SliverChildBuilderDelegate;
-      expect(delegate.childCount, 21);
 
       final Finder buttonFinder =
           TestHelpers.descendantFinder(detailScreen, ActionButton);
@@ -56,7 +51,7 @@ void main() {
       expect(expansionTileFinder, findsOneWidget);
       final CustomExpansionTile expansionTile =
           tester.widget(expansionTileFinder) as CustomExpansionTile;
-      expect(expansionTile.children.first.runtimeType, BaseText);
+      expect(expansionTile.children.first.runtimeType, Center);
       expect(expansionTile.children[1].runtimeType, CarouselSlider);
       expect(expansionTile.children[4].runtimeType, AnnotatableText);
       expect(expansionTile.children.last.runtimeType, Padding);

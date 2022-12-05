@@ -28,6 +28,13 @@ class ProfileViewModel extends BaseViewModel {
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
 
+  void setDefault() {
+    _canUpdate = false;
+    _email = null;
+    _selectedImage = null;
+    _initialUsername = null;
+  }
+
   @override
   void initViewModel() {
     _picker = ImagePicker();

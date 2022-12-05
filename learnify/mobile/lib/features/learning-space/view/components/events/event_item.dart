@@ -106,11 +106,10 @@ class EventItem extends StatelessWidget {
               style: context.bodySmall,
             )),
         PostList.createEditButton(
-          context,
-          isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
-          isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
-          isPassed ? null : viewModel.editEvent,
-        ),
+            context,
+            isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
+            isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
+            isPassed ? null : viewModel.editEvent),
       ],
     );
   }

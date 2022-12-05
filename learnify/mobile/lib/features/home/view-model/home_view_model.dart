@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:async/async.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
@@ -18,7 +20,7 @@ class HomeViewModel extends BaseViewModel {
   List<LearningSpace> _takenLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get takenLearningSpaces => _takenLearningSpaces;
 
-  final List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get friendLearningSpaces => _friendLearningSpaces;
 
   List<LearningSpace> _recommendedLearningSpaces = <LearningSpace>[];
@@ -34,6 +36,14 @@ class HomeViewModel extends BaseViewModel {
   bool _recommendedViewAll = false;
   bool get recommendedViewAll => _recommendedViewAll;
   List<Map<String, dynamic>> randomUsers = <Map<String, dynamic>>[];
+  void setDefault() {
+    _recommendedViewAll = false;
+    _friendViewAll = false;
+    _takenViewAll = false;
+    _recommendedLearningSpaces = [];
+    _takenLearningSpaces = [];
+    _friendLearningSpaces = [];
+  }
 
   @override
   void initViewModel() {
@@ -118,12 +128,12 @@ class HomeViewModel extends BaseViewModel {
         return "Requested type of list of LearningSpaces not found!";
       }
     }
-    await navigationManager.navigateToPage(
+    unawaited(navigationManager.navigateToPage(
         path: NavigationConstants.viewall,
         data: <String, dynamic>{
           'listOfLearningSpaces': expectedLearningSpaces,
           'learningSpacesType': learningSpacesType
-        });
+        }));
     return null;
   }
 
@@ -171,5 +181,46 @@ class HomeViewModel extends BaseViewModel {
     if (learningSpace != null) {
       _takenLearningSpaces.add(learningSpace);
     }
+  }
+
+  void updateLs(LearningSpace? ls) {
+    if (ls == null) return;
+    final int takenIndex =
+        _takenLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
+    if (takenIndex != -1) {
+      final List<LearningSpace> newList =
+          List<LearningSpace>.from(_takenLearningSpaces);
+      newList[takenIndex] = ls;
+      _takenLearningSpaces = newList;
+    }
+    final int friendIndex =
+        _friendLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
+    if (friendIndex != -1) {
+      final List<LearningSpace> newList =
+          List<LearningSpace>.from(_friendLearningSpaces);
+      newList[friendIndex] = ls;
+      _friendLearningSpaces = newList;
+    }
+    final int recommendedIndex = _recommendedLearningSpaces
+        .indexWhere((LearningSpace l) => l.id == ls.id);
+    if (recommendedIndex != -1) {
+      final List<LearningSpace> newList =
+          List<LearningSpace>.from(_recommendedLearningSpaces);
+      newList[recommendedIndex] = ls;
+      _recommendedLearningSpaces = newList;
+    }
+    notifyListeners();
+  }
+
+  void addLs(LearningSpace? ls) {
+    if (ls == null) return;
+    final int takenIndex =
+        _takenLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
+    if (takenIndex == -1) {
+      final List<LearningSpace> newList =
+          List<LearningSpace>.from(_takenLearningSpaces)..add(ls);
+      _takenLearningSpaces = newList;
+    }
+    notifyListeners();
   }
 }

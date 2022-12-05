@@ -44,7 +44,7 @@ class PostItem extends StatelessWidget {
           .copyWith(bottom: context.height * 1.7),
       title:
           MultiLineText('${itemIndex + 1}. ${post.title}', translated: false),
-      expandedCrossAxisAlignment: CrossAxisAlignment.center,
+      expandedCrossAxisAlignment: CrossAxisAlignment.start,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
       onExpansionChanged: (bool val) {
@@ -54,19 +54,30 @@ class PostItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        BaseText(TextKeys.clickToSeeImageAnnotations,
-            style: context.labelMedium),
+        Center(
+          child: BaseText(TextKeys.clickToSeeImageAnnotations,
+              style: context.labelMedium),
+        ),
         _carouselSlider(viewModel, post, context),
         _sliderIndicator(viewModel, post),
         context.sizedH(1.4),
         AnnotatableText(
-          key: PageStorageKey<String>(post.content ?? ''),
+          key: PageStorageKey<String>(post.content ?? 'asd'),
           content: post.content ?? '',
           annotateLabel: context.tr(TextKeys.annotate),
           annotateCallback: (int startIndex, int endIndex) async {
             await DialogBuilder(context).annotateDialog(
               post.id,
-              textCallback: viewModel.annotateText,
+              textCallback: (int startIndex, int endIndex, String annotation,
+                  String? postId) async {
+                final HomeViewModel viewModel = context.read<HomeViewModel>();
+                final Tuple3<LearningSpace?, Annotation?, String?> res =
+                    await context
+                        .read<LearningSpaceViewModel>()
+                        .annotateText(startIndex, endIndex, annotation, postId);
+                viewModel.updateLs(res.item1);
+                return Tuple2<Annotation?, String?>(res.item2, res.item3);
+              },
               startIndex: startIndex,
               endIndex: endIndex,
             );
@@ -79,7 +90,7 @@ class PostItem extends StatelessWidget {
           },
         ),
         PostList.createEditButton(context, TextKeys.editPost,
-            Icons.edit_outlined, viewModel.editPost),
+            Icons.edit_outlined, () async => viewModel.editPost(post)),
       ],
     );
   }

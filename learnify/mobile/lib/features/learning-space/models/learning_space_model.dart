@@ -26,6 +26,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         iconId: 5,
         categories: const <String>['music', 'string-instruments'],
         creator: id.toString(),
+        posts: [Post.dummy(0), Post.dummy(1)],
         createdAt: DateTime.now().subtract(const Duration(days: 3)),
         updatedAt: DateTime.now(),
       );
@@ -47,23 +48,24 @@ class LearningSpace extends BaseModel<LearningSpace> {
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
       );
 
-  LearningSpace copyWith(
-          {String? title,
-          String? description,
-          int? numParticipants,
-          int? iconId,
-          List<String>? categories,
-          String? creator,
-          List<User>? admins,
-          List<Post>? posts}) =>
+  LearningSpace copyWith({
+    String? title,
+    String? description,
+    int? numParticipants,
+    int? iconId,
+    List<String>? categories,
+    String? creator,
+    List<User>? admins,
+    List<Post>? posts,
+  }) =>
       LearningSpace(
-        id: id,
-        title: title,
-        description: description,
-        numParticipants: numParticipants,
-        iconId: iconId,
+        id: id ?? id,
+        title: title ?? this.title,
+        description: description ?? this.description,
+        numParticipants: numParticipants ?? this.numParticipants,
+        iconId: iconId ?? this.iconId,
         categories: categories ?? this.categories,
-        creator: creator,
+        creator: creator ?? this.creator,
         admins: admins ?? this.admins,
         posts: posts ?? this.posts,
         createdAt: createdAt,

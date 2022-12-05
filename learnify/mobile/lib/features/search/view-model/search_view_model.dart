@@ -143,6 +143,10 @@ class SearchViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+  void setDefault() {
+    _resultLearningSpaces = [];
+    didResultCome = false;
+}
 
   Future<UserPreview?> _userSearchRequest(String name) async {
     _resultUsers = _allUsers;

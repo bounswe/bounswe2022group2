@@ -41,9 +41,9 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
               (BuildContext context, int index, __) {
         switch (index) {
           case 1:
-            return SearchScreen();
+            return const SearchScreen();
           case 2:
-            return TakenLsScreen();
+            return const TakenLsScreen();
           case 3:
             return const ProfileScreen();
           default:
@@ -74,7 +74,7 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
             (BuildContext context, int index, __) => Visibility(
               visible: index == 3,
               child: BaseIconButton(
-                onPressed: CustomInterceptors.navigateToLogin,
+                onPressed: () => CustomInterceptors.navigateToLogin(context),
                 icon: Icons.logout_outlined,
                 color: context.lightActiveColor,
                 iconPadding: EdgeInsets.all(context.width * .4),

@@ -15,7 +15,7 @@ void main() {
   testWidgets(
     "Test text annotation functionality.",
     (WidgetTester tester) async {
-      const LearningSpace dummyLearningSpace = LearningSpace();
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
       await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
@@ -48,25 +48,22 @@ void main() {
       expect(annotatableText.onAnnotationClick, isNotNull);
       expect(annotatableText.annotateCallback, isNotNull);
       expect(annotatableText.annotateLabel, isNotNull);
-      expect(annotatableText.allAnnotations, isEmpty);
       final BuildContext context = tester.element(find.byType(Container).first);
       final LearningSpaceViewModel viewModel =
           context.read<LearningSpaceViewModel>();
       final Post firstPostModel = viewModel.posts.first;
       const String annotationContent = 'This is a great annotation.';
-      final Annotation annotation = viewModel.createTextAnnotation(
-          3,
-          annotatableText.content.length - 5,
-          annotationContent,
-          firstPostModel,
-          0);
-      expect(annotation.content, annotationContent);
-      expect(annotation.endIndex - annotation.startIndex,
+      final Annotation? annotation = viewModel
+          .createTextAnnotation(3, annotatableText.content.length - 5,
+              annotationContent, firstPostModel, 0)
+          .item2;
+      expect(annotation?.content, annotationContent);
+      expect((annotation?.endIndex ?? 0) - (annotation?.startIndex ?? 0),
           annotatableText.content.length - 8);
       await tester.pumpAndSettle();
       final Post foundPost =
           viewModel.posts.where((Post c) => c.id == firstPostModel.id).first;
-      expect(foundPost.annotations.length, 1);
+      expect(foundPost.annotations.length, greaterThanOrEqualTo(1));
       final Annotation foundAnnotation = foundPost.annotations.first;
       expect(foundAnnotation, annotation);
     },
