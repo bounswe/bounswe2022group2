@@ -40,7 +40,10 @@ export default function Post(props){
                     src={images}
                     alt="space"
                     style = {{width: "893.5px",
-                    height: "600px"}}
+                    height: "auto",
+                    maxWidth: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",}}
                 />
             <div className='space-5'></div>
                 <MDEditor.Markdown
