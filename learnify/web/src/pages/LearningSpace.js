@@ -1,10 +1,10 @@
 import React, { useEffect , useState } from 'react';
 import './style.css'
+import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import {useNavigate} from 'react-router-dom';
 import elipse from '../images/learning-space-illustration.svg';
-import {useLocation} from 'react-router-dom';
 import event from '../images/event.png';
 import people from '../images/download.png';
 import creator from '../images/creator.png';
@@ -14,13 +14,11 @@ import Post from '../components/Post';
 
 
 function LearningSpace() {
+
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
-    const location = useLocation();
-    var lsid = "638b318f3d70ded23d570220";
-    if(location.state!==null){
-    lsid = location.state.lsid ? location.state.lsid : "638b318f3d70ded23d570220"; 
-    }
+    const { lsid } = useParams();
+
 
     const [message, setMessage] = useState("");
 
@@ -134,9 +132,6 @@ function LearningSpace() {
             .catch((error) => {
                 console.log(error.message);
             })
-            }
-            if(location.state!==null){
-                console.log(location.state.lsid)
             }
         getLearningSpace();
     }, []);

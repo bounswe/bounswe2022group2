@@ -908,6 +908,19 @@ h1 {
     min-height: calc(100vh - 190px);
 }
 
+.lsbycategorypage-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-right: 36px;
+}
+
+.lsbycategorypage-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(100vh - 190px);
+}
+
 .counter__output {	
     font-size: 20px;	
     color: #000000;	
