@@ -4,13 +4,10 @@ import 'dart:math';
 import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
-import '../../../product/constants/icon_keys.dart';
-import '../../../product/constants/storage_keys.dart';
 import '../models/categories_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';

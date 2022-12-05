@@ -47,15 +47,16 @@ class LearningSpace extends BaseModel<LearningSpace> {
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
       );
 
-  LearningSpace copyWith(
-          {String? title,
-          String? description,
-          int? numParticipants,
-          int? iconId,
-          List<String>? categories,
-          String? creator,
-          List<User>? admins,
-          List<Post>? posts}) =>
+  LearningSpace copyWith({
+    String? title,
+    String? description,
+    int? numParticipants,
+    int? iconId,
+    List<String>? categories,
+    String? creator,
+    List<User>? admins,
+    List<Post>? posts,
+  }) =>
       LearningSpace(
         id: id,
         title: title,

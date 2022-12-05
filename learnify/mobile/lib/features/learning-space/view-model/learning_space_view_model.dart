@@ -61,14 +61,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   @override
   void initView() {
-    _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
-        _posts.length, (_) => GlobalKey<CustomExpansionTileState>());
-    _eventsExpansionTileKeys =
-        List<GlobalKey<CustomExpansionTileState>>.generate(
-            _events.length, (_) => GlobalKey<CustomExpansionTileState>());
-    _carouselControllers = List<CarouselController>.generate(
-        _posts.length, (_) => CarouselController());
-    _carouselPageIndexes = List<int>.generate(_posts.length, (_) => 0);
+    _initializeKeys();
   }
 
   @override
@@ -78,6 +71,27 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   void setDefault() {}
+
+  void setLearningSpace(LearningSpace? newSpace) {
+    _posts = newSpace?.posts ?? <Post>[];
+    // _posts = List<Post>.generate(20, Post.dummy);
+    _events = List<Event>.generate(20, Event.dummy);
+    _events
+      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
+      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+    _initializeKeys();
+  }
+
+  void _initializeKeys() {
+    _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
+        _posts.length, (_) => GlobalKey<CustomExpansionTileState>());
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            _events.length, (_) => GlobalKey<CustomExpansionTileState>());
+    _carouselControllers = List<CarouselController>.generate(
+        _posts.length, (_) => CarouselController());
+    _carouselPageIndexes = List<int>.generate(_posts.length, (_) => 0);
+  }
 
   void setCarouselPageIndex(int newIndex, int i) {
     if (newIndex == _carouselPageIndexes[i]) return;

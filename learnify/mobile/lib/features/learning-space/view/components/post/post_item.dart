@@ -44,7 +44,7 @@ class PostItem extends StatelessWidget {
           .copyWith(bottom: context.height * 1.7),
       title:
           MultiLineText('${itemIndex + 1}. ${post.title}', translated: false),
-      expandedCrossAxisAlignment: CrossAxisAlignment.center,
+      expandedCrossAxisAlignment: CrossAxisAlignment.start,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
       onExpansionChanged: (bool val) {
@@ -54,8 +54,10 @@ class PostItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        BaseText(TextKeys.clickToSeeImageAnnotations,
-            style: context.labelMedium),
+        Center(
+          child: BaseText(TextKeys.clickToSeeImageAnnotations,
+              style: context.labelMedium),
+        ),
         _carouselSlider(viewModel, post, context),
         _sliderIndicator(viewModel, post),
         context.sizedH(1.4),
@@ -79,7 +81,7 @@ class PostItem extends StatelessWidget {
           },
         ),
         PostList.createEditButton(context, TextKeys.editPost,
-            Icons.edit_outlined, viewModel.editPost),
+            Icons.edit_outlined, viewModel.editPost, isEdit:true),
       ],
     );
   }

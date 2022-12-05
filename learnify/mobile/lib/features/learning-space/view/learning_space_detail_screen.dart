@@ -49,7 +49,7 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           builder: (BuildContext context) => _builder(context, learningSpace),
           voidInit: (BuildContext context) => context
               .read<LearningSpaceViewModel>()
-              .learningSpace = learningSpace,
+              .setLearningSpace(learningSpace),
           resizeToAvoidBottomInset: false,
           key: key,
         );

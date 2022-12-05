@@ -54,7 +54,8 @@ class PostList extends StatelessWidget {
   }
 
   static Widget createEditButton(BuildContext context, String textKey,
-          IconData icon, ErrorHelper? callback) =>
+          IconData icon, ErrorHelper? callback,
+          {bool isEdit = false}) =>
       Padding(
         padding: EdgeInsets.only(
             top: context.height * 1.7,
@@ -72,12 +73,9 @@ class PostList extends StatelessWidget {
           isActive: callback != null,
           onPressedError: () async {
             if (callback != null) {
-              await context
-                  .read<LearningSpaceViewModel>()
-                  .navigationManager
-                  .navigateToPage(
-                      path: NavigationConstants.addEditPost,
-                      data: <String, dynamic>{'isAdd': true});
+              await NavigationManager.instance.navigateToPage(
+                  path: NavigationConstants.addEditPost,
+                  data: <String, dynamic>{'isAdd': !isEdit});
               return await callback();
             }
             return null;
