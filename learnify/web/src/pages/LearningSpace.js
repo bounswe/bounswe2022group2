@@ -12,6 +12,7 @@ import geolocation from '../images/location.png';
 import MDEditor from "@uiw/react-md-editor";
 import Post from '../components/Post';
 import Participants from '../components/Participants';
+import JoinLsButton from '../components/JoinLsButton';
 
 
 function LearningSpace() {
@@ -36,8 +37,6 @@ function LearningSpace() {
     const [imageUrl, setImageUrl] = useState("");
 
     const token = localStorage.getItem("token");
-
-    const navigate = useNavigate();
 
     const [forum, setForum]= useState(false);
     const [white, setWhite] = useState(false);
@@ -131,7 +130,6 @@ function LearningSpace() {
                         setPostArray(json.learning_spaces[0].posts);
                         setLsCreator(json.learning_spaces[0].creator);
                         setParticipants(json.learning_spaces[0].participants);
-                        setParticipants(participants.filter((item) => item !== lsCreator))
                     });
                     
                     return response.json();
@@ -201,7 +199,7 @@ function LearningSpace() {
                         <p>{description}</p>
                     </label>
                     <div className='space-12'></div>
-                    <button className="btn-orange" data-testid="forgotPassword">JOIN</button>
+                    <JoinLsButton title = {title} participants = {participants}/>
                     <div className='space-8'></div>
                     <a><img src={elipse} alt="elipse" height={360} /></a>
                     <div className='space-8'></div>
