@@ -52,7 +52,7 @@ function LearningSpaceDetailBox(props) {
     return (
         <div className="ls-detail-box-container" onClick={(e) => {
             e.preventDefault();
-            window.location.href='/'+props.url;
+            window.location.href='/learningspace/'+props.url;
             }}>
             <div className="ls-detail-box-icon">
                 <img src={icons[props.icon_id - 1]} className="ls-detail-box-icon" alt="ls-icon" height={240}/>
