@@ -351,13 +351,15 @@
     border: 2px solid #1746A2;
 }
 
-.absolute {
+.search-results-container {
     position: fixed;
     margin-top: 40px;
     width: 500px;
     background-color: #FAF9F6;
     overflow-y: visible;
     border-radius: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 .search-result-item {

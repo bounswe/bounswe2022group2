@@ -32,7 +32,7 @@ export default function NavBar(){
                 <div className="relative">
                     <input className='search-input-field' type="text" placeholder="Search learning spaces"  size={30} onChange={handleChange} value={searchInput}/>
 
-                    <div className="absolute">
+                    <div className="search-results-container">
                         {searchResults.map(result => (
                             <ul>
                                 <li className='search-result-item'><a href={`/learningspace/${result.id}`}>{result.title}</a></li>
