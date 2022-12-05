@@ -3,11 +3,8 @@ import './style.css'
 import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
-import {useNavigate} from 'react-router-dom';
 import elipse from '../images/learning-space-illustration.svg';
 import event from '../images/event.png';
-import people from '../images/download.png';
-import creator from '../images/creator.png';
 import geolocation from '../images/location.png';
 import MDEditor from "@uiw/react-md-editor";
 import Post from '../components/Post';
