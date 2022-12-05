@@ -55,6 +55,7 @@ class TextKeys {
   static const String takenLearnifies = "taken_learnifies";
   static const String friendLearnifies = "friend_learnifies";
   static const String recommendedLearnifies = "recommended_learnifies";
+  static const String recommendedUsers = "recommended_users";
   static const String annotate = "annotate";
   static const String annotateText = "annotate_text";
   static const String annotationHintText = "annotation_hint_text";
@@ -76,7 +77,7 @@ class TextKeys {
       "select_annotated_dialog_title";
   static const String takenCourses = "taken_courses";
   static const String friendCourses = "friend_courses";
-  static const String recommendedCourses = "recommended_courses";
+  static const String recommendedLearningSpaces = "recommended_learning_spaces";
   static const String clickToSeeImageAnnotations = "click_image_annotations";
   static const String createEvent = "create_event";
   static const String editEvent = "edit_event";

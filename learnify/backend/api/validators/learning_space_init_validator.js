@@ -42,6 +42,9 @@ export function validateEditPost_init(body) {
   const schema = Joi.object({
     ls_id: Joi.string().min(3).required(),
     post_id: Joi.string().min(3).required(),
+    title: Joi.string(),
+    content: Joi.string(),
+    images:Joi.array()
   });
   return schema.validate(body);
 }
