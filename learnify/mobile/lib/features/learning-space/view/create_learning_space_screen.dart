@@ -1,6 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/helpers/validators.dart';
 import '../../../../core/widgets/text-field/custom_text_form_field.dart';
@@ -11,7 +12,9 @@ import '../../../core/helpers/selector_helper.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
+import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
+import '../../../product/theme/light_theme.dart';
 import '../constants/widget_keys.dart';
 import '../models/learning_space_model.dart';
 import '../view-model/create_learning_space_view_model.dart';
@@ -39,12 +42,41 @@ class CreateLearningSpaceScreen extends BaseView<CreateLearningSpaceViewModel> {
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          _lsIcon,
+          context.sizedH(.8),
+          _iconSelector(),
           context.sizedH(2.6),
           const _LearningSpaceForm(),
           const _AddCategories(),
           context.sizedH(.8),
           _doneButton(isCreate),
         ],
+      );
+
+  static Widget get _lsIcon =>
+      SelectorHelper<int?, CreateLearningSpaceViewModel>().builder(
+        (_, CreateLearningSpaceViewModel model) => model.selectedImage,
+        (BuildContext context, int? selectedImage, __) {
+          ImageProvider imageProvider = AssetImage(IconKeys.lsIcons[13]);
+          if (selectedImage != null) {
+            final String image = IconKeys.lsIcons[selectedImage];
+            imageProvider = AssetImage(image);
+          }
+          return CircleAvatar(
+            foregroundImage: imageProvider,
+            radius: context.width * 12,
+            foregroundColor: LightAppTheme.lightBlue,
+            backgroundColor: LightAppTheme.lightBlue,
+          );
+        },
+      );
+
+  static Widget _iconSelector() =>
+      SelectorHelper<int?, CreateLearningSpaceViewModel>().builder(
+        (_, CreateLearningSpaceViewModel model) => model.selectedImage,
+        (BuildContext context, int? selectedImage, __) => IconButton(
+            onPressed: context.read<CreateLearningSpaceViewModel>().pickIcon,
+            icon: const Icon(Icons.photo)),
       );
 
   static Widget _doneButton(bool isCreate) =>

@@ -13,4 +13,5 @@ class NavigationConstants {
   static const String annotations = '/annotations';
   static const String createEditLearningSpace = '/create-edit-space';
   static const String chapterImage = '/chapter-image';
+  static const String addEditPost = "/add-edit-post";
 }

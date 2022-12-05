@@ -34,6 +34,7 @@ export function validatePost_init(body) {
     ls_id: Joi.string().min(3).required(),
     title: Joi.string().min(3).required(),
     content: Joi.string().min(6).required(),
+    images: Joi.array()
   });
   return schema.validate(body);
 }

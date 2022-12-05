@@ -3,26 +3,17 @@ import '../../learning-space/models/learning_space_model.dart';
 
 class GetLearningSpacesResponse extends BaseModel<GetLearningSpacesResponse> {
   const GetLearningSpacesResponse(
-      {this.resultMessage,
-      this.takenLearningSpaces = const <LearningSpace>[],
-      this.friendLearningSpaces = const <LearningSpace>[],
-      this.recommendedLearningSpaces = const <LearningSpace>[]});
+      {this.resultMessage, this.learningSpaces = const <LearningSpace>[]});
 
   factory GetLearningSpacesResponse.fromJson(Map<String, dynamic> json) =>
       GetLearningSpacesResponse(
-          resultMessage: BaseModel.getByType<String>(json['resultMessage']),
-          takenLearningSpaces: BaseModel.embeddedListFromJson<LearningSpace>(
-              json['takenls'], const LearningSpace()),
-          friendLearningSpaces: BaseModel.embeddedListFromJson<LearningSpace>(
-              json['friendls'], const LearningSpace()),
-          recommendedLearningSpaces:
-              BaseModel.embeddedListFromJson<LearningSpace>(
-                  json['recomendedls'], const LearningSpace()));
+        resultMessage: BaseModel.getByType<String>(json['resultMessage']),
+        learningSpaces: BaseModel.embeddedListFromJson<LearningSpace>(
+            json['learning_spaces'], const LearningSpace()),
+      );
 
   final String? resultMessage;
-  final List<LearningSpace> takenLearningSpaces;
-  final List<LearningSpace> friendLearningSpaces;
-  final List<LearningSpace> recommendedLearningSpaces;
+  final List<LearningSpace> learningSpaces;
 
   @override
   GetLearningSpacesResponse fromJson(Map<String, dynamic> json) =>
@@ -31,19 +22,13 @@ class GetLearningSpacesResponse extends BaseModel<GetLearningSpacesResponse> {
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
         'resultMessage': resultMessage,
-        'takenls':
-            BaseModel.embeddedListToJson<LearningSpace>(takenLearningSpaces),
-        'friendls':
-            BaseModel.embeddedListToJson<LearningSpace>(friendLearningSpaces),
-        'recomendedls': BaseModel.embeddedListToJson<LearningSpace>(
-            recommendedLearningSpaces)
+        'learning_spaces':
+            BaseModel.embeddedListToJson<LearningSpace>(learningSpaces),
       };
 
   @override
   List<Object?> get props => <Object?>[
         resultMessage,
-        takenLearningSpaces,
-        friendLearningSpaces,
-        recommendedLearningSpaces
+        learningSpaces,
       ];
 }

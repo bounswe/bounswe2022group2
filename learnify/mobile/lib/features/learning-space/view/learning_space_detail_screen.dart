@@ -34,11 +34,13 @@ import '../models/chapter_model.dart';
 import '../models/event.dart';
 import '../models/learning_space_model.dart';
 import '../view-model/learning_space_view_model.dart';
+import 'annotations_screen.dart';
 
 part 'components/chapter/chapter_item.dart';
 part 'components/chapter/chapter_list.dart';
 part 'components/events/event_item.dart';
 part 'components/events/events_list.dart';
+part 'components/forum_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
@@ -81,28 +83,13 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(
-              vertical: context.height * .6, horizontal: context.width * 2),
-          sliver: tabKey == TextKeys.chapters
-              ? const ChapterList()
-              : (tabKey == TextKeys.events
-                  ? const EventsList()
-                  : SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (_, int i) => Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: context.height * .3),
-                                child: const Text('i')),
-                            const CustomDivider(),
-                          ],
-                        ),
-                        childCount: 12,
-                      ),
-                    )),
-        ),
+            padding: EdgeInsets.symmetric(
+                vertical: context.height * .6, horizontal: context.width * 2),
+            sliver: tabKey == TextKeys.chapters
+                ? const ChapterList()
+                : (tabKey == TextKeys.events
+                    ? const EventsList()
+                    : const ForumList())),
       ];
 
   static List<Widget> _headerSliverBuilder(
@@ -125,6 +112,7 @@ class MySliverOverlayAbsorber extends StatefulWidget {
 
 class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
   late Size wsize = Size.fromHeight(context.responsiveSize * 2);
+  late Size iconSize = Size.fromHeight(context.responsiveSize * 2);
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +129,17 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Image.asset(IconKeys.learnIllustration,
-                    width: context.width * 60),
+                MeasuredSize(
+                  onChange: (Size size) {
+                    if (!mounted) return;
+                    setState(() {
+                      iconSize = size;
+                    });
+                  },
+                  child: Image.asset(
+                      IconKeys.lsIcons[tempLearningSpace?.iconId ?? 0],
+                      width: context.width * 60),
+                ),
                 context.sizedH(1),
                 MeasuredSize(
                     onChange: (Size size) {
@@ -178,9 +175,13 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                     context
                                         .read<LearningSpaceViewModel>()
                                         .enrollLearningSpace();
+                                    context
+                                        .read<HomeViewModel>()
+                                        .addToTakenLearningSpaces(
+                                            tempLearningSpace);
                                   },
                                   child: const Text(
-                                    'Enroll',
+                                    TextKeys.enroll,
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 15,
@@ -247,7 +248,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
         ),
         floating: true,
         pinned: true,
-        expandedHeight: context.height * 26 + wsize.height,
+        expandedHeight: context.height * 8 + iconSize.height + wsize.height,
         forceElevated: widget.innerBoxIsScrolled,
         bottom: ColoredTabBar(
           color: context.primary,

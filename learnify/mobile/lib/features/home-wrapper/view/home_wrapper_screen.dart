@@ -41,7 +41,7 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
               (BuildContext context, int index, __) {
         switch (index) {
           case 1:
-            return const SearchScreen();
+            return SearchScreen();
           case 2:
             return TakenLsScreen();
           case 3:
