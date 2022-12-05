@@ -35,24 +35,35 @@ class HomeScreen extends BaseView<HomeViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-              height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.takenLearningSpaces,
-                  context.read<HomeViewModel>().takenLearningSpaces),
-            ),
-            context.sizedH(3),
-            SizedBox(
-              height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.friendLearningSpaces,
-                  context.read<HomeViewModel>().friendLearningSpaces),
-            ),
-            context.sizedH(3),
-            SizedBox(
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.takenLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
                 height: context.height * 23,
                 child: _coursePreviewList(
-                    context,
-                    TextKeys.recommendedLearningSpaces,
-                    context.read<HomeViewModel>().recommendedLearningSpaces)),
+                    context, TextKeys.takenLearningSpaces, list),
+              ),
+            ),
+            context.sizedH(3),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.friendLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.friendLearningSpaces, list),
+              ),
+            ),
+            context.sizedH(3),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.recommendedLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.recommendedLearningSpaces, list),
+              ),
+            ),
           ],
         ),
       );
