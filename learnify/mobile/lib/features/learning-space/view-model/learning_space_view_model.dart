@@ -28,7 +28,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<Post> _posts = <Post>[];
   List<Post> get posts => _posts;
-  final List<Event> _events = <Event>[];
+  List<Event> _events = <Event>[];
   List<Event> get events => _events;
   List<GlobalKey<CustomExpansionTileState>> _expansionTileKeys =
       <GlobalKey<CustomExpansionTileState>>[];
@@ -48,9 +48,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _lsService = LSService.instance;
-    _posts = learningSpace!.posts;
+    _posts = learningSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
-    // _events = List<Event>.generate(20, Event.dummy);
+    _events = List<Event>.generate(20, Event.dummy);
     _events
       ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
       ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
