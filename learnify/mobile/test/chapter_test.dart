@@ -13,7 +13,7 @@ import 'test_helpers.dart';
 
 void main() {
   testWidgets(
-    "Test chapter list and item widgets.",
+    "Test post list and item widgets.",
     (WidgetTester tester) async {
       const LearningSpace dummyLearningSpace = LearningSpace();
       final LearningSpaceDetailScreen detailScreen =
@@ -27,9 +27,9 @@ void main() {
           tester.widget(tabFinder) as DefaultTabController;
       expect(tabController.initialIndex, 0);
 
-      final Finder chapterListFinder =
-          TestHelpers.descendantFinder(detailScreen, ChapterList);
-      expect(chapterListFinder, findsOneWidget);
+      final Finder postListFinder =
+          TestHelpers.descendantFinder(detailScreen, PostList);
+      expect(postListFinder, findsOneWidget);
 
       final Finder listFinder =
           TestHelpers.descendantFinder(detailScreen, SliverList);
@@ -44,16 +44,15 @@ void main() {
       expect(buttonFinder, findsOneWidget);
       final ActionButton button = tester.widget(buttonFinder) as ActionButton;
       expect(button.isActive, true);
-      expect(button.text, TextKeys.createChapter);
+      expect(button.text, TextKeys.createPost);
 
-      final Finder chapterFinder =
-          TestHelpers.descendantFinder(detailScreen, ChapterItem);
-      final ChapterItem firstChapter =
-          tester.widget(chapterFinder.first) as ChapterItem;
-      expect(firstChapter.itemIndex, 0);
+      final Finder postFinder =
+          TestHelpers.descendantFinder(detailScreen, PostItem);
+      final PostItem firstPost = tester.widget(postFinder.first) as PostItem;
+      expect(firstPost.itemIndex, 0);
 
       final Finder expansionTileFinder =
-          TestHelpers.descendantFinder(firstChapter, CustomExpansionTile);
+          TestHelpers.descendantFinder(firstPost, CustomExpansionTile);
       expect(expansionTileFinder, findsOneWidget);
       final CustomExpansionTile expansionTile =
           tester.widget(expansionTileFinder) as CustomExpansionTile;
@@ -65,7 +64,7 @@ void main() {
       expect(padding.child.runtimeType, ActionButton);
       final ActionButton? editButton = padding.child as ActionButton?;
       expect(editButton?.isActive, true);
-      expect(editButton?.text, TextKeys.editChapter);
+      expect(editButton?.text, TextKeys.editPost);
     },
   );
 }

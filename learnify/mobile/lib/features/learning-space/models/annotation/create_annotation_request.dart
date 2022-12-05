@@ -52,7 +52,8 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
 
   factory AnnotationTarget.fromJson(Map<String, dynamic> json) =>
       AnnotationTarget(
-        id: BaseModel.getByType<String>(json['id']),
+        id: BaseModel.getByType<String>(json['_id']) ??
+            BaseModel.getByType<String>(json['id']),
         type: BaseModel.getWithDefault<String>(json['type'], 'Image'),
         format: BaseModel.getByType<String>(json['format']),
         selector: BaseModel.embeddedModelFromJson<AnnotationSelector>(
@@ -72,7 +73,7 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        if (id != null) 'id': id,
+        if (id != null) '_id': id,
         if (format != null) 'type': 'Image',
         if (format != null) 'format': format,
         if (selector != null)

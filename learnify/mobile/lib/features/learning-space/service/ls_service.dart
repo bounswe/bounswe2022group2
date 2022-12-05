@@ -3,10 +3,12 @@ import 'dart:core';
 import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/any_model.dart';
+import '../models/add_post_request_model.dart';
 import '../models/annotation/create_annotation_request.dart';
 import '../models/categories_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
+import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../view/create_learning_space_screen.dart';
@@ -27,6 +29,8 @@ class LSService extends ILSService {
   static const String _categories = '/categories';
   static const String _enrollLS = '/learningspace/enroll';
   static const String _createAnnotation = '/learningspace/annotation';
+  static const String _addPost = '/learningSpace/post';
+  static const String _editPost = '/learningSpace/edit/post';
 
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
 
@@ -75,4 +79,20 @@ class LSService extends ILSService {
         type: RequestTypes.post,
         body: body,
       );
+
+  @override
+  Future<IResponseModel<EnrollLSResponse>> addPost(
+          AddPostRequestModel body) async =>
+      networkManager.send<AddPostRequestModel, EnrollLSResponse>(_addPost,
+          parseModel: const EnrollLSResponse(),
+          type: RequestTypes.post,
+          body: body);
+
+  @override
+  Future<IResponseModel<EnrollLSResponse>> editPost(
+          EditPostRequestModel body) async =>
+      networkManager.send<EditPostRequestModel, EnrollLSResponse>(_editPost,
+          parseModel: const EnrollLSResponse(),
+          type: RequestTypes.put,
+          body: body);
 }

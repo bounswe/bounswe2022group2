@@ -19,7 +19,7 @@ class EventsList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
-            ? ChapterList.createEditButton(context, TextKeys.createEvent,
+            ? PostList.createEditButton(context, TextKeys.createEvent,
                 Icons.event_available_outlined, viewModel.createEvent)
             : Column(
                 mainAxisSize: MainAxisSize.min,
@@ -30,7 +30,7 @@ class EventsList extends StatelessWidget {
                     child: EventItem(
                       itemIndex: i - 1,
                       callback: (int itemIndex) =>
-                          ChapterList.updateExpansions(itemIndex, keys),
+                          PostList.updateExpansions(itemIndex, keys),
                       expansionTileKey: keys[i - 1],
                     ),
                   ),

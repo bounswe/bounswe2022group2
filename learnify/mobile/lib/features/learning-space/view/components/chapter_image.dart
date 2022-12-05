@@ -13,16 +13,16 @@ import '../../../../product/language/language_keys.dart';
 import '../../models/annotation/annotation_model.dart';
 import '../../view-model/learning_space_view_model.dart';
 
-class ChapterImage extends StatelessWidget {
-  const ChapterImage({
+class PostImage extends StatelessWidget {
+  const PostImage({
     required this.imageUrl,
     required this.allAnnotations,
-    required this.chapterId,
+    required this.postId,
     Key? key,
   }) : super(key: key);
   final String imageUrl;
   final List<Annotation> allAnnotations;
-  final String chapterId;
+  final String postId;
   static DefaultAppBar _appBar(BuildContext context) => DefaultAppBar(
         size: context.height * 6,
         showBack: true,
@@ -38,7 +38,7 @@ class ChapterImage extends StatelessWidget {
         .where((Annotation a) => a.isImage && a.imageUrl == imageUrl)
         .toList();
     return Scaffold(
-      appBar: ChapterImage._appBar(context),
+      appBar: PostImage._appBar(context),
       body: Center(
         child: AnnotatableImage(
           networkUrl: imageUrl,
@@ -64,7 +64,7 @@ class ChapterImage extends StatelessWidget {
             final Offset foundEnd =
                 Offset(max(start.dx, end.dx), max(start.dy, end.dy));
             return DialogBuilder(context).annotateDialog(
-              chapterId,
+              postId,
               imageCallback:
                   context.read<LearningSpaceViewModel>().annotateImage,
               startOffset: foundStart,

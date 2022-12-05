@@ -1,9 +1,17 @@
+import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../core/base/view-model/base_view_model.dart';
+import '../../../core/managers/network/models/l_response_model.dart';
+import '../models/add_post_request_model.dart';
+import '../models/edit_post_request_model.dart';
+import '../models/enroll_ls_response_model.dart';
+import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
+import '../service/ls_service.dart';
 
 class AddPostViewModel extends BaseViewModel {
+  late final LSService _lsService;
   Post? post;
 
   late TextEditingController _titleController;
@@ -19,7 +27,9 @@ class AddPostViewModel extends BaseViewModel {
   bool get canUpdate => _canUpdate;
 
   @override
-  void initViewModel() {}
+  void initViewModel() {
+    _lsService = LSService.instance;
+  }
 
   @override
   void disposeViewModel() {}
@@ -53,5 +63,56 @@ class AddPostViewModel extends BaseViewModel {
 
   void _setDefault() {
     _canUpdate = false;
+  }
+
+  Future<String?> addPost(String? lsId) async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_addPostRequest(lsId));
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _addPostRequest(String? lsId) async {
+    final AddPostRequestModel request = AddPostRequestModel(
+      lsId: lsId,
+      title: _titleController.text,
+      content: _contentController.text,
+    );
+    final IResponseModel<EnrollLSResponse> response =
+        await _lsService.addPost(request);
+    if (response.hasError) {
+      return response.error?.errorMessage;
+    }
+    final LearningSpace? ls = response.data?.learningSpace;
+    if (ls == null) {
+      return "Learning Space not found";
+    }
+    return null;
+  }
+
+  Future<String?> editPost(String? lsId) async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_editPostRequest(lsId));
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _editPostRequest(String? lsId) async {
+    final EditPostRequestModel request = EditPostRequestModel(
+      lsId: lsId,
+      postId: post?.id,
+      title: _titleController.text,
+      content: _contentController.text,
+    );
+    final IResponseModel<EnrollLSResponse> response =
+        await _lsService.editPost(request);
+    if (response.hasError) {
+      return response.error?.errorMessage;
+    }
+    final LearningSpace? ls = response.data?.learningSpace;
+    if (ls == null) {
+      return "Learning Space not found";
+    }
+    return null;
   }
 }

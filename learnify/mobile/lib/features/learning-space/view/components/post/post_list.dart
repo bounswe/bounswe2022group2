@@ -1,7 +1,7 @@
 part of '../../learning_space_detail_screen.dart';
 
-class ChapterList extends StatelessWidget {
-  const ChapterList({Key? key}) : super(key: key);
+class PostList extends StatelessWidget {
+  const PostList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ChapterList extends StatelessWidget {
             .listenValue(
                 (LearningSpaceViewModel model) =>
                     Tuple2<int, List<GlobalKey<CustomExpansionTileState>>>(
-                        model.chapters.length, model.expansionTileKeys),
+                        model.posts.length, model.expansionTileKeys),
                 context);
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
@@ -19,9 +19,9 @@ class ChapterList extends StatelessWidget {
         (_, int i) => i == 0
             ? createEditButton(
                 context,
-                TextKeys.createChapter,
+                TextKeys.createPost,
                 Icons.add_outlined,
-                context.read<LearningSpaceViewModel>().createChapter,
+                context.read<LearningSpaceViewModel>().createPost,
               )
             : Column(
                 mainAxisSize: MainAxisSize.min,
@@ -29,7 +29,7 @@ class ChapterList extends StatelessWidget {
                   Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: context.height * .3),
-                    child: ChapterItem(
+                    child: PostItem(
                       itemIndex: i - 1,
                       callback: (int itemIndex) =>
                           updateExpansions(itemIndex, keys),

@@ -37,7 +37,8 @@ class Event extends BaseModel<Event> {
       );
 
   factory Event.fromJson(Map<String, dynamic> json) => Event(
-        id: BaseModel.getByType<String>(json['id']),
+        id: BaseModel.getByType<String>(json['_id']) ??
+            BaseModel.getByType<String>(json['id']),
         date: BaseModel.getWithDefault<DateTime>(json['date'], DateTime.now()),
         description: BaseModel.getByType<String>(json['description']),
         title: BaseModel.getByType<String>(json['title']),
@@ -104,7 +105,7 @@ class Event extends BaseModel<Event> {
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        'id': id,
+        '_id': id,
         'date': BaseModel.primitiveToJson<DateTime>(date),
         'description': description,
         'duration': duration,

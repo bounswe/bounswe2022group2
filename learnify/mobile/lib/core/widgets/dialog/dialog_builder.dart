@@ -58,7 +58,7 @@ class DialogBuilder {
 
   /// Annotate dialog
   Future<Annotation?> annotateDialog(
-    String? chapterId, {
+    String? postId, {
     AnnotateTextDialogCallback? textCallback,
     AnnotateImageDialogCallback? imageCallback,
     int? startIndex,
@@ -109,10 +109,7 @@ class DialogBuilder {
                 final NavigatorState navigator = Navigator.of(context);
                 if (textCallback != null) {
                   final Tuple2<Annotation?, String?> res = await textCallback(
-                      startIndex ?? 0,
-                      endIndex ?? 0,
-                      annotationText,
-                      chapterId);
+                      startIndex ?? 0, endIndex ?? 0, annotationText, postId);
                   navigator.pop(res.item1);
                   return res.item2;
                 } else if (imageCallback != null && imageUrl != null) {
@@ -120,7 +117,7 @@ class DialogBuilder {
                     startOffset ?? Offset.zero,
                     endOffset ?? Offset.zero,
                     annotationText,
-                    chapterId,
+                    postId,
                     color ?? Colors.white,
                     imageUrl,
                   );

@@ -18,7 +18,7 @@ class HomeViewModel extends BaseViewModel {
   List<LearningSpace> _takenLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get takenLearningSpaces => _takenLearningSpaces;
 
-  List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
+  final List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get friendLearningSpaces => _friendLearningSpaces;
 
   List<LearningSpace> _recommendedLearningSpaces = <LearningSpace>[];
@@ -140,9 +140,9 @@ class HomeViewModel extends BaseViewModel {
     return false;
   }
 
-  bool getIsEnrolled(String id) {
+  bool getIsEnrolled(String? title) {
     for (int i = 0; i < _takenLearningSpaces.length; i++) {
-      if (_takenLearningSpaces[i].id == id) {
+      if (_takenLearningSpaces[i].title == title) {
         return true;
       }
     }
