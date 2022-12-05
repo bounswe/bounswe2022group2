@@ -1,13 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:learnify/core/managers/navigation/navigation_manager.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
-import 'package:learnify/features/view-learning-spaces/view/taken_ls_screen.dart';
 import 'package:learnify/features/view-learning-spaces/view/view_all_list.dart';
-import 'package:learnify/product/constants/navigation_constants.dart';
 
 import 'test_helpers.dart';
 
