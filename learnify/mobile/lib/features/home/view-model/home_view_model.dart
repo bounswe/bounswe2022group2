@@ -119,11 +119,11 @@ class HomeViewModel extends BaseViewModel {
       //return resp.error?.errorMessage;
       expectedLearningSpaces = takenLearningSpaces;
     } else {
-      if (learningSpacesType == TextKeys.takenLearnifies) {
+      if (learningSpacesType == TextKeys.takenLearningSpaces) {
         expectedLearningSpaces = _takenLearningSpaces;
-      } else if (learningSpacesType == TextKeys.friendLearnifies) {
+      } else if (learningSpacesType == TextKeys.friendLearningSpaces) {
         expectedLearningSpaces = _friendLearningSpaces;
-      } else if (learningSpacesType == TextKeys.recommendedLearnifies) {
+      } else if (learningSpacesType == TextKeys.recommendedLearningSpaces) {
         expectedLearningSpaces = _recommendedLearningSpaces;
       } else {
         return "Requested type of list of LearningSpaces not found!";
@@ -139,13 +139,13 @@ class HomeViewModel extends BaseViewModel {
   }
 
   bool getViewAllStatus(String learningSpacesType) {
-    if (learningSpacesType == TextKeys.takenLearnifies) {
+    if (learningSpacesType == TextKeys.takenLearningSpaces) {
       return _takenViewAll;
     }
-    if (learningSpacesType == TextKeys.friendLearnifies) {
+    if (learningSpacesType == TextKeys.friendLearningSpaces) {
       return _friendViewAll;
     }
-    if (learningSpacesType == TextKeys.recommendedLearnifies) {
+    if (learningSpacesType == TextKeys.recommendedLearningSpaces) {
       return _recommendedViewAll;
     }
     return false;

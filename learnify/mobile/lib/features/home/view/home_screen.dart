@@ -11,7 +11,6 @@ import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../../learning-space/models/learning_space_model.dart';
-import '../../learning-space/view-model/learning_space_view_model.dart';
 import '../view-model/home_view_model.dart';
 
 part '../components/course_preview.dart';
@@ -38,13 +37,13 @@ class HomeScreen extends BaseView<HomeViewModel> {
           children: <Widget>[
             SizedBox(
               height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.takenLearnifies,
+              child: _coursePreviewList(context, TextKeys.takenLearningSpaces,
                   context.read<HomeViewModel>().takenLearningSpaces),
             ),
             context.sizedH(3),
             SizedBox(
               height: context.height * 23,
-              child: _coursePreviewList(context, TextKeys.friendLearnifies,
+              child: _coursePreviewList(context, TextKeys.friendLearningSpaces,
                   context.read<HomeViewModel>().friendLearningSpaces),
             ),
             context.sizedH(3),
@@ -52,7 +51,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
                 height: context.height * 23,
                 child: _coursePreviewList(
                     context,
-                    TextKeys.recommendedLearnifies,
+                    TextKeys.recommendedLearningSpaces,
                     context.read<HomeViewModel>().recommendedLearningSpaces)),
           ],
         ),
