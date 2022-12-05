@@ -314,7 +314,7 @@ export default function Post(props){
                     <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
                 </div>
                 <div className='ls-button-container-alt3'>
-                    <a href="/author" className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></a>
+                    <label className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></label>
                 </div>
                     {creator}
                 <div className='ls-button-container-alt2'>
