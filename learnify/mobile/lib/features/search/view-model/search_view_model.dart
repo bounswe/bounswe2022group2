@@ -1,12 +1,13 @@
 import 'package:async/async.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../home/service/I_home_service.dart';
-import '../../home/service/home_service.dart';
+
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../home/model/get_learning_spaces_response_model.dart';
+import '../../home/service/I_home_service.dart';
+import '../../home/service/home_service.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/search_response_model.dart';
 import '../service/i_search_service.dart';
@@ -70,7 +71,6 @@ class SearchViewModel extends BaseViewModel {
     _searchController = TextEditingController();
     _searchController.addListener(_controllerListener);
     _getRecommendedLearningSpaces();
-    _setDefault();
   }
 
   @override
@@ -78,11 +78,8 @@ class SearchViewModel extends BaseViewModel {
     _searchController.dispose();
     _resultLearningSpaces = <LearningSpace>[];
     _recommendedLearningSpaces = <LearningSpace>[];
-    _setDefault();
     super.disposeView();
   }
-
-  void _setDefault() {}
 
   void clearResults() {
     _searchController.clear();
@@ -143,10 +140,11 @@ class SearchViewModel extends BaseViewModel {
     notifyListeners();
     return null;
   }
+
   void setDefault() {
     _resultLearningSpaces = [];
     didResultCome = false;
-}
+  }
 
   Future<UserPreview?> _userSearchRequest(String name) async {
     _resultUsers = _allUsers;

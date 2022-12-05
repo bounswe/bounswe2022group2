@@ -49,11 +49,10 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
+
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
-    _eventsExpansionTileKeys = <GlobalKey<CustomExpansionTileState>>[];
-    _expansionTileKeys = <GlobalKey<CustomExpansionTileState>>[];
     _events = <Event>[];
     _posts = <Post>[];
     _learningSpace = null;
@@ -76,12 +75,6 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initView() {
     _initializeKeys();
-  }
-
-  @override
-  void disposeView() {
-    setDefault();
-    super.disposeView();
   }
 
   void setLearningSpace(LearningSpace? newSpace) {

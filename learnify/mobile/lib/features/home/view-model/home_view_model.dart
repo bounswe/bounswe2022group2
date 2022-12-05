@@ -36,6 +36,7 @@ class HomeViewModel extends BaseViewModel {
   bool _recommendedViewAll = false;
   bool get recommendedViewAll => _recommendedViewAll;
   List<Map<String, dynamic>> randomUsers = <Map<String, dynamic>>[];
+
   void setDefault() {
     _recommendedViewAll = false;
     _friendViewAll = false;

@@ -4,7 +4,7 @@ import '../models/annotation/annotation_model.dart';
 class AnnotationsViewModel extends BaseViewModel {
   late String _annotationText;
   String get annotationText => _annotationText;
-  List<Annotation> _annotations = <Annotation>[];
+  final List<Annotation> _annotations = <Annotation>[];
   List<Annotation> get annotations => _annotations;
 
   @override
@@ -17,12 +17,4 @@ class AnnotationsViewModel extends BaseViewModel {
 
   @override
   void initView() {}
-
-  @override
-  void disposeView() {
-    setDefault();
-    super.disposeView();
-  }
-
-  void setDefault() {}
 }
