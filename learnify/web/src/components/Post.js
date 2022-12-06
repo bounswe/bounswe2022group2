@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import up from '../images/chevron-up-solid.svg';
-import down from '../images/chevron-down-solid.svg';
-import comment from '../images/comment-regular.svg';
-import edit from '../images/pen-to-square-regular.svg';
-import trash from '../images/trash-can-regular.svg';
-import author from '../images/create2.svg';
-import MDEditor from "@uiw/react-md-editor";
 import "@recogito/recogito-js/dist/recogito.min.css";
 import {useEffect, useRef } from "react";
 import { Recogito } from "@recogito/recogito-js";
 import { Annotorious } from "@recogito/annotorious";
 import "@recogito/annotorious/dist/annotorious.min.css";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import MDEditor from "@uiw/react-md-editor";
 
 function TextInterface({
     classes,
@@ -91,7 +86,9 @@ export default function Post(props){
   // Init Annotorious when the component
   // mounts, and keep the current 'anno'
   // instance in the application state
+  
   useEffect(() => {
+    if(images[0] != ""){
     let annotorious = null;
 
     if (imgEl.current) {
@@ -203,12 +200,12 @@ export default function Post(props){
 
     // Cleanup: destroy current instance
     return () => annotorious.destroy();
-  }, []);
+}}, []);
 
   useEffect(() => {
     console.log("andso", anno?.getImageSnippetById());
   }, [watch]);
-
+  
   // Toggles current tool + button label
   const toggleTool = () => {
     if (tool === "rect") {
@@ -219,6 +216,9 @@ export default function Post(props){
       anno.setDrawingTool("rect");
     }
   };
+
+
+  
 
     const [i, setI] = useState(0);
   const [url, setUrl] = useState();
@@ -239,91 +239,91 @@ export default function Post(props){
   const handleCreateAnnotation = (annotation) => {
     console.log("current URL", url);
   };
-    
-    const title = props.myPost.title;
-    const postId = props.myPost._id;
-    const creator = props.myPost.creator;
-    const content = props.myPost.content;
-    const images = props.myPost.images;
 
-    const [upCounter, setUpCounter] = useState(0);
-    const [downCounter, setDownCounter] = useState(0);
-    const [deletePost, setDeletePost] = useState(false);
+  const title = props.myPost.title;
+  const postId = props.myPost._id;
+  const creator = props.myPost.creator;
+  const content = props.myPost.content;
+  const images = props.myPost.images;
 
-    const [postTitle, setPostTitle] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+  const [upCounter, setUpCounter] = useState(0);
+  const [downCounter, setDownCounter] = useState(0);
+  const [deletePost, setDeletePost] = useState(false);
 
-    const increaseUp = () => {
-        setUpCounter(count => count + 1);
-    };
-    const increaseDown = () => {
-        setDownCounter(count => count + 1);
-    };
-    const deleteThePost = () => {
-        setDeletePost(current => !current);
-    };
+  const [postTitle, setPostTitle] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
-    const [editPost, setEditPost] = useState(false);
+  const increaseUp = () => {
+      setUpCounter(count => count + 1);
+  };
+  const increaseDown = () => {
+      setDownCounter(count => count + 1);
+  };
+  const deleteThePost = () => {
+      setDeletePost(current => !current);
+  };
 
-    const editThePost = () => {
-        setValue(content);
-        setEditPost(current => !current);
-    };
+  const [editPost, setEditPost] = useState(false);
 
-    const [value, setValue] = useState("");
+  const editThePost = () => {
+      setValue(content);
+      setEditPost(current => !current);
+  };
 
-    const token = localStorage.getItem("token");
+  const [value, setValue] = useState("");
 
-    const [message, setMessage] = useState("");
+  const token = localStorage.getItem("token");
 
-    const lsid = props.my_lsid;
-    
-    const handleSubmitEdit  = () => {
-        editExPost(lsid, postId, postTitle, value, imageUrl);
-    }
-    
-    const editExPost = async (lsid, postId, postTitle, final, imageUrl) => {
-        console.log(lsid)
-        console.log(postId)
-        console.log(postTitle)
-        console.log(final)
-        console.log(imageUrl)
-        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/post`, {
-            method: "PUT",
-            body: JSON.stringify({
-                ls_id: lsid,
-                post_id: postId,
-                title: postTitle,
-                content: final,
-                images: [imageUrl],
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': `${token}` , 
-            },
-        })
-            .then((response) => {
-                if (response.status === 200) {
-                    console.log("successfull")
-                    
-                    response.json().then( json => {
-                        console.log(json.learningSpace.id)
-                    });
-                    console.log("Learning Space Post edited successfully!");
-                    window.location.reload();
-                } else {
-                    setMessage("Post could not be edited!");
-                    response.json().then( json => {
-                        console.log(json.resultMessage);
-                    });
-                }
-            }
-            )
-            .catch((error) => {
-                console.log(error);
-            }
-            );
-    };
+  const [message, setMessage] = useState("");
+
+  const lsid = props.my_lsid;
+  
+  const handleSubmitEdit  = () => {
+      editExPost(lsid, postId, postTitle, value, imageUrl);
+  }
+  
+  const editExPost = async (lsid, postId, postTitle, final, imageUrl) => {
+      console.log(lsid)
+      console.log(postId)
+      console.log(postTitle)
+      console.log(final)
+      console.log(imageUrl)
+      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/post`, {
+          method: "PUT",
+          body: JSON.stringify({
+              ls_id: lsid,
+              post_id: postId,
+              title: postTitle,
+              content: final,
+              images: [imageUrl],
+          }),
+          headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+              'Authorization': `${token}` , 
+          },
+      })
+          .then((response) => {
+              if (response.status === 200) {
+                  console.log("successfull")
+                  
+                  response.json().then( json => {
+                      console.log(json.learningSpace.id)
+                  });
+                  console.log("Learning Space Post edited successfully!");
+                  window.location.reload();
+              } else {
+                  setMessage("Post could not be edited!");
+                  response.json().then( json => {
+                      console.log(json.resultMessage);
+                  });
+              }
+          }
+          )
+          .catch((error) => {
+              console.log(error);
+          }
+          );
+  };
 
     return(
     <div>
@@ -333,10 +333,7 @@ export default function Post(props){
                 {title}
             </label>
             <div className='space-5'></div>
-            <div>
-         <div>
-      </div>
-            {(images[0] != "") && <div>
+              {images[0] != "" && <div>
                 <img
                     ref={imgEl}
                     src={images}
@@ -347,10 +344,9 @@ export default function Post(props){
                     objectFit: "cover",
                     objectPosition: "center",}}
                 />
-                <div className='space-5'></div>
+            <div className='space-5'></div>
             </div>
         }
-        </div>
             <div style={{ whiteSpace: "pre-wrap" }} className="">
                 <TextInterface
                     classes={classes}
@@ -360,37 +356,59 @@ export default function Post(props){
                 />
             </div>
             <div className='space-5'></div>
-            <div className='ls-buttons'>
-                <div className='ls-button-container2'>
-                    <button className='ls-button'><img src={up} alt="Learnify Logo" height={20} onClick={increaseUp}/></button>
+            <div className='post-buttons-contaier'>
+                <div className='post-box-left'>
+                    <div className='ls-button-container2'>
+                        <button className='post-upvote-button'>
+                            <FontAwesomeIcon icon={solid('caret-up')} color="green" onClick={increaseUp}/>
+                        </button>
+                    </div>
+                    <div className='post-container-display-item'>
+                        <label className="counter__output">{upCounter}</label>
+                    </div>
+                    <div className='ls-button-container2'>
+                        <button className='post-downvote-button'>
+                            <FontAwesomeIcon icon={solid('caret-down')} color="red" onClick={increaseDown}/>
+                        </button>
+                    </div>
+                    <div className='post-container-display-item'>
+                        <label className="counter__output">{downCounter}</label>
+                    </div>
+                    <div className='ls-button-container2'>
+                        <div className='post-comment-button'>
+                            <a href="/reply">
+                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div className='post-container-display-item'>
+                        <label className="counter__output">{0}</label>
+                    </div>
                 </div>
-                <div className='ls-button-container'>
-                    <label className="counter__output">{upCounter}</label>
+                <div className='annotation-selection-button'>
+                  {(images[0] != "") && 
+                    <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
+                   } 
                 </div>
-                <div className='ls-button-container2'>
-                <button className='ls-button'><img src={down} alt="Learnify Logo" height={20} onClick={increaseDown}/></button>
-                </div>
-                <div className='ls-button-container'>
-                    <label className="counter__output">{downCounter}</label>
-                </div>
-                <div className='ls-button-container2'>
-                    <a href="/reply" className='navBarText'><img src={comment} alt="Learnify Logo" height={20} /></a>
-                </div>
-                <div className='ls-button-container'>
-                    <label className="counter__output">{0}</label>
-                </div>
-                <div className='ls-button-container'>
-                    <button className="btn-orange" onClick={toggleTool}> {tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>              
-                </div>
-                <div className='ls-button-container-alt3'>
-                <label className='navBarText'><img src={author} alt="Learnify Logo" height={25} /></label>
-                </div>
-                    {creator}
-                <div className='ls-button-container-alt2'>
-                <button className='ls-button'> <img src={edit} alt="Learnify Logo" height={20} onClick={editThePost}/> </button>
-                </div>
-                <div className='ls-button-container-alt2'>
-                    <button className='ls-button'> <img src={trash} alt="Learnify Logo" height={20} onClick={deleteThePost}/> </button>
+                <div className='post-box-right'>
+                    <div className='ls-button-container-alt3'>
+                        <label className='post-owner-icon-container'>
+                            <FontAwesomeIcon icon={solid('user-pen')} color="black"/>
+                        </label>
+                    </div>
+                    <div className='post-owner-display-item'>
+                        {creator}
+                    </div>
+                    <div className='ls-button-container-alt2'>
+                        <button className='post-edit-icon-container'>
+                                <FontAwesomeIcon icon={solid('edit')} color="black" onClick={editThePost}/>
+                        </button>
+                    </div>
+                    <div className='ls-button-container-alt2'>
+                        <button className='post-delete-button'>
+                            <FontAwesomeIcon icon={solid('trash-can')} color="black"/>
+                        </button>
+                    </div>
                 </div>
                 </div>
                 {editPost && <div>
