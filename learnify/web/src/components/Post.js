@@ -403,7 +403,7 @@ export default function Post(props){
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-delete-button'>
-                            <FontAwesomeIcon icon={solid('trash-can')} color="black"/>
+                            <FontAwesomeIcon icon={solid('trash-can')} color="black" onClick={deleteThePost}/>
                         </button>
                     </div>
                 </div>
