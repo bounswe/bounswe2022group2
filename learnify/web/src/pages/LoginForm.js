@@ -31,7 +31,7 @@ function LoginForm() {
     const [message, setMessage] = useState("");
 
     const loginUser = async (email, password) => {
-        await fetch("http://3.75.151.200:3000/auth/login", {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/auth/login`, {
             method: "POST",
             body: JSON.stringify({
                 email: email,
@@ -46,8 +46,11 @@ function LoginForm() {
                 console.log(response.statusText);
                 if (response.ok) {
                     console.log("successfull")
-                    localStorage.setItem("token", response.json().token)
-                    navigate('/home-page',{replace: true});
+                    response.json().then( json => {
+                        localStorage.setItem("token",json.token);
+                        localStorage.setItem("username",json.user.username);
+                    });
+                    navigate('/home',{replace: true});
                     return response.json();
                 } else {
                     response.json().then( json => {
