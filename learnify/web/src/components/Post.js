@@ -6,6 +6,7 @@ import { Annotorious } from "@recogito/annotorious";
 import "@recogito/annotorious/dist/annotorious.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import MDEditor from "@uiw/react-md-editor";
 
 function TextInterface({
     classes,
@@ -216,10 +217,7 @@ export default function Post(props){
     }
   };
 
-
-  
-
-    const [i, setI] = useState(0);
+  const [i, setI] = useState(0);
   const [url, setUrl] = useState();
   const [classes, setClasses] = useState(["class1", "class2"]);
 
@@ -239,24 +237,90 @@ export default function Post(props){
     console.log("current URL", url);
   };
 
-    const title = props.myPost.title;
-    const creator = props.myPost.creator;
-    const content = props.myPost.content;
-    const images = props.myPost.images;
+  const title = props.myPost.title;
+  const postId = props.myPost._id;
+  const creator = props.myPost.creator;
+  const content = props.myPost.content;
+  const images = props.myPost.images;
 
-    const [upCounter, setUpCounter] = useState(0);
-    const [downCounter, setDownCounter] = useState(0);
-    const [deletePost, setDeletePost] = useState(false);
+  const [upCounter, setUpCounter] = useState(0);
+  const [downCounter, setDownCounter] = useState(0);
+  const [deletePost, setDeletePost] = useState(false);
 
-    const increaseUp = () => {
-        setUpCounter(count => count + 1);
-    };
-    const increaseDown = () => {
-        setDownCounter(count => count + 1);
-    };
-    const deleteThePost = () => {
-        setDeletePost(current => !current);
-    };
+  const [postTitle, setPostTitle] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+
+  const increaseUp = () => {
+      setUpCounter(count => count + 1);
+  };
+  const increaseDown = () => {
+      setDownCounter(count => count + 1);
+  };
+  const deleteThePost = () => {
+      setDeletePost(current => !current);
+  };
+
+  const [editPost, setEditPost] = useState(false);
+
+  const editThePost = () => {
+      setValue(content);
+      setEditPost(current => !current);
+  };
+
+  const [value, setValue] = useState("");
+
+  const token = localStorage.getItem("token");
+
+  const [message, setMessage] = useState("");
+
+  const lsid = props.my_lsid;
+  
+  const handleSubmitEdit  = () => {
+      editExPost(lsid, postId, postTitle, value, imageUrl);
+  }
+  
+  const editExPost = async (lsid, postId, postTitle, final, imageUrl) => {
+      console.log(lsid)
+      console.log(postId)
+      console.log(postTitle)
+      console.log(final)
+      console.log(imageUrl)
+      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/post`, {
+          method: "PUT",
+          body: JSON.stringify({
+              ls_id: lsid,
+              post_id: postId,
+              title: postTitle,
+              content: final,
+              images: [imageUrl],
+          }),
+          headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+              'Authorization': `${token}` , 
+          },
+      })
+          .then((response) => {
+              if (response.status === 200) {
+                  console.log("successfull")
+                  
+                  response.json().then( json => {
+                      console.log(json.learningSpace.id)
+                  });
+                  console.log("Learning Space Post edited successfully!");
+                  window.location.reload();
+              } else {
+                  setMessage("Post could not be edited!");
+                  response.json().then( json => {
+                      console.log(json.resultMessage);
+                  });
+              }
+          }
+          )
+          .catch((error) => {
+              console.log(error);
+          }
+          );
+  };
 
     return(
     <div>
@@ -333,11 +397,9 @@ export default function Post(props){
                         {creator}
                     </div>
                     <div className='ls-button-container-alt2'>
-                        <div className='post-edit-icon-container'>
-                            <a href="/edit">
-                                <FontAwesomeIcon icon={solid('edit')} color="black"/>
-                            </a>
-                        </div>
+                        <button className='post-edit-icon-container'>
+                                <FontAwesomeIcon icon={solid('edit')} color="black" onClick={editThePost}/>
+                        </button>
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-delete-button'>
@@ -346,7 +408,26 @@ export default function Post(props){
                     </div>
                 </div>
                 </div>
-                
+                {editPost && <div>
+                <div className='space-3'></div>
+                <div className='add-post-box-mid'>
+                            <label className="form__label" htmlFor="title">Post Title </label>
+                            <div className='space-3'></div>
+                            <span className='title-box-post' role='textbox' data-placeholder={props.myPost.title} value='nameMessage' contentEditable='true' onInput={(e) => setPostTitle(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="imageLink">Image Link </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setImageUrl(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="postContent">Post Contents </label>
+                            <div className='space-3'></div>
+                    <MDEditor height={200} value={value} onChange={setValue} />
+                    <div className='space-8'></div>
+                    <div>
+                      <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitEdit()}}>Submit</button>
+                    </div>
+                    </div>
+                </div>}
         </div>
         }
         </div>
