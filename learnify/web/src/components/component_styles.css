@@ -338,6 +338,96 @@
     cursor: pointer;
 }
 
+.post-box-left {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.post-box-right {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.post-buttons-contaier {
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.post-upvote-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    padding-top: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.post-downvote-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+}
+
+.post-container-display-item {
+    margin-right: 1.5em;
+    margin-top: 8px;
+}
+
+.post-comment-button {
+    background-color: transparent;
+    border: none;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+.annotation-selection-button {
+    padding-top: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+.post-owner-icon-container {
+    background-color: transparent;
+    border: none;
+    padding-top: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.post-owner-display-item {
+    margin-top: 11px;
+    font-size: small;
+    font-weight: 600;
+}
+
+.post-edit-icon-container {
+    background-color: transparent;
+    border: none;
+    padding-top: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.post-delete-button {
+    background-color: transparent;
+    border: none;
+    padding-top: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
 .search-input-field {
     width: 500px;
     height: 40px;
