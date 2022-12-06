@@ -217,10 +217,7 @@ export default function Post(props){
     }
   };
 
-
-  
-
-    const [i, setI] = useState(0);
+  const [i, setI] = useState(0);
   const [url, setUrl] = useState();
   const [classes, setClasses] = useState(["class1", "class2"]);
 
@@ -416,7 +413,7 @@ export default function Post(props){
                 <div className='add-post-box-mid'>
                             <label className="form__label" htmlFor="title">Post Title </label>
                             <div className='space-3'></div>
-                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setPostTitle(e.target.textContent)}></span>
+                            <span className='title-box-post' role='textbox' data-placeholder={props.myPost.title} value='nameMessage' contentEditable='true' onInput={(e) => setPostTitle(e.target.textContent)}></span>
                             <div className='space-5'></div>
                             <label className="form__label" htmlFor="imageLink">Image Link </label>
                             <div className='space-3'></div>
