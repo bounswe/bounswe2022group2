@@ -85,7 +85,9 @@ export default function Post(props){
   // Init Annotorious when the component
   // mounts, and keep the current 'anno'
   // instance in the application state
+  
   useEffect(() => {
+    if(images[0] != ""){
     let annotorious = null;
 
     if (imgEl.current) {
@@ -197,12 +199,12 @@ export default function Post(props){
 
     // Cleanup: destroy current instance
     return () => annotorious.destroy();
-  }, []);
+}}, []);
 
   useEffect(() => {
     console.log("andso", anno?.getImageSnippetById());
   }, [watch]);
-
+  
   // Toggles current tool + button label
   const toggleTool = () => {
     if (tool === "rect") {
@@ -213,6 +215,9 @@ export default function Post(props){
       anno.setDrawingTool("rect");
     }
   };
+
+
+  
 
     const [i, setI] = useState(0);
   const [url, setUrl] = useState();
@@ -261,7 +266,7 @@ export default function Post(props){
                 {title}
             </label>
             <div className='space-5'></div>
-            <div>
+              {images[0] != "" && <div>
                 <img
                     ref={imgEl}
                     src={images}
@@ -272,8 +277,9 @@ export default function Post(props){
                     objectFit: "cover",
                     objectPosition: "center",}}
                 />
-        </div>
             <div className='space-5'></div>
+            </div>
+        }
             <div style={{ whiteSpace: "pre-wrap" }} className="">
                 <TextInterface
                     classes={classes}
@@ -313,7 +319,9 @@ export default function Post(props){
                     </div>
                 </div>
                 <div className='annotation-selection-button'>
+                  {(images[0] != "") && 
                     <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
+                   } 
                 </div>
                 <div className='post-box-right'>
                     <div className='ls-button-container-alt3'>
