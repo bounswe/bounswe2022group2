@@ -45,7 +45,7 @@ void main() {
 
       final GlobalKey<FormState>? formKey = form.key as GlobalKey<FormState>?;
       expect(actionButton.isActive, false);
-      expect(formKey?.currentState?.validate(), true);
+      expect(formKey?.currentState?.validate(), false);
 
       final Finder usernameFinder = TestHelpers.descendantFinderByKey(
           profileScreen, ProfileKeys.usernameField);

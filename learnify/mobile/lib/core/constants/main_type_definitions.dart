@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
+import '../../features/learning-space/models/annotation/annotation_model.dart';
 import '../widgets/app-bar/default_app_bar.dart';
 
 /// FutureOr<void> function definition.
@@ -19,3 +21,28 @@ typedef ErrorHelper = FutureOr<String?> Function();
 
 /// Callback of the checkbox.
 typedef CheckboxCallback = void Function(bool value);
+
+/// index callback
+typedef IndexCallback = void Function(int index);
+
+/// string callback
+typedef StringCallback = void Function(String id);
+
+/// annotation click callback
+typedef AnnotationClickCallback = void Function(
+    List<Annotation> annotations, String annotatedText);
+
+typedef AnnotateTextDialogCallback = Future<Tuple2<Annotation?, String?>>
+    Function(int startIndex, int endIndex, String annotation, String? postId);
+typedef AnnotateImageDialogCallback
+    = Future<Tuple2<Annotation?, String?>> Function(
+        Offset startOffset,
+        Offset endOffset,
+        String annotation,
+        String? postId,
+        Color color,
+        String imageUrl);
+typedef AnnotateImageCallback = Future<Annotation?> Function(
+    Offset start, Offset end, Color color);
+
+typedef AnnotateCallback = Future<void> Function(int startIndex, int endIndex);

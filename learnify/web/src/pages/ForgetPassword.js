@@ -29,7 +29,7 @@ function ForgetPassword() {
 
 
     const forgetPassword = async (email) => {
-        await fetch("http://3.75.151.200:3000/auth/resend", {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/auth/resend`, {
             method: "POST",
             body: JSON.stringify({
                 email: email,
@@ -40,6 +40,8 @@ function ForgetPassword() {
         })
             .then((response) => {
                 if (response.status === 200) {
+                    localStorage.setItem("emailVerified", true);
+                    localStorage.setItem("comesFromForgetPassword", true);
                     navigate('/verify-email', {replace: true});
                     console.log("Password reset link has been sent to your email address!");
                 } else {
@@ -86,6 +88,7 @@ function ForgetPassword() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-body">
                         <div className="email">
+                        <div className='space-20'/>
                             <label className="form__label" htmlFor="email"> RESET PASSWORD  </label>
     
                            <div className='form-note'>

@@ -61,7 +61,12 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         alignment: Alignment.centerLeft,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: context.responsiveSize * 5),
-          child: BaseText(titleText!, style: textStyle),
+          child: BaseText(
+            titleText!,
+            style: textStyle ?? context.titleMedium,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       );
 
@@ -70,6 +75,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: BaseIconButton(
           onPressed: NavigationManager.instance.pop,
           icon: Icons.chevron_left_outlined,
+          color: Colors.white,
         ),
       );
 

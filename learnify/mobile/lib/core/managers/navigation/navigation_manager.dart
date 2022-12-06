@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../extensions/string/string_extensions.dart';
 import 'l_navigation_manager.dart';
+import 'navigation_route.dart';
 
 class NavigationManager implements INavigationManager {
   factory NavigationManager() => _instance;
@@ -16,8 +18,15 @@ class NavigationManager implements INavigationManager {
   Future<void> navigateToPage({
     required String path,
     Map<String, dynamic> data = const <String, dynamic>{},
+    bool checkHistory = false,
   }) async {
-    await navigatorKey.currentState?.pushNamed(path, arguments: data);
+    final bool hasVisited = MyNavigatorObserver.hasVisited(path);
+    if (!hasVisited || !checkHistory) {
+      await navigatorKey.currentState?.pushNamed(path, arguments: data);
+    } else {
+      navigatorKey.currentState?.popUntil((Route<dynamic> route) =>
+          route.settings.name?.compareWithoutCase(path) ?? false);
+    }
   }
 
   @override
@@ -27,6 +36,13 @@ class NavigationManager implements INavigationManager {
   }) async {
     await navigatorKey.currentState
         ?.pushNamedAndRemoveUntil(path, removeAllOldRoutes, arguments: data);
+  }
+
+  Future<void> navigateToPageAndRemove({
+    String path = '/',
+    Map<String, dynamic> data = const <String, dynamic>{},
+  }) async {
+    await navigatorKey.currentState?.popAndPushNamed(path, arguments: data);
   }
 
   @override

@@ -60,18 +60,23 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
       SelectorHelper<String?, ProfileViewModel>().builder(
         (_, ProfileViewModel model) => model.selectedImage,
         (BuildContext context, String? path, __) {
-          final File? file = path == null ? null : File(path);
-          final ImageProvider imageProvider = file != null
-              ? FileImage(file)
-              // ignore: unnecessary_cast
-              : (const AssetImage(IconKeys.userProfile)
-                  as ImageProvider<Object>);
-          return CircleAvatar(
-            foregroundImage: imageProvider,
-            radius: context.width * 12,
-            foregroundColor: LightAppTheme.lightBlue,
-            backgroundColor: LightAppTheme.lightBlue,
-          );
+          // ignore: unnecessary_cast
+          ImageProvider imageProvider = const AssetImage(IconKeys.userProfile);
+          late final CircleAvatar circleAvatar;
+          try {
+            final File? file = path == null ? null : File(path);
+            if (file != null) imageProvider = FileImage(file);
+            circleAvatar = CircleAvatar(
+              foregroundImage: imageProvider,
+              radius: context.width * 12,
+              foregroundColor: LightAppTheme.lightBlue,
+              backgroundColor: LightAppTheme.lightBlue,
+            );
+          } on FileSystemException catch (e) {
+            debugPrint(e.toString());
+            circleAvatar = const CircleAvatar();
+          }
+          return circleAvatar;
         },
       );
 

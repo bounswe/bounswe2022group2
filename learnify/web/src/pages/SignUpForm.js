@@ -46,7 +46,7 @@ function SignUpForm() {
     const [message, setMessage] = useState("");
     
     const registerUser = async (username, email, password) => {
-        await fetch("http://3.75.151.200:3000/auth/signup", {
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/auth/signup`, {
             method: "POST",
             body: JSON.stringify({
                 username: username,
@@ -61,6 +61,8 @@ function SignUpForm() {
                 console.log(response.status);
                 console.log(response.statusText);
                 if (response.ok) {
+                    localStorage.setItem("emailVerified", true);
+                    localStorage.setItem("comesFromForgetPassword", false);
                     navigate('/verify-email', {replace: true});
                     return response.json();
                 } else {

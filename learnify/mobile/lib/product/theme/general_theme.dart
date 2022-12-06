@@ -18,15 +18,15 @@ mixin GeneralTheme {
   static TabBarTheme tabBarTheme(Color? borderColor) => TabBarTheme(
         indicator: BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: borderColor ?? LightAppTheme.orange),
+            bottom: BorderSide(color: borderColor ?? LightAppTheme.lightBlue),
           ),
         ),
       );
 
   static SwitchThemeData switchThemeData(Color? color) => SwitchThemeData(
         thumbColor: all(color),
-        overlayColor: all(color ?? LightAppTheme.orange),
-        trackColor: all(color ?? LightAppTheme.orange),
+        overlayColor: all(color ?? LightAppTheme.lightBlue),
+        trackColor: all(color ?? LightAppTheme.lightBlue),
         splashRadius: 0,
       );
 
@@ -57,8 +57,8 @@ mixin GeneralTheme {
   static OutlineInputBorder _border(Color? color, {double? width}) =>
       OutlineInputBorder(
         borderRadius: const BorderRadius.all(Radius.circular(23)),
-        borderSide:
-            BorderSide(color: color ?? LightAppTheme.orange, width: width ?? 1),
+        borderSide: BorderSide(
+            color: color ?? LightAppTheme.lightBlue, width: width ?? 1),
       );
 
   static ButtonThemeData buttonTheme(Color? inactiveColor) =>
