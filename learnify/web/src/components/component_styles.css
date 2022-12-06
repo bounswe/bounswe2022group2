@@ -450,6 +450,7 @@
     border-radius: 20px;
     max-height: 300px;
     overflow-y: scroll;
+    z-index: 100;
 }
 
 .search-result-item {
