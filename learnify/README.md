@@ -15,6 +15,10 @@ MAIL_PASS: application password of MAIL, please refer to : https://support.googl
 
 You can contact us for getting MAIL and MAIL_PASS used for our Milestone 1 presentation.
 
+#### Semantic server
+
+You should add API key used for semantic analysis API, please contact us for the required .env file.
+
 #### Frontend
 
 No environment files are required.
