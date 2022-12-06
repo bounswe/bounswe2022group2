@@ -428,3 +428,103 @@
     cursor: pointer;
     outline: none;
 }
+.search-input-field {
+    width: 500px;
+    height: 40px;
+    background-color: #FFF7E9;
+    border-radius: 100px;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid #1746A2;
+}
+
+.search-results-container {
+    position: fixed;
+    margin-top: 40px;
+    width: 500px;
+    background-color: #FAF9F6;
+    overflow-y: visible;
+    border-radius: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.search-result-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #FAF9F6;
+    color: black;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #1746A2;
+    color: #FFF7E9;
+}
+
+.navBarText{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+}
+
+.navBarText2{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 30px;
+    margin-left: 2px;
+}
+
+.btn-orange{
+    align-items: center;
+    background-color: #FF731D;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color:#1746A2;
+    cursor: pointer;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.btn-white2{	
+    align-items: center;	
+    background-color: #ffffff;	
+    border: 0;	
+    border-radius: 100px;	
+    box-sizing: border-box;	
+    color:#1746A2;	
+    cursor: pointer;	
+    font-family: 'Open Sans' sans-serif;	
+    font-size: 16px;	
+    font-weight: 600;	
+    line-height: 20px;	
+    padding: 5px;	
+    padding-left: 15px;	
+    padding-right: 15px;	
+    text-align: center;	
+    touch-action: manipulation;	
+    transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;	
+
+}
