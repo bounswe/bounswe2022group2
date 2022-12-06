@@ -11,9 +11,15 @@ class _PostForm extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Flexible(child: _titleField(model.titleController)),
+          Flexible(
+              child: SingleChildScrollView(
+            child: _titleField(model.titleController),
+          )),
           context.sizedH(.5),
-          Flexible(child: _contentField(model.contentController)),
+          Flexible(
+              child: SingleChildScrollView(
+            child: _contentField(model.contentController),
+          )),
           context.sizedH(1.5),
         ],
       ),
@@ -21,6 +27,7 @@ class _PostForm extends StatelessWidget {
   }
 
   Widget _titleField(TextEditingController controller) => CustomTextFormField(
+        maxLines: 1,
         key: AddPostKeys.titleField,
         controller: controller,
         hintText: TextKeys.addPostTitleHint,
@@ -31,6 +38,7 @@ class _PostForm extends StatelessWidget {
       );
 
   Widget _contentField(TextEditingController controller) => CustomTextFormField(
+        maxLines: 8,
         key: AddPostKeys.contentField,
         controller: controller,
         hintText: TextKeys.addPostContentHint,

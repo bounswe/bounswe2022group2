@@ -12,9 +12,15 @@ class _LearningSpaceForm extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Flexible(child: _titleField(model.titleController)),
+          Flexible(
+              child: SingleChildScrollView(
+            child: _titleField(model.titleController),
+          )),
           context.sizedH(.5),
-          Flexible(child: _descriptionField(model.descriptionController)),
+          Flexible(
+              child: SingleChildScrollView(
+            child: _descriptionField(model.descriptionController),
+          )),
           context.sizedH(.5),
           Flexible(child: _participantsField(model.participantsController)),
           Flexible(child: _addedCategories(context)),
@@ -25,6 +31,7 @@ class _LearningSpaceForm extends StatelessWidget {
   }
 
   Widget _titleField(TextEditingController controller) => CustomTextFormField(
+        maxLines: 1,
         key: CreateLearningSpaceKeys.titleField,
         controller: controller,
         hintText: TextKeys.spaceTitleHint,
@@ -37,6 +44,7 @@ class _LearningSpaceForm extends StatelessWidget {
 
   Widget _descriptionField(TextEditingController controller) =>
       CustomTextFormField(
+        maxLines: 5,
         key: CreateLearningSpaceKeys.titleField,
         controller: controller,
         hintText: TextKeys.spaceDescriptionHint,

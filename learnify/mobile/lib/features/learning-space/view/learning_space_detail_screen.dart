@@ -162,7 +162,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               SizedBox(
-                                width: 270,
+                                width: context.width * 65,
                                 child: Text(
                                   softWrap: true,
                                   tempLearningSpace?.title ??
@@ -177,18 +177,24 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                     backgroundColor: Theme.of(context)
                                         .colorScheme
                                         .secondary),
-                                onPressed: () async {
-                                  final LearningSpaceViewModel viewModel =
-                                      context.read<LearningSpaceViewModel>();
-                                  final HomeViewModel homeModel =
-                                      context.read<HomeViewModel>();
-                                  final String? res =
-                                      await viewModel.enrollLearningSpace();
-                                  if (res != null) return;
-                                  homeModel.addToTakenLearningSpaces(
-                                      viewModel.learningSpace);
-                                  homeModel.updateLs(viewModel.learningSpace);
-                                },
+                                onPressed: context
+                                        .read<HomeViewModel>()
+                                        .getIsEnrolled(tempLearningSpace?.title)
+                                    ? () {}
+                                    : () async {
+                                        final LearningSpaceViewModel viewModel =
+                                            context
+                                                .read<LearningSpaceViewModel>();
+                                        final HomeViewModel homeModel =
+                                            context.read<HomeViewModel>();
+                                        final String? res = await viewModel
+                                            .enrollLearningSpace();
+                                        if (res != null) return;
+                                        homeModel.addToTakenLearningSpaces(
+                                            viewModel.learningSpace);
+                                        homeModel
+                                            .updateLs(viewModel.learningSpace);
+                                      },
                                 child: SelectorHelper<bool, HomeViewModel>()
                                     .builder(
                                         (_, HomeViewModel model) =>
