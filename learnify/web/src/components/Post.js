@@ -262,10 +262,8 @@ export default function Post(props){
             </label>
             <div className='space-5'></div>
             <div>
-      <div>
-      </div>
-            {(images[0] != "" ) && <div>
                 <img
+                    ref={imgEl}
                     src={images}
                     alt="space"
                     style = {{width: "893.5px",
@@ -274,9 +272,8 @@ export default function Post(props){
                     objectFit: "cover",
                     objectPosition: "center",}}
                 />
+        </div>
             <div className='space-5'></div>
-            </div>
-            }
             <div style={{ whiteSpace: "pre-wrap" }} className="">
                 <TextInterface
                     classes={classes}
