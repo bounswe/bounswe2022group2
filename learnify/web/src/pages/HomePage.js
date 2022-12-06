@@ -38,9 +38,9 @@ function HomePage() {
                             <div className='space-12'></div>
                             <div>
                                 <ul role="list" className="ls-prev-list-3">
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_13} />
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_6} />
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_20} />
+                                    <LearningSpacePrev name="Horse Riding" icon={lslogo_13} />
+                                    <LearningSpacePrev name="Deserts At Home" icon={lslogo_6} />
+                                    <LearningSpacePrev name="Scuba Diving" icon={lslogo_20} />
                                 </ul>
                             </div>
                         </div>
@@ -54,12 +54,12 @@ function HomePage() {
                     </label>
                     <div className='space-5'></div>
                     <div className='feed-list-box'>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="friend" action="gokay joined Horse Riding Learning Space"/>
+                        <FeedItem username="friend" action="gokay joined Scuba Diving Learning Space"/>
+                        <FeedItem username="friend" action="mehmet joined Scuba Diving Learning Space"/>
+                        <FeedItem username="friend" action="enessurmeli1 created Karete Learning Space"/>
+                        <FeedItem username="friend" action="enessurmeli1 joined Deserts At Home Learning Space "/>
+                        <FeedItem username="friend" action="gokay created Scuba Diving Learning Space"/>
                     </div>
                 </div>
             </div>
@@ -79,10 +79,10 @@ function HomePage() {
                     <div className='space-12'></div>
                     <div>
                         <ul role="list" className="ls-prev-list-4">
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
+                            <LearningSpacePrev name="Horse Riding" icon={lslogo_19} />
+                            <LearningSpacePrev name="Deserts At Home" icon={lslogo_18} />
+                            <LearningSpacePrev name="Scuba Diving" icon={lslogo_17} />
+                            <LearningSpacePrev name="Playing Piano" icon={lslogo_16} />
                         </ul>
                     </div>
                 </div>
@@ -100,10 +100,10 @@ function HomePage() {
                     <div className='space-12'></div>
                     <div>
                         <ul role="list" className="ls-prev-list-4">
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
+                            <LearningSpacePrev name="Deserts At Home" icon={lslogo_19} />
+                            <LearningSpacePrev name="Playing Piano" icon={lslogo_18} />
+                            <LearningSpacePrev name="Horse Riding" icon={lslogo_17} />
+                            <LearningSpacePrev name="Scuba Diving" icon={lslogo_16} />
                         </ul>
                     </div>
                 </div>
