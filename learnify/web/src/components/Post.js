@@ -426,8 +426,8 @@ export default function Post(props){
                             <div className='space-3'></div>
                     <MDEditor height={200} value={value} onChange={setValue} />
                     <div className='space-8'></div>
-                    <div className='ls-button-container-alt4'>
-                    <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitEdit()}}>Submit</button>
+                    <div>
+                      <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitEdit()}}>Submit</button>
                     </div>
                     </div>
                 </div>}
