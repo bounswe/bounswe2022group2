@@ -14,93 +14,25 @@
 
 ## Executive Summary
 
-## List and Status of Deliverables
+***
+
+### Provide a summary of your project status:
+
+***
+
+### Describe any changes your team has made or planned since Milestone 1 to improve development process, explain how those changes will impact your process:
+
+***
+
+### Describe the improvements you have planned for the remainder of your project:
+
+***
+
+## Progress Based on Teamwork
 
 ---------
 
-## Evaluation of Deliverables
-
-#### Software Requirements Specification
-
-#### Software Design (UML)
-
-#### Scenarios and Mockups
-
-#### Project Plan
-
-#### Individual Contributions Reports
-
-#### Software
-
-#### Mobile Deliverables (APK and Manual)
-
-#### Group Review
-
----------
-
-## Evaluation of Tools and Processes
-
-### ~ Evaluation of Tools ~
-
-### ~ Evaluation of Processes ~
-
----------
-
-## Review the Milestone
-
----------
-
-### ~ Against Objectives ~
-
----------
-
-### ~ Progress ~
-
----------
-
-### ~ What went well? ~
-
----------
-
-### ~ What did not go well? ~
-
----------
-
-### ~ The Customer Presentation ~
-
----------
-
-## Requirements
-
----------
-
-## Responsibilities
-
-- **Altay Acar**
-
-- **Egemen Atik**
-
-- **Ezgi Aysel Batı**
-
-- **Batuhan Çelik**
-
-- **Hasan Can Erol**
-
-- **Ecenur Sezer:**
-
-- **Onur Kömürcü**
-
-- **Koray Tekin:**
-
-- **Muhammed Enes Sürmeli:**
- 
-- **Bahrican Yeşil:**
-
-- **Mehmet Gökay Yıldız**
-
----------
-
-## Summary of Individual Work
+### Summary of Individual Work
 
 - **Altay Acar**
   |Issue Title|Link|
@@ -180,6 +112,66 @@
   |Pull Request Title|Link|
   |-----|:--------:|
   
-  ---------
+***
   
-## Moving Forward
+### Status of the Deliverables of Milestone 1
+
+***
+
+### Progress According to Requirements
+
+***
+
+### API Endpoints
+
+***
+
+### User Interface / User Experience
+
+***
+
+### Annotations
+
+*** 
+
+### Standards
+
+***
+
+#### Mobile Deliverables (APK and Manual)
+
+#### Group Review
+
+---------
+
+## Individual reports
+
+***
+
+### Requirements
+
+***
+
+### Responsibilities
+
+- **Altay Acar**
+
+- **Egemen Atik**
+
+- **Ezgi Aysel Batı**
+
+- **Batuhan Çelik**
+
+- **Hasan Can Erol**
+
+- **Ecenur Sezer:**
+
+- **Onur Kömürcü**
+
+- **Koray Tekin:**
+
+- **Muhammed Enes Sürmeli:**
+ 
+- **Bahrican Yeşil:**
+
+- **Mehmet Gökay Yıldız**
