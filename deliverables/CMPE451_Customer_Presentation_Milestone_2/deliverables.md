@@ -13,7 +13,10 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
   * [Lecturer Creates Community Event Scenario, Ezgi Ece Smith](https://github.com/bounswe/bounswe2022group2/wiki/Lecturer-Creates-Community-Event-Scenario,-Ezgi-Ece-Smith)
 * [Project Plan](https://github.com/bounswe/bounswe2022group2/wiki/Project-Plan)
 * [Individual Contribution Reports](#Individual-Contributions-Report)
-* [Customer Milestone 1 Group Review](#Milestone-Group-Review)
+* [Customer Milestone 2 Group Review](#Milestone-Group-Review)
+* [Mobile App APK](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK)
+* [Mobile System Manual](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual)
+
 
 ## Individual Contributions Report
 
@@ -21,7 +24,8 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 
 ### *Member:*  
 
-Name: 
+Name: xxx
+
 Group: Group2 - xxx Team
 
 ### *Responsibilities:*
@@ -39,5 +43,7 @@ management of our software project:
 ### *Unit Tests:*
 
 ### *Additional Information:*  
+
+***
 
 ## Milestone Group Review
