@@ -25,7 +25,7 @@ export default function NavBar(){
 
     console.log(searchResults)
 
-    return <nav className="nav">
+    return <nav className="nav" data-testid="navbar">
         <a href="/home"><img src={logo} alt="Learnify Logo" height={60} /></a>
         <ul>
             
