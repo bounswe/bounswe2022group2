@@ -74,13 +74,6 @@
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Ecenur Sezer**
-  |Issue Title|Link|
-  |-----|:--------:|
-
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  
 - **Onur Kömürcü:**
   |Issue Title|Link|
   |-----|:--------:|
@@ -88,17 +81,24 @@
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Koray Tekin**
+- **Ecenur Sezer**
   |Issue Title|Link|
   |-----|:--------:|
-    
+
   |Pull Request Title|Link|
   |-----|:--------:|
-
+  
 - **Muhammed Enes Sürmeli:**
   |Issue Title|Link|
   |-----|:--------:|
 
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  
+- **Koray Tekin**
+  |Issue Title|Link|
+  |-----|:--------:|
+    
   |Pull Request Title|Link|
   |-----|:--------:|
   
