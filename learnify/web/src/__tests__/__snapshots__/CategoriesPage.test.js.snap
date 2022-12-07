@@ -10,7 +10,7 @@ exports[`CategoriesPage should render page layout correctly 1`] = `
       href="/home"
     >
       <img
-        alt="Learnify Logo"
+        alt="Learnify Logo Navbar"
         height={60}
         src="logo-dblue.png"
       />
@@ -37,7 +37,7 @@ exports[`CategoriesPage should render page layout correctly 1`] = `
           href="/notifications"
         >
           <img
-            alt="Learnify Logo"
+            alt="Notifications Icon"
             height={20}
             src="notification-icon.svg"
           />
