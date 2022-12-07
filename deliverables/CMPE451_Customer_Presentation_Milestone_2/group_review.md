@@ -128,6 +128,8 @@
 
 ### API Endpoints
 
+For milestone 2, 11 new endpoints have been implemented. Detailed explanations and request/response examples are present in the documentation over Postman. Please click [here](https://documenter.getpostman.com/view/16983185/2s8Yt1tADd) to view.
+
 ***
 
 ### User Interface / User Experience
