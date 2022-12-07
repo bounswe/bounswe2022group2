@@ -1,14 +1,18 @@
 # Group 2 - Milestone 2 - Group Review
 
 1. [Executive Summary](#executive-summary)
-2. [List and status of deliverables](#list-and-status-of-deliverables)
-3. [Evaluation of the status of deliverables and its impact on your project plan](#evaluation-of-deliverables)
-4. [Evaluation of tools and processes you have used to manage your team project](#evaluation-of-tools-and-processes)
-5. [Review the Milestone](#review-the-milestone)
-6. [The requirements addressed in this milestone](#requirements)
-7. [Overall description of responsibilities that are assigned to each member](#responsibilities)
-8. [A Summary of work performed by each team member (in tabular format)](#summary-of-individual-work)
-9. [Moving Forward](#moving-forward)
+* 1.1 Summary of the Project Status
+* 1.2 Changes the team has made or planned since Milestone 1 to improve development process, and how those changes will impact the process
+* 1.3 The Improvements Planned for the Remainder of the Project
+2. [Progress Based on Teamwork](#progress-based-on-teamwork)
+* 2.1 Summary of Individual Work
+* 2.2 Status of the Deliverables of Milestone 1
+* 2.3 Progress According to Requirements
+* 2.4 API Endpoints
+* 2.5 User Interface / User Experience
+* 2.6 Annotations
+* 2.7 Standards
+3. [Individual Reports](#individual-reports)
 
 ---------
 
@@ -16,15 +20,15 @@
 
 ***
 
-### Provide a summary of your project status:
+### Summary of the Project Status:
 
 ***
 
-### Describe any changes your team has made or planned since Milestone 1 to improve development process, explain how those changes will impact your process:
+### Changes the team has made or planned since Milestone 1 to improve development process, and how those changes will impact the process:
 
 ***
 
-### Describe the improvements you have planned for the remainder of your project:
+### The Improvements Planned for the Remainder of the Project:
 
 ***
 
@@ -138,40 +142,28 @@
 
 ***
 
-#### Mobile Deliverables (APK and Manual)
+## Individual Reports
 
-#### Group Review
+--------------------------  
 
----------
+### *Member:*  
 
-## Individual reports
+Name: xxx
 
-***
+Group: Group2 - xxx Team
 
-### Requirements
+### *Responsibilities:*
 
-***
+### *Main Contributions:*
 
-### Responsibilities
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
 
-- **Altay Acar**
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
 
-- **Egemen Atik**
+### *Pull Requests:*
 
-- **Ezgi Aysel Batı**
+### *Unit Tests:*
 
-- **Batuhan Çelik**
-
-- **Hasan Can Erol**
-
-- **Ecenur Sezer:**
-
-- **Onur Kömürcü**
-
-- **Koray Tekin:**
-
-- **Muhammed Enes Sürmeli:**
- 
-- **Bahrican Yeşil:**
-
-- **Mehmet Gökay Yıldız**
+### *Additional Information:*  
