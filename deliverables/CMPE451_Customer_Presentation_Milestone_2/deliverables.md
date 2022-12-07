@@ -17,4 +17,27 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 
 ## Individual Contributions Report
 
+--------------------------  
+
+### *Member:*  
+
+Name: 
+Group: Group2 - xxx Team
+
+### *Responsibilities:*
+
+### *Main Contributions:*
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+
+### *Pull Requests:*
+
+### *Unit Tests:*
+
+### *Additional Information:*  
+
 ## Milestone Group Review
