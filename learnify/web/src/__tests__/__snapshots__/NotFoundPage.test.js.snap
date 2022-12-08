@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage should render page layout correctly 1`] = `
+<div
+  className="notFoundPageLayout"
+>
+  <div
+    className="notfound-page-logo"
+  >
+    <img
+      alt="Learnify Logo"
+      height={60}
+      src="logo-dblue.png"
+      style={
+        Object {
+          "float": "left",
+        }
+      }
+    />
+  </div>
+  <div
+    className="notfoundpage-text"
+  >
+    <h1>
+      Oops! Something went wrong!
+    </h1>
+  </div>
+  <img
+    alt="Learnify 404 Not Found"
+    className="mockup"
+    src="404NotFound.jpg"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <div>
+    <button
+      className="btn-blue"
+      onClick={[Function]}
+    >
+      Return
+    </button>
+  </div>
+</div>
+`;
