@@ -18,24 +18,6 @@ class Event extends BaseModel<Event> {
     this.courseId,
     this.isCompleted = false,
   });
-
-  factory Event.dummy(int? id) => Event(
-        id: id.toString(),
-        courseId: id.toString(),
-        date: (id ?? 0) % 3 == 0
-            ? DateTime.now().subtract(Duration(days: Random().nextInt(20)))
-            : DateTime.now().add(Duration(days: Random().nextInt(20))),
-        title: "Let's Do This",
-        description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-        participationLimit: 100,
-        duration: Random().nextInt(15) * 60,
-        eventCreator: 'eventCreator',
-        geoLocationLat: 12,
-        geoLocationLon: 34,
-        participants: const ['adas', 'bdf', 'cas'],
-      );
-
   factory Event.fromJson(Map<String, dynamic> json) => Event(
         id: BaseModel.getByType<String>(json['_id']) ??
             BaseModel.getByType<String>(json['id']),
@@ -54,6 +36,44 @@ class Event extends BaseModel<Event> {
         courseId: BaseModel.getByType<String>(json['courseId']),
         isCompleted: BaseModel.getWithDefault<bool>(json['isCompleted'], false),
       );
+
+  factory Event.dummy(int? id) => Event(
+        id: id.toString(),
+        courseId: id.toString(),
+        date: (id ?? 0) % 3 == 0
+            ? DateTime.now().subtract(Duration(
+                days: Random().nextInt(20),
+                hours: Random().nextInt(14),
+                minutes: Random().nextInt(47)))
+            : DateTime.now().add(Duration(
+                days: Random().nextInt(20),
+                hours: Random().nextInt(14),
+                minutes: Random().nextInt(47))),
+        title: _eventTitles[id ?? 0],
+        description: _eventDescriptions[id ?? 0],
+        participationLimit: Random().nextInt(50) + 50,
+        duration: Random().nextInt(15) * 60,
+        eventCreator: 'eventCreator',
+        geoLocationLat: 12,
+        geoLocationLon: 34,
+        participants: const ['adas', 'bdf', 'cas'],
+      );
+
+  static const List<String> _eventTitles = <String>[
+    "Solving Difficulties",
+    "Q&A Session",
+    "Just to Talk",
+    "Let's Learn",
+    "Next Post?"
+  ];
+
+  static const List<String> _eventDescriptions = <String>[
+    "We all had difficulties in this journey together. Solving them via online tools is hard sometimes. Let's meet and solve these issues together face to face.",
+    "We all work, sometimes we deserve coffee. Hope to see you all!",
+    "Knowing each other face to face will be nice. I want to meet you all!",
+    "I think we can expand our vision about this learning space and put a different thing together.",
+    "Adding an interesting and attractive post will help us to increase the participant number."
+  ];
 
   Event copyWith({
     String? id,
