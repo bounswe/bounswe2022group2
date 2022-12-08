@@ -398,9 +398,8 @@ demonstrated during the demo:
   1. [Frontend: Implementation of Static Navigation Bar](https://github.com/bounswe/bounswe2022group2/issues/533)
   2. [Frontend: Implementation of Learning Space page layout and initial components](https://github.com/bounswe/bounswe2022group2/issues/541)
   3. [Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space](https://github.com/bounswe/bounswe2022group2/issues/624)
-  4. [Frontend: HOTFIX Learning Space Page Structural Overflow](https://github.com/bounswe/bounswe2022group2/issues/636)
-  5. [Frontend: Implementation of participants component of LS and providing the back-end connection](https://github.com/bounswe/bounswe2022group2/issues/648)
-  6. [Frontend: Unit Tests for Footer Component](https://github.com/bounswe/bounswe2022group2/issues/686)
+  4. [Frontend: Implementation of participants component of LS and providing the back-end connection](https://github.com/bounswe/bounswe2022group2/issues/648)
+  5. [Frontend: Unit Tests for Footer Component](https://github.com/bounswe/bounswe2022group2/issues/686)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
