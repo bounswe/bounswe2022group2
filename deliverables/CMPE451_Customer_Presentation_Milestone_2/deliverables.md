@@ -85,3 +85,74 @@ management of our software project:
 
 ### *Additional Information:*  
 None
+
+--------------------
+
+### *Member:*  
+
+Name: Ecenur Sezer
+
+Group: Group2 - Backend Team
+
+### *Responsibilities:*
+
+  1. Creating enroll to Learning Space Endpoint.
+  2. Implementing unit tests for enroll to learning space endpoint.
+  3. Creating post.js model.
+  4. Creating Create Post endpoint.
+  5. Implementing the unit tests for Create Post Endpoint.
+  6. Creating Edit Post Endpoint.
+  7. Implementing the unit tests for Edit Post Endpoint.
+  8. Research about W3C models and standarts to prepare backend implementation.
+  9. Creating annotation.js model.
+  10. Creating Create Annotation endpoint.
+  11. Creating Edit Annotations endpoint.
+  12. Reviewing the works done by the backend team.
+  13. Solving bugs, errors, problems encountered during the implementation of the database connection regularly.
+  14. Attending and participating general meetings regularly.
+  15. Attending and participating frontend team meetings regularly.
+  16. Deploying the new version of dev branch when requested.
+  17. Creating Postman documentation with examples for newly implemented endpoints.
+
+### *Main Contributions:*
+As a member of our backend team, I have created many endpoints and unit tests that connect the database to the features we created as a team. This has come with many research on Node.js, Docker and AWS technologies. During the process, reviews and bugs appeared has been handled by me and my teammates. After every created endpoint, unit tests and documentations on Postman with examples are created by me. In our plan, backend implementations of Annotations are my responsibility. Research on must follow conventions and implementations are done by me. I have also contributed to our project plan and general meetings regularly.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Backend: POST Learning Space Enroll Endpoint](https://github.com/bounswe/bounswe2022group2/issues/561)
+  2. [Backend: Implementing Unit Tests for Enrolling Learning Space](https://github.com/bounswe/bounswe2022group2/issues/563)
+  3. [Backend: Create Annotation Endpoint](https://github.com/bounswe/bounswe2022group2/issues/577)
+  4. [Backend: Create Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/589)
+  5. [Backend: Edit Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/600)
+  7. [Backend: Edit Annotation Endpoint](https://github.com/bounswe/bounswe2022group2/issues/602)
+  8. [Backend: Unit Tests for Create Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/663)
+  9. [Backend: Unit Tests for Edit Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/665)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1. [Milestone-2 Report: Annotations](https://github.com/bounswe/bounswe2022group2/issues/675)
+  2. [Milestone-2 Report: API Documentation](https://github.com/bounswe/bounswe2022group2/issues/677)
+  3. [Milestone-2 Report:Indiviual Report](https://github.com/bounswe/bounswe2022group2/issues/691)
+
+### *Pull Requests:*
+1.561 backend post learning space join endpoint [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
+2. 563 backend implementing unit tests for enrolling learning space  [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
+3. Backend: Create Annotation Endpoint [#588](https://github.com/bounswe/bounswe2022group2/pull/588)
+4. Backend: Create post endpoint implemented [#590](https://github.com/bounswe/bounswe2022group2/pull/590)
+5. Backend: Annotation Endpoint Creator and LS IDs [#597](https://github.com/bounswe/bounswe2022group2/pull/597)
+6.Backend: Edit Post Endpoint [#601](https://github.com/bounswe/bounswe2022group2/pull/601)
+7. Backend: Edit Annotations Endpoint [#603](https://github.com/bounswe/bounswe2022group2/pull/603)
+8. Backend: Create Post endpoint Unit Test [#664](https://github.com/bounswe/bounswe2022group2/pull/664)
+9. Backend: Unit Tests for Edit Post Endpoint [#666](https://github.com/bounswe/bounswe2022group2/pull/666)
+10. Milestone-2 Report: Annotations [#674](https://github.com/bounswe/bounswe2022group2/pull/674)
+11. Milestone-2 Report: API Documentation [#685](https://github.com/bounswe/bounswe2022group2/pull/685)
+
+### *Unit Tests:*
+1. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/676)
+2. Backend: Implementing Unit Tests for Login endpoint [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
+3. 563 backend implementing unit tests for enrolling learning space [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
+4. Backend: Create Post endpoint Unit Test [#664](https://github.com/bounswe/bounswe2022group2/pull/664)
+5. Backend: Unit Tests for Edit Post Endpoint [#666](https://github.com/bounswe/bounswe2022group2/pull/666)
+
+### *Additional Information:*  
+   I took the resposibility of presenting in our demo with my teammates, and enyojed this task very much since both our demos are amazing.
