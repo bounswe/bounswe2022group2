@@ -128,10 +128,21 @@
   
 - **Koray Tekin**
   |Issue Title|Link|
-  |-----|:--------:|
+  |Frontend: Implementation of Static Navigation Bar| [#533](https://github.com/bounswe/bounswe2022group2/issues/533)
+  |Frontend: Implementation of Learning Space page layout and initial components|[#541](https://github.com/bounswe/bounswe2022group2/issues/541)
+  |Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space|[#624](https://github.com/bounswe/bounswe2022group2/issues/624)
+  |Frontend: Implementation of participants component of LS and providing the back-end connection|[#648](https://github.com/bounswe/bounswe2022group2/issues/648)
+  |Frontend: Unit Tests for Footer Component|[#686](https://github.com/bounswe/bounswe2022group2/issues/686)
+  |Frontend: Reserach on initializing the Annotation Implementation|[#526](https://github.com/bounswe/bounswe2022group2/issues/526)
+  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)
     
   |Pull Request Title|Link|
-  |-----|:--------:|
+  |Frontend: Implementation of Static Navigation Bar| [#534](https://github.com/bounswe/bounswe2022group2/pull/534)
+  |Frontend: Implementation of Learning Space initial Components/Layout|[#591](https://github.com/bounswe/bounswe2022group2/pull/591)
+  |Frontend: Learning Spaces providing back-end connection|[#626](https://github.com/bounswe/bounswe2022group2/pull/626)
+  |Frontend: HOTFIX Router Modularization|[#628](https://github.com/bounswe/bounswe2022group2/pull/628)
+  |Frontend: Participants component implementation for LS pages|[#654](https://github.com/bounswe/bounswe2022group2/pull/654)
+  |Frontend: Unit Tests for Static Footer Component|[#689](https://github.com/bounswe/bounswe2022group2/pull/689)
   
 - **Bahrican Yeşil:**
   |Issue Title|Link|
@@ -354,3 +365,59 @@ management of our software project:
 
 ### *Additional Information:*  
    I took the resposibility of presenting in our demo with my teammates, and enyojed this task very much since both our demos are amazing.
+   
+   --------------------
+
+### *Member:*  
+
+Name: Koray Tekin
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+  1. Searching for and using new methods throughout web-application development process
+  2. Building the main layout for the Learning Space pages.
+  3. Providing the initial back-end connection for the Learning Space pages.
+  4. Providing component logic for our web application.
+  5. Implementing the Static Navigation Bar component.
+  6. Utilizing the components in the Learning Space page(modularization of the components via related end-points). 
+  7. Implementing unit tests for the Static Footer component.
+  8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  9. Reviewing the works done by the frontend team.
+  10. Creating search issues for the easier implementation of our projects functionalities. 
+  11. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  12. Attending and participating general meetings regularly.
+  13. Attending and participating frontend team meetings regularly.
+
+### *Main Contributions:*
+I am one of the members of the front-end team of our application Learnify, as a team of 4 we are implementing the web-application side. Throughout this development process we try not to diverge from the path that we follow for; deciding on "What is next?", sharig the tasks equally among our team members, keeping in touch with the team during the implementation, conducting research when needed, reviewing and commenting on each others work regularly and, finally making sure that our application functions as expected. I have taken responsibiity for all of these development steps time to time. Regularly participated to weekly meetings of our team and shared my point of view for the further developments that can be conducted for our web-application, at the same time those meetings are the time that we share each weeks tasks, so I have shared my mind about load balancing each week and took significant tasks that have effected the development of our application. While keeping in touch with the other team members both for the design and functionality ideas, first of all I have implemented the "Static Navigation Bar" components layout and the functionalty, implemented the layout and several of the components for the Learning Space pages which is one of the main pages of our web-application(where learning and sharing takes place.), contributed to our codebase with several hot-fixes related to the REST API utilization and router modularization. And as I have mentioned above, testing the work we have come up with was one of the important points, as we have done always in our front-end team; we have shared the designs and functionalities that were added and implemented the unit tests for those, my responsibility was to test the Footer component and I did so. Our team was also aware of the importance of conducting research together and share our findings with each other, I have created a research team issue for finding out the annotation technologies and libraries that our team can benefit from and shared my own findings via examples and hyperlinks with my team.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Frontend: Implementation of Static Navigation Bar](https://github.com/bounswe/bounswe2022group2/issues/533)
+  2. [Frontend: Implementation of Learning Space page layout and initial components](https://github.com/bounswe/bounswe2022group2/issues/541)
+  3. [Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space](https://github.com/bounswe/bounswe2022group2/issues/624)
+  4. [Frontend: Implementation of participants component of LS and providing the back-end connection](https://github.com/bounswe/bounswe2022group2/issues/648)
+  5. [Frontend: Unit Tests for Footer Component](https://github.com/bounswe/bounswe2022group2/issues/686)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1. [Frontend: Reserach on initializing the Annotation Implementation](https://github.com/bounswe/bounswe2022group2/issues/526)
+  2. [Requirements Revision](https://github.com/bounswe/bounswe2022group2/issues/678)
+
+### *Pull Requests:*
+1. Frontend: Implementation of Static Navigation Bar [#534](https://github.com/bounswe/bounswe2022group2/pull/534)
+2. Frontend: Implementation of Learning Space initial Components/Layout [#591](https://github.com/bounswe/bounswe2022group2/pull/591)
+3. Frontend: Learning Spaces providing back-end connection [#626](https://github.com/bounswe/bounswe2022group2/pull/626)
+4. Frontend: HOTFIX Router Modularization [#628](https://github.com/bounswe/bounswe2022group2/pull/628)
+5. Frontend: Participants component implementation for LS pages [#654](https://github.com/bounswe/bounswe2022group2/pull/654)
+6. Frontend: Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
+
+### *Unit Tests:*
+1. Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
+
+### *Additional Information:*  
+Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively.
+
+--------------------
