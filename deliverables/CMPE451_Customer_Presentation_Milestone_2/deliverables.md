@@ -273,6 +273,6 @@ management of our software project:
 1. Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components  [#695](https://github.com/bounswe/bounswe2022group2/issues/695)
 
 ### *Additional Information:*  
-None
+I did not miss any lecture or lab time. Actively participated in all team meetings, demo ideas and demos.
 
 --------------------
