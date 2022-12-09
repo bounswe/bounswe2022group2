@@ -374,7 +374,19 @@ Annotation Selection Dialog: [Code File in the Repository](https://github.com/bo
 <img width="549" alt="Screen Shot 2022-12-09 at 15 31 37" src="https://user-images.githubusercontent.com/60237280/206703348-acb30c6f-23c5-45b5-9311-b90ad7d1b758.png">
 <img width="579" alt="Screen Shot 2022-12-09 at 15 31 51" src="https://user-images.githubusercontent.com/60237280/206703412-f8dac760-2cea-4ab8-9a68-8ab90836bfaa.png">
 
+You can see the visual demonstration of the image and text annotations on mobile from the below images:
 
+**Image Annotations**
+
+<img width="372" alt="image_annotation_1" src="https://user-images.githubusercontent.com/60237280/206683909-6ee47924-e307-4cb2-9735-6383aa673d84.png">&nbsp;&nbsp;&nbsp;<img width="372" alt="image_annotation_2" src="https://user-images.githubusercontent.com/60237280/206683918-1b6b21b7-81ef-401f-a499-4bd11fa8c753.png">
+
+<img width="372" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations 2" src="https://user-images.githubusercontent.com/60237280/206683926-9bbd585d-5192-4e30-a52f-e329c9aabbe2.png">
+
+**Text Annotations**
+
+<img width="374" alt="text_annotation_1" src="https://user-images.githubusercontent.com/60237280/206684119-95232a18-8132-4cc9-8903-13dddd51f38e.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="text_annotation_2" src="https://user-images.githubusercontent.com/60237280/206684123-9c659a42-9479-48f9-ab8b-fdbe32d2fc79.png">
+
+<img width="372" alt="text_annotation_3" src="https://user-images.githubusercontent.com/60237280/206684131-b7f182f1-aab3-4bb2-87b5-b67b79683edb.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations" src="https://user-images.githubusercontent.com/60237280/206684133-41dd4e29-9789-4dae-a0b9-c36bdf34d1bb.png">
  
  ***
 
