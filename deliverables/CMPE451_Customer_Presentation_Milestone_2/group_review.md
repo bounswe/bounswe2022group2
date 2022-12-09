@@ -367,6 +367,14 @@ Link: [Sign Up Page](https://github.com/bounswe/bounswe2022group2/blob/master/le
 
 <img width="1525" alt="signup-page" src="https://user-images.githubusercontent.com/68481602/206698399-4fee4340-0b19-4942-9ee5-ec57332809e6.png">
 
+#### Login Page
+
+Responsible: Koray Tekin \
+Link: [Login Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LoginForm.js)
+
+<img width="1501" alt="Screen Shot 2022-12-09 at 15 48 30" src="https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png">
+
+
 #### Home Page
 
 Responsible: Altay Acar \
@@ -408,6 +416,14 @@ Responsible: Mehmet Gökay Yıldız \
 Link: [Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/CreateLS.js)
 
 <img width="1528" alt="create-ls-page" src="https://user-images.githubusercontent.com/42673110/206700987-81ed6668-6267-483c-b766-f93849c763f8.png">
+
+#### Learning Space Specific Page
+
+Responsible: Koray Tekin \
+Link: [Learning Space Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LearningSpace.js)
+
+<img width="1501" alt="Screen Shot 2022-12-09 at 15 51 56" src="https://user-images.githubusercontent.com/74411541/206706633-19b029c7-032d-4088-9215-8e6bc9e2e484.png">
+
 
 #### Mobile
 
