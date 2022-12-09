@@ -375,6 +375,14 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 <img width="300" alt="forget-password" src="https://user-images.githubusercontent.com/56553280/206687548-af6db5ec-b28f-497a-a0b1-0e2af19175ed.jpg">
 
 
+##### Verification Screen
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/verification)
+
+<img width="300" alt="verification" src="https://user-images.githubusercontent.com/100771925/206706051-b31c6c98-41ea-453a-b393-7e28ec308cd7.png">
+
+
 ##### App Bar and Bottom Navigation Bar
 
 Responsible: Bahrican Yeşil \
@@ -382,6 +390,14 @@ Link - App Bar: [Code File in the Repository](https://github.com/bounswe/bounswe
 Link - Bottom Navigation Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
 
 <img width="300" alt="app_and_bottom_nav_bar" src="https://user-images.githubusercontent.com/60237280/206682705-eeae485d-aa33-4e54-8598-408f4da6787a.png">
+
+##### Home Screen
+
+Responsibles: Ezgi Aysel Batı -> Course Preview Widget / Egemen Atik -> Horizontal Scrollable Course Preview Widget List \
+Link - Course Preview Widget : [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home/components/course_preview.dart) \
+Link - Horizontal Scrollable Course Preview Widget List : [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home/view/home_screen.dart)
+
+<img width="300" alt="home_screen" src="https://user-images.githubusercontent.com/100771925/206707086-bdda9479-15fe-4793-a74d-b78c0e759ce1.png">
 
 ##### Profile Screen
 
@@ -420,6 +436,27 @@ Responsible: Ezgi Aysel Batı
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/forum_list.dart)
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206689133-fea41c35-81bf-4151-ba51-12e7720b1843.jpg">
+
+##### Learning Space Detail Screen: Information Part
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/learning_space_detail_screen.dart)
+
+<img width="300" alt="ls_detail_information" src="https://user-images.githubusercontent.com/100771925/206707954-ca555c86-9bcd-499e-bde4-6af705946292.png">
+
+##### Add Post Screen
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/add_post_screen.dart)
+
+<img width="300" alt="add_post" src="https://user-images.githubusercontent.com/100771925/206708112-87a73f59-b0a5-459e-baeb-d88cec46d32b.png">
+
+##### Edit Post Screen
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/add_post_screen.dart)
+
+<img width="300" alt="edit_post" src="https://user-images.githubusercontent.com/100771925/206708184-30ac0460-e9cd-4e8f-865b-6672fe485132.png">
 
 
 ##### Annotating an Image
