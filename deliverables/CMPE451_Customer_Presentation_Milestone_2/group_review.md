@@ -26,18 +26,6 @@ Learnify is an online learning platform that provides users collaborative spaces
 
 ***
 
-### Summary of the Project Status
-
-***
-
-### Changes the team has made or planned since Milestone 1 to improve development process, and how those changes will impact the process
-
-***
-
-### The Improvements Planned for the Remainder of the Project
-
-***
-
 ## Progress Based on Teamwork
 
 ---------
@@ -186,45 +174,47 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Milestone-2 Report: API Documentation|[#685](https://github.com/bounswe/bounswe2022group2/pull/685)| 2.5 hrs|
   
 * **Muhammed Enes Sürmeli:**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Milestone 2: Individual Report - Muhammed Enes Sürmeli|[#727](https://github.com/bounswe/bounswe2022group2/issues/727)|
-  |Milestone-2 Report: List and Status of Deliverables|[#724](https://github.com/bounswe/bounswe2022group2/issues/724)|
-  |Preparing Milestone 2 - CMPE 451 Deliverables|[#668](https://github.com/bounswe/bounswe2022group2/issues/668)|
-  |Frontend: Implementation of Not Found Page|[#520](https://github.com/bounswe/bounswe2022group2/issues/520)|
-  |Frontend: Implementation of Private Routes|[#521](https://github.com/bounswe/bounswe2022group2/issues/521)|
-  |Frontend: Implementation of Components on Learning Space Page|[#549](https://github.com/bounswe/bounswe2022group2/issues/549)|
-  |Frontend: Implementation of onClick Button Rendering|[#630](https://github.com/bounswe/bounswe2022group2/issues/630)|
-  |Frontend: Backend Connection for the Create Post Part of Learning Space Page|[#641](https://github.com/bounswe/bounswe2022group2/issues/641)|
-  |Frontend: Implementation of the Text Annotation|[#650](https://github.com/bounswe/bounswe2022group2/issues/650)|
-  |Frontend: Implementation of the Image Annotation|[#651](https://github.com/bounswe/bounswe2022group2/issues/651)|
-  |Frontend: Implementation of Edit Post Feature|[#659](https://github.com/bounswe/bounswe2022group2/issues/659)|
-  |Frontend: Backend Connection For Edit Post|[#660](https://github.com/bounswe/bounswe2022group2/issues/660)|
-  |Frontend: Unit Tests for Not Found Page|[#681](https://github.com/bounswe/bounswe2022group2/issues/681)|
-  |Frontend: Unit Tests for Email Verification Page|[#453](https://github.com/bounswe/bounswe2022group2/issues/453)|
-  |Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts|[#492](https://github.com/bounswe/bounswe2022group2/issues/492)|
-  |Documenting the Meeting Notes for the Frontend Meeting 4|[#548](https://github.com/bounswe/bounswe2022group2/issues/548)
-  |Documenting Meeting Notes for the Meeting 6 of CMPE 451|[#535](https://github.com/bounswe/bounswe2022group2/issues/535)
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |Milestone 2: Individual Report - Muhammed Enes Sürmeli|[#727](https://github.com/bounswe/bounswe2022group2/issues/727)|3 hours|
+  |Milestone-2 Report: List and Status of Deliverables|[#724](https://github.com/bounswe/bounswe2022group2/issues/724)|2 hours|
+  |Preparing Milestone 2 - CMPE 451 Deliverables|[#668](https://github.com/bounswe/bounswe2022group2/issues/668)|3 hours and 30 minutes|
+  |Frontend: Implementation of Not Found Page|[#520](https://github.com/bounswe/bounswe2022group2/issues/520)|6 hours|
+  |Frontend: Implementation of Private Routes|[#521](https://github.com/bounswe/bounswe2022group2/issues/521)|5 hours|
+  |Frontend: Implementation of Components on Learning Space Page|[#549](https://github.com/bounswe/bounswe2022group2/issues/549)|2 hours and 15 minutes|
+  |Frontend: Implementation of onClick Button Rendering|[#630](https://github.com/bounswe/bounswe2022group2/issues/630)|2 hours|
+  |Frontend: Backend Connection for the Create Post Part of Learning Space Page|[#641](https://github.com/bounswe/bounswe2022group2/issues/641)|5 hours and 45 minutes|
+  |Frontend: Implementation of the Text Annotation|[#650](https://github.com/bounswe/bounswe2022group2/issues/650)|5 hours|
+  |Frontend: Implementation of the Image Annotation|[#651](https://github.com/bounswe/bounswe2022group2/issues/651)|6 hours and 30 minutes|
+  |Frontend: Implementation of Edit Post Feature|[#659](https://github.com/bounswe/bounswe2022group2/issues/659)|4 hours and 15 minutes|
+  |Frontend: Backend Connection For Edit Post|[#660](https://github.com/bounswe/bounswe2022group2/issues/660)|1 hour|
+  |Frontend: Unit Tests for Not Found Page|[#681](https://github.com/bounswe/bounswe2022group2/issues/681)|1 hour|
+  |Frontend: Unit Tests for Email Verification Page|[#453](https://github.com/bounswe/bounswe2022group2/issues/453)|1 hour and 15 minutes|
+  |Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts|[#492](https://github.com/bounswe/bounswe2022group2/issues/492)|4 hours|
+  |Documenting the Meeting Notes for the Frontend Meeting 4|[#548](https://github.com/bounswe/bounswe2022group2/issues/548)|3 hours 30 minutes|
+  |Documenting Meeting Notes for the Meeting 6 of CMPE 451|[#535](https://github.com/bounswe/bounswe2022group2/issues/535)|2 hours 30 minutes|
+  |Milestone-2: User Interfaces for Web Application|[#723](https://github.com/bounswe/bounswe2022group2/issues/723)|30 minutes|
   
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  |Milestone 2: Individual Report - Muhammed Enes Sürmeli|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|
-  |Milestone-2 Report: List and Status of Deliverables|[#718](https://github.com/bounswe/bounswe2022group2/issues/718)|
-  |Milestone 2: Preparing Deliverables and Group Review|[#672](https://github.com/bounswe/bounswe2022group2/issues/672)|
-  |Frontend: Implementation For Edit Post Feature|[#661](https://github.com/bounswe/bounswe2022group2/issues/661)|
-  |Frontend: Backend Connection for the Edit Post Part|[#661](https://github.com/bounswe/bounswe2022group2/issues/661)|
-  |Frontend: Implementation of Private Routes|[#523](https://github.com/bounswe/bounswe2022group2/issues/523)|
-  |Frontend: Implementation of Not Found Page|[#525](https://github.com/bounswe/bounswe2022group2/issues/525)|
-  |Frontend: Implementation of Components on Learning Space Page|[#629](https://github.com/bounswe/bounswe2022group2/issues/629)|
-  |Frontend: Implementation of onClick Button Rendering|[#631](https://github.com/bounswe/bounswe2022group2/issues/631)|
-  |Frontend: Create Post Feature of Learning Space Page|[#643](https://github.com/bounswe/bounswe2022group2/issues/643)|
-  |Frontend: Backend Connection for the Create Post Part of Learning Space Page|[#643](https://github.com/bounswe/bounswe2022group2/issues/643)|
-  |Frontend: Implementation of the Text Annotation|[#658](https://github.com/bounswe/bounswe2022group2/issues/658)|
-  |Frontend: Implementation of the Image Annotation|[#658](https://github.com/bounswe/bounswe2022group2/issues/658)|
-  |Milestone 1: What Went Well, What Did Not Go Well, and Individual Contribution Parts|[#508](https://github.com/bounswe/bounswe2022group2/issues/508)|
-  |Frontend: Unit Tests for Email Verification Page|[#458](https://github.com/bounswe/bounswe2022group2/issues/458)|
-  |Frontend: Unit Tests for Not Found Page|[#683](https://github.com/bounswe/bounswe2022group2/issues/683)|
-  |Updating the Dev Branch|[#684](https://github.com/bounswe/bounswe2022group2/issues/684)|
+  |Pull Request Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |Milestone 2: Individual Report - Muhammed Enes Sürmeli|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|3 hours and 15 minutes|
+  |Milestone-2 Report: List and Status of Deliverables|[#718](https://github.com/bounswe/bounswe2022group2/issues/718)|2 hours|
+  |Milestone 2: Preparing Deliverables and Group Review|[#672](https://github.com/bounswe/bounswe2022group2/issues/672)|3 hours and 30 minutes|
+  |Frontend: Implementation For Edit Post Feature|[#661](https://github.com/bounswe/bounswe2022group2/issues/661)|4 hours and 15 minutes|
+  |Frontend: Backend Connection for the Edit Post Part|[#661](https://github.com/bounswe/bounswe2022group2/issues/661)|1 hour|
+  |Frontend: Implementation of Private Routes|[#523](https://github.com/bounswe/bounswe2022group2/issues/523)|5 hours|
+  |Frontend: Implementation of Not Found Page|[#525](https://github.com/bounswe/bounswe2022group2/issues/525)|6 hours|
+  |Frontend: Implementation of Components on Learning Space Page|[#629](https://github.com/bounswe/bounswe2022group2/issues/629)|2 hours and 15 minutes|
+  |Frontend: Implementation of onClick Button Rendering|[#631](https://github.com/bounswe/bounswe2022group2/issues/631)|2 hours|
+  |Frontend: Create Post Feature of Learning Space Page|[#643](https://github.com/bounswe/bounswe2022group2/issues/643)|3 hours|
+  |Frontend: Backend Connection for the Create Post Part of Learning Space Page|[#643](https://github.com/bounswe/bounswe2022group2/issues/643)|2 hours and 45 minutes|
+  |Frontend: Implementation of the Text Annotation|[#658](https://github.com/bounswe/bounswe2022group2/issues/658)|5 hours|
+  |Frontend: Implementation of the Image Annotation|[#658](https://github.com/bounswe/bounswe2022group2/issues/658)|6 hours and 30 minutes|
+  |Milestone 1: What Went Well, What Did Not Go Well, and Individual Contribution Parts|[#508](https://github.com/bounswe/bounswe2022group2/issues/508)|4 hours|
+  |Frontend: Unit Tests for Email Verification Page|[#458](https://github.com/bounswe/bounswe2022group2/issues/458)|1 hour and 15 minutes|
+  |Frontend: Unit Tests for Not Found Page|[#683](https://github.com/bounswe/bounswe2022group2/issues/683)|1 hour|
+  |Milestone-2: Web Application's UI Designs - Enes|[#744](https://github.com/bounswe/bounswe2022group2/issues/744)|30 minutes|
+  |Updating the Dev Branch|[#684](https://github.com/bounswe/bounswe2022group2/issues/684)|15 minutes|
   
 * **Koray Tekin**
   |Issue Title|Link|Time consumption|
