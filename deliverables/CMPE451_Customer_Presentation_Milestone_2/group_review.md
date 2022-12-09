@@ -232,7 +232,6 @@
   |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)|
 
   |Pull Request Title|Link|
-
   |-----|:--------:|
   |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)|
   |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)|
@@ -249,6 +248,369 @@
 ***
 
 ### Progress According to Requirements
+*Note*: C stands for Complated, I stands for In Progress, N stands for Not Started. First term is status of Frontend team, the second term is the status of the backend team, and the third term is the status of the mobile team.
+
+For example, C/N/I means that the frontend team completed, the backend team is not started and the mobile team is still working on it.
+
+### 1. Functional Requirements
+
+#### 1.1. 🧍 User Requirements
+
+<details><summary>1.1.1. 🔑 Authentication</summary><blockquote>
+
+<details><summary>1.1.1.1. Signup</summary>
+
+* 1.1.1.1.1. Guests shall enter an unused username, an unregistered email address, and a strong password to signup. C/C
+* 1.1.1.1.2. Guests shall agree to the privacy policy and terms&conditions to signup.C/C
+
+</details>
+
+<details><summary>1.1.1.2. Login</summary>
+
+* 1.1.1.2.1. Users shall provide their usernames and passwords to log in.C/C
+
+</details>
+
+<details><summary>1.1.1.3. Email Verification</summary>
+
+* 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.C/C
+</details>
+
+<details><summary>1.1.1.4. Forgot Password</summary>
+
+* 1.1.1.4.1. Users shall first enter the email addresses they signed up with and then the verification code they received.C/C
+* 1.1.1.4.2. Users shall be authenticated after verification and be logged in.C/C
+</details>
+
+<details><summary>1.1.1.5. Logout</summary>
+
+* 1.1.1.5.1. Users shall be able to log out.N/C
+
+</details>
+
+<details><summary>1.1.1.6. Change Password</summary>
+
+* 1.1.1.6.1. Users shall be able to change their passwords from the settings screen.C/N
+
+</details>
+
+</blockquote></details>
+
+<details><summary>1.1.2. 🗿 Profile Page</summary><blockquote>
+
+* 1.1.2.1. Users shall have a profile page.N/N
+* 1.1.2.2. Users shall be able to edit their profile page.N/N
+* 1.1.2.3. Users shall be abke to display their full name on their profile pages.N/N
+* 1.1.2.4. Users shall have an avatar.N/N
+* 1.1.2.5. Users shall be able to change their avatars.N/N
+* 1.1.2.6. Users shall have a bio in their profile pages.N/N
+* 1.1.2.7. Users shall have a "My Events" section on their profile pages.N/N
+* 1.1.2.8. Users shall be able to determine their profile page visibility as public or private.N/N
+* 1.1.2.9. Followers, Follows, My Events, Interest Areas, Achievements, Progress, Notes, and Annotations sections shall be hidden on private profiles.N/N
+
+<details><summary>1.1.2.10. Interests and Knowledge</summary>
+
+* 1.1.2.10.1 Users shall identify their interest areas.N/N
+* 1.1.2.10.2 Users shall display their interest areas in their profile pages.N/N
+
+</details>
+
+<details><summary>1.1.2.11. Achievements</summary>
+
+* 1.1.2.11.1. Users shall be able to earn achievements via the completion of a specific amount of Learning Spaces with related topics.N/N
+* 1.1.2.11.2. Users shall view their achievements from the achievements section of their profile pages.N/N
+
+</details>
+
+
+<details><summary>1.1.2.12. Progress Tracking</summary>
+
+* 1.1.2.12.1. Users shall be able to track their progress.N/N
+
+</details>
+
+<details><summary>1.1.2.13. Notes</summary>
+
+* 1.1.2.13.1. Users shall view their notes taken on a learning space in the notes section of their profile pages.N/N
+
+</details>
+
+<details><summary>1.1.2.14. Annotations</summary>
+
+* 1.1.2.14.1. Users shall be able to annotate post images and texts in learning spaces.I/I
+* 1.1.2.14.2. Users shall be able to view annotations made by other users.I/I
+* 1.1.2.14.3. Users shall be able to browse annotations by category, by course, by history, and by upvotes they have received.I/I
+* 1.1.2.14.4. Users shall access the annotations they have added for course material from the annotations section of their profile pages.I/I
+</details>
+
+
+<details><summary>1.1.2.15. Learning Spaces and Reputation</summary>
+
+* 1.1.2.15.1. Users shall be able to see all learning spaces they created or enrolled in.N/N
+
+</details>
+
+<details><summary>1.1.2.16. Recommendation</summary>
+
+* 1.1.2.16.1. Users shall be able to see the feedback they have received for their learning content contributions in the recommendations section. N/N
+
+</details>
+
+</blockquote></details>
+
+<details><summary>1.1.3 👩🏼‍💻 User Interaction</summary><blockquote>
+
+<details><summary>1.1.3.1. User-User Interaction</summary>
+
+* 1.1.3.1.1. Users shall see each other's profiles. N/N
+* 1.1.3.1.2. Users shall be able to follow each other. N/N
+* 1.1.3.1.3. Users shall see the information of people they follow; their achievements and activities. N/N
+* 1.1.3.1.4. Users shall be able to share notes with each other. N/N
+* 1.1.3.1.5. Users shall be able to block other users. N/N
+* 1.1.3.1.6. Users could prevent other users to see their profile by blocking them. N/N
+
+
+</details>
+
+
+<details><summary>1.1.3.2. User-Learning Space Interaction</summary>
+
+<blockquote>
+
+<details><summary>1.1.3.2.1. Creating Learning Space & Content</summary>
+
+* 1.1.3.2.1.1. Users shall enter a title and description and choose an icon and categories to create a lecture. C/C
+* 1.1.3.2.1.2 Participants shall be able to add polls and notes as learning material. I/I
+* 1.1.3.2.1.3 Participants shall organize learning material in chapters. N/N
+
+</details>
+
+<details><summary>1.1.3.2.2. Editing Learning Spaces</summary>
+
+* 1.1.3.2.2.1. Users shall be able to edit all material they provided. C/C
+* 1.1.3.2.2.2. Users shall be able to delete learning spaces they created. N/N
+
+</details>
+
+<details><summary>1.1.3.2.3. Enrolling to Learning Spaces </summary>
+
+* 1.1.3.2.3.1. Users shall see the content within sections. N/N
+* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire. I/I 
+* 1.1.3.2.3.3. Users shall know the type of poll they are participating in beforehand. N/N
+* 1.1.3.2.3.4. Users shall receive confirmation of their expertise on the topic upon completion of a lecture. N/N
+* 1.1.3.2.3.5. Users shall be able to review other users in terms of providing learning material by giving stars and optionally providing feedback. N/N
+* 1.1.3.2.3.6. Users shall be able to report inappropriate comments in the discussion forum of the lecture. N/N
+
+</details>
+
+<details><summary>1.1.3.2.4. Notes and Annotation</summary>
+
+* 1.1.3.2.4.1. Each user shall have his/her notes section under each lecture. I/I
+* 1.1.3.2.4.2. Users shall create and edit notes under the notes section via typing. N/N
+* 1.1.3.2.4.3. Users shall be able to mention other notes from other learning spaces or/and other users in his/her. N/N
+* 1.1.3.2.4.4. Users shall connect, annotate and tag notes. N/N
+
+</details>
+
+<details><summary>1.1.3.2.5. Community Events</summary>
+
+* 1.1.3.2.5.1. Participants shall be able to create community events for that learning space. N/N
+* 1.1.3.2.5.2. Created events shall only be available to currently enrolled learners. N/N
+* 1.1.3.2.5.3. Created events should have a specific date, duration, location and limit for the number of participants. N/N
+* 1.1.3.2.5.4. The event creator can give a brief description of the topics of discussion for the event. N/N
+* 1.1.3.2.5.5. Event creators shall be able to cancel events that they have created. N/N
+* 1.1.3.2.5.6. Created events should be visible on the learning space info page along with the date, duration, location and number of participants. N/N
+* 1.1.3.2.5.7. The number of learners who will join the event will be visible on the event information. N/N
+
+</details>
+
+<details><summary>1.1.3.2.6. Creating Polls</summary>
+
+* 1.1.3.2.6.1 Users shall be able to create anonymous polls, multiple answer polls, and quiz polls as part of learning space material. N/N
+
+</details>
+
+<details><summary>1.1.3.2.7. Discussions Forum</summary>
+
+* 1.1.3.2.7.1. Participants of a learning space shall be able to create discussion posts. I/I
+* 1.1.3.2.7.2. The discussion's theme should be detectable during the creation of a discussion also chapter-specific and lecture-specific options for context should be available. N/N
+
+</details>
+
+</details>
+
+</blockquote></details>
+
+<details><summary>1.1.4 📝 Learning Space Structure</summary><blockquote>
+
+* 1.1.4.1. Participants shall deliver learning material in form of posts which contain text and images. C/C
+* 1.1.4.4. Learning Space shall have the main page where users can see introduction, events, sections, notes, annotations, and polls. I/I
+* 1.1.4.5. The creator of a learning space shall be able to add additional admins to the learning space. N/N
+* 1.1.4.6. Every learning space shall have a general discussion forum. I/I
+* 1.1.4.7. Every learning space shall have a discussion forum per chapter. N/N
+
+
+</details>
+
+<details><summary>1.1.5 🛂 Administration</summary><blockquote>
+
+* 1.1.5.1. Admin shall evaluate reports and takes action accordingly. N/N
+* 1.1.5.2. Admin shall be able to ban users permanently and temporarily. N/N
+* 1.1.5.3. Admin shall be able to view all contents. N/N
+* 1.1.5.4. Admin shall be able to remove any content. N/N
+
+</details>
+
+</blockquote>
+</details>
+
+
+### 1.2. 💻 System Requirements
+
+<details><summary>1.2.1. 💡 Recommendations </summary><blockquote>
+
+* 1.2.1.1. Users will get various learning spaces as recommendations. N/N
+* 1.2.1.2. These recommendations will be based on users' preferences about the topics of learning space. Learning spaces that have similar topics will be chosen to recommend. N/N
+* 1.2.1.3. The recommendations will be displayed on the home page. N/N
+
+</blockquote></details>
+
+<details><summary>1.2.2. 🔔 Notifications</summary><blockquote>
+
+  * 1.2.2.1 Users shall get notifications from the system. N/N
+  * 1.2.2.2 The system shall notify users who did not complete almost done section of the registration. N/N
+  * 1.2.2.3 The system shall notify users regarding any posts on the discussion forum of the lectures they take or give. N/N
+  * 1.2.2.4 The system shall notify users when other users share notes with them. N/N
+  * 1.2.2.5 The system shall notify users when they earn an achievement. N/N
+  * 1.2.2.6 The system shall notify users to give feedback after each completed lecture. N/N
+  * 1.2.2.7 The system shall notify lecturers when a user provides feedback on one of their courses. N/N
+  * 1.2.2.8 The system shall notify users when an event is created for a lecture they are taking or giving. N/N
+  * 1.2.2.9 The system shall notify users when a poll is created in a lecture they are taking. N/N
+  * 1.2.2.10 The system shall notify users when they do not use the application for more than one day. N/N
+  * 1.2.2.11 Users shall be able to turn their notifications on or off. N/N
+  * 1.2.2.12 The system shall notify users when other users follow them. N/N
+
+</blockquote></details>
+
+<details><summary>1.2.3. 🔎 Searching and Browsing </summary><blockquote>
+
+  * 1.2.3.1 The system shall implement semantic searching. C/C
+  * 1.2.3.2 The system shall allow users to search for other users. N
+     * 1.2.3.2.1 The system shall allow searching for users by their username. N
+     * 1.2.3.2.2 The system should suggest users based on full name when search query gives no result for usernames.N
+  * 1.2.3.3 The system shall allow users to search for courses.C/C
+  * 1.2.3.4 The system shall offer filters for search results.N
+     * 1.2.3.4.1 The system shall allow users to filter search results as only users or only courses.N
+  * 1.2.3.5 The system shall allow users to browse for recommended courses.N
+  * 1.2.3.6 The system shall allow users to browse for courses offered by a lecturer on the lecturer user's profile page.N
+  * 1.2.3.7 The system shall allow users to browse their notes.N
+  * 1.2.3.8 The system shall allow users to browse for notes filtered by their tags.N
+  * 1.2.3.9 The system shall allow users to browse the activities and achievements of users they follow on the user's profile page.N
+</blockquote></details>
+
+<details><summary>1.2.4. 📝 Learning Spaces </summary><blockquote>
+
+
+* 1.2.4.1. The system shall set the user created the lecture as the lecture’s lecturer. N/N
+* 1.2.4.2. Newly created lectures, chapters, and sections shall set as private initially as long as the lecturer states otherwise.N/N
+
+
+</blockquote>
+</details>
+
+<details><summary>1.2.5. 💬 Forum/Discussion </summary><blockquote>
+
+* 1.2.5.1. The forum features should be unique to the lecture or to a specific chapter of any lecture. There is no common discussion channel for the entire community without topic specification.N/N
+* 1.2.5.2. Learners can be in contact with lecturers through discussions either by asking questions or giving feedback. N/N
+* 1.2.5.3. The discussion contents should be stored.N/N
+* 1.2.5.4. The forum should include a timestamp for each entry and the sender's name should be at top of the each entry.N/N
+* 1.2.5.5. The discussion entry creator's name should direct any user to his/her profile page.N/N
+
+</blockquote>
+</details>
+
+<details><summary>1.2.6. 🏁 Almost Done </summary><blockquote>
+
+* 1.2.6.1. System shall allow users to optionally provide additional information about their full names, birth date, state of education, gender just after the signup stage.N/N
+* 1.2.6.2. System should allow users to select educational topics, and titles which they are interested in in the almost done stage.N/N
+
+</blockquote>
+</details>
+
+<details><summary>1.2.7. 🗑️ Delete Account </summary><blockquote>
+
+* 1.2.7.1. System shall allow users to delete their accounts.N/N
+* 1.2.7.2. All personalized information about the deleted users have to be anonymized or completely deleted according to the privacy policy that will be determined later on.N/N
+
+</blockquote>
+</details>
+
+<details><summary>1.2.8. 🗒️ Annotations </summary><blockquote>
+
+* 1.2.8.1. Users shall be able to create annotations.I
+* 1.2.8.2. Annotations should comply to the [W3 Web Annotation Data Model](https://github.com/bounswe/bounswe2022group2/wiki/W3-Web-Annotation-Data-Model).I
+* 1.2.8.3. Owner of the annotations shall be able to set annotations as public or private.N
+* 1.2.8.4. Created annotations shall be reachable from both profile page and relevant target resource(s).N
+* 1.2.8.5. Annotations may have a body attribute.I
+* 1.2.8.6. Annotations shall have a target attribute.I
+* 1.2.8.7. Annotations may have more than one body attribute and may have more than one target attribute.I
+* 1.2.8.8. Annotations with public visibility should be listed on that annotation's creator's profile page.N
+
+</blockquote>
+
+</details>
+
+## 2. Non-Functional Requirements
+
+<details><summary>2.1. 🔓 Availability and Accessibility</summary><blockquote>
+
+
+* 2.1.1. System should have a Website interface that provides an web specific user experience.C
+* 2.1.2. System should have a Android application interface that provides an mobile specific user experience.C
+* 2.1.3. System should support [UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character encoding.C
+* 2.1.4. System should support English language.C
+
+</details>
+
+<details><summary>2.2. 🔏 Privacy</summary><blockquote>
+
+ 
+* 2.2.1. Ethical concerns must be considered, so system must follow the rules defined by [GDPR](https://tr.wikipedia.org/wiki/Genel_Veri_Koruma_Y%C3%B6netmeli%C4%9Fi)/[KVKK](https://tr.wikipedia.org/wiki/Ki%C5%9Fisel_Verileri_Koruma_Kurumu).
+     * 2.2.1.1 A well-defined explanation about how users data will be used must be given to users.N
+     * 2.2.1.2 Users must agree to the Privacy Policy and User Agreement.C
+     * 2.2.1.3 If any change happens in the policy, users must be notified about it. N
+* 2.2.2. Lectures can be private or public. If a lecture is private, its content should not be visible to every user in the app.N
+</details>
+
+<details><summary>2.3.  🛡️ Security</summary><blockquote>
+
+ 
+* 2.3.1 All sensitive data shall be encrypted before storing.N
+* 2.3.2 The system shall block the account if any security issue is observed. N
+</details>
+
+<details><summary>2.4.  🔧 Performance and Reliability</summary><blockquote>
+
+ 
+* 2.4.1 The system should be able to handle at least 10.000 users and 500 user actions simultaneously. N
+* 2.4.2 The system should have a response time of at most 2.0 seconds excluding network based delay.N
+</details>
+
+<details><summary>2.5. 🧩 Usability </summary><blockquote>
+
+ 
+* 2.5.1 The system should provide a user-friendly interface. It should contain a basic site map and should not contain a confusing linking system.I
+* 2.5.2 The system should provide a direct feedback mechanism. Upon interaction, user shall be informed about success or failure of their action. I
+* 2.5.3 The system should have a well-chosen typeface that should be readable and clean.I
+</details>
+
+<details><summary>2.6. 🌋 Disaster Recovery </summary><blockquote>
+
+* 2.6.1 The system should get backups and send them off-site at regular intervals for the possibility of disasters.N
+* 2.6.2 System shall be able to reinitialize itself and continue functioning in case of an unexpected shutdown.N
+* 2.6.3 System shall keep logs regarding the unexpected shutdown. N
+</details>
+
 
 ***
 
