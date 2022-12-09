@@ -93,6 +93,68 @@ None
 
 ### *Member:*  
 
+Name: Egemen Atik
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+  1. Implementing information part of learning space detail screen.
+  2. Implementing add post screen.
+  3. Implementing edit post screen.
+  4. Implementing enroll button and back-end connection for enroll functionality.
+  5. Implementing back-end connection for add post functionality.
+  6. Implementing back-end connection for edit post functionality.
+  7. Implementing back-end connection for getting taken learning spaces.
+  8. Implementing back-end connection for getting all learning spaces.
+  9. Implementing dynamic sizing for learning space detail screen.
+  10. Implementing routing between create learning space and learning space detail screens.
+  11. Implementing post model and necessary request&response models for corresponding back-end connections.
+  12. Implementing argument passing to edit post screen so that title and content of the post to be edited is present in the edit post screen.
+  13. Implementing argument passing to learning space detail screen.
+  14. Conducting research on Flutter libraries and methodologies that will be used during our development process.
+  15. Reviewing the works done by the mobile team.
+  16. Solving bugs, errors, problems encountered during the implementation of the mobile part of our application regularly.
+  17. Attending and participating general meetings regularly.
+  18. Attending and participating mobile team meetings regularly.
+  19. Attending to customer meetings and lectures regularly.
+
+### *Main Contributions:*
+I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
+
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile: Implementing Information Section of Learning Space Detail Screen](https://github.com/bounswe/bounswe2022group2/issues/524)
+  2. [Mobile: Enhancement on Learning Space Detail Screen](https://github.com/bounswe/bounswe2022group2/issues/616)
+  3. [Mobile: Implementing Add/Edit Post Screen](https://github.com/bounswe/bounswe2022group2/issues/618)
+  4. [Mobile: Backend Connection For Taken Learning Spaces and Recommended Learning Spaces](https://github.com/bounswe/bounswe2022group2/issues/634)
+  5. [Mobile: Backend Connection For Add/Edit Post](https://github.com/bounswe/bounswe2022group2/issues/645)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+1. [Milestone-2 Report: Progress According To Requirements](https://github.com/bounswe/bounswe2022group2/issues/705)
+2. [Milestone-2 Report: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/706)
+
+### *Pull Requests:*
+1. Mobile: Implementation of learning space information section [#528](https://github.com/bounswe/bounswe2022group2/pull/528)
+2. Mobile: Learning space detail enhancement [#587](https://github.com/bounswe/bounswe2022group2/pull/587)
+3. Mobile: Post add and edit screens [#623](https://github.com/bounswe/bounswe2022group2/pull/623)
+4. Mobile: Getting taken and recommended learning spaces backend connection [#642](https://github.com/bounswe/bounswe2022group2/pull/642)
+5. Mobile: Backend connection for add and edit post functionalities [#649](https://github.com/bounswe/bounswe2022group2/pull/649)
+6. Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit [#667](https://github.com/bounswe/bounswe2022group2/pull/667)
+
+### *Unit Tests:*
+1. Mobile: Verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
+2. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
+
+### *Additional Information:*  
+I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
+
+--------------------
+
+### *Member:*  
+
 Name: Ecenur Sezer
 
 Group: Group2 - Backend Team
