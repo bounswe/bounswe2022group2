@@ -18,6 +18,8 @@
 
 ## Executive Summary
 
+Learnify is an online learning platform that provides users collaborative spaces. The users can create a learning space and document their expertise by adding any content or notes. The user can also make annotations to other learning spaces to contribute to the platform and specific learning space. The thing is that Learnify trying to accomplish is creating a new platform to everyone can share their comments and recommendations instead of building another kind of teacher-student interaction. Learnify is available on mobile and web platforms. The current status of Learnify is that it supports sign-up, login, email verification, forgot password, resending email verification code, changing password, enrolling learning space, making annotations and editing annotations, creating posts, and editing posts. Learnify also supports semantic search and filtering learning spaces by category. These were the requirements we aimed to implement for Milestone-2 with the new features since Milestone-1.
+
 ***
 
 ### Summary of the Project Status:
