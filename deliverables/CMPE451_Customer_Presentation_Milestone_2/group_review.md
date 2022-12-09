@@ -12,7 +12,7 @@
 * 2.2 Status of the Deliverables of Milestone 1
 * 2.3 Progress According to Requirements
 * 2.4 API Endpoints
-* 2.5 User Interface / User Experience
+* 2.5 [User Interface/User Experience](#user-interface/user-experience)
 * 2.6 Annotations
 * 2.7 Standards
 
@@ -198,16 +198,16 @@
   |Create a Pull Request Template|[#480](https://github.com/bounswe/bounswe2022group2/issues/480)|
   
 - **Mehmet Gökay Yıldız**
-    |Issue Title|Link|
-    |-----|:--------:|
-    |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)|
-    |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)|
-    |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)|
-    |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)|
-    |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)|
-    |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)|
-    |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)|
-    |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)|
+  |Issue Title|Link|
+  |-----|:--------:|
+  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)|
+  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)|
+  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)|
+  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)|
+  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)|
+  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)|
+  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)|
+  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)|
 
   |Pull Request Title|Link|
 
@@ -234,7 +234,87 @@
 
 ***
 
-### User Interface / User Experience
+### User Interface/User Experience
+
+#### Mobile
+
+Note: We structured our folders in a way that they can be managed easily. Therefore, we're giving the link of the folder related to the code part you requested. Please analyze and review them carefully. You can also see the import statements at the beginning of each file and so that you can find the implementations of sub-components in a screen. Please traverse all files included in the directory and also the imported ones and the sub-folders (such as view, model, view-model, constants, and so on) to see our implementations on the code side.
+
+##### Signup Screen
+
+Responsible: Bahrican Yeşil \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/signup)
+
+<img width="300" alt="signup" src="https://user-images.githubusercontent.com/60237280/206682554-5439005e-8336-43b3-9b99-cec9c870b6e3.png">
+
+
+##### App Bar and Bottom Navigation Bar
+
+Responsible: Bahrican Yeşil \
+Link - App Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/app-bar/default_app_bar.dart) \
+Link - Bottom Navigation Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
+
+<img width="300" alt="app_and_bottom_nav_bar" src="https://user-images.githubusercontent.com/60237280/206682705-eeae485d-aa33-4e54-8598-408f4da6787a.png">
+
+##### Profile Screen
+
+Responsible: Bahrican Yeşil \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/profile)
+
+<img width="300" alt="profile" src="https://user-images.githubusercontent.com/60237280/206682855-3656d3de-1f22-4fd2-abc9-8e648351e27b.png">
+
+
+##### Posts Section
+
+Responsible: Bahrican Yeşil \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/post)
+
+<img width="300" alt="post_section" src="https://user-images.githubusercontent.com/60237280/206682884-99e85216-3e5c-4e8d-9e1b-e527d609337a.png">
+
+
+##### Events Section
+
+Responsible: Bahrican Yeşil \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/events)
+
+<img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/60237280/206682936-04114a85-19a7-4f35-b80c-db58db7f36cf.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_2" src="https://user-images.githubusercontent.com/60237280/206682967-1d494b11-ac5f-4c5d-9c7f-d1a45bf42334.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_3" src="https://user-images.githubusercontent.com/60237280/206682971-531d4ff0-4615-4f1c-b659-1982caf05554.png">
+
+
+##### Annotating an Image
+
+Note: We implemented annotating image functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package. We just got help from a repository which includes manipulation and edit feature on images. However, it doesn't have any annotation-related feature. We just benefit from it for image edit feature (drawing rectangles on an image). We also gave a link to that repository at the beginning of related files. \
+
+Responsible: Bahrican Yeşil \
+Annotated Post Image: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/chapter_image.dart) \
+Annotatable Image: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/image/annotatable_image.dart) \
+All Image Manipulation Components: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/core/widgets/image) \
+Cropped Image Preview on Annotations Screen: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
+
+<img width="372" alt="image_annotation_1" src="https://user-images.githubusercontent.com/60237280/206683909-6ee47924-e307-4cb2-9735-6383aa673d84.png">&nbsp;&nbsp;&nbsp;<img width="372" alt="image_annotation_2" src="https://user-images.githubusercontent.com/60237280/206683918-1b6b21b7-81ef-401f-a499-4bd11fa8c753.png">
+
+<img width="372" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations 2" src="https://user-images.githubusercontent.com/60237280/206683926-9bbd585d-5192-4e30-a52f-e329c9aabbe2.png">
+
+
+
+##### Annotating a Text
+
+Note: We implemented annotating text functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package. \
+
+Responsible: Bahrican Yeşil \
+Annotatable Text: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/text/annotatable/annotatable_text.dart) \
+All Text Manipulation Components for Annotation: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/core/widgets/text/annotatable)
+
+<img width="374" alt="text_annotation_1" src="https://user-images.githubusercontent.com/60237280/206684119-95232a18-8132-4cc9-8903-13dddd51f38e.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="text_annotation_2" src="https://user-images.githubusercontent.com/60237280/206684123-9c659a42-9479-48f9-ab8b-fdbe32d2fc79.png">
+
+<img width="372" alt="text_annotation_3" src="https://user-images.githubusercontent.com/60237280/206684131-b7f182f1-aab3-4bb2-87b5-b67b79683edb.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations" src="https://user-images.githubusercontent.com/60237280/206684133-41dd4e29-9789-4dae-a0b9-c36bdf34d1bb.png">
+
+##### Annotation Selection Dialog
+
+Responsible: Bahrican Yeşil \
+Annotation Selection Dialog: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/dialog/single_choose_dialog.dart)
+
+<img width="374" alt="annotation_selection_dialog" src="https://user-images.githubusercontent.com/60237280/206684280-6440588f-c7d6-4d97-9ee1-10e8efecd307.png">
+
 
 ***
 
