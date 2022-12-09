@@ -342,10 +342,12 @@ Annotation Selection Dialog: [Code File in the Repository](https://github.com/bo
   Since the mobile side has the back-end connection completely, the mobile is also integrated with W3C standards. The incoming and outgoing data on mobile (requests and responses) are all appropriate for the W3C standards.
 
   **Image annotation**
+
   Backend: \
   ![imageannot](https://user-images.githubusercontent.com/64018144/206256739-c0594972-3d76-4b01-b383-0bbaea0965eb.jpg)
 
   **Text annotation**
+  
   Backend: \
   ![photo](https://user-images.githubusercontent.com/64018144/206253615-7417e2c0-a835-46df-a3f9-16901faf8fbe.jpg)
 
