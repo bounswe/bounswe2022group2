@@ -45,31 +45,27 @@ Learnify is an online learning platform that provides users collaborative spaces
 ### Summary of Individual Work
 
 * **Altay Acar**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|
-  |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|
-  |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|
-  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#636](https://github.com/bounswe/bounswe2022group2/issues/636)|
-  |Frontend: Implementation of Semantic Search Bar|[#652](https://github.com/bounswe/bounswe2022group2/issues/652)|
-  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)|
-  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)|
-  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|9h|
+  |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|6h|
+  |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|6h|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#636](https://github.com/bounswe/bounswe2022group2/issues/636)|30m|
+  |Frontend: Implementation of Semantic Search Bar|[#652](https://github.com/bounswe/bounswe2022group2/issues/652)|3h|
+  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)|1h 20m|
+  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)|1h 20m|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|1h 20m|
   
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|
-  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/pull/571)|
-  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/pull/633)|
-  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/pull/637)|
-  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/pull/655)|
-  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|
-  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|
-  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|
-  |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/pull/707)|
-  |Milestone 2: Summary of Work - Bahrican|[#708](https://github.com/bounswe/bounswe2022group2/pull/708)|
-  |Milestone 2: Mobile UI/UX Section - Bahrican|[#715](https://github.com/bounswe/bounswe2022group2/pull/715)|
-  |Milestone 2: Mobile Related Additions to the Annotations Part|[#734](https://github.com/bounswe/bounswe2022group2/pull/734)|
+  |Pull Request Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|9h|
+  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/pull/571)|6h|
+  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/pull/633)|6h|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/pull/637)|30m|
+  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/pull/655)|3h|
+  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|1h 20m|
+  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|1h 20m|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|1h 20m|
 
 * **Egemen Atik**
   |Issue Title|Link|
@@ -277,6 +273,7 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Milestone 2: Annotations Part of the Report - Mobile|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|
   |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|
   
+  
   |Pull Request Title|Link|
   |-----|:--------:|
   |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/issues/707)|
@@ -301,6 +298,10 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Completes tests of the chapter section|[#502](https://github.com/bounswe/bounswe2022group2/issues/502)|
   |Mobile: Learning Space Chapter Section|[#501](https://github.com/bounswe/bounswe2022group2/issues/501)|
   |Create a Pull Request Template|[#480](https://github.com/bounswe/bounswe2022group2/issues/480)|
+  |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/pull/707)|
+  |Milestone 2: Summary of Work - Bahrican|[#708](https://github.com/bounswe/bounswe2022group2/pull/708)|
+  |Milestone 2: Mobile UI/UX Section - Bahrican|[#715](https://github.com/bounswe/bounswe2022group2/pull/715)|
+  |Milestone 2: Mobile Related Additions to the Annotations Part|[#734](https://github.com/bounswe/bounswe2022group2/pull/734)|
   
 * **Mehmet Gökay Yıldız**
   |Issue Title|Link|Time Consumption|
