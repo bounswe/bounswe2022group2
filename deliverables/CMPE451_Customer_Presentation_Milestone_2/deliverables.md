@@ -16,10 +16,9 @@ Below are the hyperlinks to our deliverable documents which are mentioned in the
 * [Mobile App APK](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK)
 * [Mobile System Manual](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual)
 
-
 ## Individual Contributions Report
 
---------------------------  
+--------------------------
 
 ### *Member:*  
 
@@ -51,6 +50,7 @@ Group: Group2 - Frontend Team
   20. Attending and participating frontend team meetings regularly.
 
 ### *Main Contributions:*
+
 I am a member of our frontend team for the development of our application, namely Learnify. As I did in the first milestone, I continued to provide visual components of our web application according to the design guidelines we have determined together and in harmony with other components and pages of our web application. Before our weekly frontend team meetings I have regularly inspected our application's development's current state and provided necessary agenda for that week. I have also provided page layouts and visual components like icons, logos, or illustrations for our web application. I have also researched on icon library that we can use (Fontawesome) and implemented it so that the performance and loading times for our screens increase significantly by not trying to render each png file when loading. I have also researched n dynamic routing in React and provided an easy-to-use and effective solution to one of our biggest issues: overcoming hardcoding each url path in App.js. I have also provided a component based page layouting logic so that we can eaily import components and use them withouut repeating lines of code and be able to pass specific parameters to display components. Besides, I have implemented categories page, learning spaces by category page and semantic search component in the navigation bar. For each, I have implemented separate components, established backend connection, established dynamic routing and passed parameters to display components according to the response acquired from the REST API. I have also regularly provided css classes that satisfy our design guidelines for the components implemented by the whole frontend team. I have regularly helped my teammates to fix any erroneous part of their code, provided hotfixes, and tried to share them good practices that I have learned. Additionally, I have implemented unit tests for the components that I have created during the development of our web application’s frontend.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
@@ -69,6 +69,7 @@ management of our software project:
   None between the milestone 1 and milestone 2
 
 ### *Pull Requests:*
+
 1. Frontend: Implementation of Home Page [#536](https://github.com/bounswe/bounswe2022group2/issues/536)
 2. Frontend: Implementation of Categories Page [#571](https://github.com/bounswe/bounswe2022group2/issues/571)
 3. Frontend: Learning Spaces by Category Pages Implementation [#633](https://github.com/bounswe/bounswe2022group2/issues/633)
@@ -79,14 +80,16 @@ management of our software project:
 8. Frontend: Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
 
 ### *Unit Tests:*
+
 1. Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/issues/676)
 2. Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/issues/680)
 3. Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
 
 ### *Additional Information:*  
+
 None
 
---------------------
+-----------------------------
 
 ### *Member:*  
 
@@ -115,6 +118,7 @@ Group: Group2 - Backend Team
   17. Creating Postman documentation with examples for newly implemented endpoints.
 
 ### *Main Contributions:*
+
 As a member of our backend team, I have created many endpoints and unit tests that connect the database to the features we created as a team. This has come with many research on Node.js, Docker and AWS technologies. During the process, reviews and bugs appeared has been handled by me and my teammates. After every created endpoint, unit tests and documentations on Postman with examples are created by me. In our plan, backend implementations of Annotations are my responsibility. Research on must follow conventions and implementations are done by me. I have also contributed to our project plan and general meetings regularly.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
@@ -135,6 +139,7 @@ management of our software project:
   3. [Milestone-2 Report:Indiviual Report](https://github.com/bounswe/bounswe2022group2/issues/691)
 
 ### *Pull Requests:*
+
 1.561 backend post learning space join endpoint [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
 2. 563 backend implementing unit tests for enrolling learning space  [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
 3. Backend: Create Annotation Endpoint [#588](https://github.com/bounswe/bounswe2022group2/pull/588)
@@ -148,6 +153,7 @@ management of our software project:
 11. Milestone-2 Report: API Documentation [#685](https://github.com/bounswe/bounswe2022group2/pull/685)
 
 ### *Unit Tests:*
+
 1. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/676)
 2. Backend: Implementing Unit Tests for Login endpoint [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
 3. 563 backend implementing unit tests for enrolling learning space [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
@@ -155,9 +161,9 @@ management of our software project:
 5. Backend: Unit Tests for Edit Post Endpoint [#666](https://github.com/bounswe/bounswe2022group2/pull/666)
 
 ### *Additional Information:*  
+
    I took the resposibility of presenting in our demo with my teammates, and enyojed this task very much since both our demos are amazing.
-   
-   
+
 --------------------
 
 ### *Member:*  
@@ -173,16 +179,17 @@ Group: Group2 - Frontend Team
   3. Providing the initial back-end connection for the Learning Space pages.
   4. Providing component logic for our web application.
   5. Implementing the Static Navigation Bar component.
-  6. Utilizing the components in the Learning Space page(modularization of the components via related end-points). 
+  6. Utilizing the components in the Learning Space page(modularization of the components via related end-points).
   7. Implementing unit tests for the Static Footer component.
   8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
   9. Reviewing the works done by the frontend team.
-  10. Creating search issues for the easier implementation of our projects functionalities. 
+  10. Creating search issues for the easier implementation of our projects functionalities.
   11. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
   12. Attending and participating general meetings regularly.
   13. Attending and participating frontend team meetings regularly.
 
 ### *Main Contributions:*
+
 I am one of the members of the front-end team of our application Learnify, as a team of 4 we are implementing the web-application side. Throughout this development process we try not to diverge from the path that we follow for; deciding on "What is next?", sharig the tasks equally among our team members, keeping in touch with the team during the implementation, conducting research when needed, reviewing and commenting on each others work regularly and, finally making sure that our application functions as expected. I have taken responsibiity for all of these development steps time to time. Regularly participated to weekly meetings of our team and shared my point of view for the further developments that can be conducted for our web-application, at the same time those meetings are the time that we share each weeks tasks, so I have shared my mind about load balancing each week and took significant tasks that have effected the development of our application. While keeping in touch with the other team members both for the design and functionality ideas, first of all I have implemented the "Static Navigation Bar" components layout and the functionalty, implemented the layout and several of the components for the Learning Space pages which is one of the main pages of our web-application(where learning and sharing takes place.), contributed to our codebase with several hot-fixes related to the REST API utilization and router modularization. And as I have mentioned above, testing the work we have come up with was one of the important points, as we have done always in our front-end team; we have shared the designs and functionalities that were added and implemented the unit tests for those, my responsibility was to test the Footer component and I did so. Our team was also aware of the importance of conducting research together and share our findings with each other, I have created a research team issue for finding out the annotation technologies and libraries that our team can benefit from and shared my own findings via examples and hyperlinks with my team.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
@@ -199,6 +206,7 @@ management of our software project:
   2. [Requirements Revision](https://github.com/bounswe/bounswe2022group2/issues/678)
 
 ### *Pull Requests:*
+
 1. Frontend: Implementation of Static Navigation Bar [#534](https://github.com/bounswe/bounswe2022group2/pull/534)
 2. Frontend: Implementation of Learning Space initial Components/Layout [#591](https://github.com/bounswe/bounswe2022group2/pull/591)
 3. Frontend: Learning Spaces providing back-end connection [#626](https://github.com/bounswe/bounswe2022group2/pull/626)
@@ -207,12 +215,128 @@ management of our software project:
 6. Frontend: Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
 
 ### *Unit Tests:*
+
 1. Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
 
 ### *Additional Information:*  
+
 Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively.
 
 --------------------
+
+### *Member:*  
+
+Name: Bahrican Yeşil
+
+Group: Group2 - Android/Mobile Team
+
+### *Responsibilities:*
+
+  1. Creating a pull request template to better organize pull requests among the whole team
+  2. Creating GitHub actions for Flutter & Android project, CI for Android project
+  3. Implementation of posts section under the learning space detail screen (with post model, post items and post list)
+  4. Writing tests of the chapter section of the learning space detail screen
+  5. Doing a detailed research on text annotations with Flutter and determining how to implement text annotations on mobile
+  6. Implementing annotatable text widget as a generic widget to use across the app and integrating it into posts section under the learning space detail screen
+  7. Doing a detailed research on how to display text annotations, and determining the way to follow (highlighted random light background color)
+  8. Doing a detailed research on how to solve the annotation overlapping problem for texts on mobile
+  9. Implementing annotated/highlighted and clickable text widget as a generic widget to use across the app
+  10. Implementing overlapped annotation support by mixing the colors and designing an algorithm to separate annotation parts
+  11. Implementing a generic single choose dialog for use across the app
+  12. Implementing multiple annotation selection dialog
+  13. Implementing native splash screen (for opening phase of the app)
+  14. Doing a detailed research on image annotations with Flutter and determining how to implement image annotations, discussion with Alper hoca and Suzan hoca regarding to the image annotations on mobile
+  15. Implementing annotatable image widget as a generic widget to use across the app and integrating it into posts section under the learning space detail screen
+  16. Doing a detailed research on how to display image annotations, and determining the way to follow, finding a solution for overlapped image annotations
+  17. Implementing annotated image display functionality with paint info, integration of its logic into annotatable image widget
+  18. Integration of the random user API to use while showing static content across the app
+  19. Implementing events section of the learning space detail screen as static
+  20. Back-end connection of the creating text annotation
+  21. Back-end connection of the creating image annotation
+  22. Writing tests for the text annotation feature
+  23. Writing tests for the image annotation feature
+  24. Implementing cropped image annotation preview for annotations screen
+  25. Implementation of basic structure of the learning space detail screen on mobile with base sliver view and tab bar view
+  26. Implementation of generic expandable item and list on mobile to use across the app (used in so many places)
+  27. Implementing page transition animations for screen changes with navigation
+  28. Documenting 2 mobile team meeting notes out of 5 notes
+  29. Conducting research on Flutter packages, finding and integrating helpful and nice ones (like page transition as I mentioned)
+  30. Reviewing the works done by the mobile team on a regular basis
+  31. Solving bugs, errors, problems encountered during the implementation of the mobile of our application regularly
+  32. Helping to teammates, answering their questions, solving critical bugs&errors before the demo day
+  33. Attending and participating general meetings regularly
+  34. Attending and participating mobile team meetings regularly
+
+### *Main Contributions:*
+
+I am a member of the mobile team for the development of our application which is Learnify. Therefore, my most contributions was on the mobile side. However, I also did significant contributions on general organization of our repository and the process in the team. I've created a project of our repository under the organization. I have created a pull request template to well-organize the PRs with explanatory description, content details and issue closing information (just as I created issue templates in the previous term for CMPE352). I have also created GitHub actions for our Android/Mobile project since this is so important for continuous integration. I have mainly managed our mobile team meetings, I determined our situation and what we need to do before the mobile meetings. I helped to team with feature prioritization, scheduling and sharing among the mobile team members.
+
+Apart from theses management contributions, I mainly took the whole responsibility of the text & image annotations on mobile with their all details. I have both implemented and solved their bugs realized in the development phase. I have also communicated with back-end team and helped to build the annotation model&endpoints to be compatible with W3C standards. I implemented designs, functionalities, back-end connections, tests, in short everything for text and image annotations on mobile. So, my main contribution mobile is annotations.
+
+Apart from the annotations, I implemented the posts section of the learning space detail screen which opened as the default tab view in the screen. I also implemented event section as static by fetching user data from a 3rd party API temporarily until the back-end is ready. I contributed with small but nice touches to the mobile app like page transition animations, native splash screen and so on. Other than these, I contributed to the mobile code base with lots of generic widgets used across the app in different screens.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile: Implementing Annotatable Text Widget](https://github.com/bounswe/bounswe2022group2/issues/505)
+  2. [Mobile: Implementing Highlighted (Annotated) Text Widget](https://github.com/bounswe/bounswe2022group2/issues/517)
+  3. [Mobile: Implementing Overlapped Text Annotation Support](https://github.com/bounswe/bounswe2022group2/issues/545)
+  4. [Mobile: Implementation of the Image Annotation](https://github.com/bounswe/bounswe2022group2/issues/578)
+  5. [Mobile: Implementation of the Annotated Image Display Logic](https://github.com/bounswe/bounswe2022group2/issues/579)
+  6. [Mobile: Implementation of the Events Section](https://github.com/bounswe/bounswe2022group2/issues/583)
+  7. [Mobile: Back-end Connection of Creating Annotation](https://github.com/bounswe/bounswe2022group2/issues/594)
+  8. [Mobile: Writing Tests of the Text Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/606)
+  9. [Mobile: Writing Tests of the Image Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/608)
+  10. [Mobile: Image Annotation Cropped Preview - Annotations Screen](https://github.com/bounswe/bounswe2022group2/issues/614)
+  11. [Mobile: Writing Tests of the Text Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/606)
+  12. [Mobile: Implementing Learning Space Detail Chapter Section](https://github.com/bounswe/bounswe2022group2/issues/477)
+  13. [Mobile: Writing Tests of the Learning Space Detail Chapter Section](https://github.com/bounswe/bounswe2022group2/issues/478)
+  14. [Mobile: Implementing Page Transition Animation](https://github.com/bounswe/bounswe2022group2/issues/558)
+  15. [Mobile: Native Splash Screen](https://github.com/bounswe/bounswe2022group2/issues/552)
+  
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1. [Creating a Pull Request Template](https://github.com/bounswe/bounswe2022group2/issues/476)
+  2. [Documenting Meeting notes for Mobile Meeting #4](https://github.com/bounswe/bounswe2022group2/issues/479)
+  3. [Mobile: Create GitHub Actions for Flutter](https://github.com/bounswe/bounswe2022group2/issues/554)
+  4. [Milestone 2: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/701)
+
+### *Pull Requests:*
+
+1. Create a Pull Request Template [#480](https://github.com/bounswe/bounswe2022group2/pull/480)
+2. Milestone 1: Evaluation of Tools And Processes - Mobile [#484](https://github.com/bounswe/bounswe2022group2/pull/484)
+3. Mobile: Learning Space Chapter Section [#501](https://github.com/bounswe/bounswe2022group2/pull/501)
+4. Mobile: Annotatable Text Widget Implementation [#538](https://github.com/bounswe/bounswe2022group2/pull/538)
+5. Mobile: Highlighted/Annotated text widget [#539](https://github.com/bounswe/bounswe2022group2/pull/539)
+6. Mobile: Enhancement-Overlapped annotations [#547](https://github.com/bounswe/bounswe2022group2/pull/547)
+7. Mobile: Implementation of Multiple Annotation Selection Dialog [#550](https://github.com/bounswe/bounswe2022group2/pull/550)
+8. Mobile: Native Splash Screen [#553](https://github.com/bounswe/bounswe2022group2/pull/553)
+9. Creates GitHub Actions for Flutter [#555](https://github.com/bounswe/bounswe2022group2/pull/555)
+10. Mobile: Page Transition Animation [#559](https://github.com/bounswe/bounswe2022group2/pull/559)
+11. Mobile: Fix Selected Categories Issue Between Page Transitions [#580](https://github.com/bounswe/bounswe2022group2/pull/580)
+12. Mobile: Image Annotation [#581](https://github.com/bounswe/bounswe2022group2/pull/581)
+13. Integrate display logic for image annotations [#582](https://github.com/bounswe/bounswe2022group2/pull/582)
+14. Mobile: Create Annotation Back End Connection [#595](https://github.com/bounswe/bounswe2022group2/pull/595)
+15. Mobile: BugFix - Chapter Unit Tests [#599](https://github.com/bounswe/bounswe2022group2/pull/599)
+16. Mobile: Text Annotation Tests [#607](https://github.com/bounswe/bounswe2022group2/pull/607)
+17. Mobile: Image Annotation Tests [#612](https://github.com/bounswe/bounswe2022group2/pull/612)
+18. Mobile: Annotation Screen [#613](https://github.com/bounswe/bounswe2022group2/pull/613)
+19. Mobile: Bugfix/annotation model update [#653](https://github.com/bounswe/bounswe2022group2/pull/653)
+20. Mobile: Hotfix - Set Default Values and lots of Demo Bugs [#662](https://github.com/bounswe/bounswe2022group2/pull/662)
+
+### *Unit Tests:*
+
+1. Mobile: Image Annotation Tests [#612](https://github.com/bounswe/bounswe2022group2/pull/612)
+2. Mobile: Text Annotation Tests [#607](https://github.com/bounswe/bounswe2022group2/pull/607)
+3. Mobile: Chapter Section Tests under Learning Space Detail Screen [#502](https://github.com/bounswe/bounswe2022group2/pull/502)
+4. Mobile: Profile Screen Tests [#404](https://github.com/bounswe/bounswe2022group2/pull/404)
+5. Mobile: Signup Screen Tests [#373](https://github.com/bounswe/bounswe2022group2/pull/373)
+6. Mobile: Sign Up Screen Back-end Connection Tests [#389](https://github.com/bounswe/bounswe2022group2/pull/389)
+
+### *Additional Information:*  
+
+Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively. I also took responsibility in the process that we prepare our mobile app into the demo-day. I solved critical bugs, checked and corrected the back-end connection, data update in the app. I also answered incoming questions in the demo day and helped to our presenter. I took the responsibility of most significant feature we developed until the milestone 2 on mobile side, which is the annotation feature.
+
+---------------------------
 
 ### *Member:*  
 
