@@ -114,23 +114,22 @@ Learnify is an online learning platform that provides users collaborative spaces
   
   |Issue Title|Link| Time consumption|
   |-----|:--------:|:--------:|
-  |POST /learningspace endpint implementation|[532 ](https://github.com/bounswe/bounswe2022group2/issues/532)|4 hours|
-  |GET /categories endpoint implementation|[551 ](https://github.com/bounswe/bounswe2022group2/issues/551)|2 hours|
-  |Semantic search implementation for backend|[566 ](https://github.com/bounswe/bounswe2022group2/issues/566)|30 hours|
-  |Getters for the learningspace|[574 ](https://github.com/bounswe/bounswe2022group2/issues/574)|2 hours|
-  |Getters for learningspaces : random ls getter for main page.|[615 ](https://github.com/bounswe/bounswe2022group2/issues/615)|1 hour|
-  |GET learning spaces using user information|[619 ](https://github.com/bounswe/bounswe2022group2/issues/619)|2 hours|
+  |POST /learningspace endpint implementation|[532](https://github.com/bounswe/bounswe2022group2/issues/532)|4 hours|
+  |GET /categories endpoint implementation|[551](https://github.com/bounswe/bounswe2022group2/issues/551)|2 hours|
+  |Semantic search implementation for backend|[566](https://github.com/bounswe/bounswe2022group2/issues/566)|30 hours|
+  |Getters for the learningspace|[574](https://github.com/bounswe/bounswe2022group2/issues/574)|2 hours|
+  |Getters for learningspaces : random ls getter for main page.|[615](https://github.com/bounswe/bounswe2022group2/issues/615)|1 hour|
+  |GET learning spaces using user information|[619](https://github.com/bounswe/bounswe2022group2/issues/619)|2 hours|
 
   |Pull Request Title|Link|Time consumption|
   |-----|:--------:|:-----:|
-  |POST /learningspace implementation|[540 ](https://github.com/bounswe/bounswe2022group2/issues/540)|4 hours|
-  |get categories endpoint implementation and categories logic in learning spaces|[556 ](https://github.com/bounswe/bounswe2022group2/issues/556)|4 hours|
-  |Semantic search implementation for backend|[573 ](https://github.com/bounswe/bounswe2022group2/issues/573)|30 hours|
-  |Getters for the learning spaces|[575 ](https://github.com/bounswe/bounswe2022group2/issues/575)|2 hours|
+  |POST /learningspace implementation|[540](https://github.com/bounswe/bounswe2022group2/issues/540)|4 hours|
+  |get categories endpoint implementation and categories logic in learning spaces|[556](https://github.com/bounswe/bounswe2022group2/issues/556)|4 hours|
+  |Semantic search implementation for backend|[573](https://github.com/bounswe/bounswe2022group2/issues/573)|30 hours|
+  |Getters for the learning spaces|[575](https://github.com/bounswe/bounswe2022group2/issues/575)|2 hours|
   |615 getters for learningspaces: get most participated learning spaces if a query is not given|[617](https://github.com/bounswe/bounswe2022group2/issues/617)|1 hours|
   |GET endpoints regarding user and learningspace relation|[621](https://github.com/bounswe/bounswe2022group2/issues/621)|2 hours|
   |Milestone 2: Merge dev to master(Getting release)|[670](https://github.com/bounswe/bounswe2022group2/issues/670)|1 hour|
-  
   
 * **Hasan Can Erol**
   |Issue Title|Link|
@@ -251,55 +250,58 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Frontend: Unit Tests for Static Footer Component|[#689](https://github.com/bounswe/bounswe2022group2/pull/689)|
   
 * **Bahrican Yeşil:**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Milestone 2: Individual Report - Bahrican Yesil|[#701](https://github.com/bounswe/bounswe2022group2/issues/701)|
-  |Mobile: Image Annotation Cropped Preview - Annotations Screen|[#614](https://github.com/bounswe/bounswe2022group2/issues/614)|
-  |Mobile: Writing Tests of the Image Annotation Feature|[#608](https://github.com/bounswe/bounswe2022group2/issues/608)|
-  |Mobile: Writing Tests of the Text Annotation Feature|[#606](https://github.com/bounswe/bounswe2022group2/issues/606)|
-  |Mobile: Bug Fix for Chapter (Post) Tests|[#598](https://github.com/bounswe/bounswe2022group2/issues/598)|
-  |Mobile: Back-end Connection of Creating Annotation|[#594](https://github.com/bounswe/bounswe2022group2/issues/594)|
-  |Mobile: Implementation of the Events Section|[#583](https://github.com/bounswe/bounswe2022group2/issues/583)|
-  |Mobile: Implementation of the Annotated Image Logic|[#579](https://github.com/bounswe/bounswe2022group2/issues/579)|
-  |Mobile: Implementation of the Image Annotation|[#578](https://github.com/bounswe/bounswe2022group2/issues/578)|
-  |Mobile: Implementing Page Transition Animation|[#558](https://github.com/bounswe/bounswe2022group2/issues/558)|
-  |Mobile: Create GitHub Actions for Flutter |[#554](https://github.com/bounswe/bounswe2022group2/issues/554)|
-  |Mobile: Native Splash Screen|[#552](https://github.com/bounswe/bounswe2022group2/issues/552)|
-  |Mobile: Implementing Multiple Annotation Selection Dialog |[#546](https://github.com/bounswe/bounswe2022group2/issues/546)|
-  |Mobile: Implementing Overlapped Annotation Support|[#545](https://github.com/bounswe/bounswe2022group2/issues/545)|
-  |Mobile: Implementing Highlighted (Annotated) Text Widget|[#517](https://github.com/bounswe/bounswe2022group2/issues/517)|
-  |Mobile: Implementing Annotatable Text Widget|[#505](https://github.com/bounswe/bounswe2022group2/issues/505)|
-  |Documenting Meeting notes for Mobile Meeting #4|[#479](https://github.com/bounswe/bounswe2022group2/issues/479)|
-  |Mobile: Writing Tests of the Course Detail Chapter Section|[#478](https://github.com/bounswe/bounswe2022group2/issues/478)|
-  |Mobile: Implementing Course Detail Chapter Section|[#477](https://github.com/bounswe/bounswe2022group2/issues/477)|
-  |Creating a Pull Request Template|[#476](https://github.com/bounswe/bounswe2022group2/issues/476)|
-  |Milestone 2: Annotations Part of the Report - Mobile|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|
-  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Milestone 2: Individual Report - Bahrican Yesil|[#701](https://github.com/bounswe/bounswe2022group2/issues/701)|4h|
+  |Mobile: Image Annotation Cropped Preview - Annotations Screen|[#614](https://github.com/bounswe/bounswe2022group2/issues/614)|2h 30m|
+  |Mobile: Writing Tests of the Image Annotation Feature|[#608](https://github.com/bounswe/bounswe2022group2/issues/608)|1h 45m|
+  |Mobile: Writing Tests of the Text Annotation Feature|[#606](https://github.com/bounswe/bounswe2022group2/issues/606)|1h 15m|
+  |Mobile: Bug Fix for Chapter (Post) Tests|[#598](https://github.com/bounswe/bounswe2022group2/issues/598)|1h 15m|
+  |Mobile: Back-end Connection of Creating Annotation|[#594](https://github.com/bounswe/bounswe2022group2/issues/594)|2h 30m|
+  |Mobile: Implementation of the Events Section|[#583](https://github.com/bounswe/bounswe2022group2/issues/583)|6h|
+  |Mobile: Implementation of the Annotated Image Logic|[#579](https://github.com/bounswe/bounswe2022group2/issues/579)|2h 30m|
+  |Mobile: Implementation of the Image Annotation|[#578](https://github.com/bounswe/bounswe2022group2/issues/578)|5h 30m|
+  |Mobile: Implementing Page Transition Animation|[#558](https://github.com/bounswe/bounswe2022group2/issues/558)|1h 15m|
+  |Mobile: Create GitHub Actions for Flutter |[#554](https://github.com/bounswe/bounswe2022group2/issues/554)|1h 15m|
+  |Mobile: Native Splash Screen|[#552](https://github.com/bounswe/bounswe2022group2/issues/552)|30m|
+  |Mobile: Implementing Multiple Annotation Selection Dialog |[#546](https://github.com/bounswe/bounswe2022group2/issues/546)|3h 15m|
+  |Mobile: Implementing Overlapped Annotation Support|[#545](https://github.com/bounswe/bounswe2022group2/issues/545)|4h 15m|
+  |Mobile: Implementing Highlighted (Annotated) Text Widget|[#517](https://github.com/bounswe/bounswe2022group2/issues/517)|4h 15m|
+  |Mobile: Implementing Annotatable Text Widget|[#505](https://github.com/bounswe/bounswe2022group2/issues/505)|5h 15m|
+  |Documenting Meeting notes for Mobile Meeting #4|[#479](https://github.com/bounswe/bounswe2022group2/issues/479)|1h|
+  |Mobile: Writing Tests of the Course Detail Chapter Section|[#478](https://github.com/bounswe/bounswe2022group2/issues/478)|1h 15m|
+  |Mobile: Implementing Course Detail Chapter Section|[#477](https://github.com/bounswe/bounswe2022group2/issues/477)|5h 30m|
+  |Creating a Pull Request Template|[#476](https://github.com/bounswe/bounswe2022group2/issues/476)|45m|
+  |Milestone 2: Annotations Part of the Report - Mobile|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|1h 10m|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|2h 30m|
   
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/issues/707)|
-  |Mobile: Hotfix - Set Default Values and lots of Demo Bugs|[#662](https://github.com/bounswe/bounswe2022group2/issues/662)|
-  |Mobile/bugfix/annotation model update|[#653](https://github.com/bounswe/bounswe2022group2/issues/653)|
-  |Mobile: Annotation Screen|[#613](https://github.com/bounswe/bounswe2022group2/issues/613)|
-  |Mobile: Image Annotation Tests|[#612](https://github.com/bounswe/bounswe2022group2/issues/612)|
-  |Mobile: Text Annotation Tests|[#607](https://github.com/bounswe/bounswe2022group2/issues/607)|
-  |Mobile: BugFix - Chapter Unit Tests|[#599](https://github.com/bounswe/bounswe2022group2/issues/599)|
-  |Mobile: Create Annotation Back End Connection|[#595](https://github.com/bounswe/bounswe2022group2/issues/595)|
-  |Mobile: Learning Space Events Section|[#592](https://github.com/bounswe/bounswe2022group2/issues/592)|
-  |Integrate display logic for image annotations|[#582](https://github.com/bounswe/bounswe2022group2/issues/582)|
-  |Mobile: Implementing Image Annotation|[#581](https://github.com/bounswe/bounswe2022group2/issues/581)|
-  |Mobile: Fix Selected Categories Issue Between Page Transitions|[#580](https://github.com/bounswe/bounswe2022group2/issues/580)|
-  |Mobile: Implementing Page Transition Animation|[#559](https://github.com/bounswe/bounswe2022group2/issues/559)|
-  |Create GitHub Actions for Flutter|[#555](https://github.com/bounswe/bounswe2022group2/issues/555)|
-  |Mobile: Native Splash Screen|[#553](https://github.com/bounswe/bounswe2022group2/issues/553)|
-  |Mobile: Implementation of Multiple Annotation Selection Dialog |[#550](https://github.com/bounswe/bounswe2022group2/issues/550)|
-  |Mobile/enhancement/overlapped annotations|[#547](https://github.com/bounswe/bounswe2022group2/issues/547)|
-  |Mobile: Highlighted/Annotated Text Widget|[#539](https://github.com/bounswe/bounswe2022group2/issues/539)|
-  |Mobile: Annotatable Text Widget Implementation|[#538](https://github.com/bounswe/bounswe2022group2/issues/538)|
-  |Completes tests of the chapter section|[#502](https://github.com/bounswe/bounswe2022group2/issues/502)|
-  |Mobile: Learning Space Chapter Section|[#501](https://github.com/bounswe/bounswe2022group2/issues/501)|
-  |Create a Pull Request Template|[#480](https://github.com/bounswe/bounswe2022group2/issues/480)|
+  |Pull Request Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/pull/707)|3h 15m|
+  |Mobile: Hotfix - Set Default Values and lots of Demo Bugs|[#662](https://github.com/bounswe/bounswe2022group2/pull/662)|2h|
+  |Mobile/bugfix/annotation model update|[#653](https://github.com/bounswe/bounswe2022group2/pull/653)|45m|
+  |Mobile: Annotation Screen|[#613](https://github.com/bounswe/bounswe2022group2/pull/613)|1h 45m|
+  |Mobile: Image Annotation Tests|[#612](https://github.com/bounswe/bounswe2022group2/pull/612)|1h 45m|
+  |Mobile: Text Annotation Tests|[#607](https://github.com/bounswe/bounswe2022group2/pull/607)|1h 15m|
+  |Mobile: BugFix - Chapter Unit Tests|[#599](https://github.com/bounswe/bounswe2022group2/pull/599)|1h 15m|
+  |Mobile: Create Annotation Back End Connection|[#595](https://github.com/bounswe/bounswe2022group2/pull/595)|2h 30m|
+  |Mobile: Learning Space Events Section|[#592](https://github.com/bounswe/bounswe2022group2/pull/592)|6h|
+  |Integrate display logic for image annotations|[#582](https://github.com/bounswe/bounswe2022group2/pull/582)|2h 30m|
+  |Mobile: Implementing Image Annotation|[#581](https://github.com/bounswe/bounswe2022group2/pull/581)|5h 30m|
+  |Mobile: Fix Selected Categories Issue Between Page Transitions|[#580](https://github.com/bounswe/bounswe2022group2/pull/580)|40m|
+  |Mobile: Implementing Page Transition Animation|[#559](https://github.com/bounswe/bounswe2022group2/pull/559)|1h 15m|
+  |Create GitHub Actions for Flutter|[#555](https://github.com/bounswe/bounswe2022group2/pull/555)|1h 15m|
+  |Mobile: Native Splash Screen|[#553](https://github.com/bounswe/bounswe2022group2/pull/553)|30m|
+  |Mobile: Implementation of Multiple Annotation Selection Dialog |[#550](https://github.com/bounswe/bounswe2022group2/pull/550)|3h 15m|
+  |Mobile/enhancement/overlapped annotations|[#547](https://github.com/bounswe/bounswe2022group2/pull/547)|30m|
+  |Mobile: Highlighted/Annotated Text Widget|[#539](https://github.com/bounswe/bounswe2022group2/pull/539)|4h 15m|
+  |Mobile: Annotatable Text Widget Implementation|[#538](https://github.com/bounswe/bounswe2022group2/pull/538)|5h 15m|
+  |Completes tests of the chapter section|[#502](https://github.com/bounswe/bounswe2022group2/pull/502)|1h 15m|
+  |Mobile: Learning Space Chapter Section|[#501](https://github.com/bounswe/bounswe2022group2/pull/501)|5h 30m|
+  |Create a Pull Request Template|[#480](https://github.com/bounswe/bounswe2022group2/pull/480)|45m|
+  |Milestone 2: Summary of Work - Bahrican|[#708](https://github.com/bounswe/bounswe2022group2/pull/708)|1h 15m|
+  |Milestone 2: Mobile UI/UX Section - Bahrican|[#715](https://github.com/bounswe/bounswe2022group2/pull/715)|2h 30m|
+  |Milestone 2: Mobile Related Additions to the Annotations Part|[#734](https://github.com/bounswe/bounswe2022group2/pull/734)|1h 10m|
   
 * **Mehmet Gökay Yıldız**
   |Issue Title|Link|
@@ -345,6 +347,7 @@ Learnify is an online learning platform that provides users collaborative spaces
 ***
 
 ### Progress According to Requirements
+
 *Note*: C stands for Complated, I stands for In Progress, N stands for Not Started. First term is status of Frontend team, the second term is the status of the backend team, and the third term is the status of the mobile team.
 
 For example, C/N/I means that the frontend team completed, the backend team is not started and the mobile team is still working on it.
@@ -371,12 +374,14 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 <details><summary>1.1.1.3. Email Verification</summary>
 
 * 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.C/C/C
+
 </details>
 
 <details><summary>1.1.1.4. Forgot Password</summary>
 
 * 1.1.1.4.1. Users shall first enter the email addresses they signed up with and then the verification code they received.C/C/C
 * 1.1.1.4.2. Users shall be authenticated after verification and be logged in.C/C/C
+
 </details>
 
 <details><summary>1.1.1.5. Logout</summary>
@@ -419,7 +424,6 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 </details>
 
-
 <details><summary>1.1.2.12. Progress Tracking</summary>
 
 * 1.1.2.12.1. Users shall be able to track their progress.N/N/N
@@ -438,8 +442,8 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 * 1.1.2.14.2. Users shall be able to view annotations made by other users.I/I/C
 * 1.1.2.14.3. Users shall be able to browse annotations by category, by course, by history, and by upvotes they have received.I/I/I
 * 1.1.2.14.4. Users shall access the annotations they have added for course material from the annotations section of their profile pages.I/I/I
-</details>
 
+</details>
 
 <details><summary>1.1.2.15. Learning Spaces and Reputation</summary>
 
@@ -466,9 +470,7 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 * 1.1.3.1.5. Users shall be able to block other users. N/N/N
 * 1.1.3.1.6. Users could prevent other users to see their profile by blocking them. N/N/N
 
-
 </details>
-
 
 <details><summary>1.1.3.2. User-Learning Space Interaction</summary>
 
@@ -492,7 +494,7 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 <details><summary>1.1.3.2.3. Enrolling to Learning Spaces </summary>
 
 * 1.1.3.2.3.1. Users shall see the content within sections. N/N/C
-* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire. I/I/C 
+* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire. I/I/C
 * 1.1.3.2.3.3. Users shall know the type of poll they are participating in beforehand. N/N/N
 * 1.1.3.2.3.4. Users shall receive confirmation of their expertise on the topic upon completion of a lecture. N/N/N
 * 1.1.3.2.3.5. Users shall be able to review other users in terms of providing learning material by giving stars and optionally providing feedback. N/N/N
@@ -546,7 +548,6 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 * 1.1.4.6. Every learning space shall have a general discussion forum. I/I/I
 * 1.1.4.7. Every learning space shall have a discussion forum per chapter. N/N/N
 
-
 </details>
 
 <details><summary>1.1.5 🛂 Administration</summary><blockquote>
@@ -561,7 +562,6 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 </blockquote>
 </details>
 
-
 ### 1.2. 💻 System Requirements
 
 <details><summary>1.2.1. 💡 Recommendations </summary><blockquote>
@@ -574,43 +574,42 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 <details><summary>1.2.2. 🔔 Notifications</summary><blockquote>
 
-  * 1.2.2.1 Users shall get notifications from the system. N/N/N
-  * 1.2.2.2 The system shall notify users who did not complete almost done section of the registration. N/N/N
-  * 1.2.2.3 The system shall notify users regarding any posts on the discussion forum of the lectures they take or give. N/N/N
-  * 1.2.2.4 The system shall notify users when other users share notes with them. N/N/N
-  * 1.2.2.5 The system shall notify users when they earn an achievement. N/N/N
-  * 1.2.2.6 The system shall notify users to give feedback after each completed lecture. N/N/N
-  * 1.2.2.7 The system shall notify lecturers when a user provides feedback on one of their courses. N/N/N
-  * 1.2.2.8 The system shall notify users when an event is created for a lecture they are taking or giving. N/N/N
-  * 1.2.2.9 The system shall notify users when a poll is created in a lecture they are taking. N/N/N
-  * 1.2.2.10 The system shall notify users when they do not use the application for more than one day. N/N/N
-  * 1.2.2.11 Users shall be able to turn their notifications on or off. N/N/N
-  * 1.2.2.12 The system shall notify users when other users follow them. N/N/N
+* 1.2.2.1 Users shall get notifications from the system. N/N/N
+* 1.2.2.2 The system shall notify users who did not complete almost done section of the registration. N/N/N
+* 1.2.2.3 The system shall notify users regarding any posts on the discussion forum of the lectures they take or give. N/N/N
+* 1.2.2.4 The system shall notify users when other users share notes with them. N/N/N
+* 1.2.2.5 The system shall notify users when they earn an achievement. N/N/N
+* 1.2.2.6 The system shall notify users to give feedback after each completed lecture. N/N/N
+* 1.2.2.7 The system shall notify lecturers when a user provides feedback on one of their courses. N/N/N
+* 1.2.2.8 The system shall notify users when an event is created for a lecture they are taking or giving. N/N/N
+* 1.2.2.9 The system shall notify users when a poll is created in a lecture they are taking. N/N/N
+* 1.2.2.10 The system shall notify users when they do not use the application for more than one day. N/N/N
+* 1.2.2.11 Users shall be able to turn their notifications on or off. N/N/N
+* 1.2.2.12 The system shall notify users when other users follow them. N/N/N
 
 </blockquote></details>
 
 <details><summary>1.2.3. 🔎 Searching and Browsing </summary><blockquote>
 
-  * 1.2.3.1 The system shall implement semantic searching. C/C/C
-  * 1.2.3.2 The system shall allow users to search for other users. N/N/I
-     * 1.2.3.2.1 The system shall allow searching for users by their username. N/N/I
-     * 1.2.3.2.2 The system should suggest users based on full name when search query gives no result for usernames. N/N/N
-  * 1.2.3.3 The system shall allow users to search for courses. C/C/C
-  * 1.2.3.4 The system shall offer filters for search results. N/N/N
-     * 1.2.3.4.1 The system shall allow users to filter search results as only users or only courses. N/N/I
-  * 1.2.3.5 The system shall allow users to browse for recommended courses. N/N/I
-  * 1.2.3.6 The system shall allow users to browse for courses offered by a lecturer on the lecturer user's profile page. N/N/N
-  * 1.2.3.7 The system shall allow users to browse their notes. N/N/N
-  * 1.2.3.8 The system shall allow users to browse for notes filtered by their tags. N/N/N
-  * 1.2.3.9 The system shall allow users to browse the activities and achievements of users they follow on the user's profile page. N/N/N
+* 1.2.3.1 The system shall implement semantic searching. C/C/C
+* 1.2.3.2 The system shall allow users to search for other users. N/N/I
+  * 1.2.3.2.1 The system shall allow searching for users by their username. N/N/I
+  * 1.2.3.2.2 The system should suggest users based on full name when search query gives no result for usernames. N/N/N
+* 1.2.3.3 The system shall allow users to search for courses. C/C/C
+* 1.2.3.4 The system shall offer filters for search results. N/N/N
+  * 1.2.3.4.1 The system shall allow users to filter search results as only users or only courses. N/N/I
+* 1.2.3.5 The system shall allow users to browse for recommended courses. N/N/I
+* 1.2.3.6 The system shall allow users to browse for courses offered by a lecturer on the lecturer user's profile page. N/N/N
+* 1.2.3.7 The system shall allow users to browse their notes. N/N/N
+* 1.2.3.8 The system shall allow users to browse for notes filtered by their tags. N/N/N
+* 1.2.3.9 The system shall allow users to browse the activities and achievements of users they follow on the user's profile page. N/N/N
+
 </blockquote></details>
 
 <details><summary>1.2.4. 📝 Learning Spaces </summary><blockquote>
 
-
 * 1.2.4.1. The system shall set the user created the lecture as the lecture’s lecturer. N/N/N (not a specific lecturer in co-learning environment)
 * 1.2.4.2. Newly created lectures, chapters, and sections shall set as private initially as long as the lecturer states otherwise. N/N/N
-
 
 </blockquote>
 </details>
@@ -661,7 +660,6 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 <details><summary>2.1. 🔓 Availability and Accessibility</summary><blockquote>
 
-
 * 2.1.1. System should have a Website interface that provides an web specific user experience. C (Only for front-end)
 * 2.1.2. System should have a Android application interface that provides an mobile specific user experience.C (Only for mobile)
 * 2.1.3. System should support [UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character encoding. C/C/C
@@ -671,34 +669,34 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 <details><summary>2.2. 🔏 Privacy</summary><blockquote>
 
- 
 * 2.2.1. Ethical concerns must be considered, so system must follow the rules defined by [GDPR](https://tr.wikipedia.org/wiki/Genel_Veri_Koruma_Y%C3%B6netmeli%C4%9Fi)/[KVKK](https://tr.wikipedia.org/wiki/Ki%C5%9Fisel_Verileri_Koruma_Kurumu).
-     * 2.2.1.1 A well-defined explanation about how users data will be used must be given to users. N/N/N
-     * 2.2.1.2 Users must agree to the Privacy Policy and User Agreement. C/C/C
-     * 2.2.1.3 If any change happens in the policy, users must be notified about it. N/N/N
+  * 2.2.1.1 A well-defined explanation about how users data will be used must be given to users. N/N/N
+  * 2.2.1.2 Users must agree to the Privacy Policy and User Agreement. C/C/C
+  * 2.2.1.3 If any change happens in the policy, users must be notified about it. N/N/N
 * 2.2.2. Lectures can be private or public. If a lecture is private, its content should not be visible to every user in the app. N/N/N
+
 </details>
 
 <details><summary>2.3.  🛡️ Security</summary><blockquote>
 
- 
 * 2.3.1 All sensitive data shall be encrypted before storing. N/N/N
 * 2.3.2 The system shall block the account if any security issue is observed. N/N/N
+
 </details>
 
 <details><summary>2.4.  🔧 Performance and Reliability</summary><blockquote>
 
- 
 * 2.4.1 The system should be able to handle at least 10.000 users and 500 user actions simultaneously. N/N/N
 * 2.4.2 The system should have a response time of at most 2.0 seconds excluding network based delay. N/N/N
+
 </details>
 
 <details><summary>2.5. 🧩 Usability </summary><blockquote>
 
- 
 * 2.5.1 The system should provide a user-friendly interface. It should contain a basic site map and should not contain a confusing linking system. I/I/C
 * 2.5.2 The system should provide a direct feedback mechanism. Upon interaction, user shall be informed about success or failure of their action. I/C/C
 * 2.5.3 The system should have a well-chosen typeface that should be readable and clean. I/C/C
+
 </details>
 
 <details><summary>2.6. 🌋 Disaster Recovery </summary><blockquote>
@@ -706,8 +704,8 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 * 2.6.1 The system should get backups and send them off-site at regular intervals for the possibility of disasters. N/N/N
 * 2.6.2 System shall be able to reinitialize itself and continue functioning in case of an unexpected shutdown. N/N/N
 * 2.6.3 System shall keep logs regarding the unexpected shutdown. N/N/N
-</details>
 
+</details>
 
 ***
 
@@ -736,7 +734,6 @@ Responsible: Koray Tekin \
 Link: [Login Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LoginForm.js)
 
 <img width="1501" alt="Screen Shot 2022-12-09 at 15 48 30" src="https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png">
-
 
 #### Home Page
 
@@ -787,7 +784,6 @@ Link: [Learning Space Page](https://github.com/bounswe/bounswe2022group2/blob/ma
 
 <img width="1501" alt="Screen Shot 2022-12-09 at 15 51 56" src="https://user-images.githubusercontent.com/74411541/206706633-19b029c7-032d-4088-9215-8e6bc9e2e484.png">
 
-
 #### Mobile
 
 Note: We structured our folders in a way that they can be managed easily. Therefore, we're giving the link of the folder related to the code part you requested. Please analyze and review them carefully. You can also see the import statements at the beginning of each file and so that you can find the implementations of sub-components in a screen. Please traverse all files included in the directory and also the imported ones and the sub-folders (such as view, model, view-model, constants, and so on) to see our implementations on the code side.
@@ -813,14 +809,12 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 
 <img width="300" alt="forget-password" src="https://user-images.githubusercontent.com/56553280/206687548-af6db5ec-b28f-497a-a0b1-0e2af19175ed.jpg">
 
-
 ##### Verification Screen
 
 Responsible: Egemen Atik \
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/verification)
 
 <img width="300" alt="verification" src="https://user-images.githubusercontent.com/100771925/206706051-b31c6c98-41ea-453a-b393-7e28ec308cd7.png">
-
 
 ##### App Bar and Bottom Navigation Bar
 
@@ -829,7 +823,6 @@ Link - App Bar: [Code File in the Repository](https://github.com/bounswe/bounswe
 Link - Bottom Navigation Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
 
 <img width="300" alt="app_and_bottom_nav_bar" src="https://user-images.githubusercontent.com/60237280/206682705-eeae485d-aa33-4e54-8598-408f4da6787a.png">
-
 
 ##### Home Screen
 
@@ -859,7 +852,6 @@ Responsible: Onur Kömürcü \
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/view-learning-spaces/view)
 
 <img width="300" alt="spaces_screen" src="https://user-images.githubusercontent.com/92719802/206706395-58b9a6b6-3b54-4bd5-a302-62fa169ca566.png">
-
 
 ##### Profile Screen
 
@@ -1324,8 +1316,8 @@ management of our software project:
    I took the resposibility of presenting in our demo with my teammates, and enyojed this task very much since both our demos are amazing.
 
    --------------------
-   
-   ### *Member:*  
+
+### *Member:*  
 
 Name: Muhammed Enes Sürmeli
 
@@ -1359,9 +1351,10 @@ Group: Group2 - Frontend Team
   24. Fixing any bugs, mistakes, or problems that arose throughout the routine development of our application's front end.
   25. Consistently participating in and attending general meetings.
   26. Consistently participating in and attending frontend team meetings.
- 
+
 ### *Main Contributions:*
-I work on the front end of our Learnify application, which is being developed collaboratively by all the members of group 2. I have implemented the text and image annotation features for the frontend part complying with the W3C standards as constantly requested by our teacher in the lectures. I have offered hotfixes, sugggested a few improvements for the parts in my coworkers' code, and attempted to pass along the related information I have discovered. In addition, for the components I developed while working on the front end of our online application like not found page and email verification page, I also performed unit tests to ensure that every component worked as expected. In keeping with the design principles we jointly decided with other frontend members upon and in consistency with other components and pages of our online application, I continued to offer some of the visual components like designs, icons, and buttons of our web application for this milestone 2. I frequently checked the progress of our application's development before our weekly general and frontend team meetings, and suggested some appropriate ideas for our agenda every week. For our frontend application, I have also altered some visual parts of the learning space page post creation and editing parts so as to improve efficiency of our learning space page in terms of the loading duration by changing some of the the png images to svg icons. For our frontend part of the application, I have also given some parts of the page layouts and graphic elements like icons, logos, and drawings along with some alluring designs to support these. In addition, I looked into React's page routing and came up with a simple but effective fix for one of our fundamental problems by implementing private and protected routing, which in essence was to prevent unauthorized users from accessing the internal parts of the application like home page, learning space page, etc. I have also created a component-based page layouting logic for the post feature of the learning space page in order to easily import components, utilize them without duplicating code segments, and be able to give certain parameters with React props to display components. In addition, I added a not found page with an eye-pleasing desgin and built majority of the components and functionalities of the learning space page. Finally, in line with our frontend development, I have created some css classes that comply with our design guidelines for the components implemented by the entire frontend team, as well as implemented separate components for each, established backend connections, established private page routing, and passed parameters to display components according to the response obtained from the REST API. 
+
+I work on the front end of our Learnify application, which is being developed collaboratively by all the members of group 2. I have implemented the text and image annotation features for the frontend part complying with the W3C standards as constantly requested by our teacher in the lectures. I have offered hotfixes, sugggested a few improvements for the parts in my coworkers' code, and attempted to pass along the related information I have discovered. In addition, for the components I developed while working on the front end of our online application like not found page and email verification page, I also performed unit tests to ensure that every component worked as expected. In keeping with the design principles we jointly decided with other frontend members upon and in consistency with other components and pages of our online application, I continued to offer some of the visual components like designs, icons, and buttons of our web application for this milestone 2. I frequently checked the progress of our application's development before our weekly general and frontend team meetings, and suggested some appropriate ideas for our agenda every week. For our frontend application, I have also altered some visual parts of the learning space page post creation and editing parts so as to improve efficiency of our learning space page in terms of the loading duration by changing some of the the png images to svg icons. For our frontend part of the application, I have also given some parts of the page layouts and graphic elements like icons, logos, and drawings along with some alluring designs to support these. In addition, I looked into React's page routing and came up with a simple but effective fix for one of our fundamental problems by implementing private and protected routing, which in essence was to prevent unauthorized users from accessing the internal parts of the application like home page, learning space page, etc. I have also created a component-based page layouting logic for the post feature of the learning space page in order to easily import components, utilize them without duplicating code segments, and be able to give certain parameters with React props to display components. In addition, I added a not found page with an eye-pleasing desgin and built majority of the components and functionalities of the learning space page. Finally, in line with our frontend development, I have created some css classes that comply with our design guidelines for the components implemented by the entire frontend team, as well as implemented separate components for each, established backend connections, established private page routing, and passed parameters to display components according to the response obtained from the REST API.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -1375,7 +1368,7 @@ demonstrated during the demo:
   8. [Frontend: Implementation of Edit Post Feature](https://github.com/bounswe/bounswe2022group2/issues/659)
   9. [Frontend: Backend Connection For Edit Post](https://github.com/bounswe/bounswe2022group2/issues/660)
   10. [Frontend: Unit Tests for Not Found Page](https://github.com/bounswe/bounswe2022group2/issues/681)
-  11. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453) 
+  11. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
@@ -1387,6 +1380,7 @@ management of our software project:
   6. [Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts](https://github.com/bounswe/bounswe2022group2/issues/492)
 
 ### *Pull Requests:*
+
 1. Frontend: Implementation of Private Routes [#523](https://github.com/bounswe/bounswe2022group2/pull/523)
 2. Frontend: Implementation of Not Found Page [#525](https://github.com/bounswe/bounswe2022group2/pull/525)
 3. Frontend: Implementation of Components on Learning Space Page [#629](https://github.com/bounswe/bounswe2022group2/issues/629)
@@ -1404,6 +1398,7 @@ management of our software project:
 15. Updating the Dev Branch [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
 
 ### *Unit Tests:*
+
 1. Frontend: Unit Tests for Email Verification Page [#458](https://github.com/bounswe/bounswe2022group2/pull/458)
 2. Frontend: Unit Tests for Not Found Page [#683](https://github.com/bounswe/bounswe2022group2/pull/683)
 
