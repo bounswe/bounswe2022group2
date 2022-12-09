@@ -140,16 +140,17 @@ Learnify is an online learning platform that provides users collaborative spaces
   |-----|:--------:|
   
 * **Onur Kömürcü:**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|
-  |Mobile: Implementing Learnifies Page|[#568](https://github.com/bounswe/bounswe2022group2/issues/568)|
-  |Mobile: Backend Connection for Search Page|[#584](https://github.com/bounswe/bounswe2022group2/issues/584)|
-  |Mobile: Implementing User Preview Widget|[#593](https://github.com/bounswe/bounswe2022group2/issues/593)|
-  |Mobile: Static User Search Implementation and Additional Improvements|[#635](https://github.com/bounswe/bounswe2022group2/issues/635)|
-  |Mobile: Tests for ViewAllScreen and TakenLsScreen|[#646](https://github.com/bounswe/bounswe2022group2/issues/646)|
-  |Documenting Meeting Notes of Meeting #5 of the Mobile Team|[#527](https://github.com/bounswe/bounswe2022group2/issues/527)|
-  |Milestone-2 Report: Updating Project Plan|[#690](https://github.com/bounswe/bounswe2022group2/issues/690)|
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|20 hours|
+  |Mobile: Implementing Learnifies Page|[#568](https://github.com/bounswe/bounswe2022group2/issues/568)|4 hours|
+  |Mobile: Backend Connection for Search Page|[#584](https://github.com/bounswe/bounswe2022group2/issues/584)|5 hours|
+  |Mobile: Implementing User Preview Widget|[#593](https://github.com/bounswe/bounswe2022group2/issues/593)|2 hours|
+  |Mobile: Static User Search Implementation and Additional Improvements|[#635](https://github.com/bounswe/bounswe2022group2/issues/635)|7 hours|
+  |Mobile: Tests for ViewAllScreen and TakenLsScreen|[#646](https://github.com/bounswe/bounswe2022group2/issues/646)|1h 30m|
+  |Documenting Meeting Notes of Meeting #5 of the Mobile Team|[#527](https://github.com/bounswe/bounswe2022group2/issues/527)|40 minutes|
+  |Milestone-2 Report: Updating Project Plan|[#690](https://github.com/bounswe/bounswe2022group2/issues/690)|1 hour|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|50 minutes|
   
   |Pull Request Title|Link|
   |-----|:--------:|
