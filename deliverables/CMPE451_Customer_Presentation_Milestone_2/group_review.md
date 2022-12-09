@@ -10,7 +10,7 @@
 
 * 2.1 Summary of Individual Work
 * 2.2 Status of the Deliverables of Milestone 1
-* 2.3 Progress According to Requirements
+* 2.3 [Progress According to Requirements](#progress-according-to-requirements)
 * 2.4 API Endpoints
 * 2.5 [User Interface/User Experience](#user-interface/user-experience)
 * 2.6 Annotations
