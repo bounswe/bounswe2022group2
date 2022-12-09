@@ -161,33 +161,33 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Mobile: Tests for Pages Which Use View All List|[#647](https://github.com/bounswe/bounswe2022group2/issues/647)|
   
 * **Ecenur Sezer**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Backend: POST Learning Space Enroll Endpoint| [#561](https://github.com/bounswe/bounswe2022group2/issues/561)
-  |Backend: Implementing Unit Tests for Enrolling Learning Space|[#563](https://github.com/bounswe/bounswe2022group2/issues/563)
-  |Backend: Create Annotation Endpoint|[#577](https://github.com/bounswe/bounswe2022group2/issues/577)
-  |Backend: Create Post Endpoint|[#589](https://github.com/bounswe/bounswe2022group2/issues/589)
-  |Backend: Edit Post Endpoint|[#600](https://github.com/bounswe/bounswe2022group2/issues/600)
-  |Backend: Edit Annotation Endpoint|[#602](https://github.com/bounswe/bounswe2022group2/issues/602)
-  |Backend: Unit Tests for Create Post Endpoint|[#663](https://github.com/bounswe/bounswe2022group2/issues/663)
-  |Backend: Unit Tests for Edit Post Endpoint|[#665](https://github.com/bounswe/bounswe2022group2/issues/665)
-  |Milestone-2 Report: Annotations|[#675](https://github.com/bounswe/bounswe2022group2/issues/675)
-  |Milestone-2 Report: API Documentation|[#677](https://github.com/bounswe/bounswe2022group2/issues/677)
-  |Milestone-2 Report: Individual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Backend: POST Learning Space Enroll Endpoint| [#561](https://github.com/bounswe/bounswe2022group2/issues/561) | 3 hrs |
+  |Backend: Implementing Unit Tests for Enrolling Learning Space|[#563](https://github.com/bounswe/bounswe2022group2/issues/563)| 2 hrs |
+  |Backend: Create Annotation Endpoint|[#577](https://github.com/bounswe/bounswe2022group2/issues/577)|5 hrs|
+  |Backend: Create Post Endpoint|[#589](https://github.com/bounswe/bounswe2022group2/issues/589)|3 hrs|
+  |Backend: Edit Post Endpoint|[#600](https://github.com/bounswe/bounswe2022group2/issues/600)|2 hrs|
+  |Backend: Edit Annotation Endpoint|[#602](https://github.com/bounswe/bounswe2022group2/issues/602)| 4 hrs |
+  |Backend: Unit Tests for Create Post Endpoint|[#663](https://github.com/bounswe/bounswe2022group2/issues/663)|2 hrs|
+  |Backend: Unit Tests for Edit Post Endpoint|[#665](https://github.com/bounswe/bounswe2022group2/issues/665)|2 hrs|
+  |Milestone-2 Report: Annotations|[#675](https://github.com/bounswe/bounswe2022group2/issues/675)|2 hrs|
+  |Milestone-2 Report: API Documentation|[#677](https://github.com/bounswe/bounswe2022group2/issues/677)|2.5 hrs|
+  |Milestone-2 Report: Individual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)|1 hrs|
 
   |Pull Request Title|Link|
   |-----|:--------:|
-  |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
-  |563 backend implementing unit tests for enrolling learning space|[#564](https://github.com/bounswe/bounswe2022group2/pull/564)
-  |Backend: Create Annotation Endpoint|[#588](https://github.com/bounswe/bounswe2022group2/pull/588)
-  |Backend: Create post endpoint implemented|[#590](https://github.com/bounswe/bounswe2022group2/pull/590)
-  |Backend: Annotation Endpoint Creator and LS IDs|[#597](https://github.com/bounswe/bounswe2022group2/pull/597)
-  |Backend: Edit Post Endpoint|[#601](https://github.com/bounswe/bounswe2022group2/pull/601)
-  |Backend: Edit Annotations Endpoint|[#603](https://github.com/bounswe/bounswe2022group2/pull/603)
-  |Backend: Create Post endpoint Unit Test|[#664](https://github.com/bounswe/bounswe2022group2/pull/664)
-  |Backend: Unit Tests for Edit Post Endpoint|[#666](https://github.com/bounswe/bounswe2022group2/pull/666)
-  |Milestone-2 Report: Annotations|[#674](https://github.com/bounswe/bounswe2022group2/pull/674)
-  |Milestone-2 Report: API Documentation|[#685](https://github.com/bounswe/bounswe2022group2/pull/685)
+  |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)|3 hrs|
+  |563 backend implementing unit tests for enrolling learning space|[#564](https://github.com/bounswe/bounswe2022group2/pull/564)| 2 hrs |
+  |Backend: Create Annotation Endpoint|[#588](https://github.com/bounswe/bounswe2022group2/pull/588)| 5 hrs|
+  |Backend: Create post endpoint implemented|[#590](https://github.com/bounswe/bounswe2022group2/pull/590)|3 hrs|
+  |Backend: Annotation Endpoint Creator and LS IDs|[#597](https://github.com/bounswe/bounswe2022group2/pull/597)|2 hrs|
+  |Backend: Edit Post Endpoint|[#601](https://github.com/bounswe/bounswe2022group2/pull/601)| 4 hrs |
+  |Backend: Edit Annotations Endpoint|[#603](https://github.com/bounswe/bounswe2022group2/pull/603)|2 hrs|
+  |Backend: Create Post endpoint Unit Test|[#664](https://github.com/bounswe/bounswe2022group2/pull/664)|2 hrs|
+  |Backend: Unit Tests for Edit Post Endpoint|[#666](https://github.com/bounswe/bounswe2022group2/pull/666)|2 hrs|
+  |Milestone-2 Report: Annotations|[#674](https://github.com/bounswe/bounswe2022group2/pull/674)|2 hrs|
+  |Milestone-2 Report: API Documentation|[#685](https://github.com/bounswe/bounswe2022group2/pull/685)| 2.5 hrs|
   
 * **Muhammed Enes Sürmeli:**
   |Issue Title|Link|
