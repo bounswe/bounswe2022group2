@@ -322,6 +322,27 @@ Link: [Learning Spaces by Category Page](https://github.com/bounswe/bounswe2022g
 
 <img width="1528" alt="ls-by-category-page" src="https://user-images.githubusercontent.com/68481602/206698781-54bc12fb-efe5-40b9-84bf-3a2c6f2ea4d6.png">
 
+#### Forget Password Page
+
+Responsible: Mehmet Gökay Yıldız \
+Link: [Forget Password Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/ForgetPassword.js)
+
+<img width="1527" alt="forget-password-page" src="https://user-images.githubusercontent.com/42673110/206701007-f43b67cc-ff14-4b30-883d-43ff00b45853.png">
+
+#### Change Password Page
+
+Responsible: Mehmet Gökay Yıldız \
+Link: [Change Password Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/ChangePassword.js)
+
+<img width="1111" alt="change-password-page" src="https://user-images.githubusercontent.com/42673110/206701019-f76a57e1-31e6-41c1-8015-254bc205f91d.png">
+
+#### Create Learning Space Page
+
+Responsible: Mehmet Gökay Yıldız \
+Link: [Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/CreateLS.js)
+
+<img width="1528" alt="create-ls-page" src="https://user-images.githubusercontent.com/42673110/206700987-81ed6668-6267-483c-b766-f93849c763f8.png">
+
 #### Mobile
 
 Note: We structured our folders in a way that they can be managed easily. Therefore, we're giving the link of the folder related to the code part you requested. Please analyze and review them carefully. You can also see the import statements at the beginning of each file and so that you can find the implementations of sub-components in a screen. Please traverse all files included in the directory and also the imported ones and the sub-folders (such as view, model, view-model, constants, and so on) to see our implementations on the code side.
