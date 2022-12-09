@@ -45,28 +45,28 @@ Learnify is an online learning platform that provides users collaborative spaces
 ### Summary of Individual Work
 
 * **Altay Acar**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|
-  |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|
-  |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|
-  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#636](https://github.com/bounswe/bounswe2022group2/issues/636)|
-  |Frontend: Implementation of Semantic Search Bar|[#652](https://github.com/bounswe/bounswe2022group2/issues/652)|
-  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)|
-  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)|
-  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|9h|
+  |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|6h|
+  |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|6h|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#636](https://github.com/bounswe/bounswe2022group2/issues/636)|30m|
+  |Frontend: Implementation of Semantic Search Bar|[#652](https://github.com/bounswe/bounswe2022group2/issues/652)|3h|
+  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)|1h 20m|
+  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)|1h 20m|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|1h 20m|
   
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|
-  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/pull/571)|
-  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/pull/633)|
-  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/pull/637)|
-  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/pull/655)|
-  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|
-  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|
-  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|
-  
+  |Pull Request Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|9h|
+  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/pull/571)|6h|
+  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/pull/633)|6h|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/pull/637)|30m|
+  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/pull/655)|3h|
+  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|1h 20m|
+  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|1h 20m|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|1h 20m|
+
 * **Egemen Atik**
   |Issue Title|Link|
   |-----|:--------:|
@@ -135,16 +135,17 @@ Learnify is an online learning platform that provides users collaborative spaces
   |-----|:--------:|
   
 * **Onur Kömürcü:**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|
-  |Mobile: Implementing Learnifies Page|[#568](https://github.com/bounswe/bounswe2022group2/issues/568)|
-  |Mobile: Backend Connection for Search Page|[#584](https://github.com/bounswe/bounswe2022group2/issues/584)|
-  |Mobile: Implementing User Preview Widget|[#593](https://github.com/bounswe/bounswe2022group2/issues/593)|
-  |Mobile: Static User Search Implementation and Additional Improvements|[#635](https://github.com/bounswe/bounswe2022group2/issues/635)|
-  |Mobile: Tests for ViewAllScreen and TakenLsScreen|[#646](https://github.com/bounswe/bounswe2022group2/issues/646)|
-  |Documenting Meeting Notes of Meeting #5 of the Mobile Team|[#527](https://github.com/bounswe/bounswe2022group2/issues/527)|
-  |Milestone-2 Report: Updating Project Plan|[#690](https://github.com/bounswe/bounswe2022group2/issues/690)|
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|20 hours|
+  |Mobile: Implementing Learnifies Page|[#568](https://github.com/bounswe/bounswe2022group2/issues/568)|4 hours|
+  |Mobile: Backend Connection for Search Page|[#584](https://github.com/bounswe/bounswe2022group2/issues/584)|5 hours|
+  |Mobile: Implementing User Preview Widget|[#593](https://github.com/bounswe/bounswe2022group2/issues/593)|2 hours|
+  |Mobile: Static User Search Implementation and Additional Improvements|[#635](https://github.com/bounswe/bounswe2022group2/issues/635)|7 hours|
+  |Mobile: Tests for ViewAllScreen and TakenLsScreen|[#646](https://github.com/bounswe/bounswe2022group2/issues/646)|1h 30m|
+  |Documenting Meeting Notes of Meeting #5 of the Mobile Team|[#527](https://github.com/bounswe/bounswe2022group2/issues/527)|40 minutes|
+  |Milestone-2 Report: Updating Project Plan|[#690](https://github.com/bounswe/bounswe2022group2/issues/690)|1 hour|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|50 minutes|
   
   |Pull Request Title|Link|
   |-----|:--------:|
@@ -300,26 +301,26 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Milestone 2: Mobile Related Additions to the Annotations Part|[#734](https://github.com/bounswe/bounswe2022group2/pull/734)|1h 10m|
   
 * **Mehmet Gökay Yıldız**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)|
-  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)|
-  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)|
-  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)|
-  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)|
-  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)|
-  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)|
-  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)|
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)| 3hrs |
+  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)| 8 hrs |
+  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)| 30 hrs |
+  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)| 3 hrs |
+  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)| 2 hrs |
+  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)| 3 hrs |
+  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)| 2 hrs |
+  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)| 1 hrs |
 
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)|
-  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)|
-  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)|
-  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)|
-  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)|
-  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)|
-  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)|
+  |Pull Request Title|Link|Time Consumption|
+  |-----|:--------:|-----|
+  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)| 2 hrs |
+  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)| 3 hrs |
+  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)| 30 hrs |
+  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)| 3 hrs |
+  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)| 3 hrs |
+  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)| 30 min |
+  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)| 2 hrs |
   
 ***
   
@@ -730,6 +731,20 @@ Responsible: Koray Tekin \
 Link: [Login Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LoginForm.js)
 
 <img width="1501" alt="Screen Shot 2022-12-09 at 15 48 30" src="https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png">
+  
+#### Email Verification Page
+
+Responsible: Muhammed Enes Sürmeli \
+Link: [Email Verification Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/EmailVerificationPage.js)
+
+<img width="1728" alt="Screenshot 2022-12-09 at 16 15 26" src="https://user-images.githubusercontent.com/74325266/206710871-d4251fd2-2b8d-43b2-8413-40efb89b2245.png">
+  
+#### Not Found Page
+
+Responsible: Muhammed Enes Sürmeli \
+Link: [Not Found Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/NotFoundPage.js)
+
+<img width="1728" alt="Screenshot 2022-12-09 at 16 15 07" src="https://user-images.githubusercontent.com/74325266/206711106-cae9db4e-afd1-4b56-83f1-935824ff84a8.png">
 
 #### Home Page
 
