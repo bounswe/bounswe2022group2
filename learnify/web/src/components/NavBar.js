@@ -25,8 +25,8 @@ export default function NavBar(){
 
     console.log(searchResults)
 
-    return <nav className="nav">
-        <a href="/home"><img src={logo} alt="Learnify Logo" height={60} /></a>
+    return <nav className="nav" data-testid="navbar">
+        <a href="/home"><img src={logo} alt="Learnify Logo Navbar" height={60} /></a>
         <ul>
             
                 <div className="relative">
@@ -42,7 +42,7 @@ export default function NavBar(){
                 </div>
             
             <li>
-                <a href="/notifications" className='navBarText'><img src={bell} alt="Learnify Logo" height={20} /></a>
+                <a href="/notifications" className='navBarText'><img src={bell} alt="Notifications Icon" height={20} /></a>
             </li>
             <li>
                 <a href="/home" className='navBarText'>Home</a>

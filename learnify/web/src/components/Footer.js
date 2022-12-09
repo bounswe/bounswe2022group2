@@ -6,7 +6,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <div className='footer-parent-layout'>
+        <div className='footer-parent-layout' data-testid="footer">
             <div className='footer-container'>
                 <div className='footer-row'>
                     <div className='footer-column-l'>

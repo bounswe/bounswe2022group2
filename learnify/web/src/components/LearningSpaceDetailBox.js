@@ -50,7 +50,7 @@ function LearningSpaceDetailBox(props) {
 
 
     return (
-        <div className="ls-detail-box-container" onClick={(e) => {
+        <div className="ls-detail-box-container" data-testid="ls-card" onClick={(e) => {
             e.preventDefault();
             window.location.href='/learningspace/'+props.url;
             }}>
