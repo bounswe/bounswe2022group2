@@ -436,6 +436,13 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 
 <img width="300" alt="signup" src="https://user-images.githubusercontent.com/60237280/206682554-5439005e-8336-43b3-9b99-cec9c870b6e3.png">
 
+##### Login Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/login)
+
+<img width="300" alt="login" src="https://user-images.githubusercontent.com/92719802/206705437-1bb131c0-693f-42aa-b6ad-5b4523d416aa.png">
+
 ##### Forget Password Screen
 
 Responsible: Ezgi Aysel Batı  
@@ -460,6 +467,7 @@ Link - Bottom Navigation Bar: [Code File in the Repository](https://github.com/b
 
 <img width="300" alt="app_and_bottom_nav_bar" src="https://user-images.githubusercontent.com/60237280/206682705-eeae485d-aa33-4e54-8598-408f4da6787a.png">
 
+
 ##### Home Screen
 
 Responsibles: Ezgi Aysel Batı -> Course Preview Widget / Egemen Atik -> Horizontal Scrollable Course Preview Widget List \
@@ -467,6 +475,28 @@ Link - Course Preview Widget : [Code Folder in the Repository](https://github.co
 Link - Horizontal Scrollable Course Preview Widget List : [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home/view/home_screen.dart)
 
 <img width="300" alt="home_screen" src="https://user-images.githubusercontent.com/100771925/206707086-bdda9479-15fe-4793-a74d-b78c0e759ce1.png">
+
+##### View All Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/view-learning-spaces/view)
+
+<img width="300" alt="view_all_screen" src="https://user-images.githubusercontent.com/92719802/206706143-853b3e5d-4395-4163-8a6d-498b50a1e107.png">
+
+##### Search Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/search)
+
+<img width="300" alt="ls_search_screen" src="https://user-images.githubusercontent.com/92719802/206706771-81ec2ef5-bac4-4d09-bf9f-5e71fcec35c7.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="user_search_screen" src="https://user-images.githubusercontent.com/92719802/206707067-7a6dba90-84ad-4d5f-8b2e-15cc1a33e31c.png">
+
+##### Spaces Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/view-learning-spaces/view)
+
+<img width="300" alt="spaces_screen" src="https://user-images.githubusercontent.com/92719802/206706395-58b9a6b6-3b54-4bd5-a302-62fa169ca566.png">
+
 
 ##### Profile Screen
 
