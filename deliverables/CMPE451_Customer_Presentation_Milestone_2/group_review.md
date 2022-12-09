@@ -290,6 +290,38 @@ For milestone 2, 11 new endpoints have been implemented. Detailed explanations a
 
 ### User Interface/User Experience
 
+#### Web
+
+Note: Almost all of the pages include sub-components and each sub-component has their own ui design. Since each sub-component can be tracked from the page file itself, we did not include sub-component's files below.
+
+#### Sign Up Page
+
+Responsible: Altay Acar \
+Link: [Sign Up Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/SignUpForm.js)
+
+<img width="1525" alt="signup-page" src="https://user-images.githubusercontent.com/68481602/206698399-4fee4340-0b19-4942-9ee5-ec57332809e6.png">
+
+#### Home Page
+
+Responsible: Altay Acar \
+Link: [Home Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/HomePage.js)
+
+<img width="1527" alt="home-page" src="https://user-images.githubusercontent.com/68481602/206697988-72dce30f-f5e5-4874-b808-3e454a638c8c.png">
+
+#### Categories Page
+
+Responsible: Altay Acar \
+Link: [Categories Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/CategoriesPage.js)
+
+<img width="1111" alt="categries-page" src="https://user-images.githubusercontent.com/68481602/206698747-da901a07-7a53-40f2-99c1-07a807a01842.png">
+
+#### Learning Spaces by Category Page
+
+Responsible: Altay Acar \
+Link: [Learning Spaces by Category Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LSbyCategoryPage.js)
+
+<img width="1528" alt="ls-by-category-page" src="https://user-images.githubusercontent.com/68481602/206698781-54bc12fb-efe5-40b9-84bf-3a2c6f2ea4d6.png">
+
 #### Mobile
 
 Note: We structured our folders in a way that they can be managed easily. Therefore, we're giving the link of the folder related to the code part you requested. Please analyze and review them carefully. You can also see the import statements at the beginning of each file and so that you can find the implementations of sub-components in a screen. Please traverse all files included in the directory and also the imported ones and the sub-folders (such as view, model, view-model, constants, and so on) to see our implementations on the code side.
