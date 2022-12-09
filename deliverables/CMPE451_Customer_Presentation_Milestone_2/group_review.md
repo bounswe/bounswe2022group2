@@ -100,6 +100,7 @@
   
 * **Ecenur Sezer**
   |Issue Title|Link|
+  |-----|:--------:|
   |Backend: POST Learning Space Enroll Endpoint| [#561](https://github.com/bounswe/bounswe2022group2/issues/561)
   |Backend: Implementing Unit Tests for Enrolling Learning Space|[#563](https://github.com/bounswe/bounswe2022group2/issues/563)
   |Backend: Create Annotation Endpoint|[#577](https://github.com/bounswe/bounswe2022group2/issues/577)
@@ -113,6 +114,7 @@
   |Milestone-2 Report: Individual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)
 
   |Pull Request Title|Link|
+  |-----|:--------:|
   |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
   |563 backend implementing unit tests for enrolling learning space|[#564](https://github.com/bounswe/bounswe2022group2/pull/564)
   |Backend: Create Annotation Endpoint|[#588](https://github.com/bounswe/bounswe2022group2/pull/588)
