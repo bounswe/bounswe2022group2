@@ -218,6 +218,74 @@ management of our software project:
 ### *Additional Information:*  
 I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
 
+-----------------------------
+
+### *Member:* 
+
+Name: Onur Kömürcü
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+ 1. Implementing view all screen 
+ 2. Implementing data passing from home screen
+ 3. Implementing spaces screen
+ 4. Implementing search screen which contains learning spaces and users
+ 5. Implementing backend connection of the search screen
+ 6. Implementing user preview widget
+ 7. Implementing static user search
+ 8. Implementing tests for view all screen
+ 9. Implementing tests for spaces screen
+ 10. Research about how to implement search screen
+ 11. Research about how to pass data between pages
+ 12. Analyze the structure of the "SelectorHelper" which is implemented by Bahrican and used instead of stateful widget
+ 13. Changing the location of "create a learning space" button from home page to spaces page
+ 14. Reviewing the works done by the mobile team
+ 15. Reporting any bugs that is occurred in the progress of development
+ 16. Documenting one of the mobile team meeting
+ 17. Contributing to project management, focused on increasing the democracy among team members
+ 18. Clarifying the objectives of the project with asking detailed questions about our project features to our TA
+ 19. Contributing to planning flow of the demo presentation and creating sample learning spaces and posts for demo
+ 20. Attending and participating general meetings regularly.
+ 21. Attending and participating mobile team meetings regularly.
+ 22. Attending to customer meetings and lectures regularly.
+
+### *Main Contributions:*
+
+I am member of the mobile team. I mainly contributed to the tasks that are related to the mobile side of our project. I have implemented several pages that can be seen both above and below. Before implementing the pages, I did detailed research about these pages. I analyzed the example screens. When the widgets have done and endpoints were implemented by our backend team, I analyzed the related endpoints. After that, backend connections of the pages are done if needed. Some pages have to receive data from another pages. So, I do research about data passing in Flutter. I reviewed and tried to understand deeply the works that are done by other mobile team members. I stick with our project plan. Other than these, I have contributed to project management. I opened polls for clarifying our decisions with our team in various things. Also, contributed to some works for our demo like creating learning spaces and posts. Specification of the requirements has great importance of the project development. I asked my detailed questions about our features to our TA. The answers changed our way of thinking of that features in various aspects. Collaborative learning is an example of this. Additionally, I attended to mobile/general team meetings and lessons regularly to keep synchronized with our team and project.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+ 1. Mobile: Implementing Search Page [#567](https://github.com/bounswe/bounswe2022group2/issues/567)
+ 2. Mobile: Implementing Learnifies Page [#568](https://github.com/bounswe/bounswe2022group2/issues/568)
+ 3. Mobile: Backend Connection for Search Page [#584](https://github.com/bounswe/bounswe2022group2/issues/584)
+ 4. Mobile: Implementing User Preview Widget [#593](https://github.com/bounswe/bounswe2022group2/issues/593)
+ 5. Mobile: Static User Search Implementation and Additional Improvements [#635](https://github.com/bounswe/bounswe2022group2/issues/635)
+ 6. Mobile: Tests for ViewAllScreen and TakenLsScreen [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+ 1. Documenting Meeting Notes of Meeting #5 of the Mobile Team [#527](https://github.com/bounswe/bounswe2022group2/issues/527)
+ 2. Milestone-2 Report: Updating Project Plan [#690](https://github.com/bounswe/bounswe2022group2/issues/690)
+
+### *Pull Requests:*
+
+ 1. Mobile: Implementing View All Screen [#557](https://github.com/bounswe/bounswe2022group2/issues/557)
+ 2. Mobile: Implementing Spaces Page [#569](https://github.com/bounswe/bounswe2022group2/issues/569)
+ 3. Mobile: Implemented Search Screen with Backend Connection [#632](https://github.com/bounswe/bounswe2022group2/issues/632)
+ 4. Mobile: User Preview Widget [#638](https://github.com/bounswe/bounswe2022group2/issues/638)
+ 5. Mobile: Static User Search and Recommended LS in Search Implemented [#644](https://github.com/bounswe/bounswe2022group2/issues/644)
+ 6. Mobile: Tests for Pages Which Use View All List [#647](https://github.com/bounswe/bounswe2022group2/issues/647)
+
+### *Unit Tests:*
+ 
+ 1. Unit Tests for which use view all list widget [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
+
+### *Additional Information:*  
+
+None
+
 --------------------
 
 ### *Member:*  
