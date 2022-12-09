@@ -191,8 +191,8 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 ##### App Bar and Bottom Navigation Bar
 
 Responsible: Bahrican Yeşil
-Link - App Bar: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/app-bar/default_app_bar.dart)
-Link - Bottom Navigation Bar: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
+Link - App Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/app-bar/default_app_bar.dart)
+Link - Bottom Navigation Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
 
 ##### Profile Screen
 
@@ -210,11 +210,27 @@ Responsible: Bahrican Yeşil
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/events)
 
 ##### Annotating an Image
-Note: We implemented annotating image functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package.
+
+Note: We implemented annotating image functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package. We just got help from a repository which includes manipulation and edit feature on images. However, it doesn't have any annotation-related feature. We just benefit from it for image edit feature (drawing rectangles on an image). We also gave a link to that repository at the beginning of related files.
 
 Responsible: Bahrican Yeşil
-Annotation Image: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/chapter_image.dart)
-Annotatable Image: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/image/annotatable_image.dart)
+Annotated Post Image: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/chapter_image.dart)
+Annotatable Image: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/image/annotatable_image.dart)
+All Image Manipulation Components: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/core/widgets/image)
+Cropped Image Preview on Annotations Screen: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
+
+##### Annotating a Text
+
+Note: We implemented annotating text functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package.
+
+Responsible: Bahrican Yeşil
+Annotatable Text: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/text/annotatable/annotatable_text.dart)
+All Text Manipulation Components for Annotation: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/core/widgets/text/annotatable)
+
+##### Annotation Selection Dialog
+
+Responsible: Bahrican Yeşil
+Annotation Selection Dialog: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/dialog/single_choose_dialog.dart)
 
 ***
 
