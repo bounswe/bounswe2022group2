@@ -108,7 +108,7 @@
   |Backend: Unit Tests for Edit Post Endpoint|[#665](https://github.com/bounswe/bounswe2022group2/issues/665)
   |Milestone-2 Report: Annotations|[#675](https://github.com/bounswe/bounswe2022group2/issues/675)
   |Milestone-2 Report: API Documentation|[#677](https://github.com/bounswe/bounswe2022group2/issues/677)
-  |Milestone-2 Report:Indiviual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)
+  |Milestone-2 Report: Individual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)
 
   |Pull Request Title|Link|
   |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
@@ -151,17 +151,74 @@
 * **Bahrican Yeşil:**
   |Issue Title|Link|
   |-----|:--------:|
-
+  |Milestone 2: Individual Report - Bahrican Yesil|[#701](https://github.com/bounswe/bounswe2022group2/issues/701)|
+  |Mobile: Image Annotation Cropped Preview - Annotations Screen|[#614](https://github.com/bounswe/bounswe2022group2/issues/614)|
+  |Mobile: Writing Tests of the Image Annotation Feature|[#608](https://github.com/bounswe/bounswe2022group2/issues/608)|
+  |Mobile: Writing Tests of the Text Annotation Feature|[#606](https://github.com/bounswe/bounswe2022group2/issues/606)|
+  |Mobile: Bug Fix for Chapter (Post) Tests|[#598](https://github.com/bounswe/bounswe2022group2/issues/598)|
+  |Mobile: Back-end Connection of Creating Annotation|[#594](https://github.com/bounswe/bounswe2022group2/issues/594)|
+  |Mobile: Implementation of the Events Section|[#583](https://github.com/bounswe/bounswe2022group2/issues/583)|
+  |Mobile: Implementation of the Annotated Image Logic|[#579](https://github.com/bounswe/bounswe2022group2/issues/579)|
+  |Mobile: Implementation of the Image Annotation|[#578](https://github.com/bounswe/bounswe2022group2/issues/578)|
+  |Mobile: Implementing Page Transition Animation|[#558](https://github.com/bounswe/bounswe2022group2/issues/558)|
+  |Mobile: Create GitHub Actions for Flutter |[#554](https://github.com/bounswe/bounswe2022group2/issues/554)|
+  |Mobile: Native Splash Screen|[#552](https://github.com/bounswe/bounswe2022group2/issues/552)|
+  |Mobile: Implementing Multiple Annotation Selection Dialog |[#546](https://github.com/bounswe/bounswe2022group2/issues/546)|
+  |Mobile: Implementing Overlapped Annotation Support|[#545](https://github.com/bounswe/bounswe2022group2/issues/545)|
+  |Mobile: Implementing Highlighted (Annotated) Text Widget|[#517](https://github.com/bounswe/bounswe2022group2/issues/517)|
+  |Mobile: Implementing Annotatable Text Widget|[#505](https://github.com/bounswe/bounswe2022group2/issues/505)|
+  |Documenting Meeting notes for Mobile Meeting #4|[#479](https://github.com/bounswe/bounswe2022group2/issues/479)|
+  |Mobile: Writing Tests of the Course Detail Chapter Section|[#478](https://github.com/bounswe/bounswe2022group2/issues/478)|
+  |Mobile: Implementing Course Detail Chapter Section|[#477](https://github.com/bounswe/bounswe2022group2/issues/477)|
+  |Creating a Pull Request Template|[#476](https://github.com/bounswe/bounswe2022group2/issues/476)|
+  
   |Pull Request Title|Link|
   |-----|:--------:|
+  |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/issues/707)|
+  |Mobile: Hotfix - Set Default Values and lots of Demo Bugs|[#662](https://github.com/bounswe/bounswe2022group2/issues/662)|
+  |Mobile/bugfix/annotation model update|[#653](https://github.com/bounswe/bounswe2022group2/issues/653)|
+  |Mobile: Annotation Screen|[#613](https://github.com/bounswe/bounswe2022group2/issues/613)|
+  |Mobile: Image Annotation Tests|[#612](https://github.com/bounswe/bounswe2022group2/issues/612)|
+  |Mobile: Text Annotation Tests|[#607](https://github.com/bounswe/bounswe2022group2/issues/607)|
+  |Mobile: BugFix - Chapter Unit Tests|[#599](https://github.com/bounswe/bounswe2022group2/issues/599)|
+  |Mobile: Create Annotation Back End Connection|[#595](https://github.com/bounswe/bounswe2022group2/issues/595)|
+  |Mobile: Learning Space Events Section|[#592](https://github.com/bounswe/bounswe2022group2/issues/592)|
+  |Integrate display logic for image annotations|[#582](https://github.com/bounswe/bounswe2022group2/issues/582)|
+  |Mobile: Implementing Image Annotation|[#581](https://github.com/bounswe/bounswe2022group2/issues/581)|
+  |Mobile: Fix Selected Categories Issue Between Page Transitions|[#580](https://github.com/bounswe/bounswe2022group2/issues/580)|
+  |Mobile: Implementing Page Transition Animation|[#559](https://github.com/bounswe/bounswe2022group2/issues/559)|
+  |Create GitHub Actions for Flutter|[#555](https://github.com/bounswe/bounswe2022group2/issues/555)|
+  |Mobile: Native Splash Screen|[#553](https://github.com/bounswe/bounswe2022group2/issues/553)|
+  |Mobile: Implementation of Multiple Annotation Selection Dialog |[#550](https://github.com/bounswe/bounswe2022group2/issues/550)|
+  |Mobile/enhancement/overlapped annotations|[#547](https://github.com/bounswe/bounswe2022group2/issues/547)|
+  |Mobile: Highlighted/Annotated Text Widget|[#539](https://github.com/bounswe/bounswe2022group2/issues/539)|
+  |Mobile: Annotatable Text Widget Implementation|[#538](https://github.com/bounswe/bounswe2022group2/issues/538)|
+  |Completes tests of the chapter section|[#502](https://github.com/bounswe/bounswe2022group2/issues/502)|
+  |Mobile: Learning Space Chapter Section|[#501](https://github.com/bounswe/bounswe2022group2/issues/501)|
+  |Create a Pull Request Template|[#480](https://github.com/bounswe/bounswe2022group2/issues/480)|
   
-* **Mehmet Gökay Yıldız**
+- **Mehmet Gökay Yıldız**
   |Issue Title|Link|
   |-----|:--------:|
+  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)|
+  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)|
+  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)|
+  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)|
+  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)|
+  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)|
+  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)|
+  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)|
 
   |Pull Request Title|Link|
 
   |-----|:--------:|
+  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)|
+  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)|
+  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)|
+  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)|
+  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)|
+  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)|
+  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)|
   
 ***
   
@@ -520,3 +577,181 @@ management of our software project:
 Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively.
 
 --------------------
+
+### *Member:*  
+
+Name: Bahrican Yeşil
+
+Group: Group2 - Android/Mobile Team
+
+### *Responsibilities:*
+
+  1. Creating a pull request template to better organize pull requests among the whole team
+  2. Creating GitHub actions for Flutter & Android project, CI for Android project
+  3. Implementation of posts section under the learning space detail screen (with post model, post items and post list)
+  4. Writing tests of the chapter section of the learning space detail screen
+  5. Doing a detailed research on text annotations with Flutter and determining how to implement text annotations on mobile
+  6. Implementing annotatable text widget as a generic widget to use across the app and integrating it into posts section under the learning space detail screen
+  7. Doing a detailed research on how to display text annotations, and determining the way to follow (highlighted random light background color)
+  8. Doing a detailed research on how to solve the annotation overlapping problem for texts on mobile
+  9. Implementing annotated/highlighted and clickable text widget as a generic widget to use across the app
+  10. Implementing overlapped annotation support by mixing the colors and designing an algorithm to separate annotation parts
+  11. Implementing a generic single choose dialog for use across the app
+  12. Implementing multiple annotation selection dialog
+  13. Implementing native splash screen (for opening phase of the app)
+  14. Doing a detailed research on image annotations with Flutter and determining how to implement image annotations, discussion with Alper hoca and Suzan hoca regarding to the image annotations on mobile
+  15. Implementing annotatable image widget as a generic widget to use across the app and integrating it into posts section under the learning space detail screen
+  16. Doing a detailed research on how to display image annotations, and determining the way to follow, finding a solution for overlapped image annotations
+  17. Implementing annotated image display functionality with paint info, integration of its logic into annotatable image widget
+  18. Integration of the random user API to use while showing static content across the app
+  19. Implementing events section of the learning space detail screen as static
+  20. Back-end connection of the creating text annotation
+  21. Back-end connection of the creating image annotation
+  22. Writing tests for the text annotation feature
+  23. Writing tests for the image annotation feature
+  24. Implementing cropped image annotation preview for annotations screen
+  25. Implementation of basic structure of the learning space detail screen on mobile with base sliver view and tab bar view
+  26. Implementation of generic expandable item and list on mobile to use across the app (used in so many places)
+  27. Implementing page transition animations for screen changes with navigation
+  28. Documenting 2 mobile team meeting notes out of 5 notes
+  29. Conducting research on Flutter packages, finding and integrating helpful and nice ones (like page transition as I mentioned)
+  30. Reviewing the works done by the mobile team on a regular basis
+  31. Solving bugs, errors, problems encountered during the implementation of the mobile of our application regularly
+  32. Helping to teammates, answering their questions, solving critical bugs&errors before the demo day
+  33. Attending and participating general meetings regularly
+  34. Attending and participating mobile team meetings regularly
+
+### *Main Contributions:*
+
+I am a member of the mobile team for the development of our application which is Learnify. Therefore, most contributions were on the mobile side. However, I also did significant contributions to the general organization of our repository and the process of the team. I've created a project for our repository under the organization. I have created a pull request template to well-organize the PRs with explanatory descriptions, content details, and issue-closing information (just as I created issue templates in the previous term for CMPE352). I have also created GitHub actions for our Android/Mobile project since this is so important for continuous integration. I have mainly managed our mobile team meetings, I determined our situation and what we need to do before the mobile meetings. I helped to team with feature prioritization, scheduling, and sharing among the mobile team members.
+
+Apart from these management contributions, I mainly took the whole responsibility for the text & image annotations on mobile with their all details. I have both implemented and solved the bugs realized in the development phase. I have also communicated with the back-end team and helped to build the annotation model&endpoints to be compatible with W3C standards. I implemented designs, functionalities, back-end connections, and tests, in short everything for text and image annotations on mobile. So, my main contribution to mobile is annotations.
+
+Apart from the annotations, I implemented the posts section of the learning space detail screen which opened as the default tab view on the screen. I also implemented the event section as static by fetching user data from a 3rd party API temporarily until the back end is ready. I contributed with small but nice touches to the mobile app like page transition animations, a native splash screen, and so on. Other than these, I contributed to the mobile code base with lots of generic widgets used across the app on different screens.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile: Implementing Annotatable Text Widget](https://github.com/bounswe/bounswe2022group2/issues/505)
+  2. [Mobile: Implementing Highlighted (Annotated) Text Widget](https://github.com/bounswe/bounswe2022group2/issues/517)
+  3. [Mobile: Implementing Overlapped Text Annotation Support](https://github.com/bounswe/bounswe2022group2/issues/545)
+  4. [Mobile: Implementation of the Image Annotation](https://github.com/bounswe/bounswe2022group2/issues/578)
+  5. [Mobile: Implementation of the Annotated Image Display Logic](https://github.com/bounswe/bounswe2022group2/issues/579)
+  6. [Mobile: Implementation of the Events Section](https://github.com/bounswe/bounswe2022group2/issues/583)
+  7. [Mobile: Back-end Connection of Creating Annotation](https://github.com/bounswe/bounswe2022group2/issues/594)
+  8. [Mobile: Writing Tests of the Text Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/606)
+  9. [Mobile: Writing Tests of the Image Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/608)
+  10. [Mobile: Image Annotation Cropped Preview - Annotations Screen](https://github.com/bounswe/bounswe2022group2/issues/614)
+  11. [Mobile: Writing Tests of the Text Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/606)
+  12. [Mobile: Implementing Learning Space Detail Chapter Section](https://github.com/bounswe/bounswe2022group2/issues/477)
+  13. [Mobile: Writing Tests of the Learning Space Detail Chapter Section](https://github.com/bounswe/bounswe2022group2/issues/478)
+  14. [Mobile: Implementing Page Transition Animation](https://github.com/bounswe/bounswe2022group2/issues/558)
+  15. [Mobile: Native Splash Screen](https://github.com/bounswe/bounswe2022group2/issues/552)
+  
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1. [Creating a Pull Request Template](https://github.com/bounswe/bounswe2022group2/issues/476)
+  2. [Documenting Meeting notes for Mobile Meeting #4](https://github.com/bounswe/bounswe2022group2/issues/479)
+  3. [Mobile: Create GitHub Actions for Flutter](https://github.com/bounswe/bounswe2022group2/issues/554)
+  4. [Milestone 2: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/701)
+
+### *Pull Requests:*
+
+1. Create a Pull Request Template [#480](https://github.com/bounswe/bounswe2022group2/pull/480)
+2. Milestone 1: Evaluation of Tools And Processes - Mobile [#484](https://github.com/bounswe/bounswe2022group2/pull/484)
+3. Mobile: Learning Space Chapter Section [#501](https://github.com/bounswe/bounswe2022group2/pull/501)
+4. Mobile: Annotatable Text Widget Implementation [#538](https://github.com/bounswe/bounswe2022group2/pull/538)
+5. Mobile: Highlighted/Annotated text widget [#539](https://github.com/bounswe/bounswe2022group2/pull/539)
+6. Mobile: Enhancement-Overlapped annotations [#547](https://github.com/bounswe/bounswe2022group2/pull/547)
+7. Mobile: Implementation of Multiple Annotation Selection Dialog [#550](https://github.com/bounswe/bounswe2022group2/pull/550)
+8. Mobile: Native Splash Screen [#553](https://github.com/bounswe/bounswe2022group2/pull/553)
+9. Creates GitHub Actions for Flutter [#555](https://github.com/bounswe/bounswe2022group2/pull/555)
+10. Mobile: Page Transition Animation [#559](https://github.com/bounswe/bounswe2022group2/pull/559)
+11. Mobile: Fix Selected Categories Issue Between Page Transitions [#580](https://github.com/bounswe/bounswe2022group2/pull/580)
+12. Mobile: Image Annotation [#581](https://github.com/bounswe/bounswe2022group2/pull/581)
+13. Integrate display logic for image annotations [#582](https://github.com/bounswe/bounswe2022group2/pull/582)
+14. Mobile: Create Annotation Back End Connection [#595](https://github.com/bounswe/bounswe2022group2/pull/595)
+15. Mobile: BugFix - Chapter Unit Tests [#599](https://github.com/bounswe/bounswe2022group2/pull/599)
+16. Mobile: Text Annotation Tests [#607](https://github.com/bounswe/bounswe2022group2/pull/607)
+17. Mobile: Image Annotation Tests [#612](https://github.com/bounswe/bounswe2022group2/pull/612)
+18. Mobile: Annotation Screen [#613](https://github.com/bounswe/bounswe2022group2/pull/613)
+19. Mobile: Bugfix/annotation model update [#653](https://github.com/bounswe/bounswe2022group2/pull/653)
+20. Mobile: Hotfix - Set Default Values and lots of Demo Bugs [#662](https://github.com/bounswe/bounswe2022group2/pull/662)
+
+### *Unit Tests:*
+
+1. Mobile: Image Annotation Tests [#612](https://github.com/bounswe/bounswe2022group2/pull/612)
+2. Mobile: Text Annotation Tests [#607](https://github.com/bounswe/bounswe2022group2/pull/607)
+3. Mobile: Chapter Section Tests under Learning Space Detail Screen [#502](https://github.com/bounswe/bounswe2022group2/pull/502)
+4. Mobile: Profile Screen Tests [#404](https://github.com/bounswe/bounswe2022group2/pull/404)
+5. Mobile: Signup Screen Tests [#373](https://github.com/bounswe/bounswe2022group2/pull/373)
+6. Mobile: Sign Up Screen Back-end Connection Tests [#389](https://github.com/bounswe/bounswe2022group2/pull/389)
+
+### *Additional Information:*  
+
+Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively. I also took responsibility in the process that we prepare our mobile app into the demo-day. I solved critical bugs, checked and corrected the back-end connection, data update in the app. I also answered incoming questions in the demo day and helped to our presenter. I took the responsibility of most significant feature we developed until the milestone 2 on mobile side, which is the annotation feature.
+
+---------------------------
+
+### *Member:*  
+
+Name: Mehmet Gökay Yıldız
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+  1. Provide an .env file to use in further development
+  2. Implementing the change password page.
+  3. Implementing the create learning space page.
+  4. Implementing the component logic for already created change password page.
+  5. Implementing the dropdown component to use in create learning space page.
+  6. Implementing the image selection grid component.
+  7. Implementing the backend connection between the create learning space page and our REST API.
+  8. Providing logic for the communcation of child component with parent component.
+  9. Implementing Join Learning Space button.
+  10. Implementing Join Learning Space button functionality with backend connection.
+  11. Implementing unit tests for Dropdown component.
+  12. Implementing unit tests for SelectIconGrid component.
+  13. Implementing unit tests for JoinLSButton component.
+  14. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  15. Reviewing the works done by the frontend team.
+  16. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  17. Attending and participating general meetings regularly.
+  27. Attending and participating frontend team meetings regularly.
+
+### *Main Contributions:*
+
+I am a member of the front-end team of our application Learnify. As a member of the frontend team, I am proud to say that we have a strong team mentality that is focused on collaboration and communication. Over the past Milestone, I have personally contributed to this team mentality by consistently working closely with my teammates to ensure that we are catching the deadlines and the goals that we have set. During this milestone, first thing that I did is carrying static backend links to an .env file to make it more flexible for any change since the number of backend calls will increase while the application is developing so we need to save it as a variable to use at the different parts of the code. Then to complete authentication related issues, I have created the change password component so we are ready for the feature. Then, we have started the Learning spaces and I took the part where we create the learning spaces. After discussions with backend on what to send from the frontend to create a learning space, I have started from implementing a dropdown list and select component and image selection component. To use these components from the create learning space page, I have worked on the function callback from parent to child components. Then after we complete the design of the page, we have worked on both the connections between the frontend and the backend and connections between the pages that we have implemented. At the end, all of the team and I are focused more on the functionality on the learning space page and offering the contents in the learning space page. I have worked closely with the team members during this process and find ways to show the content that we have from the backend. I have watched out our frontend code base during each pull request and did continious testing during and after each merge and make sure that the system is working in a reliable manner. Also, I have implemented unit tests to the components that I have created.
+
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Frontend: .env file and using environment variables in the code](https://github.com/bounswe/bounswe2022group2/issues/529)
+  2. [Frontend: Change Password Screen](https://github.com/bounswe/bounswe2022group2/issues/530)
+  3. [Frontend: Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/543)
+  4. [Frontend: Backend connection of Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/576)
+  5. [Frontend: Connection of create ls page with created ls page](https://github.com/bounswe/bounswe2022group2/issues/625)
+  6. [Frontend: Join Learning Space](https://github.com/bounswe/bounswe2022group2/issues/656)
+  7. [Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components](https://github.com/bounswe/bounswe2022group2/issues/695)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1.  [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
+
+### *Pull Requests:*
+1. Frontend: the urls connected to .env [#531](https://github.com/bounswe/bounswe2022group2/pull/531)
+2. Dev frontend change password [#537](https://github.com/bounswe/bounswe2022group2/pull/537)
+3. Dev frontend create ls  [#572](https://github.com/bounswe/bounswe2022group2/pull/572)
+4. Frontend: interconnection between the create ls and ls page is done [#627](https://github.com/bounswe/bounswe2022group2/pull/627)
+5. Frontend: Join Learning Space [#657](https://github.com/bounswe/bounswe2022group2/pull/657)
+6. HOTFIX HOMEPAGE [#671](https://github.com/bounswe/bounswe2022group2/pull/671)
+7. Frontend: unit tests for three components initialized [#694](https://github.com/bounswe/bounswe2022group2/pull/694)
+
+### *Unit Tests:*
+1. Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components  [#695](https://github.com/bounswe/bounswe2022group2/issues/695)
+
+### *Additional Information:*  
+I did not miss any lecture or lab time. Actively participated in all team meetings, demo ideas and demos.
+
+--------------------
+
