@@ -79,11 +79,25 @@
   
 * **Batuhan Çelik**
   
-  |Issue Title|Link|
-  |-----|:--------:|
+  |Issue Title|Link| Time consumption|
+  |-----|:--------:|:--------:|
+  |POST /learningspace endpint implementation|[532 ](https://github.com/bounswe/bounswe2022group2/issues/532)|4 hours|
+  |GET /categories endpoint implementation|[551 ](https://github.com/bounswe/bounswe2022group2/issues/551)|2 hours|
+  |Semantic search implementation for backend|[566 ](https://github.com/bounswe/bounswe2022group2/issues/566)|30 hours|
+  |Getters for the learningspace|[574 ](https://github.com/bounswe/bounswe2022group2/issues/574)|2 hours|
+  |Getters for learningspaces : random ls getter for main page.|[615 ](https://github.com/bounswe/bounswe2022group2/issues/615)|1 hour|
+  |GET learning spaces using user information|[619 ](https://github.com/bounswe/bounswe2022group2/issues/619)|2 hours|
 
-  |Pull Request Title|Link|
-  |-----|:--------:|
+  |Pull Request Title|Link|Time consumption|
+  |-----|:--------:|:-----:|
+  |POST /learningspace implementation|[540 ](https://github.com/bounswe/bounswe2022group2/issues/540)|4 hours|
+  |get categories endpoint implementation and categories logic in learning spaces|[556 ](https://github.com/bounswe/bounswe2022group2/issues/556)|4 hours|
+  |Semantic search implementation for backend|[573 ](https://github.com/bounswe/bounswe2022group2/issues/573)|30 hours|
+  |Getters for the learning spaces|[575 ](https://github.com/bounswe/bounswe2022group2/issues/575)|2 hours|
+  |615 getters for learningspaces: get most participated learning spaces if a query is not given|[617](https://github.com/bounswe/bounswe2022group2/issues/617)|1 hours|
+  |GET endpoints regarding user and learningspace relation|[621](https://github.com/bounswe/bounswe2022group2/issues/621)|2 hours|
+  |Milestone 2: Merge dev to master(Getting release)|[670](https://github.com/bounswe/bounswe2022group2/issues/670)|1 hour|
+  
   
 * **Hasan Can Erol**
   |Issue Title|Link|
