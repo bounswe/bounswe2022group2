@@ -68,9 +68,22 @@
 * **Egemen Atik**
   |Issue Title|Link|
   |-----|:--------:|
+  |Mobile: Implementing Information Section of Learning Space Detail Screen|[#524](https://github.com/bounswe/bounswe2022group2/issues/524)|
+  |Mobile: Enhancement on Learning Space Detail Screen|[#616](https://github.com/bounswe/bounswe2022group2/issues/616)|
+  |Mobile: Implementing Add/Edit Post Screen|[#618](https://github.com/bounswe/bounswe2022group2/issues/618)|
+  |Mobile: Backend Connection For Taken Learning Spaces and Recommended Learning Spaces|[#634](https://github.com/bounswe/bounswe2022group2/issues/634)|
+  |Mobile: Backend Connection For Add/Edit Post|[#645](https://github.com/bounswe/bounswe2022group2/issues/645)|
+  |Milestone-2 Report: Progress According To Requirements|[#705](https://github.com/bounswe/bounswe2022group2/issues/705)|
+  |Milestone-2 Report: Individual Report|[#706](https://github.com/bounswe/bounswe2022group2/issues/706)|
 
   |Pull Request Title|Link|
   |-----|:--------:|
+  |Mobile: Implementation of learning space information section|[#528](https://github.com/bounswe/bounswe2022group2/pull/528)|
+  |Mobile: Learning space detail enhancement|[#587](https://github.com/bounswe/bounswe2022group2/pull/587)|
+  |Mobile: Post add and edit screens|[#623](https://github.com/bounswe/bounswe2022group2/pull/623)|
+  |Mobile: Taken and recommended learning spaces backend connection|[#642](https://github.com/bounswe/bounswe2022group2/pull/642)|
+  |Mobile: Backend connection for add and edit post|[#649](https://github.com/bounswe/bounswe2022group2/pull/649)|
+  |Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit|[#667](https://github.com/bounswe/bounswe2022group2/pull/667)|
 
 
 * **Ezgi Aysel Batı**
@@ -244,6 +257,21 @@
 ***
   
 ### Status of the Deliverables of Milestone 1
+
+#### List and Status of Deliverables
+
+|Deliverable|Status|Date Delivered|
+|-----|:--------:|:------:|
+|[Software Requirements Specification](https://github.com/bounswe/bounswe2022group2/wiki/Requirements)| Updated and Delivered |06/12/2022 |
+|[Software Design (UML):Use-Case Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Use-Case-Diagram)|Delivered|06/12/2022|
+|[Software Design (UML):Class Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Class-Diagram)|Delivered|06/12/2022|
+|[Software Design (UML):Sequence Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Sequence-Diagram)|Delivered|06/12/2022|
+|Scenarios and Mockups ([1](https://github.com/bounswe/bounswe2022group2/wiki/Registered-Lecturer-Scenario,-Hasan-Ta%C5%9Fk%C4%B1ran),   [2](https://github.com/bounswe/bounswe2022group2/wiki/Unregistered-Learner-Scenario,-Ai-Zheng),  [3](https://github.com/bounswe/bounswe2022group2/wiki/Lecturer-Creates-Community-Event-Scenario,-Ezgi-Ece-Smith)) | Updated and Delivered | 06/12/2022|
+|[Project Plan](https://github.com/bounswe/bounswe2022group2/wiki/Project-Plan)|Delivered|06/12/2022|
+|[Individual Contribution Reports](https://github.com/bounswe/bounswe2022group2/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/deliverables.md#Individual-Contributions-Report)|Delivered|06/12/2022|
+|[Software](https://github.com/bounswe/bounswe2022group2) | Updated and Delivered | 06/12/2022|
+|Mobile Deliverables ([Manual](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual),     [APK](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK))|Updated and Delivered |06/12/2022|
+|Group Review (This Document) | Delivered | 09/12/2022|
 
 ***
 
@@ -616,6 +644,8 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### API Endpoints
 
+For milestone 2, 11 new endpoints have been implemented. Detailed explanations and request/response examples are present in the documentation over Postman. Please click [here](https://documenter.getpostman.com/view/16983185/2s8Yt1tADd) to view.
+
 ***
 
 ### User Interface/User Experience
@@ -630,6 +660,14 @@ Responsible: Bahrican Yeşil \
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/signup)
 
 <img width="300" alt="signup" src="https://user-images.githubusercontent.com/60237280/206682554-5439005e-8336-43b3-9b99-cec9c870b6e3.png">
+
+
+##### Forget Password Screen
+
+Responsible: Ezgi Aysel Batı  
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/forget-password)
+
+<img width="300" alt="forget-password" src="https://user-images.githubusercontent.com/56553280/206687548-af6db5ec-b28f-497a-a0b1-0e2af19175ed.jpg">
 
 
 ##### App Bar and Bottom Navigation Bar
@@ -647,6 +685,14 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 
 <img width="300" alt="profile" src="https://user-images.githubusercontent.com/60237280/206682855-3656d3de-1f22-4fd2-abc9-8e648351e27b.png">
 
+##### Create Learning Space Screen
+
+Responsible: Ezgi Aysel Batı \
+Link:  [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/create_learning_space_screen.dart)
+
+<img width="300" alt="profile" src="https://user-images.githubusercontent.com/56553280/206690749-8983b19b-1c8a-4ec3-9166-c8ec6af0acbf.jpg">
+
+Note: Link only contains static "screen" implementation. For model and backend connections refer to pr's regarding this screen.  
 
 ##### Posts Section
 
@@ -662,6 +708,13 @@ Responsible: Bahrican Yeşil \
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/events)
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/60237280/206682936-04114a85-19a7-4f35-b80c-db58db7f36cf.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_2" src="https://user-images.githubusercontent.com/60237280/206682967-1d494b11-ac5f-4c5d-9c7f-d1a45bf42334.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_3" src="https://user-images.githubusercontent.com/60237280/206682971-531d4ff0-4615-4f1c-b659-1982caf05554.png">
+
+##### Forum Section
+
+Responsible: Ezgi Aysel Batı
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/forum_list.dart)
+
+<img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206689133-fea41c35-81bf-4151-ba51-12e7720b1843.jpg">
 
 
 ##### Annotating an Image
@@ -698,6 +751,14 @@ Responsible: Bahrican Yeşil \
 Annotation Selection Dialog: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/dialog/single_choose_dialog.dart)
 
 <img width="374" alt="annotation_selection_dialog" src="https://user-images.githubusercontent.com/60237280/206684280-6440588f-c7d6-4d97-9ee1-10e8efecd307.png">
+
+#### Annotation Details Screen
+
+Responsible: Ezgi Aysel Batı  
+* Only for the image annotation, the preview of annotated image part was implemented by Bahrican. 
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
+
+<img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206688618-b5d1c078-8d1b-4433-bf92-d5171ad53e28.jpg">&nbsp;&nbsp;&nbsp;<img width="300" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">
 
 
 ***
@@ -829,6 +890,69 @@ management of our software project:
 None
 
 ---------------
+
+### *Member:*  
+
+Name: Egemen Atik
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+  1. Implementing information part of learning space detail screen.
+  2. Implementing add post screen.
+  3. Implementing edit post screen.
+  4. Implementing enroll button and back-end connection for enroll functionality.
+  5. Implementing back-end connection for add post functionality.
+  6. Implementing back-end connection for edit post functionality.
+  7. Implementing back-end connection for getting taken learning spaces.
+  8. Implementing back-end connection for getting all learning spaces.
+  9. Implementing dynamic sizing for learning space detail screen.
+  10. Implementing routing between create learning space and learning space detail screens.
+  11. Implementing post model and necessary request&response models for corresponding back-end connections.
+  12. Implementing argument passing to edit post screen so that title and content of the post to be edited is present in the edit post screen.
+  13. Implementing argument passing to learning space detail screen.
+  14. Conducting research on Flutter libraries and methodologies that will be used during our development process.
+  15. Reviewing the works done by the mobile team.
+  16. Solving bugs, errors, problems encountered during the implementation of the mobile part of our application regularly.
+  17. Attending and participating general meetings regularly.
+  18. Attending and participating mobile team meetings regularly.
+  19. Attending to customer meetings and lectures regularly.
+
+### *Main Contributions:*
+I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
+
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Mobile: Implementing Information Section of Learning Space Detail Screen](https://github.com/bounswe/bounswe2022group2/issues/524)
+  2. [Mobile: Enhancement on Learning Space Detail Screen](https://github.com/bounswe/bounswe2022group2/issues/616)
+  3. [Mobile: Implementing Add/Edit Post Screen](https://github.com/bounswe/bounswe2022group2/issues/618)
+  4. [Mobile: Backend Connection For Taken Learning Spaces and Recommended Learning Spaces](https://github.com/bounswe/bounswe2022group2/issues/634)
+  5. [Mobile: Backend Connection For Add/Edit Post](https://github.com/bounswe/bounswe2022group2/issues/645)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+1. [Milestone-2 Report: Progress According To Requirements](https://github.com/bounswe/bounswe2022group2/issues/705)
+2. [Milestone-2 Report: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/706)
+
+### *Pull Requests:*
+1. Mobile: Implementation of learning space information section [#528](https://github.com/bounswe/bounswe2022group2/pull/528)
+2. Mobile: Learning space detail enhancement [#587](https://github.com/bounswe/bounswe2022group2/pull/587)
+3. Mobile: Post add and edit screens [#623](https://github.com/bounswe/bounswe2022group2/pull/623)
+4. Mobile: Getting taken and recommended learning spaces backend connection [#642](https://github.com/bounswe/bounswe2022group2/pull/642)
+5. Mobile: Backend connection for add and edit post functionalities [#649](https://github.com/bounswe/bounswe2022group2/pull/649)
+6. Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit [#667](https://github.com/bounswe/bounswe2022group2/pull/667)
+
+### *Unit Tests:*
+1. Mobile: Verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
+2. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
+
+### *Additional Information:*  
+I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
+
+---------------
+
 ### *Member:*  
 
 Name: Ezgi Aysel Batı

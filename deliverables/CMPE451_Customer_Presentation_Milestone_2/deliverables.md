@@ -90,6 +90,73 @@ management of our software project:
 None
 
 -----------------------------
+### *Member:*  
+
+Name: Batuhan Çelik
+
+Group: Group2 - Backend Team
+
+### *Responsibilities:*
+
+In the order of time consumption.
+
+1. Perform research about semantic search methods, find a computationally feasible method to add sementic search functionality to our project, implement the semantic search microservice, dockerize the microservice and finally create an endpoint on main app to serve the results.
+2. Understand the W3 annotation model and contribute to the system design of the annotations.
+3. Find a cost efficient way to deploy our application, since frontend container is huge, free tier EC2 instances were not sufficient to deploy them, so I had to create a multi instance architecture and set up docker-hub for our team.
+4. Communicate with the front and backend teams to design the API according to their needs.
+5. Implement the API specification determined with the other team members.
+6. Database management, add, delete elements and run migrations when requested by other members.
+7. Reviewing the works done by the backend team.
+8. Solving bugs, errors, problems encountered during the implementation of backend and create hotfixes when needed.
+9. Attending and participating general meetings regularly.
+10. Organising, attending and participating backend team meetings regularly.
+
+### *Main Contributions:*
+
+As a member of backend team, I established a strong communication with the frontend and backend teams to design an API specification statisfying their needs and complying with the backend development conventions. Of course I took part in implementation of that API. 
+
+Most of this milestone went by researching. I had to put in lots of hours to understand different semantic search algorithms and find methods to implement them in our application. I learned about semantic search databases and found some open source implementations (Open semantic search was the most remarkable one), then, deployed them in docker containers just to see the smallest one required at least 4 GBs of memory. Accepting defeat, I looked for an API that would provide BERT encodings to me. Those types of APIs are not frequent since most companies provided whole data processing APIs instead of giving just encodings. This business model is fine for companies but getting this service free is out of question since it is a costly operation. In the end I tried 8 different services to find a solution we can integrate to our application easily. 
+
+Besides semantic search, even though I did not contributed code to the annotations part of our application, I gone through the annotation model doccumentation with Ecenur and made sure our interface complied with the model. While ecenur was sick, I was taking care of the annotations part, during this duration, I found some open source implementations to get inspiration from. In the end I contributed to the annotations part with my understanding of the model. 
+
+When everything was implemented, we found out that our frontend was too resource hungry to be deployed on a free tier EC2. In addition to that we now had a semantic search microservice. In the end, our system architecture had to be revised. I made those revisions and deployed the new architecture without problems.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [POST /learningspace endpint implementation ](https://github.com/bounswe/bounswe2022group2/issues/532)
+  2. [GET /categories endpoint implementation](https://github.com/bounswe/bounswe2022group2/issues/551)
+  3. [Semantic search implementation for backend ](https://github.com/bounswe/bounswe2022group2/issues/566)
+  4. [Getters for the learningspace](https://github.com/bounswe/bounswe2022group2/issues/574)
+  5. [Getters for learningspaces : random ls getter for main page.](https://github.com/bounswe/bounswe2022group2/issues/615)
+  6. [GET learning spaces using user information](https://github.com/bounswe/bounswe2022group2/issues/619)
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  None between the milestone 1 and milestone 2
+
+### *Pull Requests:*
+
+1. [POST /learningspace implementation](https://github.com/bounswe/bounswe2022group2/issues/540)
+2. [get categories endpoint implementation and categories logic in learning spaces](https://github.com/bounswe/bounswe2022group2/issues/556)
+3. [get categories endpoint implementation and categories logic in learning spaces](https://github.com/bounswe/bounswe2022group2/issues/556)
+4. [Semantic search implementation for backend](https://github.com/bounswe/bounswe2022group2/issues/573)
+5. [Getters for the learning spaces](https://github.com/bounswe/bounswe2022group2/issues/575)
+6. [615 getters for learningspaces: get most participated learning spaces if a query is not given](https://github.com/bounswe/bounswe2022group2/issues/617)
+7. [GET endpoints regarding user and learningspace relation ](https://github.com/bounswe/bounswe2022group2/issues/621)
+8. [Milestone 2: Merge dev to master ](https://github.com/bounswe/bounswe2022group2/issues/670)
+
+
+### *Unit Tests:*
+
+Unit tests are delivered with their respective PRs when deemed required(when the endpoint implemented some logic instead of just being mongoose querries).
+
+### *Hot fixes:*
+
+
+1. [HOTFIX: change outdated docker run instructions ](https://github.com/bounswe/bounswe2022group2/commit/6c79f3bf6a20786246c4c5d00361733e0e79751e)
+2. [HOTFIX: state db folder in docker compose](https://github.com/bounswe/bounswe2022group2/commit/73b5b644a709278f44248133b8cd682bf696b73a)
+3. [HOTFIX: learningspace title added back to response](https://github.com/bounswe/bounswe2022group2/commit/acadb07f572a50f6d5b13ac28a17c15c35e8f1b9) 
+
+-----------------------------
 
 ### *Member:*  
 
@@ -150,6 +217,74 @@ management of our software project:
 
 ### *Additional Information:*  
 I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
+
+-----------------------------
+
+### *Member:* 
+
+Name: Onur Kömürcü
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+ 1. Implementing view all screen 
+ 2. Implementing data passing from home screen
+ 3. Implementing spaces screen
+ 4. Implementing search screen which contains learning spaces and users
+ 5. Implementing backend connection of the search screen
+ 6. Implementing user preview widget
+ 7. Implementing static user search
+ 8. Implementing tests for view all screen
+ 9. Implementing tests for spaces screen
+ 10. Research about how to implement search screen
+ 11. Research about how to pass data between pages
+ 12. Analyze the structure of the "SelectorHelper" which is implemented by Bahrican and used instead of stateful widget
+ 13. Changing the location of "create a learning space" button from home page to spaces page
+ 14. Reviewing the works done by the mobile team
+ 15. Reporting any bugs that is occurred in the progress of development
+ 16. Documenting one of the mobile team meeting
+ 17. Contributing to project management, focused on increasing the democracy among team members
+ 18. Clarifying the objectives of the project with asking detailed questions about our project features to our TA
+ 19. Contributing to planning flow of the demo presentation and creating sample learning spaces and posts for demo
+ 20. Attending and participating general meetings regularly.
+ 21. Attending and participating mobile team meetings regularly.
+ 22. Attending to customer meetings and lectures regularly.
+
+### *Main Contributions:*
+
+I am member of the mobile team. I mainly contributed to the tasks that are related to the mobile side of our project. I have implemented several pages that can be seen both above and below. Before implementing the pages, I did detailed research about these pages. I analyzed the example screens. When the widgets have done and endpoints were implemented by our backend team, I analyzed the related endpoints. After that, backend connections of the pages are done if needed. Some pages have to receive data from another pages. So, I do research about data passing in Flutter. I reviewed and tried to understand deeply the works that are done by other mobile team members. I stick with our project plan. Other than these, I have contributed to project management. I opened polls for clarifying our decisions with our team in various things. Also, contributed to some works for our demo like creating learning spaces and posts. Specification of the requirements has great importance of the project development. I asked my detailed questions about our features to our TA. The answers changed our way of thinking of that features in various aspects. Collaborative learning is an example of this. Additionally, I attended to mobile/general team meetings and lessons regularly to keep synchronized with our team and project.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+ 1. Mobile: Implementing Search Page [#567](https://github.com/bounswe/bounswe2022group2/issues/567)
+ 2. Mobile: Implementing Learnifies Page [#568](https://github.com/bounswe/bounswe2022group2/issues/568)
+ 3. Mobile: Backend Connection for Search Page [#584](https://github.com/bounswe/bounswe2022group2/issues/584)
+ 4. Mobile: Implementing User Preview Widget [#593](https://github.com/bounswe/bounswe2022group2/issues/593)
+ 5. Mobile: Static User Search Implementation and Additional Improvements [#635](https://github.com/bounswe/bounswe2022group2/issues/635)
+ 6. Mobile: Tests for ViewAllScreen and TakenLsScreen [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+ 1. Documenting Meeting Notes of Meeting #5 of the Mobile Team [#527](https://github.com/bounswe/bounswe2022group2/issues/527)
+ 2. Milestone-2 Report: Updating Project Plan [#690](https://github.com/bounswe/bounswe2022group2/issues/690)
+
+### *Pull Requests:*
+
+ 1. Mobile: Implementing View All Screen [#557](https://github.com/bounswe/bounswe2022group2/issues/557)
+ 2. Mobile: Implementing Spaces Page [#569](https://github.com/bounswe/bounswe2022group2/issues/569)
+ 3. Mobile: Implemented Search Screen with Backend Connection [#632](https://github.com/bounswe/bounswe2022group2/issues/632)
+ 4. Mobile: User Preview Widget [#638](https://github.com/bounswe/bounswe2022group2/issues/638)
+ 5. Mobile: Static User Search and Recommended LS in Search Implemented [#644](https://github.com/bounswe/bounswe2022group2/issues/644)
+ 6. Mobile: Tests for Pages Which Use View All List [#647](https://github.com/bounswe/bounswe2022group2/issues/647)
+
+### *Unit Tests:*
+ 
+ 1. Unit Tests for which use view all list widget [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
+
+### *Additional Information:*  
+
+None
 
 --------------------
 
