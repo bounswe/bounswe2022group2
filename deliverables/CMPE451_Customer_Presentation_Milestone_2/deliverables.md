@@ -90,6 +90,7 @@ management of our software project:
 None
 
 -----------------------------
+
 ### *Member:*  
 
 Name: Batuhan Çelik
@@ -113,19 +114,19 @@ In the order of time consumption.
 
 ### *Main Contributions:*
 
-As a member of backend team, I established a strong communication with the frontend and backend teams to design an API specification statisfying their needs and complying with the backend development conventions. Of course I took part in implementation of that API. 
+As a member of backend team, I established a strong communication with the frontend and backend teams to design an API specification statisfying their needs and complying with the backend development conventions. Of course I took part in implementation of that API.
 
-Most of this milestone went by researching. I had to put in lots of hours to understand different semantic search algorithms and find methods to implement them in our application. I learned about semantic search databases and found some open source implementations (Open semantic search was the most remarkable one), then, deployed them in docker containers just to see the smallest one required at least 4 GBs of memory. Accepting defeat, I looked for an API that would provide BERT encodings to me. Those types of APIs are not frequent since most companies provided whole data processing APIs instead of giving just encodings. This business model is fine for companies but getting this service free is out of question since it is a costly operation. In the end I tried 8 different services to find a solution we can integrate to our application easily. 
+Most of this milestone went by researching. I had to put in lots of hours to understand different semantic search algorithms and find methods to implement them in our application. I learned about semantic search databases and found some open source implementations (Open semantic search was the most remarkable one), then, deployed them in docker containers just to see the smallest one required at least 4 GBs of memory. Accepting defeat, I looked for an API that would provide BERT encodings to me. Those types of APIs are not frequent since most companies provided whole data processing APIs instead of giving just encodings. This business model is fine for companies but getting this service free is out of question since it is a costly operation. In the end I tried 8 different services to find a solution we can integrate to our application easily.
 
-Besides semantic search, even though I did not contributed code to the annotations part of our application, I gone through the annotation model doccumentation with Ecenur and made sure our interface complied with the model. While ecenur was sick, I was taking care of the annotations part, during this duration, I found some open source implementations to get inspiration from. In the end I contributed to the annotations part with my understanding of the model. 
+Besides semantic search, even though I did not contributed code to the annotations part of our application, I gone through the annotation model doccumentation with Ecenur and made sure our interface complied with the model. While ecenur was sick, I was taking care of the annotations part, during this duration, I found some open source implementations to get inspiration from. In the end I contributed to the annotations part with my understanding of the model.
 
 When everything was implemented, we found out that our frontend was too resource hungry to be deployed on a free tier EC2. In addition to that we now had a semantic search microservice. In the end, our system architecture had to be revised. I made those revisions and deployed the new architecture without problems.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
-  1. [POST /learningspace endpint implementation ](https://github.com/bounswe/bounswe2022group2/issues/532)
+  1. [POST /learningspace endpint implementation](https://github.com/bounswe/bounswe2022group2/issues/532)
   2. [GET /categories endpoint implementation](https://github.com/bounswe/bounswe2022group2/issues/551)
-  3. [Semantic search implementation for backend ](https://github.com/bounswe/bounswe2022group2/issues/566)
+  3. [Semantic search implementation for backend](https://github.com/bounswe/bounswe2022group2/issues/566)
   4. [Getters for the learningspace](https://github.com/bounswe/bounswe2022group2/issues/574)
   5. [Getters for learningspaces : random ls getter for main page.](https://github.com/bounswe/bounswe2022group2/issues/615)
   6. [GET learning spaces using user information](https://github.com/bounswe/bounswe2022group2/issues/619)
@@ -141,9 +142,8 @@ management of our software project:
 4. [Semantic search implementation for backend](https://github.com/bounswe/bounswe2022group2/issues/573)
 5. [Getters for the learning spaces](https://github.com/bounswe/bounswe2022group2/issues/575)
 6. [615 getters for learningspaces: get most participated learning spaces if a query is not given](https://github.com/bounswe/bounswe2022group2/issues/617)
-7. [GET endpoints regarding user and learningspace relation ](https://github.com/bounswe/bounswe2022group2/issues/621)
-8. [Milestone 2: Merge dev to master ](https://github.com/bounswe/bounswe2022group2/issues/670)
-
+7. [GET endpoints regarding user and learningspace relation](https://github.com/bounswe/bounswe2022group2/issues/621)
+8. [Milestone 2: Merge dev to master](https://github.com/bounswe/bounswe2022group2/issues/670)
 
 ### *Unit Tests:*
 
@@ -151,10 +151,9 @@ Unit tests are delivered with their respective PRs when deemed required(when the
 
 ### *Hot fixes:*
 
-
-1. [HOTFIX: change outdated docker run instructions ](https://github.com/bounswe/bounswe2022group2/commit/6c79f3bf6a20786246c4c5d00361733e0e79751e)
+1. [HOTFIX: change outdated docker run instructions](https://github.com/bounswe/bounswe2022group2/commit/6c79f3bf6a20786246c4c5d00361733e0e79751e)
 2. [HOTFIX: state db folder in docker compose](https://github.com/bounswe/bounswe2022group2/commit/73b5b644a709278f44248133b8cd682bf696b73a)
-3. [HOTFIX: learningspace title added back to response](https://github.com/bounswe/bounswe2022group2/commit/acadb07f572a50f6d5b13ac28a17c15c35e8f1b9) 
+3. [HOTFIX: learningspace title added back to response](https://github.com/bounswe/bounswe2022group2/commit/acadb07f572a50f6d5b13ac28a17c15c35e8f1b9)
 
 -----------------------------
 
@@ -187,8 +186,8 @@ Group: Group2 - Mobile Team
   19. Attending to customer meetings and lectures regularly.
 
 ### *Main Contributions:*
-I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
 
+I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -200,10 +199,12 @@ demonstrated during the demo:
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+
 1. [Milestone-2 Report: Progress According To Requirements](https://github.com/bounswe/bounswe2022group2/issues/705)
 2. [Milestone-2 Report: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/706)
 
 ### *Pull Requests:*
+
 1. Mobile: Implementation of learning space information section [#528](https://github.com/bounswe/bounswe2022group2/pull/528)
 2. Mobile: Learning space detail enhancement [#587](https://github.com/bounswe/bounswe2022group2/pull/587)
 3. Mobile: Post add and edit screens [#623](https://github.com/bounswe/bounswe2022group2/pull/623)
@@ -212,15 +213,17 @@ management of our software project:
 6. Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit [#667](https://github.com/bounswe/bounswe2022group2/pull/667)
 
 ### *Unit Tests:*
+
 1. Mobile: Verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
 2. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
 
 ### *Additional Information:*  
+
 I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
 
 -----------------------------
 
-### *Member:* 
+### *Member:*
 
 Name: Onur Kömürcü
 
@@ -228,7 +231,7 @@ Group: Group2 - Mobile Team
 
 ### *Responsibilities:*
 
- 1. Implementing view all screen 
+ 1. Implementing view all screen
  2. Implementing data passing from home screen
  3. Implementing spaces screen
  4. Implementing search screen which contains learning spaces and users
@@ -257,6 +260,7 @@ I am member of the mobile team. I mainly contributed to the tasks that are relat
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+
  1. Mobile: Implementing Search Page [#567](https://github.com/bounswe/bounswe2022group2/issues/567)
  2. Mobile: Implementing Learnifies Page [#568](https://github.com/bounswe/bounswe2022group2/issues/568)
  3. Mobile: Backend Connection for Search Page [#584](https://github.com/bounswe/bounswe2022group2/issues/584)
@@ -266,6 +270,7 @@ demonstrated during the demo:
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+
  1. Documenting Meeting Notes of Meeting #5 of the Mobile Team [#527](https://github.com/bounswe/bounswe2022group2/issues/527)
  2. Milestone-2 Report: Updating Project Plan [#690](https://github.com/bounswe/bounswe2022group2/issues/690)
 
@@ -279,7 +284,7 @@ management of our software project:
  6. Mobile: Tests for Pages Which Use View All List [#647](https://github.com/bounswe/bounswe2022group2/issues/647)
 
 ### *Unit Tests:*
- 
+
  1. Unit Tests for which use view all list widget [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
 
 ### *Additional Information:*  
@@ -397,9 +402,10 @@ Group: Group2 - Frontend Team
   24. Fixing any bugs, mistakes, or problems that arose throughout the routine development of our application's front end.
   25. Consistently participating in and attending general meetings.
   26. Consistently participating in and attending frontend team meetings.
- 
+
 ### *Main Contributions:*
-I work on the front end of our Learnify application, which is being developed collaboratively by all the members of group 2. I have implemented the text and image annotation features for the frontend part complying with the W3C standards as constantly requested by our teacher in the lectures. I have offered hotfixes, sugggested a few improvements for the parts in my coworkers' code, and attempted to pass along the related information I have discovered. In addition, for the components I developed while working on the front end of our online application like not found page and email verification page, I also performed unit tests to ensure that every component worked as expected. In keeping with the design principles we jointly decided with other frontend members upon and in consistency with other components and pages of our online application, I continued to offer some of the visual components like designs, icons, and buttons of our web application for this milestone 2. I frequently checked the progress of our application's development before our weekly general and frontend team meetings, and suggested some appropriate ideas for our agenda every week. For our frontend application, I have also altered some visual parts of the learning space page post creation and editing parts so as to improve efficiency of our learning space page in terms of the loading duration by changing some of the the png images to svg icons. For our frontend part of the application, I have also given some parts of the page layouts and graphic elements like icons, logos, and drawings along with some alluring designs to support these. In addition, I looked into React's page routing and came up with a simple but effective fix for one of our fundamental problems by implementing private and protected routing, which in essence was to prevent unauthorized users from accessing the internal parts of the application like home page, learning space page, etc. I have also created a component-based page layouting logic for the post feature of the learning space page in order to easily import components, utilize them without duplicating code segments, and be able to give certain parameters with React props to display components. In addition, I added a not found page with an eye-pleasing desgin and built majority of the components and functionalities of the learning space page. Finally, in line with our frontend development, I have created some css classes that comply with our design guidelines for the components implemented by the entire frontend team, as well as implemented separate components for each, established backend connections, established private page routing, and passed parameters to display components according to the response obtained from the REST API. 
+
+I work on the front end of our Learnify application, which is being developed collaboratively by all the members of group 2. I have implemented the text and image annotation features for the frontend part complying with the W3C standards as constantly requested by our teacher in the lectures. I have offered hotfixes, sugggested a few improvements for the parts in my coworkers' code, and attempted to pass along the related information I have discovered. In addition, for the components I developed while working on the front end of our online application like not found page and email verification page, I also performed unit tests to ensure that every component worked as expected. In keeping with the design principles we jointly decided with other frontend members upon and in consistency with other components and pages of our online application, I continued to offer some of the visual components like designs, icons, and buttons of our web application for this milestone 2. I frequently checked the progress of our application's development before our weekly general and frontend team meetings, and suggested some appropriate ideas for our agenda every week. For our frontend application, I have also altered some visual parts of the learning space page post creation and editing parts so as to improve efficiency of our learning space page in terms of the loading duration by changing some of the the png images to svg icons. For our frontend part of the application, I have also given some parts of the page layouts and graphic elements like icons, logos, and drawings along with some alluring designs to support these. In addition, I looked into React's page routing and came up with a simple but effective fix for one of our fundamental problems by implementing private and protected routing, which in essence was to prevent unauthorized users from accessing the internal parts of the application like home page, learning space page, etc. I have also created a component-based page layouting logic for the post feature of the learning space page in order to easily import components, utilize them without duplicating code segments, and be able to give certain parameters with React props to display components. In addition, I added a not found page with an eye-pleasing desgin and built majority of the components and functionalities of the learning space page. Finally, in line with our frontend development, I have created some css classes that comply with our design guidelines for the components implemented by the entire frontend team, as well as implemented separate components for each, established backend connections, established private page routing, and passed parameters to display components according to the response obtained from the REST API.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -413,7 +419,7 @@ demonstrated during the demo:
   8. [Frontend: Implementation of Edit Post Feature](https://github.com/bounswe/bounswe2022group2/issues/659)
   9. [Frontend: Backend Connection For Edit Post](https://github.com/bounswe/bounswe2022group2/issues/660)
   10. [Frontend: Unit Tests for Not Found Page](https://github.com/bounswe/bounswe2022group2/issues/681)
-  11. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453) 
+  11. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
@@ -425,6 +431,7 @@ management of our software project:
   6. [Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts](https://github.com/bounswe/bounswe2022group2/issues/492)
 
 ### *Pull Requests:*
+
 1. Frontend: Implementation of Private Routes [#523](https://github.com/bounswe/bounswe2022group2/pull/523)
 2. Frontend: Implementation of Not Found Page [#525](https://github.com/bounswe/bounswe2022group2/pull/525)
 3. Frontend: Implementation of Components on Learning Space Page [#629](https://github.com/bounswe/bounswe2022group2/issues/629)
@@ -442,15 +449,15 @@ management of our software project:
 15. Updating the Dev Branch [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
 
 ### *Unit Tests:*
+
 1. Frontend: Unit Tests for Email Verification Page [#458](https://github.com/bounswe/bounswe2022group2/pull/458)
 2. Frontend: Unit Tests for Not Found Page [#683](https://github.com/bounswe/bounswe2022group2/pull/683)
 
 ### *Additional Information:*  
 
 I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I readily contributed and shared my ideas when it came to project planning and decision making with other team members. Lastly, I had no prior experience with frontend development or React before this semester, so, I had to step outside of my comfort zone to continue learning and understanding more about these topics for this milestone.
-   
---------------------
 
+--------------------
 
 ### *Member:*  
 
@@ -585,7 +592,9 @@ management of our software project:
   2. [Documenting Meeting notes for Mobile Meeting #4](https://github.com/bounswe/bounswe2022group2/issues/479)
   3. [Mobile: Create GitHub Actions for Flutter](https://github.com/bounswe/bounswe2022group2/issues/554)
   4. [Milestone 2: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/701)
-
+  5. [Milestone 2: Annotations Part of the Report - Mobile](https://github.com/bounswe/bounswe2022group2/issues/719)
+  6. [Milestone 2: Fill User Interface Part for Mobile](https://github.com/bounswe/bounswe2022group2/issues/710)
+  
 ### *Pull Requests:*
 
 1. Create a Pull Request Template [#480](https://github.com/bounswe/bounswe2022group2/pull/480)
@@ -608,6 +617,10 @@ management of our software project:
 18. Mobile: Annotation Screen [#613](https://github.com/bounswe/bounswe2022group2/pull/613)
 19. Mobile: Bugfix/annotation model update [#653](https://github.com/bounswe/bounswe2022group2/pull/653)
 20. Mobile: Hotfix - Set Default Values and lots of Demo Bugs [#662](https://github.com/bounswe/bounswe2022group2/pull/662)
+21. Milestone 2: Individual Report of Bahrican [#707](https://github.com/bounswe/bounswe2022group2/pull/707)
+22. Milestone 2: Summary of Work - Bahrican [#708](https://github.com/bounswe/bounswe2022group2/pull/708)
+23. Milestone 2: Mobile UI/UX Section - Bahrican [#715](https://github.com/bounswe/bounswe2022group2/pull/715)
+24. Milestone 2: Mobile Related Additions to the Annotations Part [#734](https://github.com/bounswe/bounswe2022group2/pull/734)
 
 ### *Unit Tests:*
 
@@ -655,7 +668,6 @@ Group: Group2 - Frontend Team
 
 I am a member of the front-end team of our application Learnify. As a member of the frontend team, I am proud to say that we have a strong team mentality that is focused on collaboration and communication. Over the past Milestone, I have personally contributed to this team mentality by consistently working closely with my teammates to ensure that we are catching the deadlines and the goals that we have set. During this milestone, first thing that I did is carrying static backend links to an .env file to make it more flexible for any change since the number of backend calls will increase while the application is developing so we need to save it as a variable to use at the different parts of the code. Then to complete authentication related issues, I have created the change password component so we are ready for the feature. Then, we have started the Learning spaces and I took the part where we create the learning spaces. After discussions with backend on what to send from the frontend to create a learning space, I have started from implementing a dropdown list and select component and image selection component. To use these components from the create learning space page, I have worked on the function callback from parent to child components. Then after we complete the design of the page, we have worked on both the connections between the frontend and the backend and connections between the pages that we have implemented. At the end, all of the team and I are focused more on the functionality on the learning space page and offering the contents in the learning space page. I have worked closely with the team members during this process and find ways to show the content that we have from the backend. I have watched out our frontend code base during each pull request and did continious testing during and after each merge and make sure that the system is working in a reliable manner. Also, I have implemented unit tests to the components that I have created.
 
-
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
   1. [Frontend: .env file and using environment variables in the code](https://github.com/bounswe/bounswe2022group2/issues/529)
@@ -668,9 +680,10 @@ demonstrated during the demo:
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
-  1.  [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
+  1. [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
 
 ### *Pull Requests:*
+
 1. Frontend: the urls connected to .env [#531](https://github.com/bounswe/bounswe2022group2/pull/531)
 2. Dev frontend change password [#537](https://github.com/bounswe/bounswe2022group2/pull/537)
 3. Dev frontend create ls  [#572](https://github.com/bounswe/bounswe2022group2/pull/572)
@@ -680,9 +693,11 @@ management of our software project:
 7. Frontend: unit tests for three components initialized [#694](https://github.com/bounswe/bounswe2022group2/pull/694)
 
 ### *Unit Tests:*
+
 1. Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components  [#695](https://github.com/bounswe/bounswe2022group2/issues/695)
 
 ### *Additional Information:*  
+
 I did not miss any lecture or lab time. Actively participated in all team meetings, demo ideas and demos.
 
 --------------------
