@@ -13,8 +13,8 @@
 * 2.3 Progress According to Requirements
 * 2.4 API Endpoints
 * 2.5 [User Interface/User Experience](#user-interfaceuser-experience)
-* 2.6 Annotations
-* 2.7 Standards
+* 2.6 [Annotations](#annotations)
+* 2.7 [Standards](#standards)
 
 3. [Individual Reports](#individual-reports)
 
@@ -328,20 +328,26 @@ Annotation Selection Dialog: [Code File in the Repository](https://github.com/bo
 #### Status
   
   In our recent status, annotations are supported on both mobile and frontend. In application level, we are able to annotate both images and text. Users can select a specific part of an image and leave a text annotation. Similarly, users can select a piece of text and leave text annotation as well. In both cases, annotated area is highlighted. On mobile, the application connection with specification is also complete. Which means users can re-visit their own and others' annotations anytime they visit a learning space post. On frontend, connection with backend will be implemented on near future, however, annotations are still present on current web session.
+
+  For Mobile:
+  We have fully functional text and image annotation support. We have implemented annotation feature for both image and texts separately without using any package. We have full control on our code and don't have any external dependency related to the annotations on mobile. We also support some edge cases like overlapped text/image annotations, multiple annotations on the same part and so on. As we said in the above paragraph, the back-end connection of the annotation features on mobile is also completed and they are working as integrated.
   
 ***
   
-#### Standarts
+#### Standards
   
   As conventions, annotations are required to be universal, which means that any web client should be able to use existing and create new annotations from/coming to our microservice. To provide this, the annotations should be the W3 Web Annotation Data model. This aspects of annotating is pretty clear on our side. However, for the sake of Milestone 2, the microservice implementation was left to near future. Currently, annotations are stored on learnify servers. The annotations saved on the database follow the W3 Model. The image below is an example of how image and text annotations are stored in our database.
 
-  ![imageannot](https://user-images.githubusercontent.com/64018144/206256739-c0594972-3d76-4b01-b383-0bbaea0965eb.jpg)
+  For Mobile:
+  Since the mobile side has the back-end connection completely, the mobile is also integrated with W3C standards. The incoming and outgoing data on mobile (requests and responses) are all appropriate for the W3C standards.
 
   **Image annotation**
-
-  ![photo](https://user-images.githubusercontent.com/64018144/206253615-7417e2c0-a835-46df-a3f9-16901faf8fbe.jpg)
+  Backend: \
+  ![imageannot](https://user-images.githubusercontent.com/64018144/206256739-c0594972-3d76-4b01-b383-0bbaea0965eb.jpg)
 
   **Text annotation**
+  Backend: \
+  ![photo](https://user-images.githubusercontent.com/64018144/206253615-7417e2c0-a835-46df-a3f9-16901faf8fbe.jpg)
 
   And in this images you can see the models we do follow from W3 model.
 
@@ -371,7 +377,7 @@ Annotation Selection Dialog: [Code File in the Repository](https://github.com/bo
      We will create another service designed just to keep and return annotations and we will access it using axios library.
 * Change the request parameters on Create Annotation Endpoint:
 
-     Although the annotations kept in the database and returned to the application fully obeys the W3 annotation model, the model sent by the application to the create annotation endpoint does not follow the same convention. In very near future, the annotation model sent by the application and get by the specification will be exactly the same and will be W3 annotation model.
+     Although the annotations kept in the database and returned to the application fully obeys the W3 annotation model, the model sent by the application to the create annotation endpoint does not follow the same convention. In very near future, the annotation model sent by the application and get by the specification will be exactly the same and will be W3 annotation model. The mobile side also will update its models accordingly after the back-end performed required changes.
 
 ***
 

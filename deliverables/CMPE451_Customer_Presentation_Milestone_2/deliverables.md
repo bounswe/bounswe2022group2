@@ -120,8 +120,8 @@ Group: Group2 - Mobile Team
   19. Attending to customer meetings and lectures regularly.
 
 ### *Main Contributions:*
-I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
 
+I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -133,10 +133,12 @@ demonstrated during the demo:
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+
 1. [Milestone-2 Report: Progress According To Requirements](https://github.com/bounswe/bounswe2022group2/issues/705)
 2. [Milestone-2 Report: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/706)
 
 ### *Pull Requests:*
+
 1. Mobile: Implementation of learning space information section [#528](https://github.com/bounswe/bounswe2022group2/pull/528)
 2. Mobile: Learning space detail enhancement [#587](https://github.com/bounswe/bounswe2022group2/pull/587)
 3. Mobile: Post add and edit screens [#623](https://github.com/bounswe/bounswe2022group2/pull/623)
@@ -145,10 +147,12 @@ management of our software project:
 6. Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit [#667](https://github.com/bounswe/bounswe2022group2/pull/667)
 
 ### *Unit Tests:*
+
 1. Mobile: Verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
 2. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
 
 ### *Additional Information:*  
+
 I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
 
 --------------------
@@ -431,7 +435,6 @@ Group: Group2 - Frontend Team
 
 I am a member of the front-end team of our application Learnify. As a member of the frontend team, I am proud to say that we have a strong team mentality that is focused on collaboration and communication. Over the past Milestone, I have personally contributed to this team mentality by consistently working closely with my teammates to ensure that we are catching the deadlines and the goals that we have set. During this milestone, first thing that I did is carrying static backend links to an .env file to make it more flexible for any change since the number of backend calls will increase while the application is developing so we need to save it as a variable to use at the different parts of the code. Then to complete authentication related issues, I have created the change password component so we are ready for the feature. Then, we have started the Learning spaces and I took the part where we create the learning spaces. After discussions with backend on what to send from the frontend to create a learning space, I have started from implementing a dropdown list and select component and image selection component. To use these components from the create learning space page, I have worked on the function callback from parent to child components. Then after we complete the design of the page, we have worked on both the connections between the frontend and the backend and connections between the pages that we have implemented. At the end, all of the team and I are focused more on the functionality on the learning space page and offering the contents in the learning space page. I have worked closely with the team members during this process and find ways to show the content that we have from the backend. I have watched out our frontend code base during each pull request and did continious testing during and after each merge and make sure that the system is working in a reliable manner. Also, I have implemented unit tests to the components that I have created.
 
-
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
   1. [Frontend: .env file and using environment variables in the code](https://github.com/bounswe/bounswe2022group2/issues/529)
@@ -444,9 +447,10 @@ demonstrated during the demo:
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
-  1.  [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
+  1. [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
 
 ### *Pull Requests:*
+
 1. Frontend: the urls connected to .env [#531](https://github.com/bounswe/bounswe2022group2/pull/531)
 2. Dev frontend change password [#537](https://github.com/bounswe/bounswe2022group2/pull/537)
 3. Dev frontend create ls  [#572](https://github.com/bounswe/bounswe2022group2/pull/572)
@@ -456,9 +460,11 @@ management of our software project:
 7. Frontend: unit tests for three components initialized [#694](https://github.com/bounswe/bounswe2022group2/pull/694)
 
 ### *Unit Tests:*
+
 1. Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components  [#695](https://github.com/bounswe/bounswe2022group2/issues/695)
 
 ### *Additional Information:*  
+
 I did not miss any lecture or lab time. Actively participated in all team meetings, demo ideas and demos.
 
 --------------------
