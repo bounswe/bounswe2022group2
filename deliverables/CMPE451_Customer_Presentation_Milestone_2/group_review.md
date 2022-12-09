@@ -8,10 +8,10 @@
 
 2. [Progress Based on Teamwork](#progress-based-on-teamwork)
 
-* 2.1 Summary of Individual Work
-* 2.2 Status of the Deliverables of Milestone 1
-* 2.3 Progress According to Requirements
-* 2.4 API Endpoints
+* 2.1 [Summary of Individual Work](#summary-of-individual-work)
+* 2.2 [Status of the Deliverables of Milestone 1](#status-of-the-deliverables-of-milestone-1)
+* 2.3 [Progress According to Requirements](#progress-according-to-requirements)
+* 2.4 [API Endpoints](#api-endpoints)
 * 2.5 [User Interface/User Experience](#user-interfaceuser-experience)
 * 2.6 [Annotations](#annotations)
 * 2.7 [Standards](#standards)
