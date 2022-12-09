@@ -313,6 +313,67 @@ management of our software project:
 None
 
 ---------------
+### *Member:*  
+
+Name: Ezgi Aysel Batı
+
+Group: Group2 - Mobile Team
+
+### *Responsibilities:*
+
+  1. Implementing Create Learning Space screen
+  2. Implementing Discussions Screen
+  3. Implementing Annotations Screen (the screen that displays all annotations when you click on the highlighted part)
+  4. Implementing Learning Space model
+  5. Implementing text item widget.
+  6. Implementing service for Learning Space related requests.
+  7. Implementing the backend connection between the create learning space screen and our REST API.
+  8. Implementing Learning Space Forum screen
+  9. Providing mock data for discussion forum and randomizing it for realistic usage view
+  10. Integrating LS Icons of Frontend to mobile as assets 
+  11. Reviewing the works done by the mobile team.
+  12. Helping mobile members with bugs they encounter and parts they struggle to implement via discord meetings.
+  13. Presenting mobile section of the demo
+  14. Attending and participating general meetings regularly.
+  15. Attending and participating in mobile team meetings regularly.
+  16. Implementing the backend connection to get category options from our REST API.
+  17. Additional to meetings communicated with some backend and frontend members to make sure our development process is aligned.
+
+### *Main Contributions:*
+As a member of mobile team, I have developed several screens and also model/services for Milestone 2. I have also reviewed my teammates' works both in terms of code correctness and functionality. Did research regarding Provider structure in flutter. Held bug fix sessions with other new learning mobile members to solve parts we struggle to develop. Participated in bug fix session to prepare for the demo (pr #662). I also did lots of research about unit testing in flutter as I came across a special case problem. I presented the mobile parts in the customer demo.
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:  
+  - Mobile: Implementing Create/Edit Learning Space Screen [#510](https://github.com/bounswe/bounswe2022group2/issues/510)  
+  - Mobile: Implementing Annotation Screen [#560](https://github.com/bounswe/bounswe2022group2/issues/560)  
+  - Mobile: Backend Connection of Create Learning Space [#570](https://github.com/bounswe/bounswe2022group2/issues/570)  
+  - Mobile: Get Categories from Backend [#586](https://github.com/bounswe/bounswe2022group2/issues/586)  
+  - Mobile: Forum/Discussion Screen [#620](https://github.com/bounswe/bounswe2022group2/issues/620)  
+  - Mobile: Icon Selector for Create LS Screen [#639](https://github.com/bounswe/bounswe2022group2/issues/639)  
+ 
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+   - Requirements Revision [#678](https://github.com/bounswe/bounswe2022group2/issues/678)
+
+ 
+
+### *Pull Requests:*
+  - Mobile: create edit Learning Space screen [#565](https://github.com/bounswe/bounswe2022group2/pull/565) 
+  - Mobile/create ls backend [#585](https://github.com/bounswe/bounswe2022group2/pull/585)
+  - Mobile: Annotation Screen  [#613](https://github.com/bounswe/bounswe2022group2/pull/613) 
+  - Mobile: LS Forum  [#622](https://github.com/bounswe/bounswe2022group2/pull/622)
+  - Mobile: create ls image selection  [#640](https://github.com/bounswe/bounswe2022group2/pull/640)
+
+### *Unit Tests:*
+ - Widget and Network tests for forget password screen: https://github.com/bounswe/bounswe2022group2/pull/442 
+ - Widget tests for Create LS Screen: https://github.com/bounswe/bounswe2022group2/blob/mobile/create-ls-tests/learnify/mobile/test/create_ls_test.dart
+ * Create LS Screen tests have not been merged to the master branch as the futureInit() function used in this screen causes automated tests to fail. After 7-8 hours and 300+ lines of bug fixing attempts I gave up on it. The screen works and the tests are written properly. They just fail automated testing. 
+
+### *Additional Information:*  
+None
+
+---------------
 
 ### *Member:*  
 
