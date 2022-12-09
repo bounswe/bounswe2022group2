@@ -297,6 +297,95 @@ management of our software project:
 
 ### *Member:*  
 
+Name: Muhammed Enes Sürmeli
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+  1. Constructing the not found page's primary structure and layout.
+  2. Putting the not found page in place.
+  3. Layout for learning space page and components are offered and designed to improve user interface and user experience.
+  4. Giving our web application some component logic on learning space page.
+  5. Developing the post component.
+  6. Putting into practice some of the learning space page's elements and icons.
+  7. Implementing post creation feature for learning space page.
+  8. Implementing post editing feature for learning space page.
+  9. Creating the backend connection between our REST API and the learning space page post creation feature.
+  10. Creating the backend connection between our REST API and the learning space page post editing feature.
+  11. Providing a method for private and protected routing.
+  12. Conducting research on the React frameworks, libraries, and development approaches we'll be using on our project.
+  13. Conducting research on the W3C annotation standards and annotation implementation methods we'll be using on our project.
+  14. Throughout the web application development process, looking for and utilizing new techniques.
+  15. Implementing text annotation feature for created learning space posts.
+  16. Implementing image annotation feature for created learning space posts.
+  17. Implementing unit tests for not found page.
+  18. Implementing unit tests for email verification page.
+  19. Documenting frontend team meeting notes #4.
+  20. Documenting general team meeting notes #6.
+  21. Creating the general structure for the milestone 2 report.
+  22. Creating the list and status of the deliverables table for milestone 2 report.
+  23. Reviewing the works done by the frontend team.
+  24. Fixing any bugs, mistakes, or problems that arose throughout the routine development of our application's front end.
+  25. Consistently participating in and attending general meetings.
+  26. Consistently participating in and attending frontend team meetings.
+ 
+### *Main Contributions:*
+I work on the front end of our Learnify application, which is being developed collaboratively by all the members of group 2. I have implemented the text and image annotation features for the frontend part complying with the W3C standards as constantly requested by our teacher in the lectures. I have offered hotfixes, sugggested a few improvements for the parts in my coworkers' code, and attempted to pass along the related information I have discovered. In addition, for the components I developed while working on the front end of our online application like not found page and email verification page, I also performed unit tests to ensure that every component worked as expected. In keeping with the design principles we jointly decided with other frontend members upon and in consistency with other components and pages of our online application, I continued to offer some of the visual components like designs, icons, and buttons of our web application for this milestone 2. I frequently checked the progress of our application's development before our weekly general and frontend team meetings, and suggested some appropriate ideas for our agenda every week. For our frontend application, I have also altered some visual parts of the learning space page post creation and editing parts so as to improve efficiency of our learning space page in terms of the loading duration by changing some of the the png images to svg icons. For our frontend part of the application, I have also given some parts of the page layouts and graphic elements like icons, logos, and drawings along with some alluring designs to support these. In addition, I looked into React's page routing and came up with a simple but effective fix for one of our fundamental problems by implementing private and protected routing, which in essence was to prevent unauthorized users from accessing the internal parts of the application like home page, learning space page, etc. I have also created a component-based page layouting logic for the post feature of the learning space page in order to easily import components, utilize them without duplicating code segments, and be able to give certain parameters with React props to display components. In addition, I added a not found page with an eye-pleasing desgin and built majority of the components and functionalities of the learning space page. Finally, in line with our frontend development, I have created some css classes that comply with our design guidelines for the components implemented by the entire frontend team, as well as implemented separate components for each, established backend connections, established private page routing, and passed parameters to display components according to the response obtained from the REST API. 
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Frontend: Implementation of Not Found Page](https://github.com/bounswe/bounswe2022group2/issues/520)
+  2. [Frontend: Implementation of Private Routes](https://github.com/bounswe/bounswe2022group2/issues/521)
+  3. [Frontend: Implementation of Components on Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/549)
+  4. [Frontend: Implementation of onClick Button Rendering](https://github.com/bounswe/bounswe2022group2/issues/630)
+  5. [Frontend: Backend Connection for the Create Post Part of Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/641)
+  6. [Frontend: Implementation of the Text Annotation](https://github.com/bounswe/bounswe2022group2/issues/650)
+  7. [Frontend: Implementation of the Image Annotation](https://github.com/bounswe/bounswe2022group2/issues/651)
+  8. [Frontend: Implementation of Edit Post Feature](https://github.com/bounswe/bounswe2022group2/issues/659)
+  9. [Frontend: Backend Connection For Edit Post](https://github.com/bounswe/bounswe2022group2/issues/660)
+  10. [Frontend: Unit Tests for Not Found Page](https://github.com/bounswe/bounswe2022group2/issues/681)
+  11. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453) 
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1. [Documenting the Meeting Notes for the Frontend Meeting 4](https://github.com/bounswe/bounswe2022group2/issues/548)
+  2. [Documenting Meeting Notes for the Meeting 6 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/535)
+  3. [Preparing Milestone 2 - CMPE 451 Deliverables](https://github.com/bounswe/bounswe2022group2/issues/668)
+  4. [Milestone 2: Individual Report - Muhammed Enes Sürmeli](https://github.com/bounswe/bounswe2022group2/issues/711)
+  5. [Milestone-2 Report: List and Status of Deliverables](https://github.com/bounswe/bounswe2022group2/issues/712)
+  6. [Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts](https://github.com/bounswe/bounswe2022group2/issues/492)
+
+### *Pull Requests:*
+1. Frontend: Implementation of Private Routes [#523](https://github.com/bounswe/bounswe2022group2/pull/523)
+2. Frontend: Implementation of Not Found Page [#525](https://github.com/bounswe/bounswe2022group2/pull/525)
+3. Frontend: Implementation of Components on Learning Space Page [#629](https://github.com/bounswe/bounswe2022group2/issues/629)
+4. Frontend: Implementation of onClick Button Rendering [#631](https://github.com/bounswe/bounswe2022group2/issues/631)
+5. Frontend: Create Post Feature of Learning Space Page [#643](https://github.com/bounswe/bounswe2022group2/issues/643)
+6. Frontend: Backend Connection for the Create Post Part of Learning Space Page [#643](https://github.com/bounswe/bounswe2022group2/issues/643)
+7. Frontend: Implementation of the Text Annotation [#658](https://github.com/bounswe/bounswe2022group2/pull/658)
+8. Frontend: Implementation of the Image Annotation [#658](https://github.com/bounswe/bounswe2022group2/pull/658)
+9. Frontend: Implementation For Edit Post Feature [#661](https://github.com/bounswe/bounswe2022group2/pull/661)
+10. Frontend: Backend Connection for the Edit Post Part [#661](https://github.com/bounswe/bounswe2022group2/pull/661)
+11. Milestone 2: Preparing Deliverables and Group Review [#672](https://github.com/bounswe/bounswe2022group2/pull/672)
+12. Milestone 1: What Went Well, What Did Not Go Well, and Individual Contribution Parts [#508](https://github.com/bounswe/bounswe2022group2/pull/508)
+13. Frontend: Unit Tests for Email Verification Page [#458](https://github.com/bounswe/bounswe2022group2/pull/458)
+14. Frontend: Unit Tests for Not Found Page [#683](https://github.com/bounswe/bounswe2022group2/pull/683)
+15. Updating the Dev Branch [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
+
+### *Unit Tests:*
+1. Frontend: Unit Tests for Email Verification Page [#458](https://github.com/bounswe/bounswe2022group2/pull/458)
+2. Frontend: Unit Tests for Not Found Page [#683](https://github.com/bounswe/bounswe2022group2/pull/683)
+
+### *Additional Information:*  
+
+I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I readily contributed and shared my ideas when it came to project planning and decision making with other team members. Lastly, I had no prior experience with frontend development or React before this semester, so, I had to step outside of my comfort zone to continue learning and understanding more about these topics for this milestone.
+   
+--------------------
+
+
+### *Member:*  
+
 Name: Koray Tekin
 
 Group: Group2 - Frontend Team
