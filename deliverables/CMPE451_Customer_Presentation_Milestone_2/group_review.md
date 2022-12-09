@@ -259,6 +259,21 @@
   
 ### Status of the Deliverables of Milestone 1
 
+#### List and Status of Deliverables
+
+|Deliverable|Status|Date Delivered|
+|-----|:--------:|:------:|
+|[Software Requirements Specification](https://github.com/bounswe/bounswe2022group2/wiki/Requirements)| Updated and Delivered |06/12/2022 |
+|[Software Design (UML):Use-Case Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Use-Case-Diagram)|Delivered|06/12/2022|
+|[Software Design (UML):Class Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Class-Diagram)|Delivered|06/12/2022|
+|[Software Design (UML):Sequence Diagram](https://github.com/bounswe/bounswe2022group2/wiki/Sequence-Diagram)|Delivered|06/12/2022|
+|Scenarios and Mockups ([1](https://github.com/bounswe/bounswe2022group2/wiki/Registered-Lecturer-Scenario,-Hasan-Ta%C5%9Fk%C4%B1ran),   [2](https://github.com/bounswe/bounswe2022group2/wiki/Unregistered-Learner-Scenario,-Ai-Zheng),  [3](https://github.com/bounswe/bounswe2022group2/wiki/Lecturer-Creates-Community-Event-Scenario,-Ezgi-Ece-Smith)) | Updated and Delivered | 06/12/2022|
+|[Project Plan](https://github.com/bounswe/bounswe2022group2/wiki/Project-Plan)|Delivered|06/12/2022|
+|[Individual Contribution Reports](https://github.com/bounswe/bounswe2022group2/blob/master/deliverables/CMPE451_Customer_Presentation_Milestone_2/deliverables.md#Individual-Contributions-Report)|Delivered|06/12/2022|
+|[Software](https://github.com/bounswe/bounswe2022group2) | Updated and Delivered | 06/12/2022|
+|Mobile Deliverables ([Manual](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual),     [APK](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK))|Updated and Delivered |06/12/2022|
+|Group Review (This Document) | Delivered | 09/12/2022|
+
 ***
 
 ### Progress According to Requirements
