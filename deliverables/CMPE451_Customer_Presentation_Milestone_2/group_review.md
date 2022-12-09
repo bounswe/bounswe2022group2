@@ -1,17 +1,21 @@
 # Group 2 - Milestone 2 - Group Review
 
 1. [Executive Summary](#executive-summary)
+
 * 1.1 Summary of the Project Status
 * 1.2 Changes the team has made or planned since Milestone 1 to improve development process, and how those changes will impact the process
 * 1.3 The Improvements Planned for the Remainder of the Project
+
 2. [Progress Based on Teamwork](#progress-based-on-teamwork)
+
 * 2.1 Summary of Individual Work
 * 2.2 Status of the Deliverables of Milestone 1
 * 2.3 Progress According to Requirements
 * 2.4 API Endpoints
-* 2.5 User Interface / User Experience
+* 2.5 [User Interface/User Experience](#user-interface/user-experience)
 * 2.6 Annotations
 * 2.7 Standards
+
 3. [Individual Reports](#individual-reports)
 
 ---------
@@ -20,15 +24,15 @@
 
 ***
 
-### Summary of the Project Status:
+### Summary of the Project Status
 
 ***
 
-### Changes the team has made or planned since Milestone 1 to improve development process, and how those changes will impact the process:
+### Changes the team has made or planned since Milestone 1 to improve development process, and how those changes will impact the process
 
 ***
 
-### The Improvements Planned for the Remainder of the Project:
+### The Improvements Planned for the Remainder of the Project
 
 ***
 
@@ -38,16 +42,16 @@
 
 ### Summary of Individual Work
 
-- **Altay Acar**
+* **Altay Acar**
   |Issue Title|Link|
   |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|
   |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|
   |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|
   |Frontend: HOTFIX Learning Space Page Structural Overflow|[#636](https://github.com/bounswe/bounswe2022group2/issues/636)|
   |Frontend: Implementation of Semantic Search Bar|[#652](https://github.com/bounswe/bounswe2022group2/issues/652)|
-  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)| 
-  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)| 
-  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)| 
+  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)|
+  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|
   
   |Pull Request Title|Link|
   |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/issues/536)|
@@ -59,21 +63,21 @@
   |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/issues/680)|
   |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/issues/684)|
 
-- **Egemen Atik**
+* **Egemen Atik**
   |Issue Title|Link|
   |-----|:--------:|
 
   |Pull Request Title|Link|
   |-----|:--------:|
 
-- **Ezgi Aysel Batı**
+* **Ezgi Aysel Batı**
   |Issue Title|Link|
   |-----|:--------:|
 
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Batuhan Çelik**
+* **Batuhan Çelik**
   
   |Issue Title|Link|
   |-----|:--------:|
@@ -81,18 +85,18 @@
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Hasan Can Erol**
+* **Hasan Can Erol**
   |Issue Title|Link|
   |-----|:--------:|
   
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Onur Kömürcü:**
+* **Onur Kömürcü:**
   |Issue Title|Link|
   |-----|:--------:|
   
-- **Ecenur Sezer**
+* **Ecenur Sezer**
   |Issue Title|Link|
   |Backend: POST Learning Space Enroll Endpoint| [#561](https://github.com/bounswe/bounswe2022group2/issues/561)
   |Backend: Implementing Unit Tests for Enrolling Learning Space|[#563](https://github.com/bounswe/bounswe2022group2/issues/563)
@@ -105,7 +109,7 @@
   |Milestone-2 Report: Annotations|[#675](https://github.com/bounswe/bounswe2022group2/issues/675)
   |Milestone-2 Report: API Documentation|[#677](https://github.com/bounswe/bounswe2022group2/issues/677)
   |Milestone-2 Report:Indiviual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)
-    
+
   |Pull Request Title|Link|
   |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
   |563 backend implementing unit tests for enrolling learning space|[#564](https://github.com/bounswe/bounswe2022group2/pull/564)
@@ -119,14 +123,14 @@
   |Milestone-2 Report: Annotations|[#674](https://github.com/bounswe/bounswe2022group2/pull/674)
   |Milestone-2 Report: API Documentation|[#685](https://github.com/bounswe/bounswe2022group2/pull/685)
   
-- **Muhammed Enes Sürmeli:**
+* **Muhammed Enes Sürmeli:**
   |Issue Title|Link|
   |-----|:--------:|
 
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Koray Tekin**
+* **Koray Tekin**
   |Issue Title|Link|
   |Frontend: Implementation of Static Navigation Bar| [#533](https://github.com/bounswe/bounswe2022group2/issues/533)
   |Frontend: Implementation of Learning Space page layout and initial components|[#541](https://github.com/bounswe/bounswe2022group2/issues/541)
@@ -135,7 +139,7 @@
   |Frontend: Unit Tests for Footer Component|[#686](https://github.com/bounswe/bounswe2022group2/issues/686)
   |Frontend: Reserach on initializing the Annotation Implementation|[#526](https://github.com/bounswe/bounswe2022group2/issues/526)
   |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)
-    
+
   |Pull Request Title|Link|
   |Frontend: Implementation of Static Navigation Bar| [#534](https://github.com/bounswe/bounswe2022group2/pull/534)
   |Frontend: Implementation of Learning Space initial Components/Layout|[#591](https://github.com/bounswe/bounswe2022group2/pull/591)
@@ -144,18 +148,19 @@
   |Frontend: Participants component implementation for LS pages|[#654](https://github.com/bounswe/bounswe2022group2/pull/654)
   |Frontend: Unit Tests for Static Footer Component|[#689](https://github.com/bounswe/bounswe2022group2/pull/689)
   
-- **Bahrican Yeşil:**
+* **Bahrican Yeşil:**
   |Issue Title|Link|
   |-----|:--------:|
 
   |Pull Request Title|Link|
   |-----|:--------:|
   
-- **Mehmet Gökay Yıldız**
+* **Mehmet Gökay Yıldız**
   |Issue Title|Link|
   |-----|:--------:|
 
   |Pull Request Title|Link|
+
   |-----|:--------:|
   
 ***
@@ -172,7 +177,44 @@
 
 ***
 
-### User Interface / User Experience
+### User Interface/User Experience
+
+#### Mobile
+
+Note: We structured our folders in a way that they can be managed easily. Therefore, we're giving the link of the folder related to the code part you requested. Please analyze and review them carefully. You can also see the import statements at the beginning of each file and so that you can find the implementations of sub-components in a screen. Please traverse all files included in the directory and also the imported ones and the sub-folders (such as view, model, view-model, constants, and so on) to see our implementations on the code side.
+
+##### Signup Screen
+
+Responsible: Bahrican Yeşil
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/signup)
+
+##### App Bar and Bottom Navigation Bar
+
+Responsible: Bahrican Yeşil
+Link - App Bar: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/app-bar/default_app_bar.dart)
+Link - Bottom Navigation Bar: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
+
+##### Profile Screen
+
+Responsible: Bahrican Yeşil
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/profile)
+
+##### Posts Section
+
+Responsible: Bahrican Yeşil
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/post)
+
+##### Events Section
+
+Responsible: Bahrican Yeşil
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/events)
+
+##### Annotating an Image
+Note: We implemented annotating image functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package.
+
+Responsible: Bahrican Yeşil
+Annotation Image: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/chapter_image.dart)
+Annotatable Image: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/image/annotatable_image.dart)
 
 ***
 
@@ -180,48 +222,50 @@
 
 #### Status
   
-  In our recent status, annotations are supported on both mobile and frontend. In application level, we are able to annotate both images and text. Users can select a specific part of an image and leave a text annotation. Similarly, users can select a piece of text and leave text annotation as well. In both cases, annotated area is highlighted. On mobile, the application connection with specification is also complete. Which means users can re-visit their own and others' annotations anytime they visit a learning space post. On frontend, connection with backend will be implemented on near future, however, annotations are still present on current web session. 
+  In our recent status, annotations are supported on both mobile and frontend. In application level, we are able to annotate both images and text. Users can select a specific part of an image and leave a text annotation. Similarly, users can select a piece of text and leave text annotation as well. In both cases, annotated area is highlighted. On mobile, the application connection with specification is also complete. Which means users can re-visit their own and others' annotations anytime they visit a learning space post. On frontend, connection with backend will be implemented on near future, however, annotations are still present on current web session.
   
 ***
   
 #### Standarts
   
   As conventions, annotations are required to be universal, which means that any web client should be able to use existing and create new annotations from/coming to our microservice. To provide this, the annotations should be the W3 Web Annotation Data model. This aspects of annotating is pretty clear on our side. However, for the sake of Milestone 2, the microservice implementation was left to near future. Currently, annotations are stored on learnify servers. The annotations saved on the database follow the W3 Model. The image below is an example of how image and text annotations are stored in our database.
-    
+
   ![imageannot](https://user-images.githubusercontent.com/64018144/206256739-c0594972-3d76-4b01-b383-0bbaea0965eb.jpg)
 
   **Image annotation**
-    
+
   ![photo](https://user-images.githubusercontent.com/64018144/206253615-7417e2c0-a835-46df-a3f9-16901faf8fbe.jpg)
-    
+
   **Text annotation**
 
   And in this images you can see the models we do follow from W3 model.
-   
+
   ![image annotation](https://user-images.githubusercontent.com/64018144/206257031-c7c4ca7a-25b4-4185-803c-6c37b9b0e4b6.jpg)
   
-  **Resource: https://www.w3.org/TR/annotation-model/#embedded-textual-body**
+  **Resource: <https://www.w3.org/TR/annotation-model/#embedded-textual-body>**
   
   ![text annotation](https://user-images.githubusercontent.com/64018144/206257184-d1443e41-f05f-4698-8970-454b0382c90e.jpg)
   
-  **Resource : https://www.w3.org/TR/annotation-model/#text-position-selector**
+  **Resource : <https://www.w3.org/TR/annotation-model/#text-position-selector>**
   
   ![creator](https://user-images.githubusercontent.com/64018144/206247957-0f4edf11-4996-49a2-aad3-70c073b97374.jpg)
   
-  **Resource: https://www.w3.org/TR/annotation-model/#index-of-json-keys**
+  **Resource: <https://www.w3.org/TR/annotation-model/#index-of-json-keys>**
   
   The API calls and examples are present on the postman documentation of the CREATE ANNOTATIONS endpoint. Please do check the link in [API Endpoints](https://www.w3.org/TR/annotation-model/#index-of-json-keys) section of our milestone 2 report.
   
  ***
- 
-  #### Improvements in the Future
-   **After our second demo, along with feedback we as a team see clearer on our mistakes on providing the universality and reusability of our annotations and we will do many improvements.** 
+
+#### Improvements in the Future
+
+   **After our second demo, along with feedback we as a team see clearer on our mistakes on providing the universality and reusability of our annotations and we will do many improvements.**
   These improvements will be:
-   - Create microservice:
-   
+
+* Create microservice:
+
      We will create another service designed just to keep and return annotations and we will access it using axios library.
-   - Change the request parameters on Create Annotation Endpoint:
-   
+* Change the request parameters on Create Annotation Endpoint:
+
      Although the annotations kept in the database and returned to the application fully obeys the W3 annotation model, the model sent by the application to the create annotation endpoint does not follow the same convention. In very near future, the annotation model sent by the application and get by the specification will be exactly the same and will be W3 annotation model.
 
 ***
@@ -260,6 +304,7 @@ Group: Group2 - Frontend Team
   20. Attending and participating frontend team meetings regularly.
 
 ### *Main Contributions:*
+
 I am a member of our frontend team for the development of our application, namely Learnify. As I did in the first milestone, I continued to provide visual components of our web application according to the design guidelines we have determined together and in harmony with other components and pages of our web application. Before our weekly frontend team meetings I have regularly inspected our application's development's current state and provided necessary agenda for that week. I have also provided page layouts and visual components like icons, logos, or illustrations for our web application. I have also researched on icon library that we can use (Fontawesome) and implemented it so that the performance and loading times for our screens increase significantly by not trying to render each png file when loading. I have also researched n dynamic routing in React and provided an easy-to-use and effective solution to one of our biggest issues: overcoming hardcoding each url path in App.js. I have also provided a component based page layouting logic so that we can eaily import components and use them withouut repeating lines of code and be able to pass specific parameters to display components. Besides, I have implemented categories page, learning spaces by category page and semantic search component in the navigation bar. For each, I have implemented separate components, established backend connection, established dynamic routing and passed parameters to display components according to the response acquired from the REST API. I have also regularly provided css classes that satisfy our design guidelines for the components implemented by the whole frontend team. I have regularly helped my teammates to fix any erroneous part of their code, provided hotfixes, and tried to share them good practices that I have learned. Additionally, I have implemented unit tests for the components that I have created during the development of our web application’s frontend.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
@@ -278,6 +323,7 @@ management of our software project:
   None between the milestone 1 and milestone 2
 
 ### *Pull Requests:*
+
 1. Frontend: Implementation of Home Page [#536](https://github.com/bounswe/bounswe2022group2/issues/536)
 2. Frontend: Implementation of Categories Page [#571](https://github.com/bounswe/bounswe2022group2/issues/571)
 3. Frontend: Learning Spaces by Category Pages Implementation [#633](https://github.com/bounswe/bounswe2022group2/issues/633)
@@ -288,11 +334,13 @@ management of our software project:
 8. Frontend: Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
 
 ### *Unit Tests:*
+
 1. Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/issues/676)
 2. Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/issues/680)
 3. Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
 
 ### *Additional Information:*  
+
 None
 
 ---------------
@@ -324,6 +372,7 @@ Group: Group2 - Backend Team
   17. Creating Postman documentation with examples for newly implemented endpoints.
 
 ### *Main Contributions:*
+
 As a member of our backend team, I have created many endpoints and unit tests that connect the database to the features we created as a team. This has come with many research on Node.js, Docker and AWS technologies. During the process, reviews and bugs appeared has been handled by me and my teammates. After every created endpoint, unit tests and documentations on Postman with examples are created by me. In our plan, backend implementations of Annotations are my responsibility. Research on must follow conventions and implementations are done by me. I have also contributed to our project plan and general meetings regularly.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
@@ -344,6 +393,7 @@ management of our software project:
   3. [Milestone-2 Report:Indiviual Report](https://github.com/bounswe/bounswe2022group2/issues/691)
 
 ### *Pull Requests:*
+
 1.561 backend post learning space join endpoint [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
 2. 563 backend implementing unit tests for enrolling learning space  [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
 3. Backend: Create Annotation Endpoint [#588](https://github.com/bounswe/bounswe2022group2/pull/588)
@@ -357,6 +407,7 @@ management of our software project:
 11. Milestone-2 Report: API Documentation [#685](https://github.com/bounswe/bounswe2022group2/pull/685)
 
 ### *Unit Tests:*
+
 1. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/676)
 2. Backend: Implementing Unit Tests for Login endpoint [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
 3. 563 backend implementing unit tests for enrolling learning space [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
@@ -364,8 +415,9 @@ management of our software project:
 5. Backend: Unit Tests for Edit Post Endpoint [#666](https://github.com/bounswe/bounswe2022group2/pull/666)
 
 ### *Additional Information:*  
+
    I took the resposibility of presenting in our demo with my teammates, and enyojed this task very much since both our demos are amazing.
-   
+
    --------------------
 
 ### *Member:*  
@@ -381,16 +433,17 @@ Group: Group2 - Frontend Team
   3. Providing the initial back-end connection for the Learning Space pages.
   4. Providing component logic for our web application.
   5. Implementing the Static Navigation Bar component.
-  6. Utilizing the components in the Learning Space page(modularization of the components via related end-points). 
+  6. Utilizing the components in the Learning Space page(modularization of the components via related end-points).
   7. Implementing unit tests for the Static Footer component.
   8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
   9. Reviewing the works done by the frontend team.
-  10. Creating search issues for the easier implementation of our projects functionalities. 
+  10. Creating search issues for the easier implementation of our projects functionalities.
   11. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
   12. Attending and participating general meetings regularly.
   13. Attending and participating frontend team meetings regularly.
 
 ### *Main Contributions:*
+
 I am one of the members of the front-end team of our application Learnify, as a team of 4 we are implementing the web-application side. Throughout this development process we try not to diverge from the path that we follow for; deciding on "What is next?", sharig the tasks equally among our team members, keeping in touch with the team during the implementation, conducting research when needed, reviewing and commenting on each others work regularly and, finally making sure that our application functions as expected. I have taken responsibiity for all of these development steps time to time. Regularly participated to weekly meetings of our team and shared my point of view for the further developments that can be conducted for our web-application, at the same time those meetings are the time that we share each weeks tasks, so I have shared my mind about load balancing each week and took significant tasks that have effected the development of our application. While keeping in touch with the other team members both for the design and functionality ideas, first of all I have implemented the "Static Navigation Bar" components layout and the functionalty, implemented the layout and several of the components for the Learning Space pages which is one of the main pages of our web-application(where learning and sharing takes place.), contributed to our codebase with several hot-fixes related to the REST API utilization and router modularization. And as I have mentioned above, testing the work we have come up with was one of the important points, as we have done always in our front-end team; we have shared the designs and functionalities that were added and implemented the unit tests for those, my responsibility was to test the Footer component and I did so. Our team was also aware of the importance of conducting research together and share our findings with each other, I have created a research team issue for finding out the annotation technologies and libraries that our team can benefit from and shared my own findings via examples and hyperlinks with my team.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
@@ -407,6 +460,7 @@ management of our software project:
   2. [Requirements Revision](https://github.com/bounswe/bounswe2022group2/issues/678)
 
 ### *Pull Requests:*
+
 1. Frontend: Implementation of Static Navigation Bar [#534](https://github.com/bounswe/bounswe2022group2/pull/534)
 2. Frontend: Implementation of Learning Space initial Components/Layout [#591](https://github.com/bounswe/bounswe2022group2/pull/591)
 3. Frontend: Learning Spaces providing back-end connection [#626](https://github.com/bounswe/bounswe2022group2/pull/626)
@@ -415,9 +469,11 @@ management of our software project:
 6. Frontend: Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
 
 ### *Unit Tests:*
+
 1. Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
 
 ### *Additional Information:*  
+
 Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively.
 
 --------------------
