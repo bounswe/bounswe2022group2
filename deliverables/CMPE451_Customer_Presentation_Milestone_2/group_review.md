@@ -197,13 +197,28 @@
   |Mobile: Learning Space Chapter Section|[#501](https://github.com/bounswe/bounswe2022group2/issues/501)|
   |Create a Pull Request Template|[#480](https://github.com/bounswe/bounswe2022group2/issues/480)|
   
-* **Mehmet Gökay Yıldız**
-  |Issue Title|Link|
-  |-----|:--------:|
+- **Mehmet Gökay Yıldız**
+    |Issue Title|Link|
+    |-----|:--------:|
+    |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)|
+    |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)|
+    |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)|
+    |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)|
+    |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)|
+    |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)|
+    |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)|
+    |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)|
 
   |Pull Request Title|Link|
 
   |-----|:--------:|
+  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)|
+  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)|
+  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)|
+  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)|
+  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)|
+  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)|
+  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)|
   
 ***
   
@@ -596,3 +611,67 @@ management of our software project:
 Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively. I also took responsibility in the process that we prepare our mobile app into the demo-day. I solved critical bugs, checked and corrected the back-end connection, data update in the app. I also answered incoming questions in the demo day and helped to our presenter. I took the responsibility of most significant feature we developed until the milestone 2 on mobile side, which is the annotation feature.
 
 ---------------------------
+
+### *Member:*  
+
+Name: Mehmet Gökay Yıldız
+
+Group: Group2 - Frontend Team
+
+### *Responsibilities:*
+
+  1. Provide an .env file to use in further development
+  2. Implementing the change password page.
+  3. Implementing the create learning space page.
+  4. Implementing the component logic for already created change password page.
+  5. Implementing the dropdown component to use in create learning space page.
+  6. Implementing the image selection grid component.
+  7. Implementing the backend connection between the create learning space page and our REST API.
+  8. Providing logic for the communcation of child component with parent component.
+  9. Implementing Join Learning Space button.
+  10. Implementing Join Learning Space button functionality with backend connection.
+  11. Implementing unit tests for Dropdown component.
+  12. Implementing unit tests for SelectIconGrid component.
+  13. Implementing unit tests for JoinLSButton component.
+  14. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  15. Reviewing the works done by the frontend team.
+  16. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  17. Attending and participating general meetings regularly.
+  27. Attending and participating frontend team meetings regularly.
+
+### *Main Contributions:*
+
+I am a member of the front-end team of our application Learnify. As a member of the frontend team, I am proud to say that we have a strong team mentality that is focused on collaboration and communication. Over the past Milestone, I have personally contributed to this team mentality by consistently working closely with my teammates to ensure that we are catching the deadlines and the goals that we have set. During this milestone, first thing that I did is carrying static backend links to an .env file to make it more flexible for any change since the number of backend calls will increase while the application is developing so we need to save it as a variable to use at the different parts of the code. Then to complete authentication related issues, I have created the change password component so we are ready for the feature. Then, we have started the Learning spaces and I took the part where we create the learning spaces. After discussions with backend on what to send from the frontend to create a learning space, I have started from implementing a dropdown list and select component and image selection component. To use these components from the create learning space page, I have worked on the function callback from parent to child components. Then after we complete the design of the page, we have worked on both the connections between the frontend and the backend and connections between the pages that we have implemented. At the end, all of the team and I are focused more on the functionality on the learning space page and offering the contents in the learning space page. I have worked closely with the team members during this process and find ways to show the content that we have from the backend. I have watched out our frontend code base during each pull request and did continious testing during and after each merge and make sure that the system is working in a reliable manner. Also, I have implemented unit tests to the components that I have created.
+
+
+* *Code Related Significant Issues:* My issues that contribute to the code base
+demonstrated during the demo:
+  1. [Frontend: .env file and using environment variables in the code](https://github.com/bounswe/bounswe2022group2/issues/529)
+  2. [Frontend: Change Password Screen](https://github.com/bounswe/bounswe2022group2/issues/530)
+  3. [Frontend: Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/543)
+  4. [Frontend: Backend connection of Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/576)
+  5. [Frontend: Connection of create ls page with created ls page](https://github.com/bounswe/bounswe2022group2/issues/625)
+  6. [Frontend: Join Learning Space](https://github.com/bounswe/bounswe2022group2/issues/656)
+  7. [Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components](https://github.com/bounswe/bounswe2022group2/issues/695)
+
+* *Management Related Significant Issues:* My issues that contribute to the
+management of our software project:
+  1.  [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
+
+### *Pull Requests:*
+1. Frontend: the urls connected to .env [#531](https://github.com/bounswe/bounswe2022group2/pull/531)
+2. Dev frontend change password [#537](https://github.com/bounswe/bounswe2022group2/pull/537)
+3. Dev frontend create ls  [#572](https://github.com/bounswe/bounswe2022group2/pull/572)
+4. Frontend: interconnection between the create ls and ls page is done [#627](https://github.com/bounswe/bounswe2022group2/pull/627)
+5. Frontend: Join Learning Space [#657](https://github.com/bounswe/bounswe2022group2/pull/657)
+6. HOTFIX HOMEPAGE [#671](https://github.com/bounswe/bounswe2022group2/pull/671)
+7. Frontend: unit tests for three components initialized [#694](https://github.com/bounswe/bounswe2022group2/pull/694)
+
+### *Unit Tests:*
+1. Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components  [#695](https://github.com/bounswe/bounswe2022group2/issues/695)
+
+### *Additional Information:*  
+I did not miss any lecture or lab time. Actively participated in all team meetings, demo ideas and demos.
+
+--------------------
+
