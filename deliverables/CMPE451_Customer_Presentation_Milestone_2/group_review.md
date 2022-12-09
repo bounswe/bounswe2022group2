@@ -228,24 +228,24 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Updating the Dev Branch|[#684](https://github.com/bounswe/bounswe2022group2/issues/684)|
   
 * **Koray Tekin**
-  |Issue Title|Link|
-  |-----|:--------:|
-  |Frontend: Implementation of Static Navigation Bar| [#533](https://github.com/bounswe/bounswe2022group2/issues/533)|
-  |Frontend: Implementation of Learning Space page layout and initial components|[#541](https://github.com/bounswe/bounswe2022group2/issues/541)|
-  |Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space|[#624](https://github.com/bounswe/bounswe2022group2/issues/624)|
-  |Frontend: Implementation of participants component of LS and providing the back-end connection|[#648](https://github.com/bounswe/bounswe2022group2/issues/648)|
-  |Frontend: Unit Tests for Footer Component|[#686](https://github.com/bounswe/bounswe2022group2/issues/686)|
-  |Frontend: Reserach on initializing the Annotation Implementation|[#526](https://github.com/bounswe/bounswe2022group2/issues/526)|
-  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)|
+  |Issue Title|Link|Time consumption|
+  |-----|:--------:|----|
+  |Frontend: Implementation of Static Navigation Bar| [#533](https://github.com/bounswe/bounswe2022group2/issues/533)|10 hours|
+  |Frontend: Implementation of Learning Space page layout and initial components|[#541](https://github.com/bounswe/bounswe2022group2/issues/541)|10 hours|
+  |Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space|[#624](https://github.com/bounswe/bounswe2022group2/issues/624)|2 hours|
+  |Frontend: Implementation of participants component of LS and providing the back-end connection|[#648](https://github.com/bounswe/bounswe2022group2/issues/648)|2 hours|
+  |Frontend: Unit Tests for Footer Component|[#686](https://github.com/bounswe/bounswe2022group2/issues/686)|1 hour|
+  |Frontend: Reserach on initializing the Annotation Implementation|[#526](https://github.com/bounswe/bounswe2022group2/issues/526)|2 hours|
+  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)|2 hours|
 
-  |Pull Request Title|Link|
-  |-----|:--------:|
-  |Frontend: Implementation of Static Navigation Bar| [#534](https://github.com/bounswe/bounswe2022group2/pull/534)|
-  |Frontend: Implementation of Learning Space initial Components/Layout|[#591](https://github.com/bounswe/bounswe2022group2/pull/591)|
-  |Frontend: Learning Spaces providing back-end connection|[#626](https://github.com/bounswe/bounswe2022group2/pull/626)|
-  |Frontend: HOTFIX Router Modularization|[#628](https://github.com/bounswe/bounswe2022group2/pull/628)|
-  |Frontend: Participants component implementation for LS pages|[#654](https://github.com/bounswe/bounswe2022group2/pull/654)|
-  |Frontend: Unit Tests for Static Footer Component|[#689](https://github.com/bounswe/bounswe2022group2/pull/689)|
+  |Pull Request Title|Link|Time Consumptation|
+  |-----|:--------:|----|
+  |Frontend: Implementation of Static Navigation Bar| [#534](https://github.com/bounswe/bounswe2022group2/pull/534)|10 hours|
+  |Frontend: Implementation of Learning Space initial Components/Layout|[#591](https://github.com/bounswe/bounswe2022group2/pull/591)|10 hours|
+  |Frontend: Learning Spaces providing back-end connection|[#626](https://github.com/bounswe/bounswe2022group2/pull/626)|2 hours|
+  |Frontend: HOTFIX Router Modularization|[#628](https://github.com/bounswe/bounswe2022group2/pull/628)|half an hour|
+  |Frontend: Participants component implementation for LS pages|[#654](https://github.com/bounswe/bounswe2022group2/pull/654)|2 hours|
+  |Frontend: Unit Tests for Static Footer Component|[#689](https://github.com/bounswe/bounswe2022group2/pull/689)|1 hour|
   
 * **Bahrican Yeşil:**
   |Issue Title|Link|
