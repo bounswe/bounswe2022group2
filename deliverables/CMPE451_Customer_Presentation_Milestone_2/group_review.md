@@ -66,6 +66,10 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|
   |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|
   |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|
+  |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/pull/707)|
+  |Milestone 2: Summary of Work - Bahrican|[#708](https://github.com/bounswe/bounswe2022group2/pull/708)|
+  |Milestone 2: Mobile UI/UX Section - Bahrican|[#715](https://github.com/bounswe/bounswe2022group2/pull/715)|
+  |Milestone 2: Mobile Related Additions to the Annotations Part|[#734](https://github.com/bounswe/bounswe2022group2/pull/734)|
 
 * **Egemen Atik**
   |Issue Title|Link|
@@ -221,6 +225,8 @@ Learnify is an online learning platform that provides users collaborative spaces
   |Mobile: Writing Tests of the Course Detail Chapter Section|[#478](https://github.com/bounswe/bounswe2022group2/issues/478)|
   |Mobile: Implementing Course Detail Chapter Section|[#477](https://github.com/bounswe/bounswe2022group2/issues/477)|
   |Creating a Pull Request Template|[#476](https://github.com/bounswe/bounswe2022group2/issues/476)|
+  |Milestone 2: Annotations Part of the Report - Mobile|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|
   
   |Pull Request Title|Link|
   |-----|:--------:|
@@ -366,14 +372,12 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 
 <img width="300" alt="signup" src="https://user-images.githubusercontent.com/60237280/206682554-5439005e-8336-43b3-9b99-cec9c870b6e3.png">
 
-
 ##### Forget Password Screen
 
 Responsible: Ezgi Aysel Batı  
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/forget-password)
 
 <img width="300" alt="forget-password" src="https://user-images.githubusercontent.com/56553280/206687548-af6db5ec-b28f-497a-a0b1-0e2af19175ed.jpg">
-
 
 ##### App Bar and Bottom Navigation Bar
 
@@ -390,7 +394,6 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 
 <img width="300" alt="profile" src="https://user-images.githubusercontent.com/60237280/206682855-3656d3de-1f22-4fd2-abc9-8e648351e27b.png">
 
-
 ##### Create Learning Space Screen
 
 Responsible: Ezgi Aysel Batı \
@@ -399,7 +402,6 @@ Link:  [Code Folder in the Repository](https://github.com/bounswe/bounswe2022gro
 <img width="300" alt="profile" src="https://user-images.githubusercontent.com/56553280/206690749-8983b19b-1c8a-4ec3-9166-c8ec6af0acbf.jpg">
 
 Note: Link only contains static "screen" implementation. For model and backend connections refer to pr's regarding this screen.  
-
 
 ##### Posts Section
 
@@ -415,14 +417,12 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/60237280/206682936-04114a85-19a7-4f35-b80c-db58db7f36cf.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_2" src="https://user-images.githubusercontent.com/60237280/206682967-1d494b11-ac5f-4c5d-9c7f-d1a45bf42334.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_3" src="https://user-images.githubusercontent.com/60237280/206682971-531d4ff0-4615-4f1c-b659-1982caf05554.png">
 
-
 ##### Forum Section
 
 Responsible: Ezgi Aysel Batı
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/forum_list.dart)
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206689133-fea41c35-81bf-4151-ba51-12e7720b1843.jpg">
-
 
 ##### Annotating an Image
 
@@ -457,15 +457,14 @@ Annotation Selection Dialog: [Code File in the Repository](https://github.com/bo
 
 <img width="374" alt="annotation_selection_dialog" src="https://user-images.githubusercontent.com/60237280/206684280-6440588f-c7d6-4d97-9ee1-10e8efecd307.png">
 
-
 #### Annotation Details Screen
 
 Responsible: Ezgi Aysel Batı  
-* Only for the image annotation, the preview of annotated image part was implemented by Bahrican. 
+
+* Only for the image annotation, the preview of annotated image part was implemented by Bahrican.
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206688618-b5d1c078-8d1b-4433-bf92-d5171ad53e28.jpg">&nbsp;&nbsp;&nbsp;<img width="300" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">
-
 
 ***
 
@@ -512,7 +511,7 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
   **Resource: <https://www.w3.org/TR/annotation-model/#index-of-json-keys>**
   
   The API calls and examples are present on the postman documentation of the CREATE ANNOTATIONS endpoint. Please do check the link in [API Endpoints](https://www.w3.org/TR/annotation-model/#index-of-json-keys) section of our milestone 2 report.
- 
+
   Here's the corresponding model on mobile for annotations: [Annotation Model](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/models/annotation/annotation_model.dart)
   Please, don't be mistaken by looking at the fields. This model is just adjusted to use the annotation data on mobile more easily. It fetches the incoming data from the back-end, parsing it and extracting the required fields in accordance with W3C standards. You can see the below images for parsing details, if you analyze it carefully, you will see that all data is in accordance with W3C standards. Image and text annotation information (like start index and start offset) all have been fetched and parsed according to the W3C model.
   
@@ -533,7 +532,7 @@ You can see the visual demonstration of the image and text annotations on mobile
 <img width="374" alt="text_annotation_1" src="https://user-images.githubusercontent.com/60237280/206684119-95232a18-8132-4cc9-8903-13dddd51f38e.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="text_annotation_2" src="https://user-images.githubusercontent.com/60237280/206684123-9c659a42-9479-48f9-ab8b-fdbe32d2fc79.png">
 
 <img width="372" alt="text_annotation_3" src="https://user-images.githubusercontent.com/60237280/206684131-b7f182f1-aab3-4bb2-87b5-b67b79683edb.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations" src="https://user-images.githubusercontent.com/60237280/206684133-41dd4e29-9789-4dae-a0b9-c36bdf34d1bb.png">
- 
+
  ***
 
 #### Improvements in the Future
@@ -655,8 +654,8 @@ Group: Group2 - Mobile Team
   19. Attending to customer meetings and lectures regularly.
 
 ### *Main Contributions:*
-I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
 
+I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -668,10 +667,12 @@ demonstrated during the demo:
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+
 1. [Milestone-2 Report: Progress According To Requirements](https://github.com/bounswe/bounswe2022group2/issues/705)
 2. [Milestone-2 Report: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/706)
 
 ### *Pull Requests:*
+
 1. Mobile: Implementation of learning space information section [#528](https://github.com/bounswe/bounswe2022group2/pull/528)
 2. Mobile: Learning space detail enhancement [#587](https://github.com/bounswe/bounswe2022group2/pull/587)
 3. Mobile: Post add and edit screens [#623](https://github.com/bounswe/bounswe2022group2/pull/623)
@@ -680,10 +681,12 @@ management of our software project:
 6. Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit [#667](https://github.com/bounswe/bounswe2022group2/pull/667)
 
 ### *Unit Tests:*
+
 1. Mobile: Verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
 2. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
 
 ### *Additional Information:*  
+
 I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
 
 ---------------
@@ -960,7 +963,9 @@ management of our software project:
   2. [Documenting Meeting notes for Mobile Meeting #4](https://github.com/bounswe/bounswe2022group2/issues/479)
   3. [Mobile: Create GitHub Actions for Flutter](https://github.com/bounswe/bounswe2022group2/issues/554)
   4. [Milestone 2: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/701)
-
+  5. [Milestone 2: Annotations Part of the Report - Mobile](https://github.com/bounswe/bounswe2022group2/issues/719)
+  6. [Milestone 2: Fill User Interface Part for Mobile](https://github.com/bounswe/bounswe2022group2/issues/710)
+  
 ### *Pull Requests:*
 
 1. Create a Pull Request Template [#480](https://github.com/bounswe/bounswe2022group2/pull/480)
@@ -983,6 +988,10 @@ management of our software project:
 18. Mobile: Annotation Screen [#613](https://github.com/bounswe/bounswe2022group2/pull/613)
 19. Mobile: Bugfix/annotation model update [#653](https://github.com/bounswe/bounswe2022group2/pull/653)
 20. Mobile: Hotfix - Set Default Values and lots of Demo Bugs [#662](https://github.com/bounswe/bounswe2022group2/pull/662)
+21. Milestone 2: Individual Report of Bahrican [#707](https://github.com/bounswe/bounswe2022group2/pull/707)
+22. Milestone 2: Summary of Work - Bahrican [#708](https://github.com/bounswe/bounswe2022group2/pull/708)
+23. Milestone 2: Mobile UI/UX Section - Bahrican [#715](https://github.com/bounswe/bounswe2022group2/pull/715)
+24. Milestone 2: Mobile Related Additions to the Annotations Part [#734](https://github.com/bounswe/bounswe2022group2/pull/734)
 
 ### *Unit Tests:*
 
