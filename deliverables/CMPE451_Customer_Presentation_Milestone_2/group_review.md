@@ -736,7 +736,20 @@ Responsible: Koray Tekin \
 Link: [Login Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LoginForm.js)
 
 <img width="1501" alt="Screen Shot 2022-12-09 at 15 48 30" src="https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png">
+  
+#### Email Verification Page
 
+Responsible: Muhammed Enes Sürmeli \
+Link: [Email Verification Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/EmailVerificationPage.js)
+
+<img width="1728" alt="Screenshot 2022-12-09 at 16 15 26" src="https://user-images.githubusercontent.com/74325266/206710871-d4251fd2-2b8d-43b2-8413-40efb89b2245.png">
+  
+#### Not Found Page
+
+Responsible: Muhammed Enes Sürmeli \
+Link: [Not Found Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/NotFoundPage.js)
+
+<img width="1728" alt="Screenshot 2022-12-09 at 16 15 07" src="https://user-images.githubusercontent.com/74325266/206711106-cae9db4e-afd1-4b56-83f1-935824ff84a8.png">
 
 #### Home Page
 
