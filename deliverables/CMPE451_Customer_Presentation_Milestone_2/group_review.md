@@ -66,12 +66,29 @@
   |Pull Request Title|Link|
   |-----|:--------:|
 
-- **Ezgi Aysel Batı**
-  |Issue Title|Link|
+- **Ezgi Aysel Batı**  
+  |Issue Title|Link|  
   |-----|:--------:|
+  |Mobile: Implementing Create/Edit Learning Space Screen|[#510](https://github.com/bounswe/bounswe2022group2/issues/510)|  
+  |Mobile: Implementing Annotation Screen|[#560](https://github.com/bounswe/bounswe2022group2/issues/560)|  
+  |Mobile: Backend Connection of Create Learning Space|[#570](https://github.com/bounswe/bounswe2022group2/issues/570)|  
+  |Mobile: Get Categories from Backend|[#586](https://github.com/bounswe/bounswe2022group2/issues/586)|  
+  |Mobile: Forum/Discussion Screen|[#620](https://github.com/bounswe/bounswe2022group2/issues/620)|  
+  |Mobile: Icon Selector for Create LS Screen|[#639](https://github.com/bounswe/bounswe2022group2/issues/639)|  
+  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)|
+    
+  
+
 
   |Pull Request Title|Link|
   |-----|:--------:|
+  |Mobile: create edit Learning Space screen|[#565](https://github.com/bounswe/bounswe2022group2/pull/565)|  
+  |Mobile/create ls backend | [#585](https://github.com/bounswe/bounswe2022group2/pull/585)|  
+  |Mobile: Annotation Screen - 560 | [#613](https://github.com/bounswe/bounswe2022group2/pull/613)|   
+  |Mobile: LS Forum | [#622](https://github.com/bounswe/bounswe2022group2/pull/622)|  
+  |Mobile: create ls image selection | [#640](https://github.com/bounswe/bounswe2022group2/pull/640) |
+
+  
   
 - **Batuhan Çelik**
   
