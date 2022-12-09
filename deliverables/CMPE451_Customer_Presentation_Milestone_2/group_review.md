@@ -263,7 +263,117 @@
 
 ### Progress According to Requirements
 
-***
+## 1. Functional Requirements
+
+### 1.1. 🧍 User Requirements
+
+1.1.1. 🔑 Authentication
+
+1.1.1.1. Signup *Status: Completed  
+
+1.1.1.2. Login *Status: Completed* 
+
+1.1.1.3. Email Verification *Status: Completed* 
+
+1.1.1.4. Forgot Password *Status: Completed* 
+
+1.1.1.5. Logout 
+
+1.1.1.6. Change Password *Status: In Progress* 
+
+1.1.2.  Profile Page *Status: In Progress* 
+
+1.1.2.10. Interests and Knowledge *Status: Not Started* 
+
+1.1.2.11. Achievements *Status: Not Started* 
+
+1.1.2.12. Progress Tracking *Status: Not Started* 
+
+1.1.2.13. Notes *Status: Not Started* 
+
+1.1.2.14. Annotations *Status: In Progress* 
+
+1.1.2.15. Learning Spaces *Status: Completed*
+
+1.1.2.16. Reputation *Status: Not Started*
+
+1.1.3.1. User-User Interaction *Status: Not Started* 
+
+
+1.1.3.2.1. Creating Learning Space & Content
+
+* 1.1.3.2.1.1. Users shall enter a title and description and choose an icon and categories to create a lecture. *Status: Completed* 
+* 1.1.3.2.1.2 Participants shall be able to add polls and notes as learning material. *Status: In progress* 
+* 1.1.3.2.1.3 Participants shall organize learning material in chapters. *Status: Not Started* 
+
+1.1.3.2.2. Editing Learning Spaces *Status: In progress* 
+
+1.1.3.2.3. Enrolling to Learning Spaces 
+
+* 1.1.3.2.3.1. Users shall see the content within sections.
+* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire.  *Status: Completed* 
+* 1.1.3.2.3.3. Users shall know the type of poll they are participating in beforehand. *Status: Not Started* 
+* 1.1.3.2.3.4. Users shall receive confirmation of their expertise on the topic upon completion of a lecture.  *Status: Not Started* 
+* 1.1.3.2.3.5. Users shall be able to review other users in terms of providing learning material by giving stars and optionally providing feedback. *Status: Not Started* 
+* 1.1.3.2.3.6. Users shall be able to report inappropriate comments in the discussion forum of the lecture. *Status: Not Started* 
+
+1.1.3.2.4. Notes and Annotation *Status: Not Started* 
+
+1.1.3.2.5. Community Events  *Status: In progress* 
+
+1.1.3.2.6. Creating Polls *Status: Not Started* 
+
+1.1.3.2.7. Discussions Forum  *Status: In progress* 
+
+1.1.4 Learning Space Structure
+
+* 1.1.4.1. Participants shall deliver learning material in form of posts which contain text and images. *Status: Completed* 
+* 1.1.4.4. Learning Space shall have the main page where users can see introduction, events, sections, notes, annotations, and polls. *Status: In progress* 
+* 1.1.4.5. The creator of a learning space shall be able to add additional admins to the learning space. *Status: Not Started* 
+* 1.1.4.6. Every learning space shall have a general discussion forum. *Status: In progress* 
+* 1.1.4.7. Every learning space shall have a discussion forum per chapter. *Status: Not Started* 
+
+1.1.5 Administration *Status: Not Started* 
+
+### 1.2. 💻 System Requirements
+
+1.2.1. Recommendations *Status: In progress* 
+
+1.2.2. Notifications *Status: Not Started* 
+
+1.2.3. Searching and Browsing 
+  * 1.2.3.1 The system shall implement semantic searching. *Status: Completed* 
+  * 1.2.3.2 The system shall allow users to search for other users. *Status: In progress* 
+  * 1.2.3.3 The system shall allow users to search for courses. *Status: Completed* 
+  * 1.2.3.4 The system shall offer filters for search results.*Status: In progress* 
+  * 1.2.3.5 The system shall allow users to browse for recommended courses. *Status: In progress* 
+  * 1.2.3.6 The system shall allow users to browse for courses offered by a user on the user's profile page. *Status: Not Started* 
+  * 1.2.3.7 The system shall allow users to browse their notes. *Status: Not Started* 
+  * 1.2.3.8 The system shall allow users to browse for notes filtered by their tags. *Status: Not Started* 
+  * 1.2.3.9 The system shall allow users to browse the activities and achievements of users they follow on the user's profile page. *Status: Not Started* 
+
+
+1.2.5. Forum/Discussion *Status: In progress* 
+
+
+1.2.6. Almost Done *Status: Not Started* 
+
+1.2.7. 🗑️ Delete Account *Status: Not Started* 
+
+1.2.8. 🗒️ Annotations
+
+* 1.2.8.1. Users shall be able to create annotations. *Status: Completed* 
+* 1.2.8.2. Annotations should comply to the [W3 Web Annotation Data Model](https://github.com/bounswe/bounswe2022group2/wiki/W3-Web-Annotation-Data-Model). *Status: In progress* 
+* 1.2.8.3. Owner of the annotations shall be able to set annotations as public or private. *Status: Not Started* 
+* 1.2.8.4. Created annotations shall be reachable from both profile page and relevant target resource(s). *Status: In progress* 
+* 1.2.8.5. Annotations may have a body attribute. *Status: Completed*  
+* 1.2.8.6. Annotations shall have a target attribute. *Status: Completed* 
+* 1.2.8.7. Annotations may have more than one body attribute and  one target attribute. *Status: Completed* 
+* 1.2.8.8. Annotations with public visibility should be listed on that annotation's creator's profile page. *Status: Not Started* 
+
+## 2. Non-Functional Requirements
+
+
 
 ### API Endpoints
 
