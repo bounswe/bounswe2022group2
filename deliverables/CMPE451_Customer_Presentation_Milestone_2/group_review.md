@@ -345,6 +345,40 @@ Learnify is an online learning platform that provides users collaborative spaces
 
 ### Progress According to Requirements
 
+### *Software Requirements Specification*
+
+Since the requirements specification of our project was done when there is not any implementation progress going on, although most of the application’s structure is coherent with the requirements specification from milestone 1, some changes are made because of the implementation: We have added image annotation feature. We have changed the content type of learning spaces from chapters to posts so that learning is not received but achieved with collaborative effort. Because of the same reason, the creator of the learning space and the participants are now not separated by themselves, they all listed as contributors. In accordance to all these big updates that resulted from the implementation and customer meetings between the milestones 1 and 2, we have updated relevant sections of software requirements specification.
+
+### *Software Design (UML)*
+
+There was not any significant changes in the software design diagrams between the milestones 1 and 2.
+
+### *Scenarios and Mockups*
+
+There was not any significant changes in the scenarios and mockups between the milestones 1 and 2. However, since those scenarios are outdated and used for only the very first days of the development of our application and did not feature anything related the real scenarios, we have used different scenarios in our customer presentation.
+
+Web application’s demo featured Mehmet, a new grad who just bought a new home and wants to learn some tips and recipes to follow in his new kitchen. Mehmet log ins to Learnify, browses categories and find the suitable category. Then, finds a learning space that raises his interest, joins that learning space, and upvotes a content that he really likes. Then, he is amazed by the idea of sharing the knowledge. So, he creates his own learning space about pottery, and adds his first post. Because he mistakenly misspelled a word during adding the post, he edits the post. He is also good at electro guitar. So, he searches for any learning spaces about it. But because he is a bit lazy he only writes guitar to the search bar, but he finds the learning space he was looking for. He spots some false information in the posts of that learning space and points those mistakes out by adding annotation.
+
+### *Project Plan*
+
+There was not any significant changes in the project plan between the milestones 1 and 2.
+
+### *Individual Contribution Reports*
+
+Individual contribution reports feature any contribution of each member between the milestones 1 and 2, strongly featuring development of our application’s core parts such as but not limited to home, learning spaces, posts, annotations, semantic search. Each team member provided their own contributions in tabular format.
+
+### *Software*
+
+Between the milestones 1 and 2 our software has been through big updates and now its version is updated from 0.1.0-alpha to 0.2.0-alpha. In the first milestone, all the authentication related part of our application was finished completely. In this version for the milestone 2, it now features a home page, fully functioning learning space content, contributors and annotations. Also, it features semantic search, which is now only limited to searching for learning spaces. Now, a user can create a learning space, join a learning space, add posts, annotate any content, search for learning spaces, browse categories and learning spaces by category.
+
+### *Mobile Deliverables (Manual, APK)*
+
+There was not any significant changes in the project plan between the milestones 1 and 2.
+
+### *Group Review (This Document)*
+
+Group review features the review of the work done by the whole group between the milestones 1 and 2, strongly featuring development of our application’s core parts such as but not limited to home, learning spaces, posts, annotations, semantic search.
+
 *Note*: C stands for Complated, I stands for In Progress, N stands for Not Started. First term is status of Frontend team, the second term is the status of the backend team, and the third term is the status of the mobile team.
 
 For example, C/N/I means that the frontend team completed, the backend team is not started and the mobile team is still working on it.
