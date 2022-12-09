@@ -510,6 +510,7 @@ management of our software project:
 ### *Unit Tests:*
 
 1. Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
+2. Unit Tests for Login Page [#467](https://github.com/bounswe/bounswe2022group2/pull/467)
 
 ### *Additional Information:*  
 
