@@ -44,6 +44,7 @@
 
 * **Altay Acar**
   |Issue Title|Link|
+  |-----|:--------:|
   |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|
   |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|
   |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|
@@ -54,14 +55,15 @@
   |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|
   
   |Pull Request Title|Link|
-  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/issues/536)|
-  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/issues/571)|
-  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/issues/633)|
-  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/issues/637)|
-  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/issues/655)|
-  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/issues/676)|
-  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/issues/680)|
-  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/issues/684)|
+  |-----|:--------:|
+  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|
+  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/pull/571)|
+  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/pull/633)|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/pull/637)|
+  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/pull/655)|
+  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|
+  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|
 
 * **Egemen Atik**
   |Issue Title|Link|
@@ -116,6 +118,7 @@
   
 * **Ecenur Sezer**
   |Issue Title|Link|
+  |-----|:--------:|
   |Backend: POST Learning Space Enroll Endpoint| [#561](https://github.com/bounswe/bounswe2022group2/issues/561)
   |Backend: Implementing Unit Tests for Enrolling Learning Space|[#563](https://github.com/bounswe/bounswe2022group2/issues/563)
   |Backend: Create Annotation Endpoint|[#577](https://github.com/bounswe/bounswe2022group2/issues/577)
@@ -129,6 +132,7 @@
   |Milestone-2 Report: Individual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)
 
   |Pull Request Title|Link|
+  |-----|:--------:|
   |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
   |563 backend implementing unit tests for enrolling learning space|[#564](https://github.com/bounswe/bounswe2022group2/pull/564)
   |Backend: Create Annotation Endpoint|[#588](https://github.com/bounswe/bounswe2022group2/pull/588)
@@ -442,20 +446,21 @@ management of our software project:
 
 ### *Pull Requests:*
 
-1. Frontend: Implementation of Home Page [#536](https://github.com/bounswe/bounswe2022group2/issues/536)
-2. Frontend: Implementation of Categories Page [#571](https://github.com/bounswe/bounswe2022group2/issues/571)
-3. Frontend: Learning Spaces by Category Pages Implementation [#633](https://github.com/bounswe/bounswe2022group2/issues/633)
-4. Frontend: HOTFIX Learning Space Page Structural Overflow [#637](https://github.com/bounswe/bounswe2022group2/issues/637)
-5. Frontend: Semantic Search Bar Implementation [#655](https://github.com/bounswe/bounswe2022group2/issues/655)
-6. Frontend: Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/issues/676)
-7. Frontend: Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/issues/680)
-8. Frontend: Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
+1. Frontend: Implementation of Home Page [#536](https://github.com/bounswe/bounswe2022group2/pull/536)
+2. Frontend: Implementation of Categories Page [#571](https://github.com/bounswe/bounswe2022group2/pull/571)
+3. Frontend: Learning Spaces by Category Pages Implementation [#633](https://github.com/bounswe/bounswe2022group2/pull/633)
+4. Frontend: HOTFIX Learning Space Page Structural Overflow [#637](https://github.com/bounswe/bounswe2022group2/pull/637)
+5. Frontend: Semantic Search Bar Implementation [#655](https://github.com/bounswe/bounswe2022group2/pull/655)
+6. Frontend: Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/pull/676)
+7. Frontend: Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/pull/680)
+8. Frontend: Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/pull/684)
 
 ### *Unit Tests:*
 
-1. Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/issues/676)
-2. Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/issues/680)
-3. Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
+1. Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/pull/676)
+2. Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/pull/680)
+3. Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/pull/684)
+4. Unit Tests for Sign Up Page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
 
 ### *Additional Information:*  
 
