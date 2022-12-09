@@ -366,7 +366,16 @@ Annotation Selection Dialog: [Code File in the Repository](https://github.com/bo
   **Resource: <https://www.w3.org/TR/annotation-model/#index-of-json-keys>**
   
   The API calls and examples are present on the postman documentation of the CREATE ANNOTATIONS endpoint. Please do check the link in [API Endpoints](https://www.w3.org/TR/annotation-model/#index-of-json-keys) section of our milestone 2 report.
+ 
+  Here's the corresponding model on mobile for annotations: [Annotation Model](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/models/annotation/annotation_model.dart)
+  Please, don't be mistaken by looking at the fields. This model is just adjusted to use the annotation data on mobile more easily. It fetches the incoming data from the back-end, parsing it and extracting the required fields in accordance with W3C standards. You can see the below images for parsing details, if you analyze it carefully, you will see that all data is in accordance with W3C standards. Image and text annotation information (like start index and start offset) all have been fetched and parsed according to the W3C model.
   
+<img width="555" alt="Screen Shot 2022-12-09 at 15 31 25" src="https://user-images.githubusercontent.com/60237280/206703285-2f7e4c47-5547-4549-a259-ace1e14f3cab.png">
+<img width="549" alt="Screen Shot 2022-12-09 at 15 31 37" src="https://user-images.githubusercontent.com/60237280/206703348-acb30c6f-23c5-45b5-9311-b90ad7d1b758.png">
+<img width="579" alt="Screen Shot 2022-12-09 at 15 31 51" src="https://user-images.githubusercontent.com/60237280/206703412-f8dac760-2cea-4ab8-9a68-8ab90836bfaa.png">
+
+
+ 
  ***
 
 #### Improvements in the Future
