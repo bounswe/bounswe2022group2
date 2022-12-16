@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:intl/intl.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -12,7 +14,6 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/extensions/number/number_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
-import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
@@ -27,9 +28,7 @@ import '../../../core/widgets/text/base_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
-import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
-import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';

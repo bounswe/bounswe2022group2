@@ -97,13 +97,41 @@ class EventItem extends StatelessWidget {
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         context.sizedH(.8),
-        _infoText(context, TextKeys.eventParticipants, '',
-            customWidget: _participantsRow(context, userPhotos),
-            lastChild: BaseText(
-              '${userPhotos.length}/${event.participationLimit}',
-              translated: false,
-              style: context.bodySmall,
-            )),
+        _infoText(
+          context,
+          TextKeys.eventParticipants,
+          '',
+          customWidget: _participantsRow(context, userPhotos),
+          lastChild: BaseText(
+            '${userPhotos.length}/${event.participationLimit}',
+            translated: false,
+            style: context.bodySmall,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: context.height * 1),
+          child: SizedBox(
+            height: context.height * 20,
+            child: FlutterMap(
+              options: MapOptions(
+                center: LatLng(51.509364, -0.128928),
+                zoom: 9.2,
+              ),
+              nonRotatedChildren: [
+                AttributionWidget.defaultWidget(
+                  source: 'OpenStreetMap contributors',
+                  onSourceTapped: null,
+                ),
+              ],
+              children: [
+                TileLayer(
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: 'com.example.app',
+                ),
+              ],
+            ),
+          ),
+        ),
         PostList.createEditButton(
             context,
             isPassed ? TextKeys.passedEvent : TextKeys.editEvent,

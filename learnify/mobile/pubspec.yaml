@@ -31,6 +31,8 @@ dependencies:
   cached_network_image: ^3.2.2
   flutter_native_splash: ^2.2.14
   page_transition: ^2.0.9
+  flutter_map: ^3.0.0
+  latlong2: ^0.8.1
 
   # Model
   equatable: ^2.0.5
