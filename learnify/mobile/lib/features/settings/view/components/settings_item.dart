@@ -7,6 +7,7 @@ import '../../../../core/widgets/text/base_text.dart';
 import '../../../../core/widgets/text/colored/colored_bullet_text.dart';
 import '../../constants/settings_constants.dart';
 import '../../constants/settings_options.dart';
+import 'social_account.dart';
 
 class SettingsItem extends StatelessWidget {
   const SettingsItem({required this.settings, Key? key}) : super(key: key);
@@ -46,8 +47,8 @@ class SettingsItem extends StatelessWidget {
     switch (settings) {
       case SettingsOptions.appInfo:
         return _infoTexts(context);
-      // case SettingsOptions.socialInfo:
-      //   return <Widget>[const _SocialMedia()];
+      case SettingsOptions.socialInfo:
+        return <Widget>[const SocialAccounts()];
       default:
         return <Widget>[];
     }

@@ -33,9 +33,8 @@ mixin SettingsTexts on StatelessWidget {
         nameKey: 'github',
         link: 'https://github.com/bounswe/bounswe2022group2'),
     const SocialMediaModel(
-        nameKey: 'we',
-        link:
-            'https://user-images.githubusercontent.com/64018144/194706872-8b4e83cc-503b-4165-a7be-003430276dc9.jpg'),
+        nameKey: 'logo-dblue',
+        link: 'https://github.com/bounswe/bounswe2022group2/wiki'),
     const SocialMediaModel(
         nameKey: 'linkedin',
         link: 'https://www.linkedin.com/school/bogazici-university/'),
