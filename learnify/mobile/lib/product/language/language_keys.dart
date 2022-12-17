@@ -110,4 +110,5 @@ class TextKeys {
   static const String appInfoSubtitle = "app_info_subtitle";
   static const String socialInfoSubtitle = "social_info_subtitle";
   static const String themeSubtitle = "theme_subtitle";
+  static const String settings = "settings";
 }
