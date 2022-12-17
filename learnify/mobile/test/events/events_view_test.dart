@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
@@ -14,6 +15,22 @@ void main() {
       await tester.pumpWidget(
         TestHelpers.appWidget(detailScreen),
       );
+
+      final Finder tabFinder =
+          TestHelpers.descendantFinder(detailScreen, DefaultTabController);
+      expect(tabFinder, findsOneWidget);
+      final DefaultTabController tabController =
+          tester.widget(tabFinder) as DefaultTabController;
+      expect(tabController.initialIndex, equals(2));
+
+      final Finder tabViewFinder =
+          TestHelpers.descendantFinder(detailScreen, TabBarView);
+      final TabBarView tabView = tester.widget(tabViewFinder) as TabBarView;
+      expect(tabView.children.length, equals(3));
+
+      final Finder eventsListFinder =
+          TestHelpers.descendantFinder(detailScreen, EventsList);
+      expect(eventsListFinder, findsOneWidget);
 
       // expect(eventsList., equals(1));
       // final Finder postListFinder =

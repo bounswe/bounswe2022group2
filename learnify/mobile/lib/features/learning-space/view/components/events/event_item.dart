@@ -36,7 +36,8 @@ class EventItem extends StatelessWidget {
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    User user = LocalManager.instance.getModel(const User(), StorageKeys.user);
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final List<Map<String, dynamic>> userList = context
         .read<HomeViewModel>()
         .randomUsers
