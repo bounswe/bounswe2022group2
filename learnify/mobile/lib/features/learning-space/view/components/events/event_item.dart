@@ -112,7 +112,8 @@ class EventItem extends StatelessWidget {
           padding: EdgeInsets.only(top: context.height * 1.8),
           child: SizedBox(
             height: context.height * 22,
-            child: _EventMap(location: GeoLocation.dummy()),
+            child:
+                _EventMap(location: event.geoLocation ?? const GeoLocation()),
           ),
         ),
         PostList.createEditButton(

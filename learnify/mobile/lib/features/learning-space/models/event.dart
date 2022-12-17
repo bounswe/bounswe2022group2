@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../../../../core/base/model/base_model.dart';
+import 'geolocation/geolocation_model.dart';
 
 class Event extends BaseModel<Event> {
   const Event({
@@ -11,8 +12,7 @@ class Event extends BaseModel<Event> {
     this.duration,
     this.participationLimit,
     this.eventCreator,
-    this.geoLocationLat,
-    this.geoLocationLon,
+    this.geoLocation,
     this.participants = const <String>[],
     this.lsId,
   });
@@ -26,8 +26,8 @@ class Event extends BaseModel<Event> {
         participationLimit:
             BaseModel.getByType<int>(json['participationLimit']),
         eventCreator: BaseModel.getByType<String>(json['eventCreator']),
-        geoLocationLat: BaseModel.getByType<double>(json['geoLocationLat']),
-        geoLocationLon: BaseModel.getByType<double>(json['geoLocationLon']),
+        geoLocation: BaseModel.embeddedModelFromJson<GeoLocation>(
+            json['geoLocation'], const GeoLocation()),
         participants: BaseModel.getWithDefault<List<String>>(
             json['participants'], <String>[]),
         lsId: BaseModel.getByType<String>(json['lsId']),
@@ -50,8 +50,7 @@ class Event extends BaseModel<Event> {
         participationLimit: Random().nextInt(50) + 50,
         duration: Random().nextInt(15) * 60,
         eventCreator: 'eventCreator',
-        geoLocationLat: 12,
-        geoLocationLon: 34,
+        geoLocation: GeoLocation.dummy(),
         participants: const <String>['adas', 'bdf', 'cas'],
       );
 
@@ -78,9 +77,8 @@ class Event extends BaseModel<Event> {
     int? duration,
     int? participationLimit,
     String? eventCreator,
-    double? geoLocationLat,
     String? title,
-    double? geoLocationLon,
+    GeoLocation? geoLocation,
     List<String>? participants,
     bool? isHappening,
     String? lsId,
@@ -95,8 +93,7 @@ class Event extends BaseModel<Event> {
         lsId: lsId ?? this.lsId,
         title: title ?? this.title,
         eventCreator: eventCreator ?? this.eventCreator,
-        geoLocationLat: geoLocationLat ?? this.geoLocationLat,
-        geoLocationLon: geoLocationLon ?? this.geoLocationLon,
+        geoLocation: geoLocation ?? this.geoLocation,
         participants: participants ?? this.participants,
       );
 
@@ -106,8 +103,7 @@ class Event extends BaseModel<Event> {
   final int? duration;
   final int? participationLimit;
   final String? eventCreator;
-  final double? geoLocationLat;
-  final double? geoLocationLon;
+  final GeoLocation? geoLocation;
   final List<String> participants;
   final String? lsId;
   final String? title;
@@ -123,9 +119,9 @@ class Event extends BaseModel<Event> {
         'duration': duration,
         'participationLimit': participationLimit,
         'eventCreator': eventCreator,
-        'geoLocationLat': geoLocationLat,
-        'geoLocationLon': geoLocationLon,
+        'geoLocation': geoLocation,
         'participants': participants,
+        'geoLocation': BaseModel.embeddedModelToJson<GeoLocation>(geoLocation),
         'lsId': lsId,
         'title': title,
       };
@@ -138,8 +134,7 @@ class Event extends BaseModel<Event> {
         duration,
         participationLimit,
         eventCreator,
-        geoLocationLat,
-        geoLocationLon,
+        geoLocation,
         participants,
         lsId,
         title
