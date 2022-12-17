@@ -4,6 +4,7 @@ import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/widgets/base-icon/base_icon.dart';
 import '../../../../core/widgets/text/base_text.dart';
+import '../../../../core/widgets/text/colored/colored_bullet_text.dart';
 import '../../constants/settings_constants.dart';
 import '../../constants/settings_options.dart';
 
@@ -54,13 +55,18 @@ class SettingsItem extends StatelessWidget {
 
   List<Widget> _infoTexts(BuildContext context) => List<Padding>.generate(
         SettingsTexts.infoSentences.keys.length,
-        (int i) => Padding(
-          padding: EdgeInsets.symmetric(horizontal: context.width * 2),
-          // child: BulletColoredText(
-          //   text: SettingsTexts.infoSentences.keys.elementAt(i),
-          //   coloredTexts: SettingsTexts.infoSentences.values.elementAt(i),
-          // ),
-        ),
+        (int i) {
+          final List<String> coloredTexts =
+              SettingsTexts.infoSentences.values.elementAt(i);
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: context.width * 2),
+            child: BulletColoredText(
+              text: context.tr(SettingsTexts.infoSentences.keys.elementAt(i)),
+              coloredTexts: List<String>.generate(coloredTexts.length,
+                  (int index) => context.tr(coloredTexts[index])),
+            ),
+          );
+        },
       );
 
   Widget _title(BuildContext context) => BaseText(
@@ -71,5 +77,6 @@ class SettingsItem extends StatelessWidget {
   Widget _subtitle(BuildContext context) => BaseText(
         settings.subtitle,
         textAlign: TextAlign.start,
+        style: context.labelMedium,
       );
 }

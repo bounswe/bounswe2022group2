@@ -6,9 +6,11 @@ import '../../../product/language/language_keys.dart';
 mixin SettingsTexts on StatelessWidget {
   /// Information sentences with colored words in the settings screen.
   static const Map<String, List<String>> infoSentences = <String, List<String>>{
-    TextKeys.appInfo: <String>[
+    TextKeys.appInfoDescription1: <String>[
       TextKeys.learnify,
       TextKeys.throughCollaboration,
+    ],
+    TextKeys.appInfoDescription2: <String>[
       TextKeys.comment,
       TextKeys.notes,
       TextKeys.annotations,
