@@ -97,13 +97,25 @@ class EventItem extends StatelessWidget {
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         context.sizedH(.8),
-        _infoText(context, TextKeys.eventParticipants, '',
-            customWidget: _participantsRow(context, userPhotos),
-            lastChild: BaseText(
-              '${userPhotos.length}/${event.participationLimit}',
-              translated: false,
-              style: context.bodySmall,
-            )),
+        _infoText(
+          context,
+          TextKeys.eventParticipants,
+          '',
+          customWidget: _participantsRow(context, userPhotos),
+          lastChild: BaseText(
+            '${userPhotos.length}/${event.participationLimit}',
+            translated: false,
+            style: context.bodySmall,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: context.height * 1.8),
+          child: SizedBox(
+            height: context.height * 22,
+            child:
+                _EventMap(location: event.geoLocation ?? const GeoLocation()),
+          ),
+        ),
         PostList.createEditButton(
             context,
             isPassed ? TextKeys.passedEvent : TextKeys.editEvent,

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../../../../core/base/model/base_model.dart';
+import 'geolocation/geolocation_model.dart';
 
 class Event extends BaseModel<Event> {
   const Event({
@@ -11,12 +12,9 @@ class Event extends BaseModel<Event> {
     this.duration,
     this.participationLimit,
     this.eventCreator,
-    this.geoLocationLat,
-    this.geoLocationLon,
+    this.geoLocation,
     this.participants = const <String>[],
-    this.isHappening = false,
-    this.courseId,
-    this.isCompleted = false,
+    this.lsId,
   });
   factory Event.fromJson(Map<String, dynamic> json) => Event(
         id: BaseModel.getByType<String>(json['_id']) ??
@@ -28,18 +26,16 @@ class Event extends BaseModel<Event> {
         participationLimit:
             BaseModel.getByType<int>(json['participationLimit']),
         eventCreator: BaseModel.getByType<String>(json['eventCreator']),
-        geoLocationLat: BaseModel.getByType<double>(json['geoLocationLat']),
-        geoLocationLon: BaseModel.getByType<double>(json['geoLocationLon']),
+        geoLocation: BaseModel.embeddedModelFromJson<GeoLocation>(
+            json['geoLocation'], const GeoLocation()),
         participants: BaseModel.getWithDefault<List<String>>(
             json['participants'], <String>[]),
-        isHappening: BaseModel.getWithDefault<bool>(json['isHappening'], false),
-        courseId: BaseModel.getByType<String>(json['courseId']),
-        isCompleted: BaseModel.getWithDefault<bool>(json['isCompleted'], false),
+        lsId: BaseModel.getByType<String>(json['lsId']),
       );
 
   factory Event.dummy(int? id) => Event(
         id: id.toString(),
-        courseId: id.toString(),
+        lsId: id.toString(),
         date: (id ?? 0) % 3 == 0
             ? DateTime.now().subtract(Duration(
                 days: Random().nextInt(20),
@@ -54,9 +50,8 @@ class Event extends BaseModel<Event> {
         participationLimit: Random().nextInt(50) + 50,
         duration: Random().nextInt(15) * 60,
         eventCreator: 'eventCreator',
-        geoLocationLat: 12,
-        geoLocationLon: 34,
-        participants: const ['adas', 'bdf', 'cas'],
+        geoLocation: GeoLocation.dummy(),
+        participants: const <String>['adas', 'bdf', 'cas'],
       );
 
   static const List<String> _eventTitles = <String>[
@@ -82,12 +77,11 @@ class Event extends BaseModel<Event> {
     int? duration,
     int? participationLimit,
     String? eventCreator,
-    double? geoLocationLat,
     String? title,
-    double? geoLocationLon,
+    GeoLocation? geoLocation,
     List<String>? participants,
     bool? isHappening,
-    String? courseId,
+    String? lsId,
     bool? isCompleted,
   }) =>
       Event(
@@ -96,13 +90,10 @@ class Event extends BaseModel<Event> {
         description: description ?? this.description,
         participationLimit: participationLimit ?? this.participationLimit,
         duration: duration ?? this.duration,
-        courseId: courseId ?? this.courseId,
+        lsId: lsId ?? this.lsId,
         title: title ?? this.title,
         eventCreator: eventCreator ?? this.eventCreator,
-        geoLocationLat: geoLocationLat ?? this.geoLocationLat,
-        geoLocationLon: geoLocationLon ?? this.geoLocationLon,
-        isCompleted: isCompleted ?? this.isCompleted,
-        isHappening: isHappening ?? this.isHappening,
+        geoLocation: geoLocation ?? this.geoLocation,
         participants: participants ?? this.participants,
       );
 
@@ -112,12 +103,9 @@ class Event extends BaseModel<Event> {
   final int? duration;
   final int? participationLimit;
   final String? eventCreator;
-  final double? geoLocationLat;
-  final double? geoLocationLon;
+  final GeoLocation? geoLocation;
   final List<String> participants;
-  final bool isHappening;
-  final String? courseId;
-  final bool isCompleted;
+  final String? lsId;
   final String? title;
 
   @override
@@ -131,12 +119,10 @@ class Event extends BaseModel<Event> {
         'duration': duration,
         'participationLimit': participationLimit,
         'eventCreator': eventCreator,
-        'geoLocationLat': geoLocationLat,
-        'geoLocationLon': geoLocationLon,
+        'geoLocation': geoLocation,
         'participants': participants,
-        'isHappening': isHappening,
-        'courseId': courseId,
-        'isCompleted': isCompleted,
+        'geoLocation': BaseModel.embeddedModelToJson<GeoLocation>(geoLocation),
+        'lsId': lsId,
         'title': title,
       };
 
@@ -148,12 +134,9 @@ class Event extends BaseModel<Event> {
         duration,
         participationLimit,
         eventCreator,
-        geoLocationLat,
-        geoLocationLon,
+        geoLocation,
         participants,
-        isHappening,
-        courseId,
-        isCompleted,
+        lsId,
         title
       ];
 }
