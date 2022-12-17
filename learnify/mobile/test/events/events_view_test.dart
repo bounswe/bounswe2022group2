@@ -40,6 +40,13 @@ void main() {
       final SliverChildBuilderDelegate sliverDelegate =
           sliverList.delegate as SliverChildBuilderDelegate;
       expect(sliverDelegate.childCount, 4);
+
+      final Finder eventFinder =
+          TestHelpers.descendantFinder(eventsList, EventItem);
+      expect(eventFinder, findsWidgets);
+      final EventItem firstEvent =
+          tester.widget(eventFinder.first) as EventItem;
+      expect(firstEvent.itemIndex, 0);
     },
   );
 }
