@@ -64,6 +64,7 @@ void main() {
       final Map<String, dynamic> userName =
           HomeViewModel.randomUsers.last['name'];
       final List<String> userPhotos = HomeViewModel.randomUsers
+          .sublist(0, 13 + 15)
           .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
           .toList();
       expect(usernameText.text, userName['first'] + ' ' + userName['last']);
@@ -99,6 +100,11 @@ void main() {
       final Widget participants = expansionTile.children[8];
       expect(participants.runtimeType, Row);
       final Row participantsRow = expansionTile.children[8] as Row;
+      expect(participantsRow.children.length, equals(3));
+      expect(participantsRow.children[2].runtimeType, BaseText);
+      final BaseText participantsText = participantsRow.children[2] as BaseText;
+      expect(participantsText.text,
+          '${userPhotos.length}/${eventModel.participationLimit}');
 
       final Widget eventMap = expansionTile.children[9];
       expect(eventMap.runtimeType, Padding);
