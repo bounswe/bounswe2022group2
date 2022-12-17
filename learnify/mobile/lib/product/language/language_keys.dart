@@ -97,4 +97,10 @@ class TextKeys {
   static const String addPostContentHint = "add_post_content_hint";
   static const String addPostContentLabel = "add_post_content_label";
   static const String enroll = "enroll";
+  static const String appInfo = "app_info";
+  static const String throughCollaboration = "through_collaboration";
+  static const String comment = "comment";
+  static const String notes = "notes";
+  static const String annotations = "annotations";
+  static const String learnify = "learnify";
 }

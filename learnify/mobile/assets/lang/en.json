@@ -67,11 +67,11 @@
   "title_label": "Title",
   "description_hint": "Explain this Space",
   "description_label": "Description",
-  "done":"Done",
-  "create_space_page_title" : "Create Learning Space",
+  "done": "Done",
+  "create_space_page_title": "Create Learning Space",
   "participant_limit": "Participant Limit",
-  "categories":"Categories: ",
-  "add_categories_hint":"Choose from many available categories!",
+  "categories": "Categories: ",
+  "add_categories_hint": "Choose from many available categories!",
   "select_annotated_dialog_title": "Select a Text to See Annotations",
   "taken_courses": "Taken Spaces",
   "friend_courses": "Friends' Spaces",
@@ -96,5 +96,10 @@
   "add_post_title_label": "Title",
   "add_post_content_hint": "Enter content of post",
   "add_post_content_label": "Content",
-  "enroll": "Enroll"
+  "enroll": "Enroll",
+  "app_info": "Learnify is an online learning platform, where learning is achieved through collaboration. Every user can contribute with their knowledge to our platform's learning space by providing any material, comment, notes, or even annotations on the existing learning material.",
+  "through_collaboration": "through collaboration",
+  "comment": "comment",
+  "notes": "notes",
+  "annotations": "annotations"
 }
