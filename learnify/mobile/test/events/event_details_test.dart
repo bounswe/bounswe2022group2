@@ -1,5 +1,8 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/intl.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
@@ -60,7 +63,6 @@ void main() {
       final Map<String, dynamic> userName =
           HomeViewModel.randomUsers.last['name'];
       final List<String> userPhotos = HomeViewModel.randomUsers
-          // ignore: avoid_dynamic_calls
           .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
           .toList();
       expect(usernameText.text, userName['first'] + ' ' + userName['last']);
@@ -70,10 +72,18 @@ void main() {
       expect(description.runtimeType, MultiLineText);
       final MultiLineText descriptionText =
           expansionTile.children[2] as MultiLineText;
+      expect(descriptionText.text, eventModel.description ?? '');
 
       final Widget eventDate = expansionTile.children[4];
       expect(eventDate.runtimeType, Row);
       final Row eventDateWidget = expansionTile.children[4] as Row;
+      expect(eventDateWidget.children[1].runtimeType, Expanded);
+      expect((eventDateWidget.children[1] as Expanded).child.runtimeType,
+          BaseText);
+      final BaseText eventDateText =
+          (eventDateWidget.children[1] as Expanded).child as BaseText;
+      expect(eventDateText.text,
+          DateFormat('dd MMMM yyyy - kk:mm').format(eventModel.date));
 
       final Widget eventDuration = expansionTile.children[6];
       expect(eventDuration.runtimeType, Row);
