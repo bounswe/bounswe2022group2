@@ -14,9 +14,7 @@ class Event extends BaseModel<Event> {
     this.geoLocationLat,
     this.geoLocationLon,
     this.participants = const <String>[],
-    this.isHappening = false,
-    this.courseId,
-    this.isCompleted = false,
+    this.lsId,
   });
   factory Event.fromJson(Map<String, dynamic> json) => Event(
         id: BaseModel.getByType<String>(json['_id']) ??
@@ -32,14 +30,12 @@ class Event extends BaseModel<Event> {
         geoLocationLon: BaseModel.getByType<double>(json['geoLocationLon']),
         participants: BaseModel.getWithDefault<List<String>>(
             json['participants'], <String>[]),
-        isHappening: BaseModel.getWithDefault<bool>(json['isHappening'], false),
-        courseId: BaseModel.getByType<String>(json['courseId']),
-        isCompleted: BaseModel.getWithDefault<bool>(json['isCompleted'], false),
+        lsId: BaseModel.getByType<String>(json['lsId']),
       );
 
   factory Event.dummy(int? id) => Event(
         id: id.toString(),
-        courseId: id.toString(),
+        lsId: id.toString(),
         date: (id ?? 0) % 3 == 0
             ? DateTime.now().subtract(Duration(
                 days: Random().nextInt(20),
@@ -56,7 +52,7 @@ class Event extends BaseModel<Event> {
         eventCreator: 'eventCreator',
         geoLocationLat: 12,
         geoLocationLon: 34,
-        participants: const ['adas', 'bdf', 'cas'],
+        participants: const <String>['adas', 'bdf', 'cas'],
       );
 
   static const List<String> _eventTitles = <String>[
@@ -87,7 +83,7 @@ class Event extends BaseModel<Event> {
     double? geoLocationLon,
     List<String>? participants,
     bool? isHappening,
-    String? courseId,
+    String? lsId,
     bool? isCompleted,
   }) =>
       Event(
@@ -96,13 +92,11 @@ class Event extends BaseModel<Event> {
         description: description ?? this.description,
         participationLimit: participationLimit ?? this.participationLimit,
         duration: duration ?? this.duration,
-        courseId: courseId ?? this.courseId,
+        lsId: lsId ?? this.lsId,
         title: title ?? this.title,
         eventCreator: eventCreator ?? this.eventCreator,
         geoLocationLat: geoLocationLat ?? this.geoLocationLat,
         geoLocationLon: geoLocationLon ?? this.geoLocationLon,
-        isCompleted: isCompleted ?? this.isCompleted,
-        isHappening: isHappening ?? this.isHappening,
         participants: participants ?? this.participants,
       );
 
@@ -115,9 +109,7 @@ class Event extends BaseModel<Event> {
   final double? geoLocationLat;
   final double? geoLocationLon;
   final List<String> participants;
-  final bool isHappening;
-  final String? courseId;
-  final bool isCompleted;
+  final String? lsId;
   final String? title;
 
   @override
@@ -134,9 +126,7 @@ class Event extends BaseModel<Event> {
         'geoLocationLat': geoLocationLat,
         'geoLocationLon': geoLocationLon,
         'participants': participants,
-        'isHappening': isHappening,
-        'courseId': courseId,
-        'isCompleted': isCompleted,
+        'lsId': lsId,
         'title': title,
       };
 
@@ -151,9 +141,7 @@ class Event extends BaseModel<Event> {
         geoLocationLat,
         geoLocationLon,
         participants,
-        isHappening,
-        courseId,
-        isCompleted,
+        lsId,
         title
       ];
 }

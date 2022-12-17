@@ -7,15 +7,15 @@ class GeoLocation extends BaseModel<GeoLocation> {
     this.accuracy = 0,
     this.altitude = 0,
     this.altitudeAccuracy = 0,
-    this.heading = 0,
+    this.heading = 0, 
     this.speed = 0,
     this.timestamp = 0,
   });
 
   factory GeoLocation.dummy({double? latitude, double? longitude}) =>
       GeoLocation(
-        latitude: latitude ?? 31.32,
-        longitude: longitude ?? 35.12,
+        latitude: latitude ?? 35.268259,
+        longitude: longitude ?? 33.824730,
         accuracy: 98,
         altitude: 2,
         altitudeAccuracy: 80,
