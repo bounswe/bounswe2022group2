@@ -5,33 +5,30 @@ class EventItem extends StatelessWidget {
     required this.callback,
     required this.itemIndex,
     required this.expansionTileKey,
+    required this.event,
     Key? key,
   }) : super(key: key);
   final int itemIndex;
   final IndexCallback callback;
   final GlobalKey<CustomExpansionTileState> expansionTileKey;
+  final Event event;
 
   @override
-  Widget build(BuildContext context) {
-    final Event event = SelectorHelper<Event, LearningSpaceViewModel>()
-        .listenValue(
-            (LearningSpaceViewModel model) => model.events[itemIndex], context);
-    return Theme(
-      data: Theme.of(context).copyWith(
-        dividerColor: Colors.transparent,
-        highlightColor: context.primary.withOpacity(.15),
-        hoverColor: context.primary,
-      ),
-      child: ListTileTheme(
-        contentPadding: EdgeInsets.zero,
-        minLeadingWidth: 0,
-        minVerticalPadding: 0,
-        horizontalTitleGap: 0,
-        dense: true,
-        child: _expansionTile(context, event),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Theme(
+        data: Theme.of(context).copyWith(
+          dividerColor: Colors.transparent,
+          highlightColor: context.primary.withOpacity(.15),
+          hoverColor: context.primary,
+        ),
+        child: ListTileTheme(
+          contentPadding: EdgeInsets.zero,
+          minLeadingWidth: 0,
+          minVerticalPadding: 0,
+          horizontalTitleGap: 0,
+          dense: true,
+          child: _expansionTile(context, event),
+        ),
+      );
 
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =

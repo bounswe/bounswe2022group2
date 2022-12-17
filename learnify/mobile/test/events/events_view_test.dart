@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/intl.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
+import 'package:learnify/core/widgets/text/base_text.dart';
+import 'package:learnify/features/learning-space/models/event.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 
@@ -52,6 +55,24 @@ void main() {
       final Finder expansionTileFinder =
           TestHelpers.descendantFinder(firstEvent, CustomExpansionTile);
       expect(expansionTileFinder, findsOneWidget);
+      final CustomExpansionTile expansionTile =
+          tester.widget(expansionTileFinder) as CustomExpansionTile;
+
+      final Event eventModel = firstEvent.event;
+
+      final Widget eventTitle = expansionTile.title;
+      expect(eventTitle.runtimeType, Row);
+      final Row titleWidget = expansionTile.title as Row;
+      expect(titleWidget.children[0].runtimeType, Flexible);
+      final Flexible titleTextWrapper = titleWidget.children[0] as Flexible;
+      expect(titleWidget.children[1].runtimeType, BaseText);
+      final BaseText dateText = titleWidget.children[1] as BaseText;
+      expect(titleTextWrapper.child.runtimeType, BaseText);
+      final BaseText titleText = titleTextWrapper.child as BaseText;
+      expect(
+          titleText.text, '${firstEvent.itemIndex + 1}. ${eventModel.title}');
+      expect(
+          dateText.text, DateFormat('dd MMM - kk:mm').format(eventModel.date));
     },
   );
 }
