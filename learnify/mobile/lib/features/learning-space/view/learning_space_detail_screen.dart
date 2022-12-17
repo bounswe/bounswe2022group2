@@ -33,12 +33,14 @@ import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/event.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../view-model/learning_space_view_model.dart';
 import 'annotations_screen.dart';
 
 part 'components/events/event_item.dart';
+part 'components/events/event_map.dart';
 part 'components/events/events_list.dart';
 part 'components/forum_list.dart';
 part 'components/post/post_item.dart';

@@ -109,27 +109,10 @@ class EventItem extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: context.height * 1),
+          padding: EdgeInsets.only(top: context.height * 1.8),
           child: SizedBox(
-            height: context.height * 20,
-            child: FlutterMap(
-              options: MapOptions(
-                center: LatLng(51.509364, -0.128928),
-                zoom: 9.2,
-              ),
-              nonRotatedChildren: [
-                AttributionWidget.defaultWidget(
-                  source: 'OpenStreetMap contributors',
-                  onSourceTapped: null,
-                ),
-              ],
-              children: [
-                TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  userAgentPackageName: 'com.example.app',
-                ),
-              ],
-            ),
+            height: context.height * 22,
+            child: _EventMap(location: GeoLocation.dummy()),
           ),
         ),
         PostList.createEditButton(
