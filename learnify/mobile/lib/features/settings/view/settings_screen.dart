@@ -21,12 +21,7 @@ class SettingsScreen extends BaseView<SettingsViewModel> {
                 padding: EdgeInsets.only(top: context.height * 2),
                 child: const BaseText(SettingsTexts.madeBy, translated: false),
               )
-            : Column(
-                children: const <Widget>[
-                  // _SettingsItem(settings: SettingsOptions.values[index]),
-                  // const CustomDivider(),
-                ],
-              ),
+            : Column(),
       ),
     );
   }
