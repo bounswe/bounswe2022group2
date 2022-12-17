@@ -12,9 +12,7 @@ void main() {
       late final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen = LearningSpaceDetailScreen(
           learningSpace: dummyLearningSpace, initialIndex: 2);
-      await tester.pumpWidget(
-        TestHelpers.appWidget(detailScreen),
-      );
+      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);
@@ -31,11 +29,17 @@ void main() {
       final Finder eventsListFinder =
           TestHelpers.descendantFinder(detailScreen, EventsList);
       expect(eventsListFinder, findsOneWidget);
+      final EventsList eventsList =
+          tester.widget(eventsListFinder) as EventsList;
 
-      // expect(eventsList., equals(1));
-      // final Finder postListFinder =
-      //     TestHelpers.descendantFinder(detailScreen, PostList);
-      // expect(postListFinder, findsOneWidget);
+      final Finder sliverListFinder =
+          TestHelpers.descendantFinder(eventsList, SliverList);
+      expect(sliverListFinder, findsOneWidget);
+      final SliverList sliverList =
+          tester.widget(sliverListFinder) as SliverList;
+      final SliverChildBuilderDelegate sliverDelegate =
+          sliverList.delegate as SliverChildBuilderDelegate;
+      expect(sliverDelegate.childCount, 4);
     },
   );
 }
