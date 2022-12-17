@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
+import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/language/language_keys.dart';
 import '../constants/settings_constants.dart';
 import '../constants/settings_options.dart';
 import '../view-model/settings_view_model.dart';
+import 'components/settings_item.dart';
 
 class SettingsScreen extends BaseView<SettingsViewModel> {
   const SettingsScreen({Key? key})
@@ -24,7 +26,12 @@ class SettingsScreen extends BaseView<SettingsViewModel> {
                 padding: EdgeInsets.only(top: context.height * 2),
                 child: const BaseText(SettingsTexts.madeBy, translated: false),
               )
-            : Column(),
+            : Column(
+                children: <Widget>[
+                  SettingsItem(settings: SettingsOptions.values[index]),
+                  const CustomDivider(),
+                ],
+              ),
       ),
     );
   }
