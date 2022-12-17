@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/multiline_text.dart';
 import 'package:learnify/features/learning-space/models/event.dart';
@@ -70,6 +71,13 @@ void main() {
       final Widget eventMap = expansionTile.children[9];
       expect(eventMap.runtimeType, Padding);
       final Padding eventMapWidget = expansionTile.children[9] as Padding;
+
+      final Widget attendEvent = expansionTile.children[10];
+      expect(attendEvent.runtimeType, Padding);
+      expect((attendEvent as Padding).child.runtimeType, ActionButton);
+      final ActionButton? attendEventWidget =
+          attendEvent.child as ActionButton?;
+      expect(attendEventWidget?.isActive, true);
     },
   );
 }
