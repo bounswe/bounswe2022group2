@@ -101,5 +101,12 @@
   "through_collaboration": "through collaboration",
   "comment": "comment",
   "notes": "notes",
-  "annotations": "annotations"
+  "annotations": "annotations",
+  "social_info": "Social Account Info",
+  "theme": "Theme",
+  "language": "Language",
+  "social_info_subtitle":"You can contact with us via these channels.",
+  "app_info_subtitle": "Confused about how to use app?",
+  "theme_subtitle": "You can switch between light and dark themes.",
+  "language_subtitle": "You can use the app with your native language!"
 }

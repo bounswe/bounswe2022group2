@@ -103,4 +103,11 @@ class TextKeys {
   static const String notes = "notes";
   static const String annotations = "annotations";
   static const String learnify = "learnify";
+  static const String language = "language";
+  static const String theme = "theme";
+  static const String socialInfo = "social_info";
+  static const String languageSubtitle = "language_subtitle";
+  static const String appInfoSubtitle = "app_info_subtitle";
+  static const String socialInfoSubtitle = "social_info_subtitle";
+  static const String themeSubtitle = "theme_subtitle";
 }
