@@ -30,11 +30,11 @@ mixin SettingsTexts on StatelessWidget {
   static final List<SocialMediaModel> socialMediaAccounts = <SocialMediaModel>[
     SocialMediaModel(nameKey: 'email', link: _emailUri.toString()),
     const SocialMediaModel(
-        nameKey: 'github',
-        link: 'https://github.com/bounswe/bounswe2022group2'),
-    const SocialMediaModel(
         nameKey: 'logo-dblue',
         link: 'https://github.com/bounswe/bounswe2022group2/wiki'),
+    const SocialMediaModel(
+        nameKey: 'github',
+        link: 'https://github.com/bounswe/bounswe2022group2'),
   ];
 
   static Uri get _emailUri => Uri(
