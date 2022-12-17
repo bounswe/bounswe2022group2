@@ -5,6 +5,7 @@ import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/widgets/base-icon/base_icon.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../core/widgets/text/colored/colored_bullet_text.dart';
+import '../../../../product/language/language_keys.dart';
 import '../../constants/settings_constants.dart';
 import '../../constants/settings_options.dart';
 import 'social_account.dart';
@@ -45,6 +46,16 @@ class SettingsItem extends StatelessWidget {
 
   List<Widget> _children(BuildContext context) {
     switch (settings) {
+      case SettingsOptions.language:
+        return <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const <Widget>[
+              BaseText(TextKeys.selectedLanguage),
+              // PopupMenuButton(itemBuilder: itemBuilder),
+            ],
+          )
+        ];
       case SettingsOptions.appInfo:
         return _infoTexts(context);
       case SettingsOptions.socialInfo:
