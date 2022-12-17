@@ -35,10 +35,8 @@ class EventItem extends StatelessWidget {
         context.read<LearningSpaceViewModel>();
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
-    final List<Map<String, dynamic>> userList = context
-        .read<HomeViewModel>()
-        .randomUsers
-        .sublist(0, Random().nextInt(34) + 15);
+    final List<Map<String, dynamic>> userList =
+        HomeViewModel.randomUsers.sublist(0, 13 + 15);
     final List<String> userPhotos = userList
         // ignore: avoid_dynamic_calls
         .map((Map<String, dynamic> e) => e['picture']['medium'] as String)

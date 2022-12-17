@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
+import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/core/widgets/text/multiline_text.dart';
+import 'package:learnify/features/home/view-model/home_view_model.dart';
 import 'package:learnify/features/learning-space/models/event.dart';
 import 'package:learnify/features/learning-space/models/geolocation/geolocation_model.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
@@ -51,6 +53,18 @@ void main() {
       final Widget creator = expansionTile.children[0];
       expect(creator.runtimeType, Row);
       final Row creatorRow = expansionTile.children[0] as Row;
+      expect(creatorRow.children[0].runtimeType, CircleAvatar);
+      final CircleAvatar circleAvatar = creatorRow.children[0] as CircleAvatar;
+      expect(creatorRow.children[2].runtimeType, BaseText);
+      final BaseText usernameText = creatorRow.children[2] as BaseText;
+      final Map<String, dynamic> userName =
+          HomeViewModel.randomUsers.last['name'];
+      final List<String> userPhotos = HomeViewModel.randomUsers
+          // ignore: avoid_dynamic_calls
+          .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
+          .toList();
+      expect(usernameText.text, userName['first'] + ' ' + userName['last']);
+      expect(circleAvatar.foregroundImage, NetworkImage(userPhotos.last));
 
       final Widget description = expansionTile.children[2];
       expect(description.runtimeType, MultiLineText);
