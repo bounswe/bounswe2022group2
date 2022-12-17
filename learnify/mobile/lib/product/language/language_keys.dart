@@ -81,6 +81,7 @@ class TextKeys {
   static const String clickToSeeImageAnnotations = "click_image_annotations";
   static const String createEvent = "create_event";
   static const String editEvent = "edit_event";
+  static const String attendEvent = "attend_event";
   static const String eventDate = "event_date";
   static const String eventDuration = "event_duration";
   static const String eventParticipationLimit = "event_participation_limit";

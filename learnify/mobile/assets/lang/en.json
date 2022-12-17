@@ -80,6 +80,7 @@
   "click_image_annotations": "Click on image for annotations",
   "create_event": "Create an Event",
   "edit_event": "Edit the Event",
+  "attend_event": "Attend Event",
   "event_date": "Event Date",
   "event_duration": "Duration",
   "event_participation_limit": "Participation Limit",

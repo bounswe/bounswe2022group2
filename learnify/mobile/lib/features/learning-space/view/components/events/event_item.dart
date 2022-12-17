@@ -36,6 +36,7 @@ class EventItem extends StatelessWidget {
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
+    User user = LocalManager.instance.getModel(const User(), StorageKeys.user);
     final List<Map<String, dynamic>> userList = context
         .read<HomeViewModel>()
         .randomUsers
@@ -116,11 +117,12 @@ class EventItem extends StatelessWidget {
                 _EventMap(location: event.geoLocation ?? const GeoLocation()),
           ),
         ),
-        PostList.createEditButton(
-            context,
-            isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
-            isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
-            isPassed ? null : viewModel.editEvent),
+        if (event.eventCreator != user.id)
+          PostList.createEditButton(
+              context,
+              isPassed ? TextKeys.passedEvent : TextKeys.attendEvent,
+              isPassed ? Icons.timer_off_outlined : Icons.join_inner_outlined,
+              isPassed ? null : viewModel.attendEvent),
       ],
     );
   }

@@ -69,10 +69,6 @@ class LearningSpaceViewModel extends BaseViewModel {
       ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
   }
 
-  void _createEvents() {
-    _events = List<Event>.generate(Random().nextInt(5), Event.dummy);
-  }
-
   @override
   void disposeViewModel() {}
 
@@ -148,7 +144,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> editEvent() async {
+  Future<String?> attendEvent() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
     //     path: NavigationConstants.createEditPost);
@@ -341,5 +337,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     _initializeKeys();
     notifyListeners();
     return _learningSpace;
+  }
+
+  void setEvents(List<Event> newEvents) {
+    if (newEvents != _events) {
+      _events = newEvents;
+    }
   }
 }

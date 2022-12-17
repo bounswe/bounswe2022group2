@@ -14,6 +14,7 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/extensions/number/number_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
@@ -28,7 +29,9 @@ import '../../../core/widgets/text/base_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
+import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
+import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
@@ -48,9 +51,11 @@ part 'components/post/post_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
-  LearningSpaceDetailScreen({required LearningSpace? learningSpace, Key? key})
+  LearningSpaceDetailScreen(
+      {required LearningSpace? learningSpace, int initialIndex = 0, Key? key})
       : super(
-          builder: (BuildContext context) => _builder(context, learningSpace),
+          builder: (BuildContext context) =>
+              _builder(context, learningSpace, initialIndex),
           voidInit: (BuildContext context) => context
               .read<LearningSpaceViewModel>()
               .setLearningSpace(learningSpace),
@@ -58,8 +63,10 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           key: key,
         );
 
-  static Widget _builder(BuildContext context, LearningSpace? learningSpace) =>
+  static Widget _builder(BuildContext context, LearningSpace? learningSpace,
+          int initialIndex) =>
       DefaultTabController(
+        initialIndex: initialIndex,
         length: LearningSpaceConstants.tabKeys.length,
         child: NestedScrollView(
           headerSliverBuilder: _headerSliverBuilder,
