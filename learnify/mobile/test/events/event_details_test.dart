@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
+import 'package:learnify/core/extensions/number/number_extensions.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
@@ -88,6 +89,12 @@ void main() {
       final Widget eventDuration = expansionTile.children[6];
       expect(eventDuration.runtimeType, Row);
       final Row eventDurationWidget = expansionTile.children[6] as Row;
+      expect(eventDurationWidget.children[1].runtimeType, Expanded);
+      expect((eventDurationWidget.children[1] as Expanded).child.runtimeType,
+          BaseText);
+      final BaseText eventDurationText =
+          (eventDurationWidget.children[1] as Expanded).child as BaseText;
+      expect(eventDurationText.text, '${eventModel.duration?.minsToString}');
 
       final Widget participants = expansionTile.children[8];
       expect(participants.runtimeType, Row);
