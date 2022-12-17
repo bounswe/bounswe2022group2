@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 
@@ -47,6 +48,10 @@ void main() {
       final EventItem firstEvent =
           tester.widget(eventFinder.first) as EventItem;
       expect(firstEvent.itemIndex, 0);
+
+      final Finder expansionTileFinder =
+          TestHelpers.descendantFinder(firstEvent, CustomExpansionTile);
+      expect(expansionTileFinder, findsOneWidget);
     },
   );
 }
