@@ -15,6 +15,15 @@ mixin SettingsTexts on StatelessWidget {
       TextKeys.notes,
       TextKeys.annotations,
     ],
+    TextKeys.appInfoDescription3: <String>[
+      TextKeys.texts,
+      TextKeys.images,
+      TextKeys.amazing,
+    ],
+    TextKeys.appInfoDescription4: <String>[
+      TextKeys.events,
+      TextKeys.coLearners,
+    ],
   };
 
   /// Social media accounts.

@@ -100,6 +100,8 @@ class TextKeys {
   static const String appInfo = "app_info";
   static const String appInfoDescription1 = "app_info_description_1";
   static const String appInfoDescription2 = "app_info_description_2";
+  static const String appInfoDescription3 = "app_info_description_3";
+  static const String appInfoDescription4 = "app_info_description_4";
   static const String throughCollaboration = "through_collaboration";
   static const String comment = "comment";
   static const String notes = "notes";
@@ -113,4 +115,8 @@ class TextKeys {
   static const String socialInfoSubtitle = "social_info_subtitle";
   static const String themeSubtitle = "theme_subtitle";
   static const String settings = "settings";
+  static const String texts = "texts";
+  static const String images = "images";
+  static const String amazing = "amazing";
+  static const String coLearners = "co-learners";
 }
