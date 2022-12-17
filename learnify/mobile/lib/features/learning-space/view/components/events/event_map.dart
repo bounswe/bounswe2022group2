@@ -11,6 +11,7 @@ class _EventMap extends StatefulWidget {
 class __EventMapState extends State<_EventMap> {
   @override
   Widget build(BuildContext context) {
+    final double markerSize = context.width * 12;
     final LatLng markerPoint =
         LatLng(widget.location.latitude, widget.location.longitude);
     return FlutterMap(
@@ -23,10 +24,10 @@ class __EventMapState extends State<_EventMap> {
         MarkerLayer(
           markers: <Marker>[
             Marker(
-              width: context.width * 12,
-              height: context.width * 12,
+              width: markerSize,
+              height: markerSize,
               point: markerPoint,
-              builder: (_) => Image.asset(IconKeys.logo),
+              builder: (_) => Image.asset(IconKeys.locationMarker),
             ),
           ],
         ),
