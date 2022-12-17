@@ -4,6 +4,7 @@ import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/multiline_text.dart';
 import 'package:learnify/features/learning-space/models/event.dart';
+import 'package:learnify/features/learning-space/models/geolocation/geolocation_model.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 
@@ -75,6 +76,9 @@ void main() {
       expect((eventChild1! as SizedBox).child.runtimeType, EventMap);
       final EventMap eventMapWidget =
           (eventChild1 as SizedBox).child! as EventMap;
+      final GeoLocation location = eventMapWidget.location;
+      expect(location.latitude, equals(eventModel.geoLocation?.latitude));
+      expect(location.longitude, equals(eventModel.geoLocation?.longitude));
 
       final Widget attendEvent = expansionTile.children[10];
       expect(attendEvent.runtimeType, Padding);
