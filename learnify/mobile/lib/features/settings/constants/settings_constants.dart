@@ -35,9 +35,6 @@ mixin SettingsTexts on StatelessWidget {
     const SocialMediaModel(
         nameKey: 'logo-dblue',
         link: 'https://github.com/bounswe/bounswe2022group2/wiki'),
-    const SocialMediaModel(
-        nameKey: 'linkedin',
-        link: 'https://www.linkedin.com/school/bogazici-university/'),
   ];
 
   static Uri get _emailUri => Uri(
