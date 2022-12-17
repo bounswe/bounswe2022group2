@@ -112,7 +112,7 @@ class EventItem extends StatelessWidget {
           child: SizedBox(
             height: context.height * 22,
             child:
-                _EventMap(location: event.geoLocation ?? const GeoLocation()),
+                EventMap(location: event.geoLocation ?? const GeoLocation()),
           ),
         ),
         if (event.eventCreator != user.id)

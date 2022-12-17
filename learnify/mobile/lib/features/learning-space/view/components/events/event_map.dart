@@ -1,14 +1,14 @@
 part of '../../learning_space_detail_screen.dart';
 
-class _EventMap extends StatefulWidget {
-  const _EventMap({required this.location, Key? key}) : super(key: key);
+class EventMap extends StatefulWidget {
+  const EventMap({required this.location, Key? key}) : super(key: key);
   final GeoLocation location;
 
   @override
-  State<_EventMap> createState() => __EventMapState();
+  State<EventMap> createState() => _EventMapState();
 }
 
-class __EventMapState extends State<_EventMap> {
+class _EventMapState extends State<EventMap> {
   @override
   Widget build(BuildContext context) {
     final double markerSize = context.width * 12;

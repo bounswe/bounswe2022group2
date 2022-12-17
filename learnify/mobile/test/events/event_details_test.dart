@@ -70,7 +70,11 @@ void main() {
 
       final Widget eventMap = expansionTile.children[9];
       expect(eventMap.runtimeType, Padding);
-      final Padding eventMapWidget = expansionTile.children[9] as Padding;
+      final Widget? eventChild1 = (eventMap as Padding).child;
+      expect(eventChild1.runtimeType, SizedBox);
+      expect((eventChild1! as SizedBox).child.runtimeType, EventMap);
+      final EventMap eventMapWidget =
+          (eventChild1 as SizedBox).child! as EventMap;
 
       final Widget attendEvent = expansionTile.children[10];
       expect(attendEvent.runtimeType, Padding);
