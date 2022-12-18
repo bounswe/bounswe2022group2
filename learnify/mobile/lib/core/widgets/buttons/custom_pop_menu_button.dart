@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/string/string_extensions.dart';
+import '../../providers/theme/theme_provider.dart';
 import '../base-icon/base_icon.dart';
 import '../text/multiline_text.dart';
 
@@ -32,7 +34,7 @@ class PopMenuButton extends StatefulWidget {
     this.optColor,
     this.alignment,
     this.decoration,
-    this.capitalizeChoice = true,
+    this.capitalizeChoice = false,
     Key? key,
   }) : super(key: key);
   // --> Assert about the length of values and icons.
@@ -130,6 +132,7 @@ class _PopMenuButtonState extends State<PopMenuButton> {
           onCanceled: widget.onCanceled,
           padding: EdgeInsets.symmetric(horizontal: context.width),
           elevation: 6,
+          color: context.primary.withOpacity(.9),
           itemBuilder: (BuildContext context) => widget.values
               .map((String choice) => _popMenuItem(choice, context, textColor))
               .toList(),
@@ -217,7 +220,7 @@ class _PopMenuButtonState extends State<PopMenuButton> {
       MultiLineText(
         textKey,
         capitalize: capitalize,
-        style: context.bodySmall,
+        style: context.read<ThemeProvider>().currentTheme.textTheme.bodyMedium,
         color: textColor,
         translated: widget.translated,
         textAlign: textAlign,

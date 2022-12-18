@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/widgets/base-icon/base_icon.dart';
+import '../../../../core/widgets/buttons/custom_pop_menu_button.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../core/widgets/text/colored/colored_bullet_text.dart';
 import '../../../../product/language/language_keys.dart';
+import '../../../../product/language/language_options.dart';
 import '../../constants/settings_constants.dart';
 import '../../constants/settings_options.dart';
 import 'social_account.dart';
@@ -34,7 +36,7 @@ class SettingsItem extends StatelessWidget {
         collapsedTextColor: context.inactiveTextColor,
         collapsedIconColor: context.inactiveTextColor,
         tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-        childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
+        childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 4)
             .copyWith(bottom: context.height * 1.7),
         leading: BaseIcon(context, settings.icon),
         title: _title(context),
@@ -50,8 +52,22 @@ class SettingsItem extends StatelessWidget {
         return <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const <Widget>[
-              BaseText(TextKeys.selectedLanguage),
+            children: <Widget>[
+              BaseText(TextKeys.selectedLanguage, style: context.bodySmall),
+              PopMenuButton(
+                values: List<String>.generate(LanguageOptions.values.length,
+                    (int i) => LanguageOptions.values[i].languageName),
+                width: context.width * 26,
+                translated: false,
+                selectedValue: 'Türkçe',
+                padding: EdgeInsets.symmetric(
+                    horizontal: context.responsiveSize,
+                    vertical: context.responsiveSize * .2),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    border: Border.all(color: context.textColor, width: .7)),
+                onTap: (String val) {},
+              ),
             ],
           )
         ];
