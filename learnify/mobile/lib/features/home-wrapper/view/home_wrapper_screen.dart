@@ -8,6 +8,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/managers/network/custom_interceptors.dart';
 import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
@@ -15,6 +16,7 @@ import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../../../product/theme/light_theme.dart';
 import '../../home/view/home_screen.dart';
 import '../../profile/view/profile_screen.dart';
@@ -62,7 +64,12 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
           SelectorHelper<int, HomeWrapperViewModel>().builder(
             (_, HomeWrapperViewModel model) => model.bottomNavBarIndex,
             (BuildContext context, int index, __) => BaseIconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (index == 3) {
+                  NavigationManager.instance
+                      .navigateToPage(path: NavigationConstants.settings);
+                }
+              },
               icon: _appBarIcon(index),
               color: context.lightActiveColor,
               iconPadding: EdgeInsets.all(context.width * .4),
