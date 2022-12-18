@@ -122,4 +122,5 @@ class TextKeys {
   static const String on = "on";
   static const String off = "off";
   static const String selectedLanguage = "selected_language";
+  static const String madeBy = "made_by";
 }

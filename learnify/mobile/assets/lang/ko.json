@@ -120,5 +120,6 @@
   "settings": "설정",
   "on": "On",
   "off": "Off",
-  "selected_language": "Selected Language:"
+  "selected_language": "선택한 언어:",
+  "made_by": "Learnify에서 💙로 제작"
 }

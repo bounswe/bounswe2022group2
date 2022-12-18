@@ -6,7 +6,6 @@ import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/language/language_keys.dart';
-import '../constants/settings_constants.dart';
 import '../constants/settings_options.dart';
 import '../view-model/settings_view_model.dart';
 import 'components/settings_item.dart';
@@ -24,7 +23,7 @@ class SettingsScreen extends BaseView<SettingsViewModel> {
         itemBuilder: (BuildContext context, int index) => index == optionLength
             ? Padding(
                 padding: EdgeInsets.only(top: context.height * 2),
-                child: const BaseText(SettingsTexts.madeBy, translated: false),
+                child: const BaseText(TextKeys.madeBy),
               )
             : Column(
                 children: <Widget>[

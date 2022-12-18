@@ -108,5 +108,9 @@
   "app_info_subtitle": "Confused about how to use app?",
   "theme_subtitle": "You can switch between light and dark themes.",
   "language_subtitle": "You can use the app with your native language!",
-  "settings": "Ayarlar"
+  "settings": "Ayarlar",
+  "on": "On",
+  "off": "Off",
+  "selected_language": "Seçili Dil:",
+  "made_by": "Learnify Tarafından 💙 İle Geliştirildi"
 }

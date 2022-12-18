@@ -120,5 +120,6 @@
   "settings": "設定",
   "on": "On",
   "off": "Off",
-  "selected_language": "Selected Language:"
+  "selected_language": "選択した言語:",
+  "made_by": "Learnify の 💙 で作成"
 }

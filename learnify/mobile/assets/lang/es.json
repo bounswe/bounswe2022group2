@@ -117,8 +117,9 @@
   "app_info_subtitle": "Confused about how to use app?",
   "theme_subtitle": "You can switch between light and dark themes.",
   "language_subtitle": "You can use the app with your native language!",
-  "settings": "ajustes",
+  "settings": "Ajustes",
   "on": "On",
   "off": "Off",
-  "selected_language": "Selected Language:"
+  "selected_language": "Idioma seleccionado:",
+  "made_by": "Hecho con 💙 por Learnify"
 }

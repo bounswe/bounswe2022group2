@@ -41,7 +41,7 @@ mixin SettingsTexts on StatelessWidget {
         scheme: 'mailto',
         path: 'learnify451@gmail.com',
         query: _encodeQueryParameters(<String, String>{
-          'subject': 'Hello From Learnify App!',
+          'subject': 'Learnify App!',
         }),
       );
 
@@ -50,9 +50,6 @@ mixin SettingsTexts on StatelessWidget {
           .map((MapEntry<String, String> e) =>
               '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
           .join('&');
-
-  /// Made with 💙 by Learnify Team.
-  static const String madeBy = ' Made with 💙 by Learnify Team';
 }
 
 /// Model for social media accounts.

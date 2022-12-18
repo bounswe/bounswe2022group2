@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
+import '../../../../core/extensions/string/string_extensions.dart';
+import '../../../../core/providers/language/language_provider.dart';
 import '../../../../core/widgets/base-icon/base_icon.dart';
 import '../../../../core/widgets/buttons/custom_pop_menu_button.dart';
 import '../../../../core/widgets/text/base_text.dart';
@@ -48,6 +51,8 @@ class SettingsItem extends StatelessWidget {
 
   List<Widget> _children(BuildContext context) {
     const List<LanguageOptions> langValues = LanguageOptions.values;
+    final LanguageOptions selectedLang =
+        context.read<LanguageProvider>().language;
     switch (settings) {
       case SettingsOptions.language:
         return <Widget>[
@@ -60,9 +65,8 @@ class SettingsItem extends StatelessWidget {
                     langValues.length, (int i) => langValues[i].languageName),
                 width: context.width * 30,
                 translated: false,
-                // TODO: Fix
-                selectedValue: 'Türkçe',
-                icon: _langIconPath(langValues[0].name),
+                selectedValue: selectedLang.languageName,
+                icon: _langIconPath(selectedLang.name),
                 icons: List<String>.generate(langValues.length,
                     (int i) => _langIconPath(langValues[i].name)),
                 padding: EdgeInsets.symmetric(
@@ -71,7 +75,10 @@ class SettingsItem extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                     border: Border.all(color: context.textColor, width: .7)),
-                onTap: (String val) {},
+                onTap: (String val) => context
+                    .read<LanguageProvider>()
+                    .setLanguage(langValues.firstWhere((LanguageOptions e) =>
+                        e.languageName.compareWithoutCase(val))),
               ),
             ],
           )
