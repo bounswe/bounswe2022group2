@@ -5,12 +5,14 @@ import '../../../../core/extensions/context/context_extensions.dart';
 import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/extensions/string/string_extensions.dart';
 import '../../../../core/providers/language/language_provider.dart';
+import '../../../../core/providers/theme/theme_provider.dart';
 import '../../../../core/widgets/base-icon/base_icon.dart';
 import '../../../../core/widgets/buttons/custom_pop_menu_button.dart';
 import '../../../../core/widgets/text/base_text.dart';
 import '../../../../core/widgets/text/colored/colored_bullet_text.dart';
 import '../../../../product/language/language_keys.dart';
 import '../../../../product/language/language_options.dart';
+import '../../../../product/theme/theme_types.dart';
 import '../../constants/settings_constants.dart';
 import '../../constants/settings_options.dart';
 import 'social_account.dart';
@@ -50,39 +52,11 @@ class SettingsItem extends StatelessWidget {
       );
 
   List<Widget> _children(BuildContext context) {
-    const List<LanguageOptions> langValues = LanguageOptions.values;
-    final LanguageOptions selectedLang =
-        context.read<LanguageProvider>().language;
     switch (settings) {
       case SettingsOptions.language:
-        return <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              BaseText(TextKeys.selectedLanguage, style: context.bodySmall),
-              PopMenuButton(
-                values: List<String>.generate(
-                    langValues.length, (int i) => langValues[i].languageName),
-                width: context.width * 30,
-                translated: false,
-                selectedValue: selectedLang.languageName,
-                icon: _langIconPath(selectedLang.name),
-                icons: List<String>.generate(langValues.length,
-                    (int i) => _langIconPath(langValues[i].name)),
-                padding: EdgeInsets.symmetric(
-                    horizontal: context.responsiveSize,
-                    vertical: context.responsiveSize * .2),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    border: Border.all(color: context.textColor, width: .7)),
-                onTap: (String val) => context
-                    .read<LanguageProvider>()
-                    .setLanguage(langValues.firstWhere((LanguageOptions e) =>
-                        e.languageName.compareWithoutCase(val))),
-              ),
-            ],
-          )
-        ];
+        return <Widget>[_languageRow(context)];
+      case SettingsOptions.theme:
+        return <Widget>[_themeRow(context)];
       case SettingsOptions.appInfo:
         return _infoTexts(context);
       case SettingsOptions.socialInfo:
@@ -90,6 +64,48 @@ class SettingsItem extends StatelessWidget {
       default:
         return <Widget>[];
     }
+  }
+
+  Widget _languageRow(BuildContext context) {
+    const List<LanguageOptions> langValues = LanguageOptions.values;
+    final LanguageOptions selectedLang =
+        context.read<LanguageProvider>().language;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        BaseText(TextKeys.selectedLanguage, style: context.bodySmall),
+        PopMenuButton(
+          values: List<String>.generate(
+              langValues.length, (int i) => langValues[i].languageName),
+          width: context.width * 30,
+          translated: false,
+          selectedValue: selectedLang.languageName,
+          icon: _langIconPath(selectedLang.name),
+          icons: List<String>.generate(
+              langValues.length, (int i) => _langIconPath(langValues[i].name)),
+          padding: EdgeInsets.symmetric(
+              horizontal: context.responsiveSize,
+              vertical: context.responsiveSize * .2),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              border: Border.all(color: context.textColor, width: .7)),
+          onTap: (String val) => context.read<LanguageProvider>().setLanguage(
+              langValues.firstWhere((LanguageOptions e) =>
+                  e.languageName.compareWithoutCase(val))),
+        ),
+      ],
+    );
+  }
+
+  Widget _themeRow(BuildContext context) {
+    final ThemeTypes selectedTheme =
+        context.read<ThemeProvider>().currentThemeEnum;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        BaseText(TextKeys.selectedTheme, style: context.bodySmall),
+      ],
+    );
   }
 
   String _langIconPath(String lang) => 'assets/flags/$lang.png';
