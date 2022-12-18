@@ -52,7 +52,6 @@ class SettingsItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const <Widget>[
               BaseText(TextKeys.selectedLanguage),
-              // PopupMenuButton(itemBuilder: itemBuilder),
             ],
           )
         ];

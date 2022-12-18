@@ -15,6 +15,13 @@ class LanguageProvider extends ChangeNotifier {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en', 'US'),
     Locale('tr', 'TR'),
+    Locale('de', 'DE'),
+    Locale('fr', 'FR'),
+    Locale('es', 'ES'),
+    Locale('ko', 'KR'),
+    Locale('ja', 'JP'),
+    Locale('ar', 'AE'),
+    Locale('mn', 'MN'),
   ];
 
   /// Current app locale for the current language.
@@ -51,15 +58,6 @@ class LanguageProvider extends ChangeNotifier {
     // TODO: Fix
     // await SettingsLocalManager.instance
     //     .addOrUpdate(SettingsStorageKeys.language, _lang.name);
-    notifyListeners();
-  }
-
-  Future<void> switchLanguage() async {
-    if (_lang == LanguageOptions.en) {
-      await setLanguage(LanguageOptions.tr);
-    } else {
-      await setLanguage(LanguageOptions.en);
-    }
     notifyListeners();
   }
 
