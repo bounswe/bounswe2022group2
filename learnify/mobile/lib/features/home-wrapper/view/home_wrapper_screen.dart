@@ -71,7 +71,7 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
                 }
               },
               icon: _appBarIcon(index),
-              color: context.lightActiveColor,
+              color: context.lightDarkActiveColor,
               iconPadding: EdgeInsets.all(context.width * .4),
               padding: EdgeInsets.symmetric(horizontal: context.width * 1.8),
             ),
@@ -83,7 +83,7 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
               child: BaseIconButton(
                 onPressed: () => CustomInterceptors.navigateToLogin(context),
                 icon: Icons.logout_outlined,
-                color: context.lightActiveColor,
+                color: context.lightDarkActiveColor,
                 iconPadding: EdgeInsets.all(context.width * .4),
                 padding: EdgeInsets.only(right: context.width * 1.5),
               ),

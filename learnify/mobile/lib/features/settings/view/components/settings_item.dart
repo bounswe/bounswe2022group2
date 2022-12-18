@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/extensions/context/context_extensions.dart';
@@ -98,12 +99,30 @@ class SettingsItem extends StatelessWidget {
   }
 
   Widget _themeRow(BuildContext context) {
-    final ThemeTypes selectedTheme =
-        context.read<ThemeProvider>().currentThemeEnum;
+    final ThemeProvider themeProv = context.read<ThemeProvider>();
+    final ThemeTypes selectedTheme = themeProv.currentThemeEnum;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        BaseText(TextKeys.selectedTheme, style: context.bodySmall),
+        BaseText(TextKeys.darkMode, style: context.bodySmall),
+        FlutterSwitch(
+          width: context.width * 19,
+          height: context.height * 4.2,
+          valueFontSize: context.width * 3.8,
+          toggleSize: context.width * 6.5,
+          value: selectedTheme == ThemeTypes.dark,
+          borderRadius: 25,
+          padding: context.width * 2,
+          showOnOff: true,
+          activeIcon:
+              BaseIcon(context, Icons.dark_mode_outlined, color: Colors.black),
+          inactiveIcon:
+              BaseIcon(context, Icons.light_mode_outlined, color: Colors.black),
+          activeText: context.tr(TextKeys.on),
+          inactiveText: context.tr(TextKeys.off),
+          onToggle: (bool val) =>
+              themeProv.setTheme(val ? ThemeTypes.dark : ThemeTypes.light),
+        ),
       ],
     );
   }
