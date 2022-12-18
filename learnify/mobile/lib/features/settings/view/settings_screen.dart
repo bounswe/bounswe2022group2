@@ -17,7 +17,7 @@ class SettingsScreen extends BaseView<SettingsViewModel> {
   static Widget _builder(BuildContext context) {
     final int optionLength = SettingsOptions.values.length;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: context.height * 3),
+      padding: EdgeInsets.symmetric(vertical: context.height * 1),
       child: ListView.builder(
         itemCount: optionLength + 1,
         itemBuilder: (BuildContext context, int index) => index == optionLength
