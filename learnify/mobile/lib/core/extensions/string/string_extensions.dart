@@ -51,4 +51,8 @@ extension NullableStringUtility on String? {
     if (otherString == null || this == null) return false;
     return otherString.toLowerCase() == this!.toLowerCase();
   }
+
+  /// Converts the string to an enum according to the given list of values.
+  T? toEnum<T extends Enum>(List<T> values) => values
+      .firstWhereOrNull((T e) => e.name.toLowerCase() == this?.toLowerCase());
 }

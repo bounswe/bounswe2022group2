@@ -32,12 +32,13 @@ dependencies:
   flutter_native_splash: ^2.2.14
   page_transition: ^2.0.9
   flutter_map: ^3.0.0
-  latlong2: ^0.8.1
+  flutter_switch: ^0.3.2
 
   # Model
   equatable: ^2.0.5
   collection: ^1.16.0
   tuple: ^2.0.1
+  latlong2: ^0.8.1
 
   # Local Storage
   shared_preferences: ^2.0.15
@@ -64,6 +65,7 @@ flutter:
   assets:
     - assets/lang/
     - assets/images/
+    - assets/flags/
 
 
 flutter_native_splash:

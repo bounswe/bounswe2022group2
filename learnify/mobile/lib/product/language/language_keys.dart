@@ -119,4 +119,8 @@ class TextKeys {
   static const String images = "images";
   static const String amazing = "amazing";
   static const String coLearners = "co-learners";
+  static const String on = "on";
+  static const String off = "off";
+  static const String selectedLanguage = "selected_language";
+  static const String madeBy = "made_by";
 }
