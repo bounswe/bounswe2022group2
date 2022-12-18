@@ -142,7 +142,8 @@ class _PopMenuButtonState extends State<PopMenuButton> {
           tooltip: widget.enabled ? null : '🚫',
           child: Padding(
             padding: widget.childPadding ??
-                EdgeInsets.only(left: context.responsiveSize * .6),
+                EdgeInsets.symmetric(
+                    horizontal: context.width, vertical: context.height * .7),
             child: _popMenuChild(context, textColor),
           ),
         ),
@@ -158,8 +159,9 @@ class _PopMenuButtonState extends State<PopMenuButton> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           if (widget.icon != null)
-            Image.asset(widget.icon!, color: widget.optColor),
-          if (widget.icon != null) context.sizedW(.5),
+            Image.asset(widget.icon!,
+                color: widget.optColor, width: context.width * 5),
+          if (widget.icon != null) context.sizedW(1),
           Flexible(
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -189,8 +191,9 @@ class _PopMenuButtonState extends State<PopMenuButton> {
         onTap: () => widget.onTap(choice),
         child: Row(
           children: <Widget>[
-            if (widget.icon != null)
-              Image.asset(widget.icons[widget.values.indexOf(choice)]),
+            if (widget.icons.isNotEmpty)
+              Image.asset(widget.icons[widget.values.indexOf(choice)],
+                  width: context.width * 4.5),
             Padding(
               padding: _padding(context),
               child: _titleText(
@@ -205,9 +208,9 @@ class _PopMenuButtonState extends State<PopMenuButton> {
         ),
       );
 
-  EdgeInsets _padding(BuildContext context) => widget.icon != null
+  EdgeInsets _padding(BuildContext context) => widget.icons.isNotEmpty
       ? EdgeInsets.only(
-          left: context.responsiveSize * (widget.titlePaddingFactor ?? .6))
+          left: context.responsiveSize * (widget.titlePaddingFactor ?? 2.2))
       : EdgeInsets.zero;
 
   MultiLineText _titleText(

@@ -47,6 +47,7 @@ class SettingsItem extends StatelessWidget {
       );
 
   List<Widget> _children(BuildContext context) {
+    const List<LanguageOptions> langValues = LanguageOptions.values;
     switch (settings) {
       case SettingsOptions.language:
         return <Widget>[
@@ -55,11 +56,15 @@ class SettingsItem extends StatelessWidget {
             children: <Widget>[
               BaseText(TextKeys.selectedLanguage, style: context.bodySmall),
               PopMenuButton(
-                values: List<String>.generate(LanguageOptions.values.length,
-                    (int i) => LanguageOptions.values[i].languageName),
-                width: context.width * 26,
+                values: List<String>.generate(
+                    langValues.length, (int i) => langValues[i].languageName),
+                width: context.width * 30,
                 translated: false,
+                // TODO: Fix
                 selectedValue: 'Türkçe',
+                icon: _langIconPath(langValues[0].name),
+                icons: List<String>.generate(langValues.length,
+                    (int i) => _langIconPath(langValues[i].name)),
                 padding: EdgeInsets.symmetric(
                     horizontal: context.responsiveSize,
                     vertical: context.responsiveSize * .2),
@@ -79,6 +84,8 @@ class SettingsItem extends StatelessWidget {
         return <Widget>[];
     }
   }
+
+  String _langIconPath(String lang) => 'assets/flags/$lang.png';
 
   List<Widget> _infoTexts(BuildContext context) => List<Padding>.generate(
         SettingsTexts.infoSentences.keys.length,
