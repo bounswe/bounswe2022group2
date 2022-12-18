@@ -112,7 +112,7 @@ class SettingsItem extends StatelessWidget {
           toggleSize: context.width * 6.5,
           value: selectedTheme == ThemeTypes.dark,
           borderRadius: 25,
-          padding: context.width * 2,
+          padding: context.width * 1.5,
           showOnOff: true,
           activeIcon:
               BaseIcon(context, Icons.dark_mode_outlined, color: Colors.black),
