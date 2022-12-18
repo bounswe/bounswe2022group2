@@ -123,4 +123,5 @@ class TextKeys {
   static const String off = "off";
   static const String selectedLanguage = "selected_language";
   static const String madeBy = "made_by";
+  static const String darkMode = "dark_mode";
 }

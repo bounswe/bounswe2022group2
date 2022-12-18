@@ -162,7 +162,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       width: double.infinity,
-                      color: Colors.white,
+                      color: context.isDark ? Colors.black54 : Colors.white,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[

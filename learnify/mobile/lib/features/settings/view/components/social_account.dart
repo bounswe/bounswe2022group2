@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/extensions/context/context_extensions.dart';
+import '../../../../core/extensions/context/theme_extensions.dart';
 import '../../../../core/helpers/url_launcher_helper.dart';
 import '../../constants/settings_constants.dart';
 
@@ -21,7 +22,9 @@ class SocialAccounts extends StatelessWidget {
       child: IconButton(
         padding: EdgeInsets.all(context.width * 3),
         onPressed: () async => UrlLauncherHelper.launch(account.link),
-        icon: Image.asset('assets/images/${account.nameKey}.png'),
+        icon: Image.asset('assets/images/${account.nameKey}.png',
+            color:
+                i == 2 ? (context.isDark ? Colors.white : Colors.black) : null),
         splashRadius: 25,
       ),
     );
