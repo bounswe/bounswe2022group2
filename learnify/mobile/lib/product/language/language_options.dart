@@ -5,4 +5,12 @@ enum LanguageOptions {
 
   /// Turkish language.
   tr,
+
+  de,
+  fr,
+  es,
+  ko,
+  ja,
+  ar,
+  mn
 }

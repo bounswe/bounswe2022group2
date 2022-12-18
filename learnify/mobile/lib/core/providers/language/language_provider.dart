@@ -2,7 +2,10 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_options.dart';
+import '../../extensions/string/string_extensions.dart';
+import '../../managers/local/local_manager.dart';
 import 'app_localizations.dart';
 
 class LanguageProvider extends ChangeNotifier {
@@ -40,13 +43,11 @@ class LanguageProvider extends ChangeNotifier {
   ];
 
   void _getStoredLang() {
-    // TODO: Fix
-    // final Languages? storedLang = SettingsLocalManager.instance
-    //     .get(SettingsStorageKeys.language)
-    //     ?.toEnum<Languages>(Languages.values);
-    // if (storedLang != null) _lang = storedLang;
-    // _assignLanguage();
-    // _appLocale ??= supportedLocales[0];
+    final LanguageOptions? storedLang = LocalManager.instance
+        .getString(StorageKeys.language)
+        ?.toEnum<LanguageOptions>(LanguageOptions.values);
+    if (storedLang != null) _lang = storedLang;
+    _assignLanguage();
     _appLocale ??= supportedLocales[0];
   }
 
@@ -55,9 +56,7 @@ class LanguageProvider extends ChangeNotifier {
     if (_lang.name == language.name) return;
     _lang = language;
     _assignLanguage();
-    // TODO: Fix
-    // await SettingsLocalManager.instance
-    //     .addOrUpdate(SettingsStorageKeys.language, _lang.name);
+    await LocalManager.instance.setString(StorageKeys.language, _lang.name);
     notifyListeners();
   }
 
