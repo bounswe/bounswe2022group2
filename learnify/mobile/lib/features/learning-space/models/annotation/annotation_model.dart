@@ -92,7 +92,11 @@ class Annotation extends BaseModel<Annotation> {
         startOffset ?? Offset.zero, endOffset ?? Offset.zero);
   }
 
-  String? get imageUrl => target?.id;
+  String? get imageUrl {
+    final int? hashIndex = target?.id?.indexOf('#');
+    if (hashIndex == -1 || hashIndex == null) return null;
+    return target?.id?.substring(0, hashIndex);
+  }
 
   int get startIndex => target?.selector?.start ?? 0;
   int get endIndex => target?.selector?.end ?? 0;
