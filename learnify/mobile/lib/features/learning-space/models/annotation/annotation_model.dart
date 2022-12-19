@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/base/model/base_model.dart';
 import '../../../../core/helpers/color_helpers.dart';
-import 'create_annotation_request.dart';
 
 // ignore: must_be_immutable
 class Annotation extends BaseModel<Annotation> {
@@ -10,7 +9,7 @@ class Annotation extends BaseModel<Annotation> {
     this.id,
     this.context,
     this.type,
-    this.body = const <AnnotationBody>[],
+    this.body,
     this.target,
   });
 
@@ -20,14 +19,13 @@ class Annotation extends BaseModel<Annotation> {
         type: BaseModel.getByType<String>(json['type']),
         target: BaseModel.embeddedModelFromJson<AnnotationTarget>(
             json['target'], const AnnotationTarget()),
-        body: BaseModel.embeddedListFromJson<AnnotationBody>(
-            json['body'], AnnotationBody()),
+        body: BaseModel.getByType<String>(json['body']),
       );
 
   final String? id;
   final String? context;
   final String? type;
-  final List<AnnotationBody> body;
+  final String? body;
   final AnnotationTarget? target;
   Color? colorParam;
 
@@ -39,7 +37,7 @@ class Annotation extends BaseModel<Annotation> {
         'id': id,
         '@context': context,
         'type': type,
-        'body': BaseModel.embeddedListToJson<AnnotationBody>(body),
+        'body': body,
         'target': BaseModel.embeddedModelToJson<AnnotationTarget>(target)
       };
 
