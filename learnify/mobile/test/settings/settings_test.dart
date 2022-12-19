@@ -17,7 +17,7 @@ void main() {
       expect(itemFinder, findsWidgets);
 
       final List<Widget> settingsItems = tester.widgetList(itemFinder).toList();
-      print(settingsItems);
+      expect(settingsItems.length, equals(4));
     },
   );
 }
