@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/features/settings/constants/settings_options.dart';
 import 'package:learnify/features/settings/view/components/settings_item.dart';
 import 'package:learnify/features/settings/view/settings_screen.dart';
@@ -32,6 +34,14 @@ void main() {
       final Finder expansionTileFinder =
           TestHelpers.descendantFinder(firstItem, ExpansionTile);
       expect(expansionTileFinder, findsOneWidget);
+      final ExpansionTile expansionTile =
+          tester.widget(expansionTileFinder) as ExpansionTile;
+
+      final Widget tileChild = expansionTile.children[0];
+      expect(tileChild.runtimeType, Row);
+      final Row switchRow = expansionTile.children[0] as Row;
+      expect(switchRow.children[0].runtimeType, BaseText);
+      expect(switchRow.children[1].runtimeType, FlutterSwitch);
     },
   );
 }
