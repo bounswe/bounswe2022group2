@@ -53,7 +53,7 @@ void main() {
       final BaseText themeText = switchRow.children[0] as BaseText;
       final FlutterSwitch themeSwitch = switchRow.children[1] as FlutterSwitch;
 
-      final ThemeTypes? storedTheme = LocalManager.instance
+      ThemeTypes? storedTheme = LocalManager.instance
           .getString(StorageKeys.theme)
           ?.toEnum<ThemeTypes>(ThemeTypes.values);
       expect(themeText.text, equals(TextKeys.darkMode));
@@ -87,6 +87,18 @@ void main() {
               ?.toEnum<LanguageOptions>(LanguageOptions.values) ??
           LanguageOptions.en;
       expect(languageButton.selectedValue, storedLang.languageName);
+
+      themeSwitch.onToggle(true);
+      storedTheme = LocalManager.instance
+          .getString(StorageKeys.theme)
+          ?.toEnum<ThemeTypes>(ThemeTypes.values);
+      expect(themeSwitch.value, storedTheme == ThemeTypes.dark);
+
+      themeSwitch.onToggle(false);
+      storedTheme = LocalManager.instance
+          .getString(StorageKeys.theme)
+          ?.toEnum<ThemeTypes>(ThemeTypes.values);
+      expect(themeSwitch.value, storedTheme == ThemeTypes.light);
     },
   );
 }
