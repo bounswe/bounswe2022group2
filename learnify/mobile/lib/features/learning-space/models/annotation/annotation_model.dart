@@ -92,6 +92,9 @@ class Annotation extends BaseModel<Annotation> {
   }
 
   String? get imageUrl => target?.id;
+
+  int get startIndex => target?.selector?.start ?? 0;
+  int get endIndex => target?.selector?.end ?? 0;
 }
 
 class AnnotationTarget extends BaseModel<AnnotationTarget> {
