@@ -14,14 +14,6 @@ class Annotation extends BaseModel<Annotation> {
     this.target,
   });
 
-  factory Annotation.dummy(int id) => Annotation(
-        id: id.toString(),
-        context: "http://www.w3.org/ns/anno.jsonld",
-        type: 'Annotation',
-        body: <AnnotationBody>[AnnotationBody()],
-        target: const AnnotationTarget(),
-      );
-
   factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
         id: BaseModel.getByType<String>(json['id']),
         context: BaseModel.getByType<String>(json['@context']),
@@ -31,16 +23,6 @@ class Annotation extends BaseModel<Annotation> {
         body: BaseModel.embeddedListFromJson<AnnotationBody>(
             json['body'], AnnotationBody()),
       );
-
-  Annotation copyWith({
-    String? content,
-  }) {
-    final Annotation annotation = Annotation(
-      id: id,
-    );
-    annotation.color = colorParam ?? annotation.color;
-    return annotation;
-  }
 
   final String? id;
   final String? context;
@@ -70,4 +52,47 @@ class Annotation extends BaseModel<Annotation> {
   }
 
   set color(Color newColor) => colorParam = newColor;
+}
+
+class AnnotationTarget extends BaseModel<AnnotationTarget> {
+  const AnnotationTarget({
+    this.source,
+    this.type,
+    this.id,
+    this.format,
+    this.source,
+    this.selector,
+  });
+
+  factory AnnotationTarget.fromJson(Map<String, dynamic> json) =>
+      AnnotationTarget(
+        format: BaseModel.getByType<String>(json['format']),
+        type: BaseModel.getByType<String>(json['type']),
+        id: BaseModel.getByType<String>(json['id']),
+        source: BaseModel.getByType<String>(json['source']),
+        selector: BaseModel.embeddedModelFromJson<AnnotationSelector>(
+            json['selector'], AnnotationSelector()),
+      );
+
+  @override
+  AnnotationTarget fromJson(Map<String, dynamic> json) =>
+      AnnotationTarget.fromJson(json);
+
+  final String? source;
+  final AnnotationSelector? selector;
+  final String? type;
+  final String? id;
+  final String? format;
+
+  @override
+  Map<String, dynamic> get toJson => <String, dynamic>{
+        'source': source,
+        'selector': BaseModel.embeddedModelToJson<AnnotationSelector>(selector),
+        'type': type,
+        'id': id,
+        'format': format,
+      };
+
+  @override
+  List<Object?> get props => <Object?>[id, type, format, source, selector];
 }
