@@ -45,10 +45,13 @@ export default function LearningSpacePrev(props) {
         lslogo_19, 
         lslogo_20
     ]
-    
+
     return (
         <div>
-            <div className='learning-space-card'>
+            <div className='learning-space-card' data-testid="ls-prev-card" onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/learning-space/' + props.url;
+            }}>
                 <div>
                     <img src={props.icon} className="learning-space-icon" alt="learning space logo" height={140} />
                 </div>
