@@ -134,9 +134,10 @@ class PostItem extends StatelessWidget {
             paintHistory:
                 List<PaintInfo>.generate(imageAnnotations.length, (int i) {
               final Annotation a = imageAnnotations[i];
+              final Tuple2<Offset, Offset> offsets = a.startEndOffsets;
               return PaintInfo(
                 annotation: a,
-                offset: <Offset>[a.startOffset, a.endOffset],
+                offset: <Offset>[offsets.item1, offsets.item2],
                 painter: Paint()
                   ..color = a.color
                   ..strokeWidth = 4
