@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
 import '../../../../../core/base/model/base_model.dart';
+import '../../../../core/extensions/string/string_extensions.dart';
 import '../../../../core/helpers/color_helpers.dart';
 
 // ignore: must_be_immutable
@@ -50,6 +52,46 @@ class Annotation extends BaseModel<Annotation> {
   }
 
   set color(Color newColor) => colorParam = newColor;
+
+  bool get isImage => target?.type?.compareWithoutCase('Image') ?? false;
+
+  Tuple2<Offset, Offset> get startEndOffsets {
+    Offset? startOffset;
+    Offset? endOffset;
+    if (isImage) {
+      final String? imageUrl = target?.id;
+      if (imageUrl != null) {
+        final int hashIndex =
+            !imageUrl.contains('#') ? 0 : imageUrl.indexOf('#');
+        if (hashIndex > 0) {
+          final String exactImage = imageUrl.substring(0, hashIndex);
+          String temp = imageUrl;
+          int nextComma = temp.indexOf('#xywh=');
+          if (nextComma < temp.length) {
+            temp = temp.substring(nextComma + 6);
+            nextComma = temp.indexOf(',');
+            final String x = temp.substring(0, nextComma);
+            temp = temp.substring(nextComma + 1);
+            nextComma = temp.indexOf(',');
+            final String y = temp.substring(0, nextComma);
+            temp = temp.substring(nextComma + 1);
+            nextComma = temp.indexOf(',');
+            final String w = temp.substring(0, nextComma);
+            temp = temp.substring(nextComma + 1);
+            final String h = temp.substring(0);
+            startOffset =
+                Offset(double.tryParse(x) ?? 0, double.tryParse(y) ?? 0);
+            endOffset = Offset(startOffset.dx + (double.tryParse(w) ?? 0),
+                startOffset.dy + (double.tryParse(h) ?? 0));
+          }
+        }
+      }
+    }
+    return Tuple2<Offset, Offset>(
+        startOffset ?? Offset.zero, endOffset ?? Offset.zero);
+  }
+
+  String? get imageUrl => target?.id;
 }
 
 class AnnotationTarget extends BaseModel<AnnotationTarget> {

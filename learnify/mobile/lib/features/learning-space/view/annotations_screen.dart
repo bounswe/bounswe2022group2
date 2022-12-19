@@ -3,6 +3,7 @@ import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
@@ -52,10 +53,11 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
             (int i) {
               final Annotation a = annotations[i];
               return TextItem(
-                creator: a.creator ?? "ezgi ezgi",
-                content: a.content ??
+                // TODO: Fix
+                creator: a.body ?? "ezgi ezgi",
+                content: a.body ??
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
-                upvotes: a.upVote ?? Random().nextInt(30),
+                upvotes: int.tryParse(a.body ?? '') ?? Random().nextInt(30),
               );
             },
           ),
@@ -77,10 +79,11 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
   static Widget _targetText(BuildContext context, List<Annotation> annotations,
       String? annotatedText) {
     final Annotation a = annotations.first;
-    Rect rect = Rect.fromPoints(a.startOffset, a.endOffset);
+    final Tuple2<Offset, Offset> offsets = a.startEndOffsets;
+    Rect rect = Rect.fromPoints(offsets.item1, offsets.item2);
     for (final Annotation annotation in annotations) {
-      rect = rect.intersect(
-          Rect.fromPoints(annotation.startOffset, annotation.endOffset));
+      final Tuple2<Offset, Offset> anOffsets = annotation.startEndOffsets;
+      rect = rect.intersect(Rect.fromPoints(anOffsets.item1, anOffsets.item2));
     }
     return a.isImage
         ? FutureBuilder<ui.Image>(
@@ -90,8 +93,8 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
                 return CustomPaint(
                   painter: CroppedImagePainter(snapshot.data, rect),
                   child: SizedBox(
-                    width: a.endOffset.dx - a.startOffset.dx,
-                    height: a.endOffset.dy - a.startOffset.dy,
+                    width: offsets.item2.dx - offsets.item1.dx,
+                    height: offsets.item2.dy - offsets.item1.dy,
                   ),
                 );
               } else {
