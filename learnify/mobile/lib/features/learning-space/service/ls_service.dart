@@ -4,7 +4,7 @@ import '../../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../models/add_post_request_model.dart';
-import '../models/annotation/create_annotation_request.dart';
+import '../models/annotation/annotation_model.dart';
 import '../models/categories_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
@@ -69,11 +69,10 @@ class LSService extends ILSService {
       );
 
   @override
-  Future<IResponseModel<AnyModel>> annotate(
-          CreateAnnotationRequest body) async =>
-      networkManager.send<CreateAnnotationRequest, AnyModel>(
+  Future<IResponseModel<Annotation>> annotate(Annotation body) async =>
+      networkManager.send<Annotation, Annotation>(
         _createAnnotation,
-        parseModel: const AnyModel(),
+        parseModel: Annotation(),
         type: RequestTypes.post,
         body: body,
       );
