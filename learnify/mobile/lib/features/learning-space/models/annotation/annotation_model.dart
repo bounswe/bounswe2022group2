@@ -13,6 +13,7 @@ class Annotation extends BaseModel<Annotation> {
     this.type,
     this.body,
     this.target,
+    this.colorParam,
   });
 
   factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
