@@ -21,7 +21,7 @@ import lslogo_18 from '../images/ls_icons/ls-icon-18.svg'
 import lslogo_19 from '../images/ls_icons/ls-icon-19.svg'
 import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
 
-export default function LearningSpacePrev(props) {
+function LearningSpacePrev(props) {
 
     const icons = [
         lslogo_1, 
@@ -47,18 +47,18 @@ export default function LearningSpacePrev(props) {
     ]
 
     return (
-        <div>
-            <div className='learning-space-card' data-testid="ls-prev-card" onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/learning-space/' + props.url;
+        <div className='learning-space-card' data-testid="ls-prev-card" onClick={(e) => {
+            e.preventDefault();
+            window.location.href = '/learning-space/' + props.url;
             }}>
-                <div>
-                    <img src={props.icon} className="learning-space-icon" alt="learning space logo" height={140} />
-                </div>
-                <label className='learning-space-title'>
-                    {props.name}
-                </label>
+            <div className='ls-prev-box-icon'>
+                <img src={icons[props.icon_id - 1]} className="learning-space-icon" alt="learning space icon" height={140} />
             </div>
+            <label className='learning-space-title'>
+                {props.title}
+            </label>
         </div>
     );
   }
+
+  export default LearningSpacePrev;
