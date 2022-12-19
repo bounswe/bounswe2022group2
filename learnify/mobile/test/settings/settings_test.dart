@@ -3,6 +3,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/core/extensions/string/string_extensions.dart';
 import 'package:learnify/core/managers/local/local_manager.dart';
+import 'package:learnify/core/widgets/buttons/custom_pop_menu_button.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/features/settings/constants/settings_options.dart';
 import 'package:learnify/features/settings/view/components/settings_item.dart';
@@ -56,6 +57,22 @@ void main() {
           ?.toEnum<ThemeTypes>(ThemeTypes.values);
       expect(themeText.text, equals(TextKeys.darkMode));
       expect(themeSwitch.value, storedTheme == ThemeTypes.dark);
+
+      final Finder expansionTileFinderLang =
+          TestHelpers.descendantFinder(item2, ExpansionTile);
+      expect(expansionTileFinderLang, findsOneWidget);
+      final ExpansionTile expansionTile2 =
+          tester.widget(expansionTileFinderLang) as ExpansionTile;
+
+      final Widget tileChild2 = expansionTile2.children[0];
+      expect(tileChild2.runtimeType, Row);
+      final Row popMenuRow = expansionTile2.children[0] as Row;
+      expect(popMenuRow.children[0].runtimeType, BaseText);
+      expect(popMenuRow.children[1].runtimeType, PopMenuButton);
+
+      final BaseText languageText = popMenuRow.children[0] as BaseText;
+      final PopMenuButton languageButton =
+          popMenuRow.children[1] as PopMenuButton;
     },
   );
 }
