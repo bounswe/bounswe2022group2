@@ -60,7 +60,6 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
     this.type,
     this.id,
     this.format,
-    this.source,
     this.selector,
   });
 
@@ -71,7 +70,7 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
         id: BaseModel.getByType<String>(json['id']),
         source: BaseModel.getByType<String>(json['source']),
         selector: BaseModel.embeddedModelFromJson<AnnotationSelector>(
-            json['selector'], AnnotationSelector()),
+            json['selector'], const AnnotationSelector()),
       );
 
   @override
@@ -95,4 +94,37 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
 
   @override
   List<Object?> get props => <Object?>[id, type, format, source, selector];
+}
+
+class AnnotationSelector extends BaseModel<AnnotationSelector> {
+  const AnnotationSelector({
+    this.type,
+    this.start,
+    this.end,
+  });
+
+  factory AnnotationSelector.fromJson(Map<String, dynamic> json) =>
+      AnnotationSelector(
+        type: BaseModel.getByType<String>(json['type']),
+        start: BaseModel.getByType<int>(json['start']),
+        end: BaseModel.getByType<int>(json['end']),
+      );
+
+  @override
+  AnnotationSelector fromJson(Map<String, dynamic> json) =>
+      AnnotationSelector.fromJson(json);
+
+  final String? type;
+  final int? start;
+  final int? end;
+
+  @override
+  Map<String, dynamic> get toJson => <String, dynamic>{
+        'type': type,
+        'start': start,
+        'end': end,
+      };
+
+  @override
+  List<Object?> get props => <Object?>[type, start, end];
 }
