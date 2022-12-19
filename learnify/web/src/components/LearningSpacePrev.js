@@ -22,6 +22,30 @@ import lslogo_19 from '../images/ls_icons/ls-icon-19.svg'
 import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
 
 export default function LearningSpacePrev(props) {
+
+    const icons = [
+        lslogo_1, 
+        lslogo_2, 
+        lslogo_3, 
+        lslogo_4, 
+        lslogo_5, 
+        lslogo_6, 
+        lslogo_7, 
+        lslogo_8, 
+        lslogo_9, 
+        lslogo_10, 
+        lslogo_11, 
+        lslogo_12, 
+        lslogo_13, 
+        lslogo_14, 
+        lslogo_15, 
+        lslogo_16, 
+        lslogo_17, 
+        lslogo_18, 
+        lslogo_19, 
+        lslogo_20
+    ]
+    
     return (
         <div>
             <div className='learning-space-card'>
