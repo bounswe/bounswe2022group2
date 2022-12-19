@@ -28,6 +28,10 @@ void main() {
       expect(item3.settings, equals(SettingsOptions.appInfo));
       final SettingsItem lastItem = settingsItems[3] as SettingsItem;
       expect(lastItem.settings, equals(SettingsOptions.socialInfo));
+
+      final Finder expansionTileFinder =
+          TestHelpers.descendantFinder(firstItem, ExpansionTile);
+      expect(expansionTileFinder, findsOneWidget);
     },
   );
 }
