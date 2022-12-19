@@ -81,6 +81,12 @@ void main() {
         List<String>.generate(
             langValues.length, (int i) => langValues[i].languageName),
       );
+
+      final LanguageOptions storedLang = LocalManager.instance
+              .getString(StorageKeys.language)
+              ?.toEnum<LanguageOptions>(LanguageOptions.values) ??
+          LanguageOptions.en;
+      expect(languageButton.selectedValue, storedLang.languageName);
     },
   );
 }
