@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:learnify/core/extensions/string/string_extensions.dart';
+import 'package:learnify/core/managers/local/local_manager.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/features/settings/constants/settings_options.dart';
 import 'package:learnify/features/settings/view/components/settings_item.dart';
 import 'package:learnify/features/settings/view/settings_screen.dart';
+import 'package:learnify/product/constants/storage_keys.dart';
+import 'package:learnify/product/language/language_keys.dart';
+import 'package:learnify/product/theme/theme_types.dart';
 
 import '../test_helpers.dart';
 
@@ -42,6 +47,15 @@ void main() {
       final Row switchRow = expansionTile.children[0] as Row;
       expect(switchRow.children[0].runtimeType, BaseText);
       expect(switchRow.children[1].runtimeType, FlutterSwitch);
+
+      final BaseText themeText = switchRow.children[0] as BaseText;
+      final FlutterSwitch themeSwitch = switchRow.children[1] as FlutterSwitch;
+
+      final ThemeTypes? storedTheme = LocalManager.instance
+          .getString(StorageKeys.theme)
+          ?.toEnum<ThemeTypes>(ThemeTypes.values);
+      expect(themeText.text, equals(TextKeys.darkMode));
+      expect(themeSwitch.value, storedTheme == ThemeTypes.dark);
     },
   );
 }
