@@ -10,6 +10,7 @@ import 'package:learnify/features/settings/view/components/settings_item.dart';
 import 'package:learnify/features/settings/view/settings_screen.dart';
 import 'package:learnify/product/constants/storage_keys.dart';
 import 'package:learnify/product/language/language_keys.dart';
+import 'package:learnify/product/language/language_options.dart';
 import 'package:learnify/product/theme/theme_types.dart';
 
 import '../test_helpers.dart';
@@ -73,6 +74,13 @@ void main() {
       final BaseText languageText = popMenuRow.children[0] as BaseText;
       final PopMenuButton languageButton =
           popMenuRow.children[1] as PopMenuButton;
+      const List<LanguageOptions> langValues = LanguageOptions.values;
+      expect(languageText.text, equals(TextKeys.selectedLanguage));
+      expect(
+        languageButton.values,
+        List<String>.generate(
+            langValues.length, (int i) => langValues[i].languageName),
+      );
     },
   );
 }
