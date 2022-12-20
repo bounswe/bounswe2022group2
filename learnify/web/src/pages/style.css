@@ -675,6 +675,12 @@ h1 {
     align-content: center;
     margin: 0 auto;
 }
+
+.profilepage-layout {
+    width: fit-content;
+    align-content: center;
+    margin: 0 auto;
+}
 .ls-box3 {
     background-color: #1746A2;
     width: 100%;
