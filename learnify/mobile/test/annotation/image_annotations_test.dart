@@ -14,7 +14,7 @@ import '../test_helpers.dart';
 
 void main() {
   testWidgets(
-    "Test text annotation functionality.",
+    "Test image annotation functionality.",
     (WidgetTester tester) async {
       final LearningSpace dummyLearningSpace = LearningSpace.dummy(0);
       final LearningSpaceDetailScreen detailScreen =

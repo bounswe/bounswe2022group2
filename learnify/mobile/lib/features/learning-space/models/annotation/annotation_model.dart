@@ -54,7 +54,9 @@ class Annotation extends BaseModel<Annotation> {
 
   set color(Color newColor) => colorParam = newColor;
 
-  bool get isImage => target?.type?.compareWithoutCase('Image') ?? false;
+  bool get isImage =>
+      (target?.type?.compareWithoutCase('Image') ?? false) ||
+      (target?.selector == null);
 
   Tuple2<Offset, Offset> get startEndOffsets {
     Offset? startOffset;
@@ -65,7 +67,6 @@ class Annotation extends BaseModel<Annotation> {
         final int hashIndex =
             !imageUrl.contains('#') ? 0 : imageUrl.indexOf('#');
         if (hashIndex > 0) {
-          final String exactImage = imageUrl.substring(0, hashIndex);
           String temp = imageUrl;
           int nextComma = temp.indexOf('#xywh=');
           if (nextComma < temp.length) {
