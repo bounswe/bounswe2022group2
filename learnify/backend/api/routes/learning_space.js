@@ -11,7 +11,8 @@ import {
     put_edit_post, 
     put_edit_annotation,
     get_by_participation,
-    get_by_creator
+    get_by_creator,
+    create_event
 } from '../controllers/learning_space/index.js';
 
 
@@ -28,6 +29,7 @@ router.put('/edit/post', put_edit_post)
 router.get('/', semanti_search_ls)
 router.get('/user/participated', get_by_participation)
 router.get('/user/created', get_by_creator)
+router.post('/event', create_event)
 
 
 export default router;
