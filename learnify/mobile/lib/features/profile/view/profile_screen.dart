@@ -22,6 +22,7 @@ import '../../../product/theme/dark_theme.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../../product/theme/light_theme.dart';
 import '../../home-wrapper/view-model/home_wrapper_view_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/profile_view_model.dart';
 
@@ -47,11 +48,11 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             context.sizedH(2),
             const _ProfileForm(),
             context.sizedH(1.7),
-            _totalCountRow(context),
+            _updateButton,
+            context.sizedH(1),
+            _enrolledLearningSpacesButton,
             context.sizedH(1),
             Transform.scale(scale: .85, child: const _ProfileChart()),
-            context.sizedH(1),
-            _updateButton,
           ],
         ),
       );
@@ -126,18 +127,35 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             child: IntrinsicHeight(
               child: Row(
                 children: <Widget>[
-                  Expanded(child: _countColumn(context, 14, TextKeys.friends)),
-                  const CustomVerticalDivider(
-                      color: DarkAppTheme.lightActiveColor),
-                  Expanded(child: _countColumn(context, 4, TextKeys.enrolled)),
-                  const CustomVerticalDivider(
-                      color: DarkAppTheme.lightActiveColor),
+                  //Expanded(child: _countColumn(context, 14, TextKeys.friends)),
+                  //const CustomVerticalDivider(
+                  //    color: DarkAppTheme.lightActiveColor),
                   Expanded(
-                      child: _countColumn(context, 3, TextKeys.contributed)),
+                      child: _countColumn(context, 4, TextKeys.enrolledLS)),
+                  //const CustomVerticalDivider(
+                  //    color: DarkAppTheme.lightActiveColor),
+                  //Expanded(
+                  //    child: _countColumn(context, 3, TextKeys.contributed)),
                 ],
               ),
             ),
           ),
+        ),
+      );
+
+  static Widget get _enrolledLearningSpacesButton =>
+      SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.learningSpaces,
+        (BuildContext context, List<LearningSpace> learningSpaces, _) =>
+            ActionButton(
+          text: TextKeys.enrolledLS,
+          padding: EdgeInsets.symmetric(
+              horizontal: context.responsiveSize * 2.8,
+              vertical: context.responsiveSize * 1.4),
+          isActive: true, //learningSpaces.isNotEmpty,
+          onPressed: () async {
+            //ToDo
+          },
         ),
       );
 
