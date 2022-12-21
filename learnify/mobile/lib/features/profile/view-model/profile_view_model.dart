@@ -61,7 +61,7 @@ class ProfileViewModel extends BaseViewModel {
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _usernameController = TextEditingController(text: _initialUsername);
     _usernameController.addListener(_controllerListener);
-    _biographyController = TextEditingController(text: _initialUsername);
+    _biographyController = TextEditingController(text: _initialBiography);
     _biographyController.addListener(_controllerListener);
     _setDefault();
   }

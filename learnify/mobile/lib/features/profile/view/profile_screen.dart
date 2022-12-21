@@ -161,25 +161,34 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         ),
       );
 
-  static Widget _totalCountRow(BuildContext context) => Padding(
-        padding: EdgeInsets.symmetric(horizontal: context.responsiveSize * 10),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Container(
-            color: LightAppTheme.lightBlue.withOpacity(.8),
-            padding: EdgeInsets.all(context.responsiveSize * 2.5),
-            child: IntrinsicHeight(
-              child: Row(
-                children: <Widget>[
-                  Expanded(child: _countColumn(context, 14, TextKeys.friends)),
-                  const CustomVerticalDivider(
-                      color: DarkAppTheme.lightActiveColor),
-                  Expanded(child: _countColumn(context, 4, TextKeys.enrolled)),
-                  const CustomVerticalDivider(
-                      color: DarkAppTheme.lightActiveColor),
-                  Expanded(
-                      child: _countColumn(context, 3, TextKeys.contributed)),
-                ],
+  static Widget _totalCountRow(BuildContext context) =>
+      SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.learningSpaces,
+        (BuildContext context, List<LearningSpace> learningSpaces, _) =>
+            Padding(
+          padding:
+              EdgeInsets.symmetric(horizontal: context.responsiveSize * 10),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Container(
+              color: LightAppTheme.lightBlue.withOpacity(.8),
+              padding: EdgeInsets.all(context.responsiveSize * 2.5),
+              child: IntrinsicHeight(
+                child: Row(
+                  children: <Widget>[
+                    Expanded(child: _countColumn(context, 0, TextKeys.friends)),
+                    const CustomVerticalDivider(
+                        color: DarkAppTheme.lightActiveColor),
+                    Expanded(
+                        child: _countColumn(
+                            context, learningSpaces.length, TextKeys.enrolled)),
+                    const CustomVerticalDivider(
+                        color: DarkAppTheme.lightActiveColor),
+                    Expanded(
+                        child: _countColumn(context, learningSpaces.length,
+                            TextKeys.contributed)),
+                  ],
+                ),
               ),
             ),
           ),
