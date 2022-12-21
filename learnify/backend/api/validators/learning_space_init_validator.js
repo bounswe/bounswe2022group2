@@ -54,3 +54,13 @@ export function validateLSEnroll_init(body) {
   });
   return schema.validate(body);
 }
+export function validateComment_init(body) {
+  const schema = Joi.object({
+    post_id: Joi.string().min(3).required(),
+    ls_id: Joi.string().min(3).required(),
+    content: Joi.string().min(6).required(),
+    token: Joi.string().min(6).max(2000).required(),
+    images: Joi.array()
+  });
+  return schema.validate(body);
+}
