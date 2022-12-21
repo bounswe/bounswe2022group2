@@ -119,9 +119,7 @@ class ProfileViewModel extends BaseViewModel {
     final bool isBiographyValid =
         biographyFormKey.currentState?.validate() ?? false;
     if (isBiographyValid) {
-      _initialUsername = _usernameController.text;
-      _user = _user.copyWith(username: _usernameController.text);
-      await localManager.setModel(_user, StorageKeys.user);
+      _initialBiography = _biographyController.text;
       if (_selectedImage != null) {
         await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
       }

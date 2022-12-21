@@ -20,7 +20,7 @@ class _ProfileForm extends StatelessWidget {
         context.sizedH(1.5),
         Form(
           key: model.biographyFormKey,
-          child: Flexible(child: _biographyField(model.usernameController)),
+          child: Flexible(child: _biographyField(model.biographyController)),
         ),
       ],
     );
@@ -49,6 +49,7 @@ class _ProfileForm extends StatelessWidget {
         prefixIcon: Icons.contact_support_outlined,
         textInputAction: TextInputAction.newline,
         textInputType: TextInputType.multiline,
+        maxLength: 200,
         padding: const EdgeInsets.all(10),
       );
 }
