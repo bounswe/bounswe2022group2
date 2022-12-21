@@ -69,9 +69,8 @@ void main() {
             0,
           )
           .item2;
-      // TODO:
       final Tuple2<Offset, Offset> offsets = annotation.startEndOffsets;
-      // expect(annotation.content, annotationContent);
+      expect(annotation.body, annotationContent);
       expect(offsets.item1, startOffset);
       expect(offsets.item2, endOffset);
       expect(annotation.color, color);

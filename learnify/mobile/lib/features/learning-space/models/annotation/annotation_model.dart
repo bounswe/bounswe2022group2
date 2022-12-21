@@ -9,8 +9,8 @@ import '../../../../core/helpers/color_helpers.dart';
 class Annotation extends BaseModel<Annotation> {
   Annotation({
     this.id,
-    this.context,
-    this.type,
+    this.context = 'http://www.w3.org/ns/anno.jsonld',
+    this.type = 'Annotation',
     this.body,
     this.target,
     this.colorParam,

@@ -169,11 +169,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     final AnnotationSelector selector =
         AnnotationSelector(start: startIndex, end: endIndex);
     final Annotation req = Annotation(
-      // TODO: Fix
       body: annotation,
-      // lsId: _learningSpace?.id,
-      // postId: oldPost.id,
+      id: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
       target: AnnotationTarget(selector: selector),
+      // TODO: Fix
+      // creator: user.username,
     );
     final IResponseModel<Annotation> res = await _lsService.annotate(req);
     if (res.hasError) {
@@ -193,19 +193,15 @@ class LearningSpaceViewModel extends BaseViewModel {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
-      id: (startIndex * endIndex + Random().nextInt(490)).toString(),
-      // TODO: Fix
-      // content: annotation,
+      body: annotation,
       target: AnnotationTarget(
         selector: AnnotationSelector(
           start: startIndex,
           end: endIndex,
         ),
       ),
+      id: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       // TODO: Fix
-      // courseId: learningSpace?.id,
-      // postId: post.id,
-      // upVote: 0,
       // creator: user.username,
     );
     final List<Annotation> newAnnotations =
@@ -241,9 +237,9 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h', format: 'image/jpeg');
     final Annotation req = Annotation(
       body: annotation,
+      id: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}',
       // TODO: Fix
-      // lsId: _learningSpace?.id,
-      // postId: oldPost.id,
+      // creator: user.username,
       target: target,
     );
     final IResponseModel<Annotation> res = await _lsService.annotate(req);
@@ -308,17 +304,12 @@ class LearningSpaceViewModel extends BaseViewModel {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
-      id: (startOffset.dx * endOffset.dx + Random().nextInt(490)).toString(),
-      // TODO: Fix
-      // content: annotation,
+      body: annotation,
+      id: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       target: AnnotationTarget(
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
-      // TODO: Fix
-      // postId: post.id,
-      // courseId: learningSpace?.id,
       colorParam: backgroundColor,
       // TODO: Fix
-      // upVote: 0,
       // creator: user.username,
     );
     final List<Annotation> newAnnotations =
