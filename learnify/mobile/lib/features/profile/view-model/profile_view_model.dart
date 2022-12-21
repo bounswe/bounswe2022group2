@@ -69,15 +69,19 @@ class ProfileViewModel extends BaseViewModel {
   @override
   void disposeView() {
     _usernameController.dispose();
+    _biographyController.dispose();
     _setDefault();
     super.disposeView();
   }
 
   void _controllerListener() {
-    final String newText = _usernameController.text;
-    final bool newCanSignup = newText.isNotEmpty && newText != _initialUsername;
-    if (_canUpdate == newCanSignup) return;
-    _canUpdate = newCanSignup;
+    final String newUsername = _usernameController.text;
+    final String newBiography = _biographyController.text;
+    final bool isUpdated =
+        (newUsername.isNotEmpty && newUsername != _initialUsername) ||
+            (newBiography.isNotEmpty && newBiography != _initialBiography);
+    if (_canUpdate == isUpdated) return;
+    _canUpdate = isUpdated;
     notifyListeners();
   }
 
