@@ -1,0 +1,1 @@
+export { default as getAnnotationsByLsPostId } from './get_annotations_by_ls_post_id.js';
