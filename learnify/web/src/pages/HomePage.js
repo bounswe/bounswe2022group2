@@ -22,6 +22,7 @@ function HomePage() {
     const username = localStorage.getItem('username');
 
     const [myLearningSpaces, setMyLearningSpaces] = React.useState([]);
+    const [popularLearningSpaces, setPopularLearningSpaces] = React.useState([]);
 
     useEffect(() => {
         const getOwnLearningSpaces = async () => {
@@ -41,6 +42,19 @@ function HomePage() {
             <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
         </div>
     ));
+
+    useEffect(() => {
+        const getPopularLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setPopularLearningSpaces(res.data.learning_spaces);
+        }
+        getPopularLearningSpaces();
+    }, []);
 
   return(
     <div className='home'>
