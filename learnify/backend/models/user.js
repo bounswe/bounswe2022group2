@@ -22,6 +22,12 @@ const userSchema = new Schema({
   verification_code: {
     type: String, required: false, default: false
   },
+  profile_picture: {
+    type: String, required: false, default: null
+  },
+  bio: {
+    type: String, required: false, default: null
+  }
 },
   {
     timestamps: true,
