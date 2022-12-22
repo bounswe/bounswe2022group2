@@ -88,8 +88,16 @@ class PostItem extends StatelessWidget {
             await viewModel.viewAnnotations(annotations, annotationText);
           },
         ),
-        PostList.createEditButton(context, TextKeys.editPost,
-            Icons.edit_outlined, () async => viewModel.editPost(post)),
+        Row(
+          children: <Widget>[
+            Expanded(
+                child: PostList.createEditButton(context, TextKeys.editPost,
+                    Icons.edit_outlined, () async => viewModel.editPost(post))),
+            Expanded(
+                child: PostList.createEditButton(context, TextKeys.addComment,
+                    Icons.comment_outlined, () {})),
+          ],
+        ),
       ],
     );
   }
