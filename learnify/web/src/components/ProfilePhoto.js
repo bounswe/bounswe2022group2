@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './component_styles.css';
 
 function ProfilePhoto() {
   const [photo, setPhoto] = useState(null);
@@ -23,17 +22,17 @@ function ProfilePhoto() {
           ) : (
             <div className="default-photo">
               <i className="fas fa-user-circle" />
+              <label htmlFor="photo-input">
+                <span>Upload a profile photo</span>
+              </label>
+              <input
+                type="file"
+                id="photo-input"
+                accept="image/*"
+                onChange={handleFileChange}
+              />
             </div>
           )}
-          <label htmlFor="photo-input">
-            <span>Upload a profile photo</span>
-          </label>
-          <input
-            type="file"
-            id="photo-input"
-            accept="image/*"
-            onChange={handleFileChange}
-          />
         </div>
       )}
     </div>

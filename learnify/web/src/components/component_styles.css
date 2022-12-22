@@ -529,13 +529,15 @@
     transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;	
 
 }
-
 .profile-photo {
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .profile-photo img {
@@ -553,7 +555,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3em;
+    font-size: 2em;
     color: #ccc;
   }
   
@@ -562,7 +564,7 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: #666;
   }
   
