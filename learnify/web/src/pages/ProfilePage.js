@@ -5,7 +5,8 @@ import NavBar from '../components/NavBar';
 import illustration from '../images/categories-page-illustration.svg'
 import pp from '../images/elipse.png'
 import happy from '../images/happy.png'
-
+import ProfilePhoto from '../components/ProfilePhoto';
+// <img src={pp} alt="Profile photo" height={333} />
 
 function ProfilePage() {
     return(
@@ -50,7 +51,8 @@ function ProfilePage() {
             </div>
 
             <div className='profile-page-middle'>
-                <img src={pp} alt="Profile photo" height={333} />
+                <ProfilePhoto />
+                
                 <div className='space-30'/>
                 <div className='profile-page-ls-box'>
                     This is the first LS
