@@ -56,6 +56,12 @@ function HomePage() {
         getPopularLearningSpaces();
     }, []);
 
+    const popularLearningSpacesList = popularLearningSpaces.map(ls => (
+        <div className='lsprev-container'>
+            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+        </div>
+    ));
+
   return(
     <div className='home'>
         <NavBar />
