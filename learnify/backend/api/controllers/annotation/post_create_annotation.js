@@ -15,16 +15,8 @@ export default async (req, res) => {
   }
 
 
-  if (req.body.target.source) {
-    const re = /\w+/g;
-    const url = String(req.body.target.source);
-    var match = url.match(re);
-    var ls_id = match[2];
-    var post_id = match[3];
 
-
-
-    let ls = await LearningSpace.findOne({_id: ls_id})
+    let ls = await LearningSpace.findOne({_id: req.params.ls_id})
       .catch((err) => {
         console.log(err.message);
         return res.status(500).json({ "resultMessage": "Something is wrong." });
@@ -36,7 +28,7 @@ export default async (req, res) => {
       return res.status(409).json({ "resultMessage": err });
     }
 
-    let post = ls.posts.find(element => String(element.id) == post_id);
+    let post = ls.posts.find(element => String(element.id) == req.params.post_id);
 
     if (!post) {
       const err = "There is no post with given id"
@@ -44,9 +36,8 @@ export default async (req, res) => {
       return res.status(409).json({ "resultMessage": err });
     }
 
-  }
 
-  var response = await axios.post(annotations_server + "/annotations/create" , req.body, {
+  var response = await axios.post(annotations_server + `/annotations/create/${req.params.ls_id}/${req.params.post_id}`  , req.body, {
     headers: {
       'Authorization':req.headers.authorization
     }
