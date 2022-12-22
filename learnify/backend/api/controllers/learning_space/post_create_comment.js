@@ -1,5 +1,4 @@
 
-import { Post } from '../../../models/index.js';
 import { LearningSpace } from '../../../models/index.js';
 import mongoose from 'mongoose';
 import jwt from "jsonwebtoken";
@@ -13,7 +12,7 @@ const Comment = model('Comment', commentSchema)
 export default async (req, res) => {
     var username;
     try {
-        const authHeader = req.body.token;
+        const authHeader = req.headers.authorization;
         username = jwt.decode(authHeader).username;
     } catch (e) {
         return res.status(401).json({ "resultMessage": "There is something wrong with your auth token." });
@@ -32,9 +31,13 @@ export default async (req, res) => {
         });
     
     let post;
+    var numCheck = 0;
         ls.posts.forEach(function(check) {
             if(check._id == req.body.post_id){
                 post = check;
+            }
+            if(!post){
+                numCheck++;
             }
         });
         
@@ -52,14 +55,19 @@ export default async (req, res) => {
     });
 
     if(req.body.images){
-        post.images = req.body.images;
+        ls.posts[numCheck].images = req.body.images;
     }
 
-    post.comments.push(comment);
-    console.log(post)
-    await post.save().catch((err) => {
+    ls.posts[numCheck].comments.push(comment);
+    console.log(ls.posts[numCheck].comments)
+    await ls.save().catch((err) => {
         console.log(err.message)
         return res.status(500).json({ "resultMessage": "Could not save post to DB" });
+    });
+
+    return res.status(200).json({
+        resultMessage: "Comment is succesfully created.",
+        learningSpace: ls
     });
 
     };
