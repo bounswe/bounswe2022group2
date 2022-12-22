@@ -476,7 +476,7 @@ h1 {
     width: 510px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    overflow: scroll;
 }
 
 .ls-prev-list-4 {
@@ -489,6 +489,7 @@ h1 {
 .ls-box-layout-3 {
     text-align: left;
     width: 510px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     color: #FFF7E9;
@@ -514,7 +515,7 @@ h1 {
     font-family: 'Open Sans' sans-serif;
     font-size: 22px;
     font-weight: bold;
-    margin-left: 36px;
+    margin-left: 14px;
 }
 
 
@@ -938,4 +939,9 @@ h1 {
 .counter__output {	
     font-size: 20px;	
     color: #000000;	
+}
+
+.lsprev-container {
+    padding-left: 10px;
+    padding-right: 10px;
 }
