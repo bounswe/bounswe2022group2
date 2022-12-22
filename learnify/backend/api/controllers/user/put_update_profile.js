@@ -1,4 +1,4 @@
-
+import jwt from "jsonwebtoken";
 import { User } from '../../../models/index.js';
 import { validateUpdateProfile } from '../../validators/user_validator.js';
 
@@ -6,7 +6,6 @@ import { validateUpdateProfile } from '../../validators/user_validator.js';
 
 export default async (req, res) => {
     var username;
-    console.log(req.headers);
     try{
       const authHeader = req.headers.authorization;
       username = jwt.decode(authHeader).username;
@@ -20,7 +19,7 @@ export default async (req, res) => {
     return res.status(400).json({ "resultMessage": "Please check your inputs."});
   }
   
-  var user = await User.find({ username: username })
+  var user = await User.findOne({ username: username })
     .catch((err) => {
       console.log("Could not fetch users from mongoDB")
       console.log(err.message);
@@ -28,7 +27,7 @@ export default async (req, res) => {
     });
   
   if (! user) {
-    console.log("User with existing email tried to signup")
+    console.log("User with given username does not exists")
     return res.status(409).json({ "resultMessage": "User with given username does not exists" });
   }
 
@@ -41,11 +40,12 @@ export default async (req, res) => {
       console.log(err.message)
       return res.status(500).json({ "resultMessage": "Could not save ls to DB" });
   });
-  var profile = user.json()
+  var profile = user.toJSON();
   delete profile.email;
+  delete profile.id;
   return res.status(200).json({
       resultMessage: "Profile is succesfully updated.",
-      profile: user
+      profile: profile
   });
 
 };
