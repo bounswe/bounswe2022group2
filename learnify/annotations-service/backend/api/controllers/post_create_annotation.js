@@ -19,7 +19,7 @@ export default async (req, res) => {
     }
 
     let count = await Annotation.count();
-    let id = `http://frontURL/anno${count + 1}`;
+    let id = `http://frontURL/${req.params.ls_id}/${req.params.post_id}/anno${count + 1}`;
 
     let annotation = new Annotation({
         _id: id,
