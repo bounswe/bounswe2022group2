@@ -1,0 +1,1 @@
+export {default as update_profile} from './put_update_profile.js'
