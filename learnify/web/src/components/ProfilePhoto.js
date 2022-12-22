@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
 
-
-const ProfilePhoto = () => {
+function ProfilePhoto() {
   const [photo, setPhoto] = useState(null);
 
-  const handlePhoto = (event) => {
-    const photo = event.target.files[0];
-    setPhoto(photo);
+  const handleFileChange = (event) => {
+    setPhoto(event.target.files[0]);
   };
 
   return (
     <div>
-      <input type="file" onChange={handlePhoto} />
-      <img src={photo} alt="Profile photo" height={333} />
+      {photo ? (
+        <img src={URL.createObjectURL(photo)} alt="Profile" />
+      ) : (
+        <div>
+          <label htmlFor="photo-input">
+            <i className="fas fa-user-circle"></i>
+            <span>Upload a profile photo</span>
+          </label>
+          <input
+            type="file"
+            id="photo-input"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+        </div>
+      )}
     </div>
-    );
+  );
 }
 
-export default ProfilePhoto
+export default ProfilePhoto;
