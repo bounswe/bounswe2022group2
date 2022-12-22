@@ -463,6 +463,18 @@ h1 {
     margin-left: 2.7723em;	
 }
 
+.profile-page-text{	
+    font-family: 'Open Sans' sans-serif;	
+    margin-left: 2.7723em;	
+    color: #0b22ec;
+}
+
+.profile-page-image{
+    width: fit-content;
+    align-content: center;
+    padding-right: 2px;
+}
+
 .login-button-error{
     width:100%;
     margin-top:.25rem;
@@ -675,6 +687,34 @@ h1 {
     align-content: center;
     margin: 0 auto;
 }
+
+.profilepage-layout {
+    width: fit-content;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.profilepage{
+    display: flex;
+    color: #FFF7E9;
+    min-height: calc(100vh - 190px);
+}
+
+.profilepage-friends-box{
+    background-color: #FF731D;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px 0px rgba(120,120,120,0.52);
+    color:#FFF7E9;
+    text-align: left;
+    padding: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+    max-height: 400px;
+}
+
 .ls-box3 {
     background-color: #1746A2;
     width: 100%;
@@ -707,6 +747,30 @@ h1 {
   }
 
   .learning-space-right{
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: right;
+    width: 20%;
+    background-color: #FFF7E9;
+  }
+
+  .profile-page-left {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: left;
+    width: 20%;
+    background-color: #FFF7E9;
+  }
+  
+  .profile-page-middle {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: center;
+    width: 60%;
+    background-color: #FFF7E9;
+  }
+
+  .profile-page-right{
     margin-left: 1em;
     margin-right: 1em;
     align-content: right;
@@ -795,6 +859,21 @@ h1 {
 }
 
 .ls-box-mid{
+    background-color: #f8f6f4;
+    width: 97%;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 6px;
+    box-shadow: 0px 12px 16px -12px rgba(26,26,26,1);
+    color:#4a07f5;
+    text-align: left;
+    padding: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.profile-page-ls-box{
     background-color: #f8f6f4;
     width: 97%;
     border-radius: 20px;
