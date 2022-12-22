@@ -125,4 +125,5 @@ class TextKeys {
   static const String madeBy = "made_by";
   static const String darkMode = "dark_mode";
   static const String addComment = "add_comment";
+  static const String addCommentHint = "add_comment_hint";
 }

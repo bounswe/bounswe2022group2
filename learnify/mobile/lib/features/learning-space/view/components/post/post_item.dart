@@ -94,8 +94,16 @@ class PostItem extends StatelessWidget {
                 child: PostList.createEditButton(context, TextKeys.editPost,
                     Icons.edit_outlined, () async => viewModel.editPost(post))),
             Expanded(
-                child: PostList.createEditButton(context, TextKeys.addComment,
-                    Icons.comment_outlined, () {})),
+              child: PostList.createEditButton(
+                context,
+                TextKeys.addComment,
+                Icons.comment_outlined,
+                () async {
+                  final Future<String?> comment =
+                      viewModel.addCommentDialog(context);
+                },
+              ),
+            ),
           ],
         ),
       ],

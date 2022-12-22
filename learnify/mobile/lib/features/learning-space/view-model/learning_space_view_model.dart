@@ -13,8 +13,11 @@ import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../../../core/widgets/text-field/custom_text_form_field.dart';
+import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
+import '../../../product/language/language_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_request.dart';
@@ -50,6 +53,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
 
+  late TextEditingController _commentController;
+  TextEditingController get commentController => _commentController;
+
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
@@ -70,11 +76,18 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   @override
+  void disposeView() {
+    commentController.dispose();
+    super.disposeView();
+  }
+
+  @override
   void disposeViewModel() {}
 
   @override
   void initView() {
     _initializeKeys();
+    _commentController = TextEditingController();
   }
 
   void setLearningSpace(LearningSpace? newSpace) {
@@ -125,6 +138,26 @@ class LearningSpaceViewModel extends BaseViewModel {
     //     path: NavigationConstants.createEditPost);
     return null;
   }
+
+  Future<String?> addCommentDialog(BuildContext context) => showDialog(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+            title: const BaseText(TextKeys.addComment),
+            content: CustomTextFormField(
+              hintText: TextKeys.addCommentHint,
+              maxLines: 3,
+              controller: _commentController,
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(_commentController.text);
+                  _commentController.clear();
+                },
+                child: const BaseText(TextKeys.done),
+              )
+            ],
+          ));
 
   Future<String?> viewAnnotations(
       List<Annotation> annotations, String? annotationText) async {
