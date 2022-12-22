@@ -1,10 +1,12 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import './style.css'
 import LearningSpacePrev from '../components/LearningSpacePrev';
 import FeedItem from '../components/FeedItem';
 import CreateLearningSpaceButton from '../components/CreateLearningSpaceButton';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import axios from 'axios';
 import lslogo_13 from '../images/ls_icons/ls-icon-13.svg'
 import lslogo_6 from '../images/ls_icons/ls-icon-6.svg'
 import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
@@ -18,6 +20,21 @@ function HomePage() {
 
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
+
+    const [myLearningSpaces, setMyLearningSpaces] = React.useState([]);
+
+    useEffect(() => {
+        const getOwnLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/user/participated`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setMyLearningSpaces(res.data.learning_spaces);
+        }
+        getOwnLearningSpaces();
+    }, []);
 
   return(
     <div className='home'>
