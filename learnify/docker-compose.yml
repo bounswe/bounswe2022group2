@@ -11,6 +11,17 @@ services:
       - data:/data/db
     networks:
       - mongo_net
+  semantic-server:
+    hostname: semantic
+    build: 
+      context: ./semantic_service
+      dockerfile: dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - mongo_net
+    depends_on:
+      - mongodb
   annotation-server:
     hostname: annotation
     build: 
@@ -33,6 +44,15 @@ services:
       - mongo_net
     depends_on:
       - mongodb
+  frontend:
+    hostname: frontend
+    build:
+      context: ./web
+      dockerfile: dockerfile
+    ports:
+      - "9000:3000"
+    depends_on:
+      - server
 
 networks:
   mongo_net:
