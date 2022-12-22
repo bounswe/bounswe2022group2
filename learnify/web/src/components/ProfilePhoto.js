@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
+import './component_styles.css';
 
 function ProfilePhoto() {
   const [photo, setPhoto] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
+    setLoading(true);
     setPhoto(event.target.files[0]);
   };
-  
 
   return (
-    <div>
+    <div className="profile-photo">
       {photo ? (
         <img src={URL.createObjectURL(photo)} alt="Profile" />
       ) : (
         <div>
+          {loading ? (
+            <div className="default-photo">
+              <i className="fas fa-spinner fa-spin" />
+            </div>
+          ) : (
+            <div className="default-photo">
+              <i className="fas fa-user-circle" />
+            </div>
+          )}
           <label htmlFor="photo-input">
-            <i className="fas fa-user-circle"></i>
             <span>Upload a profile photo</span>
           </label>
           <input
