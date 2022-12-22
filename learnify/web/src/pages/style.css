@@ -534,10 +534,11 @@ h1 {
 }
 
 .ls-prev-list-4 {
-    width: 680px;
+    width: 720px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow: scroll;
 }
 
 .ls-box-layout-3 {
@@ -551,7 +552,8 @@ h1 {
 
 .ls-box-layout-4 {
     text-align: left;
-    width: 680px;
+    width: 720px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     color: #FFF7E9;
