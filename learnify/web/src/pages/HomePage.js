@@ -22,6 +22,7 @@ function HomePage() {
     const username = localStorage.getItem('username');
 
     const [myLearningSpaces, setMyLearningSpaces] = React.useState([]);
+    const [popularLearningSpaces, setPopularLearningSpaces] = React.useState([]);
 
     useEffect(() => {
         const getOwnLearningSpaces = async () => {
@@ -37,6 +38,25 @@ function HomePage() {
     }, []);
 
     const ownLearningSpaces = myLearningSpaces.map(ls => (
+        <div className='lsprev-container'>
+            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+        </div>
+    ));
+
+    useEffect(() => {
+        const getPopularLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setPopularLearningSpaces(res.data.learning_spaces);
+        }
+        getPopularLearningSpaces();
+    }, []);
+
+    const popularLearningSpacesList = popularLearningSpaces.slice(0, 10).map(ls => (
         <div className='lsprev-container'>
             <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
         </div>
@@ -105,12 +125,9 @@ function HomePage() {
                     </div>
                     <div className='space-12'></div>
                     <div>
-                        <ul role="list" className="ls-prev-list-4">
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
-                        </ul>
+                        <div className="ls-prev-list-4">
+                            {popularLearningSpacesList}
+                        </div>
                     </div>
                 </div>
                 <div className='ls-box-layout-4'>
