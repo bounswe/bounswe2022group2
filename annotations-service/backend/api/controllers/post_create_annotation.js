@@ -1,7 +1,7 @@
 
-import Annotation from '../../../models/annotation.js';
+import Annotation from '../../models/annotation.js';
 import jwt from "jsonwebtoken";
-import { validateCreateAnnotation_init } from '../../validators/annotations_init_validator.js';
+import { validateCreateAnnotation_init } from '../validators/annotations_init_validator.js';
 
 export default async (req, res) => {
     var username;

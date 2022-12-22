@@ -9,7 +9,7 @@ const router = Router();
 router.use('/auth', auth);
 router.use('/learningspace', learning_space);
 router.use('/categories', categories);
-router.use('/annotations', annotations);
+//router.use('/annotations', annotations);
 
 
 export default router;
