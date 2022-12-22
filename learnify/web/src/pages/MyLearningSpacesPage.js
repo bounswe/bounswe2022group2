@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
+import './style.css';
+import LearningSpaceDetailBox from '../components/LearningSpaceDetailBox';
+import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';
 
 function MyLearningSpacesPage() {
 
@@ -21,6 +24,10 @@ function MyLearningSpacesPage() {
         }
         getOwnLearningSpaces();
     }, []);
+
+    const lsBoxes = learningspaces.map(ls => (
+        <LearningSpaceDetailBox title={ls.title} description={ls.description} icon_id={ls.icon_id} num_participants={ls.num_participants} url={ls.id}/>
+    ));
 
     return (
         <div>
