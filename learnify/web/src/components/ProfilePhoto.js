@@ -6,6 +6,7 @@ function ProfilePhoto() {
   const handleFileChange = (event) => {
     setPhoto(event.target.files[0]);
   };
+  
 
   return (
     <div>
