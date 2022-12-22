@@ -23,3 +23,10 @@ export function validateVerifyEmail(body) {
   });
   return schema.validate(body);
 }
+export function validateUpdateProfile(body) {
+  const schema = Joi.object({
+    bio: Joi.string().min(3),
+    profile_picture: Joi.string().base64().min(3).max(400),
+  });
+  return schema.validate(body);
+}
