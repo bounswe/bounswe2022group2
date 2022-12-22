@@ -36,6 +36,10 @@ function HomePage() {
         getOwnLearningSpaces();
     }, []);
 
+    const ownLearningSpaces = myLearningSpaces.map(ls => (
+        <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+    ));
+
   return(
     <div className='home'>
         <NavBar />
@@ -58,9 +62,7 @@ function HomePage() {
                             <div className='space-12'></div>
                             <div>
                                 <ul role="list" className="ls-prev-list-3">
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_13} />
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_6} />
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_20} />
+                                    {ownLearningSpaces}
                                 </ul>
                             </div>
                         </div>
