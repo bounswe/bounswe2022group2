@@ -25,7 +25,7 @@ describe('POST /events', () => {
         title: 'Test Event',
         description: 'This is a test event',
         date: '2022-01-01',
-        duration: '2 hours',
+        duration: 2,
         geolocation: {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12},
         lsId: '12345'
       })
@@ -37,7 +37,7 @@ describe('POST /events', () => {
         assert.strictEqual(res.body.event.title, 'Test Event');
         assert.strictEqual(res.body.event.description, 'This is a test event');
         assert.strictEqual(res.body.event.date, '2022-01-01');
-        assert.strictEqual(res.body.event.duration, '2 hours');
+        assert.strictEqual(res.body.event.duration, 2);
         assert.strictEqual(res.body.event.geolocation, {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12});
         assert.strictEqual(res.body.event.lsId, '12345');
         done();
@@ -51,7 +51,7 @@ describe('POST /events', () => {
         title: '',
         description: 'This is a test event',
         date: '2022-01-01',
-        duration: '2 hours',
+        duration: 2,
         geolocation: {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12},
         lsId: '12345'
       })
@@ -74,7 +74,7 @@ describe('POST /events', () => {
         title: 'Test Event',
         description: 'This is a test event',
         date: '2022-01-01',
-        duration: '2 hours',
+        duration: 2,
         geolocation: {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12},
         lsId: '12345'
       })
