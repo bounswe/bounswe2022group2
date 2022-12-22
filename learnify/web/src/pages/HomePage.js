@@ -16,6 +16,9 @@ import lslogo_16 from '../images/ls_icons/ls-icon-16.svg'
 
 function HomePage() {
 
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
   return(
     <div className='home'>
         <NavBar />
