@@ -345,6 +345,14 @@
 }
 
 .post-box-right {
+    padding-left: 360px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.comment-box-right {
+    padding-left: 260px;
     display: flex;
     flex-direction: row;
     position: relative;

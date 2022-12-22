@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {useEffect, useRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
@@ -95,9 +94,8 @@ export default function Comment(props){
         {!deleteComment &&
         <div className='ls-box-mid'>
             <div className='space-5'></div>
-              {images[0] != "" && <div>
+              {images[0] !== "" && <div>
                 <img
-                    ref={imgEl}
                     src={images}
                     alt="space"
                     style = {{width: "893.5px",
@@ -108,7 +106,7 @@ export default function Comment(props){
                 />
             <div className='space-5'></div>
             </div>
-        }
+            }
             <MDEditor.Markdown
                 style={{ padding: 15 }}
                 source={content}
@@ -144,12 +142,7 @@ export default function Comment(props){
                         <label className="counter__output">{0}</label>
                     </div>
                 </div>
-                <div className='annotation-selection-button'>
-                  {(images[0] != "") && 
-                    <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
-                   } 
-                </div>
-                <div className='post-box-right'>
+                <div className='comment-box-right'>
                     <div className='ls-button-container-alt3'>
                         <label className='post-owner-icon-container'>
                             <FontAwesomeIcon icon={solid('user-pen')} color="black"/>
@@ -165,7 +158,7 @@ export default function Comment(props){
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-delete-button'>
-                            <FontAwesomeIcon icon={solid('trash-can')} color="black"/>
+                            <FontAwesomeIcon icon={solid('trash-can')} color="black" onClick={deleteTheComment}/>
                         </button>
                     </div>
                 </div>

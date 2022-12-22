@@ -7,6 +7,7 @@ import "@recogito/annotorious/dist/annotorious.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
+import Comment from './Comment';
 
 function TextInterface({
     classes,
@@ -205,17 +206,6 @@ export default function Post(props){
   useEffect(() => {
     console.log("andso", anno?.getImageSnippetById());
   }, [watch]);
-  
-  // Toggles current tool + button label
-  const toggleTool = () => {
-    if (tool === "rect") {
-      setTool("polygon");
-      anno.setDrawingTool("polygon");
-    } else {
-      setTool("rect");
-      anno.setDrawingTool("rect");
-    }
-  };
 
   const [i, setI] = useState(0);
   const [url, setUrl] = useState();
@@ -274,7 +264,7 @@ export default function Post(props){
 };
 
 const handleSubmitFinal  = () => {
-  //createPost(lsid, postTitle, value, imageUrl);
+  //createComment(lsid, postTitle, value, imageUrl);
 }
 
   const [value, setValue] = useState("");
@@ -400,11 +390,6 @@ const handleSubmitFinal  = () => {
                         <label className="counter__output">{0}</label>
                     </div>
                 </div>
-                <div className='annotation-selection-button'>
-                  {(images[0] !== "") && 
-                    <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
-                   } 
-                </div>
                 <div className='post-box-right'>
                     <div className='ls-button-container-alt3'>
                         <label className='post-owner-icon-container'>
@@ -421,7 +406,7 @@ const handleSubmitFinal  = () => {
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-delete-button'>
-                            <FontAwesomeIcon icon={solid('trash-can')} color="black"/>
+                            <FontAwesomeIcon icon={solid('trash-can')} color="black" onClick={deleteThePost}/>
                         </button>
                     </div>
                 </div>
@@ -475,7 +460,10 @@ const handleSubmitFinal  = () => {
                     </div>
                     }
                     <div className='add-post-box-mid'>
-                      Comments will be here!
+                    {/*{commentArray.map(myComment =>
+                                    <Comment myComment = {myComment} my_lsid = {lsid}/>)}
+                    */}
+                    Comments will be here!
                     </div>
                 </div>}
         </div>
