@@ -125,9 +125,9 @@ function HomePage() {
                     </div>
                     <div className='space-12'></div>
                     <div>
-                        <ul role="list" className="ls-prev-list-4">
+                        <div className="ls-prev-list-4">
                             {popularLearningSpacesList}
-                        </ul>
+                        </div>
                     </div>
                 </div>
                 <div className='ls-box-layout-4'>
