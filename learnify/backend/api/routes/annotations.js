@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { getAnnotationsByLsPostId } from '../annotation_service/controllers/index.js';
+//import { createAnnotation } from '../annotation_service/controllers/index.js';
 
 const router = Router();
 
-router.get('/get/:ls_id/:post_id', getAnnotationsByLsPostId);
+//router.post('/create', createAnnotation);
 
 export default router;
