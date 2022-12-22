@@ -5,41 +5,38 @@ class EventItem extends StatelessWidget {
     required this.callback,
     required this.itemIndex,
     required this.expansionTileKey,
+    required this.event,
     Key? key,
   }) : super(key: key);
   final int itemIndex;
   final IndexCallback callback;
   final GlobalKey<CustomExpansionTileState> expansionTileKey;
+  final Event event;
 
   @override
-  Widget build(BuildContext context) {
-    final Event event = SelectorHelper<Event, LearningSpaceViewModel>()
-        .listenValue(
-            (LearningSpaceViewModel model) => model.events[itemIndex], context);
-    return Theme(
-      data: Theme.of(context).copyWith(
-        dividerColor: Colors.transparent,
-        highlightColor: context.primary.withOpacity(.15),
-        hoverColor: context.primary,
-      ),
-      child: ListTileTheme(
-        contentPadding: EdgeInsets.zero,
-        minLeadingWidth: 0,
-        minVerticalPadding: 0,
-        horizontalTitleGap: 0,
-        dense: true,
-        child: _expansionTile(context, event),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Theme(
+        data: Theme.of(context).copyWith(
+          dividerColor: Colors.transparent,
+          highlightColor: context.primary.withOpacity(.15),
+          hoverColor: context.primary,
+        ),
+        child: ListTileTheme(
+          contentPadding: EdgeInsets.zero,
+          minLeadingWidth: 0,
+          minVerticalPadding: 0,
+          horizontalTitleGap: 0,
+          dense: true,
+          child: _expansionTile(context, event),
+        ),
+      );
 
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    final List<Map<String, dynamic>> userList = context
-        .read<HomeViewModel>()
-        .randomUsers
-        .sublist(0, Random().nextInt(34) + 15);
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
+    final List<Map<String, dynamic>> userList =
+        HomeViewModel.randomUsers.sublist(0, 13 + 15);
     final List<String> userPhotos = userList
         // ignore: avoid_dynamic_calls
         .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
@@ -97,18 +94,30 @@ class EventItem extends StatelessWidget {
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         context.sizedH(.8),
-        _infoText(context, TextKeys.eventParticipants, '',
-            customWidget: _participantsRow(context, userPhotos),
-            lastChild: BaseText(
-              '${userPhotos.length}/${event.participationLimit}',
-              translated: false,
-              style: context.bodySmall,
-            )),
-        PostList.createEditButton(
-            context,
-            isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
-            isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
-            isPassed ? null : viewModel.editEvent),
+        _infoText(
+          context,
+          TextKeys.eventParticipants,
+          '',
+          customWidget: _participantsRow(context, userPhotos),
+          lastChild: BaseText(
+            '${userPhotos.length}/${event.participationLimit}',
+            translated: false,
+            style: context.bodySmall,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: context.height * 1.8),
+          child: SizedBox(
+            height: context.height * 22,
+            child: EventMap(location: event.geoLocation ?? const GeoLocation()),
+          ),
+        ),
+        if (event.eventCreator != user.id)
+          PostList.createEditButton(
+              context,
+              isPassed ? TextKeys.passedEvent : TextKeys.attendEvent,
+              isPassed ? Icons.timer_off_outlined : Icons.join_inner_outlined,
+              isPassed ? null : viewModel.attendEvent),
       ],
     );
   }
