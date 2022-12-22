@@ -538,9 +538,70 @@
     transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;	
 
 }
-
 .ls-prev-box-icon {
     border-radius: 20px;
     box-shadow: inset 0px 0px 54px -23px rgba(87,87,87,0.7);
 }
 
+.profile-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-photo {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #ccc;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .default-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #ccc;
+  }
+  
+  .default-photo span {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 0.7em;
+    color: #666;
+  }
+  
+  #photo-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
