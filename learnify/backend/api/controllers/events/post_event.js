@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 import { Event} from '../../../models/index.js';
 import LearningSpace from "../../../models/learning_space.js";
-import { validateEvent } from '../../validators/learning_space_init_validator.js';
+import { validateEvent } from '../../validators/event_validator.js';
 
 export default async (req, res) => {
   var username;
