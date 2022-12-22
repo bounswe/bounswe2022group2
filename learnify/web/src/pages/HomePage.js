@@ -56,9 +56,11 @@ function HomePage() {
         getPopularLearningSpaces();
     }, []);
 
+    console.log(popularLearningSpaces.slice(0, 10))
+
     const popularLearningSpacesList = popularLearningSpaces.slice(0, 10).map(ls => (
         <div className='lsprev-container'>
-            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls._id} />
         </div>
     ));
 
