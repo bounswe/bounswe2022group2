@@ -37,7 +37,9 @@ function HomePage() {
     }, []);
 
     const ownLearningSpaces = myLearningSpaces.map(ls => (
-        <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+        <div className='lsprev-container'>
+            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+        </div>
     ));
 
   return(
@@ -61,9 +63,9 @@ function HomePage() {
                             </div>
                             <div className='space-12'></div>
                             <div>
-                                <ul role="list" className="ls-prev-list-3">
+                                <div className="ls-prev-list-3">
                                     {ownLearningSpaces}
-                                </ul>
+                                </div>
                             </div>
                         </div>
                         <CreateLearningSpaceButton />
