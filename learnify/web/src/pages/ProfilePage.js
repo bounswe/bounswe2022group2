@@ -65,7 +65,10 @@ function ProfilePage() {
             </div>
 
             <div className='profile-page-right'>
-                <img src={happy} alt="Profile photo" height={180} />
+                <div className='profile-page-image'>
+                    <img src={happy} alt="Profile photo" height={250}/>
+                </div>
+               
                 <label className='profile-page-text'> Meet with new people and learn together, that is what matters... LEARNIFY</label>
                 <div className='profilepage-friends-box'>
                 <label className='navBarText2'> About this user</label>

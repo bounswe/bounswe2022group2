@@ -469,6 +469,12 @@ h1 {
     color: #0b22ec;
 }
 
+.profile-page-image{
+    width: fit-content;
+    align-content: center;
+    padding-right: 2px;
+}
+
 .login-button-error{
     width:100%;
     margin-top:.25rem;
