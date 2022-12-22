@@ -10,31 +10,33 @@ function ProfilePhoto() {
   };
 
   return (
-    <div className="profile-photo">
-      {photo ? (
-        <img src={URL.createObjectURL(photo)} alt="Profile" />
-      ) : (
-        <div>
-          {loading ? (
-            <div className="default-photo">
-              <i className="fas fa-spinner fa-spin" />
-            </div>
-          ) : (
-            <div className="default-photo">
-              <i className="fas fa-user-circle" />
-              <label htmlFor="photo-input">
-                <span>Upload a profile photo</span>
-              </label>
-              <input
-                type="file"
-                id="photo-input"
-                accept="image/*"
-                onChange={handleFileChange}
-              />
-            </div>
-          )}
-        </div>
-      )}
+    <div className="profile-frame">
+      <div className="profile-photo">
+        {photo ? (
+          <img src={URL.createObjectURL(photo)} alt="Profile" />
+        ) : (
+          <div>
+            {loading ? (
+              <div className="default-photo">
+                <i className="fas fa-spinner fa-spin" />
+              </div>
+            ) : (
+              <div className="default-photo">
+                <i className="fas fa-user-circle" />
+                <label htmlFor="photo-input">
+                  <span>Upload photo</span>
+                </label>
+                <input
+                  type="file"
+                  id="photo-input"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
