@@ -810,7 +810,7 @@ h1 {
 }
 
 .add-post-box-mid{	
-    background-color: #f8f6f4;	
+    background-color: white;	
     width: 97%;	
     border-radius: 20px;	
     margin-top: 5px;	
@@ -865,8 +865,31 @@ h1 {
 
 .feed-title {
     font-family: 'Open Sans' sans-serif;
-    font-size: 22px;
+    font-size: 36px;
     font-weight: bold;    
+}
+
+.comment-section-header {
+    display: grid;
+    grid-template-columns: 4% 38% 58%;
+    justify-content: space-between;
+    padding-right: 36px;
+    align-items: flex-start;
+}
+
+.comment-title {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 24px;
+}
+
+.comment-indicator {
+    font-family: 'Open Sans' sans-serif;
+    font-size: 50px;
+    font-weight: 250;
+    padding-left: 20px;
 }
 
 .feed-list-box {

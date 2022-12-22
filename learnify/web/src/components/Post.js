@@ -88,7 +88,7 @@ export default function Post(props){
   // instance in the application state
   
   useEffect(() => {
-    if(images[0] != ""){
+    if(images[0] !== ""){
     let annotorious = null;
 
     if (imgEl.current) {
@@ -262,10 +262,20 @@ export default function Post(props){
 
   const [editPost, setEditPost] = useState(false);
 
+  const [addComment, setAddComment] = useState(false);
+
   const editThePost = () => {
       setValue(content);
       setEditPost(current => !current);
   };
+
+  const setAddTheComment = () => {
+    setAddComment(current => !current);
+};
+
+const handleSubmitFinal  = () => {
+  //createPost(lsid, postTitle, value, imageUrl);
+}
 
   const [value, setValue] = useState("");
 
@@ -273,7 +283,17 @@ export default function Post(props){
 
   const [message, setMessage] = useState("");
 
+  const [commentValue, setCommentValue] = useState("");
+
+  const [commentImageUrl, setCommentImageUrl] = useState("");
+
   const lsid = props.my_lsid;
+
+  const [addCommentButton, setAddCommentButton]= useState(true);
+
+  const handleSubmitCommentButton  = () => {
+    setAddCommentButton(current => !current);
+}
   
   const handleSubmitEdit  = () => {
       editExPost(lsid, postId, postTitle, value, imageUrl);
@@ -330,7 +350,7 @@ export default function Post(props){
                 {title}
             </label>
             <div className='space-5'></div>
-              {images[0] != "" && <div>
+              {images[0] !== "" && <div>
                 <img
                     ref={imgEl}
                     src={images}
@@ -373,9 +393,7 @@ export default function Post(props){
                     </div>
                     <div className='ls-button-container2'>
                         <div className='post-comment-button'>
-                            <a href="/reply">
-                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
-                            </a>
+                                <FontAwesomeIcon icon={regular('comment')} color="black" onClick={setAddTheComment}/>
                         </div>
                     </div>
                     <div className='post-container-display-item'>
@@ -383,7 +401,7 @@ export default function Post(props){
                     </div>
                 </div>
                 <div className='annotation-selection-button'>
-                  {(images[0] != "") && 
+                  {(images[0] !== "") && 
                     <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
                    } 
                 </div>
@@ -426,6 +444,38 @@ export default function Post(props){
                     <div>
                       <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitEdit()}}>Submit</button>
                     </div>
+                    </div>
+                </div>}
+                {addComment && <div>
+                  <div className='space-3'></div>
+                  <div className='comment-section-header'>
+                  <label className='comment-indicator'>
+                      L
+                    </label>
+                  <label className='comment-title'>
+                      Comment Section
+                    </label>
+                    <div className='ls-button-container-alt'>
+                            <button className={!addCommentButton ? "btn-white2" : "btn-lightBlue"} data-testid="forgotPassword" onClick={()=>handleSubmitCommentButton()}>{<span>Add Comment</span>}</button>
+                    </div>
+                  </div>
+                  {!addCommentButton && 
+                    <div className='add-post-box-mid'>
+                            <label className="form__label" htmlFor="imageLink">Image Link </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setCommentImageUrl(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="postContent">Comment Contents </label>
+                            <div className='space-3'></div>
+                            <MDEditor height={200} value={commentValue} onChange={setCommentValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitFinal()}}>Submit</button>
+                    </div>
+                    </div>
+                    }
+                    <div className='add-post-box-mid'>
+                      Comments will be here!
                     </div>
                 </div>}
         </div>
