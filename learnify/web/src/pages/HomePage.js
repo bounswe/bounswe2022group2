@@ -1,10 +1,12 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import './style.css'
 import LearningSpacePrev from '../components/LearningSpacePrev';
 import FeedItem from '../components/FeedItem';
 import CreateLearningSpaceButton from '../components/CreateLearningSpaceButton';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import axios from 'axios';
 import lslogo_13 from '../images/ls_icons/ls-icon-13.svg'
 import lslogo_6 from '../images/ls_icons/ls-icon-6.svg'
 import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
@@ -15,6 +17,30 @@ import lslogo_16 from '../images/ls_icons/ls-icon-16.svg'
 
 
 function HomePage() {
+
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
+    const [myLearningSpaces, setMyLearningSpaces] = React.useState([]);
+
+    useEffect(() => {
+        const getOwnLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/user/participated`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setMyLearningSpaces(res.data.learning_spaces);
+        }
+        getOwnLearningSpaces();
+    }, []);
+
+    const ownLearningSpaces = myLearningSpaces.map(ls => (
+        <div className='lsprev-container'>
+            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
+        </div>
+    ));
 
   return(
     <div className='home'>
@@ -37,11 +63,9 @@ function HomePage() {
                             </div>
                             <div className='space-12'></div>
                             <div>
-                                <ul role="list" className="ls-prev-list-3">
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_13} />
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_6} />
-                                    <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_20} />
-                                </ul>
+                                <div className="ls-prev-list-3">
+                                    {ownLearningSpaces}
+                                </div>
                             </div>
                         </div>
                         <CreateLearningSpaceButton />
@@ -54,12 +78,15 @@ function HomePage() {
                     </label>
                     <div className='space-5'></div>
                     <div className='feed-list-box'>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="bahri" action="created a learning space about github templates."/>
+                        <FeedItem username="onur" action="joined a learning space about creating an endpoint at 06:48."/>
+                        <FeedItem username="batuhan" action="commented its not magic its years of engineering."/>
+                        <FeedItem username="egemen" action="followed ecenur"/>
+                        <FeedItem username="gokay" action="followed altay"/>
+                        <FeedItem username="ecenur" action="created a learning space about how to present."/>
+                        <FeedItem username="enes" action="followed koray."/>
+                        <FeedItem username="ezgi" action="joined a learning space about mobile development."/>
+                        <FeedItem username="hasancan" action="followed batuhan."/>
                     </div>
                 </div>
             </div>

@@ -49,7 +49,7 @@ function LearningSpacePrev(props) {
     return (
         <div className='learning-space-card' data-testid="ls-prev-card" onClick={(e) => {
             e.preventDefault();
-            window.location.href = '/learning-space/' + props.url;
+            window.location.href = '/learningspace/' + props.url;
             }}>
             <div className='ls-prev-box-icon' data-testid="ls-prev-box-icon">
                 <img src={icons[props.icon_id - 1]} className="learning-space-icon" alt="learning space icon" height={140} />
