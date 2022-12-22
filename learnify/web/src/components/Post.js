@@ -7,6 +7,7 @@ import "@recogito/annotorious/dist/annotorious.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
+import Comment from './Comment';
 
 function TextInterface({
     classes,
@@ -88,7 +89,7 @@ export default function Post(props){
   // instance in the application state
   
   useEffect(() => {
-    if(images[0] != ""){
+    if(images[0] !== ""){
     let annotorious = null;
 
     if (imgEl.current) {
@@ -205,17 +206,6 @@ export default function Post(props){
   useEffect(() => {
     console.log("andso", anno?.getImageSnippetById());
   }, [watch]);
-  
-  // Toggles current tool + button label
-  const toggleTool = () => {
-    if (tool === "rect") {
-      setTool("polygon");
-      anno.setDrawingTool("polygon");
-    } else {
-      setTool("rect");
-      anno.setDrawingTool("rect");
-    }
-  };
 
   const [i, setI] = useState(0);
   const [url, setUrl] = useState();
@@ -262,10 +252,20 @@ export default function Post(props){
 
   const [editPost, setEditPost] = useState(false);
 
+  const [addComment, setAddComment] = useState(false);
+
   const editThePost = () => {
       setValue(content);
       setEditPost(current => !current);
   };
+
+  const setAddTheComment = () => {
+    setAddComment(current => !current);
+};
+
+const handleSubmitFinal  = () => {
+  //createComment(lsid, postTitle, value, imageUrl);
+}
 
   const [value, setValue] = useState("");
 
@@ -273,7 +273,17 @@ export default function Post(props){
 
   const [message, setMessage] = useState("");
 
+  const [commentValue, setCommentValue] = useState("");
+
+  const [commentImageUrl, setCommentImageUrl] = useState("");
+
   const lsid = props.my_lsid;
+
+  const [addCommentButton, setAddCommentButton]= useState(true);
+
+  const handleSubmitCommentButton  = () => {
+    setAddCommentButton(current => !current);
+}
   
   const handleSubmitEdit  = () => {
       editExPost(lsid, postId, postTitle, value, imageUrl);
@@ -330,7 +340,7 @@ export default function Post(props){
                 {title}
             </label>
             <div className='space-5'></div>
-              {images[0] != "" && <div>
+              {images[0] !== "" && <div>
                 <img
                     ref={imgEl}
                     src={images}
@@ -373,19 +383,12 @@ export default function Post(props){
                     </div>
                     <div className='ls-button-container2'>
                         <div className='post-comment-button'>
-                            <a href="/reply">
-                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
-                            </a>
+                                <FontAwesomeIcon icon={regular('comment')} color="black" onClick={setAddTheComment}/>
                         </div>
                     </div>
                     <div className='post-container-display-item'>
                         <label className="counter__output">{0}</label>
                     </div>
-                </div>
-                <div className='annotation-selection-button'>
-                  {(images[0] != "") && 
-                    <button className="btn-orange" onClick={toggleTool}>{tool === "rect" ? "RECTANGLE" : "POLYGON"}</button>
-                   } 
                 </div>
                 <div className='post-box-right'>
                     <div className='ls-button-container-alt3'>
@@ -403,7 +406,7 @@ export default function Post(props){
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-delete-button'>
-                            <FontAwesomeIcon icon={solid('trash-can')} color="black"/>
+                            <FontAwesomeIcon icon={solid('trash-can')} color="black" onClick={deleteThePost}/>
                         </button>
                     </div>
                 </div>
@@ -426,6 +429,41 @@ export default function Post(props){
                     <div>
                       <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitEdit()}}>Submit</button>
                     </div>
+                    </div>
+                </div>}
+                {addComment && <div>
+                  <div className='space-3'></div>
+                  <div className='comment-section-header'>
+                  <label className='comment-indicator'>
+                      L
+                    </label>
+                  <label className='comment-title'>
+                      Comment Section
+                    </label>
+                    <div className='ls-button-container-comment'>
+                            <button className={!addCommentButton ? "btn-comment-white" : "btn-comment-lightBlue"} data-testid="forgotPassword" onClick={()=>handleSubmitCommentButton()}>{<span>Add Comment</span>}</button>
+                    </div>
+                  </div>
+                  {!addCommentButton && 
+                    <div className='add-post-box-mid'>
+                            <label className="form__label" htmlFor="imageLink">Image Link </label>
+                            <div className='space-3'></div>
+                            <span className='details-box2' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setCommentImageUrl(e.target.textContent)}></span>
+                            <div className='space-5'></div>
+                            <label className="form__label" htmlFor="postContent">Comment Contents </label>
+                            <div className='space-3'></div>
+                            <MDEditor height={200} value={commentValue} onChange={setCommentValue} />
+                    <div className='space-8'></div>
+                    <div className='ls-button-container-alt4'>
+                    <button className="btn-orange" data-testid="forgotPassword" onClick={() => {handleSubmitFinal()}}>Submit</button>
+                    </div>
+                    </div>
+                    }
+                    <div className='add-post-box-mid'>
+                    {/*{commentArray.map(myComment =>
+                                    <Comment myComment = {myComment} my_lsid = {lsid}/>)}
+                    */}
+                    Comments will be here!
                     </div>
                 </div>}
         </div>
