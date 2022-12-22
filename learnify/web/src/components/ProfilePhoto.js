@@ -6,14 +6,22 @@ function ProfilePhoto() {
 
   const handleFileChange = (event) => {
     setLoading(true);
-    setPhoto(event.target.files[0]);
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPhoto(reader.result);
+      setLoading(false);
+
+      // Send the data URL to the server to save the photo in the database
+    };
+    reader.readAsDataURL(file);
   };
 
   return (
     <div className="profile-frame">
       <div className="profile-photo">
         {photo ? (
-          <img src={URL.createObjectURL(photo)} alt="Profile" />
+          <img src={photo} alt="Profile" /> 
         ) : (
           <div>
             {loading ? (
@@ -24,7 +32,7 @@ function ProfilePhoto() {
               <div className="default-photo">
                 <i className="fas fa-user-circle" />
                 <label htmlFor="photo-input">
-                  <span>Upload photo</span>
+                  <span>Upload a profile photo</span>
                 </label>
                 <input
                   type="file"
