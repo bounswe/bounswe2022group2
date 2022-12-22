@@ -37,11 +37,11 @@ function MyLearningSpacesPage() {
                     <div className="mylspage-title">
                         <h1>Browsing the learning spaces of:</h1>
                     </div>
-                    <div className="mylspage-header">
+                    <div className="mylspage-header" data-testid="myls-username">
                         <h1>{username}</h1>
                     </div>
                 </div>
-                <div className="mylspage-body">
+                <div className="mylspage-body" data-testid="myls-body">
                     {lsBoxes}
                 </div>
             </div>
