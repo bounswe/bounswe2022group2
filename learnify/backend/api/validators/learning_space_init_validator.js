@@ -54,20 +54,5 @@ export function validateLSEnroll_init(body) {
   });
   return schema.validate(body);
 }
-export function validateEvent(body){
-  
-  const eventValidator = Joi.object({
-    date: Joi.date().required().required(),
-    description: Joi.string(),
-    title: Joi.string().required(),
-    duration: Joi.number().required(),
-    participationLimit: Joi.number(),
-    geolocation: Joi.object({
-    latitude: Joi.number().required(),
-    longitude: Joi.number().required().required()
-  }),
-    lsId: Joi.string().required()
-  });
-  return eventValidator.validate(body);
-}
+
   
