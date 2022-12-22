@@ -4,6 +4,9 @@ import axios from 'axios';
 
 function MyLearningSpacesPage() {
 
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
     return (
         <div>
             <NavBar/>
