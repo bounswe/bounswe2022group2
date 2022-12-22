@@ -78,12 +78,15 @@ function HomePage() {
                     </label>
                     <div className='space-5'></div>
                     <div className='feed-list-box'>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
-                        <FeedItem username="friend" action="lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mattis enim, nec ornare enim."/>
+                        <FeedItem username="bahri" action="created a learning space about github templates."/>
+                        <FeedItem username="onur" action="joined a learning space about creating an endpoint at 06:48."/>
+                        <FeedItem username="batuhan" action="commented its not magic its years of engineering."/>
+                        <FeedItem username="egemen" action="followed ecenur"/>
+                        <FeedItem username="gokay" action="followed altay"/>
+                        <FeedItem username="ecenur" action="created a learning space about how to present."/>
+                        <FeedItem username="enes" action="followed koray."/>
+                        <FeedItem username="ezgi" action="joined a learning space about mobile development."/>
+                        <FeedItem username="hasancan" action="followed batuhan."/>
                     </div>
                 </div>
             </div>
