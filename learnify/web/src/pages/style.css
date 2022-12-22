@@ -319,6 +319,48 @@ body{
     transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;	
 }
 
+.btn-comment-white{	
+    align-items: center;	
+    background-color: #ffffff;	
+    border: 0;	
+    border-radius: 100px;	
+    box-sizing: border-box;	
+    color:#1746A2;	
+    cursor: pointer;	
+    font-family: 'Open Sans' sans-serif;	
+    font-size: 16px;	
+    font-weight: 600;	
+    line-height: 20px;
+    width: 140px;
+    padding: 5px;	
+    padding-left: 15px;	
+    padding-right: 15px;	
+    text-align: center;	
+    touch-action: manipulation;	
+    transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;	
+}
+
+.btn-comment-lightBlue {
+    align-items: center;
+    background-color: #38a0f6;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color:#1746A2;
+    cursor: pointer;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    width: 140px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
 .btn-lightBlue{
     align-items: center;
     background-color: #38a0f6;
@@ -835,6 +877,12 @@ h1 {
 .ls-button-container-alt {
    margin-left: 24em;
 }
+
+.ls-button-container-comment {
+    margin-top: 8px;
+    margin-left: 22em;
+    padding-top: 30px;
+ }
 
 .ls-button-container-alt2 {	
     margin-left: 1.5em;	

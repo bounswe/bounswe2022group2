@@ -455,8 +455,8 @@ const handleSubmitFinal  = () => {
                   <label className='comment-title'>
                       Comment Section
                     </label>
-                    <div className='ls-button-container-alt'>
-                            <button className={!addCommentButton ? "btn-white2" : "btn-lightBlue"} data-testid="forgotPassword" onClick={()=>handleSubmitCommentButton()}>{<span>Add Comment</span>}</button>
+                    <div className='ls-button-container-comment'>
+                            <button className={!addCommentButton ? "btn-comment-white" : "btn-comment-lightBlue"} data-testid="forgotPassword" onClick={()=>handleSubmitCommentButton()}>{<span>Add Comment</span>}</button>
                     </div>
                   </div>
                   {!addCommentButton && 
