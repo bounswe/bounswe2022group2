@@ -720,6 +720,13 @@ h1 {
     align-content: center;
     margin: 0 auto;
 }
+
+.about-page-layout {
+    width: 98%;
+    align-content: center;
+    margin: 0 auto;
+}
+
 .ls-box3 {
     background-color: #1746A2;
     width: 100%;
@@ -740,6 +747,22 @@ h1 {
     margin-right: 1em;
     align-content: left;
     width: 20%;
+    background-color: #FFF7E9;
+  }
+
+  .about-page-left {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: left;
+    width: 70%;
+    background-color: #FFF7E9;
+  }
+
+  .about-page-right {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: left;
+    width: 30%;
     background-color: #FFF7E9;
   }
   
