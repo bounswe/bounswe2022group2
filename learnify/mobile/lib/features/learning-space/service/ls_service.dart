@@ -5,6 +5,7 @@ import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../models/add_post_request_model.dart';
 import '../models/annotation/annotation_model.dart';
+import '../models/annotation/get_annotations_response.dart';
 import '../models/categories_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
@@ -27,9 +28,10 @@ class LSService extends ILSService {
   static const String _create = '/learningspace';
   static const String _categories = '/categories';
   static const String _enrollLS = '/learningspace/enroll';
-  static const String _createAnnotation = '/learningspace/annotation';
   static const String _addPost = '/learningSpace/post';
   static const String _editPost = '/learningSpace/edit/post';
+  static const String _createAnnotation = '/learningspace/annotation';
+  static const String _getAnnotations = '/annotations-service/get';
 
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
 
@@ -69,15 +71,6 @@ class LSService extends ILSService {
       );
 
   @override
-  Future<IResponseModel<Annotation>> annotate(Annotation body) async =>
-      networkManager.send<Annotation, Annotation>(
-        _createAnnotation,
-        parseModel: Annotation(),
-        type: RequestTypes.post,
-        body: body,
-      );
-
-  @override
   Future<IResponseModel<EnrollLSResponse>> addPost(
           AddPostRequestModel body) async =>
       networkManager.send<AddPostRequestModel, EnrollLSResponse>(_addPost,
@@ -92,4 +85,22 @@ class LSService extends ILSService {
           parseModel: const EnrollLSResponse(),
           type: RequestTypes.put,
           body: body);
+
+  @override
+  Future<IResponseModel<Annotation>> createAnnotation(Annotation body) async =>
+      networkManager.send<Annotation, Annotation>(
+        _createAnnotation,
+        parseModel: Annotation(),
+        type: RequestTypes.post,
+        body: body,
+      );
+
+  @override
+  Future<IResponseModel<GetAnnotationsResponse>> getAnnotations(
+          String lsId, String postId) async =>
+      networkManager.send<GetAnnotationsResponse, GetAnnotationsResponse>(
+        '$_getAnnotations/$lsId/$postId',
+        parseModel: const GetAnnotationsResponse(),
+        type: RequestTypes.get,
+      );
 }
