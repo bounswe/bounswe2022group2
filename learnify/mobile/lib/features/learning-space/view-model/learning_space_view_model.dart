@@ -16,6 +16,8 @@ import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
+import '../models/annotation/create_annotation_response.dart';
+import '../models/annotation/get_annotations_response.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../models/event.dart';
@@ -47,6 +49,8 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
+
+  Map<String, List<Annotation>> annotations = <String, List<Annotation>>{};
 
   void setDefault() {
     _carouselPageIndexes = <int>[];
@@ -156,6 +160,21 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
+  List<Annotation>? getFromMap(String postId) =>
+      annotations.containsKey(postId) ? annotations[postId] : null;
+
+  Future<List<Annotation>> getPostAnnotations(String postId) async {
+    if (annotations.containsKey(postId)) {
+      return annotations[postId]!;
+    }
+    final IResponseModel<GetAnnotationsResponse> response =
+        await _lsService.getAnnotations(_learningSpace?.id ?? '', postId);
+    if (response.hasError || response.data == null) return <Annotation>[];
+    annotations[postId] = response.data!.annotations;
+    notifyListeners();
+    return annotations[postId] ?? <Annotation>[];
+  }
+
   Future<Tuple3<LearningSpace?, Annotation?, String?>> annotateText(
       int startIndex, int endIndex, String annotation, String? postId) async {
     final int itemIndex = _posts
@@ -170,7 +189,6 @@ class LearningSpaceViewModel extends BaseViewModel {
     final AnnotationSelector selector = AnnotationSelector(
       start: startIndex,
       end: endIndex,
-      type: "TextPositionSelector",
     );
     final Annotation req = Annotation(
       body: annotation,
@@ -178,43 +196,55 @@ class LearningSpaceViewModel extends BaseViewModel {
         selector: selector,
         source: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
       ),
-      creator: user.username,
     );
-    final IResponseModel<Annotation> res = await _lsService.annotate(req);
+    final IResponseModel<CreateAnnotationResponse> res = await _lsService
+        .createAnnotation(req, _learningSpace?.id ?? '', oldPost.id ?? '');
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
     } else {
       final Tuple2<LearningSpace?, Annotation?> newAnnotation =
-          createTextAnnotation(
-              startIndex, endIndex, annotation, oldPost, itemIndex);
+          await createTextAnnotation(
+              startIndex,
+              endIndex,
+              annotation,
+              res.data?.annotation?.id,
+              res.data?.annotation?.creator,
+              oldPost,
+              itemIndex);
       return Tuple3<LearningSpace?, Annotation?, String?>(
           newAnnotation.item1, newAnnotation.item2, null);
     }
   }
 
-  Tuple2<LearningSpace?, Annotation?> createTextAnnotation(int startIndex,
-      int endIndex, String annotation, Post post, int itemIndex) {
-    final User user =
-        LocalManager.instance.getModel(const User(), StorageKeys.user);
+  Future<Tuple2<LearningSpace?, Annotation?>> createTextAnnotation(
+      int startIndex,
+      int endIndex,
+      String annotation,
+      String? id,
+      String? creator,
+      Post post,
+      int itemIndex) async {
     final Annotation newAnnotation = Annotation(
       body: annotation,
+      id: id,
+      creator: creator,
       target: AnnotationTarget(
         selector: AnnotationSelector(
           start: startIndex,
           end: endIndex,
-          type: "TextPositionSelector",
         ),
         source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       ),
-      creator: user.username,
     );
+    final List<Annotation> oldAnnotations =
+        await getPostAnnotations(post.id ?? '');
     final List<Annotation> newAnnotations =
-        List<Annotation>.from(post.annotations)
+        List<Annotation>.from(oldAnnotations)
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
-    _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
+    annotations[_posts[itemIndex].id ?? ''] = newAnnotations;
     _learningSpace = _learningSpace?.copyWith(posts: _posts);
     notifyListeners();
     return Tuple2<LearningSpace?, Annotation?>(_learningSpace, newAnnotation);
@@ -233,8 +263,6 @@ class LearningSpaceViewModel extends BaseViewModel {
       return const Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, 'Post could not found.');
     }
-    final User user =
-        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Post oldPost = _posts[itemIndex];
     final double x = startOffset.dx;
     final double y = startOffset.dy;
@@ -243,24 +271,24 @@ class LearningSpaceViewModel extends BaseViewModel {
     final AnnotationTarget target = AnnotationTarget(
         id: '$imageUrl#xywh=$x,$y,$w,$h',
         format: 'image/jpeg',
+        type: 'Image',
         source: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}');
-    final Annotation req = Annotation(
-      body: annotation,
-      creator: user.username,
-      target: target,
-    );
-    final IResponseModel<Annotation> res = await _lsService.annotate(req);
+    final Annotation req = Annotation(body: annotation, target: target);
+    final IResponseModel<CreateAnnotationResponse> res = await _lsService
+        .createAnnotation(req, _learningSpace?.id ?? '', oldPost.id ?? '');
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
     } else {
       final Tuple2<LearningSpace?, Annotation> newAnnotation =
-          createImageAnnotation(
+          await createImageAnnotation(
         startOffset,
         endOffset,
         color,
         imageUrl,
         annotation,
+        res.data?.annotation?.id,
+        res.data?.annotation?.creator,
         oldPost,
         itemIndex,
       );
@@ -295,35 +323,39 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Tuple2<LearningSpace?, Annotation> createImageAnnotation(
+  Future<Tuple2<LearningSpace?, Annotation>> createImageAnnotation(
     Offset startOffset,
     Offset endOffset,
     Color backgroundColor,
     String? imageUrl,
     String annotation,
+    String? id,
+    String? creator,
     Post post,
     int itemIndex,
-  ) {
+  ) async {
     final Offset foundStart = Offset(
         min(startOffset.dx, endOffset.dx), min(startOffset.dy, endOffset.dy));
     final Offset foundEnd = Offset(
         max(startOffset.dx, endOffset.dx), max(startOffset.dy, endOffset.dy));
-    final User user =
-        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
       body: annotation,
+      id: id,
+      creator: creator,
       target: AnnotationTarget(
           source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
+          type: 'Image',
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
       colorParam: backgroundColor,
-      creator: user.username,
     );
+    final List<Annotation> oldAnnotations =
+        await getPostAnnotations(post.id ?? '');
     final List<Annotation> newAnnotations =
-        List<Annotation>.from(post.annotations)
+        List<Annotation>.from(oldAnnotations)
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
-    _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
+    annotations[_posts[itemIndex].id ?? ''] = newAnnotations;
     _learningSpace = _learningSpace?.copyWith(posts: _posts);
     notifyListeners();
     return Tuple2<LearningSpace?, Annotation>(_learningSpace, newAnnotation);

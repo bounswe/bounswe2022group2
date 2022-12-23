@@ -402,6 +402,7 @@ class AnnotatableImageState extends State<AnnotatableImage> {
     img.resolve(ImageConfiguration.empty).addListener(
         ImageStreamListener((ImageInfo info, _) => completer.complete(info)));
     final ImageInfo imageInfo = await completer.future;
+    if (!mounted) return imageInfo.image;
     _isLoaded.value = true;
     return imageInfo.image;
   }
