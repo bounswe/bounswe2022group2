@@ -124,7 +124,10 @@ function HomePage() {
                                 Popular Learning Spaces
                             </label>
                         </div>
-                        <button className='ls-box-button'>
+                        <button className='ls-box-button' onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href=`/popular`;
+                            }}>
                             view all
                         </button>
                     </div>
