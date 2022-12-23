@@ -1,6 +1,7 @@
 version: '3.9'
 volumes:
   data:
+  data-annotation:
 services:
   mongodb:
     image: mongo:latest
@@ -11,6 +12,15 @@ services:
       - data:/data/db
     networks:
       - mongo_net
+  mongodb-annotation:
+    image: mongo:latest
+    hostname: mongo-annotation
+    ports:
+      - "27016:27017"
+    volumes:
+      - data-annotation:/data/db
+    networks:
+      - mongo_annotation_net
   semantic-server:
     hostname: semantic
     build: 
@@ -30,9 +40,9 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - mongo_net
+      - mongo_annotation_net
     depends_on:
-      - mongodb
+      - mongodb-annotation
   server:
     hostname: backend
     build: 
@@ -44,16 +54,18 @@ services:
       - mongo_net
     depends_on:
       - mongodb
-  frontend:
-    hostname: frontend
-    build:
-      context: ./web
-      dockerfile: dockerfile
-    ports:
-      - "9000:3000"
-    depends_on:
-      - server
+  # frontend:
+  #   hostname: frontend
+  #   build:
+  #     context: ./web
+  #     dockerfile: dockerfile
+  #   ports:
+  #     - "9000:3000"
+  #   depends_on:
+  #     - server
 
 networks:
   mongo_net:
+    driver: bridge
+  mongo_annotation_net:
     driver: bridge
