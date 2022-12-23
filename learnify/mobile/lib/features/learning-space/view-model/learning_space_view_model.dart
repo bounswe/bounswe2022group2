@@ -167,8 +167,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Post oldPost = _posts[itemIndex];
-    final AnnotationSelector selector =
-        AnnotationSelector(start: startIndex, end: endIndex);
+    final AnnotationSelector selector = AnnotationSelector(
+      start: startIndex,
+      end: endIndex,
+      type: "TextPositionSelector",
+    );
     final Annotation req = Annotation(
       body: annotation,
       target: AnnotationTarget(
@@ -200,6 +203,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         selector: AnnotationSelector(
           start: startIndex,
           end: endIndex,
+          type: "TextPositionSelector",
         ),
         source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       ),

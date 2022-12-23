@@ -152,7 +152,7 @@ class AnnotationTarget extends BaseModel<AnnotationTarget> {
 
 class AnnotationSelector extends BaseModel<AnnotationSelector> {
   const AnnotationSelector({
-    this.type,
+    this.type = "TextPositionSelector",
     this.start,
     this.end,
   });
