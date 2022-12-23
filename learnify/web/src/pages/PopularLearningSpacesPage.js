@@ -11,7 +11,18 @@ function PopularLearningSpacesPage() {
 
     const token = localStorage.getItem('token');
 
-    
+    useEffect(() => {
+        const getPopularLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setLearningspaces(res.data.learning_spaces);
+        }
+        getPopularLearningSpaces();
+    }, []);
 
     return (
         <div>
