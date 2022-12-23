@@ -53,9 +53,12 @@ void main() {
           context.read<LearningSpaceViewModel>();
       final Post firstPostModel = viewModel.posts.first;
       const String annotationContent = 'This is a great annotation.';
-      final Annotation? annotation = viewModel
-          .createTextAnnotation(3, annotatableText.content.length - 5,
-              annotationContent, firstPostModel, 0)
+      final Annotation? annotation = (await viewModel.createTextAnnotation(
+              3,
+              annotatableText.content.length - 5,
+              annotationContent,
+              firstPostModel,
+              0))
           .item2;
       expect(annotation?.body, annotationContent);
       expect((annotation?.endIndex ?? 0) - (annotation?.startIndex ?? 0),
@@ -63,8 +66,10 @@ void main() {
       await tester.pumpAndSettle();
       final Post foundPost =
           viewModel.posts.where((Post c) => c.id == firstPostModel.id).first;
-      expect(foundPost.annotations.length, greaterThanOrEqualTo(1));
-      final Annotation foundAnnotation = foundPost.annotations.first;
+      final List<Annotation> foundAnnotations =
+          await viewModel.getPostAnnotations(foundPost.id ?? '');
+      expect(foundAnnotations.length, greaterThanOrEqualTo(1));
+      final Annotation foundAnnotation = foundAnnotations.first;
       expect(foundAnnotation, annotation);
     },
   );

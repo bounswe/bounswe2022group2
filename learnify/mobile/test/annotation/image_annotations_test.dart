@@ -58,16 +58,15 @@ void main() {
       const Offset endOffset = Offset(98, 210);
       const Color color = Colors.red;
       const String imageUrl = 'https://picsum.photos/id/1/700/400';
-      final Annotation annotation = viewModel
-          .createImageAnnotation(
-            startOffset,
-            endOffset,
-            color,
-            imageUrl,
-            annotationContent,
-            firstPostModel,
-            0,
-          )
+      final Annotation annotation = (await viewModel.createImageAnnotation(
+        startOffset,
+        endOffset,
+        color,
+        imageUrl,
+        annotationContent,
+        firstPostModel,
+        0,
+      ))
           .item2;
       final Tuple2<Offset, Offset> offsets = annotation.startEndOffsets;
       expect(annotation.body, annotationContent);
@@ -78,8 +77,10 @@ void main() {
       await tester.pumpAndSettle();
       final Post foundPost =
           viewModel.posts.where((Post c) => c.id == firstPostModel.id).first;
-      expect(foundPost.annotations.length, greaterThanOrEqualTo(1));
-      final Annotation foundAnnotation = foundPost.annotations.first;
+      final List<Annotation> foundAnnotations =
+          await viewModel.getPostAnnotations(foundPost.id ?? '');
+      expect(foundAnnotations.length, greaterThanOrEqualTo(1));
+      final Annotation foundAnnotation = foundAnnotations.first;
       expect(foundAnnotation, annotation);
     },
   );
