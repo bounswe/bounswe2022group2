@@ -35,70 +35,80 @@ class PostItem extends StatelessWidget {
   Widget _expansionTile(BuildContext context, Post post) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    return CustomExpansionTile(
-      key: expansionTileKey,
-      collapsedTextColor: context.inactiveTextColor,
-      collapsedIconColor: context.inactiveTextColor,
-      tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
-          .copyWith(bottom: context.height * 1.7),
-      title:
-          MultiLineText('${itemIndex + 1}. ${post.title}', translated: false),
-      expandedCrossAxisAlignment: CrossAxisAlignment.start,
-      expandedAlignment: Alignment.centerLeft,
-      iconColor: context.primary,
-      onExpansionChanged: (bool val) {
-        if (val) {
-          callback(itemIndex);
+    return FutureBuilder<List<Annotation>>(
+      builder:
+          (BuildContext context, AsyncSnapshot<List<Annotation>> snapshot) {
+        if (!snapshot.hasData || snapshot.data == null) {
+          return CustomLoadingIndicator(context);
         }
-      },
-      children: <Widget>[
-        Center(
-          child: BaseText(TextKeys.clickToSeeImageAnnotations,
-              style: context.labelMedium),
-        ),
-        _carouselSlider(viewModel, post, context),
-        _sliderIndicator(viewModel, post),
-        context.sizedH(1.4),
-        AnnotatableText(
-          key: PageStorageKey<String>(post.content ?? 'asd'),
-          content: post.content ?? '',
-          annotateLabel: context.tr(TextKeys.annotate),
-          annotateCallback: (int startIndex, int endIndex) async {
-            await DialogBuilder(context).annotateDialog(
-              post.id,
-              textCallback: (int startIndex, int endIndex, String annotation,
-                  String? postId) async {
-                final HomeViewModel viewModel = context.read<HomeViewModel>();
-                final Tuple3<LearningSpace?, Annotation?, String?> res =
-                    await context
-                        .read<LearningSpaceViewModel>()
-                        .annotateText(startIndex, endIndex, annotation, postId);
-                viewModel.updateLs(res.item1);
-                return Tuple2<Annotation?, String?>(res.item2, res.item3);
+        return CustomExpansionTile(
+          key: expansionTileKey,
+          collapsedTextColor: context.inactiveTextColor,
+          collapsedIconColor: context.inactiveTextColor,
+          tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
+          childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
+              .copyWith(bottom: context.height * 1.7),
+          title: MultiLineText('${itemIndex + 1}. ${post.title}',
+              translated: false),
+          expandedCrossAxisAlignment: CrossAxisAlignment.start,
+          expandedAlignment: Alignment.centerLeft,
+          iconColor: context.primary,
+          onExpansionChanged: (bool val) {
+            if (val) {
+              callback(itemIndex);
+            }
+          },
+          children: <Widget>[
+            Center(
+              child: BaseText(TextKeys.clickToSeeImageAnnotations,
+                  style: context.labelMedium),
+            ),
+            _carouselSlider(viewModel, post, snapshot.data!, context),
+            _sliderIndicator(viewModel, post),
+            context.sizedH(1.4),
+            AnnotatableText(
+              key: PageStorageKey<String>(post.content ?? 'asd'),
+              content: post.content ?? '',
+              annotateLabel: context.tr(TextKeys.annotate),
+              annotateCallback: (int startIndex, int endIndex) async {
+                await DialogBuilder(context).annotateDialog(
+                  post.id,
+                  textCallback: (int startIndex, int endIndex,
+                      String annotation, String? postId) async {
+                    final HomeViewModel viewModel =
+                        context.read<HomeViewModel>();
+                    final Tuple3<LearningSpace?, Annotation?, String?> res =
+                        await context
+                            .read<LearningSpaceViewModel>()
+                            .annotateText(
+                                startIndex, endIndex, annotation, postId);
+                    viewModel.updateLs(res.item1);
+                    return Tuple2<Annotation?, String?>(res.item2, res.item3);
+                  },
+                  startIndex: startIndex,
+                  endIndex: endIndex,
+                );
               },
-              startIndex: startIndex,
-              endIndex: endIndex,
-            );
-          },
-          allAnnotations: post.annotations,
-          onAnnotationClick:
-              (List<Annotation> annotations, String annotationText) async {
-            //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
-            await viewModel.viewAnnotations(annotations, annotationText);
-          },
-        ),
-        PostList.createEditButton(context, TextKeys.editPost,
-            Icons.edit_outlined, () async => viewModel.editPost(post)),
-      ],
+              allAnnotations: snapshot.data!,
+              onAnnotationClick:
+                  (List<Annotation> annotations, String annotationText) async {
+                //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
+                await viewModel.viewAnnotations(annotations, annotationText);
+              },
+            ),
+            PostList.createEditButton(context, TextKeys.editPost,
+                Icons.edit_outlined, () async => viewModel.editPost(post)),
+          ],
+        );
+      },
     );
   }
 
-  CarouselSlider _carouselSlider(
-      LearningSpaceViewModel viewModel, Post post, BuildContext context) {
+  CarouselSlider _carouselSlider(LearningSpaceViewModel viewModel, Post post,
+      List<Annotation> annotations, BuildContext context) {
     final List<String> images = post.images;
     return CarouselSlider.builder(
-      key: PageStorageKey<String>('${post.id} - ${post.annotations.toList()}'),
+      key: PageStorageKey<String>('${post.id} - ${annotations.toList()}'),
       itemCount: images.length,
       carouselController: viewModel.carouselControllers[itemIndex],
       options: CarouselOptions(
@@ -111,7 +121,7 @@ class PostItem extends StatelessWidget {
             viewModel.setCarouselPageIndex(newIndex, itemIndex),
       ),
       itemBuilder: (_, int i, __) {
-        final List<Annotation> imageAnnotations = post.annotations
+        final List<Annotation> imageAnnotations = annotations
             .where((Annotation a) => a.isImage && a.imageUrl == images[i])
             .toList();
         return GestureDetector(
@@ -119,7 +129,7 @@ class PostItem extends StatelessWidget {
             path: NavigationConstants.postImage,
             data: <String, dynamic>{
               'image': images[i],
-              'all_annotations': post.annotations,
+              'all_annotations': annotations,
               'post_id': post.id,
             },
           ),
