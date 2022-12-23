@@ -103,26 +103,16 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
 
   static DefaultAppBar _appBarBuilder(BuildContext context) => DefaultAppBar(
         size: context.height * 6,
-        color: context.lightActiveColor,
+        color: context.lightDarkActiveColor,
         actionsList: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(context.responsiveSize * .6),
-          ),
-          BaseIconButton(
-            onPressed: () => Navigator.of(context).pop(),
-            icon: Icons.arrow_back_outlined,
-            color: context.lightActiveColor,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: context.width * 4),
-            child: BaseText(
-              TextKeys.viewAnnotations,
-              style: context.titleMedium,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+          BaseText(
+            TextKeys.viewAnnotations,
+            style: context.titleMedium,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ],
+        showBack: true,
         padding: EdgeInsets.symmetric(
             horizontal: context.responsiveSize * 3,
             vertical: context.responsiveSize * 2.5),

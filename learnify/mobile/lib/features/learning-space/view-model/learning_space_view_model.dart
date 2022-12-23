@@ -63,7 +63,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     _lsService = LSService.instance;
     _posts = learningSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
-    _events = List<Event>.generate(20, Event.dummy);
+    _events = List<Event>.generate(3, Event.dummy);
     _events
       ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
       ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
@@ -81,7 +81,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     _learningSpace = newSpace;
     _posts = newSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
-    _events = List<Event>.generate(20, Event.dummy);
+    _events = List<Event>.generate(3, Event.dummy);
     _events
       ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
       ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
@@ -144,7 +144,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> editEvent() async {
+  Future<String?> attendEvent() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
     //     path: NavigationConstants.createEditPost);
@@ -337,5 +337,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     _initializeKeys();
     notifyListeners();
     return _learningSpace;
+  }
+
+  void setEvents(List<Event> newEvents) {
+    if (newEvents != _events) {
+      _events = newEvents;
+    }
   }
 }

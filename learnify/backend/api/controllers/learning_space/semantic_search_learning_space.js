@@ -21,7 +21,7 @@ export default async (req, res) => {
             },
             {
                 "$sort": {
-                    "Learningspace.num_participants": 1
+                    "num_participants": -1
                 }
             },
             {

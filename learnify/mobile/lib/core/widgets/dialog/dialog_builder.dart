@@ -154,8 +154,8 @@ class DialogBuilder {
               isActive: isActive,
               onPressed: callback,
               text: text,
-              textStyle:
-                  context.labelLarge.copyWith(color: context.lightActiveColor),
+              textStyle: context.labelLarge
+                  .copyWith(color: context.lightDarkActiveColor),
               padding: EdgeInsets.symmetric(
                   horizontal: context.width * 2.5,
                   vertical: context.height * .3),

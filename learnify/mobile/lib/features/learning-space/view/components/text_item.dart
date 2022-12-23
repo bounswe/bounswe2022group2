@@ -15,7 +15,7 @@ class TextItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-        color: Colors.white,
+        color: context.isDark ? Colors.black54 : Colors.white,
         child: Padding(
           padding: EdgeInsets.symmetric(
               horizontal: context.width, vertical: context.height * 1.3),
