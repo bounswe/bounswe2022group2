@@ -74,6 +74,8 @@ void main() {
         color,
         imageUrl,
         annotationContent,
+        '0',
+        'bahricanyesil',
         firstPostModel,
         0,
       ))

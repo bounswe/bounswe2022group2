@@ -67,6 +67,8 @@ void main() {
               3,
               annotatableText.content.length - 5,
               annotationContent,
+              '0',
+              'bahricanyesil',
               firstPostModel,
               0))
           .item2;
