@@ -7,13 +7,14 @@ class EventsList extends StatelessWidget {
   Widget build(BuildContext context) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    final Tuple2<int, List<GlobalKey<CustomExpansionTileState>>> tuple =
-        SelectorHelper<Tuple2<int, List<GlobalKey<CustomExpansionTileState>>>,
+    final Tuple2<List<Event>, List<GlobalKey<CustomExpansionTileState>>> tuple =
+        SelectorHelper<
+                Tuple2<List<Event>, List<GlobalKey<CustomExpansionTileState>>>,
                 LearningSpaceViewModel>()
             .listenValue(
-                (LearningSpaceViewModel model) =>
-                    Tuple2<int, List<GlobalKey<CustomExpansionTileState>>>(
-                        model.events.length, model.eventsExpansionTileKeys),
+                (LearningSpaceViewModel model) => Tuple2<List<Event>,
+                        List<GlobalKey<CustomExpansionTileState>>>(
+                    model.events, model.eventsExpansionTileKeys),
                 context);
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
@@ -30,6 +31,7 @@ class EventsList extends StatelessWidget {
                         EdgeInsets.symmetric(vertical: context.height * .3),
                     child: EventItem(
                       itemIndex: i - 1,
+                      event: tuple.item1[i - 1],
                       callback: (int itemIndex) =>
                           PostList.updateExpansions(itemIndex, keys),
                       expansionTileKey: keys[i - 1],
@@ -38,7 +40,7 @@ class EventsList extends StatelessWidget {
                   const CustomDivider(),
                 ],
               ),
-        childCount: tuple.item1 + 1,
+        childCount: tuple.item1.length + 1,
       ),
     );
   }

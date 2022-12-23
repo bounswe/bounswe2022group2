@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JoinLsButton should render component layout correctly 1`] = `
+<div>
+  <button
+    className="btn-orange"
+    onClick={[Function]}
+  >
+    Join
+  </button>
+</div>
+`;

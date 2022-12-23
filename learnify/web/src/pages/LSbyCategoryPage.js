@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 
 function titleCase(str) {
+    if (!str) return;
     var spaceStr = str.replace(/-/g, ' ');
     var splitStr = spaceStr.toLowerCase().split(' ');
     for (var i = 0; i < splitStr.length; i++) {
