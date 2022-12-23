@@ -8,12 +8,13 @@ import 'package:learnify/features/learning-space/models/post_model.dart';
 import 'package:learnify/features/learning-space/view-model/learning_space_view_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:tuple/tuple.dart';
 
 import '../test_helpers.dart';
 
 void main() {
   testWidgets(
-    "Test text annotation functionality.",
+    "Test image annotation functionality.",
     (WidgetTester tester) async {
       final LearningSpace dummyLearningSpace = LearningSpace.dummy(0);
       final LearningSpaceDetailScreen detailScreen =
@@ -68,9 +69,10 @@ void main() {
             0,
           )
           .item2;
-      expect(annotation.content, annotationContent);
-      expect(annotation.startOffset, startOffset);
-      expect(annotation.endOffset, endOffset);
+      final Tuple2<Offset, Offset> offsets = annotation.startEndOffsets;
+      expect(annotation.body, annotationContent);
+      expect(offsets.item1, startOffset);
+      expect(offsets.item2, endOffset);
       expect(annotation.color, color);
       expect(annotation.imageUrl, imageUrl);
       await tester.pumpAndSettle();

@@ -14,13 +14,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import '../../../features/auth/verification/model/user_model.dart';
 import '../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../features/learning-space/view-model/learning_space_view_model.dart';
-import '../../../product/constants/storage_keys.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../helpers/color_helpers.dart';
-import '../../managers/local/local_manager.dart';
 import 'image_painter.dart';
 import 'ported_interactive_viewer.dart';
 
@@ -382,7 +379,7 @@ class AnnotatableImageState extends State<AnnotatableImage> {
 
   ///Dynamically sets stroke multiplier on the basis of widget size.
   ///Implemented to avoid thin stroke on high res images.
-  _setStrokeMultiplier() {
+  void _setStrokeMultiplier() {
     if ((_image!.height + _image!.width) > 1000) {
       _strokeMultiplier = (_image!.height + _image!.width) ~/ 1000;
     }
@@ -402,7 +399,7 @@ class AnnotatableImageState extends State<AnnotatableImage> {
   Future<ui.Image> _loadNetworkImage(String path) async {
     final Completer<ImageInfo> completer = Completer<ImageInfo>();
     final NetworkImage img = NetworkImage(path);
-    img.resolve(const ImageConfiguration()).addListener(
+    img.resolve(ImageConfiguration.empty).addListener(
         ImageStreamListener((ImageInfo info, _) => completer.complete(info)));
     final ImageInfo imageInfo = await completer.future;
     _isLoaded.value = true;
@@ -499,7 +496,7 @@ class AnnotatableImageState extends State<AnnotatableImage> {
       );
 
   Widget _paintSignature() => Stack(
-        children: [
+        children: <Widget>[
           RepaintBoundary(
             key: _repaintKey,
             child: ClipRect(
@@ -555,7 +552,7 @@ class AnnotatableImageState extends State<AnnotatableImage> {
         ],
       );
 
-  _scaleStartGesture(ScaleStartDetails onStart) {
+  void _scaleStartGesture(ScaleStartDetails onStart) {
     if (!widget.isSignature) {
       setState(() {
         _start = onStart.focalPoint;
