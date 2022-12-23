@@ -106,6 +106,7 @@ class PostItem extends StatelessWidget {
             ),
           ],
         ),
+        _viewComments(context, post),
       ],
     );
   }
@@ -188,5 +189,16 @@ class PostItem extends StatelessWidget {
             ),
           ),
         ),
+      );
+
+  static Widget _viewComments(BuildContext context, Post post) => TextButton(
+        child: BaseText(
+          TextKeys.viewComments,
+          style: context.titleSmall,
+          color: context.primary,
+        ),
+        onPressed: () async => NavigationManager.instance.navigateToPage(
+            path: NavigationConstants.comments,
+            data: <String, dynamic>{'post': post}),
       );
 }

@@ -126,4 +126,5 @@ class TextKeys {
   static const String darkMode = "dark_mode";
   static const String addComment = "add_comment";
   static const String addCommentHint = "add_comment_hint";
+  static const String viewComments = "view_comments";
 }
