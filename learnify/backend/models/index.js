@@ -5,5 +5,6 @@ import event from './event.js';
 
 export const User = userModel;
 export const LearningSpace = lsModel;
+
 export const Categories = categories;
 export const Event = event;
