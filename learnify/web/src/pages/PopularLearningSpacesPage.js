@@ -24,6 +24,10 @@ function PopularLearningSpacesPage() {
         getPopularLearningSpaces();
     }, []);
 
+    const lsBoxes = learningspaces.slice(0, 10).map(ls => (
+        <LearningSpaceDetailBox title={ls.title} description={ls.description} icon_id={ls.icon_id} num_participants={ls.num_participants} url={ls._id}/>
+    ));
+
     return (
         <div>
             <NavBar/>
