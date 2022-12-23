@@ -14,6 +14,7 @@ import '../../features/learning-space/view-model/create_learning_space_view_mode
 import '../../features/learning-space/view-model/learning_space_view_model.dart';
 import '../../features/profile/view-model/profile_view_model.dart';
 import '../../features/search/view-model/search_view_model.dart';
+import '../../features/settings/view-model/settings_view_model.dart';
 import '../managers/navigation/navigation_manager.dart';
 import 'language/language_provider.dart';
 import 'theme/theme_provider.dart';
@@ -92,6 +93,10 @@ class ProviderList {
     ChangeNotifierProvider<AnnotationsViewModel>(
       lazy: true,
       create: (_) => AnnotationsViewModel(),
+    ),
+    ChangeNotifierProvider<SettingsViewModel>(
+      lazy: true,
+      create: (_) => SettingsViewModel(),
     ),
   ];
 

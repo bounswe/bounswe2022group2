@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../product/constants/storage_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../../../product/theme/light_theme.dart';
 import '../../../product/theme/theme_types.dart';
+import '../../extensions/string/string_extensions.dart';
+import '../../managers/local/local_manager.dart';
 
 /// Provider of theme, manages theme actions.
 class ThemeProvider extends ChangeNotifier with LightAppTheme, DarkAppTheme {
@@ -14,19 +17,17 @@ class ThemeProvider extends ChangeNotifier with LightAppTheme, DarkAppTheme {
 
   /// Gets the current theme as [ThemeData].
   ThemeData get currentTheme {
-    // TODO: Fix
-    // if (_theme == null) _getStoredTheme();
+    if (_theme == null) _getStoredTheme();
     return _theme ?? LightAppTheme.lightTheme;
   }
 
-  // TODO: Fix
-  // void _getStoredTheme() {
-  //   final ThemeTypes? storedTheme = SettingsLocalManager.instance
-  //       .get(SettingsOptions.theme)
-  //       ?.toEnum<ThemeTypes>(ThemeTypes.values);
-  //   if (storedTheme != null) _themeEnum = storedTheme;
-  //   _assignTheme(_themeEnum);
-  // }
+  void _getStoredTheme() {
+    final ThemeTypes? storedTheme = LocalManager.instance
+        .getString(StorageKeys.theme)
+        ?.toEnum<ThemeTypes>(ThemeTypes.values);
+    if (storedTheme != null) _themeEnum = storedTheme;
+    _assignTheme(_themeEnum);
+  }
 
   void _assignTheme(ThemeTypes themeEnum) {
     if (themeEnum == ThemeTypes.dark) {
@@ -40,9 +41,8 @@ class ThemeProvider extends ChangeNotifier with LightAppTheme, DarkAppTheme {
   Future<void> setTheme(ThemeTypes themeEnum) async {
     _assignTheme(themeEnum);
     _themeEnum = themeEnum;
-    // TODO: Fix
-    // await SettingsLocalManager.instance
-    //     .set(SettingsOptions.theme, _themeEnum.name);
+    await LocalManager.instance
+        .setString(StorageKeys.theme, _themeEnum.name);
     notifyListeners();
   }
 
