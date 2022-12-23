@@ -170,6 +170,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         await _lsService.getAnnotations(_learningSpace?.id ?? '', postId);
     if (response.hasError || response.data == null) return <Annotation>[];
     annotations[postId] = response.data!.annotations;
+    notifyListeners();
     return annotations[postId] ?? <Annotation>[];
   }
 

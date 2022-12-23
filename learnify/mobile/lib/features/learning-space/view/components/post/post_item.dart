@@ -33,6 +33,8 @@ class PostItem extends StatelessWidget {
   }
 
   Widget _expansionTile(BuildContext context, Post post) {
+    final LearningSpaceViewModel viewModel =
+        context.read<LearningSpaceViewModel>();
     final List<Annotation>? mapAnnotations =
         SelectorHelper<List<Annotation>?, LearningSpaceViewModel>().listenValue(
             (LearningSpaceViewModel model) => model.getFromMap(post.id ?? ''),
@@ -51,24 +53,13 @@ class PostItem extends StatelessWidget {
       iconColor: context.primary,
       onExpansionChanged: (bool val) async {
         if (val) {
+          if (mapAnnotations == null) {
+            await viewModel.getPostAnnotations(post.id ?? '');
+          }
           callback(itemIndex);
         }
       },
-      children: mapAnnotations == null
-          ? <Widget>[
-              if (mapAnnotations == null)
-                FutureBuilder<List<Annotation>>(
-                    future: _getAnnotations(context, post.id),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<List<Annotation>> snapshot) {
-                      if (!snapshot.hasData || snapshot.data == null) {
-                        return CustomLoadingIndicator(context);
-                      }
-                      return Column(
-                          children: _children(context, post, snapshot.data!));
-                    }),
-            ]
-          : _children(context, post, mapAnnotations),
+      children: _children(context, post, mapAnnotations ?? <Annotation>[]),
     );
   }
 
@@ -76,7 +67,7 @@ class PostItem extends StatelessWidget {
       BuildContext context, Post post, List<Annotation> annotations) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    return [
+    return <Widget>[
       Center(
         child: BaseText(TextKeys.clickToSeeImageAnnotations,
             style: context.labelMedium),
