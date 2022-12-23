@@ -7,6 +7,12 @@ import NavBar from '../components/NavBar';
 
 function PopularLearningSpacesPage() {
 
+    const [learningspaces, setLearningspaces] = useState([])
+
+    const token = localStorage.getItem('token');
+
+    
+
     return (
         <div>
             <NavBar/>
