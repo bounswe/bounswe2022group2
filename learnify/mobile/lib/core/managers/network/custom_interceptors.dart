@@ -98,7 +98,6 @@ class CustomInterceptors extends Interceptor {
 
   /// Navigates to the login screen on unauthenticated cases.
   static Future<void> navigateToLogin(BuildContext? context) async {
-    // TODO: Fix
     final BuildContext? contextLocal =
         context ?? NavigationManager.instance.navigatorKey.currentContext;
     if (contextLocal != null) {
@@ -109,9 +108,7 @@ class CustomInterceptors extends Interceptor {
       contextLocal.read<HomeViewModel>().setDefault();
     }
     await LocalManager.instance.clearAll();
-    unawaited(NavigationManager.instance
-        // TODO: Fix
-        .navigateToPageClear());
+    unawaited(NavigationManager.instance.navigateToPageClear());
   }
 
   Future<void> _storeToken(String token) async {
