@@ -129,8 +129,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     annotations.sort((Annotation a1, Annotation a2) {
-      // TODO: Fix
-      if (a1.body == user.username) return -1;
+      if (a1.creator == user.username) return -1;
       return 1;
     });
     unawaited(navigationManager.navigateToPage(
@@ -165,15 +164,18 @@ class LearningSpaceViewModel extends BaseViewModel {
       return const Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, 'Post could not found.');
     }
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Post oldPost = _posts[itemIndex];
     final AnnotationSelector selector =
         AnnotationSelector(start: startIndex, end: endIndex);
     final Annotation req = Annotation(
       body: annotation,
-      id: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
-      target: AnnotationTarget(selector: selector),
-      // TODO: Fix
-      // creator: user.username,
+      target: AnnotationTarget(
+        selector: selector,
+        source: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
+      ),
+      creator: user.username,
     );
     final IResponseModel<Annotation> res = await _lsService.annotate(req);
     if (res.hasError) {
@@ -199,10 +201,9 @@ class LearningSpaceViewModel extends BaseViewModel {
           start: startIndex,
           end: endIndex,
         ),
+        source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       ),
-      id: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
-      // TODO: Fix
-      // creator: user.username,
+      creator: user.username,
     );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)
@@ -228,18 +229,20 @@ class LearningSpaceViewModel extends BaseViewModel {
       return const Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, 'Post could not found.');
     }
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Post oldPost = _posts[itemIndex];
     final double x = startOffset.dx;
     final double y = startOffset.dy;
     final double w = endOffset.dx - startOffset.dx;
     final double h = endOffset.dy - startOffset.dy;
     final AnnotationTarget target = AnnotationTarget(
-        id: '$imageUrl#xywh=$x,$y,$w,$h', format: 'image/jpeg');
+        id: '$imageUrl#xywh=$x,$y,$w,$h',
+        format: 'image/jpeg',
+        source: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}');
     final Annotation req = Annotation(
       body: annotation,
-      id: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}',
-      // TODO: Fix
-      // creator: user.username,
+      creator: user.username,
       target: target,
     );
     final IResponseModel<Annotation> res = await _lsService.annotate(req);
@@ -305,12 +308,11 @@ class LearningSpaceViewModel extends BaseViewModel {
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
       body: annotation,
-      id: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       target: AnnotationTarget(
+          source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
       colorParam: backgroundColor,
-      // TODO: Fix
-      // creator: user.username,
+      creator: user.username,
     );
     final List<Annotation> newAnnotations =
         List<Annotation>.from(post.annotations)

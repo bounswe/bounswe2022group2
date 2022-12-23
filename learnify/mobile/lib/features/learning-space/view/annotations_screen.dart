@@ -53,8 +53,7 @@ class AnnotationsScreen extends BaseView<AnnotationsViewModel> {
             (int i) {
               final Annotation a = annotations[i];
               return TextItem(
-                // TODO: Fix
-                creator: a.body ?? "ezgi ezgi",
+                creator: a.creator ?? "ezgi ezgi",
                 content: a.body ??
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
                 upvotes: int.tryParse(a.body ?? '') ?? Random().nextInt(30),

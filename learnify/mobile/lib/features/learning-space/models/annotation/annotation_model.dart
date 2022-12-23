@@ -14,6 +14,7 @@ class Annotation extends BaseModel<Annotation> {
     this.body,
     this.target,
     this.colorParam,
+    this.creator,
   });
 
   factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
@@ -23,12 +24,14 @@ class Annotation extends BaseModel<Annotation> {
         target: BaseModel.embeddedModelFromJson<AnnotationTarget>(
             json['target'], const AnnotationTarget()),
         body: BaseModel.getByType<String>(json['body']),
+        creator: BaseModel.getByType<String>(json['creator']),
       );
 
   final String? id;
   final String? context;
   final String? type;
   final String? body;
+  final String? creator;
   final AnnotationTarget? target;
   Color? colorParam;
 
@@ -41,11 +44,13 @@ class Annotation extends BaseModel<Annotation> {
         '@context': context,
         'type': type,
         'body': body,
-        'target': BaseModel.embeddedModelToJson<AnnotationTarget>(target)
+        'target': BaseModel.embeddedModelToJson<AnnotationTarget>(target),
+        'creator': creator,
       };
 
   @override
-  List<Object?> get props => <Object?>[id, context, type, body, target];
+  List<Object?> get props =>
+      <Object?>[id, context, type, body, target, creator];
 
   Color get color {
     if (colorParam != null) return colorParam!;
