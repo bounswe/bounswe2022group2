@@ -612,11 +612,12 @@ h1 {
 }
 
 .contact-title {
-    color: #1746A2;
+    color: #FF731D;
     font-family: 'Open Sans' sans-serif;
     font-size: 35px;
     font-weight: bold;
     text-align: center;
+    text-decoration: underline;
 }
 .ls-box-text {
     color: #1746A2;
@@ -669,6 +670,36 @@ h1 {
     justify-content: space-between;
     width: 300px;
     height: 200%;
+    padding: 20px;
+    background-color: #FFF7E9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    color: #1746A2;
+    outline: none;
+
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 200%;
+    padding: 20px;
+    background-color: #FFF7E9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    color: #1746A2;
+    outline: none;
+
+}
+
+.contact-box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 300px;
     padding: 20px;
     background-color: #FFF7E9;
     border-radius: 10px;
