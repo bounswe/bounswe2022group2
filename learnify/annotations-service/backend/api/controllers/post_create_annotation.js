@@ -20,8 +20,13 @@ export default async (req, res) => {
 
     let rgx = /[0-9]+$/;
     let annotations = await Annotation.find();
+    let count;
+    if(annotations.length != 0){
     let matches = (String(annotations.slice(-1)[0].id)).match(rgx);
-    let count = parseInt(matches[0]);
+    count = parseInt(matches[0]);
+    }else{
+        count = 0;
+    }
     let id = `http://frontURL/${req.params.ls_id}/${req.params.post_id}/anno${count + 1}`;
 
     let annotation = new Annotation({
