@@ -1,11 +1,8 @@
 
 import { LearningSpace } from '../../../models/index.js';
-import mongoose from 'mongoose';
+import { Comment } from '../../../models/index.js';
 import jwt from "jsonwebtoken";
-import commentSchema from '../../../models/comment.js';
 import { validateComment_init } from '../../validators/learning_space_init_validator.js';
-const { model } = mongoose;
-const Comment = model('Comment', commentSchema)
 
 
 
@@ -67,7 +64,7 @@ export default async (req, res) => {
 
     return res.status(200).json({
         resultMessage: "Comment is succesfully created.",
-        learningSpace: ls
+        Comment: comment
     });
 
     };

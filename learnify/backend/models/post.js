@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 
 
 // We can add additional fields if we enlarge the features of the app.
-
-import commentSchema from './comment.js';
+import Comment from './comment.js';
 
 const postSchema = new Schema({
   title: {
@@ -23,7 +22,7 @@ const postSchema = new Schema({
     type: String
   }],
   comments:[{
-    type: commentSchema
+    type: Comment.schema
   }],
 
 });

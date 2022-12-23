@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const commentSchema = new Schema({
   creator: {
@@ -8,14 +8,11 @@ const commentSchema = new Schema({
   content:{
     type: String, required: true
   },
-  annotations: [{
-    type: Schema.Types.Mixed,
-  }],
   images:[{
     type: String
   }],
 
 });
 
-
-export default commentSchema
+const Comment = model('Comment', commentSchema)
+export default Comment
