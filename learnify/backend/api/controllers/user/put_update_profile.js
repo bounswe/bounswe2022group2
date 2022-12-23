@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import { User } from '../../../models/index.js';
 import { validateUpdateProfile } from '../../validators/user_validator.js';
+import get_user_profile from '../../../utils/user/get_user_profile.js';
 
 
 
@@ -40,12 +41,6 @@ export default async (req, res) => {
       console.log(err.message)
       return res.status(500).json({ "resultMessage": "Could not save ls to DB" });
   });
-  var profile = user.toJSON();
-  delete profile.email;
-  delete profile.id;
-  return res.status(200).json({
-      resultMessage: "Profile is succesfully updated.",
-      profile: profile
-  });
+  return await get_user_profile(res, username)
 
 };
