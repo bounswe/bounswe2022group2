@@ -313,6 +313,7 @@ const sideBar = `
               marginLeft: "auto",
               padding: "16px",
               paddingLeft: "28px",
+              color: "#000000",
               paddingRight: "28px"}}
             source={value}
             linkTarget="_blank"
@@ -329,6 +330,7 @@ const sideBar = `
               boxShadow: "0px 12px 16px -12px rgba(26,26,26,1)",
               textAlign: "left",
               padding: "16px",
+              color: "#000000",
               paddingLeft: "28px",
               paddingRight: "28px"}}
         source={valueSide}
