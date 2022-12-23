@@ -2,6 +2,7 @@
 import Annotation from '../../models/annotation.js';
 import jwt from "jsonwebtoken";
 import { validateCreateAnnotation_init } from '../validators/annotations_init_validator.js';
+import { frontendURL } from '../../config/index.js';
 
 export default async (req, res) => {
     var username;
@@ -27,7 +28,7 @@ export default async (req, res) => {
     }else{
         count = 0;
     }
-    let id = `http://frontURL/${req.params.ls_id}/${req.params.post_id}/anno${count + 1}`;
+    let id = `${frontendURL}${req.params.ls_id}/${req.params.post_id}/anno${count + 1}`;
 
     let annotation = new Annotation({
         _id: id,
