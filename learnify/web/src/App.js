@@ -18,6 +18,7 @@ import LearningSpace from './pages/LearningSpace';
 import CategoriesPage from './pages/CategoriesPage';
 import LSbyCategoryPage from './pages/LSbyCategoryPage';
 import MyLearningSpacesPage from './pages/MyLearningSpacesPage';
+import PopularLearningSpacesPage from './pages/PopularLearningSpacesPage';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/categories/:category" element={<PrivateRoutes> <LSbyCategoryPage /> </PrivateRoutes>}/>
           <Route path="/learningspace/:lsid" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
           <Route path="/:username/learningspaces" element={<PrivateRoutes> <MyLearningSpacesPage /> </PrivateRoutes>}/>
+          <Route path="/popular" element={<PrivateRoutes> <PopularLearningSpacesPage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
