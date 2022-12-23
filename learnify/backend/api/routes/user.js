@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { update_profile } from '../controllers/user/index.js';
+import { get_user_profile, update_profile } from '../controllers/user/index.js';
 
 const router = Router();
 
 router.put('/', update_profile);
+router.get('/:username', get_user_profile);
 
 
 export default router;
