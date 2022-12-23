@@ -16,6 +16,7 @@ import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
+import '../models/annotation/get_annotations_response.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../models/event.dart';
@@ -47,6 +48,8 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
+
+  Map<String, List<Annotation>> annotations = <String, List<Annotation>>{};
 
   void setDefault() {
     _carouselPageIndexes = <int>[];
@@ -156,6 +159,17 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
+  Future<List<Annotation>> getPostAnnotations(String postId) async {
+    if (annotations.containsKey(postId)) {
+      return annotations[postId]!;
+    }
+    final IResponseModel<GetAnnotationsResponse> response =
+        await _lsService.getAnnotations(_learningSpace?.id ?? '', postId);
+    if (response.hasError || response.data == null) return <Annotation>[];
+    annotations[postId] = response.data!.annotations;
+    return annotations[postId] ?? <Annotation>[];
+  }
+
   Future<Tuple3<LearningSpace?, Annotation?, String?>> annotateText(
       int startIndex, int endIndex, String annotation, String? postId) async {
     final int itemIndex = _posts
@@ -170,7 +184,6 @@ class LearningSpaceViewModel extends BaseViewModel {
     final AnnotationSelector selector = AnnotationSelector(
       start: startIndex,
       end: endIndex,
-      type: "TextPositionSelector",
     );
     final Annotation req = Annotation(
       body: annotation,
@@ -180,21 +193,26 @@ class LearningSpaceViewModel extends BaseViewModel {
       ),
       creator: user.username,
     );
-    final IResponseModel<Annotation> res = await _lsService.annotate(req);
+    final IResponseModel<Annotation> res =
+        await _lsService.createAnnotation(req);
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
     } else {
       final Tuple2<LearningSpace?, Annotation?> newAnnotation =
-          createTextAnnotation(
+          await createTextAnnotation(
               startIndex, endIndex, annotation, oldPost, itemIndex);
       return Tuple3<LearningSpace?, Annotation?, String?>(
           newAnnotation.item1, newAnnotation.item2, null);
     }
   }
 
-  Tuple2<LearningSpace?, Annotation?> createTextAnnotation(int startIndex,
-      int endIndex, String annotation, Post post, int itemIndex) {
+  Future<Tuple2<LearningSpace?, Annotation?>> createTextAnnotation(
+      int startIndex,
+      int endIndex,
+      String annotation,
+      Post post,
+      int itemIndex) async {
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
@@ -203,14 +221,15 @@ class LearningSpaceViewModel extends BaseViewModel {
         selector: AnnotationSelector(
           start: startIndex,
           end: endIndex,
-          type: "TextPositionSelector",
         ),
         source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       ),
       creator: user.username,
     );
+    final List<Annotation> oldAnnotations =
+        await getPostAnnotations(post.id ?? '');
     final List<Annotation> newAnnotations =
-        List<Annotation>.from(post.annotations)
+        List<Annotation>.from(oldAnnotations)
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
@@ -249,13 +268,14 @@ class LearningSpaceViewModel extends BaseViewModel {
       creator: user.username,
       target: target,
     );
-    final IResponseModel<Annotation> res = await _lsService.annotate(req);
+    final IResponseModel<Annotation> res =
+        await _lsService.createAnnotation(req);
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
     } else {
       final Tuple2<LearningSpace?, Annotation> newAnnotation =
-          createImageAnnotation(
+          await createImageAnnotation(
         startOffset,
         endOffset,
         color,
@@ -295,7 +315,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Tuple2<LearningSpace?, Annotation> createImageAnnotation(
+  Future<Tuple2<LearningSpace?, Annotation>> createImageAnnotation(
     Offset startOffset,
     Offset endOffset,
     Color backgroundColor,
@@ -303,7 +323,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     String annotation,
     Post post,
     int itemIndex,
-  ) {
+  ) async {
     final Offset foundStart = Offset(
         min(startOffset.dx, endOffset.dx), min(startOffset.dy, endOffset.dy));
     final Offset foundEnd = Offset(
@@ -318,8 +338,10 @@ class LearningSpaceViewModel extends BaseViewModel {
       colorParam: backgroundColor,
       creator: user.username,
     );
+    final List<Annotation> oldAnnotations =
+        await getPostAnnotations(post.id ?? '');
     final List<Annotation> newAnnotations =
-        List<Annotation>.from(post.annotations)
+        List<Annotation>.from(oldAnnotations)
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
