@@ -7,6 +7,7 @@ import pp from '../images/elipse.png'
 import happy from '../images/happy.png'
 
 import ProfilePhoto from '../components/ProfilePhoto';
+import AboutUser from '../components/AboutUser';
 // <img src={pp} alt="Profile photo" height={333} />
 
 
@@ -77,6 +78,8 @@ function ProfilePage() {
                 </div>
                
                 <label className='profile-page-text'> Meet with new people and learn together, that is what matters... LEARNIFY</label>
+                <AboutUser />
+                
                 <div className='profilepage-friends-box'>
                 <label className='navBarText2'> About this user</label>
                      <div className='space-3'/>
