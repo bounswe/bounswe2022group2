@@ -16,10 +16,20 @@ void main() {
   testWidgets(
     "Test image annotation functionality.",
     (WidgetTester tester) async {
-      final LearningSpace dummyLearningSpace = LearningSpace.dummy(0);
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
-      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
+      await tester.pumpWidget(
+        TestHelpers.appWidget(
+          detailScreen,
+          childCallback: (BuildContext c) {
+            final LearningSpaceViewModel viewModel =
+                c.read<LearningSpaceViewModel>();
+            viewModel.annotations['0'] = <Annotation>[];
+            viewModel.annotations['1'] = <Annotation>[];
+          },
+        ),
+      );
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);

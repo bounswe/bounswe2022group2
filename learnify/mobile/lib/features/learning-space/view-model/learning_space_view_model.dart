@@ -159,6 +159,9 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
+  List<Annotation>? getFromMap(String postId) =>
+      annotations.containsKey(postId) ? annotations[postId] : null;
+
   Future<List<Annotation>> getPostAnnotations(String postId) async {
     if (annotations.containsKey(postId)) {
       return annotations[postId]!;
