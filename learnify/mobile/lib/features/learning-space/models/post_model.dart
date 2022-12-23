@@ -7,7 +7,6 @@ class Post extends BaseModel<Post> {
     this.title,
     this.creator,
     this.content,
-    this.annotations = const <Annotation>[],
     this.images = const <String>[],
     this.createdAt,
     this.updatedAt,
@@ -22,8 +21,6 @@ class Post extends BaseModel<Post> {
         title: BaseModel.getByType<String>(json['title']),
         creator: BaseModel.getByType<String>(json['creator']),
         content: BaseModel.getByType<String>(json['content']),
-        annotations: BaseModel.embeddedListFromJson<Annotation>(
-            json['annotations'], Annotation()),
         images: fetchedImages.isEmpty
             ? const <String>[
                 'https://picsum.photos/id/1/700/400',
@@ -61,7 +58,6 @@ class Post extends BaseModel<Post> {
           title: title ?? this.title,
           creator: creator ?? this.creator,
           content: content ?? this.content,
-          annotations: annotations ?? this.annotations,
           images: images ?? this.images,
           createdAt: createdAt,
           updatedAt: updatedAt);
@@ -70,7 +66,6 @@ class Post extends BaseModel<Post> {
   final String? title;
   final String? creator;
   final String? content;
-  final List<Annotation> annotations;
   final List<String> images;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -84,21 +79,12 @@ class Post extends BaseModel<Post> {
         'title': title,
         'creator': creator,
         'content': content,
-        'annotations': BaseModel.embeddedListToJson<Annotation>(annotations),
         'images': images,
         'createdAt': createdAt,
         'updatedAt': updatedAt
       };
 
   @override
-  List<Object?> get props => <Object?>[
-        id,
-        title,
-        creator,
-        content,
-        annotations,
-        images,
-        createdAt,
-        updatedAt
-      ];
+  List<Object?> get props =>
+      <Object?>[id, title, creator, content, images, createdAt, updatedAt];
 }
