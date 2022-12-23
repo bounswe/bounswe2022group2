@@ -20,5 +20,6 @@ abstract class ILSService extends BaseService {
   Future<IResponseModel<EnrollLSResponse>> editPost(EditPostRequestModel body);
   Future<IResponseModel<GetAnnotationsResponse>> getAnnotations(
       String lsId, String postId);
-  Future<IResponseModel<Annotation>> createAnnotation(Annotation body);
+  Future<IResponseModel<Annotation>> createAnnotation(
+      Annotation body, String lsId, String postId);
 }

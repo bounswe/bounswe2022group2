@@ -40,12 +40,12 @@ class Annotation extends BaseModel<Annotation> {
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        'id': id,
+        if (id != null) 'id': id,
         '@context': context,
         'type': type,
         'body': body,
         'target': BaseModel.embeddedModelToJson<AnnotationTarget>(target),
-        'creator': creator,
+        if (creator != null) 'creator': creator,
       };
 
   @override
@@ -59,9 +59,7 @@ class Annotation extends BaseModel<Annotation> {
 
   set color(Color newColor) => colorParam = newColor;
 
-  bool get isImage =>
-      (target?.type?.compareWithoutCase('Image') ?? false) ||
-      (target?.selector == null);
+  bool get isImage => target?.type?.compareWithoutCase('Image') ?? false;
 
   Tuple2<Offset, Offset> get startEndOffsets {
     Offset? startOffset;

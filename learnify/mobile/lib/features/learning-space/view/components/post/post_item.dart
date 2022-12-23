@@ -35,73 +35,91 @@ class PostItem extends StatelessWidget {
   Widget _expansionTile(BuildContext context, Post post) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    return FutureBuilder<List<Annotation>>(
-      builder:
-          (BuildContext context, AsyncSnapshot<List<Annotation>> snapshot) {
-        if (!snapshot.hasData || snapshot.data == null) {
-          return CustomLoadingIndicator(context);
+    return CustomExpansionTile(
+      key: expansionTileKey,
+      collapsedTextColor: context.inactiveTextColor,
+      collapsedIconColor: context.inactiveTextColor,
+      tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
+      childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
+          .copyWith(bottom: context.height * 1.7),
+      title:
+          MultiLineText('${itemIndex + 1}. ${post.title}', translated: false),
+      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+      expandedAlignment: Alignment.centerLeft,
+      iconColor: context.primary,
+      onExpansionChanged: (bool val) async {
+        if (val) {
+          callback(itemIndex);
         }
-        return CustomExpansionTile(
-          key: expansionTileKey,
-          collapsedTextColor: context.inactiveTextColor,
-          collapsedIconColor: context.inactiveTextColor,
-          tilePadding: EdgeInsets.symmetric(horizontal: context.width * 3),
-          childrenPadding: EdgeInsets.symmetric(horizontal: context.width * 3)
-              .copyWith(bottom: context.height * 1.7),
-          title: MultiLineText('${itemIndex + 1}. ${post.title}',
-              translated: false),
-          expandedCrossAxisAlignment: CrossAxisAlignment.start,
-          expandedAlignment: Alignment.centerLeft,
-          iconColor: context.primary,
-          onExpansionChanged: (bool val) {
-            if (val) {
-              callback(itemIndex);
-            }
-          },
-          children: <Widget>[
-            Center(
-              child: BaseText(TextKeys.clickToSeeImageAnnotations,
-                  style: context.labelMedium),
-            ),
-            _carouselSlider(viewModel, post, snapshot.data!, context),
-            _sliderIndicator(viewModel, post),
-            context.sizedH(1.4),
-            AnnotatableText(
-              key: PageStorageKey<String>(post.content ?? 'asd'),
-              content: post.content ?? '',
-              annotateLabel: context.tr(TextKeys.annotate),
-              annotateCallback: (int startIndex, int endIndex) async {
-                await DialogBuilder(context).annotateDialog(
-                  post.id,
-                  textCallback: (int startIndex, int endIndex,
-                      String annotation, String? postId) async {
-                    final HomeViewModel viewModel =
-                        context.read<HomeViewModel>();
-                    final Tuple3<LearningSpace?, Annotation?, String?> res =
-                        await context
-                            .read<LearningSpaceViewModel>()
-                            .annotateText(
-                                startIndex, endIndex, annotation, postId);
-                    viewModel.updateLs(res.item1);
-                    return Tuple2<Annotation?, String?>(res.item2, res.item3);
-                  },
-                  startIndex: startIndex,
-                  endIndex: endIndex,
-                );
-              },
-              allAnnotations: snapshot.data!,
-              onAnnotationClick:
-                  (List<Annotation> annotations, String annotationText) async {
-                //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
-                await viewModel.viewAnnotations(annotations, annotationText);
-              },
-            ),
-            PostList.createEditButton(context, TextKeys.editPost,
-                Icons.edit_outlined, () async => viewModel.editPost(post)),
-          ],
-        );
       },
+      children: <Widget>[
+        FutureBuilder<List<Annotation>>(
+            future: _getAnnotations(context, post.id),
+            builder: (BuildContext context,
+                AsyncSnapshot<List<Annotation>> snapshot) {
+              if (!snapshot.hasData || snapshot.data == null) {
+                return CustomLoadingIndicator(context);
+              }
+              return Column(
+                children: [
+                  Center(
+                    child: BaseText(TextKeys.clickToSeeImageAnnotations,
+                        style: context.labelMedium),
+                  ),
+                  _carouselSlider(viewModel, post, snapshot.data!, context),
+                  _sliderIndicator(viewModel, post),
+                  context.sizedH(1.4),
+                  AnnotatableText(
+                    key: PageStorageKey<String>(post.content ?? 'asd'),
+                    content: post.content ?? '',
+                    annotateLabel: context.tr(TextKeys.annotate),
+                    annotateCallback: (int startIndex, int endIndex) async {
+                      await DialogBuilder(context).annotateDialog(
+                        post.id,
+                        textCallback: (int startIndex, int endIndex,
+                            String annotation, String? postId) async {
+                          final HomeViewModel viewModel =
+                              context.read<HomeViewModel>();
+                          final Tuple3<LearningSpace?, Annotation?, String?>
+                              res = await context
+                                  .read<LearningSpaceViewModel>()
+                                  .annotateText(
+                                      startIndex, endIndex, annotation, postId);
+                          viewModel.updateLs(res.item1);
+                          return Tuple2<Annotation?, String?>(
+                              res.item2, res.item3);
+                        },
+                        startIndex: startIndex,
+                        endIndex: endIndex,
+                      );
+                    },
+                    allAnnotations: snapshot.data!,
+                    onAnnotationClick: (List<Annotation> annotations,
+                        String annotationText) async {
+                      //await DialogBuilder(context).textDialog(annotationText, 'Clicked Annotation:',translateTitle: false);
+                      await viewModel.viewAnnotations(
+                          annotations, annotationText);
+                    },
+                  ),
+                  PostList.createEditButton(
+                      context,
+                      TextKeys.editPost,
+                      Icons.edit_outlined,
+                      () async => viewModel.editPost(post)),
+                ],
+              );
+            }),
+      ],
     );
+  }
+
+  Future<List<Annotation>> _getAnnotations(
+      BuildContext context, String? postId) async {
+    final LearningSpaceViewModel viewModel =
+        context.read<LearningSpaceViewModel>();
+    final List<Annotation> annotations =
+        await viewModel.getPostAnnotations(postId ?? '');
+    return annotations;
   }
 
   CarouselSlider _carouselSlider(LearningSpaceViewModel viewModel, Post post,

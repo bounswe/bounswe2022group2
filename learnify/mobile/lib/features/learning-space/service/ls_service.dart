@@ -30,7 +30,7 @@ class LSService extends ILSService {
   static const String _enrollLS = '/learningspace/enroll';
   static const String _addPost = '/learningSpace/post';
   static const String _editPost = '/learningSpace/edit/post';
-  static const String _createAnnotation = '/learningspace/annotation';
+  static const String _createAnnotation = '/annotations-service/create';
   static const String _getAnnotations = '/annotations-service/get';
 
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
@@ -87,9 +87,10 @@ class LSService extends ILSService {
           body: body);
 
   @override
-  Future<IResponseModel<Annotation>> createAnnotation(Annotation body) async =>
+  Future<IResponseModel<Annotation>> createAnnotation(
+          Annotation body, String lsId, String postId) async =>
       networkManager.send<Annotation, Annotation>(
-        _createAnnotation,
+        '$_createAnnotation/$lsId/$postId',
         parseModel: Annotation(),
         type: RequestTypes.post,
         body: body,

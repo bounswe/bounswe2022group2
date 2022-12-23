@@ -191,10 +191,9 @@ class LearningSpaceViewModel extends BaseViewModel {
         selector: selector,
         source: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
       ),
-      creator: user.username,
     );
-    final IResponseModel<Annotation> res =
-        await _lsService.createAnnotation(req);
+    final IResponseModel<Annotation> res = await _lsService.createAnnotation(
+        req, _learningSpace?.id ?? '', oldPost.id ?? '');
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
@@ -233,7 +232,7 @@ class LearningSpaceViewModel extends BaseViewModel {
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
-    _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
+    annotations[_posts[itemIndex].id ?? ''] = newAnnotations;
     _learningSpace = _learningSpace?.copyWith(posts: _posts);
     notifyListeners();
     return Tuple2<LearningSpace?, Annotation?>(_learningSpace, newAnnotation);
@@ -262,14 +261,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     final AnnotationTarget target = AnnotationTarget(
         id: '$imageUrl#xywh=$x,$y,$w,$h',
         format: 'image/jpeg',
+        type: 'Image',
         source: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}');
-    final Annotation req = Annotation(
-      body: annotation,
-      creator: user.username,
-      target: target,
-    );
-    final IResponseModel<Annotation> res =
-        await _lsService.createAnnotation(req);
+    final Annotation req = Annotation(body: annotation, target: target);
+    final IResponseModel<Annotation> res = await _lsService.createAnnotation(
+        req, _learningSpace?.id ?? '', oldPost.id ?? '');
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
@@ -334,6 +330,7 @@ class LearningSpaceViewModel extends BaseViewModel {
       body: annotation,
       target: AnnotationTarget(
           source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
+          type: 'Image',
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
       colorParam: backgroundColor,
       creator: user.username,
@@ -345,7 +342,7 @@ class LearningSpaceViewModel extends BaseViewModel {
           ..add(newAnnotation)
           ..sort((Annotation a1, Annotation a2) =>
               a1.startIndex.compareTo(a2.startIndex));
-    _posts[itemIndex] = _posts[itemIndex].copyWith(annotations: newAnnotations);
+    annotations[_posts[itemIndex].id ?? ''] = newAnnotations;
     _learningSpace = _learningSpace?.copyWith(posts: _posts);
     notifyListeners();
     return Tuple2<LearningSpace?, Annotation>(_learningSpace, newAnnotation);

@@ -1,5 +1,4 @@
 import '../../../core/base/model/base_model.dart';
-import 'annotation/annotation_model.dart';
 
 class Post extends BaseModel<Post> {
   const Post({
@@ -51,7 +50,6 @@ class Post extends BaseModel<Post> {
           {String? title,
           String? creator,
           String? content,
-          List<Annotation>? annotations,
           List<String>? images}) =>
       Post(
           id: id ?? id,
