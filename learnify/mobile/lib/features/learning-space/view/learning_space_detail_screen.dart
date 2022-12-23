@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:intl/intl.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -20,6 +22,7 @@ import '../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
 import '../../../core/widgets/image/image_painter.dart';
+import '../../../core/widgets/indicators/custom_loading_indicator.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
@@ -34,12 +37,14 @@ import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/event.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../view-model/learning_space_view_model.dart';
 import 'annotations_screen.dart';
 
 part 'components/events/event_item.dart';
+part 'components/events/event_map.dart';
 part 'components/events/events_list.dart';
 part 'components/forum_list.dart';
 part 'components/post/post_item.dart';
@@ -47,9 +52,11 @@ part 'components/post/post_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
-  LearningSpaceDetailScreen({required LearningSpace? learningSpace, Key? key})
+  LearningSpaceDetailScreen(
+      {required LearningSpace? learningSpace, int initialIndex = 0, Key? key})
       : super(
-          builder: (BuildContext context) => _builder(context, learningSpace),
+          builder: (BuildContext context) =>
+              _builder(context, learningSpace, initialIndex),
           voidInit: (BuildContext context) => context
               .read<LearningSpaceViewModel>()
               .setLearningSpace(learningSpace),
@@ -57,8 +64,10 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           key: key,
         );
 
-  static Widget _builder(BuildContext context, LearningSpace? learningSpace) =>
+  static Widget _builder(BuildContext context, LearningSpace? learningSpace,
+          int initialIndex) =>
       DefaultTabController(
+        initialIndex: initialIndex,
         length: LearningSpaceConstants.tabKeys.length,
         child: NestedScrollView(
           headerSliverBuilder: _headerSliverBuilder,
@@ -154,7 +163,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       width: double.infinity,
-                      color: Colors.white,
+                      color: context.isDark ? Colors.black54 : Colors.white,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[

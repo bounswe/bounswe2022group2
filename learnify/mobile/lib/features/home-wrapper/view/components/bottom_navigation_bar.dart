@@ -18,7 +18,7 @@ class _BottomNavigationBar extends StatelessWidget {
       onTap: homeModel.setBottomNavIndex,
       buttonBackgroundColor: context.primary,
       backgroundColor: context.primary,
-      color: context.lightActiveColor,
+      color: context.lightDarkActiveColor,
       height: min(context.responsiveSize * 18, 75),
     );
   }
@@ -53,7 +53,7 @@ class _BottomNavItemState extends State<_BottomNavItem> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _activeColor = context.lightActiveColor;
+    _activeColor = context.lightDarkActiveColor;
     _inactiveColor = context.primary;
   }
 

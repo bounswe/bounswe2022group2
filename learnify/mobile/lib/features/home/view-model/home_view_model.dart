@@ -35,7 +35,7 @@ class HomeViewModel extends BaseViewModel {
 
   bool _recommendedViewAll = false;
   bool get recommendedViewAll => _recommendedViewAll;
-  List<Map<String, dynamic>> randomUsers = <Map<String, dynamic>>[];
+  static List<Map<String, dynamic>> randomUsers = <Map<String, dynamic>>[];
 
   void setDefault() {
     _recommendedViewAll = false;
@@ -49,6 +49,26 @@ class HomeViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _homeService = HomeService.instance;
+    randomUsers = List<Map<String, dynamic>>.generate(
+      70,
+      (int i) => <String, dynamic>{
+        'name': {"title": "Ms", "first": "Francisca", "last": "García"},
+        'picture': {
+          if (i % 6 == 0)
+            'medium': "https://randomuser.me/api/portraits/med/women/73.jpg"
+          else if (i % 6 == 1)
+            'medium': "https://randomuser.me/api/portraits/med/men/71.jpg"
+          else if (i % 6 == 2)
+            'medium': "https://randomuser.me/api/portraits/med/women/4.jpg"
+          else if (i % 6 == 3)
+            'medium': "https://randomuser.me/api/portraits/med/men/6.jpg"
+          else if (i % 6 == 4)
+            'medium': "https://randomuser.me/api/portraits/med/women/9.jpg"
+          else if (i % 6 == 5)
+            'medium': "https://randomuser.me/api/portraits/med/men/12.jpg"
+        }
+      },
+    );
   }
 
   @override
