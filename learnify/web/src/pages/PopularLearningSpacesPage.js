@@ -20,6 +20,7 @@ function PopularLearningSpacesPage() {
                     {lsBoxes}
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
