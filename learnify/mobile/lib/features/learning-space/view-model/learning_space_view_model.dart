@@ -16,6 +16,7 @@ import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
+import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
@@ -196,15 +197,21 @@ class LearningSpaceViewModel extends BaseViewModel {
         source: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
       ),
     );
-    final IResponseModel<Annotation> res = await _lsService.createAnnotation(
-        req, _learningSpace?.id ?? '', oldPost.id ?? '');
+    final IResponseModel<CreateAnnotationResponse> res = await _lsService
+        .createAnnotation(req, _learningSpace?.id ?? '', oldPost.id ?? '');
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
     } else {
       final Tuple2<LearningSpace?, Annotation?> newAnnotation =
           await createTextAnnotation(
-              startIndex, endIndex, annotation, oldPost, itemIndex);
+              startIndex,
+              endIndex,
+              annotation,
+              res.data?.annotation?.id,
+              res.data?.annotation?.creator,
+              oldPost,
+              itemIndex);
       return Tuple3<LearningSpace?, Annotation?, String?>(
           newAnnotation.item1, newAnnotation.item2, null);
     }
@@ -214,12 +221,14 @@ class LearningSpaceViewModel extends BaseViewModel {
       int startIndex,
       int endIndex,
       String annotation,
+      String? id,
+      String? creator,
       Post post,
       int itemIndex) async {
-    final User user =
-        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
       body: annotation,
+      id: id,
+      creator: creator,
       target: AnnotationTarget(
         selector: AnnotationSelector(
           start: startIndex,
@@ -227,7 +236,6 @@ class LearningSpaceViewModel extends BaseViewModel {
         ),
         source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
       ),
-      creator: user.username,
     );
     final List<Annotation> oldAnnotations =
         await getPostAnnotations(post.id ?? '');
@@ -255,8 +263,6 @@ class LearningSpaceViewModel extends BaseViewModel {
       return const Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, 'Post could not found.');
     }
-    final User user =
-        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Post oldPost = _posts[itemIndex];
     final double x = startOffset.dx;
     final double y = startOffset.dy;
@@ -268,8 +274,8 @@ class LearningSpaceViewModel extends BaseViewModel {
         type: 'Image',
         source: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}');
     final Annotation req = Annotation(body: annotation, target: target);
-    final IResponseModel<Annotation> res = await _lsService.createAnnotation(
-        req, _learningSpace?.id ?? '', oldPost.id ?? '');
+    final IResponseModel<CreateAnnotationResponse> res = await _lsService
+        .createAnnotation(req, _learningSpace?.id ?? '', oldPost.id ?? '');
     if (res.hasError) {
       return Tuple3<LearningSpace?, Annotation?, String?>(
           null, null, res.error?.errorMessage);
@@ -281,6 +287,8 @@ class LearningSpaceViewModel extends BaseViewModel {
         color,
         imageUrl,
         annotation,
+        res.data?.annotation?.id,
+        res.data?.annotation?.creator,
         oldPost,
         itemIndex,
       );
@@ -321,6 +329,8 @@ class LearningSpaceViewModel extends BaseViewModel {
     Color backgroundColor,
     String? imageUrl,
     String annotation,
+    String? id,
+    String? creator,
     Post post,
     int itemIndex,
   ) async {
@@ -328,16 +338,15 @@ class LearningSpaceViewModel extends BaseViewModel {
         min(startOffset.dx, endOffset.dx), min(startOffset.dy, endOffset.dy));
     final Offset foundEnd = Offset(
         max(startOffset.dx, endOffset.dx), max(startOffset.dy, endOffset.dy));
-    final User user =
-        LocalManager.instance.getModel(const User(), StorageKeys.user);
     final Annotation newAnnotation = Annotation(
       body: annotation,
+      id: id,
+      creator: creator,
       target: AnnotationTarget(
           source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
           type: 'Image',
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
       colorParam: backgroundColor,
-      creator: user.username,
     );
     final List<Annotation> oldAnnotations =
         await getPostAnnotations(post.id ?? '');
