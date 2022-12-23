@@ -610,6 +610,14 @@ h1 {
     font-weight: bold;
     text-align: left;
 }
+
+.contact-title {
+    color: #1746A2;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
 .ls-box-text {
     color: #1746A2;
     font-family: 'Open Sans' sans-serif;
@@ -721,6 +729,12 @@ h1 {
     margin: 0 auto;
 }
 
+.contact-page-layout {
+    width: fit-content;
+    align-content: center;
+    margin: 0 auto;
+}
+
 .about-page-layout {
     width: 98%;
     align-content: center;
@@ -750,6 +764,15 @@ h1 {
     background-color: #FFF7E9;
   }
 
+.contact-page-left {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: left;
+    width: 20%;
+    background-color: #FFF7E9;
+  }
+
+
   .about-page-left {
     margin-left: 1em;
     margin-right: 1em;
@@ -774,6 +797,17 @@ h1 {
     background-color: #FFF7E9;
   }
 
+  .contact-page-middle {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: center;
+    width: 60%;
+    background-color: #FFF7E9;
+  }
+
+
+
+
   .learning-space-right{
     margin-left: 1em;
     margin-right: 1em;
@@ -782,7 +816,21 @@ h1 {
     background-color: #FFF7E9;
   }
 
+  .contact-page-right{
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: right;
+    width: 20%;
+    background-color: #FFF7E9;
+  }
+
 .learning-space {
+    display: flex;
+    color: #FFF7E9;
+    min-height: calc(100vh - 190px);
+}
+
+.contact-page {
     display: flex;
     color: #FFF7E9;
     min-height: calc(100vh - 190px);
