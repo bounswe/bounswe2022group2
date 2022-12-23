@@ -1,5 +1,4 @@
 import '../../../core/base/model/base_model.dart';
-import 'annotation/annotation_model.dart';
 import 'comment/comment_model.dart';
 
 class Post extends BaseModel<Post> {
@@ -8,7 +7,6 @@ class Post extends BaseModel<Post> {
     this.title,
     this.creator,
     this.content,
-    this.annotations = const <Annotation>[],
     this.images = const <String>[],
     this.createdAt,
     this.updatedAt,
@@ -24,8 +22,6 @@ class Post extends BaseModel<Post> {
         title: BaseModel.getByType<String>(json['title']),
         creator: BaseModel.getByType<String>(json['creator']),
         content: BaseModel.getByType<String>(json['content']),
-        annotations: BaseModel.embeddedListFromJson<Annotation>(
-            json['annotations'], Annotation()),
         images: fetchedImages.isEmpty
             ? const <String>[
                 'https://picsum.photos/id/1/700/400',
@@ -49,7 +45,6 @@ class Post extends BaseModel<Post> {
           'https://picsum.photos/id/2/700/400',
           'https://picsum.photos/id/3/700/400'
         ],
-        annotations: [Annotation.dummy(0), Annotation.dummy(1)],
         creator: 'bahricanyesil',
         createdAt: DateTime.now().subtract(const Duration(days: 1)),
         updatedAt: DateTime.now(),
@@ -59,14 +54,12 @@ class Post extends BaseModel<Post> {
           {String? title,
           String? creator,
           String? content,
-          List<Annotation>? annotations,
           List<String>? images}) =>
       Post(
           id: id ?? id,
           title: title ?? this.title,
           creator: creator ?? this.creator,
           content: content ?? this.content,
-          annotations: annotations ?? this.annotations,
           images: images ?? this.images,
           createdAt: createdAt,
           updatedAt: updatedAt);
@@ -75,7 +68,6 @@ class Post extends BaseModel<Post> {
   final String? title;
   final String? creator;
   final String? content;
-  final List<Annotation> annotations;
   final List<String> images;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -90,7 +82,6 @@ class Post extends BaseModel<Post> {
         'title': title,
         'creator': creator,
         'content': content,
-        'annotations': BaseModel.embeddedListToJson<Annotation>(annotations),
         'images': images,
         'createdAt': createdAt,
         'updatedAt': updatedAt,
@@ -103,7 +94,6 @@ class Post extends BaseModel<Post> {
         title,
         creator,
         content,
-        annotations,
         images,
         createdAt,
         updatedAt,
