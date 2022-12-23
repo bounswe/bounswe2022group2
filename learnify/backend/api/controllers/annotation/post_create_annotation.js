@@ -42,6 +42,7 @@ export default async (req, res) => {
       'Authorization':req.headers.authorization
     }
   }).catch((error) => {
+    console.log(error)
     return res.status(error.response.status).json({
       resultMessage: error.response.data.resultMessage,
     });

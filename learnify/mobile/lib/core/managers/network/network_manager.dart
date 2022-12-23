@@ -41,7 +41,6 @@ class NetworkManager extends INetworkManager
   }
 
   static final NetworkManager _instance = NetworkManager._init();
-  // TODO: Fix
   static const String _baseUrl = NetworkConstants.localhostUrl;
 
   /// Returns the singleton instance of the network manager.
@@ -62,7 +61,6 @@ class NetworkManager extends INetworkManager
     String? listKey,
   }) async {
     try {
-      // TODO: Fix
       options.baseUrl = _baseUrl;
       customOptions ??= Options();
       customOptions
@@ -99,7 +97,6 @@ class NetworkManager extends INetworkManager
             customErrorMessage: 'Exception Is Occurred: ${error.toString()}'),
       );
     } finally {
-      // TODO: Fix
       options.baseUrl = _baseUrl;
     }
   }
