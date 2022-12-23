@@ -1,5 +1,6 @@
 import '../../../core/base/model/base_model.dart';
 import 'annotation/annotation_model.dart';
+import 'comment/comment_model.dart';
 
 class Post extends BaseModel<Post> {
   const Post({
@@ -11,6 +12,7 @@ class Post extends BaseModel<Post> {
     this.images = const <String>[],
     this.createdAt,
     this.updatedAt,
+    this.comments = const <Comment>[],
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
@@ -32,7 +34,9 @@ class Post extends BaseModel<Post> {
               ]
             : fetchedImages,
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
-        updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']));
+        updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
+        comments: BaseModel.embeddedListFromJson<Comment>(
+            json['comments'], const Comment()));
   }
 
   factory Post.dummy(int id) => Post(
@@ -75,6 +79,7 @@ class Post extends BaseModel<Post> {
   final List<String> images;
   final DateTime? createdAt;
   final DateTime? updatedAt;
+  final List<Comment> comments;
 
   @override
   Post fromJson(Map<String, dynamic> json) => Post.fromJson(json);
@@ -88,7 +93,8 @@ class Post extends BaseModel<Post> {
         'annotations': BaseModel.embeddedListToJson<Annotation>(annotations),
         'images': images,
         'createdAt': createdAt,
-        'updatedAt': updatedAt
+        'updatedAt': updatedAt,
+        'comments': BaseModel.embeddedListToJson<Comment>(comments)
       };
 
   @override
@@ -100,6 +106,7 @@ class Post extends BaseModel<Post> {
         annotations,
         images,
         createdAt,
-        updatedAt
+        updatedAt,
+        comments
       ];
 }
