@@ -604,10 +604,26 @@
     opacity: 0;
     cursor: pointer;
   }
-  
+
   .about-user-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-user-frame {
+    background-color: #FF731D;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px 0px rgba(120,120,120,0.52);
+    color:#FFF7E9;
+    text-align: left;
+    padding: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+    max-height: 400px;
   }
   
   .about-text-input {
@@ -621,14 +637,21 @@
   }
   
   .save-button,
-  .send-button {
-    height: 32px;
-    width: 64px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
+  .edit-button {
+    background-color: #FFF7E9;
+    color:#1746A2;
+    padding-top: 6px;
     cursor: pointer;
-    margin-top: 8px;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 100px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Open Sans' sans-serif;
+    font-weight: 600;
+    font-size: 16px;
   }
   
   .save-button {
@@ -642,7 +665,18 @@
   }
   
   .about-text {
+    font-family: 'Open Sans' sans-serif;	
+  }
+  
+  .edit-button {
+    height: 32px;
+    width: 64px;
+    border: none;
+    border-radius: 4px;
     font-size: 14px;
+    cursor: pointer;
     margin-top: 8px;
+    background-color: #f1f1f1;
+    color: #333;
   }
   
