@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
-import 'package:learnify/features/learning-space/models/event.dart';
+import 'package:learnify/features/learning-space/models/event/event.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 

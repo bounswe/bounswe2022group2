@@ -13,6 +13,7 @@ import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
+import '../models/event/get_events_response.dart';
 import 'l_ls_service.dart';
 
 /// Service for network request of auth view-model.

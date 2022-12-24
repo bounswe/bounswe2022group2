@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import '../../../../core/base/model/base_model.dart';
-import 'geolocation/geolocation_model.dart';
+import '../../../../../core/base/model/base_model.dart';
+import '../geolocation/geolocation_model.dart';
 
 class Event extends BaseModel<Event> {
   const Event({
-    required this.date,
+    this.date,
     this.id,
     this.description,
     this.title,
@@ -98,7 +98,7 @@ class Event extends BaseModel<Event> {
       );
 
   final String? id;
-  final DateTime date;
+  final DateTime? date;
   final String? description;
   final int? duration;
   final int? participationLimit;

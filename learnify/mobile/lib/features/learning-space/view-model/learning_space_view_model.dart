@@ -20,7 +20,7 @@ import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
-import '../models/event.dart';
+import '../models/event/event.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../service/ls_service.dart';

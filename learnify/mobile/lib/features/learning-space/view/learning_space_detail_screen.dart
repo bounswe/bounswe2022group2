@@ -36,7 +36,7 @@ import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
-import '../models/event.dart';
+import '../models/event/event.dart';
 import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
