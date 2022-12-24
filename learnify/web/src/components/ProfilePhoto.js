@@ -4,16 +4,28 @@ function ProfilePhoto(props) {
   const [photo, setPhoto] = useState(props.profilePicture || null);
   const [loading, setLoading] = useState(false);
 
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     setLoading(true);
     const file = event.target.files[0];
     const reader = new FileReader();
-    reader.onloadend = () => {
+    reader.onloadend = async () => {
       setPhoto(reader.result);
       setLoading(false);
 
       // Send the data URL to the server to save the photo in the database
-      
+      try {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}user/`, {
+          method: 'PUT',
+          body: JSON.stringify({ profile_picture: reader.result }),
+          headers: { 'Content-Type': 'application/json',
+          'Authorization': `${localStorage.getItem('token')} `},
+        });
+        if (!response.ok) {
+          throw new Error('Failed to update profile photo');
+        }
+      } catch (error) {
+        console.error(error);
+      }
     };
     reader.readAsDataURL(file);
   };
