@@ -1,18 +1,34 @@
 import React, { useState } from 'react';
 import './component_styles.css';
 
-function AboutUser() {
-  const [aboutText, setAboutText] = useState(
-    "This is a text instance about the user, the general information they want to give about themselves and their interests etc."
-  );
+function AboutUser(props) {
+  const [aboutText, setAboutText] = useState(props.bio);
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditButtonClick() {
     setIsEditing(true);
   }
 
-  function handleSaveButtonClick() {
+  async function handleSaveButtonClick() {
     setIsEditing(false);
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}user/`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `${localStorage.getItem("token")} `,
+        },
+        body: JSON.stringify({
+          bio: aboutText,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update bio");
+      }
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function EditButton({ onClick }) {
@@ -42,7 +58,7 @@ function AboutUser() {
           <>
             <label className="navBarText2">Bio</label>
             <div className="space-3" />
-            <label className="about-text">{aboutText}</label>
+            <label className="about-text">{props.bio}</label>
             <div className="space-3" />
             <EditButton onClick={handleEditButtonClick} />
           </>

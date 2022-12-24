@@ -683,15 +683,4 @@
     font-family: 'Open Sans' sans-serif;	
   }
   
-  .edit-button {
-    height: 32px;
-    width: 64px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 8px;
-    background-color: #f1f1f1;
-    color: #333;
-  }
   

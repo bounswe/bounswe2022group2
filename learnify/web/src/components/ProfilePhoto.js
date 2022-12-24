@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-function ProfilePhoto() {
-  const [photo, setPhoto] = useState(null);
+function ProfilePhoto(props) {
+  const [photo, setPhoto] = useState(props.profilePicture || null);
   const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
@@ -13,6 +13,7 @@ function ProfilePhoto() {
       setLoading(false);
 
       // Send the data URL to the server to save the photo in the database
+      
     };
     reader.readAsDataURL(file);
   };
