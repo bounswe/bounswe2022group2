@@ -367,9 +367,16 @@ class LearningSpaceViewModel extends BaseViewModel {
     return _learningSpace;
   }
 
-  List<Event>? get eventsOfLs => events.containsKey(_learningSpace?.id)
-      ? events[_learningSpace?.id]
-      : null;
+  List<Event>? get eventsOfLs {
+    final List<Event>? eventsList = events.containsKey(_learningSpace?.id)
+        ? events[_learningSpace?.id]
+        : null;
+    if (eventsList == null) return null;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            eventsList.length, (_) => GlobalKey<CustomExpansionTileState>());
+    return eventsList;
+  }
 
   Future<List<Event>> getEvents() async {
     final String lsId = _learningSpace?.id ?? '';
