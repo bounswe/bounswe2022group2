@@ -13,13 +13,13 @@ export default async (req, res) => {
     return res.status(401).json({ "resultMessage": "There is something wrong with your auth token."});
   }
 
-  let event = await Event.findOne({_id: req.params.id})
+  let event = await Event.findOne({_id: req.params.event})
   .catch((err) => {
     console.log("Could not fetch learning space from mongoDB")
     console.log(err.message);
     return res.status(500).json({ "resultMessage": "Something is wrong." });
   });
-
+  console.log(event)
   if (!event) {
     const err = "The event does not exists"
     console.log(err)
