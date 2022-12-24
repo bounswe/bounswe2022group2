@@ -12,7 +12,6 @@ function ProfilePhoto(props) {
     reader.onloadend = async () => {
       setPhoto(reader.result);
       setLoading(false);
-      console.log("step 1")
       // Send the file as a base64 string to the server to save the photo in the database
       try {
         const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}user/`, {
@@ -21,8 +20,7 @@ function ProfilePhoto(props) {
           headers: { 'Content-Type': 'application/json',
           'Authorization': `${localStorage.getItem('token')} `},
         });
-        console.log("step 3")
-        console.log(response)
+        window.location.reload();
         if (!response.ok) {
           throw new Error('Failed to update profile photo');
         }
@@ -38,7 +36,19 @@ function ProfilePhoto(props) {
     <div className="profile-frame">
       <div className="profile-photo">
         {props.profilePicture ? (
-          <img src={`data:image/jpeg;base64,${props.profilePicture}`} alt="Profile" /> 
+          <div>
+            <img src={`data:image/jpeg;base64,${props.profilePicture}`} alt="Profile" />
+            <label htmlFor="photo-input">
+              <span>Change profile photo</span>
+            </label>
+            
+            <input
+              type="file"
+              id="photo-input"
+              accept="image/*"
+              onChange={handleFileChange}
+            />
+          </div>
         ) : (
           <div>
             {loading ? (
