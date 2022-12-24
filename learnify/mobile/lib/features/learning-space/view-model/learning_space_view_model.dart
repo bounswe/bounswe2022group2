@@ -67,8 +67,10 @@ class LearningSpaceViewModel extends BaseViewModel {
     // _posts = List<Post>.generate(20, Post.dummy);
     _events = List<Event>.generate(3, Event.dummy);
     _events
-      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
-      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+      ..sort((Event e1, Event e2) =>
+          e1.date?.compareTo(e2.date ?? DateTime.now()) ?? 0)
+      ..sort((Event e1, Event e2) =>
+          e1.date?.isBefore(DateTime.now()) ?? false ? 1 : -1);
   }
 
   @override
@@ -85,8 +87,10 @@ class LearningSpaceViewModel extends BaseViewModel {
     // _posts = List<Post>.generate(20, Post.dummy);
     _events = List<Event>.generate(3, Event.dummy);
     _events
-      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
-      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+      ..sort((Event e1, Event e2) =>
+          e1.date?.compareTo(e2.date ?? DateTime.now()) ?? 0)
+      ..sort((Event e1, Event e2) =>
+          (e1.date?.isBefore(DateTime.now()) ?? false) ? 1 : -1);
     _initializeKeys();
   }
 

@@ -80,7 +80,9 @@ void main() {
       expect(
           titleText.text, '${firstEvent.itemIndex + 1}. ${eventModel.title}');
       expect(
-          dateText.text, DateFormat('dd MMM - kk:mm').format(eventModel.date));
+        dateText.text,
+        DateFormat('dd MMM - kk:mm').format(eventModel.date ?? DateTime.now()),
+      );
     },
   );
 }

@@ -84,8 +84,11 @@ void main() {
           BaseText);
       final BaseText eventDateText =
           (eventDateWidget.children[1] as Expanded).child as BaseText;
-      expect(eventDateText.text,
-          DateFormat('dd MMMM yyyy - kk:mm').format(eventModel.date));
+      expect(
+        eventDateText.text,
+        DateFormat('dd MMMM yyyy - kk:mm')
+            .format(eventModel.date ?? DateTime.now()),
+      );
 
       final Widget eventDuration = expansionTile.children[6];
       expect(eventDuration.runtimeType, Row);

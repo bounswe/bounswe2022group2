@@ -42,7 +42,7 @@ class EventItem extends StatelessWidget {
         .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
         .toList();
     final Map<String, dynamic> userName = userList.last['name'];
-    final bool isPassed = event.date.isBefore(DateTime.now());
+    final bool isPassed = event.date?.isBefore(DateTime.now()) ?? false;
     return CustomExpansionTile(
       key: expansionTileKey,
       collapsedTextColor: context.inactiveTextColor,
@@ -57,8 +57,10 @@ class EventItem extends StatelessWidget {
             child:
                 BaseText('${itemIndex + 1}. ${event.title}', translated: false),
           ),
-          BaseText(DateFormat('dd MMM - kk:mm').format(event.date),
-              translated: false, style: context.bodyMedium),
+          BaseText(
+              DateFormat('dd MMM - kk:mm').format(event.date ?? DateTime.now()),
+              translated: false,
+              style: context.bodyMedium),
         ],
       ),
       collapsedBackgroundColor: isPassed ? Colors.red[300] : null,
@@ -88,8 +90,11 @@ class EventItem extends StatelessWidget {
           style: context.bodySmall,
         ),
         context.sizedH(1.2),
-        _infoText(context, TextKeys.eventDate,
-            DateFormat('dd MMMM yyyy - kk:mm').format(event.date)),
+        _infoText(
+            context,
+            TextKeys.eventDate,
+            DateFormat('dd MMMM yyyy - kk:mm')
+                .format(event.date ?? DateTime.now())),
         context.sizedH(.8),
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
