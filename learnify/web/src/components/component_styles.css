@@ -684,4 +684,9 @@
     font-family: 'Open Sans' sans-serif;	
   }
   
-  
+  .participantsText{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #FFF7E9;
+}
