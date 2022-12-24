@@ -27,7 +27,7 @@ class Event extends BaseModel<Event> {
             BaseModel.getByType<int>(json['participationLimit']),
         eventCreator: BaseModel.getByType<String>(json['eventCreator']),
         geoLocation: BaseModel.embeddedModelFromJson<GeoLocation>(
-            json['geoLocation'], const GeoLocation()),
+            json['geolocation'], const GeoLocation()),
         participants: BaseModel.getWithDefault<List<String>>(
             json['participants'], <String>[]),
         lsId: BaseModel.getByType<String>(json['lsId']),
@@ -121,7 +121,7 @@ class Event extends BaseModel<Event> {
         'eventCreator': eventCreator,
         'geoLocation': geoLocation,
         'participants': participants,
-        'geoLocation': BaseModel.embeddedModelToJson<GeoLocation>(geoLocation),
+        'geolocation': BaseModel.embeddedModelToJson<GeoLocation>(geoLocation),
         'lsId': lsId,
         'title': title,
       };

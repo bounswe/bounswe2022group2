@@ -65,7 +65,7 @@ class EventItem extends StatelessWidget {
       ),
       collapsedBackgroundColor: isPassed ? Colors.red[300] : null,
       backgroundColor: isPassed ? Colors.red[300] : null,
-      expandedCrossAxisAlignment: CrossAxisAlignment.center,
+      expandedCrossAxisAlignment: CrossAxisAlignment.start,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
       onExpansionChanged: (bool val) {
@@ -74,19 +74,22 @@ class EventItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        Row(children: <Widget>[
-          CircleAvatar(
-              foregroundImage: NetworkImage(userPhotos.last), radius: 14),
-          context.sizedW(2),
-          // ignore: avoid_dynamic_calls
-          BaseText(userName['first'] + ' ' + userName['last'],
-              translated: false, style: context.bodySmall)
-        ]),
+        Row(
+          children: <Widget>[
+            CircleAvatar(
+                foregroundImage: NetworkImage(userPhotos.last), radius: 14),
+            context.sizedW(2),
+            // ignore: avoid_dynamic_calls
+            BaseText(userName['first'] + ' ' + userName['last'],
+                translated: false, style: context.bodySmall)
+          ],
+        ),
         context.sizedH(1),
         MultiLineText(
           event.description ?? '',
           translated: false,
           maxLines: 1000,
+          textAlign: TextAlign.start,
           style: context.bodySmall,
         ),
         context.sizedH(1.2),
