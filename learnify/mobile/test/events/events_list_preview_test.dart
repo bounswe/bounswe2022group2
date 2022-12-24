@@ -6,7 +6,9 @@ import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/features/learning-space/models/event/event.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
+import 'package:learnify/features/learning-space/view-model/learning_space_view_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
+import 'package:provider/provider.dart';
 
 import '../test_helpers.dart';
 
@@ -17,7 +19,15 @@ void main() {
       late final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen = LearningSpaceDetailScreen(
           learningSpace: dummyLearningSpace, initialIndex: 2);
-      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
+      await tester.pumpWidget(
+        TestHelpers.appWidget(
+          detailScreen,
+          childCallback: (BuildContext context) => context
+              .read<LearningSpaceViewModel>()
+              .setEvents(List<Event>.generate(3, Event.dummy),
+                  dummyLearningSpace.id ?? ''),
+        ),
+      );
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);

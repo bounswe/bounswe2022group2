@@ -87,9 +87,6 @@ class LearningSpaceViewModel extends BaseViewModel {
   void _initializeKeys() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
         _posts.length, (_) => GlobalKey<CustomExpansionTileState>());
-    _eventsExpansionTileKeys =
-        List<GlobalKey<CustomExpansionTileState>>.generate(
-            events.length, (_) => GlobalKey<CustomExpansionTileState>());
     _carouselControllers = List<CarouselController>.generate(
         _posts.length, (_) => CarouselController());
     _carouselPageIndexes = List<int>.generate(_posts.length, (_) => 0);
@@ -392,8 +389,9 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   void setEvents(List<Event> newEvents, String lsId) {
-    if (newEvents != events[lsId]) {
-      events[lsId] = newEvents;
-    }
+    events[lsId] = newEvents;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            newEvents.length, (_) => GlobalKey<CustomExpansionTileState>());
   }
 }
