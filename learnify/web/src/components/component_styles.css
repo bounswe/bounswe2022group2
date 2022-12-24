@@ -171,8 +171,8 @@
     cursor: pointer;
 }
 
-.user-name-text{
-    font-family: 'Open Sans' sans-serif;
+.user-name-text {
+    font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     font-size: 24px;
     text-align: left;
@@ -181,8 +181,10 @@
     padding-right: 20px;
     padding-bottom: 5px;
     overflow: auto;
-    color: #FF731D;
-}
+    color: #1746A2;
+    text-decoration: underline;
+    font-style: italic;
+  }
 
 .ls-detail-box-icon {
     border-radius: 20px;
