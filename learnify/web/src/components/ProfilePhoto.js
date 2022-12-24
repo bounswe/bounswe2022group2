@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-function ProfilePhoto() {
-  const [photo, setPhoto] = useState(null);
+function ProfilePhoto(props) {
+  const [photo, setPhoto] = useState(props.profilePicutre || null);
   const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
