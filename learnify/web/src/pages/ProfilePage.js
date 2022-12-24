@@ -10,7 +10,7 @@ import UserNameProfile from '../components/UserNameProfile';
 
 import ProfilePhoto from '../components/ProfilePhoto';
 import AboutUser from '../components/AboutUser';
-import LearningSpaceDetailBox from '../components/LearningSpaceDetailBox';
+import LearningSpaceDetailsProfile from '../components/LearningSpaceDetailsProfile';
 
 
 function ProfilePage() {
@@ -55,7 +55,7 @@ function ProfilePage() {
                     
                 <div className='profile-page-ls-box'>
                     {learningspaces.map(ls => (
-                     <LearningSpaceDetailBox 
+                     <LearningSpaceDetailsProfile
                         key={ls.id}
                         title={ls.title} 
                          description={ls.description} 
