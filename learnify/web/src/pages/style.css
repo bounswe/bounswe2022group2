@@ -931,6 +931,8 @@ h1 {
     padding: 16px;
     padding-left: 28px;
     padding-right: 28px;
+    overflow: scroll;
+    max-height: 500px;
 }
 
 .add-post-box-mid{	
