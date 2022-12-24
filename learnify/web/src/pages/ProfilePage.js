@@ -30,14 +30,14 @@ function ProfilePage() {
         }
         getProfile()
     }, [])
-    const aboutUser =  <AboutUser bio={bio} />
+    
     return(
     <div className='profilepageLayout'>
         <NavBar />
         <div className='profilepage'>
             <div className='profile-page-left'>
             
-            {aboutUser}
+            <AboutUser bio={bio} />
                 
 
                 <img src={illustration} alt="Categories Page Illustration" height={170} />
