@@ -13,6 +13,7 @@ import '../../../core/constants/main_type_definitions.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/extensions/number/number_extensions.dart';
+import '../../../core/helpers/color_helpers.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
@@ -27,6 +28,7 @@ import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
 import '../../../core/widgets/text/base_text.dart';
+import '../../../core/widgets/text/circled_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
@@ -37,7 +39,7 @@ import '../../home/view-model/home_view_model.dart';
 import '../../others-profile/view-model/others_profile_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
-import '../models/event.dart';
+import '../models/event/event.dart';
 import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
@@ -269,8 +271,8 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             children: <Widget>[
                               Expanded(
                                 child: BaseText(
-                                  tempLearningSpace?.creator ??
-                                      "Created by: placeholder_username",
+                                  '${context.tr(TextKeys.creator)}: ${tempLearningSpace?.creator}',
+                                  textAlign: TextAlign.start,
                                   translated: false,
                                   style: const TextStyle(
                                     overflow: TextOverflow.ellipsis,
@@ -285,13 +287,34 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                       }),
                                 ),
                               ),
-                              const Spacer(
-                                flex: 3,
+                              GestureDetector(
+                                onTap:
+                                    tempLearningSpace?.participants.isEmpty ??
+                                            true
+                                        ? null
+                                        : () async {
+                                            final String? selectedUser =
+                                                await DialogBuilder(context)
+                                                    .singleSelectDialog<String>(
+                                              TextKeys.eventParticipants,
+                                              tempLearningSpace?.participants ??
+                                                  <String>[],
+                                              null,
+                                            );
+                                            debugPrint(selectedUser);
+                                          },
+                                child: Row(
+                                  children: <Widget>[
+                                    const Icon(Icons.people_alt_outlined,
+                                        size: 20),
+                                    Text(
+                                        tempLearningSpace?.participants.length
+                                                .toString() ??
+                                            "",
+                                        textAlign: TextAlign.right)
+                                  ],
+                                ),
                               ),
-                              const Icon(Icons.people_alt_outlined, size: 20),
-                              Text(tempLearningSpace?.numParticipants
-                                      .toString() ??
-                                  "100")
                             ],
                           )
                         ],
@@ -308,6 +331,8 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
         bottom: ColoredTabBar(
           color: context.primary,
           tabBar: TabBar(
+            onTap: (int val) async =>
+                context.read<LearningSpaceViewModel>().getEvents(),
             tabs: LearningSpaceConstants.tabKeys
                 .map((String key) => Tab(text: context.tr(key)))
                 .toList(),

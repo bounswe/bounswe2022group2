@@ -69,6 +69,7 @@ class TextKeys {
   static const String spaceDescriptionHint = "description_hint";
   static const String spaceDescriptionLabel = "description_label";
   static const String done = "done";
+  static const String ok = "ok";
   static const String participantLimit = "participant_limit";
   static const String categories = "categories";
   static const String createLearningSpacePageTitle = "create_space_page_title";
@@ -124,4 +125,5 @@ class TextKeys {
   static const String selectedLanguage = "selected_language";
   static const String madeBy = "made_by";
   static const String darkMode = "dark_mode";
+  static const String creator = "creator";
 }

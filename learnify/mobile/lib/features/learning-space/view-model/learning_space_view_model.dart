@@ -20,7 +20,8 @@ import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
-import '../models/event.dart';
+import '../models/event/event.dart';
+import '../models/event/get_events_response.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../service/ls_service.dart';
@@ -33,8 +34,6 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<Post> _posts = <Post>[];
   List<Post> get posts => _posts;
-  List<Event> _events = <Event>[];
-  List<Event> get events => _events;
   List<GlobalKey<CustomExpansionTileState>> _expansionTileKeys =
       <GlobalKey<CustomExpansionTileState>>[];
   List<GlobalKey<CustomExpansionTileState>> get expansionTileKeys =>
@@ -51,13 +50,15 @@ class LearningSpaceViewModel extends BaseViewModel {
   List<int> get carouselPageIndexes => _carouselPageIndexes;
 
   Map<String, List<Annotation>> annotations = <String, List<Annotation>>{};
+  Map<String, List<Event>> events = <String, List<Event>>{};
 
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
-    _events = <Event>[];
     _posts = <Post>[];
     _learningSpace = null;
+    annotations.clear();
+    events.clear();
   }
 
   @override
@@ -65,10 +66,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     _lsService = LSService.instance;
     _posts = learningSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
-    _events = List<Event>.generate(3, Event.dummy);
-    _events
-      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
-      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+    // _events = List<Event>.generate(3, Event.dummy);
   }
 
   @override
@@ -82,20 +80,13 @@ class LearningSpaceViewModel extends BaseViewModel {
   void setLearningSpace(LearningSpace? newSpace) {
     _learningSpace = newSpace;
     _posts = newSpace?.posts ?? <Post>[];
-    // _posts = List<Post>.generate(20, Post.dummy);
-    _events = List<Event>.generate(3, Event.dummy);
-    _events
-      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
-      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+    // _events = List<Event>.generate(3, Event.dummy);
     _initializeKeys();
   }
 
   void _initializeKeys() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
         _posts.length, (_) => GlobalKey<CustomExpansionTileState>());
-    _eventsExpansionTileKeys =
-        List<GlobalKey<CustomExpansionTileState>>.generate(
-            _events.length, (_) => GlobalKey<CustomExpansionTileState>());
     _carouselControllers = List<CarouselController>.generate(
         _posts.length, (_) => CarouselController());
     _carouselPageIndexes = List<int>.generate(_posts.length, (_) => 0);
@@ -376,9 +367,38 @@ class LearningSpaceViewModel extends BaseViewModel {
     return _learningSpace;
   }
 
-  void setEvents(List<Event> newEvents) {
-    if (newEvents != _events) {
-      _events = newEvents;
+  List<Event>? get eventsOfLs {
+    final List<Event>? eventsList = events.containsKey(_learningSpace?.id)
+        ? events[_learningSpace?.id]
+        : null;
+    if (eventsList == null) return null;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            eventsList.length, (_) => GlobalKey<CustomExpansionTileState>());
+    return eventsList;
+  }
+
+  Future<List<Event>> getEvents() async {
+    final String lsId = _learningSpace?.id ?? '';
+    if (events.containsKey(lsId)) {
+      return events[lsId]!;
     }
+    final IResponseModel<GetEventsResponse> response =
+        await _lsService.getEvents(lsId);
+    if (response.hasError || response.data == null) return <Event>[];
+    events[lsId] = response.data!.events;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            response.data!.events.length,
+            (_) => GlobalKey<CustomExpansionTileState>());
+    notifyListeners();
+    return events[lsId] ?? <Event>[];
+  }
+
+  void setEvents(List<Event> newEvents, String lsId) {
+    events[lsId] = newEvents;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            newEvents.length, (_) => GlobalKey<CustomExpansionTileState>());
   }
 }

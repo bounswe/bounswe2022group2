@@ -7,6 +7,7 @@ import '../../../product/theme/general_theme.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
+import '../../helpers/color_helpers.dart';
 import '../buttons/action_button.dart';
 import '../indicators/custom_loading_indicator.dart';
 import '../text-field/custom_text_form_field.dart';
@@ -137,6 +138,38 @@ class DialogBuilder {
     return res;
   }
 
+  /// Participants dialog
+  Future<void> participantsDialog(List<String> participants) async {
+    await showDialog(
+      context: context,
+      // barrierDismissible: false,
+      builder: (BuildContext context) => AlertDialog(
+        title: BaseText(TextKeys.eventParticipants, style: context.titleLarge),
+        titlePadding: EdgeInsets.symmetric(vertical: context.height * 3),
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: context.width * 2, vertical: context.height * 0),
+        content: SizedBox(
+          width: double.maxFinite,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: participants.length,
+            itemBuilder: (BuildContext context, int i) => ColoredBox(
+                color: ColorHelpers.lightRandomColor,
+                child: BaseText(participants[i], translated: false)),
+          ),
+        ),
+        actionsAlignment: MainAxisAlignment.end,
+        actionsPadding: _actionsPadding(context),
+        actions: <Widget>[
+          _dialogActionButton(
+            TextKeys.ok,
+            callback: () => Navigator.of(context).pop(null),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _dialogActionButton(
     String text, {
     ErrorHelper? asyncCallback,
@@ -177,9 +210,9 @@ class DialogBuilder {
 
   EdgeInsets _actionsPadding(BuildContext context) => EdgeInsets.only(
       top: context.height * .1,
-      left: context.width * 4,
-      right: context.width * 4,
-      bottom: context.height * 1);
+      left: context.width * 3,
+      right: context.width * 3,
+      bottom: context.height * .3);
 
   /// Shows a dialog with single selection option.
   Future<T?> singleSelectDialog<T>(
