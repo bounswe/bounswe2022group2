@@ -11,7 +11,6 @@ import '../../../features/learning-space/view/annotations_screen.dart';
 import '../../../features/learning-space/view/components/chapter_image.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
-import '../../../features/others-profile/view-model/others_profile_view_model.dart';
 import '../../../features/others-profile/view/others_profile_screen.dart';
 import '../../../features/settings/view/settings_screen.dart';
 import '../../../features/view-learning-spaces/view/view_all_screen.dart';

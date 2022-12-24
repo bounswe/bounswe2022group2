@@ -34,6 +34,7 @@ import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
+import '../../others-profile/view-model/others_profile_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/event.dart';
@@ -267,13 +268,25 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Expanded(
-                                child: Text(
+                                child: BaseText(
                                   tempLearningSpace?.creator ??
                                       "Created by: placeholder_username",
-                                  textAlign: TextAlign.left,
+                                  translated: false,
                                   style: const TextStyle(
-                                      overflow: TextOverflow.ellipsis),
+                                    overflow: TextOverflow.ellipsis,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  onClick: () async =>
+                                      NavigationManager.instance.navigateToPage(
+                                          path:
+                                              NavigationConstants.othersProfile,
+                                          data: {
+                                        'username': tempLearningSpace?.creator,
+                                      }),
                                 ),
+                              ),
+                              const Spacer(
+                                flex: 3,
                               ),
                               const Icon(Icons.people_alt_outlined, size: 20),
                               Text(tempLearningSpace?.numParticipants
