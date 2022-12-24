@@ -60,6 +60,8 @@ function ProfilePage() {
                     This is the fourth LS
                 
                 </div>
+
+                <img src={`data:image/jpeg;base64,${profilePicture}`} alt="Happy" height={100} />
             </div>
 
             <div className='profile-page-right'>
