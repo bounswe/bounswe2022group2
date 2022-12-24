@@ -27,6 +27,7 @@ import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
 import '../../../core/widgets/text/base_text.dart';
+import '../../../core/widgets/text/circled_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
@@ -267,10 +268,10 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Expanded(
-                                child: Text(
-                                  tempLearningSpace?.creator ??
-                                      "Created by: placeholder_username",
-                                  textAlign: TextAlign.left,
+                                child: BaseText(
+                                  '${context.tr(TextKeys.creator)}: ${tempLearningSpace?.creator}',
+                                  textAlign: TextAlign.start,
+                                  translated: false,
                                   style: const TextStyle(
                                       overflow: TextOverflow.ellipsis),
                                 ),

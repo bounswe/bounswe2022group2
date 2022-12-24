@@ -124,4 +124,5 @@ class TextKeys {
   static const String selectedLanguage = "selected_language";
   static const String madeBy = "made_by";
   static const String darkMode = "dark_mode";
+  static const String creator = "creator";
 }

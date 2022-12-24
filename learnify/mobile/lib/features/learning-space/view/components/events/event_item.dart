@@ -35,13 +35,12 @@ class EventItem extends StatelessWidget {
         context.read<LearningSpaceViewModel>();
     final User user =
         LocalManager.instance.getModel(const User(), StorageKeys.user);
-    final List<Map<String, dynamic>> userList =
-        HomeViewModel.randomUsers.sublist(0, 13 + 15);
-    final List<String> userPhotos = userList
-        // ignore: avoid_dynamic_calls
-        .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
-        .toList();
-    final Map<String, dynamic> userName = userList.last['name'];
+    // final List<Map<String, dynamic>> userList =
+    //     HomeViewModel.randomUsers.sublist(0, 13 + 15);
+    // final List<String> userPhotos = userList
+    //     // ignore: avoid_dynamic_calls
+    //     .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
+    //     .toList();
     final bool isPassed = event.date?.isBefore(DateTime.now()) ?? false;
     return CustomExpansionTile(
       key: expansionTileKey,
@@ -76,11 +75,13 @@ class EventItem extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Widget>[
-            CircleAvatar(
-                foregroundImage: NetworkImage(userPhotos.last), radius: 14),
+            const CircleAvatar(
+                foregroundColor: Colors.white,
+                foregroundImage: AssetImage(IconKeys.person),
+                radius: 12),
             context.sizedW(2),
             // ignore: avoid_dynamic_calls
-            BaseText(event.eventCreator ?? '',
+            BaseText('${context.tr(TextKeys.creator)}: ${event.eventCreator}',
                 translated: false, style: context.bodySmall)
           ],
         ),
@@ -106,7 +107,7 @@ class EventItem extends StatelessWidget {
           context,
           TextKeys.eventParticipants,
           '',
-          customWidget: _participantsRow(context, userPhotos),
+          customWidget: _participantsRow(context),
           lastChild: BaseText(
             '${event.participants.length}/${event.participationLimit ?? '∞'}',
             translated: false,
@@ -157,9 +158,8 @@ class EventItem extends StatelessWidget {
         ],
       );
 
-  Widget _participantsRow(BuildContext context, List<String> userPhotos) {
-    final int numOfPhotos =
-        min(event.participants.length, min(userPhotos.length, 5));
+  Widget _participantsRow(BuildContext context) {
+    final int numOfPhotos = min(event.participants.length, 5);
     return Padding(
       padding: EdgeInsets.only(left: context.width * 3),
       child: Row(
@@ -167,20 +167,10 @@ class EventItem extends StatelessWidget {
           numOfPhotos + 1,
           (int i) => Align(
             widthFactor: 0.8,
-            child: CircleAvatar(
-              backgroundColor: context.primary,
-              foregroundImage: i == numOfPhotos
-                  ? null
-                  : NetworkImage(event.participants[i] == event.eventCreator
-                      ? userPhotos.last
-                      : userPhotos[i]),
-              radius: 14,
-              child: i == numOfPhotos
-                  ? BaseText('+${event.participants.length - numOfPhotos}',
-                      translated: false,
-                      color: Colors.white,
-                      style: context.labelLarge)
-                  : null,
+            child: CircledText(
+              text: i == numOfPhotos
+                  ? '+${event.participants.length - numOfPhotos}'
+                  : event.participants[i][0],
             ),
           ),
         ),
