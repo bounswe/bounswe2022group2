@@ -14,9 +14,12 @@ const postSchema = new Schema({
   content:{
     type: String, required: true
   },
-  annotations: [{
-    type: Schema.Types.Mixed,
-  }],
+  upvote: {
+    type: Number, default:0
+  },
+  downvote: {
+    type: Number, default:0
+  },
   images:[{
     type: String
   }],
