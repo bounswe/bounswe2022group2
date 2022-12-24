@@ -6,10 +6,10 @@ import illustration from '../images/categories-page-illustration.svg'
 import pp from '../images/elipse.png'
 import happy from '../images/happy.png'
 import axios from 'axios'
+import UserNameProfile from '../components/UserNameProfile';
 
 import ProfilePhoto from '../components/ProfilePhoto';
 import AboutUser from '../components/AboutUser';
-// <img src={pp} alt="Profile photo" height={333} />
 
 
 function ProfilePage() {
@@ -46,7 +46,9 @@ function ProfilePage() {
             <div className='profile-page-middle'>
 
                 <ProfilePhoto profilePicture={profilePicture} />
-
+                <div>
+                <UserNameProfile user = {username}/>
+                </div>
                 <div className='space-30'/>
                 <div className='profile-page-ls-box'>
                     This is the first LS
