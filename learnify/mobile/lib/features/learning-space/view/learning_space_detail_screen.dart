@@ -277,10 +277,30 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                       overflow: TextOverflow.ellipsis),
                                 ),
                               ),
-                              const Icon(Icons.people_alt_outlined, size: 20),
-                              Text(tempLearningSpace?.numParticipants
-                                      .toString() ??
-                                  "100")
+                              GestureDetector(
+                                onTap: () async {
+                                  final String? selectedUser =
+                                      await DialogBuilder(context)
+                                          .singleSelectDialog<String>(
+                                    TextKeys.eventParticipants,
+                                    tempLearningSpace?.participants ??
+                                        <String>[],
+                                    null,
+                                  );
+                                  debugPrint(selectedUser);
+                                },
+                                child: Row(
+                                  children: <Widget>[
+                                    const Icon(Icons.people_alt_outlined,
+                                        size: 20),
+                                    Text(
+                                        tempLearningSpace?.participants.length
+                                                .toString() ??
+                                            "",
+                                        textAlign: TextAlign.right)
+                                  ],
+                                ),
+                              ),
                             ],
                           )
                         ],

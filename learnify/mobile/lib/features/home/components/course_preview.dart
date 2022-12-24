@@ -55,7 +55,7 @@ class CoursePreview extends StatelessWidget {
           ),
           const Spacer(),
           const Icon(Icons.people_alt_outlined, size: 15),
-          Text(learningSpace?.numParticipants.toString() ?? "",
+          Text(learningSpace?.participants.length.toString() ?? "",
               textAlign: TextAlign.right)
         ],
       ));
