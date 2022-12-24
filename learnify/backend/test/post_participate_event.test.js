@@ -54,7 +54,7 @@ describe('POST /api/events/participate/:event', () => {
     Event.findOne = () => { throw new Error('findOne error') };
 
     const res = await request(app)
-      .post(`/api/events/${eventId}/participate`)
+      .post(`/events/participate/${eventId}`)
       .set('Authorization', `Bearer ${token}`)
       .set('Accept', 'application/json');
 
