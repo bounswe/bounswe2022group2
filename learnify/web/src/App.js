@@ -20,6 +20,7 @@ import LSbyCategoryPage from './pages/LSbyCategoryPage';
 import AboutPage from './pages/AboutPage';
 import MyLearningSpacesPage from './pages/MyLearningSpacesPage';
 import PopularLearningSpacesPage from './pages/PopularLearningSpacesPage';
+import ContactPage from './pages/ContactPage';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/verify-email" element={<PrivateRoutesVerify> <EmailVerificationPage /> </PrivateRoutesVerify>}/>
           <Route path="/home" element={<PrivateRoutes> <HomePage /> </PrivateRoutes>}/>
           <Route path="/about" element={<AboutPage/>}/>
+          <Route path="/contact" element={<ContactPage/>}/>
           <Route path="/forget-password" element={<ForgetPassword/>}/>
           <Route path="/change-password" element={<ChangePassword/>}/>
           <Route path="/create-ls" element={<PrivateRoutes> <CreateLS /> </PrivateRoutes>}/>
