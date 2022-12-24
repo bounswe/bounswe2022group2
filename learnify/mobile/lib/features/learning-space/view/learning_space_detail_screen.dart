@@ -278,17 +278,21 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                 ),
                               ),
                               GestureDetector(
-                                onTap: () async {
-                                  final String? selectedUser =
-                                      await DialogBuilder(context)
-                                          .singleSelectDialog<String>(
-                                    TextKeys.eventParticipants,
-                                    tempLearningSpace?.participants ??
-                                        <String>[],
-                                    null,
-                                  );
-                                  debugPrint(selectedUser);
-                                },
+                                onTap:
+                                    tempLearningSpace?.participants.isEmpty ??
+                                            true
+                                        ? null
+                                        : () async {
+                                            final String? selectedUser =
+                                                await DialogBuilder(context)
+                                                    .singleSelectDialog<String>(
+                                              TextKeys.eventParticipants,
+                                              tempLearningSpace?.participants ??
+                                                  <String>[],
+                                              null,
+                                            );
+                                            debugPrint(selectedUser);
+                                          },
                                 child: Row(
                                   children: <Widget>[
                                     const Icon(Icons.people_alt_outlined,

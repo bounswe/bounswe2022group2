@@ -104,12 +104,14 @@ class EventItem extends StatelessWidget {
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         context.sizedH(.8),
         GestureDetector(
-          onTap: () async {
-            final String? selectedUser = await DialogBuilder(context)
-                .singleSelectDialog<String>(
-                    TextKeys.eventParticipants, event.participants, null);
-            debugPrint(selectedUser);
-          },
+          onTap: event.participants.isEmpty
+              ? null
+              : () async {
+                  final String? selectedUser = await DialogBuilder(context)
+                      .singleSelectDialog<String>(
+                          TextKeys.eventParticipants, event.participants, null);
+                  debugPrint(selectedUser);
+                },
           child: _infoText(
             context,
             TextKeys.eventParticipants,
