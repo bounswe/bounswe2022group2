@@ -13,7 +13,7 @@ import AboutUser from '../components/AboutUser';
 
 
 function ProfilePage() {
-    const username = localStorage.getItem('username');
+    const username = localStorage.getItem('username')
     const [profilePicture, setProfilePicture] = useState('')
     const [bio, setBio] = useState('')
     const [learningSpaces, setLearningSpaces] = useState([])
@@ -25,18 +25,19 @@ function ProfilePage() {
             setProfilePicture(res.data.profile_picture)
             setBio(res.data.bio)
             setLearningSpaces(res.data.participated)
+            console.log(res.data)
+            console.log(res.data.bio)
         }
         getProfile()
     }, [])
-
+    const aboutUser =  <AboutUser bio={bio} />
     return(
     <div className='profilepageLayout'>
         <NavBar />
         <div className='profilepage'>
             <div className='profile-page-left'>
             
-            <AboutUser bio={bio} />
-
+            {aboutUser}
                 
 
                 <img src={illustration} alt="Categories Page Illustration" height={170} />

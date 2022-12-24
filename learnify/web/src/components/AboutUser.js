@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './component_styles.css';
 
 function AboutUser(props) {
-    const [aboutText, setAboutText] = useState(
-        props.bio || "This is a text instance about the user, the general information they want to give about themselves and their interests etc."
-      );
+    const [aboutText, setAboutText] = useState(props.bio);
+
+      console.log(aboutText)
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditButtonClick() {
