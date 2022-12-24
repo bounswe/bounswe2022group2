@@ -103,15 +103,23 @@ class EventItem extends StatelessWidget {
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         context.sizedH(.8),
-        _infoText(
-          context,
-          TextKeys.eventParticipants,
-          '',
-          customWidget: _participantsRow(context),
-          lastChild: BaseText(
-            '${event.participants.length}/${event.participationLimit ?? '∞'}',
-            translated: false,
-            style: context.bodySmall,
+        GestureDetector(
+          onTap: () async {
+            final String? selectedUser = await DialogBuilder(context)
+                .singleSelectDialog<String>(
+                    TextKeys.eventParticipants, event.participants, null);
+            debugPrint(selectedUser);
+          },
+          child: _infoText(
+            context,
+            TextKeys.eventParticipants,
+            '',
+            customWidget: _participantsRow(context),
+            lastChild: BaseText(
+              '${event.participants.length}/${event.participationLimit ?? '∞'}',
+              translated: false,
+              style: context.bodySmall,
+            ),
           ),
         ),
         Padding(
