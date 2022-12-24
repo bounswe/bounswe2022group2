@@ -80,7 +80,7 @@ class EventItem extends StatelessWidget {
                 foregroundImage: NetworkImage(userPhotos.last), radius: 14),
             context.sizedW(2),
             // ignore: avoid_dynamic_calls
-            BaseText(userName['first'] + ' ' + userName['last'],
+            BaseText(event.eventCreator ?? '',
                 translated: false, style: context.bodySmall)
           ],
         ),
@@ -108,7 +108,7 @@ class EventItem extends StatelessWidget {
           '',
           customWidget: _participantsRow(context, userPhotos),
           lastChild: BaseText(
-            '${userPhotos.length}/${event.participationLimit ?? '∞'}',
+            '${event.participants.length}/${event.participationLimit ?? '∞'}',
             translated: false,
             style: context.bodySmall,
           ),
@@ -158,7 +158,8 @@ class EventItem extends StatelessWidget {
       );
 
   Widget _participantsRow(BuildContext context, List<String> userPhotos) {
-    final int numOfPhotos = min(5, userPhotos.length);
+    final int numOfPhotos =
+        min(event.participants.length, min(userPhotos.length, 5));
     return Padding(
       padding: EdgeInsets.only(left: context.width * 3),
       child: Row(
@@ -168,11 +169,14 @@ class EventItem extends StatelessWidget {
             widthFactor: 0.8,
             child: CircleAvatar(
               backgroundColor: context.primary,
-              foregroundImage:
-                  i == numOfPhotos ? null : NetworkImage(userPhotos[i]),
+              foregroundImage: i == numOfPhotos
+                  ? null
+                  : NetworkImage(event.participants[i] == event.eventCreator
+                      ? userPhotos.last
+                      : userPhotos[i]),
               radius: 14,
               child: i == numOfPhotos
-                  ? BaseText('+${userPhotos.length - numOfPhotos}',
+                  ? BaseText('+${event.participants.length - numOfPhotos}',
                       translated: false,
                       color: Colors.white,
                       style: context.labelLarge)
