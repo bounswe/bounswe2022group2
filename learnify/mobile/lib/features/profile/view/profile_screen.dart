@@ -130,6 +130,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           final HomeWrapperViewModel homeModel =
               context.read<HomeWrapperViewModel>();
           return ActionButton(
+            key: ProfileKeys.updateButton,
             text: TextKeys.update,
             padding: EdgeInsets.symmetric(
                 horizontal: context.responsiveSize * 2.8,
@@ -150,6 +151,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         (_, ProfileViewModel model) => model.learningSpaces,
         (BuildContext context, List<LearningSpace> learningSpaces, _) =>
             ActionButton(
+          key: ProfileKeys.enrolledLearningSpacesButton,
           text: TextKeys.enrolledLS,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
