@@ -7,13 +7,13 @@ import pp from '../images/elipse.png'
 import happy from '../images/happy.png'
 import axios from 'axios'
 import UserNameProfile from '../components/UserNameProfile';
-
+import { useParams } from 'react-router-dom';
 import ProfilePhoto from '../components/ProfilePhoto';
 import AboutUser from '../components/AboutUser';
 
 
 function ProfilePage() {
-    const username = localStorage.getItem('username')
+    const { username } = useParams();
     const [profilePicture, setProfilePicture] = useState('')
     const [bio, setBio] = useState('')
     const [learningSpaces, setLearningSpaces] = useState([])
