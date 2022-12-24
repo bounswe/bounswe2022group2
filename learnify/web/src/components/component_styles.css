@@ -639,6 +639,7 @@
     padding-left: 28px;
     padding-right: 28px;
     max-height: 400px;
+    overflow: scroll;
   }
   
   .about-text-input {
