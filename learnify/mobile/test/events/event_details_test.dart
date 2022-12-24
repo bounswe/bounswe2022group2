@@ -107,7 +107,7 @@ void main() {
       expect(participantsRow.children[2].runtimeType, BaseText);
       final BaseText participantsText = participantsRow.children[2] as BaseText;
       expect(participantsText.text,
-          '${userPhotos.length}/${eventModel.participationLimit}');
+          '${userPhotos.length}/${eventModel.participationLimit ?? '∞'}');
 
       final Widget eventMap = expansionTile.children[9];
       expect(eventMap.runtimeType, Padding);

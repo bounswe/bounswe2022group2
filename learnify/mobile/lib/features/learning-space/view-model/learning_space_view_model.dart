@@ -379,11 +379,14 @@ class LearningSpaceViewModel extends BaseViewModel {
     if (events.containsKey(lsId)) {
       return events[lsId]!;
     }
-    await Future.delayed(const Duration(seconds: 3));
     final IResponseModel<GetEventsResponse> response =
         await _lsService.getEvents(lsId);
     if (response.hasError || response.data == null) return <Event>[];
     events[lsId] = response.data!.events;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            response.data!.events.length,
+            (_) => GlobalKey<CustomExpansionTileState>());
     notifyListeners();
     return events[lsId] ?? <Event>[];
   }

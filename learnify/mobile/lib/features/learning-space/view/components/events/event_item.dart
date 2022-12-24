@@ -105,7 +105,7 @@ class EventItem extends StatelessWidget {
           '',
           customWidget: _participantsRow(context, userPhotos),
           lastChild: BaseText(
-            '${userPhotos.length}/${event.participationLimit}',
+            '${userPhotos.length}/${event.participationLimit ?? '∞'}',
             translated: false,
             style: context.bodySmall,
           ),

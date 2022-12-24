@@ -23,7 +23,6 @@ class EventsList extends StatelessWidget {
         ..sort((Event e1, Event e2) =>
             e1.date?.isBefore(DateTime.now()) ?? false ? 1 : -1);
     }
-    print(tuple.item1);
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
       key: const PageStorageKey<String>('EVENTS_LIST'),
