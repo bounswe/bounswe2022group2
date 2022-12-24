@@ -16,6 +16,11 @@ class EventsList extends StatelessWidget {
                         List<GlobalKey<CustomExpansionTileState>>>(
                     model.events, model.eventsExpansionTileKeys),
                 context);
+    tuple.item1
+      ..sort((Event e1, Event e2) =>
+          e1.date?.compareTo(e2.date ?? DateTime.now()) ?? 0)
+      ..sort((Event e1, Event e2) =>
+          e1.date?.isBefore(DateTime.now()) ?? false ? 1 : -1);
     final List<GlobalKey<CustomExpansionTileState>> keys = tuple.item2;
     return SliverList(
       key: const PageStorageKey<String>('EVENTS_LIST'),
