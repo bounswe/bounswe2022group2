@@ -282,7 +282,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                       NavigationManager.instance.navigateToPage(
                                           path:
                                               NavigationConstants.othersProfile,
-                                          data: {
+                                          data: <String, String?>{
                                         'username': tempLearningSpace?.creator,
                                       }),
                                 ),
@@ -301,7 +301,13 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                                   <String>[],
                                               null,
                                             );
-                                            debugPrint(selectedUser);
+                                            await NavigationManager.instance
+                                                .navigateToPage(
+                                                    path: NavigationConstants
+                                                        .othersProfile,
+                                                    data: <String, String?>{
+                                                  'username': selectedUser,
+                                                });
                                           },
                                 child: Row(
                                   children: <Widget>[

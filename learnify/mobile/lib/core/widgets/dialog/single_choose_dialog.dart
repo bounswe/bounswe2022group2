@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../product/constants/navigation_constants.dart';
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
 import '../../extensions/string/string_extensions.dart';
-import '../../managers/navigation/navigation_manager.dart';
 import '../divider/custom_divider.dart';
 import '../text/multiline_text.dart';
 
@@ -54,10 +52,7 @@ class SingleChooseDialog<T> extends StatelessWidget {
   Widget _getSimpleDialogOption(T element, BuildContext context) => Material(
         color: Colors.transparent,
         child: SimpleDialogOption(
-          onPressed: () async => NavigationManager.instance
-              .navigateToPage(path: NavigationConstants.othersProfile, data: {
-            'username': element,
-          }),
+          onPressed: () => Navigator.of(context).pop(element),
           child: _dialogChild(context, element),
         ),
       );
