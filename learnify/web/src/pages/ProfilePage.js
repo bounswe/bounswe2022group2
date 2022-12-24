@@ -5,11 +5,14 @@ import NavBar from '../components/NavBar';
 import illustration from '../images/categories-page-illustration.svg'
 import pp from '../images/elipse.png'
 import happy from '../images/happy.png'
+import UserNameProfile from '../components/UserNameProfile';
 
 import ProfilePhoto from '../components/ProfilePhoto';
 import AboutUser from '../components/AboutUser';
 // <img src={pp} alt="Profile photo" height={333} />
 
+const username = localStorage.getItem('username');
+console.log(username);
 
 
 
@@ -30,7 +33,9 @@ function ProfilePage() {
             <div className='profile-page-middle'>
 
                 <ProfilePhoto />
-
+                <div>
+                <UserNameProfile user = {username}/>
+                </div>
                 <div className='space-30'/>
                 <div className='profile-page-ls-box'>
                     This is the first LS
