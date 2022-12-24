@@ -44,10 +44,11 @@ class CircledText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.all(3),
         margin: margin ?? EdgeInsets.zero,
         decoration: BoxDecoration(
-            color: color ?? context.primary, shape: BoxShape.circle),
+            color: color ?? context.primary.withOpacity(.3),
+            shape: BoxShape.circle),
         width: context.width * sizeFactor,
         child: textWidget ??
             BaseText(

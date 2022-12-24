@@ -171,6 +171,8 @@ class EventItem extends StatelessWidget {
               text: i == numOfPhotos
                   ? '+${event.participants.length - numOfPhotos}'
                   : event.participants[i][0],
+              textStyle: context.bodyMedium
+                  .copyWith(color: ColorHelpers.darkRandomColor),
             ),
           ),
         ),
