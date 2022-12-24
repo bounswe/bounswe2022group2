@@ -13,6 +13,7 @@ import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
+import '../models/event/get_events_response.dart';
 import 'l_ls_service.dart';
 
 /// Service for network request of auth view-model.
@@ -33,6 +34,7 @@ class LSService extends ILSService {
   static const String _editPost = '/learningSpace/edit/post';
   static const String _createAnnotation = '/annotations-service/create';
   static const String _getAnnotations = '/annotations-service/get';
+  static const String _getEvents = '/events/ls';
 
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
 
@@ -103,6 +105,14 @@ class LSService extends ILSService {
       networkManager.send<GetAnnotationsResponse, GetAnnotationsResponse>(
         '$_getAnnotations/$lsId/$postId',
         parseModel: const GetAnnotationsResponse(),
+        type: RequestTypes.get,
+      );
+
+  @override
+  Future<IResponseModel<GetEventsResponse>> getEvents(String lsId) async =>
+      networkManager.send<GetEventsResponse, GetEventsResponse>(
+        '$_getEvents/$lsId',
+        parseModel: const GetEventsResponse(),
         type: RequestTypes.get,
       );
 }

@@ -10,6 +10,7 @@ import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
+import '../models/event/get_events_response.dart';
 
 /// Abstract base class for auth service, defines the required functions.
 abstract class ILSService extends BaseService {
@@ -23,4 +24,5 @@ abstract class ILSService extends BaseService {
       String lsId, String postId);
   Future<IResponseModel<CreateAnnotationResponse>> createAnnotation(
       Annotation body, String lsId, String postId);
+  Future<IResponseModel<GetEventsResponse>> getEvents(String lsId);
 }

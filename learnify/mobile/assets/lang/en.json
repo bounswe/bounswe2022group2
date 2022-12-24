@@ -125,5 +125,7 @@
   "made_by": "Made with 💙 by Learnify Team",
   "dark_mode": "Dark Mode:",
   "biography": "Biography",
-  "add_biography_hint": "Explain Yourself Briefly"
+  "add_biography_hint": "Explain Yourself Briefly",
+  "creator": "Creator",
+  "ok": "OK"
 }
