@@ -370,11 +370,16 @@ class LearningSpaceViewModel extends BaseViewModel {
     return _learningSpace;
   }
 
+  List<Event>? get eventsOfLs => events.containsKey(_learningSpace?.id)
+      ? events[_learningSpace?.id]
+      : null;
+
   Future<List<Event>> getEvents() async {
     final String lsId = _learningSpace?.id ?? '';
     if (events.containsKey(lsId)) {
       return events[lsId]!;
     }
+    await Future.delayed(const Duration(seconds: 3));
     final IResponseModel<GetEventsResponse> response =
         await _lsService.getEvents(lsId);
     if (response.hasError || response.data == null) return <Event>[];

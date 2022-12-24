@@ -22,6 +22,7 @@ import '../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
 import '../../../core/widgets/image/image_painter.dart';
+import '../../../core/widgets/indicators/custom_loading_indicator.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
@@ -295,7 +296,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
           color: context.primary,
           tabBar: TabBar(
             onTap: (int val) async =>
-                context.read<LearningSpaceViewModel>().getEvents(val),
+                context.read<LearningSpaceViewModel>().getEvents(),
             tabs: LearningSpaceConstants.tabKeys
                 .map((String key) => Tab(text: context.tr(key)))
                 .toList(),
