@@ -5,16 +5,16 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../view-model/others_profile_view_model.dart';
 
-class ProfileScreen extends BaseView<OthersProfileViewModel> {
-  const ProfileScreen({Key? key})
+class OthersProfileScreen extends BaseView<OthersProfileViewModel> {
+  OthersProfileScreen({required String username, Key? key})
       : super(
-          builder: _builder,
+          builder: (BuildContext context) => _builder(context, username),
           scrollable: true,
           hasScaffold: false,
           key: key,
         );
 
-  static Widget _builder(BuildContext context) => Padding(
+  static Widget _builder(BuildContext context, String username) => Padding(
       padding: EdgeInsets.symmetric(vertical: context.height * 3),
-      child: const BaseText('othersProfile'));
+      child: BaseText(username));
 }
