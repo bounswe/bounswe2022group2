@@ -31,6 +31,9 @@ const eventSchema = new Schema({
   participants: {
     type: [String]
   },
+  num_participants: {
+    type: Number, default: 1
+  },
   lsId: {
     type: String
   }
