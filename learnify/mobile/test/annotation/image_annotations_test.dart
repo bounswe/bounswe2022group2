@@ -8,17 +8,28 @@ import 'package:learnify/features/learning-space/models/post_model.dart';
 import 'package:learnify/features/learning-space/view-model/learning_space_view_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:tuple/tuple.dart';
 
 import '../test_helpers.dart';
 
 void main() {
   testWidgets(
-    "Test text annotation functionality.",
+    "Test image annotation functionality.",
     (WidgetTester tester) async {
-      final LearningSpace dummyLearningSpace = LearningSpace.dummy(0);
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
-      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
+      await tester.pumpWidget(
+        TestHelpers.appWidget(
+          detailScreen,
+          childCallback: (BuildContext c) {
+            final LearningSpaceViewModel viewModel =
+                c.read<LearningSpaceViewModel>();
+            viewModel.annotations['0'] = <Annotation>[];
+            viewModel.annotations['1'] = <Annotation>[];
+          },
+        ),
+      );
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);
@@ -57,27 +68,31 @@ void main() {
       const Offset endOffset = Offset(98, 210);
       const Color color = Colors.red;
       const String imageUrl = 'https://picsum.photos/id/1/700/400';
-      final Annotation annotation = viewModel
-          .createImageAnnotation(
-            startOffset,
-            endOffset,
-            color,
-            imageUrl,
-            annotationContent,
-            firstPostModel,
-            0,
-          )
+      final Annotation annotation = (await viewModel.createImageAnnotation(
+        startOffset,
+        endOffset,
+        color,
+        imageUrl,
+        annotationContent,
+        '0',
+        'bahricanyesil',
+        firstPostModel,
+        0,
+      ))
           .item2;
-      expect(annotation.content, annotationContent);
-      expect(annotation.startOffset, startOffset);
-      expect(annotation.endOffset, endOffset);
+      final Tuple2<Offset, Offset> offsets = annotation.startEndOffsets;
+      expect(annotation.body, annotationContent);
+      expect(offsets.item1, startOffset);
+      expect(offsets.item2, endOffset);
       expect(annotation.color, color);
       expect(annotation.imageUrl, imageUrl);
       await tester.pumpAndSettle();
       final Post foundPost =
           viewModel.posts.where((Post c) => c.id == firstPostModel.id).first;
-      expect(foundPost.annotations.length, greaterThanOrEqualTo(1));
-      final Annotation foundAnnotation = foundPost.annotations.first;
+      final List<Annotation> foundAnnotations =
+          await viewModel.getPostAnnotations(foundPost.id ?? '');
+      expect(foundAnnotations.length, greaterThanOrEqualTo(1));
+      final Annotation foundAnnotation = foundAnnotations.first;
       expect(foundAnnotation, annotation);
     },
   );
