@@ -7,6 +7,7 @@ import pp from '../images/elipse.png'
 import happy from '../images/happy.png'
 
 import ProfilePhoto from '../components/ProfilePhoto';
+import AboutUser from '../components/AboutUser';
 // <img src={pp} alt="Profile photo" height={333} />
 
 
@@ -19,37 +20,9 @@ function ProfilePage() {
         <div className='profilepage'>
             <div className='profile-page-left'>
             
-                <div className='ls-box3'>
-                    <label className='feed-title'>
-                        <label className='navBarText2'> Friends</label>
-                    </label>
-                    <div className='space-3'/>
-                    FancyFriend
-                    <div className='space-3'/>
-                    YourFriend
-                    <div className='space-3'/>
-                    myfriend
-                    <div className='space-3'/>
-                    FriendHandsome
-                    <div className='space-3'/>
-                    myfriendE
-                </div>
+            <AboutUser />
 
-                <div className='profilepage-friends-box'>
-                    <label className='feed-title'>
-                        <label className='navBarText2'> Interest Areas</label>
-                    </label>
-                    <div className='space-3'/>
-                    Knitting
-                    <div className='space-3'/>
-                    Cooking
-                    <div className='space-3'/>
-                    Coding
-                    <div className='space-3'/>
-                    Reading
-                    <div className='space-3'/>
-                    Writing
-                </div>
+                
 
                 <img src={illustration} alt="Categories Page Illustration" height={170} />
             </div>
@@ -78,12 +51,22 @@ function ProfilePage() {
                
                 <label className='profile-page-text'> Meet with new people and learn together, that is what matters... LEARNIFY</label>
                 <div className='profilepage-friends-box'>
-                <label className='navBarText2'> About this user</label>
-                     <div className='space-3'/>
-                     <label>
-                    This is a text instance about the user, the general information they want to give about themcelf and their interests etc.
+                    <label className='feed-title'>
+                        <label className='navBarText2'> Interest Areas</label>
                     </label>
+                    <div className='space-3'/>
+                    Knitting
+                    <div className='space-3'/>
+                    Cooking
+                    <div className='space-3'/>
+                    Coding
+                    <div className='space-3'/>
+                    Reading
+                    <div className='space-3'/>
+                    Writing
                 </div>
+                
+
             </div>
               
     
