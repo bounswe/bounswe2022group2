@@ -8,7 +8,7 @@ class AddCommentResponse extends BaseModel<AddCommentResponse> {
       AddCommentResponse(
           resultMessage: BaseModel.getByType<String>(json['resultMessage']),
           comment: BaseModel.embeddedModelFromJson<Comment>(
-              json['comment'], const Comment()));
+              json['Comment'], const Comment()));
 
   final String? resultMessage;
   final Comment? comment;

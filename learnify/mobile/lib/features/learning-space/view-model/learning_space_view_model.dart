@@ -167,11 +167,20 @@ class LearningSpaceViewModel extends BaseViewModel {
       return Tuple3<LearningSpace?, Comment?, String?>(
           null, null, resp.error?.errorMessage);
     } else {
-      final Comment? comment = resp.data?.comment;
+      final Comment comment = Comment(
+        id: resp.data?.comment?.id,
+        content: resp.data?.comment?.content,
+        creator: resp.data?.comment?.creator,
+        images: resp.data?.comment?.images ?? <String>[],
+      );
+
       final List<Comment> initialComments = comments[postId] ?? <Comment>[];
       final List<Comment> updatedComments = List<Comment>.from(initialComments)
         ..add(comment!);
       comments[postId ?? ''] = updatedComments;
+      final int itemIndex = _posts
+          .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
+      posts[itemIndex].comments.add(comment);
       _learningSpace = _learningSpace?.copyWith(posts: _posts);
       notifyListeners();
       return Tuple3<LearningSpace?, Comment?, String?>(

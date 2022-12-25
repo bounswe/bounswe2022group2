@@ -54,13 +54,15 @@ class Post extends BaseModel<Post> {
           {String? title,
           String? creator,
           String? content,
-          List<String>? images}) =>
+          List<String>? images,
+          List<Comment>? comments}) =>
       Post(
           id: id ?? id,
           title: title ?? this.title,
           creator: creator ?? this.creator,
           content: content ?? this.content,
           images: images ?? this.images,
+          comments: comments ?? this.comments,
           createdAt: createdAt,
           updatedAt: updatedAt);
 
