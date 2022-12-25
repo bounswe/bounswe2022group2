@@ -13,6 +13,7 @@ const EventForm = () => {
     const [timeValue, setTimeValue] = useState(null);
     const [eventDuration, setEventDuration] = useState('');
     const [durationError, setDurationError] = useState(false);
+    const [plimitValue, setPlimitValue] = useState('');
 
 
     const handleDurationChange = (event) => {
@@ -22,6 +23,10 @@ const EventForm = () => {
         } else {
             setDurationError(false);
         }
+    };
+
+    const handlePlimitValueChange = (event) => {
+        setPlimitValue(event.target.value);
     };
 
     return (
@@ -75,6 +80,18 @@ const EventForm = () => {
                             onChange={handleDurationChange}
                             error={durationError}
                             helperText={durationError ? (eventDuration < 0 ? 'Duration cannot be negative.' : 'Duration cannot be 0.') : ''}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                        />
+                    </div>
+                    <div className="eventform-body-row">
+                        <TextField
+                            required
+                            label="Participation Limit"
+                            type="number"
+                            value={plimitValue}
+                            onChange={handlePlimitValueChange}
                             InputLabelProps={{
                                 shrink: true,
                             }}
