@@ -9,6 +9,9 @@ import TextField from '@mui/material/TextField';
 
 const EventForm = () => {
 
+    const [eventTitle, setEventTitle] = useState('');
+    const [eventTitleError, setEventTitleError] = useState(false);
+
     const [dateValue, setDateValue] = useState(null);
     const [timeValue, setTimeValue] = useState(null);
     const [eventDuration, setEventDuration] = useState('');
@@ -16,6 +19,9 @@ const EventForm = () => {
     const [plimitValue, setPlimitValue] = useState('');
     const [plimitError, setPlimitError] = useState(false);
 
+    const handleEventTitleChange = (event) => {
+        setEventTitle(event.target.value);
+    };
 
     const handleDurationChange = (event) => {
         setEventDuration(event.target.value);
@@ -43,7 +49,13 @@ const EventForm = () => {
                 </div>
                 <div className="eventform-body">
                     <div className="eventform-body-row">
-                        <input type="text" className='eventform-input' placeholder="Event Title" />
+                        <TextField
+                            required
+                            label="Event Title"
+                            type="text"
+                            value={eventTitle}
+                            onChange={handleEventTitleChange}
+                        />
                     </div>
                     <div className="eventform-body-row">
                         <textarea className='eventform-input' placeholder="Event Description" />
