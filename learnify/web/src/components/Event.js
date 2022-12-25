@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Event(props){
 
@@ -22,11 +22,57 @@ export default function Event(props){
                     d.getFullYear()].join('/')+' '+
                     [d.getHours(),
                     d.getMinutes()].join(':');
-  
+
+  const [isJoined, setIsJoined] = useState(true);
+
+  useEffect(()=>{
+    if(showEvent !== true && deleteEvent !== true){
+        const ifameData=document.getElementById("iframeId")
+        const lat=latitude;
+        const lon=longitude;
+        ifameData.src=`https://maps.google.com/maps?q=${lat},${lon}&hl=es;&output=embed`
+    }
+    })
+
+  const [value, setValue] = useState("");
+
+  const [deleteEvent, setDeleteEvent] = useState(false);
+
+  const deleteTheEvent = () => {
+        setDeleteEvent(current => !current);
+  };
+
+  const [editEvent, setEditEvent] = useState(false);
+
+  const [showEvent, setShowEvent] = useState(true);
+
+  const [showParticipants, setShowParticipants] = useState(true);
+
+  const showTheParticipants = () => {
+    setShowParticipants(current => !current);
+  };
+
+  const editTheEvent = () => {
+      setEditEvent(current => !current);
+  };
+
+  const showTheEvent = () => {
+    setShowEvent(current => !current);
+  };
+
+  const joinEvent = () => {
+    setIsJoined(current => !current);
+  };
+
+  const token = localStorage.getItem("token");
+
+  const [message, setMessage] = useState("");
+
+  const lsid = props.my_lsid;
 
     return(
     <div>
-
-    </div>
+        
+        </div>
     );
 }
