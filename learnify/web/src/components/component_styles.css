@@ -564,3 +564,11 @@
     width: 100%;
     height: 100%;
 }
+
+.eventform-header {
+    color: #1746A2;
+    display: flex;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
