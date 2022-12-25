@@ -264,6 +264,10 @@ export default function Post(props){
     setAddComment(current => !current);
 };
 
+useEffect(() => {
+  localStorage.setItem("commentClicked", false);
+}, []);
+
   const [value, setValue] = useState("");
 
   const token = localStorage.getItem("token");
@@ -426,7 +430,7 @@ export default function Post(props){
                         </div>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{0}</label>
+                        <label className="counter__output">{commentArray.length}</label>
                     </div>
                 </div>
                 <div className='post-box-right'>
