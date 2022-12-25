@@ -57,9 +57,8 @@ function ProfilePage() {
                 <UserNameProfile user = {username}/>
                 </div>
                 <div className='space-20'/>
-                <div className='profile-page-ls-box-drawer'>
                     <label className='user-profile-ls-text'> {username}'s learning spaces box </label>                    
-                </div>
+                
                 <div className='profile-page-ls-box'>
                     {learningspaces.map(ls => (
                      <LearningSpaceDetailsProfile
