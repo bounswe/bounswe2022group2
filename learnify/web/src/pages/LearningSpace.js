@@ -330,7 +330,8 @@ function LearningSpace() {
                     <label className='navBarText2'> <img src={geolocation} alt="Learnify Logo" height={70} /></label>
                     </label>
                     <div className='space-5'></div>
-                       
+                        {eventArray.map(myEvent =>
+                                    <Event myEvent = {myEvent} my_lsid = {lsid}/>)}
                 </div>
             </div>
         </div>
