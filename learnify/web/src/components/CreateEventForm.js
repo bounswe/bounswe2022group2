@@ -13,7 +13,7 @@ const EventForm = () => {
     const [eventTitleError, setEventTitleError] = useState(false);
 
     const [eventDescription, setEventDescription] = useState('');
-    
+    const [eventDescriptionError, setEventDescriptionError] = useState(false);
 
     const [dateValue, setDateValue] = useState(null);
     const [timeValue, setTimeValue] = useState(null);
@@ -33,6 +33,11 @@ const EventForm = () => {
 
     const handleEventDescriptionChange = (event) => {
         setEventDescription(event.target.value);
+        if (event.target.value.length < 3) {
+            setEventDescriptionError(true);
+        } else {
+            setEventDescriptionError(false);
+        }
     };
 
     const handleDurationChange = (event) => {
@@ -79,6 +84,8 @@ const EventForm = () => {
                             multiline
                             maxRows={6}
                             value={eventDescription}
+                            error={eventDescriptionError}
+                            helperText={eventDescriptionError ? 'Event description must be at least 3 characters long' : ''}
                             onChange={handleEventDescriptionChange}
                         />
                     </div>
