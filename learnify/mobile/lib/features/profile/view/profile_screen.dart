@@ -38,6 +38,8 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           scrollable: true,
           hasScaffold: false,
           key: key,
+          futureInit: (BuildContext context) async =>
+              context.read<ProfileViewModel>()._getProfile(),
         );
 
   static Widget _builder(BuildContext context) => Padding(
@@ -148,7 +150,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
 
   static Widget get _enrolledLearningSpacesButton =>
       SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.learningSpaces,
+        (_, ProfileViewModel model) => model.enrolledLearningSpaces,
         (BuildContext context, List<LearningSpace> learningSpaces, _) =>
             ActionButton(
           key: ProfileKeys.enrolledLearningSpacesButton,
@@ -165,7 +167,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
 
   static Widget _totalCountRow(BuildContext context) =>
       SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.learningSpaces,
+        (_, ProfileViewModel model) => model.enrolledLearningSpaces,
         (BuildContext context, List<LearningSpace> learningSpaces, _) =>
             Padding(
           padding:

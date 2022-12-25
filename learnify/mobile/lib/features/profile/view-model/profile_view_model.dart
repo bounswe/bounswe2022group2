@@ -1,17 +1,29 @@
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../core/managers/network/models/any_model.dart';
+import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
+import '../model/get_profile_response_model.dart';
+import '../model/profile_model.dart';
+import '../service/i_profile_service.dart';
+import '../service/profile_service.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
   ProfileViewModel(this._user);
   User _user;
   User get user => _user;
+
+  Profile _profile;
+  Profile get profile => _profile;
   late final ImagePicker _picker;
+
+  late final IProfileService _profileService;
 
   late TextEditingController _usernameController;
   TextEditingController get usernameController => _usernameController;
@@ -33,8 +45,11 @@ class ProfileViewModel extends BaseViewModel {
   String? _email;
   String? get email => _email;
 
-  List<LearningSpace> _learningSpaces = <LearningSpace>[];
-  List<LearningSpace> get learningSpaces => _learningSpaces;
+  List<LearningSpace> _enrolledLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> get enrolledLearningSpaces => _enrolledLearningSpaces;
+
+  List<LearningSpace> _createdLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> get createdLearningSpaces => _createdLearningSpaces;
 
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
@@ -139,5 +154,29 @@ class ProfileViewModel extends BaseViewModel {
     _user = newUser;
     _setUserData();
     notifyListeners();
+  }
+
+  Future<String?> getProfile() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_getProfile());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _getProfile() async {
+    final String? username = _user.username;
+    if (username != null) {
+      final IResponseModel<GetProfileResponse> res =
+          await _profileService.getProfile(username);
+      final GetProfileResponse? respData = res.data;
+      if (res.hasError || respData == null) {
+        return res.error?.errorMessage;
+      }
+      _user.username = respData.username;
+    }
+
+    _setUserData();
+    notifyListeners();
+    return null;
   }
 }
