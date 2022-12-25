@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:typed_data';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,16 +12,16 @@ import '../../auth/verification/model/user_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/get_profile_response_model.dart';
 import '../model/profile_model.dart';
-import '../service/i_profile_service.dart';
 import '../service/profile_service.dart';
+import '../service/i_profile_service.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
-  ProfileViewModel(this._user, this._profile);
+  ProfileViewModel(this._user);
   User _user;
   User get user => _user;
 
-  Profile _profile;
+  late Profile _profile;
   Profile get profile => _profile;
   late final ImagePicker _picker;
 
@@ -64,6 +66,7 @@ class ProfileViewModel extends BaseViewModel {
 
   @override
   void initViewModel() {
+    _profileService = ProfileService.instance;
     _picker = ImagePicker();
   }
 
@@ -72,6 +75,7 @@ class ProfileViewModel extends BaseViewModel {
     _userFormKey = GlobalKey<FormState>();
     _biographyFormKey = GlobalKey<FormState>();
     // TODO: Fix
+    _getProfile();
     _setUserData();
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _usernameController = TextEditingController(text: _initialUsername);
@@ -156,23 +160,30 @@ class ProfileViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  Future<String?> getProfile() async {
-    await operation?.cancel();
-    operation = CancelableOperation<String?>.fromFuture(_getProfile());
-    final String? res = await operation?.valueOrCancellation();
-    return res;
-  }
+  //Future<String?> getProfile() async {
+  //  await operation?.cancel();
+  //  operation = CancelableOperation<String?>.fromFuture(_getProfile());
+  //  final String? res = await operation?.valueOrCancellation();
+  //  return res;
+  //}
 
   Future<String?> _getProfile() async {
     final String? username = _user.username;
     if (username != null) {
       final IResponseModel<GetProfileResponse> res =
-          await _profileService.getProfile(username);
+          await _profileService.getProfileRequest(username);
       final GetProfileResponse? respData = res.data;
       if (res.hasError || respData == null) {
         return res.error?.errorMessage;
       }
-      _user.username = respData.username;
+      _profile = respData.profile;
+      _selectedImage = base64.decode(_profile.profilePicture!) as String?;
+
+      _initialUsername = _profile.username;
+      _initialBiography = _profile.bio;
+      _email = _profile.email;
+      _enrolledLearningSpaces = _profile.participated;
+      _createdLearningSpaces = _profile.created;
     }
 
     _setUserData();

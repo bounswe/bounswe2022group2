@@ -11,6 +11,7 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/helpers/validators.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/action_button.dart';
@@ -18,12 +19,12 @@ import '../../../core/widgets/divider/custom_vertical_divider.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../../product/theme/light_theme.dart';
 import '../../home-wrapper/view-model/home_wrapper_view_model.dart';
-import '../../home/view-model/home_view_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/profile_view_model.dart';
@@ -38,8 +39,6 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           scrollable: true,
           hasScaffold: false,
           key: key,
-          futureInit: (BuildContext context) async =>
-              context.read<ProfileViewModel>()._getProfile(),
         );
 
   static Widget _builder(BuildContext context) => Padding(
@@ -153,34 +152,40 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
   static Widget get _enrolledLearningSpacesButton =>
       SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
         (_, ProfileViewModel model) => model.enrolledLearningSpaces,
-        (BuildContext context, List<LearningSpace> learningSpaces, _) =>
+        (BuildContext context, List<LearningSpace> enrolledLearningSpaces, _) =>
             ActionButton(
           key: ProfileKeys.enrolledLearningSpacesButton,
           text: TextKeys.enrolledLS,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
               vertical: context.responsiveSize * 1.4),
-          isActive: true, //learningSpaces.isNotEmpty,
-          onPressed: () async => context
-              .read<HomeViewModel>()
-              .viewAll(TextKeys.takenLearningSpaces),
+          isActive: enrolledLearningSpaces.isNotEmpty,
+          onPressed: () async => NavigationManager.instance.navigateToPage(
+              path: NavigationConstants.viewall,
+              data: <String, dynamic>{
+                'listOfLearningSpaces': enrolledLearningSpaces,
+                'learningSpacesType': TextKeys.takenLearningSpaces,
+              }),
         ),
       );
 
   static Widget get _createdLearningSpacesButton =>
       SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.enrolledLearningSpaces,
-        (BuildContext context, List<LearningSpace> learningSpaces, _) =>
+        (_, ProfileViewModel model) => model.createdLearningSpaces,
+        (BuildContext context, List<LearningSpace> createdLearningSpaces, _) =>
             ActionButton(
           key: ProfileKeys.createdLearningSpacesButton,
           text: TextKeys.createdLearningSpaces,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
               vertical: context.responsiveSize * 1.4),
-          isActive: true, //learningSpaces.isNotEmpty,
-          onPressed: () async => context
-              .read<HomeViewModel>()
-              .viewAll(TextKeys.takenLearningSpaces),
+          isActive: createdLearningSpaces.isNotEmpty,
+          onPressed: () async => NavigationManager.instance.navigateToPage(
+              path: NavigationConstants.viewall,
+              data: <String, dynamic>{
+                'listOfLearningSpaces': createdLearningSpaces,
+                'learningSpacesType': TextKeys.createdLearningSpaces,
+              }),
         ),
       );
 
