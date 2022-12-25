@@ -110,14 +110,15 @@ class PostItem extends StatelessWidget {
                   Icons.edit_outlined, () async => viewModel.editPost(post))),
           Expanded(
             child: PostList.createEditButton(
-              context,
-              TextKeys.addComment,
-              Icons.comment_outlined,
-              () async {
-                final Future<String?> comment =
-                    viewModel.addCommentDialog(context);
-              },
-            ),
+                context, TextKeys.addComment, Icons.comment_outlined, () async {
+              //final HomeViewModel viewModel = context.read<HomeViewModel>();
+              //final Tuple2<LearningSpace?, String?> res =
+              await context
+                  .read<LearningSpaceViewModel>()
+                  .addCommentDialog(context, post.id);
+              //viewModel.updateLs(res.item1);
+              // return Tuple2<Annotation?, String?>(res.item2, res.item3);
+            }),
           ),
         ],
       ),

@@ -21,6 +21,9 @@ import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
+import '../models/comment/add_comment_request_model.dart';
+import '../models/comment/add_comment_response_model.dart';
+import '../models/comment/comment_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../models/event/event.dart';
@@ -57,6 +60,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   Map<String, List<Annotation>> annotations = <String, List<Annotation>>{};
   Map<String, List<Event>> events = <String, List<Event>>{};
+  Map<String, List<Comment>> comments = <String, List<Comment>>{};
 
   void setDefault() {
     _carouselPageIndexes = <int>[];
@@ -65,6 +69,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     _learningSpace = null;
     annotations.clear();
     events.clear();
+    comments.clear();
   }
 
   @override
@@ -73,12 +78,6 @@ class LearningSpaceViewModel extends BaseViewModel {
     _posts = learningSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
     // _events = List<Event>.generate(3, Event.dummy);
-  }
-
-  @override
-  void disposeView() {
-    commentController.dispose();
-    super.disposeView();
   }
 
   @override
@@ -132,25 +131,53 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> addCommentDialog(BuildContext context) => showDialog(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-            title: const BaseText(TextKeys.addComment),
-            content: CustomTextFormField(
-              hintText: TextKeys.addCommentHint,
-              maxLines: 3,
-              controller: _commentController,
-            ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop(_commentController.text);
-                  _commentController.clear();
-                },
-                child: const BaseText(TextKeys.done),
-              )
-            ],
-          ));
+  Future<String?> addCommentDialog(BuildContext context, String? postId) =>
+      showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+                title: const BaseText(TextKeys.addComment),
+                content: CustomTextFormField(
+                  hintText: TextKeys.addCommentHint,
+                  maxLines: 3,
+                  controller: _commentController,
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      //final Tuple3<LearningSpace?, Comment?, String?> res =
+                      addComment(postId);
+                      Navigator.of(context).pop(_commentController.text);
+                      _commentController.clear();
+                    },
+                    child: const BaseText(TextKeys.done),
+                  )
+                ],
+              ));
+
+  Future<Tuple3<LearningSpace?, Comment?, String?>> addComment(
+      String? postId) async {
+    final CommentRequestModel req = CommentRequestModel(
+      lsId: _learningSpace?.id,
+      postId: postId,
+      content: _commentController.text,
+    );
+    final IResponseModel<AddCommentResponse> resp =
+        await _lsService.addComment(req);
+    if (resp.hasError) {
+      return Tuple3<LearningSpace?, Comment?, String?>(
+          null, null, resp.error?.errorMessage);
+    } else {
+      final Comment? comment = resp.data?.comment;
+      final List<Comment> initialComments = comments[postId] ?? <Comment>[];
+      final List<Comment> updatedComments = List<Comment>.from(initialComments)
+        ..add(comment!);
+      comments[postId ?? ''] = updatedComments;
+      _learningSpace = _learningSpace?.copyWith(posts: _posts);
+      notifyListeners();
+      return Tuple3<LearningSpace?, Comment?, String?>(
+          _learningSpace, comment, null);
+    }
+  }
 
   Future<String?> viewAnnotations(
       List<Annotation> annotations, String? annotationText) async {
