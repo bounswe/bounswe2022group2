@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
@@ -16,14 +17,24 @@ class ProfileViewModel extends BaseViewModel {
   TextEditingController get usernameController => _usernameController;
   String? _initialUsername;
 
+  late TextEditingController _biographyController;
+  TextEditingController get biographyController => _biographyController;
+  String? _initialBiography;
+
   String? _selectedImage;
   String? get selectedImage => _selectedImage;
 
-  late GlobalKey<FormState> _formKey;
-  GlobalKey<FormState> get formKey => _formKey;
+  late GlobalKey<FormState> _userFormKey;
+  GlobalKey<FormState> get userFormKey => _userFormKey;
+
+  late GlobalKey<FormState> _biographyFormKey;
+  GlobalKey<FormState> get biographyFormKey => _biographyFormKey;
 
   String? _email;
   String? get email => _email;
+
+  List<LearningSpace> _learningSpaces = <LearningSpace>[];
+  List<LearningSpace> get learningSpaces => _learningSpaces;
 
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
@@ -33,6 +44,7 @@ class ProfileViewModel extends BaseViewModel {
     _email = null;
     _selectedImage = null;
     _initialUsername = null;
+    _initialBiography = null;
   }
 
   @override
@@ -42,27 +54,34 @@ class ProfileViewModel extends BaseViewModel {
 
   @override
   void initView() {
-    _formKey = GlobalKey<FormState>();
+    _userFormKey = GlobalKey<FormState>();
+    _biographyFormKey = GlobalKey<FormState>();
     // TODO: Fix
     _setUserData();
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _usernameController = TextEditingController(text: _initialUsername);
     _usernameController.addListener(_controllerListener);
+    _biographyController = TextEditingController(text: _initialBiography);
+    _biographyController.addListener(_controllerListener);
     _setDefault();
   }
 
   @override
   void disposeView() {
     _usernameController.dispose();
+    _biographyController.dispose();
     _setDefault();
     super.disposeView();
   }
 
   void _controllerListener() {
-    final String newText = _usernameController.text;
-    final bool newCanSignup = newText.isNotEmpty && newText != _initialUsername;
-    if (_canUpdate == newCanSignup) return;
-    _canUpdate = newCanSignup;
+    final String newUsername = _usernameController.text;
+    final String newBiography = _biographyController.text;
+    final bool isUpdated =
+        (newUsername.isNotEmpty && newUsername != _initialUsername) ||
+            (newBiography.isNotEmpty && newBiography != _initialBiography);
+    if (_canUpdate == isUpdated) return;
+    _canUpdate = isUpdated;
     notifyListeners();
   }
 
@@ -85,8 +104,8 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   Future<String?> updateProfile() async {
-    final bool isValid = formKey.currentState?.validate() ?? false;
-    if (isValid) {
+    final bool isUsernameValid = userFormKey.currentState?.validate() ?? false;
+    if (isUsernameValid) {
       _initialUsername = _usernameController.text;
       _user = _user.copyWith(username: _usernameController.text);
       await localManager.setModel(_user, StorageKeys.user);
@@ -96,6 +115,18 @@ class ProfileViewModel extends BaseViewModel {
       _canUpdate = false;
       notifyListeners();
     }
+
+    final bool isBiographyValid =
+        biographyFormKey.currentState?.validate() ?? false;
+    if (isBiographyValid) {
+      _initialBiography = _biographyController.text;
+      if (_selectedImage != null) {
+        await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
+      }
+      _canUpdate = false;
+      notifyListeners();
+    }
+
     return null;
   }
 
