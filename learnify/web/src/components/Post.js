@@ -377,7 +377,7 @@ export default function Post(props){
                 {title}
             </label>
             <div className='space-5'></div>
-              {images[0] !== "" && <div>
+            {images[0] !== "" && images[0] !== null && images[0] !== undefined && <div>
                 <img
                     ref={imgEl}
                     src={images}
