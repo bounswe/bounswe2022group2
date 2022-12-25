@@ -4,7 +4,7 @@ import request from 'supertest';
 import { LearningSpace, User } from '../models/index.js';
 import app from '../app.js';
 import jwt from "jsonwebtoken";
-
+import sinon from 'sinon';
 
 
 describe('POST /learningspace', () => {

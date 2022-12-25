@@ -8,11 +8,13 @@ import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/base_text.dart';
 import 'package:learnify/core/widgets/text/multiline_text.dart';
-import 'package:learnify/features/home/view-model/home_view_model.dart';
-import 'package:learnify/features/learning-space/models/event.dart';
+import 'package:learnify/features/learning-space/models/event/event.dart';
 import 'package:learnify/features/learning-space/models/geolocation/geolocation_model.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
+import 'package:learnify/features/learning-space/view-model/learning_space_view_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
+import 'package:learnify/product/constants/icon_keys.dart';
+import 'package:provider/provider.dart';
 
 import '../test_helpers.dart';
 
@@ -23,7 +25,17 @@ void main() {
       late final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen = LearningSpaceDetailScreen(
           learningSpace: dummyLearningSpace, initialIndex: 2);
-      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
+      await tester.pumpWidget(
+        TestHelpers.appWidget(
+          TestHelpers.appWidget(
+            detailScreen,
+            childCallback: (BuildContext context) => context
+                .read<LearningSpaceViewModel>()
+                .setEvents(List<Event>.generate(3, Event.dummy),
+                    dummyLearningSpace.id ?? ''),
+          ),
+        ),
+      );
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);
@@ -61,14 +73,8 @@ void main() {
       final CircleAvatar circleAvatar = creatorRow.children[0] as CircleAvatar;
       expect(creatorRow.children[2].runtimeType, BaseText);
       final BaseText usernameText = creatorRow.children[2] as BaseText;
-      final Map<String, dynamic> userName =
-          HomeViewModel.randomUsers.last['name'];
-      final List<String> userPhotos = HomeViewModel.randomUsers
-          .sublist(0, 13 + 15)
-          .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
-          .toList();
-      expect(usernameText.text, userName['first'] + ' ' + userName['last']);
-      expect(circleAvatar.foregroundImage, NetworkImage(userPhotos.last));
+      expect(usernameText.text, 'creator: eventCreator');
+      expect(circleAvatar.foregroundImage, const AssetImage(IconKeys.person));
 
       final Widget description = expansionTile.children[2];
       expect(description.runtimeType, MultiLineText);
@@ -84,8 +90,11 @@ void main() {
           BaseText);
       final BaseText eventDateText =
           (eventDateWidget.children[1] as Expanded).child as BaseText;
-      expect(eventDateText.text,
-          DateFormat('dd MMMM yyyy - kk:mm').format(eventModel.date));
+      expect(
+        eventDateText.text,
+        DateFormat('dd MMMM yyyy - kk:mm')
+            .format(eventModel.date ?? DateTime.now()),
+      );
 
       final Widget eventDuration = expansionTile.children[6];
       expect(eventDuration.runtimeType, Row);
@@ -98,13 +107,16 @@ void main() {
       expect(eventDurationText.text, '${eventModel.duration?.minsToString}');
 
       final Widget participants = expansionTile.children[8];
-      expect(participants.runtimeType, Row);
-      final Row participantsRow = expansionTile.children[8] as Row;
+      expect(participants.runtimeType, GestureDetector);
+      final GestureDetector participantsGesture =
+          participants as GestureDetector;
+      expect(participantsGesture.child.runtimeType, Row);
+      final Row participantsRow = participantsGesture.child! as Row;
       expect(participantsRow.children.length, equals(3));
       expect(participantsRow.children[2].runtimeType, BaseText);
       final BaseText participantsText = participantsRow.children[2] as BaseText;
       expect(participantsText.text,
-          '${userPhotos.length}/${eventModel.participationLimit}');
+          '${eventModel.participants.length}/${eventModel.participationLimit ?? '∞'}');
 
       final Widget eventMap = expansionTile.children[9];
       expect(eventMap.runtimeType, Padding);

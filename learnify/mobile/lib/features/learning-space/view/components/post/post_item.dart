@@ -125,15 +125,6 @@ class PostItem extends StatelessWidget {
     ];
   }
 
-  Future<List<Annotation>> _getAnnotations(
-      BuildContext context, String? postId) async {
-    final LearningSpaceViewModel viewModel =
-        context.read<LearningSpaceViewModel>();
-    final List<Annotation> annotations =
-        await viewModel.getPostAnnotations(postId ?? '');
-    return annotations;
-  }
-
   CarouselSlider _carouselSlider(LearningSpaceViewModel viewModel, Post post,
       List<Annotation> annotations, BuildContext context) {
     final List<String> images = post.images;

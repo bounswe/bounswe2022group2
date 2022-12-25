@@ -30,6 +30,7 @@ class TextKeys {
   static const String chooseFromGallery = 'choose_from_gallery';
   static const String friends = 'friends';
   static const String enrolled = 'enrolled';
+  static const String enrolledLS = 'enrolled_ls';
   static const String contributed = 'contributed';
   static const String avg = 'avg';
   static const String mon = 'mon';
@@ -69,6 +70,7 @@ class TextKeys {
   static const String spaceDescriptionHint = "description_hint";
   static const String spaceDescriptionLabel = "description_label";
   static const String done = "done";
+  static const String ok = "ok";
   static const String participantLimit = "participant_limit";
   static const String categories = "categories";
   static const String createLearningSpacePageTitle = "create_space_page_title";
@@ -124,6 +126,9 @@ class TextKeys {
   static const String selectedLanguage = "selected_language";
   static const String madeBy = "made_by";
   static const String darkMode = "dark_mode";
+  static const String biography = "biography";
+  static const String addBiographyHint = "add_biography_hint";
+  static const String creator = "creator";
   static const String addComment = "add_comment";
   static const String addCommentHint = "add_comment_hint";
   static const String viewComments = "view_comments";

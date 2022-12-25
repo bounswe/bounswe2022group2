@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import '../../../../core/base/model/base_model.dart';
-import 'geolocation/geolocation_model.dart';
+import '../../../../../core/base/model/base_model.dart';
+import '../geolocation/geolocation_model.dart';
 
 class Event extends BaseModel<Event> {
   const Event({
-    required this.date,
+    this.date,
     this.id,
     this.description,
     this.title,
@@ -27,9 +27,8 @@ class Event extends BaseModel<Event> {
             BaseModel.getByType<int>(json['participationLimit']),
         eventCreator: BaseModel.getByType<String>(json['eventCreator']),
         geoLocation: BaseModel.embeddedModelFromJson<GeoLocation>(
-            json['geoLocation'], const GeoLocation()),
-        participants: BaseModel.getWithDefault<List<String>>(
-            json['participants'], <String>[]),
+            json['geolocation'], const GeoLocation()),
+        participants: BaseModel.getList<String>(json['participants']),
         lsId: BaseModel.getByType<String>(json['lsId']),
       );
 
@@ -98,7 +97,7 @@ class Event extends BaseModel<Event> {
       );
 
   final String? id;
-  final DateTime date;
+  final DateTime? date;
   final String? description;
   final int? duration;
   final int? participationLimit;
@@ -121,7 +120,7 @@ class Event extends BaseModel<Event> {
         'eventCreator': eventCreator,
         'geoLocation': geoLocation,
         'participants': participants,
-        'geoLocation': BaseModel.embeddedModelToJson<GeoLocation>(geoLocation),
+        'geolocation': BaseModel.embeddedModelToJson<GeoLocation>(geoLocation),
         'lsId': lsId,
         'title': title,
       };

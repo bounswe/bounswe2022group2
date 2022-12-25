@@ -14,6 +14,7 @@ class IconKeys {
   static const String learnIllustration =
       'assets/images/learn-illustration.png';
   static const String userProfile = 'assets/images/user-profile.png';
+  static const String person = 'assets/images/person.png';
 
   static const List<String> lsIcons = <String>[
     '',
