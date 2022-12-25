@@ -481,8 +481,12 @@ class LearningSpaceViewModel extends BaseViewModel {
         selectedTime.hour,
         selectedTime.minute);
     _dateTime = selectedDateTime;
-
+    notifyListeners();
     _isDateSelected = true;
-    print(_dateTime.toString());
+  }
+
+  void resetIsDateSelected() {
+    _isDateSelected = false;
+    notifyListeners();
   }
 }

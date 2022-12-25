@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
+import '../../../core/helpers/selector_helper.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
@@ -65,19 +66,23 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
       margin: EdgeInsets.symmetric(horizontal: context.width * 7),
       padding: EdgeInsets.all(context.width * 3),
       child: ElevatedButton(
-        child: model.dateTime != null
-            ? Text(
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
+        child: SelectorHelper<bool, LearningSpaceViewModel>().builder(
+          (_, LearningSpaceViewModel lsViewModel) => lsViewModel.isDateSelected,
+          (_, bool val, __) => val
+              ? Text(
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  "${model.dateTime?.day}/${model.dateTime?.month}/${model.dateTime?.year} ${model.dateTime?.hour.toString().padLeft(2, '0')}:${model.dateTime?.minute.toString().padLeft(2, '0')} (dd/mm/yyyy hh/mm)")
+              : BaseText(TextKeys.selectDateTime,
+                  style: context.titleMedium,
                   fontWeight: FontWeight.bold,
-                ),
-                "${model.dateTime?.day}/${model.dateTime?.month}/${model.dateTime?.year} ${model.dateTime?.hour.toString().padLeft(2, '0')}:${model.dateTime?.minute.toString().padLeft(2, '0')}")
-            : BaseText(TextKeys.selectDateTime,
-                style: context.titleMedium,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
+                  color: Colors.white),
+        ),
         onPressed: () async {
+          model.resetIsDateSelected();
           final DateTime? selectedDate = await showDatePicker(
               context: context,
               initialDate: model.dateTime ?? DateTime.now(),
