@@ -21,9 +21,12 @@ const EventForm = () => {
     const [eventDescriptionError, setEventDescriptionError] = useState(false);
 
     const [dateValue, setDateValue] = useState(null);
+
     const [timeValue, setTimeValue] = useState(null);
+
     const [eventDuration, setEventDuration] = useState('');
     const [durationError, setDurationError] = useState(false);
+    
     const [plimitValue, setPlimitValue] = useState('');
     const [plimitError, setPlimitError] = useState(false);
     
