@@ -11,6 +11,12 @@ const EventForm = () => {
 
     const [dateValue, setDateValue] = useState(null);
     const [timeValue, setTimeValue] = useState(null);
+    const [eventDuration, setEventDuration] = useState('');
+
+
+    const handleDurationChange = (event) => {
+        setEventDuration(event.target.value);
+    };
 
     return (
         <div className="eventform-container">
@@ -53,6 +59,18 @@ const EventForm = () => {
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
+                    </div>
+                    <div className="eventform-body-row">
+                        <TextField
+                            required
+                            label="Event Duration in Minutes"
+                            type="number"
+                            value={eventDuration}
+                            onChange={handleDurationChange}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                        />
                     </div>
                 </div>
             </form>
