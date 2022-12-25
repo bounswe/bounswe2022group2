@@ -264,6 +264,10 @@ export default function Post(props){
     setAddComment(current => !current);
 };
 
+useEffect(() => {
+  localStorage.setItem("commentClicked", false);
+}, []);
+
   const [value, setValue] = useState("");
 
   const token = localStorage.getItem("token");
