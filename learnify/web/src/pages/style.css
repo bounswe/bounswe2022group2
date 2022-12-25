@@ -918,8 +918,7 @@ h1 {
     padding-right: 28px;
 }
 
-.profile-page-ls-box{
-    background-color: #f8f6f4;
+.profile-page-ls-box {
     width: 97%;
     border-radius: 20px;
     margin-top: 5px;
@@ -931,7 +930,10 @@ h1 {
     padding: 16px;
     padding-left: 28px;
     padding-right: 28px;
-}
+    overflow: scroll;
+    max-height: 500px;
+    border: 5px solid #FF731D;
+  }
 
 .add-post-box-mid{	
     background-color: white;	

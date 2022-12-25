@@ -10,13 +10,14 @@ import UserNameProfile from '../components/UserNameProfile';
 import { useParams } from 'react-router-dom';
 import ProfilePhoto from '../components/ProfilePhoto';
 import AboutUser from '../components/AboutUser';
+import LearningSpaceDetailsProfile from '../components/LearningSpaceDetailsProfile';
 
 
 function ProfilePage() {
     const { username } = useParams();
     const [profilePicture, setProfilePicture] = useState('')
     const [bio, setBio] = useState('')
-    const [learningSpaces, setLearningSpaces] = useState([])
+    const [learningspaces, setLearningSpaces] = useState([])
 
 
     useEffect(() => {
@@ -30,6 +31,7 @@ function ProfilePage() {
         }
         getProfile()
     }, [])
+
     
     return(
     <div className='profilepageLayout'>
@@ -50,15 +52,18 @@ function ProfilePage() {
                 <UserNameProfile user = {username}/>
                 </div>
                 <div className='space-30'/>
+                    
                 <div className='profile-page-ls-box'>
-                    This is the first LS
-                    <div className='space-3'/>
-                    This is the second LS
-                    <div className='space-3'/>
-                    This is the third LS
-                    <div className='space-3'/>
-                    This is the fourth LS
-                
+                    {learningspaces.map(ls => (
+                     <LearningSpaceDetailsProfile
+                        key={ls.id}
+                        title={ls.title} 
+                         description={ls.description} 
+                        icon_id={ls.icon_id} 
+                        num_participants={ls.num_participants} 
+                        url={ls.id}
+                         />
+                        ))}
                 </div>
 
             </div>
