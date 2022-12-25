@@ -2,6 +2,7 @@ import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../model/get_profile_response_model.dart';
+import '../model/update_profile_request_model.dart';
 import 'i_profile_service.dart';
 
 class ProfileService extends IProfileService {
@@ -14,6 +15,7 @@ class ProfileService extends IProfileService {
   static ProfileService get instance => _instance;
 
   static const String _getProfile = '/profile';
+  static const String _updateProfile = '/user';
 
   @override
   Future<IResponseModel<GetProfileResponse>> getProfileRequest(
@@ -23,4 +25,14 @@ class ProfileService extends IProfileService {
           queryParameters: {'username': username},
           requireAuth: false,
           type: RequestTypes.get);
+
+  @override
+  Future<IResponseModel<GetProfileResponse>> updateProfileRequest(
+          UpdateProfileRequestModel body) async =>
+      networkManager.send<UpdateProfileRequestModel, GetProfileResponse>(
+        _updateProfile,
+        parseModel: const GetProfileResponse(),
+        type: RequestTypes.put,
+        body: body,
+      );
 }
