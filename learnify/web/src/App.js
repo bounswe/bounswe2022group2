@@ -37,7 +37,7 @@ function App() {
           <Route path="/categories" element={<PrivateRoutes> <CategoriesPage /> </PrivateRoutes>}/>
           <Route path="/categories/:category" element={<PrivateRoutes> <LSbyCategoryPage /> </PrivateRoutes>}/>
           <Route path="/learningspace/:lsid" element={<PrivateRoutes> <LearningSpace /> </PrivateRoutes>}/>
-          <Route path="/profile" element={<PrivateRoutes> <ProfilePage /> </PrivateRoutes>}/>
+          <Route path="/profile/:username" element={<PrivateRoutes> <ProfilePage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
