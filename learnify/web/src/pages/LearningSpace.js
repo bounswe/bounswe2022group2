@@ -12,6 +12,7 @@ import Participants from '../components/Participants';
 import JoinLsButton from '../components/JoinLsButton';	
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import EventForm from '../components/CreateEventForm';
 
 function LearningSpace() {
 
@@ -297,6 +298,7 @@ function LearningSpace() {
                     {participants.map(participant =>	
                                     <Participants participant = {participant} creator={lsCreator}/> )}
                 </div>
+                <EventForm lsid={lsid}/>
                 <div className='ls-box-org'>
                     <label className='feed-title'>
                     <label className='navBarText'><img src={event} alt="Learnify Logo" height={70} /></label>
