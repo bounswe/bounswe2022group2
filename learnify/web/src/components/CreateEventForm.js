@@ -110,6 +110,7 @@ const EventForm = () => {
                     <div className="eventform-body-row">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
+                                required
                                 label="Event Date"
                                 disablePast
                                 value={dateValue}
