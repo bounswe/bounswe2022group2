@@ -555,6 +555,12 @@
     font-size: 18px;
 }
 
+.ls-event-box-text{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    margin-right: 6px;
+}
+
 .navBarText2{
     font-family: 'Open Sans' sans-serif;
     font-size: 30px;
