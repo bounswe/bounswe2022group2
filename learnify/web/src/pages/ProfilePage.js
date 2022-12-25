@@ -65,6 +65,7 @@ function ProfilePage() {
                          />
                         ))}
                 </div>
+
             </div>
 
             <div className='profile-page-right'>
