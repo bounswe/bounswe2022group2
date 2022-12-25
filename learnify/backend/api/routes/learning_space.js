@@ -6,6 +6,7 @@ import {
     semanti_search_ls, 
     get_learning_space_by_id, 
     get_learning_space_by_category, 
+    post_create_comment, 
     post_create_post, 
     put_edit_post, 
     put_edit_annotation,
@@ -22,6 +23,7 @@ router.post('/', post_learningSpace)
 router.post('/enroll', post_enrollLearningSpace)
 router.put('/edit/annotation', put_edit_annotation)
 router.post('/post', post_create_post)
+router.post('/comment', post_create_comment)
 router.put('/edit/post', put_edit_post)
 router.get('/', semanti_search_ls)
 router.get('/user/participated', get_by_participation)
