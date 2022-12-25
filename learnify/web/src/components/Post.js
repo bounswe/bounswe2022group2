@@ -232,6 +232,7 @@ export default function Post(props){
   const creator = props.myPost.creator;
   const content = props.myPost.content;
   const images = props.myPost.images;
+  const commentArray = props.myPost.comments;
 
   const [upCounter, setUpCounter] = useState(0);
   const [downCounter, setDownCounter] = useState(0);
@@ -252,7 +253,7 @@ export default function Post(props){
 
   const [editPost, setEditPost] = useState(false);
 
-  const [addComment, setAddComment] = useState(false);
+  const [addComment, setAddComment] = useState(localStorage.getItem("commentClicked") === "true" ? true : false);
 
   const editThePost = () => {
       setValue(content);
@@ -263,9 +264,9 @@ export default function Post(props){
     setAddComment(current => !current);
 };
 
-const handleSubmitFinal  = () => {
-  //createComment(lsid, postTitle, value, imageUrl);
-}
+useEffect(() => {
+  localStorage.setItem("commentClicked", false);
+}, []);
 
   const [value, setValue] = useState("");
 
@@ -281,6 +282,11 @@ const handleSubmitFinal  = () => {
 
   const [addCommentButton, setAddCommentButton]= useState(true);
 
+  const handleSubmitFinal  = () => {
+    localStorage.setItem("commentClicked", true);
+    createComment(lsid, postId, commentValue, commentImageUrl);
+  }
+
   const handleSubmitCommentButton  = () => {
     setAddCommentButton(current => !current);
 }
@@ -288,6 +294,43 @@ const handleSubmitFinal  = () => {
   const handleSubmitEdit  = () => {
       editExPost(lsid, postId, postTitle, value, imageUrl);
   }
+
+  const createComment = async (lsid, postId, commentValue, commentImageUrl) => {
+      console.log(lsid)
+      console.log(postId)
+      console.log(commentValue)
+      console.log(commentImageUrl)
+      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/comment`, {
+          method: "POST",
+          body: JSON.stringify({
+              ls_id: lsid,
+              post_id: postId,
+              content: commentValue,
+              images: [commentImageUrl],
+          }),
+          headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+              'Authorization': `${token}` ,
+          },
+      })
+          .then((response) => {
+              if (response.status === 200) {
+                  console.log("successfull")
+                  setMessage("Comment added successfully");
+                  setCommentValue("");
+                  setCommentImageUrl("");
+                  setAddCommentButton(current => !current);
+                  window.location.reload();
+              } else {
+                  console.log("error")
+                  setMessage("Error adding comment");
+              }
+          })
+          .catch((error) => {
+              console.log(error);
+          });
+  };
+
   
   const editExPost = async (lsid, postId, postTitle, final, imageUrl) => {
       console.log(lsid)
@@ -340,7 +383,7 @@ const handleSubmitFinal  = () => {
                 {title}
             </label>
             <div className='space-5'></div>
-              {images[0] !== "" && <div>
+            {images[0] !== "" && images[0] !== null && images[0] !== undefined && <div>
                 <img
                     ref={imgEl}
                     src={images}
@@ -387,7 +430,7 @@ const handleSubmitFinal  = () => {
                         </div>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{0}</label>
+                        <label className="counter__output">{commentArray.length}</label>
                     </div>
                 </div>
                 <div className='post-box-right'>
@@ -460,10 +503,8 @@ const handleSubmitFinal  = () => {
                     </div>
                     }
                     <div className='add-post-box-mid'>
-                    {/*{commentArray.map(myComment =>
+                    {commentArray.map(myComment =>
                                     <Comment myComment = {myComment} my_lsid = {lsid}/>)}
-                    */}
-                    Comments will be here!
                     </div>
                 </div>}
         </div>
