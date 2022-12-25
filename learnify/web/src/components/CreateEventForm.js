@@ -126,6 +126,7 @@ const EventForm = () => {
                     <div className="eventform-body-row">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <TimePicker
+                                required
                                 label="Event Time"
                                 value={timeValue}
                                 ampm={false}
