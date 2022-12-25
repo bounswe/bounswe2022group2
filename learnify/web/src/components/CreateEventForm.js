@@ -28,6 +28,9 @@ const EventForm = () => {
     const [defaultLocation, setDefaultLocation] = useState({ lat: 41, lng: 29 });
     const [location, setLocation] = useState(defaultLocation);
     const [zoom, setZoom] = useState(DefaultZoom);
+    const apiKey = process.env.REACT_APP_MAP_API_KEY;
+
+    console.log(apiKey)
 
     const handleChangeLocation = (lat, lng) => {
         setLocation({lat:lat, lng:lng});
@@ -169,7 +172,7 @@ const EventForm = () => {
                                 style={{height:'300px'}}
                                 onChangeLocation={handleChangeLocation} 
                                 onChangeZoom={handleZoomChange}
-                                apiKey='AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8'/>
+                                apiKey={apiKey}/>
                         </div>
                     </div>         
                 </div>
