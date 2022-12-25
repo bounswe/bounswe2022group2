@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'
+import '../components/component_styles.css'
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import illustration from '../images/categories-page-illustration.svg'
@@ -52,7 +53,9 @@ function ProfilePage() {
                 <UserNameProfile user = {username}/>
                 </div>
                 <div className='space-30'/>
-                    
+                <div className='profile-page-ls-box-drawer'>
+                    <label className='user-profile-ls-text'> {username}'s learning spaces box </label>                    
+                </div>
                 <div className='profile-page-ls-box'>
                     {learningspaces.map(ls => (
                      <LearningSpaceDetailsProfile
