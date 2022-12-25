@@ -3,12 +3,10 @@ import 'dart:async';
 import 'package:async/async.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
-import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/language/language_keys.dart';
 import '../../learning-space/models/learning_space_model.dart';
-import '../../learning-space/service/ls_service.dart';
 import '../model/get_learning_spaces_response_model.dart';
 import '../service/I_home_service.dart';
 import '../service/home_service.dart';
@@ -35,7 +33,7 @@ class HomeViewModel extends BaseViewModel {
 
   bool _recommendedViewAll = false;
   bool get recommendedViewAll => _recommendedViewAll;
-  List<Map<String, dynamic>> randomUsers = <Map<String, dynamic>>[];
+  static List<Map<String, dynamic>> randomUsers = <Map<String, dynamic>>[];
 
   void setDefault() {
     _recommendedViewAll = false;
@@ -49,6 +47,26 @@ class HomeViewModel extends BaseViewModel {
   @override
   void initViewModel() {
     _homeService = HomeService.instance;
+    randomUsers = List<Map<String, dynamic>>.generate(
+      70,
+      (int i) => <String, dynamic>{
+        'name': {"title": "Ms", "first": "Francisca", "last": "García"},
+        'picture': {
+          if (i % 6 == 0)
+            'medium': "https://randomuser.me/api/portraits/med/women/73.jpg"
+          else if (i % 6 == 1)
+            'medium': "https://randomuser.me/api/portraits/med/men/71.jpg"
+          else if (i % 6 == 2)
+            'medium': "https://randomuser.me/api/portraits/med/women/4.jpg"
+          else if (i % 6 == 3)
+            'medium': "https://randomuser.me/api/portraits/med/men/6.jpg"
+          else if (i % 6 == 4)
+            'medium': "https://randomuser.me/api/portraits/med/women/9.jpg"
+          else if (i % 6 == 5)
+            'medium': "https://randomuser.me/api/portraits/med/men/12.jpg"
+        }
+      },
+    );
   }
 
   @override
@@ -67,15 +85,15 @@ class HomeViewModel extends BaseViewModel {
   void _setDefault() {}
 
   Future<void> fetchInitialLearningSpaces() async {
-    if (randomUsers.isEmpty) {
-      final IResponseModel<AnyModel> res =
-          await LSService.instance.randomUsers();
-      if (res.data?.map != null) {
-        for (final dynamic model in res.data?.map!['results']) {
-          randomUsers.add(model as Map<String, dynamic>);
-        }
-      }
-    }
+    // if (randomUsers.isEmpty) {
+    //   final IResponseModel<AnyModel> res =
+    //       await LSService.instance.randomUsers();
+    //   if (res.data?.map != null) {
+    //     for (final dynamic model in res.data?.map!['results']) {
+    //       randomUsers.add(model as Map<String, dynamic>);
+    //     }
+    //   }
+    // }
     if (_takenLearningSpaces.isNotEmpty ||
         _friendLearningSpaces.isNotEmpty ||
         _recommendedLearningSpaces.isNotEmpty) return;

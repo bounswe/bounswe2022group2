@@ -46,7 +46,7 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
   static DefaultAppBar _appBarBuilder(BuildContext context, bool isAdd) =>
       DefaultAppBar(
         size: context.height * 6,
-        color: context.lightActiveColor,
+        color: context.lightDarkActiveColor,
         actionsList: <Widget>[
           Padding(
             padding: EdgeInsets.all(context.responsiveSize * .6),
@@ -54,7 +54,7 @@ class AddPostScreen extends BaseView<AddPostViewModel> {
           BaseIconButton(
             onPressed: () => Navigator.of(context).pop(),
             icon: Icons.arrow_back_outlined,
-            color: context.lightActiveColor,
+            color: context.lightDarkActiveColor,
           ),
           Padding(
             padding: EdgeInsets.only(left: context.width * 4),

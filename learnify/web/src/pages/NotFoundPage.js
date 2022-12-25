@@ -14,7 +14,7 @@ function NotFoundPage() {
                 <img  style={{float:"left"}} src={logo} alt="Learnify Logo" height={60} />
             </div>
             <div className='notfoundpage-text'><h1>Oops! Something went wrong!</h1></div>
-            <img src={notfound} style={{ width: "60%"}} alt="Learnify 404 Not Found" class = 'mockup'/> 
+            <img src={notfound} style={{ width: "60%"}} alt="Learnify 404 Not Found" className = 'mockup'/> 
             <div>
                 <button className="btn-blue" onClick={() => navigate(-1)}>Return</button>
             </div>

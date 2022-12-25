@@ -54,6 +54,7 @@ export function validateLSEnroll_init(body) {
   });
   return schema.validate(body);
 }
+
 export function validateComment_init(body) {
   const schema = Joi.object({
     post_id: Joi.string().min(3).required(),
@@ -63,3 +64,4 @@ export function validateComment_init(body) {
   });
   return schema.validate(body);
 }
+
