@@ -29,7 +29,6 @@ class _EventForm extends StatelessWidget {
             child: SingleChildScrollView(
           child: _durationField(model.eventDurationController),
         )),
-        context.sizedH(1.5),
       ]),
     );
   }

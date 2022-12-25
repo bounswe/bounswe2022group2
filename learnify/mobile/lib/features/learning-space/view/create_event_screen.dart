@@ -26,6 +26,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
         children: <Widget>[
           context.sizedH(2.6),
           const _EventForm(),
+          _dateTimePickerField(context),
           context.sizedH(.8),
         ],
       );
@@ -56,4 +57,42 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
             horizontal: context.responsiveSize * 3,
             vertical: context.responsiveSize * 2.5),
       );
+
+  static Widget _dateTimePickerField(BuildContext context) {
+    final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
+    return Container(
+      width: context.maxPossibleWidth,
+      margin: EdgeInsets.symmetric(horizontal: context.width * 7),
+      padding: EdgeInsets.all(context.width * 3),
+      child: ElevatedButton(
+        child: model.dateTime != null
+            ? Text(
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                "${model.dateTime?.day}/${model.dateTime?.month}/${model.dateTime?.year} ${model.dateTime?.hour.toString().padLeft(2, '0')}:${model.dateTime?.minute.toString().padLeft(2, '0')}")
+            : BaseText(TextKeys.selectDateTime,
+                style: context.titleMedium,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+        onPressed: () async {
+          final DateTime? selectedDate = await showDatePicker(
+              context: context,
+              initialDate: model.dateTime ?? DateTime.now(),
+              firstDate: DateTime(2000),
+              lastDate: DateTime(2100));
+
+          if (selectedDate == null) return;
+
+          final TimeOfDay? selectedTime = await showTimePicker(
+              context: context, initialTime: TimeOfDay.now());
+
+          if (selectedTime == null) return;
+          model.pickDateTime(selectedDate, selectedTime);
+        },
+      ),
+    );
+  }
 }

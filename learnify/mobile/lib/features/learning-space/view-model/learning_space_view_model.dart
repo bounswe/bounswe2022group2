@@ -69,6 +69,12 @@ class LearningSpaceViewModel extends BaseViewModel {
   late GlobalKey<FormState> _createEventFormKey;
   GlobalKey<FormState> get createEventFormKey => _createEventFormKey;
 
+  DateTime? _dateTime;
+  DateTime? get dateTime => _dateTime;
+
+  bool _isDateSelected = false;
+  bool get isDateSelected => _isDateSelected;
+
   bool _canCreate = false;
   bool get canCreate => _canCreate;
 
@@ -80,6 +86,8 @@ class LearningSpaceViewModel extends BaseViewModel {
     annotations.clear();
     events.clear();
     _canCreate = false;
+    _dateTime = null;
+    _isDateSelected = false;
   }
 
   @override
@@ -116,7 +124,8 @@ class LearningSpaceViewModel extends BaseViewModel {
     final bool newCanCreate = newTitle.isNotEmpty &&
         newDescription.isNotEmpty &&
         newParticipationLimit.isNotEmpty &&
-        newDuration.isNotEmpty;
+        newDuration.isNotEmpty &&
+        _isDateSelected;
     if (_canCreate == newCanCreate) return;
     _canCreate = newCanCreate;
     notifyListeners();
@@ -128,6 +137,9 @@ class LearningSpaceViewModel extends BaseViewModel {
     _eventDescriptionController.dispose();
     _eventParticipationLimitController.dispose();
     _eventDurationController.dispose();
+    _canCreate = false;
+    _dateTime = null;
+    _isDateSelected = false;
     super.disposeView();
   }
 
@@ -459,5 +471,18 @@ class LearningSpaceViewModel extends BaseViewModel {
     _eventsExpansionTileKeys =
         List<GlobalKey<CustomExpansionTileState>>.generate(
             newEvents.length, (_) => GlobalKey<CustomExpansionTileState>());
+  }
+
+  void pickDateTime(DateTime selectedDate, TimeOfDay selectedTime) {
+    final DateTime selectedDateTime = DateTime(
+        selectedDate.year,
+        selectedDate.month,
+        selectedDate.day,
+        selectedTime.hour,
+        selectedTime.minute);
+    _dateTime = selectedDateTime;
+
+    _isDateSelected = true;
+    print(_dateTime.toString());
   }
 }
