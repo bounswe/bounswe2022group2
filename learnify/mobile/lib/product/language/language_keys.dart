@@ -127,4 +127,6 @@ class TextKeys {
   static const String darkMode = "dark_mode";
   static const String biography = "biography";
   static const String addBiographyHint = "add_biography_hint";
+  static const String created = "created";
+  static const String createdLearningSpaces = "created_learning_spaces";
 }
