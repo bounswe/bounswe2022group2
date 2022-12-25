@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './component_styles.css'
 import {DatePicker} from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField';
 
 const EventForm = () => {
 
-    const [value, setValue] = React.useState(null);
+    const [dateValue, setDateValue] = useState(null);
+    const [timeValue, setTimeValue] = useState(null);
 
     return (
         <div className="eventform-container">
@@ -28,12 +30,26 @@ const EventForm = () => {
                             <DatePicker
                                 label="Event Date"
                                 disablePast
-                                value={value}
-                                onChange={(newValue) => {
-                                    setValue(newValue);
+                                value={dateValue}
+                                onChange={(newDateValue) => {
+                                    setDateValue(newDateValue);
                                 }}
                                 views={['year', 'month', 'day']}
                                 inputFormat="DD-MM-YYYY"
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
+                    </div>
+                    <div className="eventform-body-row">
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <TimePicker
+                                label="Event Time"
+                                value={timeValue}
+                                ampm={false}
+                                disablePast
+                                onChange={(newTimeValue) => {
+                                    setTimeValue(newTimeValue);
+                                }}
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
