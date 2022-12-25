@@ -39,9 +39,13 @@ function ProfilePage() {
         <NavBar />
         <div className='profilepage'>
             <div className='profile-page-left'>
+
+                <div className='space-50'/>
             
-            <AboutUser bio={bio} />
+                <AboutUser bio={bio} />
                 
+
+                <div className='space-80'/>
 
                 <img src={illustration} alt="Categories Page Illustration" height={170} />
             </div>
@@ -71,11 +75,14 @@ function ProfilePage() {
             </div>
 
             <div className='profile-page-right'>
+                <div className='space-50'/>
                 <div className='profile-page-image'>
                     <img src={happy} alt="Profile photo" height={250}/>
                 </div>
-               
-                <label className='profile-page-text'> Meet with new people and learn together, that is what matters... LEARNIFY</label>
+                <div className='space-12'/>
+                <label className='profile-page-text'> "Meet with new people and learn together, that is what matters..."</label>
+                <label className='profile-page-text-two'>  - Team LEARNIFY</label>
+                <div className='space-20'/>
                 <div className='profilepage-friends-box'>
                     <label className='feed-title'>
                         <label className='navBarText2'> Interest Areas</label>

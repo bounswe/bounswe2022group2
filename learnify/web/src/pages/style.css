@@ -257,6 +257,11 @@ body{
     padding: 50px
 }
 
+
+.space-80{
+    padding: 80px
+}
+
 .registerKVKK {
     color: #FF731D;
     border-bottom: 1px solid #FF731D;
@@ -510,6 +515,14 @@ h1 {
     margin-left: 2.7723em;	
     color: #0b22ec;
 }
+
+.profile-page-text-two {
+    font-family: 'Open Sans' sans-serif;
+    margin-left: 2.7723em;
+    color: #0b22ec;
+    font-style: italic;
+    font-weight: bold;
+  }
 
 .profile-page-image{
     width: fit-content;
