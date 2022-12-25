@@ -14,6 +14,7 @@ const EventForm = () => {
     const [eventDuration, setEventDuration] = useState('');
     const [durationError, setDurationError] = useState(false);
     const [plimitValue, setPlimitValue] = useState('');
+    const [plimitError, setPlimitError] = useState(false);
 
 
     const handleDurationChange = (event) => {
@@ -27,6 +28,11 @@ const EventForm = () => {
 
     const handlePlimitValueChange = (event) => {
         setPlimitValue(event.target.value);
+        if (event.target.value === '0' || event.target.value < 0) {
+            setPlimitError(true);
+        } else {
+            setPlimitError(false);
+        }
     };
 
     return (
@@ -92,6 +98,8 @@ const EventForm = () => {
                             type="number"
                             value={plimitValue}
                             onChange={handlePlimitValueChange}
+                            error={plimitError}
+                            helperText={plimitError ? (plimitValue < 0 ? 'Participation limit cannot be negative.' : 'Participation limit cannot be 0.') : ''}
                             InputLabelProps={{
                                 shrink: true,
                             }}
