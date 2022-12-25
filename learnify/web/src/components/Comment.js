@@ -108,7 +108,7 @@ export default function Comment(props){
             </div>
             }
             <MDEditor.Markdown
-                style={{ padding: 15 }}
+                style={{ padding: 15 , overflow: "auto"}}
                 source={content}
                 linkTarget="_blank"
             />
