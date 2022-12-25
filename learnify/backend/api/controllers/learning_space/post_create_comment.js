@@ -26,6 +26,10 @@ export default async (req, res) => {
             console.log(err.message);
             return res.status(500).json({ "resultMessage": "Something is wrong." });
         });
+
+    if (!ls) {
+        return res.status(404).json({ "resultMessage": "There is no learning space with given id." });
+    }
     
     let post;
     var numCheck = 0;
