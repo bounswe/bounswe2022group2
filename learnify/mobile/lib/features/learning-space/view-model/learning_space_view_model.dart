@@ -52,6 +52,26 @@ class LearningSpaceViewModel extends BaseViewModel {
   Map<String, List<Annotation>> annotations = <String, List<Annotation>>{};
   Map<String, List<Event>> events = <String, List<Event>>{};
 
+  late TextEditingController _eventTitleController;
+  TextEditingController get eventTitleController => _eventTitleController;
+
+  late TextEditingController _eventDescriptionController;
+  TextEditingController get eventDescriptionController =>
+      _eventDescriptionController;
+
+  late TextEditingController _eventParticipationLimitController;
+  TextEditingController get eventParticipationLimitController =>
+      _eventParticipationLimitController;
+
+  late TextEditingController _eventDurationController;
+  TextEditingController get eventDurationController => _eventDurationController;
+
+  late GlobalKey<FormState> _createEventFormKey;
+  GlobalKey<FormState> get createEventFormKey => _createEventFormKey;
+
+  bool _canCreate = false;
+  bool get canCreate => _canCreate;
+
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
@@ -59,6 +79,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     _learningSpace = null;
     annotations.clear();
     events.clear();
+    _canCreate = false;
   }
 
   @override
@@ -75,6 +96,39 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initView() {
     _initializeKeys();
+    _createEventFormKey = GlobalKey<FormState>();
+    _eventTitleController = TextEditingController();
+    _eventDescriptionController = TextEditingController();
+    _eventParticipationLimitController = TextEditingController();
+    _eventDurationController = TextEditingController();
+    _eventTitleController.addListener(_controllerListener);
+    _eventDescriptionController.addListener(_controllerListener);
+    _eventParticipationLimitController.addListener(_controllerListener);
+    _eventDurationController.addListener(_controllerListener);
+  }
+
+  void _controllerListener() {
+    final String newTitle = _eventTitleController.text;
+    final String newDescription = _eventDescriptionController.text;
+    final String newParticipationLimit =
+        _eventParticipationLimitController.text;
+    final String newDuration = _eventDurationController.text;
+    final bool newCanCreate = newTitle.isNotEmpty &&
+        newDescription.isNotEmpty &&
+        newParticipationLimit.isNotEmpty &&
+        newDuration.isNotEmpty;
+    if (_canCreate == newCanCreate) return;
+    _canCreate = newCanCreate;
+    notifyListeners();
+  }
+
+  @override
+  void disposeView() {
+    _eventTitleController.dispose();
+    _eventDescriptionController.dispose();
+    _eventParticipationLimitController.dispose();
+    _eventDurationController.dispose();
+    super.disposeView();
   }
 
   void setLearningSpace(LearningSpace? newSpace) {

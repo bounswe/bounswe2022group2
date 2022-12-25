@@ -126,4 +126,16 @@ class TextKeys {
   static const String madeBy = "made_by";
   static const String darkMode = "dark_mode";
   static const String creator = "creator";
+  static const String createEventTitleHint = "create_event_title_hint";
+  static const String createEventTitleLabel = "create_event_title_label";
+  static const String createEventDescriptionHint =
+      "create_event_description_hint";
+  static const String createEventDescriptionLabel =
+      "create_event_description_label";
+  static const String createEventParticipationLimitHint =
+      "create_event_participation_limit_hint";
+  static const String createEventParticipationLimitLabel =
+      "create_event_participation_limit_label";
+  static const String createEventDurationHint = "create_event_duration_hint";
+  static const String createEventDurationLabel = "create_event_duration_label";
 }

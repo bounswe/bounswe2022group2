@@ -124,5 +124,13 @@
   "made_by": "Made with 💙 by Learnify Team",
   "dark_mode": "Dark Mode:",
   "creator": "Creator",
-  "ok": "OK"
+  "ok": "OK",
+  "create_event_title_hint": "Enter a title for event",
+  "create_event_title_label": "Title of Event",
+  "create_event_description_hint": "Enter a description for event",
+  "create_event_description_label": "Description of Event",
+  "create_event_participation_limit_hint": "Enter a participation limit for event",
+  "create_event_participation_limit_label": "Participation Limit of Event",
+  "create_event_duration_hint": "Enter a duration for event in minutes",
+  "create_event_duration_label": "Duration of Event"
 }

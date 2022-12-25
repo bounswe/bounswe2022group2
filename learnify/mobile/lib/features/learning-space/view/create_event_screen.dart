@@ -5,9 +5,13 @@ import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
+import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/language/language_keys.dart';
+import '../constants/widget_keys.dart';
 import '../view-model/learning_space_view_model.dart';
+
+part 'components/create/event_form.dart';
 
 class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
   const CreateEventScreen({Key? key})
@@ -19,7 +23,11 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
 
   static Widget _builder(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[],
+        children: <Widget>[
+          context.sizedH(2.6),
+          const _EventForm(),
+          context.sizedH(.8),
+        ],
       );
 
   static DefaultAppBar _appBarBuilder(BuildContext context) => DefaultAppBar(
