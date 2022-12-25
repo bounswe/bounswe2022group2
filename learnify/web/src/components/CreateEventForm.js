@@ -21,6 +21,11 @@ const EventForm = () => {
 
     const handleEventTitleChange = (event) => {
         setEventTitle(event.target.value);
+        if (event.target.value.length < 3) {
+            setEventTitleError(true);
+        } else {
+            setEventTitleError(false);
+        }
     };
 
     const handleDurationChange = (event) => {
@@ -54,6 +59,8 @@ const EventForm = () => {
                             label="Event Title"
                             type="text"
                             value={eventTitle}
+                            error={eventTitleError}
+                            helperText={eventTitleError ? 'Event title must be at least 3 characters long' : ''}
                             onChange={handleEventTitleChange}
                         />
                     </div>
