@@ -15,9 +15,18 @@ export default function Event(props){
   const participantsArray = props.myEvent.participants;
   const num_participants = props.myEvent.num_participants;
 
+  const d = new Date(date);
+
+  const dformat = [d.getDate(),
+                    d.getMonth()+1,
+                    d.getFullYear()].join('/')+' '+
+                    [d.getHours(),
+                    d.getMinutes()].join(':');
+  
+
     return(
     <div>
-    
-        </div>
+
+    </div>
     );
 }
