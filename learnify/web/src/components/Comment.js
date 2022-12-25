@@ -94,7 +94,7 @@ export default function Comment(props){
         {!deleteComment &&
         <div className='ls-box-mid'>
             <div className='space-5'></div>
-              {images[0] !== "" && <div>
+              {images[0] !== "" && images[0] !== null && images[0] !== undefined && <div>
                 <img
                     src={images}
                     alt="space"
