@@ -1,5 +1,4 @@
 import '../../../core/base/model/base_model.dart';
-import '../../learning-space/models/learning_space_model.dart';
 import 'profile_model.dart';
 
 class GetProfileResponse extends BaseModel<GetProfileResponse> {
