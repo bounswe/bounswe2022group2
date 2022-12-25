@@ -8,14 +8,13 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField';
 import MapPicker from 'react-google-map-picker'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const DefaultZoom = 10;
 
-const EventForm = () => {
+const EventForm = (lsid) => {
 
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('username');
 
     const [eventTitle, setEventTitle] = useState('');
     const [eventTitleError, setEventTitleError] = useState(false);
@@ -35,11 +34,13 @@ const EventForm = () => {
     
     const [defaultLocation, setDefaultLocation] = useState({ lat: 41, lng: 29 });
     const [location, setLocation] = useState(defaultLocation);
+    const [geolocation, setGeolocation] = useState({accuracy: 1, longitude: 29, latitude: 41});
     const [zoom, setZoom] = useState(DefaultZoom);
     const apiKey = process.env.REACT_APP_MAP_API_KEY;
 
     const handleChangeLocation = (lat, lng) => {
         setLocation({lat:lat, lng:lng});
+        setGeolocation({accuracy: 1, longitude: lng, latitude: lat});
     }
 
     const handleZoomChange = (zoom) => {
@@ -81,6 +82,63 @@ const EventForm = () => {
             setPlimitError(false);
         }
     };
+
+    if (timeValue && dateValue) {
+        console.log(`${dateValue.format('DD-MM-YYYY')} ${timeValue.format('HH:mm')}`)
+    }
+
+    console.log(geolocation)
+
+    const handleCreateEvent = () => {
+        if (eventTitle.length < 3) {
+            setEventTitleError(true);
+        } else {
+            setEventTitleError(false);
+        }
+        if (eventDescription.length < 3) {
+            setEventDescriptionError(true);
+        } else {
+            setEventDescriptionError(false);
+        }
+        if (eventDuration === '0' || eventDuration < 0) {
+            setDurationError(true);
+        } else {
+            setDurationError(false);
+        }
+        if (plimitValue === '0' || plimitValue < 0) {
+            setPlimitError(true);
+        } else {
+            setPlimitError(false);
+        }
+        if (eventTitle.length >= 3 && eventDescription.length >= 3 && eventDuration > 0 && plimitValue > 0) {
+            const event = {
+                lsId: lsid.lsid,
+                title: eventTitle,
+                description: eventDescription,
+                geolocation: geolocation,
+                date: `${dateValue.format('MM-DD-YYYY')} ${timeValue.format('HH:mm')}`,
+                duration: eventDuration,
+                participationLimit: plimitValue,
+            }
+            fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}events`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`
+                },
+                body: JSON.stringify(event)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                window.location.reload();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
+    }
+
 
     return (
         <div className="eventform-container">
@@ -125,7 +183,8 @@ const EventForm = () => {
                                     setDateValue(newDateValue);
                                 }}
                                 views={['year', 'month', 'day']}
-                                inputFormat="DD-MM-YYYY"
+                                inputFormat="MM-DD-YYYY"
+                                format="MM-DD-YYYY"
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
@@ -183,7 +242,10 @@ const EventForm = () => {
                                 onChangeZoom={handleZoomChange}
                                 apiKey={apiKey}/>
                         </div>
-                    </div>         
+                    </div>
+                    <button className='eventform-button' onClick={handleCreateEvent}  type="submit">
+                        Create Event
+                    </button>
                 </div>
             </form>
         </div>
