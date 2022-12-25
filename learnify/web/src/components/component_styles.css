@@ -591,3 +591,18 @@
     overflow: hidden;
     box-shadow: 0px 2px 5px 1px rgba(120,120,120,0.52);
 }
+
+.eventform-button {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    width: 100%;
+    height: 50px;
+    background-color: #1746A2;
+    border-radius: 100px;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFF7E9;
+    cursor: pointer;
+    outline: none;
+}
