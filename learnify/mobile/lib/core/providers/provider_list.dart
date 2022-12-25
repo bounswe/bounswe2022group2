@@ -74,7 +74,7 @@ class ProviderList {
           ProfileViewModel? profileViewModel) {
         final ProfileViewModel updatedModel =
             profileViewModel ?? ProfileViewModel(viewModel.user)
-              ..updateUser(viewModel.user);
+              ..updateUser();
         return updatedModel;
       },
     ),

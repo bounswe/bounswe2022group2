@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
@@ -12,24 +13,22 @@ import '../../auth/verification/model/user_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/get_profile_response_model.dart';
 import '../model/profile_model.dart';
+import '../model/update_profile_request_model.dart';
 import '../service/profile_service.dart';
 import '../service/i_profile_service.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
   ProfileViewModel(this._user);
-  User _user;
-  User get user => _user;
+  final User _user;
 
   late Profile _profile;
   Profile get profile => _profile;
+
   late final ImagePicker _picker;
+  late bool _isImagePicked = false;
 
   late final IProfileService _profileService;
-
-  late TextEditingController _usernameController;
-  TextEditingController get usernameController => _usernameController;
-  String? _initialUsername;
 
   late TextEditingController _biographyController;
   TextEditingController get biographyController => _biographyController;
@@ -47,12 +46,6 @@ class ProfileViewModel extends BaseViewModel {
   String? _email;
   String? get email => _email;
 
-  List<LearningSpace> _enrolledLearningSpaces = <LearningSpace>[];
-  List<LearningSpace> get enrolledLearningSpaces => _enrolledLearningSpaces;
-
-  List<LearningSpace> _createdLearningSpaces = <LearningSpace>[];
-  List<LearningSpace> get createdLearningSpaces => _createdLearningSpaces;
-
   bool _canUpdate = false;
   bool get canUpdate => _canUpdate;
 
@@ -60,7 +53,6 @@ class ProfileViewModel extends BaseViewModel {
     _canUpdate = false;
     _email = null;
     _selectedImage = null;
-    _initialUsername = null;
     _initialBiography = null;
   }
 
@@ -74,12 +66,8 @@ class ProfileViewModel extends BaseViewModel {
   void initView() {
     _userFormKey = GlobalKey<FormState>();
     _biographyFormKey = GlobalKey<FormState>();
-    // TODO: Fix
-    _getProfile();
-    _setUserData();
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
-    _usernameController = TextEditingController(text: _initialUsername);
-    _usernameController.addListener(_controllerListener);
+    getProfile();
     _biographyController = TextEditingController(text: _initialBiography);
     _biographyController.addListener(_controllerListener);
     _setDefault();
@@ -87,26 +75,29 @@ class ProfileViewModel extends BaseViewModel {
 
   @override
   void disposeView() {
-    _usernameController.dispose();
     _biographyController.dispose();
     _setDefault();
     super.disposeView();
   }
 
   void _controllerListener() {
-    final String newUsername = _usernameController.text;
     final String newBiography = _biographyController.text;
-    final bool isUpdated =
-        (newUsername.isNotEmpty && newUsername != _initialUsername) ||
-            (newBiography.isNotEmpty && newBiography != _initialBiography);
+    final bool isUpdated = _isImagePicked ||
+        (newBiography.isNotEmpty && newBiography != _initialBiography);
     if (_canUpdate == isUpdated) return;
     _canUpdate = isUpdated;
     notifyListeners();
   }
 
-  void _setUserData() {
-    _email = _user.email;
-    _initialUsername = _user.username;
+  void updateUser() {}
+
+  void _setUserData(Profile receivedProfile) {
+    _profile = receivedProfile;
+    _email = _profile.email;
+    _initialBiography = _profile.bio;
+    _selectedImage = _profile.profilePicture;
+    _canUpdate = false;
+    notifyListeners();
   }
 
   Future<String?> pickImage(ImageSource source) async {
@@ -114,7 +105,10 @@ class ProfileViewModel extends BaseViewModel {
       final XFile? pickedFile = await _picker.pickImage(source: source);
       if (pickedFile == null || _selectedImage == pickedFile.path) return null;
       _canUpdate = true;
-      _selectedImage = pickedFile.path;
+      final Uint8List bytes = File(pickedFile.path).readAsBytesSync();
+      final String base64Image = "data:image/png;base64,${base64Encode(bytes)}";
+      _isImagePicked = true;
+      _selectedImage = base64Image;
       notifyListeners();
     } on Exception catch (e) {
       return e.toString();
@@ -123,71 +117,81 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   Future<String?> updateProfile() async {
-    final bool isUsernameValid = userFormKey.currentState?.validate() ?? false;
-    if (isUsernameValid) {
-      _initialUsername = _usernameController.text;
-      _user = _user.copyWith(username: _usernameController.text);
-      await localManager.setModel(_user, StorageKeys.user);
-      if (_selectedImage != null) {
-        await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
-      }
-      _canUpdate = false;
-      notifyListeners();
-    }
+    await operation?.cancel();
+    operation =
+        CancelableOperation<String?>.fromFuture(_updateProfileRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
 
+  Future<String?> _updateProfileRequest() async {
     final bool isBiographyValid =
         biographyFormKey.currentState?.validate() ?? false;
-    if (isBiographyValid) {
-      _initialBiography = _biographyController.text;
-      if (_selectedImage != null) {
-        await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
-      }
-      _canUpdate = false;
-      notifyListeners();
-    }
+    if (!isBiographyValid) return null;
 
+    final UpdateProfileRequestModel request = UpdateProfileRequestModel(
+      bio: _biographyController.text,
+      profilePicture: _selectedImage,
+    );
+    final IResponseModel<GetProfileResponse> response =
+        await _profileService.updateProfileRequest(request);
+    final GetProfileResponse? respData = response.data;
+    if (response.hasError || respData == null) {
+      return response.error?.errorMessage;
+    }
+    //_setUserData(respData.profile);
+    notifyListeners();
     return null;
+/*
+    if (_selectedImage != null) {
+      await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
+    }
+*/
   }
 
   void _setDefault() {
     _canUpdate = false;
   }
 
-  void updateUser(User newUser) {
-    if (newUser == _user) return;
-    _user = newUser;
-    _setUserData();
-    notifyListeners();
+  Future<String?> getProfile() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_getProfileRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
   }
 
-  //Future<String?> getProfile() async {
-  //  await operation?.cancel();
-  //  operation = CancelableOperation<String?>.fromFuture(_getProfile());
-  //  final String? res = await operation?.valueOrCancellation();
-  //  return res;
-  //}
-
-  Future<String?> _getProfile() async {
+  Future<String?> _getProfileRequest() async {
     final String? username = _user.username;
+    print("username: $username");
     if (username != null) {
       final IResponseModel<GetProfileResponse> res =
           await _profileService.getProfileRequest(username);
       final GetProfileResponse? respData = res.data;
+
       if (res.hasError || respData == null) {
         return res.error?.errorMessage;
       }
-      _profile = respData.profile;
-      _selectedImage = base64.decode(_profile.profilePicture!) as String?;
 
-      _initialUsername = _profile.username;
-      _initialBiography = _profile.bio;
-      _email = _profile.email;
-      _enrolledLearningSpaces = _profile.participated;
-      _createdLearningSpaces = _profile.created;
+      _profile = Profile(
+        username: respData.username,
+        email: _user.email,
+        bio: respData.bio,
+        profilePicture: respData.profilePicture,
+        participated: respData.participated ?? [],
+        created: respData.created ?? [],
+      );
+      _canUpdate = false;
+      notifyListeners();
+
+      //print(respData);
+      //_setUserData(respData);
+
+      //_profile = respData.profile;
+      //_selectedImage = base64.decode(_profile.profilePicture!);
+
+      //_enrolledLearningSpaces = _profile.participated;
+      //_createdLearningSpaces = _profile.created;
     }
-
-    _setUserData();
-    notifyListeners();
     return null;
   }
 }

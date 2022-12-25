@@ -11,7 +11,7 @@ class Profile extends BaseModel<Profile> {
     this.participated = const <LearningSpace>[],
     this.created = const <LearningSpace>[],
   });
-
+/*
   factory Profile.dummy(String username) => Profile(
         username: username,
         email: 'dummy@gmail.com',
@@ -26,7 +26,7 @@ class Profile extends BaseModel<Profile> {
           LearningSpace.dummy(3)
         ],
       );
-
+*/
   factory Profile.fromJson(Map<String, dynamic> json) => Profile(
         username: BaseModel.getByType<String>(json['username']),
         email: BaseModel.getByType<String>(json['email']),

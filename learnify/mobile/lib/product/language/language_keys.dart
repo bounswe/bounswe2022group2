@@ -129,4 +129,6 @@ class TextKeys {
   static const String addBiographyHint = "add_biography_hint";
   static const String created = "created";
   static const String createdLearningSpaces = "created_learning_spaces";
+  static const String usernameColon = "username_colon";
+  static const String emailColon = "email_colon";
 }

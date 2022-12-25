@@ -27,17 +27,20 @@ import '../../../product/theme/light_theme.dart';
 import '../../home-wrapper/view-model/home_wrapper_view_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../constants/widget_keys.dart';
+import '../model/profile_model.dart';
 import '../view-model/profile_view_model.dart';
 
 part 'components/profile_chart.dart';
 part 'components/profile_form.dart';
 
 class ProfileScreen extends BaseView<ProfileViewModel> {
-  const ProfileScreen({Key? key})
+  ProfileScreen({Key? key})
       : super(
           builder: _builder,
           scrollable: true,
           hasScaffold: false,
+          futureInit: (BuildContext context) async =>
+              context.read<ProfileViewModel>().initView(),
           key: key,
         );
 
@@ -130,8 +133,6 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         (_, ProfileViewModel model) => model.canUpdate,
         (BuildContext context, bool canSignup, _) {
           final ProfileViewModel model = context.read<ProfileViewModel>();
-          final HomeWrapperViewModel homeModel =
-              context.read<HomeWrapperViewModel>();
           return ActionButton(
             key: ProfileKeys.updateButton,
             text: TextKeys.update,
@@ -140,60 +141,53 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
                 vertical: context.responsiveSize * 1.4),
             capitalizeAll: true,
             isActive: canSignup,
-            onPressedError: () async {
-              final String? res = await model.updateProfile();
-              if (res == null) homeModel.setUser(model.user);
-              return res;
-            },
+            onPressedError: () async => model.updateProfile(),
           );
         },
       );
 
   static Widget get _enrolledLearningSpacesButton =>
-      SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.enrolledLearningSpaces,
-        (BuildContext context, List<LearningSpace> enrolledLearningSpaces, _) =>
-            ActionButton(
+      SelectorHelper<Profile?, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.profile,
+        (BuildContext context, Profile? profile, _) => ActionButton(
           key: ProfileKeys.enrolledLearningSpacesButton,
           text: TextKeys.enrolledLS,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
               vertical: context.responsiveSize * 1.4),
-          isActive: enrolledLearningSpaces.isNotEmpty,
+          isActive: profile!.participated.isNotEmpty,
           onPressed: () async => NavigationManager.instance.navigateToPage(
               path: NavigationConstants.viewall,
               data: <String, dynamic>{
-                'listOfLearningSpaces': enrolledLearningSpaces,
+                'listOfLearningSpaces': profile.participated,
                 'learningSpacesType': TextKeys.takenLearningSpaces,
               }),
         ),
       );
 
   static Widget get _createdLearningSpacesButton =>
-      SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.createdLearningSpaces,
-        (BuildContext context, List<LearningSpace> createdLearningSpaces, _) =>
-            ActionButton(
+      SelectorHelper<Profile?, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.profile,
+        (BuildContext context, Profile? profile, _) => ActionButton(
           key: ProfileKeys.createdLearningSpacesButton,
           text: TextKeys.createdLearningSpaces,
           padding: EdgeInsets.symmetric(
               horizontal: context.responsiveSize * 2.8,
               vertical: context.responsiveSize * 1.4),
-          isActive: createdLearningSpaces.isNotEmpty,
+          isActive: profile!.created.isNotEmpty,
           onPressed: () async => NavigationManager.instance.navigateToPage(
               path: NavigationConstants.viewall,
               data: <String, dynamic>{
-                'listOfLearningSpaces': createdLearningSpaces,
+                'listOfLearningSpaces': profile.created,
                 'learningSpacesType': TextKeys.createdLearningSpaces,
               }),
         ),
       );
 
   static Widget _totalCountRow(BuildContext context) =>
-      SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.enrolledLearningSpaces,
-        (BuildContext context, List<LearningSpace> learningSpaces, _) =>
-            Padding(
+      SelectorHelper<Profile, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.profile,
+        (BuildContext context, Profile profile, _) => Padding(
           padding:
               EdgeInsets.symmetric(horizontal: context.responsiveSize * 10),
           child: ClipRRect(
@@ -208,13 +202,13 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
                     const CustomVerticalDivider(
                         color: DarkAppTheme.lightActiveColor),
                     Expanded(
-                        child: _countColumn(
-                            context, learningSpaces.length, TextKeys.enrolled)),
+                        child: _countColumn(context,
+                            profile.participated.length, TextKeys.enrolled)),
                     const CustomVerticalDivider(
                         color: DarkAppTheme.lightActiveColor),
                     Expanded(
                         child: _countColumn(
-                            context, learningSpaces.length, TextKeys.created)),
+                            context, profile.created.length, TextKeys.created)),
                   ],
                 ),
               ),

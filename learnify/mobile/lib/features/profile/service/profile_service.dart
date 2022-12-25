@@ -14,16 +14,15 @@ class ProfileService extends IProfileService {
   /// Static instance getter of [ProfileService].
   static ProfileService get instance => _instance;
 
-  static const String _getProfile = '/profile';
+  static const String _getProfile = '/user';
   static const String _updateProfile = '/user';
 
   @override
   Future<IResponseModel<GetProfileResponse>> getProfileRequest(
           String username) async =>
-      networkManager.send<AnyModel, GetProfileResponse>(_getProfile,
+      networkManager.send<GetProfileResponse, GetProfileResponse>(
+          '$_getProfile/$username',
           parseModel: const GetProfileResponse(),
-          queryParameters: {'username': username},
-          requireAuth: false,
           type: RequestTypes.get);
 
   @override
