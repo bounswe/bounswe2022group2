@@ -64,4 +64,13 @@ export function validateComment_init(body) {
   });
   return schema.validate(body);
 }
-
+export function validateEditComment_init(body) {
+  const schema = Joi.object({
+    post_id: Joi.string().min(3).required(),
+    ls_id: Joi.string().min(3).required(),
+    comment_id: Joi.string().min(3).required(),
+    content: Joi.string(),
+    images: Joi.array()
+  });
+  return schema.validate(body);
+}

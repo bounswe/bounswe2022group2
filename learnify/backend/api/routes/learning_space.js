@@ -8,7 +8,9 @@ import {
     get_learning_space_by_category, 
     post_create_comment, 
     post_create_post, 
+    post_create_annotation, 
     put_edit_post, 
+    put_edit_comment,
     put_edit_annotation,
     get_by_participation,
     get_by_creator
@@ -21,7 +23,9 @@ router.get('/:id', get_learning_space_by_id)
 router.get('/category/:category', get_learning_space_by_category)
 router.post('/', post_learningSpace)
 router.post('/enroll', post_enrollLearningSpace)
+router.post('/annotation', post_create_annotation)
 router.put('/edit/annotation', put_edit_annotation)
+router.put('/edit/comment', put_edit_comment)
 router.post('/post', post_create_post)
 router.post('/comment', post_create_comment)
 router.put('/edit/post', put_edit_post)
