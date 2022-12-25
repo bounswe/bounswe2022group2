@@ -17,7 +17,7 @@ const EventForm = () => {
 
     const handleDurationChange = (event) => {
         setEventDuration(event.target.value);
-        if (event.target.value === '0') {
+        if (event.target.value === '0' || event.target.value < 0) {
             setDurationError(true);
         } else {
             setDurationError(false);
@@ -74,7 +74,7 @@ const EventForm = () => {
                             value={eventDuration}
                             onChange={handleDurationChange}
                             error={durationError}
-                            helperText={durationError ? 'Duration cannot be 0.' : ''}
+                            helperText={durationError ? (eventDuration < 0 ? 'Duration cannot be negative.' : 'Duration cannot be 0.') : ''}
                             InputLabelProps={{
                                 shrink: true,
                             }}
