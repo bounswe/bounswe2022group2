@@ -3,14 +3,12 @@ import mongoose from 'mongoose';
 import request from 'supertest';
 import { User } from '../models/index.js';
 import app from '../app.js';
-import sinon from 'sinon';
 import LearningSpace from '../models/learning_space.js';
 
-const ids = [mongoose.Types.ObjectId()];
+const ids = [mongoose.Types.ObjectId(), mongoose.Types.ObjectId()];
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM4OGE4ODc1NjMwNjc2ZDEzNDM3M2YyIiwiZW1haWwiOiJlZ29sZGZlcmJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJlY2VudXIiLCJpYXQiOjE2NzAyNzQ3MTQsImV4cCI6MTY3MDM2MTExNH0.xgdgXLWB8_pqbQpf7wN2t4VucLsYLm65jwxPieorqvU";
 const ls = {
-    _id: {
-      "$oid": "63a339a5a6117a921c64b115"
-    },
+    _id: ids[0],
     title: "Vine Making at Home",
     description: "vine makers get together for best!",
     num_participants: 2,
@@ -21,16 +19,6 @@ const ls = {
     ],
     creator: "ecenur.sezer",
     admins: [],
-    createdAt: {
-      "$date": {
-        "$numberLong": "1669900867229"
-      }
-    },
-    updatedAt: {
-      "$date": {
-        "$numberLong": "1671876035494"
-      }
-    },
     posts: [
       {
         "title": "Step 2. Sanitize Everything",
@@ -41,9 +29,7 @@ const ls = {
         "images": [
           "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nick-calder-scholes-head-brewer-at-one-drop-brewing-mixes-news-photo-1611244396.?crop=1xw:0.99951xh;center,top&resize=980:*"
         ],
-        "_id": {
-          "$oid": "63a6cca817ea09dc5d7cf01c"
-        }
+        _id:ids[1] 
       }
     ],
     participants: [
@@ -56,7 +42,7 @@ const ls = {
 const addLS = (dummyDone) => {
   LearningSpace.deleteMany({ title: ls.title }).then(() => {
     const ls_saved = new LearningSpace(ls).save();
-    return Promise.all(ls_saved)
+    return Promise.all([ls_saved])
   }).then(() => dummyDone());
 };
 
@@ -72,6 +58,7 @@ describe('POST /learningspace/post/vote', () => {
     it('should return validation error when body missing', (done) => {
         request(app)
           .put(url)
+          .set('Authorization', token)
           .send({
             post_id:ls.posts[0].id,
             type:"upvote"
@@ -82,7 +69,8 @@ describe('POST /learningspace/post/vote', () => {
 
     it('should return learning space does not exist if the LS with given id does not exist', (done) => {
     request(app)
-        .post(url)
+        .put(url)
+        .set('Authorization', token)
         .send({
             ls_id:"6390e36e318d2203c41cf312",
             post_id:ls.posts[0].id,
@@ -94,16 +82,12 @@ describe('POST /learningspace/post/vote', () => {
     
     it('should return internal server error if the sent ids are not Mongo Object IDs', (done) => {
     request(app)
-        .post(url+`weirdlsid/${ls.posts[0].id}`)
+        .put(url)
+        .set('Authorization', token)
         .send({
-            "@context":"http://www.w3.org/ns/anno.jsonld",
-            "type":"Annotations",
-            "body":"I wonder if I will make it today",
-            "target":{
-               "id":"https://frog-images.com/image1#xywh=100,200,150,20",
-               "type":"Image",
-               "format":"image/jpg"
-            }
+            ls_id:"weirdid",
+            post_id:ids[1],
+            type:"upvote"
         })
         .expect(500)
         .end(done);
@@ -111,16 +95,12 @@ describe('POST /learningspace/post/vote', () => {
 
     it('should create the endpoint', (done) => {
         request(app)
-            .post(url+`${ls.id}/${ls.posts[0].id}`)
+            .put(url)
+            .set('Authorization', token)
             .send({
-                "@context":"http://www.w3.org/ns/anno.jsonld",
-                "type":"Annotations",
-                "body":"I wonder if I will make it today",
-                "target":{
-                   "id":"https://frog-images.com/image1#xywh=100,200,150,20",
-                   "type":"Image",
-                   "format":"image/jpg"
-                }
+                ls_id:ids[0],
+                post_id:ids[1],
+                type:"upvote"
             })
             .expect(200)
             .end(done);
@@ -128,6 +108,6 @@ describe('POST /learningspace/post/vote', () => {
  
 })
 
-afterEach(() => {
-    LearningSpace.deleteMany({ title: ls.title })
-  });
+// afterEach(() => {
+    
+//   });

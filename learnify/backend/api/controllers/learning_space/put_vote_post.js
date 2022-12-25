@@ -25,12 +25,13 @@ export default async (req, res) => {
             console.log(err.message);
             return res.status(500).json({ "resultMessage": "Something is wrong." });
         });
-    console.log(ls);
     if (!ls) {
         return res.status(404).json({ "resultMessage": "There is no learning space with given ID." });
     }
     
-    var post = ls.posts.find(element => element._id == req.body.post_id);
+    if(ls.posts){
+        var post = ls.posts.find(element => element._id == req.body.post_id);
+    }
     if(!post){
         return res.status(404).json({ "resultMessage": "There is no post with given ID." });
     }
