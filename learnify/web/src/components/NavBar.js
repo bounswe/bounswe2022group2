@@ -10,6 +10,8 @@ export default function NavBar(){
 
     const [searchInput, setSearchInput] = useState("");
 
+    const currentUser = localStorage.getItem('username')
+
     const handleChange = (e) => {
         e.preventDefault();
         setSearchInput(e.target.value);
@@ -57,7 +59,7 @@ export default function NavBar(){
                 <a href="/contact" className='navBarText'>Contact</a>
             </li>
             <li>
-                <a href="/profile" className='navBarText'>Profile</a>
+                <a href={`/profile/${currentUser}`} className='navBarText'>Profile</a>
             </li>
         </ul>
     </nav>

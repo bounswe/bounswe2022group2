@@ -171,6 +171,49 @@
     cursor: pointer;
 }
 
+.ls-detail-box-container-profile {
+    width: 100%;
+    height: 240px;
+    background-color: #FF731D;
+    border-radius: 20px;
+    box-shadow: 0px 0px 54px -23px rgba(87,87,87,0.7);
+    display: flex;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.user-name-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    overflow: auto;
+    color: #1746A2;
+    text-decoration: underline;
+    font-style: italic;
+  }
+
+  .user-profile-ls-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    overflow: auto;
+    color: #1746A2;
+    background-color: #f8f6f4;
+    border: 5px solid #FF731D;
+    font-style: italic;
+  }
+
 .ls-detail-box-icon {
     border-radius: 20px;
     box-shadow: inset 0px 0px 54px -23px rgba(87,87,87,0.7);
@@ -558,12 +601,136 @@
     transition: background-color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0s cubic-bezier(0.4, 0, 0.2, 1) 0s;	
 
 }
-
 .ls-prev-box-icon {
     border-radius: 20px;
     box-shadow: inset 0px 0px 54px -23px rgba(87,87,87,0.7);
 }
 
+.profile-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-photo {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #ccc;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .default-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #ccc;
+  }
+  
+  .default-photo span {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 0.7em;
+    color: #666;
+  }
+  
+  #photo-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .about-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-user-frame {
+    background-color: #FF731D;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px 0px rgba(120,120,120,0.52);
+    color:#FFF7E9;
+    text-align: left;
+    padding: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+    max-height: 400px;
+    overflow: scroll;
+  }
+  
+  .about-text-input {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .save-button,
+  .edit-button {
+    background-color: #FFF7E9;
+    color:#1746A2;
+    padding-top: 6px;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 100px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Open Sans' sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .save-button {
+    background-color: #3c75e3;
+    color: white;
+  }
+  
+  .send-button {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .about-text {
+    font-family: 'Open Sans' sans-serif;	
+  }
 .eventform-container {
     display: flex;
     flex-direction: column;
@@ -613,7 +780,14 @@
     overflow: hidden;
     box-shadow: 0px 2px 5px 1px rgba(120,120,120,0.52);
 }
+  
 
+  .participantsText{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #FFF7E9;
+}
 .eventform-button {
     margin-top: 0.6em;
     margin-bottom: 0.6em;
