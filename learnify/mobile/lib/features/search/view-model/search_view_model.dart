@@ -3,13 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../home/model/get_learning_spaces_response_model.dart';
 import '../../home/service/I_home_service.dart';
 import '../../home/service/home_service.dart';
 import '../../learning-space/models/learning_space_model.dart';
-import '../model/search_response_model.dart';
+import '../model/ls_search_response_model.dart';
 import '../service/i_search_service.dart';
 import '../service/search_service.dart';
 import '../view/search_screen.dart';
@@ -78,6 +79,7 @@ class SearchViewModel extends BaseViewModel {
     _searchController.dispose();
     _resultLearningSpaces = <LearningSpace>[];
     _recommendedLearningSpaces = <LearningSpace>[];
+    didResultCome = false;
     super.disposeView();
   }
 
@@ -85,6 +87,7 @@ class SearchViewModel extends BaseViewModel {
     _searchController.clear();
     _resultLearningSpaces = _recommendedLearningSpaces;
     _resultUsers = allUsers;
+    didResultCome = false;
     notifyListeners();
   }
 
@@ -124,18 +127,22 @@ class SearchViewModel extends BaseViewModel {
       clearResults();
       return null;
     }
-    final IResponseModel<SearchResponse> resp =
-        await _searchService.search(_searchController.text);
-    await _userSearchRequest(_searchController.text);
-    final SearchResponse? respData = resp.data;
-    if (resp.hasError || respData == null) {
+    final IResponseModel<LsSearchResponse> responseLS =
+        await _searchService.searchLs(_searchController.text);
+    final LsSearchResponse? respDataLS = responseLS.data;
+
+    final IResponseModel<AnyModel> responseUser =
+        await _searchService.searchUser(_searchController.text);
+    final AnyModel? respDataUser = responseUser.data;
+
+    if (responseLS.hasError || respDataLS == null) {
       clearResults();
-      return resp.error?.errorMessage;
+      return responseLS.error?.errorMessage;
     }
-    if (respData.resultLearningSpaces.isEmpty) {
+    if (respDataLS.resultLearningSpaces.isEmpty) {
       _resultLearningSpaces = _recommendedLearningSpaces;
     } else {
-      _resultLearningSpaces = respData.resultLearningSpaces;
+      _resultLearningSpaces = respDataLS.resultLearningSpaces;
     }
     notifyListeners();
     return null;
