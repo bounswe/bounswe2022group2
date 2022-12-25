@@ -112,7 +112,7 @@ function LearningSpace() {
 
     useEffect(() => {
         const getEvents = async () => {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/events/ls${lsid}`, {    
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}events/ls/${lsid}`, {    
                 method: "GET",
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8'
