@@ -116,6 +116,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     // TODO: Fix
     // await navigationManager.navigateToPage(
     //     path: NavigationConstants.createEditPost);
+
+    await navigationManager.navigateToPage(
+      path: NavigationConstants.createEvent,
+    );
+
     return null;
   }
 
