@@ -15,9 +15,8 @@ const annotationSchema = new Schema({
     type: Schema.Types.Mixed, 
     required: true},
 },
-{_id: false},
   {
-    timestamps: true,
+    timestamps: false,
     toJSON: {
       transform: function (doc, ret, options) {
 
@@ -29,7 +28,8 @@ const annotationSchema = new Schema({
       virtuals: true,
     },
     versionKey: false,
-  });
+  },
+  {_id: false});
 
 const Annotation = model('Annotation', annotationSchema)
 export default Annotation;

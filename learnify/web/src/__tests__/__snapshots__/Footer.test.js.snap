@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render component layout correctly 1`] = `
+<div
+  className="footer-parent-layout"
+  data-testid="footer"
+>
+  <div
+    className="footer-container"
+  >
+    <div
+      className="footer-row"
+    >
+      <div
+        className="footer-column-l"
+      >
+        <div
+          className="footer-item-bold"
+        >
+          Learnify
+        </div>
+        <div
+          className="footer-item-reg"
+        >
+          is a learning space for everyone, where learning is 
+          <br />
+           achieved through collaboration.
+        </div>
+      </div>
+      <div
+        className="footer-column-r"
+      >
+        <a
+          className="footer-item-bold"
+          href="/home"
+        >
+          Home
+        </a>
+        <a
+          className="footer-item-bold"
+          href="/categories"
+        >
+          Categories
+        </a>
+        <a
+          className="footer-item-bold"
+          href="/notifications"
+        >
+          Notifications
+        </a>
+      </div>
+      <div
+        className="footer-column-r"
+      >
+        <a
+          className="footer-item-bold"
+          href="/profile"
+        >
+          Profile
+        </a>
+        <a
+          className="footer-item-bold"
+          href="/contact"
+        >
+          Contact
+        </a>
+        <a
+          className="footer-item-bold"
+          href="/about"
+        >
+          About
+        </a>
+      </div>
+      <div
+        className="footer-column-r"
+      >
+        <a
+          className="footer-item-bold"
+          href="/user/learning-spaces"
+        >
+          My Learning Spaces
+        </a>
+        <a
+          className="footer-item-bold"
+          href="/popular-learning-spaces"
+        >
+          Popular Learning Spaces
+        </a>
+        <a
+          className="footer-item-bold"
+          href="/recommended-learning-spaces"
+        >
+          Recommended Learning Spaces
+        </a>
+      </div>
+      <div
+        className="footer-column-r"
+      >
+        2022
+         © Learnify Team. All rights reserved.
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -7,6 +7,7 @@ import '../../providers/theme/theme_provider.dart';
 /// Extensions for theme related data with context.
 extension ColorExtensions on BuildContext {
   ThemeData get _theme => watch<ThemeProvider>().currentTheme;
+  bool get isDark => watch<ThemeProvider>().isDark;
   TextTheme get _textTheme => _theme.textTheme;
 
   Color get errorColor => _theme.errorColor;
@@ -17,6 +18,8 @@ extension ColorExtensions on BuildContext {
   Color get textColor => _textTheme.bodyMedium?.color ?? Colors.white;
   Color get inactiveTextColor =>
       _textTheme.labelSmall?.color ?? Colors.white.withOpacity(.8);
+  Color get lightDarkActiveColor =>
+      isDark ? LightAppTheme.darkActiveColor : LightAppTheme.lightActiveColor;
   Color get lightActiveColor => LightAppTheme.lightActiveColor;
   Color get darkActiveColor => LightAppTheme.darkActiveColor;
   Color get activeColor =>

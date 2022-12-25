@@ -17,4 +17,14 @@ mixin ColorHelpers {
     }
     return Color(int.parse(buffer.toString()));
   }
+
+  /// Returns a dark random color.
+  static Color get darkRandomColor {
+    final List<String> letters = '012345678'.split('');
+    final StringBuffer buffer = StringBuffer('0xff');
+    for (int i = 0; i < 6; i++) {
+      buffer.write(letters[(math.Random().nextInt(letters.length)).floor()]);
+    }
+    return Color(int.parse(buffer.toString()));
+  }
 }

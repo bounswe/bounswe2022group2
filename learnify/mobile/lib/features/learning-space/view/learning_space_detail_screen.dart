@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:intl/intl.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -11,6 +13,7 @@ import '../../../core/constants/main_type_definitions.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/extensions/number/number_extensions.dart';
+import '../../../core/helpers/color_helpers.dart';
 import '../../../core/helpers/selector_helper.dart';
 import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
@@ -20,10 +23,12 @@ import '../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../core/widgets/divider/custom_divider.dart';
 import '../../../core/widgets/image/annotatable_image.dart';
 import '../../../core/widgets/image/image_painter.dart';
+import '../../../core/widgets/indicators/custom_loading_indicator.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
 import '../../../core/widgets/measured_size.dart';
 import '../../../core/widgets/text/annotatable/annotatable_text.dart';
 import '../../../core/widgets/text/base_text.dart';
+import '../../../core/widgets/text/circled_text.dart';
 import '../../../core/widgets/text/multiline_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
@@ -33,13 +38,15 @@ import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
-import '../models/event.dart';
+import '../models/event/event.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../view-model/learning_space_view_model.dart';
 import 'annotations_screen.dart';
 
 part 'components/events/event_item.dart';
+part 'components/events/event_map.dart';
 part 'components/events/events_list.dart';
 part 'components/forum_list.dart';
 part 'components/post/post_item.dart';
@@ -47,9 +54,11 @@ part 'components/post/post_list.dart';
 
 class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
     with LearningSpaceConstants {
-  LearningSpaceDetailScreen({required LearningSpace? learningSpace, Key? key})
+  LearningSpaceDetailScreen(
+      {required LearningSpace? learningSpace, int initialIndex = 0, Key? key})
       : super(
-          builder: (BuildContext context) => _builder(context, learningSpace),
+          builder: (BuildContext context) =>
+              _builder(context, learningSpace, initialIndex),
           voidInit: (BuildContext context) => context
               .read<LearningSpaceViewModel>()
               .setLearningSpace(learningSpace),
@@ -57,8 +66,10 @@ class LearningSpaceDetailScreen extends BaseView<LearningSpaceViewModel>
           key: key,
         );
 
-  static Widget _builder(BuildContext context, LearningSpace? learningSpace) =>
+  static Widget _builder(BuildContext context, LearningSpace? learningSpace,
+          int initialIndex) =>
       DefaultTabController(
+        initialIndex: initialIndex,
         length: LearningSpaceConstants.tabKeys.length,
         child: NestedScrollView(
           headerSliverBuilder: _headerSliverBuilder,
@@ -154,7 +165,7 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       width: double.infinity,
-                      color: Colors.white,
+                      color: context.isDark ? Colors.black54 : Colors.white,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -258,18 +269,42 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Expanded(
-                                child: Text(
-                                  tempLearningSpace?.creator ??
-                                      "Created by: placeholder_username",
-                                  textAlign: TextAlign.left,
+                                child: BaseText(
+                                  '${context.tr(TextKeys.creator)}: ${tempLearningSpace?.creator}',
+                                  textAlign: TextAlign.start,
+                                  translated: false,
                                   style: const TextStyle(
                                       overflow: TextOverflow.ellipsis),
                                 ),
                               ),
-                              const Icon(Icons.people_alt_outlined, size: 20),
-                              Text(tempLearningSpace?.numParticipants
-                                      .toString() ??
-                                  "100")
+                              GestureDetector(
+                                onTap:
+                                    tempLearningSpace?.participants.isEmpty ??
+                                            true
+                                        ? null
+                                        : () async {
+                                            final String? selectedUser =
+                                                await DialogBuilder(context)
+                                                    .singleSelectDialog<String>(
+                                              TextKeys.eventParticipants,
+                                              tempLearningSpace?.participants ??
+                                                  <String>[],
+                                              null,
+                                            );
+                                            debugPrint(selectedUser);
+                                          },
+                                child: Row(
+                                  children: <Widget>[
+                                    const Icon(Icons.people_alt_outlined,
+                                        size: 20),
+                                    Text(
+                                        tempLearningSpace?.participants.length
+                                                .toString() ??
+                                            "",
+                                        textAlign: TextAlign.right)
+                                  ],
+                                ),
+                              ),
                             ],
                           )
                         ],
@@ -286,6 +321,8 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
         bottom: ColoredTabBar(
           color: context.primary,
           tabBar: TabBar(
+            onTap: (int val) async =>
+                context.read<LearningSpaceViewModel>().getEvents(),
             tabs: LearningSpaceConstants.tabKeys
                 .map((String key) => Tab(text: context.tr(key)))
                 .toList(),

@@ -11,6 +11,7 @@ import '../../../features/learning-space/view/annotations_screen.dart';
 import '../../../features/learning-space/view/components/chapter_image.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
+import '../../../features/settings/view/settings_screen.dart';
 import '../../../features/view-learning-spaces/view/view_all_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../extensions/string/string_extensions.dart';
@@ -47,6 +48,8 @@ class NavigationRoute {
         return normalNavigate(HomeWrapper(initialIndex: 2), args);
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3), args);
+      case NavigationConstants.settings:
+        return normalNavigate(const SettingsScreen(), args);
       case NavigationConstants.learningSpace:
         return normalNavigate(
             LearningSpaceDetailScreen(
