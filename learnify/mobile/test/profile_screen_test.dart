@@ -38,9 +38,13 @@ void main() {
       ActionButton updateButton =
           tester.widget(updateButtonFinder) as ActionButton;
 
-      final Finder viewAllButtonFinder = TestHelpers.descendantFinderByKey(
+      final Finder enrolledButtonFinder = TestHelpers.descendantFinderByKey(
           profileScreen, ProfileKeys.enrolledLearningSpacesButton);
-      expect(viewAllButtonFinder, findsOneWidget);
+      expect(enrolledButtonFinder, findsOneWidget);
+
+      final Finder createdButtonFinder = TestHelpers.descendantFinderByKey(
+          profileScreen, ProfileKeys.createdLearningSpacesButton);
+      expect(createdButtonFinder, findsOneWidget);
 
       final Finder usernameFormFinder = TestHelpers.descendantFinderByKey(
           profileScreen, ProfileKeys.usernameField);

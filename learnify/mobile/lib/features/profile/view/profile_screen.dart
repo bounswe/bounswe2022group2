@@ -58,6 +58,8 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
             context.sizedH(2),
             _enrolledLearningSpacesButton,
             context.sizedH(1),
+            _createdLearningSpacesButton,
+            context.sizedH(1),
             Transform.scale(scale: .85, child: const _ProfileChart()),
             context.sizedH(1),
           ],
@@ -165,6 +167,23 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
         ),
       );
 
+  static Widget get _createdLearningSpacesButton =>
+      SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
+        (_, ProfileViewModel model) => model.learningSpaces,
+        (BuildContext context, List<LearningSpace> learningSpaces, _) =>
+            ActionButton(
+          key: ProfileKeys.createdLearningSpacesButton,
+          text: TextKeys.createdLearningSpaces,
+          padding: EdgeInsets.symmetric(
+              horizontal: context.responsiveSize * 2.8,
+              vertical: context.responsiveSize * 1.4),
+          isActive: true, //learningSpaces.isNotEmpty,
+          onPressed: () async => context
+              .read<HomeViewModel>()
+              .viewAll(TextKeys.takenLearningSpaces),
+        ),
+      );
+
   static Widget _totalCountRow(BuildContext context) =>
       SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
         (_, ProfileViewModel model) => model.enrolledLearningSpaces,
@@ -189,8 +208,8 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
                     const CustomVerticalDivider(
                         color: DarkAppTheme.lightActiveColor),
                     Expanded(
-                        child: _countColumn(context, learningSpaces.length,
-                            TextKeys.contributed)),
+                        child: _countColumn(
+                            context, learningSpaces.length, TextKeys.created)),
                   ],
                 ),
               ),
