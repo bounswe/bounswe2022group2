@@ -17,6 +17,9 @@ const EventForm = () => {
                     <div className="eventform-body-row">
                         <input type="text" className='eventform-input' placeholder="Event Title" />
                     </div>
+                    <div className="eventform-body-row">
+                        <textarea className='eventform-input' placeholder="Event Description" />
+                    </div>
                 </div>
             </form>
         </div>
