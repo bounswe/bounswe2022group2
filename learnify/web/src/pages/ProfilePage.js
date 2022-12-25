@@ -40,7 +40,7 @@ function ProfilePage() {
         <div className='profilepage'>
             <div className='profile-page-left'>
 
-                <div className='space-50'/>
+                <div className='space-80'/>
             
                 <AboutUser bio={bio} />
                 
@@ -56,7 +56,7 @@ function ProfilePage() {
                 <div>
                 <UserNameProfile user = {username}/>
                 </div>
-                <div className='space-30'/>
+                <div className='space-20'/>
                 <div className='profile-page-ls-box-drawer'>
                     <label className='user-profile-ls-text'> {username}'s learning spaces box </label>                    
                 </div>
