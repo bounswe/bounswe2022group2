@@ -12,13 +12,13 @@ import Participants from '../components/Participants';
 import JoinLsButton from '../components/JoinLsButton';	
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import Event from '../components/Event';
 
 function LearningSpace() {
 
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
     const { lsid } = useParams();
-
 
     const [message, setMessage] = useState("");
 
@@ -304,11 +304,10 @@ function LearningSpace() {
                     <label className='navBarText2'> <img src={geolocation} alt="Learnify Logo" height={70} /></label>
                     </label>
                     <div className='space-5'></div>
-                        <div>Preparing for Milestone - North Cafeteria</div>
-                        <div>Classical Music Concert - Albert Long Hall</div>
-                        <div>Watching Car Racing - CMPE HWLAB</div>
-                        <div>Pizza Party - CMPE Roof</div>
-                        <div>Baklava in the Making - CMPE B4</div>
+                        {/*{eventArray.map(myEvent =>
+                                    <Event myEvent = {myEvent} my_lsid = {lsid}/>)}
+                        */}
+                        Events will be here!
                 </div>
             </div>
         </div>
