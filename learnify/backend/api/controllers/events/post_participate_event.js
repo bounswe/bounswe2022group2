@@ -25,6 +25,9 @@ export default async (req, res) => {
     console.log(err)
     return res.status(409).json({ "resultMessage": err });
   }
+  if(!event.num_participants === participationLimit){
+    return res.status(400).json({ "resultMessage": "Event participation limit reached." });
+  }
   if(!event.participants.includes(username)){
       event.participants.push(username);
       event.num_participants += 1 
