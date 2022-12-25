@@ -52,7 +52,7 @@ export default async (req, res) => {
     });
 
     if(req.body.images){
-        ls.posts[numCheck].images = req.body.images;
+        comment.images = req.body.images;
     }
 
     ls.posts[numCheck].comments.push(comment);
