@@ -352,6 +352,12 @@
     position: relative;
 }
 
+.event-box-right {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
 .comment-box-right {
     padding-left: 260px;
     display: flex;
@@ -365,6 +371,13 @@
     text-align: left;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.event-buttons-contaier {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .post-upvote-button {
@@ -418,6 +431,13 @@
     margin-top: 11px;
     font-size: small;
     font-weight: 600;
+}
+
+.event-owner-display-item {
+    margin-top: 11px;
+    font-size: small;
+    font-weight: 600;
+    text-align: center;
 }
 
 .post-edit-icon-container {
