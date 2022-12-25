@@ -1,7 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './component_styles.css'
-
+import {DatePicker} from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import TextField from '@mui/material/TextField';
 
 const EventForm = () => {
 
@@ -19,6 +22,21 @@ const EventForm = () => {
                     </div>
                     <div className="eventform-body-row">
                         <textarea className='eventform-input' placeholder="Event Description" />
+                    </div>
+                    <div className="eventform-body-row">
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker
+                                label="Event Date"
+                                disablePast
+                                value={value}
+                                onChange={(newValue) => {
+                                    setValue(newValue);
+                                }}
+                                views={['year', 'month', 'day']}
+                                inputFormat="DD-MM-YYYY"
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
                     </div>
                 </div>
             </form>
