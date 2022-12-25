@@ -12,10 +12,16 @@ const EventForm = () => {
     const [dateValue, setDateValue] = useState(null);
     const [timeValue, setTimeValue] = useState(null);
     const [eventDuration, setEventDuration] = useState('');
+    const [durationError, setDurationError] = useState(false);
 
 
     const handleDurationChange = (event) => {
         setEventDuration(event.target.value);
+        if (event.target.value === '0') {
+            setDurationError(true);
+        } else {
+            setDurationError(false);
+        }
     };
 
     return (
@@ -67,6 +73,8 @@ const EventForm = () => {
                             type="number"
                             value={eventDuration}
                             onChange={handleDurationChange}
+                            error={durationError}
+                            helperText={durationError ? 'Duration cannot be 0.' : ''}
                             InputLabelProps={{
                                 shrink: true,
                             }}
