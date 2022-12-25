@@ -253,7 +253,7 @@ export default function Post(props){
 
   const [editPost, setEditPost] = useState(false);
 
-  const [addComment, setAddComment] = useState(false);
+  const [addComment, setAddComment] = useState(localStorage.getItem("commentClicked") === "true" ? true : false);
 
   const editThePost = () => {
       setValue(content);
@@ -279,6 +279,7 @@ export default function Post(props){
   const [addCommentButton, setAddCommentButton]= useState(true);
 
   const handleSubmitFinal  = () => {
+    localStorage.setItem("commentClicked", true);
     createComment(lsid, postId, commentValue, commentImageUrl);
   }
 
@@ -315,6 +316,7 @@ export default function Post(props){
                   setCommentValue("");
                   setCommentImageUrl("");
                   setAddCommentButton(current => !current);
+                  window.location.reload();
               } else {
                   console.log("error")
                   setMessage("Error adding comment");
