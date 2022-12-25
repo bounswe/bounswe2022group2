@@ -327,9 +327,9 @@ function LearningSpace() {
                 <EventForm lsid={lsid}/>
                 <div className='ls-box-org'>
                     <label className='feed-title'>
-                    <label className='navBarText'><img src={event} alt="Learnify Logo" height={70} /></label>
+                    <FontAwesomeIcon icon={solid('calendar-week') } />
+                    <label className='ls-event-box-text'></label>
                         Events
-                    <label className='navBarText2'> <img src={geolocation} alt="Learnify Logo" height={70} /></label>
                     </label>
                     <div className='space-5'></div>
                         {eventArray.map(myEvent =>
