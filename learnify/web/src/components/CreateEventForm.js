@@ -12,6 +12,9 @@ const EventForm = () => {
     const [eventTitle, setEventTitle] = useState('');
     const [eventTitleError, setEventTitleError] = useState(false);
 
+    const [eventDescription, setEventDescription] = useState('');
+    
+
     const [dateValue, setDateValue] = useState(null);
     const [timeValue, setTimeValue] = useState(null);
     const [eventDuration, setEventDuration] = useState('');
@@ -26,6 +29,10 @@ const EventForm = () => {
         } else {
             setEventTitleError(false);
         }
+    };
+
+    const handleEventDescriptionChange = (event) => {
+        setEventDescription(event.target.value);
     };
 
     const handleDurationChange = (event) => {
@@ -65,7 +72,15 @@ const EventForm = () => {
                         />
                     </div>
                     <div className="eventform-body-row">
-                        <textarea className='eventform-input' placeholder="Event Description" />
+                        <TextField
+                            required
+                            label="Event Description"
+                            type="text"
+                            multiline
+                            maxRows={6}
+                            value={eventDescription}
+                            onChange={handleEventDescriptionChange}
+                        />
                     </div>
                     <div className="eventform-body-row">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
