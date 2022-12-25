@@ -169,7 +169,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
 
   static Widget get _createdLearningSpacesButton =>
       SelectorHelper<List<LearningSpace>, ProfileViewModel>().builder(
-        (_, ProfileViewModel model) => model.learningSpaces,
+        (_, ProfileViewModel model) => model.enrolledLearningSpaces,
         (BuildContext context, List<LearningSpace> learningSpaces, _) =>
             ActionButton(
           key: ProfileKeys.createdLearningSpacesButton,

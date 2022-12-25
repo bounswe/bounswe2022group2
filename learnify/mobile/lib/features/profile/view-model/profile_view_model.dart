@@ -15,7 +15,7 @@ import '../service/profile_service.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
-  ProfileViewModel(this._user);
+  ProfileViewModel(this._user, this._profile);
   User _user;
   User get user => _user;
 
