@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'
+import '../components/component_styles.css'
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import illustration from '../images/categories-page-illustration.svg'
@@ -38,9 +39,13 @@ function ProfilePage() {
         <NavBar />
         <div className='profilepage'>
             <div className='profile-page-left'>
+
+                <div className='space-80'/>
             
-            <AboutUser bio={bio} />
+                <AboutUser bio={bio} />
                 
+
+                <div className='space-80'/>
 
                 <img src={illustration} alt="Categories Page Illustration" height={170} />
             </div>
@@ -51,8 +56,9 @@ function ProfilePage() {
                 <div>
                 <UserNameProfile user = {username}/>
                 </div>
-                <div className='space-30'/>
-                    
+                <div className='space-20'/>
+                    <label className='user-profile-ls-text'> {username}'s learning spaces box </label>                    
+                
                 <div className='profile-page-ls-box'>
                     {learningspaces.map(ls => (
                      <LearningSpaceDetailsProfile
@@ -69,11 +75,14 @@ function ProfilePage() {
             </div>
 
             <div className='profile-page-right'>
+                <div className='space-50'/>
                 <div className='profile-page-image'>
                     <img src={happy} alt="Profile photo" height={250}/>
                 </div>
-               
-                <label className='profile-page-text'> Meet with new people and learn together, that is what matters... LEARNIFY</label>
+                <div className='space-12'/>
+                <label className='profile-page-text'> "Meet with new people and learn together, that is what matters..."</label>
+                <label className='profile-page-text-two'>  - Team LEARNIFY</label>
+                <div className='space-20'/>
                 <div className='profilepage-friends-box'>
                     <label className='feed-title'>
                         <label className='navBarText2'> Interest Areas</label>

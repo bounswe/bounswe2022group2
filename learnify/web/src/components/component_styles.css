@@ -197,6 +197,23 @@
     font-style: italic;
   }
 
+  .user-profile-ls-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    overflow: auto;
+    color: #1746A2;
+    background-color: #f8f6f4;
+    border: 5px solid #FF731D;
+    font-style: italic;
+  }
+
 .ls-detail-box-icon {
     border-radius: 20px;
     box-shadow: inset 0px 0px 54px -23px rgba(87,87,87,0.7);

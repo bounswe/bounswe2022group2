@@ -56,7 +56,7 @@ function AboutUser(props) {
           </>
         ) : (
           <>
-            <label className="navBarText2">Bio</label>
+            <label className="navBarText2">Biography</label>
             <div className="space-3" />
             <label className="about-text">{props.bio}</label>
             <div className="space-3" />
