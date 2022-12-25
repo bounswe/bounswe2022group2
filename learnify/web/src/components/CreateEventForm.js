@@ -6,6 +6,9 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField';
+import MapPicker from 'react-google-map-picker'
+
+const DefaultZoom = 10;
 
 const EventForm = () => {
 
@@ -21,6 +24,18 @@ const EventForm = () => {
     const [durationError, setDurationError] = useState(false);
     const [plimitValue, setPlimitValue] = useState('');
     const [plimitError, setPlimitError] = useState(false);
+    
+    const [defaultLocation, setDefaultLocation] = useState({ lat: 41, lng: 29 });
+    const [location, setLocation] = useState(defaultLocation);
+    const [zoom, setZoom] = useState(DefaultZoom);
+
+    const handleChangeLocation = (lat, lng) => {
+        setLocation({lat:lat, lng:lng});
+    }
+
+    const handleZoomChange = (zoom) => {
+        setZoom(zoom);
+    }
 
     const handleEventTitleChange = (event) => {
         setEventTitle(event.target.value);
@@ -146,105 +161,22 @@ const EventForm = () => {
                             }}
                         />
                     </div>
+                    <div className="eventform-body-row">
+                        <div className="eventform-map">
+                            <MapPicker defaultLocation={defaultLocation}
+                                zoom={zoom}
+                                mapTypeId="roadmap"
+                                style={{height:'300px'}}
+                                onChangeLocation={handleChangeLocation} 
+                                onChangeZoom={handleZoomChange}
+                                apiKey='AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8'/>
+                        </div>
+                    </div>         
                 </div>
             </form>
         </div>
     )
 
-//   const [event, setEvent] = useState({
-//     title: '',
-//     description: '',
-//     duration: '',
-//     date: '',
-//     location: {
-//       longitude: '',
-//       latitude: '',
-//       accuracy: ''
-//     }
-//   });
-
-//   const handleChange = event => {
-//     const { name, value } = event.target;
-//     setEvent({ ...event, [name]: value });
-//   };
-
-//   const handleLocationChange = event => {
-//     const { name, value } = event.target;
-//     setEvent({
-//       ...event,
-//       location: {
-//         ...event.location,
-//         [name]: value
-//       }
-//     });
-//   };
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     // submit the form data to the server here
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label htmlFor="title">Event Title:</label>
-//       <input
-//         type="text"
-//         name="title"
-//         value={event.title}
-//         onChange={handleChange}
-//       />
-//       <br />
-//       <label htmlFor="description">Event Description:</label>
-//       <textarea
-//         name="description"
-//         value={event.description}
-//         onChange={handleChange}
-//       />
-//       <br />
-//       <label htmlFor="duration">Duration:</label>
-//       <select name="duration" value={event.duration} onChange={handleChange}>
-//         <option value="30min">30 minutes</option>
-//         <option value="1hr">1 hour</option>
-//         <option value="2hr">2 hours</option>
-//         <option value="4hr">4 hours</option>
-//         <option value="8hr">8 hours</option>
-//       </select>
-//       <br />
-//       <label htmlFor="date">Date:</label>
-//       <input
-//         type="date"
-//         name="date"
-//         value={event.date}
-//         onChange={handleChange}
-//       />
-//       <br />
-//       <label htmlFor="longitude">Longitude:</label>
-//       <input
-//         type="text"
-//         name="longitude"
-//         value={event.location.longitude}
-//         onChange={handleLocationChange}
-//       />
-//       <br />
-//       <label htmlFor="latitude">Latitude:</label>
-//       <input
-//         type="text"
-//         name="latitude"
-//         value={event.location.latitude}
-//         onChange={handleLocationChange}
-//       />
-//       <br />
-//       <label htmlFor="accuracy">Accuracy:</label>
-//       <input
-//         type="text"
-//         name="accuracy"
-//         value={event.location.accuracy}
-//         onChange={handleLocationChange}
-//       />
-//       <br />
-//       <button type="submit">Create Event</button>
-//     </form>
-//   );
 };
 
 export default EventForm;
