@@ -14,6 +14,9 @@ const DefaultZoom = 10;
 
 const EventForm = () => {
 
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
     const [eventTitle, setEventTitle] = useState('');
     const [eventTitleError, setEventTitleError] = useState(false);
 
