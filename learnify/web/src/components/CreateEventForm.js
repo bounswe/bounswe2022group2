@@ -7,6 +7,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField';
 import MapPicker from 'react-google-map-picker'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 const DefaultZoom = 10;
 
@@ -80,6 +82,7 @@ const EventForm = () => {
         <div className="eventform-container">
             <form className="eventform">
                 <div className="eventform-header">
+                    <div className='eventform-icon'> <FontAwesomeIcon icon={solid('calendar-plus') } /> </div>
                     Create Event
                 </div>
                 <div className="eventform-body">
