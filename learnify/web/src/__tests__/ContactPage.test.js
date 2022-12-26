@@ -61,6 +61,16 @@ test('contact page information for users renders correctly', async () => {
 } );
 
 
+test('contact page quote renders correctly', async () => {
+    render(<BrowserRouter><ContactPage /></BrowserRouter>);
+    const contactPageFormNameInput = screen.getByText(/It is important for our co-learners to have a good and respectful experience in order to feel valued, motivated, and supported in their learning journey/i);
+    expect(contactPageFormNameInput).toBeInTheDocument();
+} );
+
+
+
+
+
 
 
 
