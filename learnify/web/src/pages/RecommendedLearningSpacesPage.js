@@ -22,7 +22,12 @@ function PopularLearningSpacesPage() {
             setLearningspaces(res.data.learning_spaces);
         }
         getPopularLearningSpaces();
-    }
+    }, []);
+
+    const lsBoxes = learningspaces.map(ls => (
+        <LearningSpaceDetailBox title={ls.title} description={ls.description} icon_id={ls.icon_id} num_participants={ls.num_participants} url={ls._id}/>
+    ));
+
 
 }
 
