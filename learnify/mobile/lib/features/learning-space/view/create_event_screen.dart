@@ -100,22 +100,19 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                   firstDate: DateTime(2000),
                   lastDate: DateTime(2100));
 
-              if (selectedDate == null) {
+              if (selectedDate == null || passedDate(selectedDate)) {
                 model.setIsDateSelected();
                 return;
               }
-
-              if (passedDate(selectedDate)) return;
 
               final TimeOfDay? selectedTime = await showTimePicker(
                   context: context, initialTime: TimeOfDay.now());
 
-              if (selectedTime == null) {
+              if (selectedTime == null ||
+                  (isToday(selectedDate) && passedTime(selectedTime))) {
                 model.setIsDateSelected();
                 return;
               }
-
-              if (isToday(selectedDate) && passedTime(selectedTime)) return;
 
               model.pickDateTime(selectedDate, selectedTime);
             },

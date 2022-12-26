@@ -630,7 +630,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     }
     final Event? event = response.data?.event;
     if (event == null) {
-      return "Learning Space not found";
+      return "Event cannot be created";
     }
     events.forEach((String key, List<Event> value) {
       if (key == _learningSpace?.id && !value.contains(event)) {
