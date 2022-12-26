@@ -34,7 +34,7 @@ function PopularLearningSpacesPage() {
             <div className="recommendedlspage-container">
                 <div className="recommendedlspage-wrapper">
                     <div className="recommendedlspage-title">
-                        <h1>Browsing the current most popular learning spaces:</h1>
+                        <h1>Browsing the recommended learning spaces:</h1>
                     </div>
                 </div>
                 <div className="recommendedlspage-body" data-testid="recommendedlspage-body">
