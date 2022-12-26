@@ -58,7 +58,7 @@ function HomePage() {
 
     useEffect(() => {
         const getRecommendedLearningSpaces = async () => {
-            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}user/recommended`, {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/user/recomended`, {
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     'Authorization': `${token}`,
