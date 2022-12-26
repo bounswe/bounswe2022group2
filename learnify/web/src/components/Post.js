@@ -233,19 +233,22 @@ export default function Post(props){
   const content = props.myPost.content;
   const images = props.myPost.images;
   const commentArray = props.myPost.comments;
+  const upvotes = props.myPost.upvote;
+  const downvotes = props.myPost.downvote;
+  const lsid = props.my_lsid;
 
-  const [upCounter, setUpCounter] = useState(0);
-  const [downCounter, setDownCounter] = useState(0);
   const [deletePost, setDeletePost] = useState(false);
 
   const [postTitle, setPostTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   const increaseUp = () => {
-      setUpCounter(count => count + 1);
+      localStorage.setItem((postId+"upClicked"), true);
+      console.log((postId+"Clicked"));
   };
   const increaseDown = () => {
-      setDownCounter(count => count + 1);
+    localStorage.setItem((postId+"downClicked"), true);
+    console.log((postId+"Clicked"));
   };
   const deleteThePost = () => {
       setDeletePost(current => !current);
@@ -278,8 +281,6 @@ useEffect(() => {
 
   const [commentImageUrl, setCommentImageUrl] = useState("");
 
-  const lsid = props.my_lsid;
-
   const [addCommentButton, setAddCommentButton]= useState(true);
 
   const handleSubmitFinal  = () => {
@@ -294,6 +295,7 @@ useEffect(() => {
   const handleSubmitEdit  = () => {
       editExPost(lsid, postId, postTitle, value, imageUrl);
   }
+
 
   const createComment = async (lsid, postId, commentValue, commentImageUrl) => {
       console.log(lsid)
@@ -410,19 +412,19 @@ useEffect(() => {
                 <div className='post-box-left'>
                     <div className='ls-button-container2'>
                         <button className='post-upvote-button'>
-                            <FontAwesomeIcon icon={solid('caret-up')} color="green" onClick={increaseUp}/>
+                            <FontAwesomeIcon icon={solid('caret-up')} color={localStorage.getItem((postId+"upClicked")) ? "green": "black"} onClick={(localStorage.getItem((postId+"upClicked")) || localStorage.getItem((postId+"downClicked"))) ? console.log('onclick..') : increaseUp}/>
                         </button>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{upCounter}</label>
+                        <label className="counter__output">{upvotes}</label>
                     </div>
                     <div className='ls-button-container2'>
-                        <button className='post-downvote-button'>
-                            <FontAwesomeIcon icon={solid('caret-down')} color="red" onClick={increaseDown}/>
+                        <button className='post-downvote-button' disabled={true}>
+                            <FontAwesomeIcon icon={solid('caret-down')} color={localStorage.getItem((postId+"downClicked")) ? "red": "black"} onClick={(localStorage.getItem((postId+"upClicked")) || localStorage.getItem((postId+"downClicked"))) ? console.log('onclick..') : increaseDown}/>
                         </button>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{downCounter}</label>
+                        <label className="counter__output">{downvotes}</label>
                     </div>
                     <div className='ls-button-container2'>
                         <div className='post-comment-button'>
