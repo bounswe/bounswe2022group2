@@ -15,7 +15,8 @@ function TextInterface({
     classes,
     contentUrl,
     handleNext,
-    handleCreateAnnotation
+    handleCreateAnnotation,
+    postId
   }) {
     const contentRef = useRef();
   
@@ -69,7 +70,7 @@ function TextInterface({
     // ref={contentRef}
     return (
       <div>
-        <div ref={contentRef}>{text}</div>
+        <div id={"post-content-text" + postId} ref={contentRef}>{text}</div>
       </div>
     );
   }
@@ -233,7 +234,7 @@ export default function Post(props){
       type: "Annotation",
       body: annotation.body[0].value,
       target: {
-        source: 'http://3.76.176.35/' + lsid + '/' + postId,
+        source: 'http://localhost:3000/' + lsid + '/' + postId,
         selector: annotation.target.selector[1],
       }
     };
@@ -256,6 +257,44 @@ export default function Post(props){
           console.error("Error:", error);
       });
   };
+
+  useEffect (() => {
+    const getTextAnnotation = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/get/${lsid}/${postId}`);
+      console.log(response.data);
+      const r = new Recogito({
+        content: document.getElementById("post-content-text" + postId),
+      });
+      response.data.annotations.map((item) => {
+        r.addAnnotation({
+          '@context': 'http://www.w3.org/ns/anno.jsonld',
+          type: 'Annotation',
+          body: [
+            {
+              type: 'TextualBody',
+              value: item.body,
+              purpose: 'tagging',
+            },
+          ],
+          target: {
+            selector: [
+              {
+                type: 'TextQuoteSelector',
+                exact: item.body,
+              },
+              {
+                type: 'TextPositionSelector',
+                start: item.target.selector.start,
+                end: item.target.selector.end,
+              },
+            ],
+          },
+          id: '#7d7993a-34b6-4d8f-a6bf-2e596fbf9a4a',
+        });
+      });
+    };
+    getTextAnnotation();
+  }, [])
 
   const title = props.myPost.title;
   const postId = props.myPost._id;
@@ -462,6 +501,7 @@ useEffect(() => {
                     contentUrl={content}
                     handleNext={handleNext}
                     handleCreateAnnotation={handleCreateAnnotation}
+                    postId={postId}
                 />
             </div>
             <div className='space-5'></div>
