@@ -27,6 +27,8 @@ import '../models/comment/add_comment_response_model.dart';
 import '../models/comment/comment_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
+import '../models/event/create_event_request.dart';
+import '../models/event/create_event_response.dart';
 import '../models/event/event.dart';
 import '../models/event/get_events_response.dart';
 import '../models/geolocation/geolocation_model.dart';
@@ -141,7 +143,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         newDescription.isNotEmpty &&
         newParticipationLimit.isNotEmpty &&
         newDuration.isNotEmpty &&
-        _isDateSelected;
+        _dateTime != null;
     if (_canCreate == newCanCreate) return;
     _canCreate = newCanCreate;
     notifyListeners();
@@ -195,7 +197,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> createEvent() async {
+  Future<String?> toCreateEventScreen() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
     //     path: NavigationConstants.createEditPost);
@@ -555,18 +557,23 @@ class LearningSpaceViewModel extends BaseViewModel {
         selectedTime.hour,
         selectedTime.minute);
     _dateTime = selectedDateTime;
-    notifyListeners();
     _isDateSelected = true;
+    _controllerListener();
+    notifyListeners();
   }
 
   void resetIsDateSelected() {
     _isDateSelected = false;
+    _controllerListener();
     notifyListeners();
   }
 
   void setIsDateSelected() {
-    _isDateSelected = true;
-    notifyListeners();
+    if (_dateTime != null) {
+      _isDateSelected = true;
+      _controllerListener();
+      notifyListeners();
+    }
   }
 
   Future<void> setInitialGeolocation() async {
@@ -597,5 +604,41 @@ class LearningSpaceViewModel extends BaseViewModel {
         accuracy: tempPos.accuracy);
 
     _geolocation = tempGeolocation;
+  }
+
+  Future<String?> createEvent() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_createEventRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _createEventRequest() async {
+    final CreateEventRequest request = CreateEventRequest(
+        title: _eventTitleController.text,
+        description: _eventDescriptionController.text,
+        participationLimit:
+            int.tryParse(_eventParticipationLimitController.text),
+        duration: int.tryParse(_eventDurationController.text),
+        date: _dateTime,
+        geolocation: _geolocation,
+        lsId: _learningSpace?.id ?? "");
+    final IResponseModel<CreateEventResponse> response =
+        await _lsService.createEvent(request);
+    if (response.hasError) {
+      return response.error?.errorMessage;
+    }
+    final Event? event = response.data?.event;
+    if (event == null) {
+      return "Learning Space not found";
+    }
+    events.forEach((String key, List<Event> value) {
+      if (key == _learningSpace?.id && !value.contains(event)) {
+        value.add(event);
+      }
+    });
+    _initializeKeys();
+    notifyListeners();
+    return null;
   }
 }
