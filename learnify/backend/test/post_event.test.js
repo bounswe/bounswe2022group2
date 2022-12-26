@@ -1,9 +1,10 @@
 import assert from 'assert';
 import request from 'supertest';
-import { LearningSpace, User } from '../models/index.js';
+import { LearningSpace, User , Event} from '../models/index.js';
 import app from '../app.js';
 import jwt from "jsonwebtoken";
 import sinon from 'sinon';
+import { expect } from 'expect';
 
 const token = "token"        
 const username = "username"
@@ -13,19 +14,25 @@ describe('POST /events', () => {
         .onFirstCall().resolves(
           {username}
         );
-        sinon.stub(LearningSpace.prototype, "exists")
+        Event.deleteOne({title: "Test Event"});
+    });
+    afterEach(() => { sinon.restore();})
+  it('creates an event with valid inputs', (done) => {
+    sinon.stub(LearningSpace, "exists")
         .onFirstCall().resolves(
           true);
-    });
-  it('creates an event with valid inputs', (done) => {
-
+    sinon.stub(Event, "exists")
+        .onFirstCall().resolves(
+          false);
+    let r = (Math.random() + 1).toString(36).substring(7);
     request(app)
       .post('/events')
       .send({
-        title: 'Test Event',
+        title: r + 'Test Event',
         description: 'This is a test event',
         date: '2022-01-01',
         duration: 2,
+        participationLimit: 10,
         geolocation: {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12},
         lsId: '12345'
       })
@@ -34,17 +41,21 @@ describe('POST /events', () => {
       .end((err, res) => {
         if (err) return done(err);
         assert.strictEqual(res.body.resultMessage, 'Event is succesfully created.');
-        assert.strictEqual(res.body.event.title, 'Test Event');
+        assert.strictEqual(res.body.event.title,r +  'Test Event');
         assert.strictEqual(res.body.event.description, 'This is a test event');
-        assert.strictEqual(res.body.event.date, '2022-01-01');
         assert.strictEqual(res.body.event.duration, 2);
-        assert.strictEqual(res.body.event.geolocation, {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12});
+        expect(res.body.event.geolocation.accuracy).toBe(2.1);
+        expect(res.body.event.geolocation.longitude).toBe(3.15);
+        expect(res.body.event.geolocation.latitude).toBe(11.12);
         assert.strictEqual(res.body.event.lsId, '12345');
         done();
       });
   });
 
   it('returns an error with invalid inputs', (done) => {
+    sinon.stub(LearningSpace, "exists")
+        .onFirstCall().resolves(
+          true);
     request(app)
       .post('/events')
       .send({
@@ -65,17 +76,19 @@ describe('POST /events', () => {
   });
 
   it('returns an error if the learning space does not exists', (done) => {
-    sinon.stub(LearningSpace.prototype, "exists")
+    let r = (Math.random() + 1).toString(36).substring(7);
+    sinon.stub(LearningSpace, "exists")
         .onFirstCall().resolves(
           false);
     request(app)
       .post('/events')
       .send({
-        title: 'Test Event',
+        title:r +  'Test Event',
         description: 'This is a test event',
         date: '2022-01-01',
         duration: 2,
-        geolocation: {"accuracy": 2.1 ,"longitude": 3.15, "latitude": 11.12},
+        participationLimit: 10,
+        geolocation: {accuracy: 2.1 ,longitude: 3.15, latitude: 11.12},
         lsId: '12345'
       })
       .set('Authorization', 'token')

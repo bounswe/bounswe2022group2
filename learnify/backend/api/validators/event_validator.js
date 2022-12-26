@@ -7,7 +7,7 @@ export function validateEvent(body){
       description: Joi.string(),
       title: Joi.string().required(),
       duration: Joi.number().required(),
-      participationLimit: Joi.number(),
+      participationLimit: Joi.number().required(),
       geolocation: Joi.object({
       accuracy: Joi.number().required(),
       latitude: Joi.number().required(),

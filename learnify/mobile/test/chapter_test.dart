@@ -67,12 +67,21 @@ void main() {
       expect(expansionTile.children.first.runtimeType, Center);
       expect(expansionTile.children[1].runtimeType, CarouselSlider);
       expect(expansionTile.children[4].runtimeType, AnnotatableText);
-      expect(expansionTile.children.last.runtimeType, Padding);
-      final Padding padding = expansionTile.children.last as Padding;
-      expect(padding.child.runtimeType, ActionButton);
-      final ActionButton? editButton = padding.child as ActionButton?;
+      expect(expansionTile.children[5].runtimeType, Row);
+      final Row row = expansionTile.children[5] as Row;
+      expect(row.children[0].runtimeType, Expanded);
+      expect(row.children[1].runtimeType, Expanded);
+
+      final Expanded? firstExpand = row.children[0] as Expanded?;
+      final ActionButton? editButton =
+          (firstExpand?.child as Padding).child as ActionButton?;
       expect(editButton?.isActive, true);
       expect(editButton?.text, TextKeys.editPost);
+      final Expanded? secondExpand = row.children[1] as Expanded?;
+      final ActionButton? commentButton =
+          (secondExpand?.child as Padding).child as ActionButton?;
+      expect(commentButton?.isActive, true);
+      expect(commentButton?.text, TextKeys.addComment);
     },
   );
 }
