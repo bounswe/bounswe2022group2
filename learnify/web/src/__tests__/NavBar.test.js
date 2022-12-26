@@ -138,8 +138,3 @@ test('navbar profile button should be clickable', async () => {
     expect(profileButton).toBeInTheDocument();
 }   );
 
-test('navbar profile button href should be correct', async () => {
-    render(<BrowserRouter><NavBar /></BrowserRouter>);
-    const profileButton = screen.getByText(/Profile/i);
-    expect(profileButton.href).toBe('http://localhost/profile');
-}   );

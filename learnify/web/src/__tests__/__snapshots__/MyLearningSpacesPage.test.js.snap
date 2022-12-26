@@ -78,7 +78,7 @@ exports[`MyLearningSpacesPage should render page layout correctly 1`] = `
       <li>
         <a
           className="navBarText"
-          href="/profile"
+          href="/profile/null"
         >
           Profile
         </a>
