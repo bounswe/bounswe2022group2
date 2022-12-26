@@ -26,7 +26,7 @@ export default function Footer() {
                         <a href="/about" className='footer-item-bold'>About</a>
                     </div>
                     <div className='footer-column-r'>
-                        <a href="/user/learning-spaces" className='footer-item-bold'>My Learning Spaces</a>
+                        <a href={`/${currentUser}/learningspaces`} className='footer-item-bold'>My Learning Spaces</a>
                         <a href="/popular-learning-spaces" className='footer-item-bold'>Popular Learning Spaces</a>
                         <a href="/recommended-learning-spaces" className='footer-item-bold'>Recommended Learning Spaces</a>
                     </div>
