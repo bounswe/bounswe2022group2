@@ -77,7 +77,7 @@ exports[`NavBar should render component layout correctly 1`] = `
     <li>
       <a
         className="navBarText"
-        href="/profile"
+        href="/profile/null"
       >
         Profile
       </a>
