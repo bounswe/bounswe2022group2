@@ -4,8 +4,14 @@ function ProfilePhoto(props) {
   const [photo, setPhoto] = useState(props.profilePicture);
   
   const [loading, setLoading] = useState(false);
-
+  const [username, setUsername] = useState(localStorage.getItem('username'));
+  console.log(username)
+  console.log(props.userviewed)
   const handleFileChange = async (event) => {
+    // Only allow the user to change the photo if they are viewing their own profile
+    if (username !== props.userviewed) {
+      return;
+      }
     setLoading(true);
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -41,6 +47,7 @@ function ProfilePhoto(props) {
             <label htmlFor="photo-input">
               <span>Change profile photo</span>
             </label>
+          
             
             <input
               type="file"

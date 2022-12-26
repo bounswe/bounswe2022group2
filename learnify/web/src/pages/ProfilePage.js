@@ -52,7 +52,7 @@ function ProfilePage() {
 
             <div className='profile-page-middle'>
 
-                <ProfilePhoto profilePicture={profilePicture} />
+                <ProfilePhoto profilePicture={profilePicture} userviewed={username}/>
                 <div>
                 <UserNameProfile user = {username}/>
                 </div>
