@@ -489,4 +489,9 @@ class LearningSpaceViewModel extends BaseViewModel {
     _isDateSelected = false;
     notifyListeners();
   }
+
+  void setIsDateSelected() {
+    _isDateSelected = true;
+    notifyListeners();
+  }
 }
