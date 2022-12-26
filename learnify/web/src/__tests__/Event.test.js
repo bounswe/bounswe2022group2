@@ -22,4 +22,24 @@ describe('Event', () => {
     const { getByText } = render(<Event myEvent={event} />);
     expect(getByText('Event Title')).toBeInTheDocument();
   });
+
+  it('renders the correct date and time for the event', () => {
+    const event = {
+      id: '1',
+      eventCreator: 'John',
+      date: '0',
+      description: 'Event description',
+      title: 'Event Title',
+      duration: 60,
+      participationLimit: 10,
+      geolocation: {
+        latitude: 123,
+        longitude: 456
+      },
+      participants: [],
+      num_participants: 0
+    };
+    const { getByText } = render(<Event myEvent={event} />);
+    expect(getByText('0')).toBeInTheDocument();
+  });
 });
