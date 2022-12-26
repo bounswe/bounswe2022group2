@@ -3,10 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
-import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/icon_keys.dart';
-import '../../auth/verification/model/user_model.dart';
 import '../../home/model/get_learning_spaces_response_model.dart';
 import '../../home/service/I_home_service.dart';
 import '../../home/service/home_service.dart';
@@ -157,12 +155,10 @@ class SearchViewModel extends BaseViewModel {
       _resultLearningSpaces = respDataLS.resultLearningSpaces;
     }
     if (respDataUser == null || respDataUser.users.isEmpty) {
-      print("---------------------------------------");
       clearUserResults();
     } else {
       _resultUsers = await _usernameToUserPreview(respDataUser.users);
     }
-    print("Im here!");
 
     notifyListeners();
     return null;
