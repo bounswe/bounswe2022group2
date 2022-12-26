@@ -105,6 +105,8 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                 return;
               }
 
+              if (passedDate(selectedDate)) return;
+
               final TimeOfDay? selectedTime = await showTimePicker(
                   context: context, initialTime: TimeOfDay.now());
 
@@ -112,6 +114,9 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                 model.setIsDateSelected();
                 return;
               }
+
+              if (isToday(selectedDate) && passedTime(selectedTime)) return;
+
               model.pickDateTime(selectedDate, selectedTime);
             },
           ),
@@ -184,4 +189,37 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                 homeViewModel.updateLs(spaceViewModel.learningSpace);
                 NavigationManager.instance.pop();
               }));
+}
+
+bool passedDate(DateTime date) {
+  final DateTime currentDate = DateTime.now();
+  if (date.year < currentDate.year) return true;
+
+  if (date.year == currentDate.year) {
+    if (date.month < currentDate.month) return true;
+
+    if (date.month == currentDate.month) {
+      return date.day < currentDate.day;
+    }
+  }
+
+  return false;
+}
+
+bool passedTime(TimeOfDay time) {
+  final TimeOfDay currentTime = TimeOfDay.now();
+  if (time.hour < currentTime.hour) return true;
+
+  if (time.hour == currentTime.hour) {
+    if (time.minute < currentTime.minute) return true;
+  }
+
+  return false;
+}
+
+bool isToday(DateTime date) {
+  final DateTime currentDate = DateTime.now();
+  return currentDate.year == date.year &&
+      currentDate.month == date.month &&
+      currentDate.day == date.day;
 }

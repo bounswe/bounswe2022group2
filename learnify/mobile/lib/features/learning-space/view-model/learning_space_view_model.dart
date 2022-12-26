@@ -569,9 +569,11 @@ class LearningSpaceViewModel extends BaseViewModel {
   }
 
   void setIsDateSelected() {
-    _isDateSelected = true;
-    _controllerListener();
-    notifyListeners();
+    if (_dateTime != null) {
+      _isDateSelected = true;
+      _controllerListener();
+      notifyListeners();
+    }
   }
 
   Future<void> setInitialGeolocation() async {
