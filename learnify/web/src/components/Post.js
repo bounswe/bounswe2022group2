@@ -12,62 +12,16 @@ import Comment from './Comment';
 import axios from 'axios';
 
 function TextInterface({
-    classes,
     contentUrl,
-    handleNext,
-    handleCreateAnnotation,
     postId
   }) {
     const contentRef = useRef();
-  
-    const [anno, setAnno] = useState(null);
+
     const [text, setText] = useState(null);
   
     useEffect(() => {
-      // fetch(contentUrl).then((response) => {
-      //   response.text().then((t) => {
-      //     setText(t);
-      //   });
-      // });
       setText(contentUrl);
     }, [contentUrl]);
-  
-    useEffect(() => {
-      let annotorious = null;
-      // console.log("contentRef.current.parentNode", contentRef.current.parentNode);
-      if (classes && text && contentRef.current) {
-        anno && anno.destroy();
-        console.log("init anno", anno);
-  
-        const config = {
-          widgets: [
-            {
-              widget: "TAG",
-              vocabulary: classes
-            }
-          ],
-          readOnly: false,
-          content: contentRef.current
-        };
-  
-        annotorious = new Recogito(config);
-  
-        // Attach event handlers here
-        annotorious.on("createAnnotation", (annotation) => {
-          handleCreateAnnotation(annotation);
-        });
-      }
-      setAnno(annotorious);
-      return () => {
-        anno && anno.destroy();
-      };
-    }, [classes, text]);
-  
-    useEffect(() => {
-      console.log("anno changed");
-    }, [anno]);
-  
-    // ref={contentRef}
     return (
       <div>
         <div id={"post-content-text" + postId} ref={contentRef}>{text}</div>
@@ -77,186 +31,214 @@ function TextInterface({
 
 export default function Post(props){
 
-     // Ref to the image DOM element
   const imgEl = useRef();
 
-  // The current Annotorious instance
-  const [anno, setAnno] = useState();
-  const [watch, setWatch] = useState(true);
-
-  // Current drawing tool name
-  const [tool, setTool] = useState("rect");
-
-  // Init Annotorious when the component
-  // mounts, and keep the current 'anno'
-  // instance in the application state
-  
+  const [textAnnotation, setTextAnnotation] = useState();
   useEffect(() => {
-    if(images[0] !== ""){
-    let annotorious = null;
-
-    if (imgEl.current) {
-      // Init
-      annotorious = new Annotorious({
-        image: imgEl.current,
-        widgets: [
-          "COMMENT",
-          { widget: "TAG", vocabulary: ["Animal", "Building", "Waterbody"] }
-        ]
+    const postTextAnnotation = async () => {
+      const r = new Recogito({
+        content: document.getElementById("post-content-text" + postId),
       });
-
-      // Attach event handlers here
-      annotorious.on("createAnnotation", (annotation) => {
-        setWatch((prev) => !prev);
-        console.log("created", annotation, anno);
+      r.on('createAnnotation', function (propsTextAnnotation) {
+        setTextAnnotation(propsTextAnnotation);
       });
-
-      annotorious.on("updateAnnotation", (annotation, previous) => {
-        console.log("updated", annotation, previous);
-      });
-
-      annotorious.on("deleteAnnotation", (annotation) => {
-        console.log("deleted", annotation);
-      });
-
-      annotorious.on("createSelection", function () {
-        const defaultSuggestions =
-          "<p>EasterEgg</p><p>Baklava</p><p>Netting</p><p>Altay</p><p>Enes</p><p>Gökay</p><p>Koray</p>";
-        const commentWrapper = document.querySelector(".comment");
-        const commentTextarea = document.querySelector(".comment > textarea");
-        const commentSuggestion = document.createElement("div");
-        commentSuggestion.classList.add("comment-suggestion");
-        commentSuggestion.innerHTML = defaultSuggestions;
-        commentSuggestion.style.display = "none";
-        commentSuggestion.style.position = "absolute";
-        commentSuggestion.style.left = "3px";
-        commentSuggestion.style.backgroundColor = "#fff";
-        commentSuggestion.style.padding = "2px 12px";
-        commentSuggestion.style.boxShadow = "0 0 20px #00000040";
-        commentSuggestion.style.border = "1px solid #d6d7d9";
-        commentSuggestion.style.borderRadius = "3px";
-        commentSuggestion.style.zIndex = "1";
-        commentSuggestion.style.maxHeight = "100px";
-        commentSuggestion.style.overflowY = "auto";
-
-        if (commentTextarea) {
-          commentTextarea.addEventListener("keyup", () => {
-            let elements = [];
-            commentSuggestion.innerHTML = defaultSuggestions;
-            commentSuggestion.style.display = "block";
-
-            document
-              .querySelectorAll(".comment-suggestion > p")
-              .forEach((item) => {
-                if (
-                  item.innerText
-                    .toLowerCase()
-                    .includes(commentTextarea.value.toLowerCase())
-                ) {
-                  elements.push(`<p>${item.innerText}</p>`);
-                }
-              });
-
-            if (commentTextarea.value.toLowerCase() === "") {
-              commentSuggestion.innerHTML = defaultSuggestions;
-            } else if (elements.length < 1) {
-              commentSuggestion.style.display = "none";
-            } else {
-              commentSuggestion.innerHTML = elements.join("");
-            }
-          });
-        }
-
-        if (commentWrapper) {
-          commentWrapper.addEventListener("click", () => {
-            commentSuggestion.style.display = "block";
-          });
-          commentWrapper.style.position = "relative";
-          commentWrapper.appendChild(commentSuggestion);
-          document
-            .querySelectorAll(".comment-suggestion > p")
-            .forEach((item) => {
-              item.addEventListener("click", (e) => {
-                commentTextarea.value = e.target.innerText;
-                commentSuggestion.style.display = "none";
-              });
-            });
-        }
-
-        document.querySelectorAll(".comment-suggestion > p").forEach((item) => {
-          item.style.margin = "0 -12px";
-          item.style.padding = "2px 12px";
-
-          item.addEventListener("mouseover", () => {
-            item.style.backgroundColor = "rgb(189, 228, 255)";
-          });
-
-          item.addEventListener("mouseleave", () => {
-            item.style.backgroundColor = "#fff";
-          });
-        });
-      });
-    }
-
-    // Keep current Annotorious instance in state
-    setAnno(annotorious);
-    console.log("bganno", anno, annotorious?.getImageSnippetById());
-
-    // Cleanup: destroy current instance
-    return ;
-}}, []);
-
-  useEffect(() => {
-    console.log("andso", anno?.getImageSnippetById());
-  }, [watch]);
-
-  const [i, setI] = useState(0);
-  const [url, setUrl] = useState();
-  const [classes, setClasses] = useState(["class1", "class2"]);
-
-  const urlList = [
-    ""
-  ];
-
-  useEffect(() => {
-    setUrl(urlList[i]);
-  }, [i]);
-
-  const handleNext = () => {
-    setI((i + 1) % urlList.length);
-  };
-
-  const handleCreateAnnotation = async (annotation) => {
-    console.log("current URL", url);
-    console.log(annotation);
-    let data = {
-     '@context': "http://www.w3.org/ns/anno.jsonld",
-      type: "Annotation",
-      body: annotation.body[0].value,
-      target: {
-        source: 'http://localhost:3000/' + lsid + '/' + postId,
-        selector: annotation.target.selector[1],
-      }
+      let data = {
+        '@context': "http://www.w3.org/ns/anno.jsonld",
+         type: "Annotation",
+         body: textAnnotation.body[0].value,
+         target: {
+           source: 'http://localhost:3000/' + lsid + '/' + postId,
+           selector: textAnnotation.target.selector[1],
+         }
+       };
+       console.log(data);
+       await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/create/${lsid}/${postId}`, {
+         method: "POST",
+         body: JSON.stringify(data),
+         headers: {
+             'Content-type': 'application/json; charset=UTF-8',
+             'Authorization': `${token}` ,
+         },
+     })
+         .then((response) => {
+             if (response.status === 200) {
+                 console.log("successfull")
+                 setMessage("Vote added successfully");
+             }
+         })
+         .catch((error) => {
+             console.error("Error:", error);
+         });
     };
-    console.log(data);
-    await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/create/${lsid}/${postId}`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-          'Authorization': `${token}` ,
-      },
-  })
-      .then((response) => {
-          if (response.status === 200) {
-              console.log("successfull")
-              setMessage("Vote added successfully");
-          }
-      })
-      .catch((error) => {
-          console.error("Error:", error);
-      });
-  };
+    postTextAnnotation();
+  }, [textAnnotation]);
+  
+//   useEffect(() => {
+//     if(images[0] !== ""){
+//     let annotorious = null;
+
+//     if (imgEl.current) {
+//       // Init
+//       annotorious = new Annotorious({
+//         image: imgEl.current,
+//         widgets: [
+//           "COMMENT",
+//           { widget: "TAG", vocabulary: ["Animal", "Building", "Waterbody"] }
+//         ]
+//       });
+
+//       // Attach event handlers here
+//       // annotorious.on("createAnnotation", (annotation) => {
+//       //   setWatch((prev) => !prev);
+//       //   console.log("created", annotation, anno);
+//       // });
+
+//       annotorious.on("updateAnnotation", (annotation, previous) => {
+//         console.log("updated", annotation, previous);
+//       });
+
+//       annotorious.on("deleteAnnotation", (annotation) => {
+//         console.log("deleted", annotation);
+//       });
+
+//       annotorious.on("createSelection", function () {
+//         const defaultSuggestions =
+//           "<p>EasterEgg</p><p>Baklava</p><p>Netting</p><p>Altay</p><p>Enes</p><p>Gökay</p><p>Koray</p>";
+//         const commentWrapper = document.querySelector(".comment");
+//         const commentTextarea = document.querySelector(".comment > textarea");
+//         const commentSuggestion = document.createElement("div");
+//         commentSuggestion.classList.add("comment-suggestion");
+//         commentSuggestion.innerHTML = defaultSuggestions;
+//         commentSuggestion.style.display = "none";
+//         commentSuggestion.style.position = "absolute";
+//         commentSuggestion.style.left = "3px";
+//         commentSuggestion.style.backgroundColor = "#fff";
+//         commentSuggestion.style.padding = "2px 12px";
+//         commentSuggestion.style.boxShadow = "0 0 20px #00000040";
+//         commentSuggestion.style.border = "1px solid #d6d7d9";
+//         commentSuggestion.style.borderRadius = "3px";
+//         commentSuggestion.style.zIndex = "1";
+//         commentSuggestion.style.maxHeight = "100px";
+//         commentSuggestion.style.overflowY = "auto";
+
+//         if (commentTextarea) {
+//           commentTextarea.addEventListener("keyup", () => {
+//             let elements = [];
+//             commentSuggestion.innerHTML = defaultSuggestions;
+//             commentSuggestion.style.display = "block";
+
+//             document
+//               .querySelectorAll(".comment-suggestion > p")
+//               .forEach((item) => {
+//                 if (
+//                   item.innerText
+//                     .toLowerCase()
+//                     .includes(commentTextarea.value.toLowerCase())
+//                 ) {
+//                   elements.push(`<p>${item.innerText}</p>`);
+//                 }
+//               });
+
+//             if (commentTextarea.value.toLowerCase() === "") {
+//               commentSuggestion.innerHTML = defaultSuggestions;
+//             } else if (elements.length < 1) {
+//               commentSuggestion.style.display = "none";
+//             } else {
+//               commentSuggestion.innerHTML = elements.join("");
+//             }
+//           });
+//         }
+
+//         if (commentWrapper) {
+//           commentWrapper.addEventListener("click", () => {
+//             commentSuggestion.style.display = "block";
+//           });
+//           commentWrapper.style.position = "relative";
+//           commentWrapper.appendChild(commentSuggestion);
+//           document
+//             .querySelectorAll(".comment-suggestion > p")
+//             .forEach((item) => {
+//               item.addEventListener("click", (e) => {
+//                 commentTextarea.value = e.target.innerText;
+//                 commentSuggestion.style.display = "none";
+//               });
+//             });
+//         }
+
+//         document.querySelectorAll(".comment-suggestion > p").forEach((item) => {
+//           item.style.margin = "0 -12px";
+//           item.style.padding = "2px 12px";
+
+//           item.addEventListener("mouseover", () => {
+//             item.style.backgroundColor = "rgb(189, 228, 255)";
+//           });
+
+//           item.addEventListener("mouseleave", () => {
+//             item.style.backgroundColor = "#fff";
+//           });
+//         });
+//       });
+//     }
+
+//     // Keep current Annotorious instance in state
+//     // setAnno(annotorious);
+//     // console.log("bganno", anno, annotorious?.getImageSnippetById());
+
+//     // Cleanup: destroy current instance
+//     return ;
+// }}, []);
+
+  // useEffect(() => {
+  //   console.log("andso", anno?.getImageSnippetById());
+  // }, [watch]);
+
+  // const [i, setI] = useState(0);
+  // const [url, setUrl] = useState();
+  // const [classes, setClasses] = useState(["class1", "class2"]);
+
+  // const urlList = [
+  //   ""
+  // ];
+
+  // useEffect(() => {
+  //   setUrl(urlList[i]);
+  // }, [i]);
+
+  // const handleNext = () => {
+  //   setI((i + 1) % urlList.length);
+  // };
+
+  // const handleCreateAnnotation = async (annotation) => {
+  //   console.log("current URL", url);
+  //   console.log(annotation);
+  //   let data = {
+  //    '@context': "http://www.w3.org/ns/anno.jsonld",
+  //     type: "Annotation",
+  //     body: annotation.body[0].value,
+  //     target: {
+  //       source: 'http://localhost:3000/' + lsid + '/' + postId,
+  //       selector: annotation.target.selector[1],
+  //     }
+  //   };
+  //   console.log(data);
+  //   await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/create/${lsid}/${postId}`, {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //         'Content-type': 'application/json; charset=UTF-8',
+  //         'Authorization': `${token}` ,
+  //     },
+  // })
+  //     .then((response) => {
+  //         if (response.status === 200) {
+  //             console.log("successfull")
+  //             setMessage("Vote added successfully");
+  //         }
+  //     })
+  //     .catch((error) => {
+  //         console.error("Error:", error);
+  //     });
+  // };
 
   useEffect (() => {
     const getTextAnnotation = async () => {
@@ -273,7 +255,7 @@ export default function Post(props){
             {
               type: 'TextualBody',
               value: item.body,
-              purpose: 'tagging',
+              purpose: 'commenting',
             },
           ],
           target: {
@@ -289,7 +271,6 @@ export default function Post(props){
               },
             ],
           },
-          id: '#7d7993a-34b6-4d8f-a6bf-2e596fbf9a4a',
         });
       });
     };
@@ -497,10 +478,8 @@ useEffect(() => {
         }
             <div style={{ whiteSpace: "pre-wrap" }} className="">
                 <TextInterface
-                    classes={classes}
                     contentUrl={content}
-                    handleNext={handleNext}
-                    handleCreateAnnotation={handleCreateAnnotation}
+                    // handleCreateAnnotation={handleCreateAnnotation}
                     postId={postId}
                 />
             </div>
