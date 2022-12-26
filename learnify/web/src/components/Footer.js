@@ -21,7 +21,7 @@ export default function Footer() {
                         <a href="/notifications" className='footer-item-bold'>Notifications</a>
                     </div>
                     <div className='footer-column-r'>
-                        <a href="/profile" className='footer-item-bold'>Profile</a>
+                        <a href={`/profile/${currentUser}`} className='footer-item-bold'>Profile</a>
                         <a href="/contact" className='footer-item-bold'>Contact</a>
                         <a href="/about" className='footer-item-bold'>About</a>
                     </div>
