@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 
 
 // We can add additional fields if we enlarge the features of the app.
+import Comment from './comment.js';
 
 const postSchema = new Schema({
   title: {
@@ -14,15 +15,19 @@ const postSchema = new Schema({
   content:{
     type: String, required: true
   },
-  annotations: [{
-    type: Schema.Types.Mixed,
-  }],
+  upvote: {
+    type: Number, default:0
+  },
+  downvote: {
+    type: Number, default:0
+  },
   images:[{
     type: String
   }],
-
+  comments:[{
+    type: Comment.schema
+  }],
 
 });
-
 
 export default postSchema

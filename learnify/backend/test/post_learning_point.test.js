@@ -5,12 +5,12 @@ import { LearningSpace, User } from '../models/index.js';
 import app from '../app.js';
 import jwt from "jsonwebtoken";
 import sinon from 'sinon';
-
+import axios from "axios";
 
 describe('POST /learningspace', () => {
   const url = '/learningspace';
 
-
+  afterEach(() => { sinon.restore();})
 
   it('should return 400 when title is missing', (done) => {
       const title = "title1";
@@ -24,13 +24,11 @@ describe('POST /learningspace', () => {
     );
     request(app)
       .post(url)
-      .send({description, token }) //title is missing
+      .send({description }) //title is missing
+      .set('Authorization', 'Bearer valid_token')
       .expect(400)
-      .end(async (err) => {
-        if (err) return done(err);
-        });
+      .end(done);
 
-        done();
       });
 
 
@@ -46,40 +44,34 @@ describe('POST /learningspace', () => {
   );
   request(app)
     .post(url)
-    .send({title, token }) //title is missing
+    .send({title }) //title is missing
+    .set('Authorization', 'Bearer valid_token')
     .expect(400)
-    .end(async (err) => {
-      if (err) return done(err);
-      });
-      done();
+    .end(done);
+
     });
 
     it('should return 409 when title already exists', (done) => {
       const title = "title1";
-      const description= "description1";
-      const token = "token"        
+      const description= "description1";      
       const username = "username"
+      const categories = ["Music", "Sports"];
   
     sinon.stub(jwt, "decode")
     .onFirstCall().resolves(
       {username}
     );
-
-    sinon.stub(LearningSpace.prototype, "save")
+      sinon.stub(LearningSpace, "exists")
       .onFirstCall().resolves(
-        new LearningSpace({
-          title: title,
-          description: description
-        })
+        true
       );
     request(app)
       .post(url)
-      .send({title, token }) //title is missing
+      .set('Authorization', 'Bearer valid_token')
+      .send({title, description, categories})
       .expect(409)
-      .end(async (err) => {
-        if (err) return done(err);
-        });
-        done();
+      .end(done);
+       
       });
 
     it('should check for unavailable categories', (done) => {
@@ -87,7 +79,7 @@ describe('POST /learningspace', () => {
       const description= "description1";
       const token = "token"        
       const username = "username"
-      const categories = ["Music", "Sps"]
+      const categories = ["Musicc", "Sps"]
 
     sinon.stub(jwt, "decode")
     .onFirstCall().resolves(
@@ -95,45 +87,39 @@ describe('POST /learningspace', () => {
     );
     request(app)
       .post(url)
-      .send({ title, description, token, categories })
-      .expect(200)
-      .end(async (err) => {
-        if (err) return done(err);
-        });
-
-      LearningSpace.findOne({ title }).then((ls) => {
-        expect(ls.title).toBe(title);
-        expect(ls.description).toBe(description);
-        expect(ls.creator).toBe(username);
-        done();
-      });
+      .send({ title, description, categories })
+      .set('Authorization', 'Bearer valid_token')
+      .expect(400).end(done);
   });
 
 
-  it('should create the endpoint', (done) => {
-      const title = "title1";
-      const description= "description1";
-      const token = "token"        
-      const username = "username"
+  it('should create the learningspace', (done) => {
+    let r = (Math.random() + 1).toString(36).substring(7);
+      const title = r + "title11";
+      const description= "description1";       
+      const username = r + "username";
       const categories = ["Music", "Sports"]
 
     sinon.stub(jwt, "decode")
+    .onFirstCall().returns(
+      {username}
+    );
+    sinon.stub(axios, "post")
     .onFirstCall().resolves(
       {username}
     );
     request(app)
       .post(url)
-      .send({ title, description, token, categories })
+      .send({ title, description, categories })
+      .set('Authorization', 'Bearer valid_token')
       .expect(200)
-      .end(async (err) => {
-        if (err) return done(err);
-        });
-
-      LearningSpace.findOne({ title }).then((ls) => {
-        expect(ls.title).toBe(title);
-        expect(ls.description).toBe(description);
-        expect(ls.creator).toBe(username);
+      .end(function(err, res) {
+        if(err) return done(err);
+        console.log(res.body.learningSpace)
+        expect(res.body.learningSpace.title).toBe(title);
+        expect(res.body.learningSpace.description).toBe(description);
+        expect(res.body.learningSpace.creator).toBe(username)
         done();
-      });
+      }) ;
   });
 });

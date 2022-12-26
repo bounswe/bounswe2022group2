@@ -29,7 +29,7 @@ class EventsList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (_, int i) => i == 0
             ? PostList.createEditButton(context, TextKeys.createEvent,
-                Icons.event_available_outlined, viewModel.createEvent)
+                Icons.event_available_outlined, viewModel.toCreateEventScreen)
             : tuple.item1 == null
                 ? Padding(
                     padding: EdgeInsets.only(top: context.height * 2.5),

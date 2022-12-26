@@ -13,13 +13,13 @@ const users = [
     _id: ids[0],
     email: emailList[0],
     password: "user1pass",
-    username: "batu",
+    username: "batuuuuuuuuuuuuuu",
   },
   {
     _id: ids[1],
     email: emailList[1],
     password: "user2pass",
-    username: "ahmet",
+    username: "ahmetttttttttttt",
   },
 ];
 
@@ -42,7 +42,6 @@ describe('POST /auth/signup', () => {
         sinon.restore();
         User.deleteMany({ email: { $in: emailList } })
       });
-
     it('should return validation errors if the request body is not valid', (done) => {
         request(app)
           .post(signupUrl)
@@ -64,7 +63,32 @@ describe('POST /auth/signup', () => {
         })
         .expect(409)
         .end(done);
-    });
+      });
+      it('should create a new user if input has no problems', (done) => {
+        
+        sinon.mock(send_verification_email, () => ({
+          ...sinon.requireActual(send_verification_email),
+          __esModule: true,
+          default: sinon.fn(),
+        }));
+        let r = (Math.random() + 1).toString(36).substring(7);
+          request(app)
+              .post(signupUrl)
+              .send({
+              email: r + "bb@b.com",
+              password: "123456",
+              username: r + "Examplee"
+              })
+              .expect(200)
+              .end(done);
+          });
+  
+          const user = User.exists({ email: "b@b.com"})
+          .then((user) => {
+            expect(user.username).toBe("Example");
+            expect(user.password).not("123456");
+            expect(user.is_verified).not(true);
+          });
     
     it('should not create a new user if the username already exists', (done) => {
     request(app)
@@ -74,34 +98,8 @@ describe('POST /auth/signup', () => {
         password: "123456",
         username: "batu"
         })
-        .expect(409)
-        .end(done);
+        .expect(409).end(done);
     });
 
-    it('should create a new user if input has no problems', (done) => {
-
-      sinon.mock(send_verification_email, () => ({
-        ...sinon.requireActual(send_verification_email),
-        __esModule: true,
-        default: sinon.fn(),
-      }));
-
-        request(app)
-            .post(signupUrl)
-            .send({
-            email: "b@b.com",
-            password: "123456",
-            username: "Example"
-            })
-            .expect(200)
-            .end(done);
-        });
-
-        const user = User.exists({ email: "b@b.com"})
-        .then((user) => {
-          expect(user.username).toBe("Example");
-          expect(user.password).not("123456");
-          expect(user.is_verified).not(true);
-        });
     
 })

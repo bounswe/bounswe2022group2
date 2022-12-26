@@ -14,8 +14,13 @@ class _ProfileForm extends StatelessWidget {
                 translated: false)),
         context.sizedH(1.5),
         Form(
-          key: model.formKey,
+          key: model.userFormKey,
           child: Flexible(child: _usernameField(model.usernameController)),
+        ),
+        context.sizedH(1.5),
+        Form(
+          key: model.biographyFormKey,
+          child: Flexible(child: _biographyField(model.biographyController)),
         ),
       ],
     );
@@ -32,5 +37,19 @@ class _ProfileForm extends StatelessWidget {
         textInputAction: TextInputAction.next,
         autofillHints: const <String>[AutofillHints.username],
         textInputType: TextInputType.name,
+      );
+
+  Widget _biographyField(TextEditingController controller) =>
+      CustomTextFormField(
+        maxLines: 8,
+        key: ProfileKeys.biographyField,
+        controller: controller,
+        hintText: TextKeys.addBiographyHint,
+        labelText: TextKeys.biography,
+        prefixIcon: Icons.contact_support_outlined,
+        textInputAction: TextInputAction.newline,
+        textInputType: TextInputType.multiline,
+        maxLength: 200,
+        padding: const EdgeInsets.all(10),
       );
 }
