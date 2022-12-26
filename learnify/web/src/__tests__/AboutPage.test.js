@@ -23,4 +23,9 @@ describe('AboutPage', () => {
     expect(mainEditor).toBeInTheDocument();
   });
 
+  it('should render the Markdown editor for the side content', () => {
+    const { getByTestId } = render(<AboutPage />);
+    const sideEditor = getByTestId('side-editor');
+    expect(sideEditor).toBeInTheDocument();
+  });
 });
