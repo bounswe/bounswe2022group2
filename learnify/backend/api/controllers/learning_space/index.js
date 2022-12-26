@@ -10,4 +10,5 @@ export {default as put_edit_post} from './put_edit_post.js'
 export {default as get_by_participation} from './get_by_participation.js'
 export {default as get_by_creator} from './get_by_creator.js'
 export {default as put_vote_post} from './put_vote_post.js'
+export {default as get_reccomended_ls} from './get_reccomended.js'
 
