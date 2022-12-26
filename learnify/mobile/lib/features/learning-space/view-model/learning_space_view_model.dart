@@ -284,10 +284,41 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> attendEvent() async {
-    // TODO: Fix
-    // await navigationManager.navigateToPage(
-    //     path: NavigationConstants.createEditPost);
+  Future<String?> attendEvent(String eventId) async {
+    await operation?.cancel();
+    operation =
+        CancelableOperation<String?>.fromFuture(_attendEventRequest(eventId));
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _attendEventRequest(String eventId) async {
+    final IResponseModel<CreateEventResponse> response =
+        await _lsService.attendEvent(eventId);
+    if (response.hasError) {
+      return response.error?.errorMessage;
+    }
+    final Event? event = response.data?.event;
+    if (event == null) {
+      return "Could not attend";
+    }
+
+    final List<Event>? tempEventList = events[learningSpace?.id];
+
+    if (tempEventList != null) {
+      tempEventList.forEach((Event element) async {
+        if (element.id == eventId) {
+          final User tempUser =
+              await localManager.getModel(const User(), StorageKeys.user);
+          if (tempUser.username != null) {
+            element.participants.add(tempUser.username ?? "");
+          }
+        }
+      });
+    }
+
+    _initializeKeys();
+    notifyListeners();
     return null;
   }
 

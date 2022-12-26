@@ -33,4 +33,5 @@ abstract class ILSService extends BaseService {
       CommentRequestModel body);
   Future<IResponseModel<CreateEventResponse>> createEvent(
       CreateEventRequest body);
+  Future<IResponseModel<CreateEventResponse>> attendEvent(String eventId);
 }
