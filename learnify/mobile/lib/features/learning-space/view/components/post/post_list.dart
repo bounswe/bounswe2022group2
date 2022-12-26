@@ -60,8 +60,8 @@ class PostList extends StatelessWidget {
         padding: EdgeInsets.only(
             top: context.height * 1.7,
             bottom: context.height * .3,
-            left: context.width * 20,
-            right: context.width * 20),
+            left: context.width * 5,
+            right: context.width * 5),
         child: ActionButton(
           icon: BaseIcon(context, icon),
           text: textKey,
