@@ -23,7 +23,10 @@ class ProfileViewModel extends BaseViewModel {
   ProfileViewModel(this._user);
   final User _user;
 
-  late Profile _profile;
+  late Profile _profile = Profile(
+    username: "",
+    email: _user.email,
+  );
   Profile get profile => _profile;
 
   late final ImagePicker _picker;
