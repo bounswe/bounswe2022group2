@@ -18,6 +18,7 @@ import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/widget_keys.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../view-model/learning_space_view_model.dart';
 
 part 'components/create/event_form.dart';
@@ -166,56 +167,43 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
         ));
   }
 
-  static Widget _geolocationField(BuildContext context) {
-    final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
-    return Container(
+  static Widget _geolocationField(BuildContext context) => Container(
       width: context.maxPossibleWidth,
       margin: EdgeInsets.symmetric(horizontal: context.width * 7),
       child: Padding(
-          padding: EdgeInsets.all(context.width * 2),
-          child: Column(
-            children: <Widget>[
-              _geolocationSelectionField(context),
-              Row(
-                children: <Widget>[
-                  BaseText(TextKeys.currentLatitude,
-                      style: context.titleSmall, color: Colors.black),
-                  context.sizedW(2),
-                  Text("${model.geolocation.latitude}")
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  BaseText(TextKeys.currentLongitude,
-                      style: context.titleSmall, color: Colors.black),
-                  context.sizedW(2),
-                  Text("${model.geolocation.longitude}")
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  BaseText(TextKeys.currentAccuracy,
-                      style: context.titleSmall, color: Colors.black),
-                  context.sizedW(2),
-                  Text("${model.geolocation.accuracy}")
-                ],
-              ),
-              context.sizedH(2),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).colorScheme.secondary),
-                  child: BaseText(TextKeys.changeGeolocation,
-                      style: context.titleMedium,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                  onPressed: () async {
-                    print(model.geolocation.latitude);
-                    print(model.geolocation.longitude);
-                  })
-            ],
-          )),
-    );
-  }
+        padding: EdgeInsets.all(context.width * 2),
+        child: SelectorHelper<GeoLocation, LearningSpaceViewModel>().builder(
+            (_, LearningSpaceViewModel lsViewModel) => lsViewModel.geolocation,
+            (_, GeoLocation geolocation, __) => Column(
+                  children: <Widget>[
+                    _geolocationSelectionField(context),
+                    Row(
+                      children: <Widget>[
+                        BaseText(TextKeys.currentLatitude,
+                            style: context.titleSmall, color: Colors.black),
+                        context.sizedW(2),
+                        Text("${geolocation.latitude}")
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        BaseText(TextKeys.currentLongitude,
+                            style: context.titleSmall, color: Colors.black),
+                        context.sizedW(2),
+                        Text("${geolocation.longitude}")
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        BaseText(TextKeys.currentAccuracy,
+                            style: context.titleSmall, color: Colors.black),
+                        context.sizedW(2),
+                        Text("${geolocation.accuracy}")
+                      ],
+                    ),
+                  ],
+                )),
+      ));
 
   static Widget _doneButton() =>
       SelectorHelper<bool, LearningSpaceViewModel>().builder(
