@@ -87,6 +87,7 @@ exports[`ContactPage should render page layout correctly 1`] = `
   </nav>
   <div
     className="contact-page"
+    data-testid="contact-page"
   >
     <div
       className="contact-page-left"
@@ -173,6 +174,7 @@ exports[`ContactPage should render page layout correctly 1`] = `
         <span
           className="contact-box"
           contentEditable="true"
+          data-testid="contact-form"
           onInput={[Function]}
           role="textbox"
           value="nameMessage"

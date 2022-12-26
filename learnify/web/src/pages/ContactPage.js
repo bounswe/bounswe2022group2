@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import people from '../images/leutee.png';
 
+
 function ContactPage() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -15,7 +16,7 @@ function ContactPage() {
     return (
         <div>
             <NavBar/>
-            <div className='contact-page'>
+            <div className='contact-page' data-testid="contact-page">
                 <div className='contact-page-left'>
                     <div className='space-20' />
                     <div className='space-10' />
@@ -46,14 +47,14 @@ function ContactPage() {
                 <div className='contact-page-middle'>
                     <div className='space-20' />
                     <div className='space-10' />
-                    <div className='contact-title'>
+                    <div className='contact-title' >
                         Tell Us About Any Issues
                     </div>
                     <div className='space-20' />
                     <label className='ls-box-lb-option'> Subject of your issue: </label>
                     <div className='space-12' />
-                    <label>
-                        <span className='contact-box' role='textbox' value='nameMessage' contentEditable='true' onInput={(e) => setName(e.target.textContent)}></span>
+                    <label >
+                        <span className='contact-box' role='textbox' data-testid="contact-form" value='nameMessage' contentEditable='true'  onInput={(e) => setName(e.target.textContent)}></span>
                     </label>
                     <div className='space-40' />
                     <label className='ls-box-lb-option'> Can you please specify the problem? </label>
