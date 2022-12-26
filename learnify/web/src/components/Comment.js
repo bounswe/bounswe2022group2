@@ -116,7 +116,7 @@ export default function Comment(props){
             <div className='post-buttons-contaier'>
                 <div className='post-box-left'>
                     <div className='ls-button-container2'>
-                        <button className='post-upvote-button'>
+                        <button className='post-upvote-button' data-testid="upvote-button">
                             <FontAwesomeIcon icon={solid('caret-up')} color="green" onClick={increaseUp}/>
                         </button>
                     </div>
@@ -124,7 +124,7 @@ export default function Comment(props){
                         <label className="counter__output">{upCounter}</label>
                     </div>
                     <div className='ls-button-container2'>
-                        <button className='post-downvote-button'>
+                        <button className='post-downvote-button' data-testid="downvote-button">
                             <FontAwesomeIcon icon={solid('caret-down')} color="red" onClick={increaseDown}/>
                         </button>
                     </div>
@@ -152,19 +152,19 @@ export default function Comment(props){
                         {creator}
                     </div>
                     <div className='ls-button-container-alt2'>
-                        <button className='post-edit-icon-container'>
+                        <button className='post-edit-icon-container' data-testid="edit-button">
                                 <FontAwesomeIcon icon={solid('edit')} color="black" onClick={editTheComment}/>
                         </button>
                     </div>
                     <div className='ls-button-container-alt2'>
-                        <button className='post-delete-button'>
+                        <button className='post-delete-button' data-testid="delete-button">
                             <FontAwesomeIcon icon={solid('trash-can')} color="black" onClick={deleteTheComment}/>
                         </button>
                     </div>
                 </div>
                 </div>
                 {editComment && <div>
-                <div className='space-3'></div>
+                <div className='space-3' ></div>
                 <div className='add-post-box-mid'>
                             <label className="form__label" htmlFor="imageLink">Image Link </label>
                             <div className='space-3'></div>
