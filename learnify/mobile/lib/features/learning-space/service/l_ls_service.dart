@@ -12,6 +12,8 @@ import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
+import '../models/event/create_event_request.dart';
+import '../models/event/create_event_response.dart';
 import '../models/event/get_events_response.dart';
 
 /// Abstract base class for auth service, defines the required functions.
@@ -29,4 +31,6 @@ abstract class ILSService extends BaseService {
   Future<IResponseModel<GetEventsResponse>> getEvents(String lsId);
   Future<IResponseModel<AddCommentResponse>> addComment(
       CommentRequestModel body);
+  Future<IResponseModel<CreateEventResponse>> createEvent(
+      CreateEventRequest body);
 }
