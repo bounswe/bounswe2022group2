@@ -42,4 +42,25 @@ describe('Event', () => {
     const { getByText } = render(<Event myEvent={event} />);
     expect(getByText('0')).toBeInTheDocument();
   });
+
+  it('renders the correct duration for the event', () => {
+    const event = {
+      id: '1',
+      eventCreator: 'John',
+      date: '2022-01-01T12:00:00.000Z',
+      description: 'Event description',
+      title: 'Event Title',
+      duration: 0,
+      participationLimit: 10,
+      geolocation: {
+        latitude: 123,
+        longitude: 456
+      },
+      participants: [],
+      num_participants: 0
+    };
+    const { getByText } = render(<Event myEvent={event} />);
+    expect(getByText(0)).toBeInTheDocument();
+  });
+
 });
