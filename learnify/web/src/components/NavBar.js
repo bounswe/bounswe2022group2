@@ -3,6 +3,8 @@ import bell from '../images/notification-icon.svg'
 import React, {useState, useEffect } from 'react'
 import './component_styles.css';
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export default function NavBar(){
 
@@ -26,6 +28,10 @@ export default function NavBar(){
         setSearchUserInput(e.target.value);
     }
 
+    const toggle = () => {
+        setSearchDecision(!searchDecision);
+      };
+
     useEffect(() => {
         const getSearchLsResults = async () => {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace?query=${searchLsInput}`)
@@ -48,7 +54,9 @@ export default function NavBar(){
     return <nav className="nav" data-testid="navbar">
         <a href="/home"><img src={logo} alt="Learnify Logo Navbar" height={60} /></a>
         <ul>
-            
+                <div className="search-decider-container" onClick={toggle}>
+                    <FontAwesomeIcon icon={solid('arrows-rotate')} size="2x" color="#1746A2"/>
+                </div>
                 {!searchDecision && <div className="ls-search">
                     <input className='search-input-field' type="text" placeholder="Search learning spaces"  size={30} onChange={handleSearchLsChange} value={searchLsInput}/>
 

@@ -744,3 +744,8 @@
     text-decoration: none;
     color: #FFF7E9;
 }
+
+.search-decider-container {
+    justify-content: center;
+    padding-top: 18px;
+}
