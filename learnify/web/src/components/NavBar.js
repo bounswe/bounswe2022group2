@@ -37,7 +37,7 @@ export default function NavBar(){
     useEffect(() => {
         const getSearchUserResults = async () => {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}user/search/${searchUserInput}`)
-            setSearchUserResults(res.data.learning_spaces)
+            setSearchUserResults(res.data.users)
         }
         getSearchUserResults()
     }, [searchUserInput])
