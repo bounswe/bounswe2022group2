@@ -169,12 +169,9 @@ function HomePage() {
                     </div>
                     <div className='space-12'></div>
                     <div>
-                        <ul role="list" className="ls-prev-list-4">
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
-                        </ul>
+                        <div className="ls-prev-list-4">
+                            {recommendedLearningSpacesList}
+                        </div>
                     </div>
                 </div>
             </div>
