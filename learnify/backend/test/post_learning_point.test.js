@@ -74,12 +74,12 @@ describe('POST /learningspace', () => {
       );
     request(app)
       .post(url)
-      .send({title, token }) //title is missing
+      .send({title, token}) //title is missing
       .expect(409)
       .end(async (err) => {
         if (err) return done(err);
         });
-        done();
+       
       });
 
     it('should check for unavailable categories', (done) => {
