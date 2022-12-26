@@ -131,7 +131,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
   static Widget get _updateButton =>
       SelectorHelper<bool, ProfileViewModel>().builder(
         (_, ProfileViewModel model) => model.canUpdate,
-        (BuildContext context, bool canSignup, _) {
+        (BuildContext context, bool canUpdate, _) {
           final ProfileViewModel model = context.read<ProfileViewModel>();
           return ActionButton(
             key: ProfileKeys.updateButton,
@@ -140,7 +140,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
                 horizontal: context.responsiveSize * 2.8,
                 vertical: context.responsiveSize * 1.4),
             capitalizeAll: true,
-            isActive: canSignup,
+            isActive: canUpdate,
             onPressedError: () async => model.updateProfile(),
           );
         },

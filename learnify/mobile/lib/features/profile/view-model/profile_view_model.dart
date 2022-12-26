@@ -93,17 +93,6 @@ class ProfileViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void updateUser() {}
-
-  void _setUserData(Profile receivedProfile) {
-    _profile = receivedProfile;
-    _email = _profile.email;
-    _initialBiography = _profile.bio;
-    _selectedImage = _profile.profilePicture;
-    _canUpdate = false;
-    notifyListeners();
-  }
-
   Future<String?> pickImage(ImageSource source) async {
     try {
       final XFile? pickedFile = await _picker.pickImage(source: source);
@@ -134,8 +123,7 @@ class ProfileViewModel extends BaseViewModel {
         biographyFormKey.currentState?.validate() ?? false;
     if (!isBiographyValid) return null;
     final UpdateProfileRequest request = UpdateProfileRequest(
-      bio: _biographyController.text,
-      profilePicture: 'null', //_selectedImage,
+      bio: _biographyController.text, //_selectedImage,
     );
 
     final IResponseModel<UpdateProfileResponse> response =
@@ -143,6 +131,7 @@ class ProfileViewModel extends BaseViewModel {
     final UpdateProfileResponse? respData = response.data;
 
     if (response.hasError || respData == null) {
+      print('error: ${response.error?.errorMessage}');
       return response.error?.errorMessage;
     }
     print('respData: $respData');

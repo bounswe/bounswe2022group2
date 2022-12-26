@@ -94,9 +94,6 @@ class HomeViewModel extends BaseViewModel {
     //     }
     //   }
     // }
-    if (_takenLearningSpaces.isNotEmpty ||
-        _friendLearningSpaces.isNotEmpty ||
-        _recommendedLearningSpaces.isNotEmpty) return;
     await _getLearningSpaces();
     await _getTakenLearningSpaces();
   }

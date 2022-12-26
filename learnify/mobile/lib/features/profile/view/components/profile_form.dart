@@ -43,7 +43,7 @@ class _ProfileForm extends StatelessWidget {
         hintText: TextKeys.addBiographyHint,
         labelText: TextKeys.biography,
         prefixIcon: Icons.contact_support_outlined,
-        textInputAction: TextInputAction.newline,
+        textInputAction: TextInputAction.done,
         textInputType: TextInputType.multiline,
         maxLength: 200,
         padding: const EdgeInsets.all(10),
