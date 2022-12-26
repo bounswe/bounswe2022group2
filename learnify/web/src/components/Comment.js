@@ -14,6 +14,13 @@ export default function Comment(props){
 
   const [imageUrl, setImageUrl] = useState("");
 
+  useEffect(()=>{
+        if(localStorage.getItem(commentId+"upCounter") === null)
+            localStorage.setItem(commentId+"upCounter", 0);
+
+        if(localStorage.getItem(commentId+"downCounter") === null)
+            localStorage.setItem(commentId+"downCounter", 0);
+  })
 
   const increaseUp = () => {
       localStorage.setItem((commentId+"upClicked"), true);
