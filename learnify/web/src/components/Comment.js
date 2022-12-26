@@ -80,51 +80,6 @@ export default function Comment(props){
             });
     };
 
-  /*
-  const editExComment = async (lsid, commentId, commentTitle, final, imageUrl) => {
-      console.log(lsid)
-      console.log(commentId)
-      console.log(commentTitle)
-      console.log(final)
-      console.log(imageUrl)
-      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/comment`, {
-          method: "PUT",
-          body: JSON.stringify({
-              ls_id: lsid,
-              comment_id: commentId,
-              title: commentTitle,
-              content: final,
-              images: [imageUrl],
-          }),
-          headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-              'Authorization': `${token}` , 
-          },
-      })
-          .then((response) => {
-              if (response.status === 200) {
-                  console.log("successfull")
-                  
-                  response.json().then( json => {
-                      console.log(json.learningSpace.id)
-                  });
-                  console.log("Learning Space Comment edited successfully!");
-                  window.location.reload();
-              } else {
-                  setMessage("Comment could not be edited!");
-                  response.json().then( json => {
-                      console.log(json.resultMessage);
-                  });
-              }
-          }
-          )
-          .catch((error) => {
-              console.log(error);
-          }
-          );
-  };
-  */
-
     return(
     <div>
         {!deleteComment &&
