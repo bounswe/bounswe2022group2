@@ -128,6 +128,10 @@ class TextKeys {
   static const String darkMode = "dark_mode";
   static const String biography = "biography";
   static const String addBiographyHint = "add_biography_hint";
+  static const String created = "created";
+  static const String createdLearningSpaces = "created_learning_spaces";
+  static const String usernameColon = "username_colon";
+  static const String emailColon = "email_colon";
   static const String creator = "creator";
   static const String createEventTitleHint = "create_event_title_hint";
   static const String createEventTitleLabel = "create_event_title_label";

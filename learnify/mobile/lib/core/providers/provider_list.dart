@@ -73,8 +73,7 @@ class ProviderList {
       update: (_, HomeWrapperViewModel viewModel,
           ProfileViewModel? profileViewModel) {
         final ProfileViewModel updatedModel =
-            profileViewModel ?? ProfileViewModel(viewModel.user)
-              ..updateUser(viewModel.user);
+            profileViewModel ?? ProfileViewModel(viewModel.user);
         return updatedModel;
       },
     ),

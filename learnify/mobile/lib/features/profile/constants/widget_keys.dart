@@ -6,4 +6,6 @@ mixin ProfileKeys {
   static const Key updateButton = Key('update_button');
   static const Key enrolledLearningSpacesButton =
       Key('enrolled_learning_spaces_button');
+  static const Key createdLearningSpacesButton =
+      Key('created_learning_spaces_button');
 }
