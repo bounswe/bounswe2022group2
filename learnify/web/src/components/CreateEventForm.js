@@ -101,6 +101,13 @@ const EventForm = (lsid) => {
     };
 
     const handleCreateEvent = async () => {
+        console.log(lsid.lsid)
+        console.log(eventTitle)
+        console.log(eventDescription)
+        console.log(geolocation)
+        console.log(`${dateValue.format('MM-DD-YYYY')} ${timeValue.format('HH:mm')}`)
+        console.log(eventDuration)
+        console.log(plimitValue)
     try {
     const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_BASE_URL}events`,
@@ -122,6 +129,7 @@ const EventForm = (lsid) => {
     );
 
     console.log(response.data);
+    window.location.reload();
     } catch (error) {
     console.log(error);
     }
@@ -133,7 +141,7 @@ const EventForm = (lsid) => {
                 <div className='eventform-icon'> <FontAwesomeIcon icon={solid('calendar-plus') } /> </div>
                 Create Event
             </div>
-            {open && <form className="eventform">
+            {open && <div className="eventform">
                 <div className="eventform-body">
                     <div className="eventform-body-row">
                         <TextField
@@ -229,7 +237,7 @@ const EventForm = (lsid) => {
                         Create Event
                     </button>
                 </div>
-            </form>}
+            </div>}
         </div>
     )
 
