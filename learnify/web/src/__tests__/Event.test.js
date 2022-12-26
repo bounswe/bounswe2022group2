@@ -63,4 +63,24 @@ describe('Event', () => {
     expect(getByText(0)).toBeInTheDocument();
   });
 
+  it('renders the correct number of participants for the event', () => {
+    const event = {
+      id: '1',
+      eventCreator: 'John',
+      date: '2022-01-01T12:00:00.000Z',
+      description: 'Event description',
+      title: 'Event Title',
+      duration: 60,
+      participationLimit: 10,
+      geolocation: {
+        latitude: 123,
+        longitude: 456
+      },
+      participants: ['Alice', 'Bob', 'Eve'],
+      num_participants: 3
+    };
+    const { getByText } = render(<Event myEvent={event} />);
+    expect(getByText("3")).toBeInTheDocument();
+  });
+
 });
