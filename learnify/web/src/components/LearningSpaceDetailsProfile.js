@@ -50,15 +50,15 @@ function LearningSpaceDetailsProfile(props) {
 
 
     return (
-        <div className="ls-detail-box-container-profile" data-testid="ls-card" onClick={(e) => {
+        <div className="ls-detail-box-container-profile" data-testid="learning-space-details-profile" onClick={(e) => {
             e.preventDefault();
             window.location.href='/learningspace/'+props.url;
             }}>
             <div className="ls-detail-box-icon">
-                <img src={icons[props.icon_id - 1]} className="ls-detail-box-icon" alt="ls-icon" height={240}/>
+                <img src={icons[props.icon_id - 1]} className="ls-detail-box-icon" alt="ls-icon-profile" height={240}/>
             </div>
             <div className="ls-detail-box-info">
-                <div className="ls-detail-box-title">{props.title}</div>
+                <div className="ls-detail-box-title" data-testid="learning-space-details-title">{props.title}  </div>
                 <div className="ls-detail-box-description">{props.description}</div>
                 <div className="ls-detail-box-participants-container">
                     <FontAwesomeIcon className="ls-detail-box-p-icon" icon={solid('users-rectangle')} />
