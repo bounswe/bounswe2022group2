@@ -4,12 +4,14 @@ import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
 import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/language/language_keys.dart';
+import '../../home/view-model/home_view_model.dart';
 import '../constants/widget_keys.dart';
 import '../view-model/learning_space_view_model.dart';
 
@@ -166,12 +168,20 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
   static Widget _doneButton() =>
       SelectorHelper<bool, LearningSpaceViewModel>().builder(
           (_, LearningSpaceViewModel model) => model.canCreate,
-          (BuildContext context, bool canUpdate, _) => ActionButton(
+          (BuildContext context, bool canCreate, _) => ActionButton(
               text: TextKeys.done,
               padding: EdgeInsets.symmetric(
                   horizontal: context.responsiveSize * 2.8,
                   vertical: context.responsiveSize * 1.4),
               capitalizeAll: true,
-              isActive: canUpdate,
-              onPressedError: () async {}));
+              isActive: canCreate,
+              onPressedError: () async {
+                final HomeViewModel homeViewModel =
+                    context.read<HomeViewModel>();
+                final LearningSpaceViewModel spaceViewModel =
+                    context.read<LearningSpaceViewModel>();
+                await spaceViewModel.createEvent();
+                homeViewModel.updateLs(spaceViewModel.learningSpace);
+                NavigationManager.instance.pop();
+              }));
 }

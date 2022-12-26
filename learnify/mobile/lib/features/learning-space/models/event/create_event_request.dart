@@ -6,15 +6,19 @@ class CreateEventRequest extends BaseModel<CreateEventRequest> {
       {this.title,
       this.description,
       this.date,
+      this.participationLimit,
       this.duration,
       this.geolocation,
       this.lsId});
 
-  factory CreateEventRequest.fromJson(Map<String, dynamic> json) =>
+  factory CreateEventRequest.fromJson(
+          Map<String, dynamic> json) =>
       CreateEventRequest(
           title: BaseModel.getByType<String>(json['title']),
           description: BaseModel.getByType<String>(json['description']),
           date: BaseModel.getByType<DateTime>(json['date']),
+          participationLimit:
+              BaseModel.getByType<int>(json['participationLimit']),
           duration: BaseModel.getByType<int>(json['duration']),
           geolocation: BaseModel.embeddedModelFromJson<GeoLocation>(
               json['geolocation'], const GeoLocation()),
@@ -27,6 +31,7 @@ class CreateEventRequest extends BaseModel<CreateEventRequest> {
   final String? title;
   final String? description;
   final DateTime? date;
+  final int? participationLimit;
   final int? duration;
   final GeoLocation? geolocation;
   final String? lsId;
@@ -36,12 +41,20 @@ class CreateEventRequest extends BaseModel<CreateEventRequest> {
         'title': title,
         'description': description,
         'date': BaseModel.primitiveToJson<DateTime>(date),
+        'participationLimit': participationLimit.toString(),
         'duration': duration.toString(),
         'geolocation': BaseModel.embeddedModelToJson<GeoLocation>(geolocation),
         'lsId': lsId
       };
 
   @override
-  List<Object?> get props =>
-      <Object?>[title, description, date, duration, geolocation, lsId];
+  List<Object?> get props => <Object?>[
+        title,
+        description,
+        date,
+        participationLimit,
+        duration,
+        geolocation,
+        lsId
+      ];
 }
