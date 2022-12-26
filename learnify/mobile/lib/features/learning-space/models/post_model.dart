@@ -22,13 +22,7 @@ class Post extends BaseModel<Post> {
         title: BaseModel.getByType<String>(json['title']),
         creator: BaseModel.getByType<String>(json['creator']),
         content: BaseModel.getByType<String>(json['content']),
-        images: fetchedImages.isEmpty
-            ? const <String>[
-                'https://picsum.photos/id/1/700/400',
-                'https://picsum.photos/id/2/700/400',
-                'https://picsum.photos/id/3/700/400'
-              ]
-            : fetchedImages,
+        images: fetchedImages.isEmpty ? const <String>[] : fetchedImages,
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
         comments: BaseModel.embeddedListFromJson<Comment>(

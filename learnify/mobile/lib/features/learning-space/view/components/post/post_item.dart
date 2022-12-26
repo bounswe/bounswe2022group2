@@ -68,13 +68,15 @@ class PostItem extends StatelessWidget {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
     return <Widget>[
-      Center(
-        child: BaseText(TextKeys.clickToSeeImageAnnotations,
-            style: context.labelMedium),
-      ),
-      _carouselSlider(viewModel, post, annotations, context),
-      _sliderIndicator(viewModel, post),
-      context.sizedH(1.4),
+      if (post.images.isNotEmpty)
+        Center(
+          child: BaseText(TextKeys.clickToSeeImageAnnotations,
+              style: context.labelMedium),
+        ),
+      if (post.images.isNotEmpty)
+        _carouselSlider(viewModel, post, annotations, context),
+      if (post.images.isNotEmpty) _sliderIndicator(viewModel, post),
+      if (post.images.isNotEmpty) context.sizedH(1.4),
       AnnotatableText(
         key: PageStorageKey<String>(post.content ?? 'asd'),
         content: post.content ?? '',
