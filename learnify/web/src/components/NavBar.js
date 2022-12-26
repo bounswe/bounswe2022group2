@@ -6,6 +6,8 @@ import axios from 'axios'
 
 export default function NavBar(){
 
+    const [searchDecision, setSearchDecision] = useState(false);
+
     const [searchLsResults, setSearchLsResults] = useState([])
 
     const [searchLsInput, setSearchLsInput] = useState("");
@@ -32,7 +34,7 @@ export default function NavBar(){
         <a href="/home"><img src={logo} alt="Learnify Logo Navbar" height={60} /></a>
         <ul>
             
-                <div className="ls-search">
+                {!searchDecision && <div className="ls-search">
                     <input className='search-input-field' type="text" placeholder="Search learning spaces"  size={30} onChange={handleSearchLsChange} value={searchLsInput}/>
 
                     <div className="search-results-container">
@@ -42,7 +44,7 @@ export default function NavBar(){
                             </ul>
                         ))}
                     </div>
-                </div>
+                </div>}
             
             <li>
                 <a href="/notifications" className='navBarText'><img src={bell} alt="Notifications Icon" height={20} /></a>
