@@ -5,6 +5,7 @@ import 'package:async/async.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
@@ -28,6 +29,7 @@ import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../models/event/event.dart';
 import '../models/event/get_events_response.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../service/ls_service.dart';
@@ -62,6 +64,35 @@ class LearningSpaceViewModel extends BaseViewModel {
   Map<String, List<Event>> events = <String, List<Event>>{};
   Map<String, List<Comment>> comments = <String, List<Comment>>{};
 
+  late TextEditingController _eventTitleController;
+  TextEditingController get eventTitleController => _eventTitleController;
+
+  late TextEditingController _eventDescriptionController;
+  TextEditingController get eventDescriptionController =>
+      _eventDescriptionController;
+
+  late TextEditingController _eventParticipationLimitController;
+  TextEditingController get eventParticipationLimitController =>
+      _eventParticipationLimitController;
+
+  late TextEditingController _eventDurationController;
+  TextEditingController get eventDurationController => _eventDurationController;
+
+  late GlobalKey<FormState> _createEventFormKey;
+  GlobalKey<FormState> get createEventFormKey => _createEventFormKey;
+
+  DateTime? _dateTime;
+  DateTime? get dateTime => _dateTime;
+
+  bool _isDateSelected = false;
+  bool get isDateSelected => _isDateSelected;
+
+  late GeoLocation _geolocation = const GeoLocation();
+  GeoLocation get geolocation => _geolocation;
+
+  bool _canCreate = false;
+  bool get canCreate => _canCreate;
+
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
@@ -69,6 +100,9 @@ class LearningSpaceViewModel extends BaseViewModel {
     _learningSpace = null;
     annotations.clear();
     events.clear();
+    _canCreate = false;
+    _dateTime = null;
+    _isDateSelected = false;
     comments.clear();
   }
 
@@ -86,6 +120,43 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initView() {
     _initializeKeys();
+    _createEventFormKey = GlobalKey<FormState>();
+    _eventTitleController = TextEditingController();
+    _eventDescriptionController = TextEditingController();
+    _eventParticipationLimitController = TextEditingController();
+    _eventDurationController = TextEditingController();
+    _eventTitleController.addListener(_controllerListener);
+    _eventDescriptionController.addListener(_controllerListener);
+    _eventParticipationLimitController.addListener(_controllerListener);
+    _eventDurationController.addListener(_controllerListener);
+  }
+
+  void _controllerListener() {
+    final String newTitle = _eventTitleController.text;
+    final String newDescription = _eventDescriptionController.text;
+    final String newParticipationLimit =
+        _eventParticipationLimitController.text;
+    final String newDuration = _eventDurationController.text;
+    final bool newCanCreate = newTitle.isNotEmpty &&
+        newDescription.isNotEmpty &&
+        newParticipationLimit.isNotEmpty &&
+        newDuration.isNotEmpty &&
+        _isDateSelected;
+    if (_canCreate == newCanCreate) return;
+    _canCreate = newCanCreate;
+    notifyListeners();
+  }
+
+  @override
+  void disposeView() {
+    _eventTitleController.dispose();
+    _eventDescriptionController.dispose();
+    _eventParticipationLimitController.dispose();
+    _eventDurationController.dispose();
+    _canCreate = false;
+    _dateTime = null;
+    _isDateSelected = false;
+    super.disposeView();
     _commentController = TextEditingController();
   }
 
@@ -128,6 +199,11 @@ class LearningSpaceViewModel extends BaseViewModel {
     // TODO: Fix
     // await navigationManager.navigateToPage(
     //     path: NavigationConstants.createEditPost);
+
+    await navigationManager.navigateToPage(
+      path: NavigationConstants.createEvent,
+    );
+
     return null;
   }
 
@@ -469,5 +545,57 @@ class LearningSpaceViewModel extends BaseViewModel {
     _eventsExpansionTileKeys =
         List<GlobalKey<CustomExpansionTileState>>.generate(
             newEvents.length, (_) => GlobalKey<CustomExpansionTileState>());
+  }
+
+  void pickDateTime(DateTime selectedDate, TimeOfDay selectedTime) {
+    final DateTime selectedDateTime = DateTime(
+        selectedDate.year,
+        selectedDate.month,
+        selectedDate.day,
+        selectedTime.hour,
+        selectedTime.minute);
+    _dateTime = selectedDateTime;
+    notifyListeners();
+    _isDateSelected = true;
+  }
+
+  void resetIsDateSelected() {
+    _isDateSelected = false;
+    notifyListeners();
+  }
+
+  void setIsDateSelected() {
+    _isDateSelected = true;
+    notifyListeners();
+  }
+
+  Future<void> setInitialGeolocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return;
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return;
+    }
+
+    final Position tempPos = await Geolocator.getCurrentPosition();
+    final GeoLocation tempGeolocation = GeoLocation(
+        latitude: tempPos.latitude,
+        longitude: tempPos.longitude,
+        accuracy: tempPos.accuracy);
+
+    _geolocation = tempGeolocation;
   }
 }

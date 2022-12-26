@@ -33,6 +33,7 @@ dependencies:
   page_transition: ^2.0.9
   flutter_map: ^3.0.0
   flutter_switch: ^0.3.2
+  geolocator: ^9.0.2
 
   # Model
   equatable: ^2.0.5

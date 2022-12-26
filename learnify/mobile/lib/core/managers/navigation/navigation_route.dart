@@ -10,6 +10,7 @@ import '../../../features/learning-space/view/add_post_screen.dart';
 import '../../../features/learning-space/view/annotations_screen.dart';
 import '../../../features/learning-space/view/comments_screen.dart';
 import '../../../features/learning-space/view/components/chapter_image.dart';
+import '../../../features/learning-space/view/create_event_screen.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
 import '../../../features/settings/view/settings_screen.dart';
@@ -80,6 +81,8 @@ class NavigationRoute {
         return normalNavigate(
             AddPostScreen(isAdd: arguments['isAdd'], post: arguments['post']),
             args);
+      case NavigationConstants.createEvent:
+        return normalNavigate(CreateEventScreen(), args);
       case NavigationConstants.comments:
         return normalNavigate(CommentsScreen(post: arguments['post']), args);
       default:
