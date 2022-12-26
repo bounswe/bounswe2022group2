@@ -8,6 +8,7 @@ import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
 import '../../../features/learning-space/view/add_post_screen.dart';
 import '../../../features/learning-space/view/annotations_screen.dart';
+import '../../../features/learning-space/view/comments_screen.dart';
 import '../../../features/learning-space/view/components/chapter_image.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
@@ -79,6 +80,8 @@ class NavigationRoute {
         return normalNavigate(
             AddPostScreen(isAdd: arguments['isAdd'], post: arguments['post']),
             args);
+      case NavigationConstants.comments:
+        return normalNavigate(CommentsScreen(post: arguments['post']), args);
       default:
         return normalNavigate(const SignupScreen(), args);
     }

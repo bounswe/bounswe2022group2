@@ -5,6 +5,8 @@ import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
 import '../models/categories_response_model.dart';
+import '../models/comment/add_comment_request_model.dart';
+import '../models/comment/add_comment_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
@@ -25,4 +27,6 @@ abstract class ILSService extends BaseService {
   Future<IResponseModel<CreateAnnotationResponse>> createAnnotation(
       Annotation body, String lsId, String postId);
   Future<IResponseModel<GetEventsResponse>> getEvents(String lsId);
+  Future<IResponseModel<AddCommentResponse>> addComment(
+      CommentRequestModel body);
 }

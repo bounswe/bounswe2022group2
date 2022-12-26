@@ -127,5 +127,8 @@
   "biography": "Biography",
   "add_biography_hint": "Explain Yourself Briefly",
   "creator": "Creator",
-  "ok": "OK"
+  "ok": "OK",
+  "add_comment": "Comment",
+  "add_comment_hint": "Insert Comment Here",
+  "view_comments": "View All Comments"
 }
