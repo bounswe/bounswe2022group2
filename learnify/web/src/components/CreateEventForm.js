@@ -6,15 +6,18 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField';
-import MapPicker from 'react-google-map-picker'
+// import MapPicker from 'react-google-map-picker'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
+import MapContainer from './MapPicker'
 
-const DefaultZoom = 10;
+// const DefaultZoom = 10;
 
 const EventForm = (lsid) => {
 
     const token = localStorage.getItem('token');
+
+    const [open, setOpen] = useState(false);
 
     const [eventTitle, setEventTitle] = useState('');
     const [eventTitleError, setEventTitleError] = useState(false);
@@ -31,21 +34,34 @@ const EventForm = (lsid) => {
     
     const [plimitValue, setPlimitValue] = useState('');
     const [plimitError, setPlimitError] = useState(false);
+
+    const [selectedLocation, setSelectedLocation] = useState({ lat: 41, lng: 29 });
+
+    const handleSelectedLocationChange = (location) => {
+        setSelectedLocation(location);
+        setGeolocation({accuracy: 1, longitude: location.lng, latitude: location.lat});
+    }
+
+    // console.log(selectedLocation);
     
-    const [defaultLocation, setDefaultLocation] = useState({ lat: 41, lng: 29 });
-    const [location, setLocation] = useState(defaultLocation);
+    // const [defaultLocation, setDefaultLocation] = useState({ lat: 41, lng: 29 });
+    // const [location, setLocation] = useState(defaultLocation);
     const [geolocation, setGeolocation] = useState({accuracy: 1, longitude: 29, latitude: 41});
-    const [zoom, setZoom] = useState(DefaultZoom);
-    const apiKey = process.env.REACT_APP_MAP_API_KEY;
+    // const [zoom, setZoom] = useState(DefaultZoom);
+    // const apiKey = process.env.REACT_APP_MAP_API_KEY;
 
-    const handleChangeLocation = (lat, lng) => {
-        setLocation({lat:lat, lng:lng});
-        setGeolocation({accuracy: 1, longitude: lng, latitude: lat});
-    }
+    const toggle = () => {
+        setOpen(!open);
+      };
 
-    const handleZoomChange = (zoom) => {
-        setZoom(zoom);
-    }
+    // const handleChangeLocation = (lat, lng) => {
+    //     setLocation({lat:lat, lng:lng});
+    //     setGeolocation({accuracy: 1, longitude: lng, latitude: lat});
+    // }
+
+    // const handleZoomChange = (zoom) => {
+    //     setZoom(zoom);
+    // }
 
     const handleEventTitleChange = (event) => {
         setEventTitle(event.target.value);
@@ -83,11 +99,11 @@ const EventForm = (lsid) => {
         }
     };
 
-    if (timeValue && dateValue) {
-        console.log(`${dateValue.format('DD-MM-YYYY')} ${timeValue.format('HH:mm')}`)
-    }
+    // if (timeValue && dateValue) {
+    //     console.log(`${dateValue.format('DD-MM-YYYY')} ${timeValue.format('HH:mm')}`)
+    // }
 
-    console.log(geolocation)
+    // console.log(geolocation)
 
     const handleCreateEvent = () => {
         if (eventTitle.length < 3) {
@@ -142,11 +158,11 @@ const EventForm = (lsid) => {
 
     return (
         <div className="eventform-container">
-            <form className="eventform">
-                <div className="eventform-header">
-                    <div className='eventform-icon'> <FontAwesomeIcon icon={solid('calendar-plus') } /> </div>
-                    Create Event
-                </div>
+            <div className="eventform-header" onClick={toggle}>
+                <div className='eventform-icon'> <FontAwesomeIcon icon={solid('calendar-plus') } /> </div>
+                Create Event
+            </div>
+            {open && <form className="eventform">
                 <div className="eventform-body">
                     <div className="eventform-body-row">
                         <TextField
@@ -233,21 +249,16 @@ const EventForm = (lsid) => {
                         />
                     </div>
                     <div className="eventform-body-row">
-                        <div className="eventform-map">
-                            <MapPicker defaultLocation={defaultLocation}
-                                zoom={zoom}
-                                mapTypeId="roadmap"
-                                style={{height:'300px'}}
-                                onChangeLocation={handleChangeLocation} 
-                                onChangeZoom={handleZoomChange}
-                                apiKey={apiKey}/>
-                        </div>
+                        <MapContainer onSelectedLocationChange={handleSelectedLocationChange} />
+                        {/* <div className="eventform-map">
+                            <MapContainer onSelectedLocationChange={handleSelectedLocationChange} />
+                        </div> */}
                     </div>
                     <button className='eventform-button' onClick={handleCreateEvent}  type="submit">
                         Create Event
                     </button>
                 </div>
-            </form>
+            </form>}
         </div>
     )
 
