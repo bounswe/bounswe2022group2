@@ -44,7 +44,41 @@ export default function Comment(props){
   
   const handleSubmitEdit  = () => {
         localStorage.setItem("commentClicked", true);
+        editExComment(lsid, postId, commentId, value, imageUrl);
   }
+
+  const editExComment = async (lsid, postId, commentId, final, imageUrl) => {
+        console.log(lsid)
+        console.log(postId)
+        console.log(commentId)
+        console.log(final)
+        console.log(imageUrl)
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/comment`, {
+            method: "PUT",
+            body: JSON.stringify({
+                ls_id: lsid,
+                post_id: postId,
+                comment_id: commentId,
+                content: final,
+                images: [imageUrl],
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `${token}` ,
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log("success")
+                    window.location.reload();
+                } else {
+                    console.log("fail")
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
   /*
   const editExComment = async (lsid, commentId, commentTitle, final, imageUrl) => {
