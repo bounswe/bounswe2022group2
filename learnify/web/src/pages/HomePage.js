@@ -23,6 +23,7 @@ function HomePage() {
 
     const [myLearningSpaces, setMyLearningSpaces] = React.useState([]);
     const [popularLearningSpaces, setPopularLearningSpaces] = React.useState([]);
+    const [recommendedLearningSpaces, setRecommendedLearningSpaces] = React.useState([]);
 
     useEffect(() => {
         const getOwnLearningSpaces = async () => {
@@ -56,13 +57,24 @@ function HomePage() {
         getPopularLearningSpaces();
     }, []);
 
-    console.log(popularLearningSpaces.slice(0, 10))
-
     const popularLearningSpacesList = popularLearningSpaces.slice(0, 10).map(ls => (
         <div className='lsprev-container'>
             <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls._id} />
         </div>
     ));
+
+    useEffect(() => {
+        const getRecommendedLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}user/recommended`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setRecommendedLearningSpaces(res.data.learning_spaces);
+        }
+        getRecommendedLearningSpaces();
+    }, []);
 
   return(
     <div className='home'>
