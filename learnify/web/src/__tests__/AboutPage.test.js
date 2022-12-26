@@ -11,4 +11,10 @@ describe('AboutPage', () => {
     expect(navBar).toBeInTheDocument();
   });
 
+  it('should render the Footer component', () => {
+    const { getByTestId } = render(<AboutPage />);
+    const footer = getByTestId('footer');
+    expect(footer).toBeInTheDocument();
+  });
+
 });
