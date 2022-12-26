@@ -153,15 +153,16 @@ class SearchViewModel extends BaseViewModel {
     }
     if (respDataLS == null || respDataLS.resultLearningSpaces.isEmpty) {
       clearLearningSpaceResults();
-      return null;
+    } else {
+      _resultLearningSpaces = respDataLS.resultLearningSpaces;
     }
-    _resultLearningSpaces = respDataLS.resultLearningSpaces;
-
     if (respDataUser == null || respDataUser.users.isEmpty) {
+      print("---------------------------------------");
       clearUserResults();
-      return null;
+    } else {
+      _resultUsers = await _usernameToUserPreview(respDataUser.users);
     }
-    _resultUsers = await _usernameToUserPreview(respDataUser.users);
+    print("Im here!");
 
     notifyListeners();
     return null;
@@ -177,8 +178,8 @@ class SearchViewModel extends BaseViewModel {
     _resultUsers = allUsers;
     final List<UserPreview> resultUsers = <UserPreview>[];
     for (final String username in users) {
-      final UserPreview userPreview = UserPreview(
-          userName: username, profilePhoto: IconKeys.profilePageBatuhan);
+      final UserPreview userPreview =
+          UserPreview(userName: username, profilePhoto: null);
       resultUsers.add(userPreview);
     }
     return resultUsers;
