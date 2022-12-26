@@ -70,6 +70,7 @@ class TextKeys {
   static const String spaceDescriptionHint = "description_hint";
   static const String spaceDescriptionLabel = "description_label";
   static const String done = "done";
+  static const String ok = "ok";
   static const String participantLimit = "participant_limit";
   static const String categories = "categories";
   static const String createLearningSpacePageTitle = "create_space_page_title";
@@ -131,4 +132,25 @@ class TextKeys {
   static const String createdLearningSpaces = "created_learning_spaces";
   static const String usernameColon = "username_colon";
   static const String emailColon = "email_colon";
+  static const String creator = "creator";
+  static const String createEventTitleHint = "create_event_title_hint";
+  static const String createEventTitleLabel = "create_event_title_label";
+  static const String createEventDescriptionHint =
+      "create_event_description_hint";
+  static const String createEventDescriptionLabel =
+      "create_event_description_label";
+  static const String createEventParticipationLimitHint =
+      "create_event_participation_limit_hint";
+  static const String createEventParticipationLimitLabel =
+      "create_event_participation_limit_label";
+  static const String createEventDurationHint = "create_event_duration_hint";
+  static const String createEventDurationLabel = "create_event_duration_label";
+  static const String selectDateTime = "select_date_time";
+  static const String currentLatitude = "current_latitude";
+  static const String currentLongitude = "current_longitude";
+  static const String currentAccuracy = "current_accuracy";
+  static const String changeGeolocation = "change_geolocation";
+  static const String addComment = "add_comment";
+  static const String addCommentHint = "add_comment_hint";
+  static const String viewComments = "view_comments";
 }

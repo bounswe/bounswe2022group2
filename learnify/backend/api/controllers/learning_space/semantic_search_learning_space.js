@@ -6,8 +6,10 @@ export default async (req, res) => {
 
     var ls;
     if(("query" in req.query)){
+        console.log("query is :" +  req.query.query)
+        if(req.query.query == "")
+        return res.status(400).json({ "resultMessage": "Query string is empty" });
         var response = await axios.get(semantic_server + "/search/" + req.query.query);
-        
         var titles = response.data.titles;
     
         ls = await LearningSpace.find({"title" : titles}).catch((err) =>{

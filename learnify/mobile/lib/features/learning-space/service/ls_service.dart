@@ -8,11 +8,16 @@ import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
 import '../models/categories_response_model.dart';
+import '../models/comment/add_comment_request_model.dart';
+import '../models/comment/add_comment_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
+import '../models/event/create_event_request.dart';
+import '../models/event/create_event_response.dart';
+import '../models/event/get_events_response.dart';
 import 'l_ls_service.dart';
 
 /// Service for network request of auth view-model.
@@ -33,8 +38,10 @@ class LSService extends ILSService {
   static const String _editPost = '/learningSpace/edit/post';
   static const String _createAnnotation = '/annotations-service/create';
   static const String _getAnnotations = '/annotations-service/get';
-
+  static const String _getEvents = '/events/ls';
+  static const String _addComment = '/learningSpace/comment';
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
+  static const String _createEvent = '/events';
 
   Future<IResponseModel<AnyModel>> randomUsers() async =>
       networkManager.send<AnyModel, AnyModel>(
@@ -105,4 +112,30 @@ class LSService extends ILSService {
         parseModel: const GetAnnotationsResponse(),
         type: RequestTypes.get,
       );
+
+  @override
+  Future<IResponseModel<GetEventsResponse>> getEvents(String lsId) async =>
+      networkManager.send<GetEventsResponse, GetEventsResponse>(
+        '$_getEvents/$lsId',
+        parseModel: const GetEventsResponse(),
+        type: RequestTypes.get,
+      );
+
+  @override
+  Future<IResponseModel<AddCommentResponse>> addComment(
+          CommentRequestModel body) async =>
+      networkManager.send<CommentRequestModel, AddCommentResponse>(
+        _addComment,
+        parseModel: const AddCommentResponse(),
+        type: RequestTypes.post,
+        body: body,
+      );
+
+  @override
+  Future<IResponseModel<CreateEventResponse>> createEvent(
+          CreateEventRequest body) async =>
+      networkManager.send<CreateEventRequest, CreateEventResponse>(_createEvent,
+          parseModel: const CreateEventResponse(),
+          type: RequestTypes.post,
+          body: body);
 }

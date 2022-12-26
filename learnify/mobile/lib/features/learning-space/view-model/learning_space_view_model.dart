@@ -5,6 +5,7 @@ import 'package:async/async.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
@@ -12,15 +13,25 @@ import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../core/widgets/list/custom_expansion_tile.dart';
+import '../../../core/widgets/text-field/custom_text_form_field.dart';
+import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/constants/storage_keys.dart';
+import '../../../product/language/language_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
+import '../models/comment/add_comment_request_model.dart';
+import '../models/comment/add_comment_response_model.dart';
+import '../models/comment/comment_model.dart';
 import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
-import '../models/event.dart';
+import '../models/event/create_event_request.dart';
+import '../models/event/create_event_response.dart';
+import '../models/event/event.dart';
+import '../models/event/get_events_response.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../service/ls_service.dart';
@@ -33,8 +44,6 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   List<Post> _posts = <Post>[];
   List<Post> get posts => _posts;
-  List<Event> _events = <Event>[];
-  List<Event> get events => _events;
   List<GlobalKey<CustomExpansionTileState>> _expansionTileKeys =
       <GlobalKey<CustomExpansionTileState>>[];
   List<GlobalKey<CustomExpansionTileState>> get expansionTileKeys =>
@@ -50,14 +59,53 @@ class LearningSpaceViewModel extends BaseViewModel {
   List<int> _carouselPageIndexes = <int>[];
   List<int> get carouselPageIndexes => _carouselPageIndexes;
 
+  late TextEditingController _commentController;
+  TextEditingController get commentController => _commentController;
+
   Map<String, List<Annotation>> annotations = <String, List<Annotation>>{};
+  Map<String, List<Event>> events = <String, List<Event>>{};
+  Map<String, List<Comment>> comments = <String, List<Comment>>{};
+
+  late TextEditingController _eventTitleController;
+  TextEditingController get eventTitleController => _eventTitleController;
+
+  late TextEditingController _eventDescriptionController;
+  TextEditingController get eventDescriptionController =>
+      _eventDescriptionController;
+
+  late TextEditingController _eventParticipationLimitController;
+  TextEditingController get eventParticipationLimitController =>
+      _eventParticipationLimitController;
+
+  late TextEditingController _eventDurationController;
+  TextEditingController get eventDurationController => _eventDurationController;
+
+  late GlobalKey<FormState> _createEventFormKey;
+  GlobalKey<FormState> get createEventFormKey => _createEventFormKey;
+
+  DateTime? _dateTime;
+  DateTime? get dateTime => _dateTime;
+
+  bool _isDateSelected = false;
+  bool get isDateSelected => _isDateSelected;
+
+  late GeoLocation _geolocation = const GeoLocation();
+  GeoLocation get geolocation => _geolocation;
+
+  bool _canCreate = false;
+  bool get canCreate => _canCreate;
 
   void setDefault() {
     _carouselPageIndexes = <int>[];
     _carouselControllers = <CarouselController>[];
-    _events = <Event>[];
     _posts = <Post>[];
     _learningSpace = null;
+    annotations.clear();
+    events.clear();
+    _canCreate = false;
+    _dateTime = null;
+    _isDateSelected = false;
+    comments.clear();
   }
 
   @override
@@ -65,10 +113,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     _lsService = LSService.instance;
     _posts = learningSpace?.posts ?? <Post>[];
     // _posts = List<Post>.generate(20, Post.dummy);
-    _events = List<Event>.generate(3, Event.dummy);
-    _events
-      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
-      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+    // _events = List<Event>.generate(3, Event.dummy);
   }
 
   @override
@@ -77,25 +122,56 @@ class LearningSpaceViewModel extends BaseViewModel {
   @override
   void initView() {
     _initializeKeys();
+    _createEventFormKey = GlobalKey<FormState>();
+    _eventTitleController = TextEditingController();
+    _eventDescriptionController = TextEditingController();
+    _eventParticipationLimitController = TextEditingController();
+    _eventDurationController = TextEditingController();
+    _eventTitleController.addListener(_controllerListener);
+    _eventDescriptionController.addListener(_controllerListener);
+    _eventParticipationLimitController.addListener(_controllerListener);
+    _eventDurationController.addListener(_controllerListener);
+  }
+
+  void _controllerListener() {
+    final String newTitle = _eventTitleController.text;
+    final String newDescription = _eventDescriptionController.text;
+    final String newParticipationLimit =
+        _eventParticipationLimitController.text;
+    final String newDuration = _eventDurationController.text;
+    final bool newCanCreate = newTitle.isNotEmpty &&
+        newDescription.isNotEmpty &&
+        newParticipationLimit.isNotEmpty &&
+        newDuration.isNotEmpty &&
+        _dateTime != null;
+    if (_canCreate == newCanCreate) return;
+    _canCreate = newCanCreate;
+    notifyListeners();
+  }
+
+  @override
+  void disposeView() {
+    _eventTitleController.dispose();
+    _eventDescriptionController.dispose();
+    _eventParticipationLimitController.dispose();
+    _eventDurationController.dispose();
+    _canCreate = false;
+    _dateTime = null;
+    _isDateSelected = false;
+    super.disposeView();
+    _commentController = TextEditingController();
   }
 
   void setLearningSpace(LearningSpace? newSpace) {
     _learningSpace = newSpace;
     _posts = newSpace?.posts ?? <Post>[];
-    // _posts = List<Post>.generate(20, Post.dummy);
-    _events = List<Event>.generate(3, Event.dummy);
-    _events
-      ..sort((Event e1, Event e2) => e1.date.compareTo(e2.date))
-      ..sort((Event e1, Event e2) => e1.date.isBefore(DateTime.now()) ? 1 : -1);
+    // _events = List<Event>.generate(3, Event.dummy);
     _initializeKeys();
   }
 
   void _initializeKeys() {
     _expansionTileKeys = List<GlobalKey<CustomExpansionTileState>>.generate(
         _posts.length, (_) => GlobalKey<CustomExpansionTileState>());
-    _eventsExpansionTileKeys =
-        List<GlobalKey<CustomExpansionTileState>>.generate(
-            _events.length, (_) => GlobalKey<CustomExpansionTileState>());
     _carouselControllers = List<CarouselController>.generate(
         _posts.length, (_) => CarouselController());
     _carouselPageIndexes = List<int>.generate(_posts.length, (_) => 0);
@@ -121,11 +197,73 @@ class LearningSpaceViewModel extends BaseViewModel {
     return null;
   }
 
-  Future<String?> createEvent() async {
+  Future<String?> toCreateEventScreen() async {
     // TODO: Fix
     // await navigationManager.navigateToPage(
     //     path: NavigationConstants.createEditPost);
+
+    await navigationManager.navigateToPage(
+      path: NavigationConstants.createEvent,
+    );
+
     return null;
+  }
+
+  Future<String?> addCommentDialog(BuildContext context, String? postId) =>
+      showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+                title: const BaseText(TextKeys.addComment),
+                content: CustomTextFormField(
+                  hintText: TextKeys.addCommentHint,
+                  maxLines: 3,
+                  controller: _commentController,
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      //final Tuple3<LearningSpace?, Comment?, String?> res =
+                      addComment(postId);
+                      Navigator.of(context).pop(_commentController.text);
+                      _commentController.clear();
+                    },
+                    child: const BaseText(TextKeys.done),
+                  )
+                ],
+              ));
+
+  Future<Tuple3<LearningSpace?, Comment?, String?>> addComment(
+      String? postId) async {
+    final CommentRequestModel req = CommentRequestModel(
+      lsId: _learningSpace?.id,
+      postId: postId,
+      content: _commentController.text,
+    );
+    final IResponseModel<AddCommentResponse> resp =
+        await _lsService.addComment(req);
+    if (resp.hasError) {
+      return Tuple3<LearningSpace?, Comment?, String?>(
+          null, null, resp.error?.errorMessage);
+    } else {
+      final Comment comment = Comment(
+        id: resp.data?.comment?.id,
+        content: resp.data?.comment?.content,
+        creator: resp.data?.comment?.creator,
+        images: resp.data?.comment?.images ?? <String>[],
+      );
+
+      final List<Comment> initialComments = comments[postId] ?? <Comment>[];
+      final List<Comment> updatedComments = List<Comment>.from(initialComments)
+        ..add(comment!);
+      comments[postId ?? ''] = updatedComments;
+      final int itemIndex = _posts
+          .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
+      posts[itemIndex].comments.add(comment);
+      _learningSpace = _learningSpace?.copyWith(posts: _posts);
+      notifyListeners();
+      return Tuple3<LearningSpace?, Comment?, String?>(
+          _learningSpace, comment, null);
+    }
   }
 
   Future<String?> viewAnnotations(
@@ -376,9 +514,131 @@ class LearningSpaceViewModel extends BaseViewModel {
     return _learningSpace;
   }
 
-  void setEvents(List<Event> newEvents) {
-    if (newEvents != _events) {
-      _events = newEvents;
+  List<Event>? get eventsOfLs {
+    final List<Event>? eventsList = events.containsKey(_learningSpace?.id)
+        ? events[_learningSpace?.id]
+        : null;
+    if (eventsList == null) return null;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            eventsList.length, (_) => GlobalKey<CustomExpansionTileState>());
+    return eventsList;
+  }
+
+  Future<List<Event>> getEvents() async {
+    final String lsId = _learningSpace?.id ?? '';
+    if (events.containsKey(lsId)) {
+      return events[lsId]!;
     }
+    final IResponseModel<GetEventsResponse> response =
+        await _lsService.getEvents(lsId);
+    if (response.hasError || response.data == null) return <Event>[];
+    events[lsId] = response.data!.events;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            response.data!.events.length,
+            (_) => GlobalKey<CustomExpansionTileState>());
+    notifyListeners();
+    return events[lsId] ?? <Event>[];
+  }
+
+  void setEvents(List<Event> newEvents, String lsId) {
+    events[lsId] = newEvents;
+    _eventsExpansionTileKeys =
+        List<GlobalKey<CustomExpansionTileState>>.generate(
+            newEvents.length, (_) => GlobalKey<CustomExpansionTileState>());
+  }
+
+  void pickDateTime(DateTime selectedDate, TimeOfDay selectedTime) {
+    final DateTime selectedDateTime = DateTime(
+        selectedDate.year,
+        selectedDate.month,
+        selectedDate.day,
+        selectedTime.hour,
+        selectedTime.minute);
+    _dateTime = selectedDateTime;
+    _isDateSelected = true;
+    _controllerListener();
+    notifyListeners();
+  }
+
+  void resetIsDateSelected() {
+    _isDateSelected = false;
+    _controllerListener();
+    notifyListeners();
+  }
+
+  void setIsDateSelected() {
+    if (_dateTime != null) {
+      _isDateSelected = true;
+      _controllerListener();
+      notifyListeners();
+    }
+  }
+
+  Future<void> setInitialGeolocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return;
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return;
+    }
+
+    final Position tempPos = await Geolocator.getCurrentPosition();
+    final GeoLocation tempGeolocation = GeoLocation(
+        latitude: tempPos.latitude,
+        longitude: tempPos.longitude,
+        accuracy: tempPos.accuracy);
+
+    _geolocation = tempGeolocation;
+  }
+
+  Future<String?> createEvent() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(_createEventRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _createEventRequest() async {
+    final CreateEventRequest request = CreateEventRequest(
+        title: _eventTitleController.text,
+        description: _eventDescriptionController.text,
+        participationLimit:
+            int.tryParse(_eventParticipationLimitController.text),
+        duration: int.tryParse(_eventDurationController.text),
+        date: _dateTime,
+        geolocation: _geolocation,
+        lsId: _learningSpace?.id ?? "");
+    final IResponseModel<CreateEventResponse> response =
+        await _lsService.createEvent(request);
+    if (response.hasError) {
+      return response.error?.errorMessage;
+    }
+    final Event? event = response.data?.event;
+    if (event == null) {
+      return "Learning Space not found";
+    }
+    events.forEach((String key, List<Event> value) {
+      if (key == _learningSpace?.id && !value.contains(event)) {
+        value.add(event);
+      }
+    });
+    _initializeKeys();
+    notifyListeners();
+    return null;
   }
 }

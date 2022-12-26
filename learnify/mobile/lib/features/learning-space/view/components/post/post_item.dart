@@ -103,18 +103,23 @@ class PostItem extends StatelessWidget {
           await viewModel.viewAnnotations(annotations, annotationText);
         },
       ),
-      PostList.createEditButton(context, TextKeys.editPost, Icons.edit_outlined,
-          () async => viewModel.editPost(post)),
+      Row(
+        children: <Widget>[
+          Expanded(
+              child: PostList.createEditButton(context, TextKeys.editPost,
+                  Icons.edit_outlined, () async => viewModel.editPost(post))),
+          Expanded(
+            child: PostList.createEditButton(
+                context, TextKeys.addComment, Icons.comment_outlined, () async {
+              await context
+                  .read<LearningSpaceViewModel>()
+                  .addCommentDialog(context, post.id);
+            }),
+          ),
+        ],
+      ),
+      _viewComments(context, post),
     ];
-  }
-
-  Future<List<Annotation>> _getAnnotations(
-      BuildContext context, String? postId) async {
-    final LearningSpaceViewModel viewModel =
-        context.read<LearningSpaceViewModel>();
-    final List<Annotation> annotations =
-        await viewModel.getPostAnnotations(postId ?? '');
-    return annotations;
   }
 
   CarouselSlider _carouselSlider(LearningSpaceViewModel viewModel, Post post,
@@ -196,5 +201,16 @@ class PostItem extends StatelessWidget {
             ),
           ),
         ),
+      );
+
+  static Widget _viewComments(BuildContext context, Post post) => TextButton(
+        child: BaseText(
+          TextKeys.viewComments,
+          style: context.titleSmall,
+          color: context.primary,
+        ),
+        onPressed: () async => NavigationManager.instance.navigateToPage(
+            path: NavigationConstants.comments,
+            data: <String, dynamic>{'post': post}),
       );
 }
