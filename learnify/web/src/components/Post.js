@@ -502,10 +502,12 @@ useEffect(() => {
                     </div>
                     </div>
                     }
+                    {commentArray != null && commentArray.length > 0 &&
                     <div className='add-post-box-mid'>
                     {commentArray.map(myComment =>
-                                    <Comment myComment = {myComment} my_lsid = {lsid}/>)}
+                                    <Comment myComment = {myComment} my_lsid = {lsid} my_postId = {postId}/>)}
                     </div>
+                    }
                 </div>}
         </div>
         }
