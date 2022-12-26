@@ -5,6 +5,7 @@ import 'package:async/async.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
@@ -22,6 +23,7 @@ import '../models/enroll_ls_request_model.dart';
 import '../models/enroll_ls_response_model.dart';
 import '../models/event/event.dart';
 import '../models/event/get_events_response.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../models/learning_space_model.dart';
 import '../models/post_model.dart';
 import '../service/ls_service.dart';
@@ -74,6 +76,9 @@ class LearningSpaceViewModel extends BaseViewModel {
 
   bool _isDateSelected = false;
   bool get isDateSelected => _isDateSelected;
+
+  late GeoLocation _geolocation = const GeoLocation();
+  GeoLocation get geolocation => _geolocation;
 
   bool _canCreate = false;
   bool get canCreate => _canCreate;
@@ -493,5 +498,35 @@ class LearningSpaceViewModel extends BaseViewModel {
   void setIsDateSelected() {
     _isDateSelected = true;
     notifyListeners();
+  }
+
+  Future<void> setGeolocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return;
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return;
+    }
+
+    final Position tempPos = await Geolocator.getCurrentPosition();
+    final GeoLocation tempGeolocation = GeoLocation(
+        latitude: tempPos.latitude,
+        longitude: tempPos.longitude,
+        accuracy: tempPos.accuracy);
+
+    _geolocation = tempGeolocation;
   }
 }

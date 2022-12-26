@@ -81,7 +81,7 @@ class NavigationRoute {
             AddPostScreen(isAdd: arguments['isAdd'], post: arguments['post']),
             args);
       case NavigationConstants.createEvent:
-        return normalNavigate(const CreateEventScreen(), args);
+        return normalNavigate(CreateEventScreen(), args);
       default:
         return normalNavigate(const SignupScreen(), args);
     }

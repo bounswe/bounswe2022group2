@@ -16,10 +16,12 @@ import '../view-model/learning_space_view_model.dart';
 part 'components/create/event_form.dart';
 
 class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
-  const CreateEventScreen({Key? key})
+  CreateEventScreen({Key? key})
       : super(
             builder: _builder,
             appBar: _appBarBuilder,
+            futureInit: (BuildContext context) async =>
+                context.read<LearningSpaceViewModel>().setGeolocation(),
             key: key,
             scrollable: true);
 
@@ -29,6 +31,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
           context.sizedH(2.6),
           const _EventForm(),
           _dateTimePickerField(context),
+          _geolocationField(context),
           context.sizedH(.8),
           _doneButton()
         ],
@@ -111,6 +114,12 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
             },
           ),
         ));
+  }
+
+  static Widget _geolocationField(BuildContext context) {
+    final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
+    return Text(
+        "Lat:${model.geolocation.latitude} Long:${model.geolocation.longitude} Acc:${model.geolocation.accuracy}");
   }
 
   static Widget _doneButton() =>
