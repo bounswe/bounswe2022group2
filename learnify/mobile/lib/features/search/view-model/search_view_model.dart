@@ -6,6 +6,7 @@ import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../auth/verification/model/user_model.dart';
 import '../../home/model/get_learning_spaces_response_model.dart';
 import '../../home/service/I_home_service.dart';
 import '../../home/service/home_service.dart';
@@ -60,7 +61,7 @@ class SearchViewModel extends BaseViewModel {
   late List<UserPreview> _resultUsers = allUsers;
   List<UserPreview> get resultUsers => _resultUsers;
 
-  late bool didResultCome = false;
+  //late bool didResultCome = false;
 
   @override
   void initViewModel() {
@@ -80,7 +81,7 @@ class SearchViewModel extends BaseViewModel {
     _searchController.dispose();
     _resultLearningSpaces = <LearningSpace>[];
     _recommendedLearningSpaces = <LearningSpace>[];
-    didResultCome = false;
+    //didResultCome = false;
     super.disposeView();
   }
 
@@ -88,7 +89,7 @@ class SearchViewModel extends BaseViewModel {
     _searchController.clear();
     _resultLearningSpaces = _recommendedLearningSpaces;
     _resultUsers = allUsers;
-    didResultCome = false;
+    //didResultCome = false;
     notifyListeners();
   }
 
@@ -148,45 +149,38 @@ class SearchViewModel extends BaseViewModel {
 
     if (responseLS.hasError || responseUser.hasError) {
       clearResults();
-      print(responseLS.error?.errorMessage ?? responseUser.error?.errorMessage);
       return responseLS.error?.errorMessage;
     }
-    if (respDataLS == null) {
+    if (respDataLS == null || respDataLS.resultLearningSpaces.isEmpty) {
       clearLearningSpaceResults();
       return null;
     }
+    _resultLearningSpaces = respDataLS.resultLearningSpaces;
 
-    if (respDataUser == null) {
+    if (respDataUser == null || respDataUser.users.isEmpty) {
       clearUserResults();
       return null;
     }
-
-    if (respDataLS.resultLearningSpaces.isEmpty) {
-      _resultLearningSpaces = _recommendedLearningSpaces;
-    } else {
-      _resultLearningSpaces = respDataLS.resultLearningSpaces;
-    }
+    _resultUsers = await _usernameToUserPreview(respDataUser.users);
 
     notifyListeners();
     return null;
   }
 
   void setDefault() {
-    _resultLearningSpaces = [];
-    didResultCome = false;
+    _resultLearningSpaces = <LearningSpace>[];
+    _resultUsers = <UserPreview>[];
+    //didResultCome = false;
   }
 
-  Future<UserPreview?> _userSearchRequest(String name) async {
+  Future<List<UserPreview>> _usernameToUserPreview(List<String> users) async {
     _resultUsers = allUsers;
-    final List<UserPreview> newResultUsers = <UserPreview>[];
-    for (final UserPreview user in allUsers) {
-      if (user.userName.toLowerCase().contains(name.toLowerCase())) {
-        newResultUsers.add(user);
-      }
+    final List<UserPreview> resultUsers = <UserPreview>[];
+    for (final String username in users) {
+      final UserPreview userPreview = UserPreview(
+          userName: username, profilePhoto: IconKeys.profilePageBatuhan);
+      resultUsers.add(userPreview);
     }
-    if (newResultUsers.isNotEmpty) {
-      _resultUsers = newResultUsers;
-    }
-    return null;
+    return resultUsers;
   }
 }

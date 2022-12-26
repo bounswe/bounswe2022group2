@@ -14,13 +14,14 @@ class SearchService extends ISearchService {
   /// Static instance getter of [SearchService].
   static SearchService get instance => _instance;
 
-  static const String _search = '/learningspace';
+  static const String _searchLS = '/learningspace';
+  static const String _searchUser = '/user/search';
 
   @override
   Future<IResponseModel<LsSearchResponse>> searchLs(
           String searchedItem) async =>
       networkManager.send<AnyModel, LsSearchResponse>(
-        _search,
+        _searchLS,
         queryParameters: {"query": searchedItem},
         parseModel: const LsSearchResponse(),
         type: RequestTypes.get,
@@ -30,7 +31,7 @@ class SearchService extends ISearchService {
   Future<IResponseModel<UserSearchResponse>> searchUser(
           String searchedItem) async =>
       networkManager.send<AnyModel, UserSearchResponse>(
-        '$_search/$searchedItem',
+        '$_searchUser/$searchedItem',
         parseModel: const UserSearchResponse(),
         type: RequestTypes.get,
       );

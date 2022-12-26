@@ -22,7 +22,7 @@ class UserPreview extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
+              /*Padding(
                   padding: EdgeInsets.symmetric(horizontal: context.width * 4),
                   child: Ink.image(
                     padding:
@@ -32,14 +32,14 @@ class UserPreview extends StatelessWidget {
                     width: context.width * 30,
                     fit: BoxFit.scaleDown,
                   )),
-              context.sizedH(.5),
-              _courseDescription(context),
+              context.sizedH(.5),*/
+              _username(context),
             ],
           ),
         ),
       );
 
-  Widget _courseDescription(BuildContext context) => Container(
+  Widget _username(BuildContext context) => Container(
       padding: EdgeInsets.symmetric(horizontal: context.width * 3),
       width: context.width * 38,
       child: Row(
