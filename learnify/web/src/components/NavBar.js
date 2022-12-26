@@ -66,7 +66,7 @@ export default function NavBar(){
                     <div className="search-results-container">
                         {searchUserResults.map(result => (
                             <ul>
-                                <li className='search-result-item'><a href={`/learningspace/${result.id}`}>{result.title}</a></li>
+                                <li className='search-result-item'><a href={`/profile/${result}`}>{result}</a></li>
                             </ul>
                         ))}
                     </div>
