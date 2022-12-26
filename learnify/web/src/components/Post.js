@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
 import Comment from './Comment';
+import axios from 'axios';
 
 function TextInterface({
     classes,
@@ -224,8 +225,36 @@ export default function Post(props){
     setI((i + 1) % urlList.length);
   };
 
-  const handleCreateAnnotation = (annotation) => {
+  const handleCreateAnnotation = async (annotation) => {
     console.log("current URL", url);
+    console.log(annotation);
+    let data = {
+     '@context': "http://www.w3.org/ns/anno.jsonld",
+      type: "Annotation",
+      body: annotation.body[0].value,
+      target: {
+        source: 'http://3.76.176.35/' + lsid + '/' + postId,
+        selector: annotation.target.selector[1],
+      }
+    };
+    console.log(data);
+    await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/create/${lsid}/${postId}`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Authorization': `${token}` ,
+      },
+  })
+      .then((response) => {
+          if (response.status === 200) {
+              console.log("successfull")
+              setMessage("Vote added successfully");
+          }
+      })
+      .catch((error) => {
+          console.error("Error:", error);
+      });
   };
 
   const title = props.myPost.title;
