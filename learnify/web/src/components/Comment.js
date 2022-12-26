@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
+
 
 export default function Comment(props){
 
@@ -10,6 +12,7 @@ export default function Comment(props){
   const content = props.myComment.content;
   const images = props.myComment.images;
   const postId = props.my_postId;
+  const profileLink = `/profile/${creator}`;
 
   const [deleteComment, setDeleteComment] = useState(false);
 
@@ -142,7 +145,9 @@ export default function Comment(props){
                         </label>
                     </div>
                     <div className='post-owner-display-item'>
-                        {creator}
+                    <Link to={profileLink} className='commentsText'>
+                    {creator}
+                    </Link>
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-edit-icon-container'>
