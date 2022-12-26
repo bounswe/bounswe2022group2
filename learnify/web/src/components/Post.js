@@ -245,10 +245,12 @@ export default function Post(props){
   const increaseUp = () => {
       localStorage.setItem((postId+"upClicked"), true);
       console.log((postId+"Clicked"));
+      votePost(lsid, postId, "upvote");
   };
   const increaseDown = () => {
     localStorage.setItem((postId+"downClicked"), true);
     console.log((postId+"Clicked"));
+    votePost(lsid, postId, "downvote");
   };
   const deleteThePost = () => {
       setDeletePost(current => !current);
@@ -296,6 +298,30 @@ useEffect(() => {
       editExPost(lsid, postId, postTitle, value, imageUrl);
   }
 
+  const votePost = async (lsid, postId, vote) => {
+      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/post/vote`, {
+          method: "PUT",
+          body: JSON.stringify({
+              ls_id: lsid,
+              post_id: postId,
+              type: vote,
+          }),
+          headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+              'Authorization': `${token}` ,
+          },
+      })
+          .then((response) => {
+              if (response.status === 200) {
+                  console.log("successfull")
+                  setMessage("Vote added successfully");
+                  window.location.reload();
+              }
+          })
+          .catch((error) => {
+              console.error("Error:", error);
+          });
+  }
 
   const createComment = async (lsid, postId, commentValue, commentImageUrl) => {
       console.log(lsid)
