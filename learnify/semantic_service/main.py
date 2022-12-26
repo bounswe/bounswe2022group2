@@ -14,7 +14,7 @@ app = FastAPI()
 
 @app.on_event("startup")
 def startup_db_client():
-    
+    print("API key: ", config["JINA_API_KEY"])
     app.mongodb_client = MongoClient(config["DB_URI"])
     app.database = app.mongodb_client['test']
     app.clip_client = Client('grpcs://api.clip.jina.ai:2096',
@@ -26,7 +26,7 @@ def shutdown_db_client():
     app.mongodb_client.close()
 
 @app.get("/")
-async def root():
+def root():
     return {"message": "Learnify Semantic server is up!"}
 
 #Learning space model, it will use only title and get the remaining LS from the DB
@@ -53,7 +53,7 @@ def encode_learning_space(request:Request, ls: LS):
     return 200
 
 @app.get('/search/{query}')
-def encode_learning_space(request:Request, query: str):
+def  encode_learning_space(request:Request, query: str):
 
     
     encoding = app.clip_client.encode(
@@ -82,6 +82,39 @@ def encode_learning_space(request:Request, query: str):
     sim_list.reverse()
 
     sim_list = sim_list[:19]
+    
+    titles = {}
+    titles_list = []
+    for sim in sim_list:
+        titles[similarity_index[sim]] = sim
+        titles_list.append(similarity_index[sim])
+    
+    titles["titles"] = titles_list
+    
+    titles = jsonable_encoder(titles)
+    return JSONResponse(content = titles)
+
+@app.get('/reccomended/{username}')
+async def  encode_learning_space(request:Request, username: str):
+
+
+    print("Username is:", username)
+    
+    collection= app.database["learningspaces"]
+
+    similarity_index = {}
+    participated = (list(collection.find({"participants": {"$in" :[ username]}})))
+    non_participated = (list(collection.find({"participants": {"$nin" :[ username]}})))
+        
+    for ls in participated:
+        for ls2 in non_participated:
+            similarity_index[np.array(ls["BERT"]) @ np.array(ls2["BERT"] )] = ls2["title"]
+    
+    sim_list = list(similarity_index.keys())
+    sim_list.sort()
+    sim_list.reverse()
+
+    sim_list = sim_list[:9]
     
     titles = {}
     titles_list = []

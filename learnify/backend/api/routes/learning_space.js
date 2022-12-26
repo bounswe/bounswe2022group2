@@ -12,7 +12,8 @@ import {
     put_edit_comment,
     get_by_participation,
     get_by_creator,
-    put_vote_post
+    put_vote_post,
+    get_reccomended_ls
 } from '../controllers/learning_space/index.js';
 
 
@@ -30,6 +31,7 @@ router.put('/post/vote', put_vote_post)
 router.get('/', semanti_search_ls)
 router.get('/user/participated', get_by_participation)
 router.get('/user/created', get_by_creator)
+router.get('/user/recomended/', get_reccomended_ls)
 
 
 export default router;
