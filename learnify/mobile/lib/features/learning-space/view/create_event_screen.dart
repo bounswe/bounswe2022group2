@@ -118,8 +118,42 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
 
   static Widget _geolocationField(BuildContext context) {
     final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
-    return Text(
-        "Lat:${model.geolocation.latitude} Long:${model.geolocation.longitude} Acc:${model.geolocation.accuracy}");
+    return Container(
+      width: context.maxPossibleWidth,
+      margin: EdgeInsets.symmetric(horizontal: context.width * 7),
+      child: Padding(
+          padding: EdgeInsets.all(context.width * 2),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  BaseText(TextKeys.currentGeolocation,
+                      style: context.titleSmall, color: Colors.black),
+                  context.sizedW(2),
+                  Text(
+                      "(${model.geolocation.latitude}, ${model.geolocation.longitude})")
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  BaseText(TextKeys.currentAccuracy,
+                      style: context.titleSmall, color: Colors.black),
+                  context.sizedW(2),
+                  Text("${model.geolocation.accuracy}")
+                ],
+              ),
+              context.sizedH(2),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.secondary),
+                  child: BaseText(TextKeys.changeGeolocation,
+                      style: context.titleMedium,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                  onPressed: () async {})
+            ],
+          )),
+    );
   }
 
   static Widget _doneButton() =>

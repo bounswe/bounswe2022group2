@@ -133,5 +133,8 @@
   "create_event_participation_limit_label": "Participation Limit of Event",
   "create_event_duration_hint": "Enter a duration for event in minutes",
   "create_event_duration_label": "Duration of Event",
-  "select_date_time": "Select a date and a time"
+  "select_date_time": "Select a date and a time",
+  "current_geolocation": "Current Geolocation",
+  "current_accuracy": "Current Accuracy",
+  "change_geolocation": "Change Geolocation"
 }

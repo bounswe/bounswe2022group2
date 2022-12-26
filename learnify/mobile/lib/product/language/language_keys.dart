@@ -139,4 +139,7 @@ class TextKeys {
   static const String createEventDurationHint = "create_event_duration_hint";
   static const String createEventDurationLabel = "create_event_duration_label";
   static const String selectDateTime = "select_date_time";
+  static const String currentGeolocation = "current_geolocation";
+  static const String currentAccuracy = "current_accuracy";
+  static const String changeGeolocation = "change_geolocation";
 }
