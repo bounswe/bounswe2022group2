@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:positioned_tap_detector_2/positioned_tap_detector_2.dart';
 import 'package:provider/provider.dart';
+
 import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
@@ -10,6 +14,7 @@ import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
+import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/widget_keys.dart';
@@ -120,6 +125,52 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
         ));
   }
 
+  static Widget _geolocationSelectionField(BuildContext context) {
+    final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
+    Marker currentMarker = Marker(
+        width: context.width * 12,
+        height: context.width * 12,
+        point: LatLng(model.geolocation.latitude, model.geolocation.longitude),
+        builder: (_) => Image.asset(IconKeys.locationMarker));
+    return Padding(
+        padding: EdgeInsets.only(top: context.height * 1.8),
+        child: SizedBox(
+          height: context.height * 22,
+          child: SelectorHelper<bool, LearningSpaceViewModel>().builder(
+            (_, LearningSpaceViewModel lsViewModel) => true,
+            (_, bool val, __) => FlutterMap(
+              options: MapOptions(
+                  center: currentMarker.point,
+                  maxZoom: 19,
+                  onTap: (TapPosition tapPosition, LatLng latlng) {
+                    currentMarker = Marker(
+                        width: context.width * 12,
+                        height: context.width * 12,
+                        point: LatLng(latlng.latitude, latlng.longitude),
+                        builder: (_) => Image.asset(IconKeys.locationMarker));
+                    model.setGeolocation(latlng.latitude, latlng.longitude);
+                  }),
+              children: <Widget>[
+                TileLayer(
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: 'com.bounswe.learnify',
+                ),
+                MarkerLayer(
+                  markers: <Marker>[
+                    Marker(
+                      width: context.width * 12,
+                      height: context.width * 12,
+                      point: currentMarker.point,
+                      builder: (_) => Image.asset(IconKeys.locationMarker),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+
   static Widget _geolocationField(BuildContext context) {
     final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
     return Container(
@@ -129,6 +180,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
           padding: EdgeInsets.all(context.width * 2),
           child: Column(
             children: <Widget>[
+              _geolocationSelectionField(context),
               Row(
                 children: <Widget>[
                   BaseText(TextKeys.currentLatitude,
@@ -161,7 +213,10 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                       style: context.titleMedium,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
-                  onPressed: () async {})
+                  onPressed: () async {
+                    print(model.geolocation.latitude);
+                    print(model.geolocation.longitude);
+                  })
             ],
           )),
     );

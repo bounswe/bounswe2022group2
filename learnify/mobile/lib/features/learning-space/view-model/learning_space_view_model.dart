@@ -606,6 +606,14 @@ class LearningSpaceViewModel extends BaseViewModel {
     _geolocation = tempGeolocation;
   }
 
+  void setGeolocation(double latitude, double longitude) {
+    _geolocation = GeoLocation(
+        latitude: latitude,
+        longitude: longitude,
+        accuracy: _geolocation.accuracy);
+    notifyListeners();
+  }
+
   Future<String?> createEvent() async {
     await operation?.cancel();
     operation = CancelableOperation<String?>.fromFuture(_createEventRequest());
