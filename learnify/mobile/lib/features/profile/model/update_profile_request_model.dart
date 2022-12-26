@@ -1,19 +1,19 @@
 import '../../../core/base/model/base_model.dart';
 
-class UpdateProfileRequestModel extends BaseModel<UpdateProfileRequestModel> {
-  const UpdateProfileRequestModel({this.bio, this.profilePicture});
+class UpdateProfileRequest extends BaseModel<UpdateProfileRequest> {
+  const UpdateProfileRequest({this.bio, this.profilePicture});
 
-  factory UpdateProfileRequestModel.fromJson(Map<String, dynamic> json) =>
-      UpdateProfileRequestModel(
-          bio: BaseModel.getByType<String>(json['ls_id']),
-          profilePicture: BaseModel.getByType<String>(json['post_id']));
+  factory UpdateProfileRequest.fromJson(Map<String, dynamic> json) =>
+      UpdateProfileRequest(
+          bio: BaseModel.getByType<String>(json['bio']),
+          profilePicture: BaseModel.getByType<String>(json['profile_picture']));
 
   final String? bio;
   final String? profilePicture;
 
   @override
-  UpdateProfileRequestModel fromJson(Map<String, dynamic> json) =>
-      UpdateProfileRequestModel.fromJson(json);
+  UpdateProfileRequest fromJson(Map<String, dynamic> json) =>
+      UpdateProfileRequest.fromJson(json);
 
   @override
   Map<String, dynamic> get toJson =>

@@ -14,6 +14,7 @@ import '../../learning-space/models/learning_space_model.dart';
 import '../model/get_profile_response_model.dart';
 import '../model/profile_model.dart';
 import '../model/update_profile_request_model.dart';
+import '../model/update_profile_response_model.dart';
 import '../service/profile_service.dart';
 import '../service/i_profile_service.dart';
 
@@ -64,10 +65,10 @@ class ProfileViewModel extends BaseViewModel {
 
   @override
   void initView() {
+    getProfile();
     _userFormKey = GlobalKey<FormState>();
     _biographyFormKey = GlobalKey<FormState>();
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
-    getProfile();
     _biographyController = TextEditingController(text: _initialBiography);
     _biographyController.addListener(_controllerListener);
     _setDefault();
@@ -125,22 +126,35 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   Future<String?> _updateProfileRequest() async {
+    _canUpdate = false;
     final bool isBiographyValid =
         biographyFormKey.currentState?.validate() ?? false;
     if (!isBiographyValid) return null;
-
-    final UpdateProfileRequestModel request = UpdateProfileRequestModel(
+    final UpdateProfileRequest request = UpdateProfileRequest(
       bio: _biographyController.text,
-      profilePicture: _selectedImage,
+      profilePicture: 'null', //_selectedImage,
     );
-    final IResponseModel<GetProfileResponse> response =
+
+    final IResponseModel<UpdateProfileResponse> response =
         await _profileService.updateProfileRequest(request);
-    final GetProfileResponse? respData = response.data;
+    final UpdateProfileResponse? respData = response.data;
+
     if (response.hasError || respData == null) {
       return response.error?.errorMessage;
     }
-    //_setUserData(respData.profile);
-    notifyListeners();
+    print('respData: $respData');
+    final Profile? responseProfile = respData.profile;
+    if (responseProfile != null) {
+      _profile = Profile(
+        username: responseProfile.username,
+        email: _user.email,
+        bio: responseProfile.bio,
+        profilePicture: responseProfile.profilePicture,
+        participated: responseProfile.participated,
+        created: responseProfile.created,
+      );
+      notifyListeners();
+    }
     return null;
 /*
     if (_selectedImage != null) {
@@ -162,7 +176,6 @@ class ProfileViewModel extends BaseViewModel {
 
   Future<String?> _getProfileRequest() async {
     final String? username = _user.username;
-    print("username: $username");
     if (username != null) {
       final IResponseModel<GetProfileResponse> res =
           await _profileService.getProfileRequest(username);
@@ -171,14 +184,13 @@ class ProfileViewModel extends BaseViewModel {
       if (res.hasError || respData == null) {
         return res.error?.errorMessage;
       }
-
       _profile = Profile(
         username: respData.username,
         email: _user.email,
         bio: respData.bio,
         profilePicture: respData.profilePicture,
-        participated: respData.participated ?? [],
-        created: respData.created ?? [],
+        participated: respData.participated ?? <LearningSpace>[],
+        created: respData.created ?? <LearningSpace>[],
       );
       _canUpdate = false;
       notifyListeners();
