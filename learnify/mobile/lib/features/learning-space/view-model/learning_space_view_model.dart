@@ -254,7 +254,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
       final List<Comment> initialComments = comments[postId] ?? <Comment>[];
       final List<Comment> updatedComments = List<Comment>.from(initialComments)
-        ..add(comment!);
+        ..add(comment);
       comments[postId ?? ''] = updatedComments;
       final int itemIndex = _posts
           .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);

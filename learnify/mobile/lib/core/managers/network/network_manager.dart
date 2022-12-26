@@ -41,7 +41,7 @@ class NetworkManager extends INetworkManager
   }
 
   static final NetworkManager _instance = NetworkManager._init();
-  static const String _baseUrl = NetworkConstants.localhostUrl;
+  static const String _baseUrl = NetworkConstants.productionUrl;
 
   /// Returns the singleton instance of the network manager.
   static NetworkManager get instance => _instance;

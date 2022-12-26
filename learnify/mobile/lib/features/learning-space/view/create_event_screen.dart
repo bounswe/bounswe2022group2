@@ -127,27 +127,22 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
 
   static Widget _geolocationSelectionField(BuildContext context) {
     final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
-    Marker currentMarker = Marker(
-        width: context.width * 12,
-        height: context.width * 12,
-        point: LatLng(model.geolocation.latitude, model.geolocation.longitude),
-        builder: (_) => Image.asset(IconKeys.locationMarker));
     return Padding(
         padding: EdgeInsets.only(top: context.height * 1.8),
         child: SizedBox(
           height: context.height * 22,
-          child: SelectorHelper<bool, LearningSpaceViewModel>().builder(
-            (_, LearningSpaceViewModel lsViewModel) => true,
-            (_, bool val, __) => FlutterMap(
+          child: SelectorHelper<Marker, LearningSpaceViewModel>().builder(
+            (_, LearningSpaceViewModel lsViewModel) => Marker(
+                width: context.width * 12,
+                height: context.width * 12,
+                point: LatLng(
+                    model.geolocation.latitude, model.geolocation.longitude),
+                builder: (_) => Image.asset(IconKeys.locationMarker)),
+            (_, Marker marker, __) => FlutterMap(
               options: MapOptions(
-                  center: currentMarker.point,
+                  center: marker.point,
                   maxZoom: 19,
                   onTap: (TapPosition tapPosition, LatLng latlng) {
-                    currentMarker = Marker(
-                        width: context.width * 12,
-                        height: context.width * 12,
-                        point: LatLng(latlng.latitude, latlng.longitude),
-                        builder: (_) => Image.asset(IconKeys.locationMarker));
                     model.setGeolocation(latlng.latitude, latlng.longitude);
                   }),
               children: <Widget>[
@@ -160,7 +155,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                     Marker(
                       width: context.width * 12,
                       height: context.width * 12,
-                      point: currentMarker.point,
+                      point: marker.point,
                       builder: (_) => Image.asset(IconKeys.locationMarker),
                     ),
                   ],
@@ -240,6 +235,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                 await spaceViewModel.createEvent();
                 homeViewModel.updateLs(spaceViewModel.learningSpace);
                 NavigationManager.instance.pop();
+                return null;
               }));
 }
 
