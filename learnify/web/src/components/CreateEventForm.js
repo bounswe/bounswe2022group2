@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import MapContainer from './MapPicker'
+import axios from 'axios';
 
 // const DefaultZoom = 10;
 
@@ -99,62 +100,32 @@ const EventForm = (lsid) => {
         }
     };
 
-    // if (timeValue && dateValue) {
-    //     console.log(`${dateValue.format('DD-MM-YYYY')} ${timeValue.format('HH:mm')}`)
-    // }
+    const handleCreateEvent = async () => {
+    try {
+    const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_BASE_URL}events`,
+        {
+        lsId: lsid.lsid,
+        title: eventTitle,
+        description: eventDescription,
+        geolocation: geolocation,
+        date: `${dateValue.format('MM-DD-YYYY')} ${timeValue.format('HH:mm')}`,
+        duration: eventDuration,
+        participationLimit: plimitValue,
+        },
+        {
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+            Authorization: `${token}`,
+        },
+        }
+    );
 
-    // console.log(geolocation)
-
-    const handleCreateEvent = () => {
-        if (eventTitle.length < 3) {
-            setEventTitleError(true);
-        } else {
-            setEventTitleError(false);
-        }
-        if (eventDescription.length < 3) {
-            setEventDescriptionError(true);
-        } else {
-            setEventDescriptionError(false);
-        }
-        if (eventDuration === '0' || eventDuration < 0) {
-            setDurationError(true);
-        } else {
-            setDurationError(false);
-        }
-        if (plimitValue === '0' || plimitValue < 0) {
-            setPlimitError(true);
-        } else {
-            setPlimitError(false);
-        }
-        if (eventTitle.length >= 3 && eventDescription.length >= 3 && eventDuration > 0 && plimitValue > 0) {
-            const event = {
-                lsId: lsid.lsid,
-                title: eventTitle,
-                description: eventDescription,
-                geolocation: geolocation,
-                date: `${dateValue.format('MM-DD-YYYY')} ${timeValue.format('HH:mm')}`,
-                duration: eventDuration,
-                participationLimit: plimitValue,
-            }
-            fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}events`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                    'Authorization': `${token}`
-                },
-                body: JSON.stringify(event)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                window.location.reload();
-            })
-            .catch(error => {
-                console.log(error);
-            })
-        }
+    console.log(response.data);
+    } catch (error) {
+    console.log(error);
     }
-
+    };
 
     return (
         <div className="eventform-container">
