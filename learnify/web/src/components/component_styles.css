@@ -748,4 +748,5 @@
 .search-decider-container {
     justify-content: center;
     padding-top: 18px;
+    cursor: pointer;
 }
