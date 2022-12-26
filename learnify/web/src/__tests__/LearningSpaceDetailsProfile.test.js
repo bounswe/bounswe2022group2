@@ -11,14 +11,21 @@ describe("LearningSpaceDetailsProfile", () => {
     });
 } );
 
-test('learning space details profile renders correctly', async () => {
+test('learning space details profile ls component renders correctly', async () => {
     render(<BrowserRouter><LearningSpaceDetailsProfile /></BrowserRouter>);
     const learningSpaceDetailsProfile = screen.getByTestId(/learning-space-details-profile/i);
     expect(learningSpaceDetailsProfile).toBeInTheDocument();
 }   );
 
-test('learning space details profile image renders correctly', async () => {
+test('learning space details icon image renders correctly', async () => {
     render(<BrowserRouter><LearningSpaceDetailsProfile /></BrowserRouter>);
     const profileImage = screen.getByAltText(/ls-icon-profile/i);
     expect(profileImage).toBeInTheDocument();
 }  );
+
+test('learning space details profile ls component title renders correctly', async () => {
+    render(<BrowserRouter><LearningSpaceDetailsProfile /></BrowserRouter>);
+    const learningSpaceDetailsProfile = screen.getByTestId(/learning-space-details-title/i);
+    expect(learningSpaceDetailsProfile).toBeInTheDocument();
+}   );
+

@@ -20,7 +20,10 @@ exports[`LearningSpaceDetailsProfile should render component layout correctly 1`
   >
     <div
       className="ls-detail-box-title"
-    />
+      data-testid="learning-space-details-title"
+    >
+        
+    </div>
     <div
       className="ls-detail-box-description"
     />
