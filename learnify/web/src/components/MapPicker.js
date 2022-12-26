@@ -41,5 +41,5 @@ const MapContainer = ({ google, onSelectedLocationChange }) => {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBPeTJA3gyDgyj_8mR1zbWJwtFf6tOr530'
+  apiKey: process.env.REACT_APP_MAP_API_KEY
 })(MapContainer);
