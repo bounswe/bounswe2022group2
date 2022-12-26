@@ -101,7 +101,7 @@ exports[`ContactPage should render page layout correctly 1`] = `
       <div
         className="contact-title2"
       >
-        About this page and issue forms:
+        About This Page and Issue Forms:
       </div>
       <div
         className="space-10"

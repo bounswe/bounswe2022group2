@@ -21,7 +21,7 @@ function ContactPage() {
                     <div className='space-20' />
                     <div className='space-10' />
                     <div className='contact-title2'>
-                        About this page and issue forms:
+                         About This Page and Issue Forms:
                     </div>
                     <div className='space-10' />
                     <div className='box-contact'>

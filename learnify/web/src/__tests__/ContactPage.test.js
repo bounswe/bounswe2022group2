@@ -54,6 +54,14 @@ test('contact page form submit button should be clickable', async () => {
     expect(contactPageFormSubmitButton).toBeInTheDocument();
 } );
 
+test('contact page information for users renders correctly', async () => {
+    render(<BrowserRouter><ContactPage /></BrowserRouter>);
+    const contactPageFormNameInput = screen.getByText(/About This Page and Issue Forms/i);
+    expect(contactPageFormNameInput).toBeInTheDocument();
+} );
+
+
+
 
 
 
