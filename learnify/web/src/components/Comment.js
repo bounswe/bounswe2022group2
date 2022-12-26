@@ -9,6 +9,7 @@ export default function Comment(props){
   const creator = props.myComment.creator;
   const content = props.myComment.content;
   const images = props.myComment.images;
+  const postId = props.my_postId;
 
   const [deleteComment, setDeleteComment] = useState(false);
 
@@ -54,52 +55,42 @@ export default function Comment(props){
   const lsid = props.my_lsid;
   
   const handleSubmitEdit  = () => {
-     // editExComment(lsid, commentId, commentTitle, value, imageUrl);
+        localStorage.setItem("commentClicked", true);
+        editExComment(lsid, postId, commentId, value, imageUrl);
   }
-  /*
-  const editExComment = async (lsid, commentId, commentTitle, final, imageUrl) => {
-      console.log(lsid)
-      console.log(commentId)
-      console.log(commentTitle)
-      console.log(final)
-      console.log(imageUrl)
-      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/comment`, {
-          method: "PUT",
-          body: JSON.stringify({
-              ls_id: lsid,
-              comment_id: commentId,
-              title: commentTitle,
-              content: final,
-              images: [imageUrl],
-          }),
-          headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-              'Authorization': `${token}` , 
-          },
-      })
-          .then((response) => {
-              if (response.status === 200) {
-                  console.log("successfull")
-                  
-                  response.json().then( json => {
-                      console.log(json.learningSpace.id)
-                  });
-                  console.log("Learning Space Comment edited successfully!");
-                  window.location.reload();
-              } else {
-                  setMessage("Comment could not be edited!");
-                  response.json().then( json => {
-                      console.log(json.resultMessage);
-                  });
-              }
-          }
-          )
-          .catch((error) => {
-              console.log(error);
-          }
-          );
-  };
-  */
+
+  const editExComment = async (lsid, postId, commentId, final, imageUrl) => {
+        console.log(lsid)
+        console.log(postId)
+        console.log(commentId)
+        console.log(final)
+        console.log(imageUrl)
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/comment`, {
+            method: "PUT",
+            body: JSON.stringify({
+                ls_id: lsid,
+                post_id: postId,
+                comment_id: commentId,
+                content: final,
+                images: [imageUrl],
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `${token}` ,
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log("success")
+                    window.location.reload();
+                } else {
+                    console.log("fail")
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     return(
     <div>
@@ -142,16 +133,6 @@ export default function Comment(props){
                     </div>
                     <div className='post-container-display-item'>
                         <label className="counter__output">{localStorage.getItem(commentId+"downCounter")}</label>
-                    </div>
-                    <div className='ls-button-container2'>
-                        <div className='post-comment-button'>
-                            <a href="/reply">
-                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='post-container-display-item'>
-                        <label className="counter__output">{0}</label>
                     </div>
                 </div>
                 <div className='comment-box-right'>
