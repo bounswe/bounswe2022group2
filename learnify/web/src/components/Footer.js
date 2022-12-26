@@ -28,7 +28,7 @@ export default function Footer() {
                     <div className='footer-column-r'>
                         <a href={`/${currentUser}/learningspaces`} className='footer-item-bold'>My Learning Spaces</a>
                         <a href="/popular" className='footer-item-bold'>Popular Learning Spaces</a>
-                        <a href="/recommended-learning-spaces" className='footer-item-bold'>Recommended Learning Spaces</a>
+                        <a href="/recommended" className='footer-item-bold'>Recommended Learning Spaces</a>
                     </div>
                     <div className='footer-column-r'>
                         {year} © Learnify Team. All rights reserved.
