@@ -42,6 +42,7 @@ class LSService extends ILSService {
   static const String _addComment = '/learningSpace/comment';
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
   static const String _createEvent = '/events';
+  static const String _attendEvent = '/events/participate';
 
   Future<IResponseModel<AnyModel>> randomUsers() async =>
       networkManager.send<AnyModel, AnyModel>(
@@ -138,4 +139,13 @@ class LSService extends ILSService {
           parseModel: const CreateEventResponse(),
           type: RequestTypes.post,
           body: body);
+
+  @override
+  Future<IResponseModel<CreateEventResponse>> attendEvent(
+          String eventId) async =>
+      networkManager.send<AnyModel, CreateEventResponse>(
+        '$_attendEvent/$eventId',
+        parseModel: const CreateEventResponse(),
+        type: RequestTypes.post,
+      );
 }
