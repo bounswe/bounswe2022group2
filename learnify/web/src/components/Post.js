@@ -201,7 +201,7 @@ export default function Post(props){
     console.log("bganno", anno, annotorious?.getImageSnippetById());
 
     // Cleanup: destroy current instance
-    return () => annotorious.destroy();
+    return ;
 }}, []);
 
   useEffect(() => {
