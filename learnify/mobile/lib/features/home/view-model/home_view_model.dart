@@ -18,8 +18,8 @@ class HomeViewModel extends BaseViewModel {
   List<LearningSpace> _takenLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get takenLearningSpaces => _takenLearningSpaces;
 
-  List<LearningSpace> _friendLearningSpaces = <LearningSpace>[];
-  List<LearningSpace> get friendLearningSpaces => _friendLearningSpaces;
+  List<LearningSpace> _topRatedLearningSpaces = <LearningSpace>[];
+  List<LearningSpace> get topRatedLearningSpaces => _topRatedLearningSpaces;
 
   List<LearningSpace> _recommendedLearningSpaces = <LearningSpace>[];
   List<LearningSpace> get recommendedLearningSpaces =>
@@ -28,8 +28,8 @@ class HomeViewModel extends BaseViewModel {
   bool _takenViewAll = false;
   bool get takenViewAll => _takenViewAll;
 
-  bool _friendViewAll = false;
-  bool get friendViewAll => _friendViewAll;
+  bool _topRatedViewAll = false;
+  bool get topRatedViewAll => _topRatedViewAll;
 
   bool _recommendedViewAll = false;
   bool get recommendedViewAll => _recommendedViewAll;
@@ -37,11 +37,11 @@ class HomeViewModel extends BaseViewModel {
 
   void setDefault() {
     _recommendedViewAll = false;
-    _friendViewAll = false;
+    _topRatedViewAll = false;
     _takenViewAll = false;
     _recommendedLearningSpaces = [];
     _takenLearningSpaces = [];
-    _friendLearningSpaces = [];
+    _topRatedLearningSpaces = [];
   }
 
   @override
@@ -72,7 +72,7 @@ class HomeViewModel extends BaseViewModel {
   @override
   void disposeViewModel() {
     _takenLearningSpaces.clear();
-    _friendLearningSpaces.clear();
+    _topRatedLearningSpaces.clear();
     _recommendedLearningSpaces.clear();
   }
 
@@ -95,10 +95,11 @@ class HomeViewModel extends BaseViewModel {
     //   }
     // }
     if (_takenLearningSpaces.isNotEmpty ||
-        _friendLearningSpaces.isNotEmpty ||
+        _topRatedLearningSpaces.isNotEmpty ||
         _recommendedLearningSpaces.isNotEmpty) return;
     await _getLearningSpaces();
     await _getTakenLearningSpaces();
+    await _getRecommendedLearningSpaces();
   }
 
   Future<String?> _getLearningSpaces() async {
@@ -114,9 +115,9 @@ class HomeViewModel extends BaseViewModel {
         await _homeService.getLearningSpaces();
     final GetLearningSpacesResponse? respData = resp.data;
     if (resp.hasError || respData == null) return resp.error?.errorMessage;
-    _recommendedLearningSpaces = respData.learningSpaces;
+    _topRatedLearningSpaces = respData.learningSpaces;
     if (_takenLearningSpaces.length > 8) _takenViewAll = true;
-    if (_friendLearningSpaces.length > 8) _friendViewAll = true;
+    if (_topRatedLearningSpaces.length > 8) _topRatedViewAll = true;
     if (_recommendedLearningSpaces.length > 8) _recommendedViewAll = true;
     return null;
   }
@@ -139,8 +140,8 @@ class HomeViewModel extends BaseViewModel {
     } else {
       if (learningSpacesType == TextKeys.takenLearningSpaces) {
         expectedLearningSpaces = _takenLearningSpaces;
-      } else if (learningSpacesType == TextKeys.friendLearningSpaces) {
-        expectedLearningSpaces = _friendLearningSpaces;
+      } else if (learningSpacesType == TextKeys.topRatedLearningSpaces) {
+        expectedLearningSpaces = _topRatedLearningSpaces;
       } else if (learningSpacesType == TextKeys.recommendedLearningSpaces) {
         expectedLearningSpaces = _recommendedLearningSpaces;
       } else {
@@ -160,8 +161,8 @@ class HomeViewModel extends BaseViewModel {
     if (learningSpacesType == TextKeys.takenLearningSpaces) {
       return _takenViewAll;
     }
-    if (learningSpacesType == TextKeys.friendLearningSpaces) {
-      return _friendViewAll;
+    if (learningSpacesType == TextKeys.topRatedLearningSpaces) {
+      return _topRatedViewAll;
     }
     if (learningSpacesType == TextKeys.recommendedLearningSpaces) {
       return _recommendedViewAll;
@@ -196,6 +197,24 @@ class HomeViewModel extends BaseViewModel {
     return null;
   }
 
+  Future<String?> _getRecommendedLearningSpaces() async {
+    await operation?.cancel();
+    operation = CancelableOperation<String?>.fromFuture(
+        _getRecommendedLearningSpacesRequest());
+    final String? res = await operation?.valueOrCancellation();
+    return res;
+  }
+
+  Future<String?> _getRecommendedLearningSpacesRequest() async {
+    final IResponseModel<GetLearningSpacesResponse> resp =
+        await _homeService.getRecommendedLearningSpaces();
+    final GetLearningSpacesResponse? respData = resp.data;
+    if (resp.hasError || respData == null) return resp.error?.errorMessage;
+    _recommendedLearningSpaces = respData.learningSpaces;
+    if (_recommendedLearningSpaces.length > 8) _recommendedViewAll = true;
+    return null;
+  }
+
   void addToTakenLearningSpaces(LearningSpace? learningSpace) {
     if (learningSpace != null) {
       _takenLearningSpaces.add(learningSpace);
@@ -213,12 +232,12 @@ class HomeViewModel extends BaseViewModel {
       _takenLearningSpaces = newList;
     }
     final int friendIndex =
-        _friendLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
+        _topRatedLearningSpaces.indexWhere((LearningSpace l) => l.id == ls.id);
     if (friendIndex != -1) {
       final List<LearningSpace> newList =
-          List<LearningSpace>.from(_friendLearningSpaces);
+          List<LearningSpace>.from(_topRatedLearningSpaces);
       newList[friendIndex] = ls;
-      _friendLearningSpaces = newList;
+      _topRatedLearningSpaces = newList;
     }
     final int recommendedIndex = _recommendedLearningSpaces
         .indexWhere((LearningSpace l) => l.id == ls.id);
