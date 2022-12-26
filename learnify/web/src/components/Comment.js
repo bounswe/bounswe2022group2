@@ -9,6 +9,7 @@ export default function Comment(props){
   const creator = props.myComment.creator;
   const content = props.myComment.content;
   const images = props.myComment.images;
+  const postId = props.my_postId;
 
   const [upCounter, setUpCounter] = useState(0);
   const [downCounter, setDownCounter] = useState(0);
@@ -42,8 +43,9 @@ export default function Comment(props){
   const lsid = props.my_lsid;
   
   const handleSubmitEdit  = () => {
-     // editExComment(lsid, commentId, commentTitle, value, imageUrl);
+        localStorage.setItem("commentClicked", true);
   }
+
   /*
   const editExComment = async (lsid, commentId, commentTitle, final, imageUrl) => {
       console.log(lsid)
@@ -130,16 +132,6 @@ export default function Comment(props){
                     </div>
                     <div className='post-container-display-item'>
                         <label className="counter__output">{downCounter}</label>
-                    </div>
-                    <div className='ls-button-container2'>
-                        <div className='post-comment-button'>
-                            <a href="/reply">
-                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='post-container-display-item'>
-                        <label className="counter__output">{0}</label>
                     </div>
                 </div>
                 <div className='comment-box-right'>
