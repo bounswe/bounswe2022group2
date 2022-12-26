@@ -156,7 +156,10 @@ function HomePage() {
                                 Recommended Learning Spaces
                             </label>
                         </div>
-                        <button className='ls-box-button'>
+                        <button className='ls-box-button' onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href=`/recommended`;
+                            }}>
                             view all
                         </button>
                     </div>
