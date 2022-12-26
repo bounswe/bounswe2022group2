@@ -2,6 +2,7 @@ import '../../../core/constants/enums/request_types.dart';
 import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../model/ls_search_response_model.dart';
+import '../model/user_search_response_model.dart';
 import 'i_search_service.dart';
 
 class SearchService extends ISearchService {
@@ -26,11 +27,11 @@ class SearchService extends ISearchService {
       );
 
   @override
-  Future<IResponseModel<AnyModel>> searchUser(String searchedItem) async =>
-      networkManager.send<AnyModel, AnyModel>(
-        _search,
-        queryParameters: {"query": searchedItem},
-        parseModel: const AnyModel(),
+  Future<IResponseModel<UserSearchResponse>> searchUser(
+          String searchedItem) async =>
+      networkManager.send<AnyModel, UserSearchResponse>(
+        '$_search/$searchedItem',
+        parseModel: const UserSearchResponse(),
         type: RequestTypes.get,
       );
 }

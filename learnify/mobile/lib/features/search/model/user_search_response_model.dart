@@ -1,12 +1,10 @@
 import '../../../core/base/model/base_model.dart';
-import '../../learning-space/models/learning_space_model.dart';
 
 class UserSearchResponse extends BaseModel<UserSearchResponse> {
   const UserSearchResponse({this.users = const <String>[]});
 
   factory UserSearchResponse.fromJson(Map<String, dynamic> json) =>
-      UserSearchResponse(
-          users:BaseModel.getByType<List<String>>?(json['users']),);
+      UserSearchResponse(users: BaseModel.getList<String>(json['users']));
 
   final List<String> users;
 
@@ -15,14 +13,11 @@ class UserSearchResponse extends BaseModel<UserSearchResponse> {
       UserSearchResponse.fromJson(json);
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        'resultMessage': resultMessage,
-        'learning_spaces':
-            BaseModel.embeddedListToJson<LearningSpace>(resultLearningSpaces),
+        'users': BaseModel.primitiveToJson(users),
       };
 
   @override
   List<Object?> get props => <Object?>[
-        resultMessage,
-        resultLearningSpaces,
+        users,
       ];
 }

@@ -11,6 +11,7 @@ import '../../home/service/I_home_service.dart';
 import '../../home/service/home_service.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/ls_search_response_model.dart';
+import '../model/user_search_response_model.dart';
 import '../service/i_search_service.dart';
 import '../service/search_service.dart';
 import '../view/search_screen.dart';
@@ -91,6 +92,16 @@ class SearchViewModel extends BaseViewModel {
     notifyListeners();
   }
 
+  void clearUserResults() {
+    _resultUsers = allUsers;
+    notifyListeners();
+  }
+
+  void clearLearningSpaceResults() {
+    _resultLearningSpaces = _recommendedLearningSpaces;
+    notifyListeners();
+  }
+
   Future<void> _controllerListener() async {
     if (searchController.text.isEmpty) return;
     notifyListeners();
@@ -131,19 +142,31 @@ class SearchViewModel extends BaseViewModel {
         await _searchService.searchLs(_searchController.text);
     final LsSearchResponse? respDataLS = responseLS.data;
 
-    final IResponseModel<AnyModel> responseUser =
+    final IResponseModel<UserSearchResponse> responseUser =
         await _searchService.searchUser(_searchController.text);
-    final AnyModel? respDataUser = responseUser.data;
+    final UserSearchResponse? respDataUser = responseUser.data;
 
-    if (responseLS.hasError || respDataLS == null) {
+    if (responseLS.hasError || responseUser.hasError) {
       clearResults();
+      print(responseLS.error?.errorMessage ?? responseUser.error?.errorMessage);
       return responseLS.error?.errorMessage;
     }
+    if (respDataLS == null) {
+      clearLearningSpaceResults();
+      return null;
+    }
+
+    if (respDataUser == null) {
+      clearUserResults();
+      return null;
+    }
+
     if (respDataLS.resultLearningSpaces.isEmpty) {
       _resultLearningSpaces = _recommendedLearningSpaces;
     } else {
       _resultLearningSpaces = respDataLS.resultLearningSpaces;
     }
+
     notifyListeners();
     return null;
   }
