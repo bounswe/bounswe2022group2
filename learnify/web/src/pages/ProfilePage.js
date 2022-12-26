@@ -42,7 +42,7 @@ function ProfilePage() {
 
                 <div className='space-80'/>
             
-                <AboutUser bio={bio} />
+                <AboutUser bio={bio} userviewed={username}/>
                 
 
                 <div className='space-80'/>
