@@ -26,7 +26,7 @@ function ProfilePage() {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}user/${username}`)
             setProfilePicture(res.data.profile_picture)
             setBio(res.data.bio)
-            setLearningSpaces(res.data.participated)
+            setLearningSpaces([...res.data.participated, ...res.data.created]);
             console.log(res.data)
             console.log(res.data.bio)
         }
