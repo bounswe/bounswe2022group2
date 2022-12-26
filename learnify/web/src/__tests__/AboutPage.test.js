@@ -17,4 +17,10 @@ describe('AboutPage', () => {
     expect(footer).toBeInTheDocument();
   });
 
+  it('should render the Markdown editor for the main content', () => {
+    const { getByTestId } = render(<AboutPage />);
+    const mainEditor = getByTestId('main-editor');
+    expect(mainEditor).toBeInTheDocument();
+  });
+
 });
