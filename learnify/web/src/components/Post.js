@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "@recogito/recogito-js/dist/recogito.min.css";
 import {useEffect, useRef } from "react";
 import { Recogito } from "@recogito/recogito-js";
@@ -236,6 +237,7 @@ export default function Post(props){
   const upvotes = props.myPost.upvote;
   const downvotes = props.myPost.downvote;
   const lsid = props.my_lsid;
+  const profileLink = `/profile/${creator}`;
 
   const [deletePost, setDeletePost] = useState(false);
 
@@ -468,7 +470,9 @@ useEffect(() => {
                         </label>
                     </div>
                     <div className='post-owner-display-item'>
-                        {creator}
+                    <Link to={profileLink} className='commentsText'>
+                    {creator}
+                    </Link>
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-edit-icon-container'>

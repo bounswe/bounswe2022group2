@@ -798,6 +798,12 @@
     text-decoration: none;
     color: #FFF7E9;
 }
+.commentsText{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #1746A2;
+}
 
 .search-decider-container {
     justify-content: center;
