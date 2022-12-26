@@ -7,13 +7,6 @@ import CreateLearningSpaceButton from '../components/CreateLearningSpaceButton';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import axios from 'axios';
-import lslogo_13 from '../images/ls_icons/ls-icon-13.svg'
-import lslogo_6 from '../images/ls_icons/ls-icon-6.svg'
-import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
-import lslogo_19 from '../images/ls_icons/ls-icon-19.svg'
-import lslogo_18 from '../images/ls_icons/ls-icon-18.svg'
-import lslogo_17 from '../images/ls_icons/ls-icon-17.svg'
-import lslogo_16 from '../images/ls_icons/ls-icon-16.svg'
 
 
 function HomePage() {
