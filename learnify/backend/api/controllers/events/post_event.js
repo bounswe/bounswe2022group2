@@ -53,7 +53,7 @@ export default async (req, res) => {
     eventCreator: username,
     geolocation: req.body.geolocation,
     lsId : req.body.lsId,
-    participationLimit: req.bodyparticipationLimit
+    participationLimit: req.body.participationLimit
   });
 
   event.participants.push(username);
