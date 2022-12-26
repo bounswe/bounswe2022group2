@@ -5,6 +5,8 @@ export default function Footer() {
 
     const year = new Date().getFullYear();
 
+    const currentUser = localStorage.getItem('username')
+
     return (
         <div className='footer-parent-layout' data-testid="footer">
             <div className='footer-container'>
