@@ -13,6 +13,7 @@ import '../../auth/verification/model/user_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/get_profile_response_model.dart';
 import '../model/profile_model.dart';
+import '../model/profile_without_lists_model.dart';
 import '../model/update_profile_request_model.dart';
 import '../model/update_profile_response_model.dart';
 import '../service/profile_service.dart';
@@ -100,6 +101,8 @@ class ProfileViewModel extends BaseViewModel {
       _canUpdate = true;
       final Uint8List bytes = File(pickedFile.path).readAsBytesSync();
       final String base64Image = "data:image/png;base64,${base64Encode(bytes)}";
+      print(base64Image);
+      print("AhahshaHDSHhsdhsahsdhdsDHSAhsd");
       _isImagePicked = true;
       _selectedImage = base64Image;
       notifyListeners();
@@ -123,7 +126,8 @@ class ProfileViewModel extends BaseViewModel {
         biographyFormKey.currentState?.validate() ?? false;
     if (!isBiographyValid) return null;
     final UpdateProfileRequest request = UpdateProfileRequest(
-      bio: _biographyController.text, //_selectedImage,
+      bio: _biographyController.text,
+      profilePicture: _selectedImage,
     );
 
     final IResponseModel<UpdateProfileResponse> response =
@@ -131,19 +135,21 @@ class ProfileViewModel extends BaseViewModel {
     final UpdateProfileResponse? respData = response.data;
 
     if (response.hasError || respData == null) {
+      print("------------------");
       print('error: ${response.error?.errorMessage}');
       return response.error?.errorMessage;
     }
-    print('respData: $respData');
-    final Profile? responseProfile = respData.profile;
+
+    final ProfileThatResponseOfUpdateProfile? responseProfile =
+        respData.profile;
     if (responseProfile != null) {
       _profile = Profile(
         username: responseProfile.username,
         email: _user.email,
         bio: responseProfile.bio,
         profilePicture: responseProfile.profilePicture,
-        participated: responseProfile.participated,
-        created: responseProfile.created,
+        participated: _profile.participated,
+        created: _profile.created,
       );
       notifyListeners();
     }

@@ -44,7 +44,7 @@ class _ProfileForm extends StatelessWidget {
         labelText: TextKeys.biography,
         prefixIcon: Icons.contact_support_outlined,
         textInputAction: TextInputAction.done,
-        textInputType: TextInputType.multiline,
+        textInputType: TextInputType.text,
         maxLength: 200,
         padding: const EdgeInsets.all(10),
       );

@@ -1,5 +1,5 @@
 import '../../../core/base/model/base_model.dart';
-import 'profile_model.dart';
+import 'profile_without_lists_model.dart';
 
 class UpdateProfileResponse extends BaseModel<UpdateProfileResponse> {
   const UpdateProfileResponse({
@@ -10,11 +10,13 @@ class UpdateProfileResponse extends BaseModel<UpdateProfileResponse> {
   factory UpdateProfileResponse.fromJson(Map<String, dynamic> json) =>
       UpdateProfileResponse(
         resultMessage: BaseModel.getByType<String>(json['resultMessage']),
-        profile: BaseModel.getByType<Profile>(json['profile']),
+        profile:
+            BaseModel.embeddedModelFromJson<ProfileThatResponseOfUpdateProfile>(
+                json['profile'], const ProfileThatResponseOfUpdateProfile()),
       );
 
   final String? resultMessage;
-  final Profile? profile;
+  final ProfileThatResponseOfUpdateProfile? profile;
 
   @override
   UpdateProfileResponse fromJson(Map<String, dynamic> json) =>
@@ -23,7 +25,9 @@ class UpdateProfileResponse extends BaseModel<UpdateProfileResponse> {
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
         'resultMessage': resultMessage,
-        'profile': profile,
+        'profile':
+            BaseModel.embeddedModelToJson<ProfileThatResponseOfUpdateProfile>(
+                profile),
       };
 
   @override
