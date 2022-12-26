@@ -137,7 +137,11 @@
   "create_event_duration_hint": "Enter a duration for event in minutes",
   "create_event_duration_label": "Duration of Event",
   "select_date_time": "Select a date and a time",
-  "current_geolocation": "Current Geolocation",
+  "current_latitude": "Current Latitude",
+  "current_longitude": "Current Longitude",
   "current_accuracy": "Current Accuracy",
-  "change_geolocation": "Change Geolocation"
+  "change_geolocation": "Change Geolocation",
+  "add_comment": "Comment",
+  "add_comment_hint": "Insert Comment Here",
+  "view_comments": "View All Comments"
 }

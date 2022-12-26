@@ -21,7 +21,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
             builder: _builder,
             appBar: _appBarBuilder,
             futureInit: (BuildContext context) async =>
-                context.read<LearningSpaceViewModel>().setGeolocation(),
+                context.read<LearningSpaceViewModel>().setInitialGeolocation(),
             key: key,
             scrollable: true);
 
@@ -127,11 +127,18 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  BaseText(TextKeys.currentGeolocation,
+                  BaseText(TextKeys.currentLatitude,
                       style: context.titleSmall, color: Colors.black),
                   context.sizedW(2),
-                  Text(
-                      "(${model.geolocation.latitude}, ${model.geolocation.longitude})")
+                  Text("${model.geolocation.latitude}")
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  BaseText(TextKeys.currentLongitude,
+                      style: context.titleSmall, color: Colors.black),
+                  context.sizedW(2),
+                  Text("${model.geolocation.longitude}")
                 ],
               ),
               Row(

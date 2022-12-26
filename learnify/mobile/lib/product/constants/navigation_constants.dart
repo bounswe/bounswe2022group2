@@ -15,5 +15,6 @@ class NavigationConstants {
   static const String postImage = '/post-image';
   static const String addEditPost = "/add-edit-post";
   static const String settings = "/settings";
-  static const String createEvent = "create-event";
+  static const String createEvent = "/create-event";
+  static const String comments = '/comments';
 }

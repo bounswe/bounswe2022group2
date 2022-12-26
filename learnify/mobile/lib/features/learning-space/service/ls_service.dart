@@ -8,6 +8,8 @@ import '../models/annotation/annotation_model.dart';
 import '../models/annotation/create_annotation_response.dart';
 import '../models/annotation/get_annotations_response.dart';
 import '../models/categories_response_model.dart';
+import '../models/comment/add_comment_request_model.dart';
+import '../models/comment/add_comment_response_model.dart';
 import '../models/create_ls_request_model.dart';
 import '../models/create_ls_response_model.dart';
 import '../models/edit_post_request_model.dart';
@@ -35,7 +37,7 @@ class LSService extends ILSService {
   static const String _createAnnotation = '/annotations-service/create';
   static const String _getAnnotations = '/annotations-service/get';
   static const String _getEvents = '/events/ls';
-
+  static const String _addComment = '/learningSpace/comment';
   static const String _randomUserData = 'https://randomuser.me/api/?results=50';
 
   Future<IResponseModel<AnyModel>> randomUsers() async =>
@@ -114,5 +116,15 @@ class LSService extends ILSService {
         '$_getEvents/$lsId',
         parseModel: const GetEventsResponse(),
         type: RequestTypes.get,
+      );
+
+  @override
+  Future<IResponseModel<AddCommentResponse>> addComment(
+          CommentRequestModel body) async =>
+      networkManager.send<CommentRequestModel, AddCommentResponse>(
+        _addComment,
+        parseModel: const AddCommentResponse(),
+        type: RequestTypes.post,
+        body: body,
       );
 }
