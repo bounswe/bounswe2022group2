@@ -26,7 +26,7 @@ function ProfilePage() {
             const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}user/${username}`)
             setProfilePicture(res.data.profile_picture)
             setBio(res.data.bio)
-            setLearningSpaces(res.data.participated)
+            setLearningSpaces([...res.data.participated, ...res.data.created]);
             console.log(res.data)
             console.log(res.data.bio)
         }
@@ -42,7 +42,7 @@ function ProfilePage() {
 
                 <div className='space-80'/>
             
-                <AboutUser bio={bio} />
+                <AboutUser bio={bio} userviewed={username}/>
                 
 
                 <div className='space-80'/>
@@ -52,7 +52,7 @@ function ProfilePage() {
 
             <div className='profile-page-middle'>
 
-                <ProfilePhoto profilePicture={profilePicture} />
+                <ProfilePhoto profilePicture={profilePicture} userviewed={username}/>
                 <div>
                 <UserNameProfile user = {username}/>
                 </div>
