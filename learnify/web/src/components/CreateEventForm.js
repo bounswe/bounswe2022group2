@@ -6,13 +6,10 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import TextField from '@mui/material/TextField';
-// import MapPicker from 'react-google-map-picker'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import MapContainer from './MapPicker'
 import axios from 'axios';
-
-// const DefaultZoom = 10;
 
 const EventForm = (lsid) => {
 
@@ -43,26 +40,11 @@ const EventForm = (lsid) => {
         setGeolocation({accuracy: 1, longitude: location.lng, latitude: location.lat});
     }
 
-    // console.log(selectedLocation);
-    
-    // const [defaultLocation, setDefaultLocation] = useState({ lat: 41, lng: 29 });
-    // const [location, setLocation] = useState(defaultLocation);
     const [geolocation, setGeolocation] = useState({accuracy: 1, longitude: 29, latitude: 41});
-    // const [zoom, setZoom] = useState(DefaultZoom);
-    // const apiKey = process.env.REACT_APP_MAP_API_KEY;
 
     const toggle = () => {
         setOpen(!open);
       };
-
-    // const handleChangeLocation = (lat, lng) => {
-    //     setLocation({lat:lat, lng:lng});
-    //     setGeolocation({accuracy: 1, longitude: lng, latitude: lat});
-    // }
-
-    // const handleZoomChange = (zoom) => {
-    //     setZoom(zoom);
-    // }
 
     const handleEventTitleChange = (event) => {
         setEventTitle(event.target.value);
