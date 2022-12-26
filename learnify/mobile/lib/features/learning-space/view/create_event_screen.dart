@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:positioned_tap_detector_2/positioned_tap_detector_2.dart';
 import 'package:provider/provider.dart';
+
 import '../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
@@ -10,9 +14,11 @@ import '../../../core/widgets/buttons/action_button.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text-field/custom_text_form_field.dart';
 import '../../../core/widgets/text/base_text.dart';
+import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../home/view-model/home_view_model.dart';
 import '../constants/widget_keys.dart';
+import '../models/geolocation/geolocation_model.dart';
 import '../view-model/learning_space_view_model.dart';
 
 part 'components/create/event_form.dart';
@@ -100,22 +106,19 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                   firstDate: DateTime(2000),
                   lastDate: DateTime(2100));
 
-              if (selectedDate == null) {
+              if (selectedDate == null || passedDate(selectedDate)) {
                 model.setIsDateSelected();
                 return;
               }
-
-              if (passedDate(selectedDate)) return;
 
               final TimeOfDay? selectedTime = await showTimePicker(
                   context: context, initialTime: TimeOfDay.now());
 
-              if (selectedTime == null) {
+              if (selectedTime == null ||
+                  (isToday(selectedDate) && passedTime(selectedTime))) {
                 model.setIsDateSelected();
                 return;
               }
-
-              if (isToday(selectedDate) && passedTime(selectedTime)) return;
 
               model.pickDateTime(selectedDate, selectedTime);
             },
@@ -123,52 +126,84 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
         ));
   }
 
-  static Widget _geolocationField(BuildContext context) {
+  static Widget _geolocationSelectionField(BuildContext context) {
     final LearningSpaceViewModel model = context.read<LearningSpaceViewModel>();
-    return Container(
+    return Padding(
+        padding: EdgeInsets.only(top: context.height * 1.8),
+        child: SizedBox(
+          height: context.height * 22,
+          child: SelectorHelper<Marker, LearningSpaceViewModel>().builder(
+            (_, LearningSpaceViewModel lsViewModel) => Marker(
+                width: context.width * 12,
+                height: context.width * 12,
+                point: LatLng(
+                    model.geolocation.latitude, model.geolocation.longitude),
+                builder: (_) => Image.asset(IconKeys.locationMarker)),
+            (_, Marker marker, __) => FlutterMap(
+              options: MapOptions(
+                  center: marker.point,
+                  maxZoom: 19,
+                  onTap: (TapPosition tapPosition, LatLng latlng) {
+                    model.setGeolocation(latlng.latitude, latlng.longitude);
+                  }),
+              children: <Widget>[
+                TileLayer(
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: 'com.bounswe.learnify',
+                ),
+                MarkerLayer(
+                  markers: <Marker>[
+                    Marker(
+                      width: context.width * 12,
+                      height: context.width * 12,
+                      point: marker.point,
+                      builder: (_) => Image.asset(IconKeys.locationMarker),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+
+  static Widget _geolocationField(BuildContext context) => Container(
       width: context.maxPossibleWidth,
       margin: EdgeInsets.symmetric(horizontal: context.width * 7),
       child: Padding(
-          padding: EdgeInsets.all(context.width * 2),
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  BaseText(TextKeys.currentLatitude,
-                      style: context.titleSmall, color: Colors.black),
-                  context.sizedW(2),
-                  Text("${model.geolocation.latitude}")
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  BaseText(TextKeys.currentLongitude,
-                      style: context.titleSmall, color: Colors.black),
-                  context.sizedW(2),
-                  Text("${model.geolocation.longitude}")
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  BaseText(TextKeys.currentAccuracy,
-                      style: context.titleSmall, color: Colors.black),
-                  context.sizedW(2),
-                  Text("${model.geolocation.accuracy}")
-                ],
-              ),
-              context.sizedH(2),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).colorScheme.secondary),
-                  child: BaseText(TextKeys.changeGeolocation,
-                      style: context.titleMedium,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                  onPressed: () async {})
-            ],
-          )),
-    );
-  }
+        padding: EdgeInsets.all(context.width * 2),
+        child: SelectorHelper<GeoLocation, LearningSpaceViewModel>().builder(
+            (_, LearningSpaceViewModel lsViewModel) => lsViewModel.geolocation,
+            (_, GeoLocation geolocation, __) => Column(
+                  children: <Widget>[
+                    _geolocationSelectionField(context),
+                    Row(
+                      children: <Widget>[
+                        BaseText(TextKeys.currentLatitude,
+                            style: context.titleSmall, color: Colors.black),
+                        context.sizedW(2),
+                        Text("${geolocation.latitude}")
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        BaseText(TextKeys.currentLongitude,
+                            style: context.titleSmall, color: Colors.black),
+                        context.sizedW(2),
+                        Text("${geolocation.longitude}")
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        BaseText(TextKeys.currentAccuracy,
+                            style: context.titleSmall, color: Colors.black),
+                        context.sizedW(2),
+                        Text("${geolocation.accuracy}")
+                      ],
+                    ),
+                  ],
+                )),
+      ));
 
   static Widget _doneButton() =>
       SelectorHelper<bool, LearningSpaceViewModel>().builder(
@@ -188,6 +223,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
                 await spaceViewModel.createEvent();
                 homeViewModel.updateLs(spaceViewModel.learningSpace);
                 NavigationManager.instance.pop();
+                return null;
               }));
 }
 

@@ -254,7 +254,7 @@ class LearningSpaceViewModel extends BaseViewModel {
 
       final List<Comment> initialComments = comments[postId] ?? <Comment>[];
       final List<Comment> updatedComments = List<Comment>.from(initialComments)
-        ..add(comment!);
+        ..add(comment);
       comments[postId ?? ''] = updatedComments;
       final int itemIndex = _posts
           .indexWhere((Post c) => c.id?.compareWithoutCase(postId) ?? false);
@@ -606,6 +606,14 @@ class LearningSpaceViewModel extends BaseViewModel {
     _geolocation = tempGeolocation;
   }
 
+  void setGeolocation(double latitude, double longitude) {
+    _geolocation = GeoLocation(
+        latitude: latitude,
+        longitude: longitude,
+        accuracy: _geolocation.accuracy);
+    notifyListeners();
+  }
+
   Future<String?> createEvent() async {
     await operation?.cancel();
     operation = CancelableOperation<String?>.fromFuture(_createEventRequest());
@@ -630,7 +638,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     }
     final Event? event = response.data?.event;
     if (event == null) {
-      return "Learning Space not found";
+      return "Event cannot be created";
     }
     events.forEach((String key, List<Event> value) {
       if (key == _learningSpace?.id && !value.contains(event)) {
