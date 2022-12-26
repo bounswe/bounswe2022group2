@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
@@ -10,17 +10,29 @@ export default function Comment(props){
   const content = props.myComment.content;
   const images = props.myComment.images;
 
-  const [upCounter, setUpCounter] = useState(0);
-  const [downCounter, setDownCounter] = useState(0);
   const [deleteComment, setDeleteComment] = useState(false);
 
   const [imageUrl, setImageUrl] = useState("");
 
+  useEffect(()=>{
+        if(localStorage.getItem(commentId+"upCounter") === null)
+            localStorage.setItem(commentId+"upCounter", 0);
+
+        if(localStorage.getItem(commentId+"downCounter") === null)
+            localStorage.setItem(commentId+"downCounter", 0);
+  })
+
   const increaseUp = () => {
-      setUpCounter(count => count + 1);
+      localStorage.setItem((commentId+"upClicked"), true);
+      localStorage.setItem(commentId+"upCounter", (1+parseInt(localStorage.getItem(commentId+"upCounter"))));
+      localStorage.setItem("commentClicked", true);
+      window.location.reload();
   };
   const increaseDown = () => {
-      setDownCounter(count => count + 1);
+      localStorage.setItem((commentId+"downClicked"), true);
+      localStorage.setItem(commentId+"downCounter", (1+parseInt(localStorage.getItem(commentId+"downCounter"))));
+      localStorage.setItem("commentClicked", true);
+      window.location.reload();
   };
   const deleteTheComment = () => {
       setDeleteComment(current => !current);
@@ -117,19 +129,19 @@ export default function Comment(props){
                 <div className='post-box-left'>
                     <div className='ls-button-container2'>
                         <button className='post-upvote-button'>
-                            <FontAwesomeIcon icon={solid('caret-up')} color="green" onClick={increaseUp}/>
+                            <FontAwesomeIcon icon={solid('caret-up')} color={localStorage.getItem((commentId+"upClicked")) ? "green": "black"} onClick={(localStorage.getItem((commentId+"upClicked")) || localStorage.getItem((commentId+"downClicked"))) ? console.log('onclick..') : increaseUp}/>
                         </button>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{upCounter}</label>
+                        <label className="counter__output">{localStorage.getItem(commentId+"upCounter")}</label>
                     </div>
                     <div className='ls-button-container2'>
                         <button className='post-downvote-button'>
-                            <FontAwesomeIcon icon={solid('caret-down')} color="red" onClick={increaseDown}/>
+                            <FontAwesomeIcon icon={solid('caret-down')} color={localStorage.getItem((commentId+"downClicked")) ? "red": "black"} onClick={(localStorage.getItem((commentId+"upClicked")) || localStorage.getItem((commentId+"downClicked"))) ? console.log('onclick..') : increaseDown}/>
                         </button>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{downCounter}</label>
+                        <label className="counter__output">{localStorage.getItem(commentId+"downCounter")}</label>
                     </div>
                     <div className='ls-button-container2'>
                         <div className='post-comment-button'>
