@@ -11,12 +11,12 @@ export default function Participants(props) {
     return(
         <div>
             {props.creator === props.participant ? (
-                <Link to={profileLink} className='participantsText'>
+                <Link to={profileLink} className='contributorsText'>
                     <FontAwesomeIcon icon={solid('user-astronaut')} /> {props.participant}
                 </Link>
             
             ) : (
-                <Link to={profileLink} className='participantsText'>
+                <Link to={profileLink} className='contributorsText'>
                     <FontAwesomeIcon icon={solid('user-graduate')} /> {props.participant}
                 </Link>
             )}

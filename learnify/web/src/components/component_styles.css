@@ -790,14 +790,22 @@
     overflow: hidden;
     box-shadow: 0px 2px 5px 1px rgba(120,120,120,0.52);
 }
-  
 
-  .participantsText{
+.contributorsText{
+    font-family: 'Open Sans' sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #FFF7E9;
+}
+
+  
+.participantsText{
     font-family: 'Open Sans' sans-serif;
     font-size: 18px;
     text-decoration: none;
     color: #1746A2;
 }
+
 .commentsText{
     font-family: 'Open Sans' sans-serif;
     font-size: 18px;
