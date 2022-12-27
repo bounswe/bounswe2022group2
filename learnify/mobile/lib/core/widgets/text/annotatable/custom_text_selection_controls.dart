@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../../../../features/learning-space/models/annotation_model.dart';
+import '../../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../../product/theme/dark_theme.dart';
 import '../../../extensions/context/context_extensions.dart';
 import '../../../extensions/context/theme_extensions.dart';
@@ -212,14 +212,14 @@ class MyTextSelectionToolbarState extends State<MyTextSelectionToolbar> {
                     translated: false,
                     style: (widget.textStyles?.length ?? 0) > i
                         ? (widget.textStyles![i] ??
-                            TextStyle(color: context.lightActiveColor))
-                        : TextStyle(color: context.lightActiveColor),
+                            TextStyle(color: context.lightDarkActiveColor))
+                        : TextStyle(color: context.lightDarkActiveColor),
                   ),
           ),
           SizedBox(
             height: context.height * 5,
             child: CustomVerticalDivider(
-                color: context.lightActiveColor, thickness: .4, indent: 0),
+                color: context.lightDarkActiveColor, thickness: .4, indent: 0),
           ),
         ]
       ],

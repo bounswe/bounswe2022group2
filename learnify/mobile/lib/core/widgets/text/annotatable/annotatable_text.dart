@@ -1,10 +1,9 @@
 import 'dart:collection';
 
-import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../features/learning-space/models/annotation_model.dart';
+import '../../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../../product/language/language_keys.dart';
 import '../../../constants/main_type_definitions.dart';
 import '../../../extensions/context/theme_extensions.dart';
@@ -16,7 +15,7 @@ import 'custom_text_selection_controls.dart';
 class AnnotatableText extends StatelessWidget {
   const AnnotatableText({
     required this.content,
-    required this.annotations,
+    required this.allAnnotations,
     required this.onAnnotationClick,
     required this.annotateLabel,
     required this.annotateCallback,
@@ -29,7 +28,7 @@ class AnnotatableText extends StatelessWidget {
 
   final List<CustomAnnotatableItem>? items;
 
-  final List<Annotation> annotations;
+  final List<Annotation> allAnnotations;
 
   final List<TextStyle?>? textStyles;
 
@@ -37,11 +36,14 @@ class AnnotatableText extends StatelessWidget {
 
   final String? annotateLabel;
 
-  final Function(int startIndex, int endIndex)? annotateCallback;
+  final AnnotateCallback? annotateCallback;
 
   @override
   Widget build(BuildContext context) {
-    final List<_AnnotatableTextItem> mergedAnnotations = _mergeAnnotations;
+    final List<Annotation> annotations =
+        allAnnotations.where((Annotation e) => !e.isImage).toList();
+    final List<_AnnotatableTextItem> mergedAnnotations =
+        _mergeAnnotations(annotations);
     return SelectableText.rich(
       TextSpan(
         style: context.bodyMedium,
@@ -72,28 +74,28 @@ class AnnotatableText extends StatelessWidget {
                 },
               ),
       ),
+      textAlign: TextAlign.start,
       selectionControls: CustomTextSelectionControls(
-        items: <CustomAnnotatableItem>[
-          CustomAnnotatableItem(controlType: SelectionControlType.copy),
-          CustomAnnotatableItem(
-            controlType: SelectionControlType.other,
-            label: annotateLabel,
-            onPressedAnnotation: annotateCallback,
-          ),
-        ],
+        items: items ??
+            <CustomAnnotatableItem>[
+              CustomAnnotatableItem(controlType: SelectionControlType.copy),
+              CustomAnnotatableItem(
+                controlType: SelectionControlType.other,
+                label: annotateLabel,
+                onPressedAnnotation: annotateCallback,
+              ),
+            ],
         annotations: annotations,
         textStyles: textStyles,
       ),
     );
   }
 
-  List<_AnnotatableTextItem> get _mergeAnnotations {
+  List<_AnnotatableTextItem> _mergeAnnotations(List<Annotation> annotations) {
     final SplayTreeSet<int> indexes =
-        SplayTreeSet<int>.from(<int>{0}..add(content.length - 1));
+        SplayTreeSet<int>.from(<int>{0, content.length});
     for (final Annotation a in annotations) {
-      indexes
-        ..add(a.startIndex)
-        ..add(a.endIndex);
+      indexes.addAll(<int>[a.startIndex, a.endIndex]);
     }
     final List<_AnnotatableTextItem> mergedAnnotations =
         <_AnnotatableTextItem>[];
@@ -103,7 +105,6 @@ class AnnotatableText extends StatelessWidget {
       final String text = content.substring(startIndex, endIndex);
       final List<Annotation> foundAnnotations = <Annotation>[];
       for (final Annotation a in annotations) {
-        if (a.startIndex > endIndex) break;
         final String aText = content.substring(a.startIndex, a.endIndex);
         if (aText.contains(text)) foundAnnotations.add(a);
       }
@@ -155,13 +156,20 @@ class AnnotatableText extends StatelessWidget {
   Future<void> _annotationClick(
       _AnnotatableTextItem annotationItem, BuildContext context) async {
     final List<Annotation> annotations = annotationItem.annotations;
+    final List<Annotation> uniqueAnnotations = <Annotation>[];
+    for (final Annotation a in annotations) {
+      final int indexOfA = uniqueAnnotations.indexWhere((Annotation e) =>
+          e.startIndex == a.startIndex && a.endIndex == e.endIndex);
+      if (indexOfA != -1) continue;
+      uniqueAnnotations.add(a);
+    }
     if (annotations.isEmpty) return;
-    if (annotations.length == 1) {
+    if (uniqueAnnotations.length == 1) {
       final Annotation annotation = annotations[0];
-      if (annotation.id == null) return;
+      if (annotation.body == null) return;
       final String annotatedText =
           content.substring(annotation.startIndex, annotation.endIndex);
-      onAnnotationClick(annotation.id!, annotatedText);
+      onAnnotationClick(annotations, annotatedText);
     } else {
       final Set<String> annotatedTexts = <String>{};
       for (final Annotation a in annotations) {
@@ -172,13 +180,14 @@ class AnnotatableText extends StatelessWidget {
       final String? selectedText = await DialogBuilder(context)
           .singleSelectDialog(TextKeys.selectAnnotatedDialogTitle,
               annotatedTexts.toList(), null);
-      final Annotation? foundA = annotations.firstWhereOrNull((Annotation e) {
+      final List<Annotation> foundAnnotations =
+          annotations.where((Annotation e) {
         final String annotatedText =
             content.substring(e.startIndex, e.endIndex);
         return annotatedText.compareWithoutCase(selectedText);
-      });
-      if (foundA?.id == null || selectedText == null) return;
-      onAnnotationClick(foundA!.id!, selectedText);
+      }).toList();
+      if (foundAnnotations.isEmpty || selectedText == null) return;
+      onAnnotationClick(foundAnnotations, selectedText);
     }
   }
 }

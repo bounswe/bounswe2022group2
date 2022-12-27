@@ -37,6 +37,7 @@ abstract class BaseModel<T> extends Equatable {
       if (data is num) return data.toInt() as R;
       if (data is String?) return int.tryParse(data ?? '') as R?;
     }
+    if (data == null) return null;
     return data is R ? data : (R == String ? data.toString() as R : null);
   }
 

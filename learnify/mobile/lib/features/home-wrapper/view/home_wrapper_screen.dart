@@ -8,6 +8,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/managers/network/custom_interceptors.dart';
 import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/app-bar/default_app_bar.dart';
@@ -15,11 +16,12 @@ import '../../../core/widgets/base-icon/base_icon.dart';
 import '../../../core/widgets/buttons/base_icon_button.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../../product/constants/navigation_constants.dart';
 import '../../../product/theme/light_theme.dart';
 import '../../home/view/home_screen.dart';
-import '../../learning-space/view/learning_space_detail_screen.dart';
 import '../../profile/view/profile_screen.dart';
 import '../../search/view/search_screen.dart';
+import '../../view-learning-spaces/view/taken_ls_screen.dart';
 import '../constants/home_wrapper_constants.dart';
 import '../view-model/home_wrapper_view_model.dart';
 
@@ -43,9 +45,9 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
           case 1:
             return const SearchScreen();
           case 2:
-            return const LearningSpaceDetailScreen();
+            return const TakenLsScreen();
           case 3:
-            return const ProfileScreen();
+            return ProfileScreen();
           default:
             return HomeScreen();
         }
@@ -62,9 +64,14 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
           SelectorHelper<int, HomeWrapperViewModel>().builder(
             (_, HomeWrapperViewModel model) => model.bottomNavBarIndex,
             (BuildContext context, int index, __) => BaseIconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (index == 3) {
+                  NavigationManager.instance
+                      .navigateToPage(path: NavigationConstants.settings);
+                }
+              },
               icon: _appBarIcon(index),
-              color: context.lightActiveColor,
+              color: context.lightDarkActiveColor,
               iconPadding: EdgeInsets.all(context.width * .4),
               padding: EdgeInsets.symmetric(horizontal: context.width * 1.8),
             ),
@@ -74,9 +81,9 @@ class HomeWrapper extends BaseView<HomeWrapperViewModel> {
             (BuildContext context, int index, __) => Visibility(
               visible: index == 3,
               child: BaseIconButton(
-                onPressed: CustomInterceptors.navigateToLogin,
+                onPressed: () => CustomInterceptors.navigateToLogin(context),
                 icon: Icons.logout_outlined,
-                color: context.lightActiveColor,
+                color: context.lightDarkActiveColor,
                 iconPadding: EdgeInsets.all(context.width * .4),
                 padding: EdgeInsets.only(right: context.width * 1.5),
               ),

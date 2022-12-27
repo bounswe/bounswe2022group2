@@ -6,7 +6,15 @@ import '../../../features/auth/login/view/login_screen.dart';
 import '../../../features/auth/signup/view/signup_screen.dart';
 import '../../../features/auth/verification/view/verification_screen.dart';
 import '../../../features/home-wrapper/view/home_wrapper_screen.dart';
+import '../../../features/learning-space/view/add_post_screen.dart';
+import '../../../features/learning-space/view/annotations_screen.dart';
+import '../../../features/learning-space/view/comments_screen.dart';
+import '../../../features/learning-space/view/components/chapter_image.dart';
+import '../../../features/learning-space/view/create_event_screen.dart';
+import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
+import '../../../features/settings/view/settings_screen.dart';
+import '../../../features/view-learning-spaces/view/view_all_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../extensions/string/string_extensions.dart';
 
@@ -30,15 +38,53 @@ class NavigationRoute {
         return normalNavigate(const LoginScreen(), args);
       case NavigationConstants.home:
         return normalNavigate(HomeWrapper(), args);
+      case NavigationConstants.viewall:
+        return normalNavigate(
+            ViewAllScreen(
+                listOfLearningSpaces: arguments['listOfLearningSpaces'],
+                learningSpacesType: arguments['learningSpacesType']),
+            args);
       case NavigationConstants.search:
         return normalNavigate(HomeWrapper(initialIndex: 1), args);
       case NavigationConstants.courses:
         return normalNavigate(HomeWrapper(initialIndex: 2), args);
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3), args);
+      case NavigationConstants.settings:
+        return normalNavigate(const SettingsScreen(), args);
       case NavigationConstants.learningSpace:
-        return normalNavigate(const LearningSpaceDetailScreen(), args);
-
+        return normalNavigate(
+            LearningSpaceDetailScreen(
+                learningSpace: arguments['learningSpace']),
+            args);
+      case NavigationConstants.annotations:
+        return normalNavigate(
+            AnnotationsScreen(
+                annotations: arguments['annotations'],
+                annotatedText: arguments['annotatedText']),
+            args);
+      case NavigationConstants.createEditLearningSpace:
+        return normalNavigate(
+            CreateLearningSpaceScreen(
+                isCreate: arguments['isCreate'],
+                learningSpace: arguments['learningSpace']),
+            args);
+      case NavigationConstants.postImage:
+        return normalNavigate(
+            PostImage(
+              imageUrl: arguments['image'],
+              allAnnotations: arguments['all_annotations'],
+              postId: arguments['post_id'],
+            ),
+            args);
+      case NavigationConstants.addEditPost:
+        return normalNavigate(
+            AddPostScreen(isAdd: arguments['isAdd'], post: arguments['post']),
+            args);
+      case NavigationConstants.createEvent:
+        return normalNavigate(CreateEventScreen(), args);
+      case NavigationConstants.comments:
+        return normalNavigate(CommentsScreen(post: arguments['post']), args);
       default:
         return normalNavigate(const SignupScreen(), args);
     }
