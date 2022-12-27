@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LSbyCategoryPage should render page layout correctly 1`] = `
+exports[`MyLearningSpacesPage should render page layout correctly 1`] = `
 <div>
   <nav
     className="nav"
@@ -86,26 +86,28 @@ exports[`LSbyCategoryPage should render page layout correctly 1`] = `
     </ul>
   </nav>
   <div
-    className="lsbycategorypage-container"
+    className="mylspage-container"
   >
     <div
-      className="lsbycategorypage-wrapper"
+      className="mylspage-wrapper"
     >
       <div
-        className="lsbycategorypage-title"
+        className="mylspage-title"
       >
         <h1>
-          Browsing the category:
+          Browsing the learning spaces of:
         </h1>
       </div>
       <div
-        className="lsbycategorypage-header"
+        className="mylspage-header"
+        data-testid="myls-username"
       >
         <h1 />
       </div>
     </div>
     <div
-      className="lsbycategorypage-body"
+      className="mylspage-body"
+      data-testid="myls-body"
     />
   </div>
   <div

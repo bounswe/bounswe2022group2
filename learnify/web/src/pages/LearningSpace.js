@@ -12,6 +12,8 @@ import Participants from '../components/Participants';
 import JoinLsButton from '../components/JoinLsButton';	
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import EventForm from '../components/CreateEventForm';
+import Event from '../components/Event';
 
 function LearningSpace() {
 
@@ -19,12 +21,13 @@ function LearningSpace() {
     const [description, setDescription] = React.useState("");
     const { lsid } = useParams();
 
-
     const [message, setMessage] = useState("");
 
     const [value, setValue] = useState("");
 
     const [postArray, setPostArray] = useState([]);
+
+    const [eventArray, setEventArray] = useState([]);
 
     const [participants, setParticipants] = useState([]);	
     	
@@ -109,6 +112,30 @@ function LearningSpace() {
     }
 
     useEffect(() => {
+        const getEvents = async () => {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}events/ls/${lsid}`, {    
+                method: "GET",
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+            }).then((response) => {
+                console.log(response.status);
+                console.log(response.statusText);
+                if (response.ok) {
+                    console.log("successfull")
+                    response.json().then( json => {
+                        setEventArray(json.events);
+                        console.log(json.events);
+                    });
+                } else {
+                    console.log("error")
+                }
+            });
+        }
+        getEvents();
+    }, []);
+
+    useEffect(() => {
         const getLearningSpace = async () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}/learningspace/${lsid}`, {
                 method: "GET",
@@ -127,7 +154,7 @@ function LearningSpace() {
                         console.log(json.learning_spaces[0].description);
                         setPostArray(json.learning_spaces[0].posts);
                         setLsCreator(json.learning_spaces[0].creator);	
-                        setParticipants(json.learning_spaces[0].participants);	
+                        setParticipants(json.learning_spaces[0].participants);
                         console.log(participants);	
                         //setParticipants(participants.filter((item) => item !== lsCreator))
                     });
@@ -297,18 +324,16 @@ function LearningSpace() {
                     {participants.map(participant =>	
                                     <Participants participant = {participant} creator={lsCreator}/> )}
                 </div>
+                <EventForm lsid={lsid}/>
                 <div className='ls-box-org'>
                     <label className='feed-title'>
-                    <label className='navBarText'><img src={event} alt="Learnify Logo" height={70} /></label>
+                    <FontAwesomeIcon icon={solid('calendar-week') } />
+                    <label className='ls-event-box-text'></label>
                         Events
-                    <label className='navBarText2'> <img src={geolocation} alt="Learnify Logo" height={70} /></label>
                     </label>
                     <div className='space-5'></div>
-                        <div>Preparing for Milestone - North Cafeteria</div>
-                        <div>Classical Music Concert - Albert Long Hall</div>
-                        <div>Watching Car Racing - CMPE HWLAB</div>
-                        <div>Pizza Party - CMPE Roof</div>
-                        <div>Baklava in the Making - CMPE B4</div>
+                        {eventArray.map(myEvent =>
+                                    <Event myEvent = {myEvent} my_lsid = {lsid}/>)}
                 </div>
             </div>
         </div>
