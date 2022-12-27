@@ -300,7 +300,7 @@ const sideBar = `
     <div className='about-page-layout'>
         <NavBar />
         <div className='learning-space'>
-        <div className='about-page-left'>
+        <div className='about-page-left' data-testid="maineditor">
         <MDEditor.Markdown
             style={{ backgroundColor: "#f8f6f4",
               width: "97%",
@@ -319,7 +319,7 @@ const sideBar = `
             linkTarget="_blank"
           />
        </div>
-       <div className='about-page-right'>
+       <div className='about-page-right' data-testid="sideeditor">
       <MDEditor.Markdown
         style={{ backgroundColor: "#f8f6f4",
               width: "97%",
