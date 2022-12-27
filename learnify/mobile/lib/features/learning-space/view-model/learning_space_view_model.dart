@@ -364,7 +364,7 @@ class LearningSpaceViewModel extends BaseViewModel {
       body: annotation,
       target: AnnotationTarget(
         selector: selector,
-        source: 'http://3.76.176.35/${_learningSpace?.id}${oldPost.id}',
+        source: 'http://3.76.176.35/${_learningSpace?.id}/${oldPost.id}',
       ),
     );
     final IResponseModel<CreateAnnotationResponse> res = await _lsService
@@ -404,7 +404,7 @@ class LearningSpaceViewModel extends BaseViewModel {
           start: startIndex,
           end: endIndex,
         ),
-        source: 'http://3.76.176.35/${learningSpace?.id}${post.id}',
+        source: 'http://3.76.176.35/${learningSpace?.id}/${post.id}',
       ),
     );
     final List<Annotation> oldAnnotations =
@@ -442,7 +442,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h',
         format: 'image/jpeg',
         type: 'Image',
-        source: 'http://3.76.176.35/${learningSpace?.id}${oldPost.id}');
+        source: 'http://3.76.176.35/${learningSpace?.id}/${oldPost.id}');
     final Annotation req = Annotation(body: annotation, target: target);
     final IResponseModel<CreateAnnotationResponse> res = await _lsService
         .createAnnotation(req, _learningSpace?.id ?? '', oldPost.id ?? '');
@@ -513,7 +513,7 @@ class LearningSpaceViewModel extends BaseViewModel {
       id: id,
       creator: creator,
       target: AnnotationTarget(
-          source: 'http://3.76.176.35/${learningSpace?.id}${post.id}',
+          source: 'http://3.76.176.35/${learningSpace?.id}/${post.id}',
           type: 'Image',
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
       colorParam: backgroundColor,
