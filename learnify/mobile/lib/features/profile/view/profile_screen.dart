@@ -38,7 +38,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           scrollable: true,
           hasScaffold: false,
           futureInit: (BuildContext context) async =>
-              context.read<ProfileViewModel>().initView(),
+              context.read<ProfileViewModel>().getUserName(),
           key: key,
         );
 

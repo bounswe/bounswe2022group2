@@ -20,13 +20,9 @@ import '../service/profile_service.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
-  ProfileViewModel(this._user);
-  final User _user;
+  late User? _user;
 
-  late Profile _profile = Profile(
-    username: "",
-    email: _user.email,
-  );
+  late Profile _profile;
   Profile get profile => _profile;
 
   late final ImagePicker _picker;
@@ -53,6 +49,7 @@ class ProfileViewModel extends BaseViewModel {
   void setDefault() {
     _canUpdate = false;
     _email = null;
+    _user = null;
     _selectedImage = null;
     _initialBiography = null;
   }
@@ -78,7 +75,7 @@ class ProfileViewModel extends BaseViewModel {
     _biographyController.dispose();
     _profile = Profile(
       username: "",
-      email: _user.email,
+      email: _user?.email,
     );
     _setDefault();
     super.disposeView();
@@ -91,6 +88,13 @@ class ProfileViewModel extends BaseViewModel {
     if (_canUpdate == isUpdated) return;
     _canUpdate = isUpdated;
     notifyListeners();
+  }
+
+  Future<void> getUserName() async {
+    final User tempUser =
+        await localManager.getModel(const User(), StorageKeys.user);
+    _user = tempUser;
+    _profile = Profile(username: _user?.username, email: _user?.email);
   }
 
   Future<String?> pickImage(ImageSource source) async {
@@ -159,7 +163,7 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   Future<String?> _getProfileRequest() async {
-    final String? username = _user.username;
+    final String? username = _user?.username;
     if (username != null) {
       final IResponseModel<GetProfileResponse> res =
           await _profileService.getProfileRequest(username);
@@ -172,7 +176,7 @@ class ProfileViewModel extends BaseViewModel {
       _selectedImage = respData.profilePicture;
       _profile = Profile(
         username: respData.username,
-        email: _user.email,
+        email: _user?.email,
         bio: respData.bio,
         profilePicture: respData.profilePicture,
         participated: respData.participated ?? <LearningSpace>[],
