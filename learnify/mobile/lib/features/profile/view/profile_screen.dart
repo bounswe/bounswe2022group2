@@ -1,9 +1,9 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,6 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/extensions/context/theme_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
-import '../../../core/helpers/validators.dart';
 import '../../../core/managers/navigation/navigation_manager.dart';
 import '../../../core/providers/theme/theme_provider.dart';
 import '../../../core/widgets/base-icon/base_icon.dart';
@@ -25,8 +24,6 @@ import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../../product/theme/light_theme.dart';
-import '../../home-wrapper/view-model/home_wrapper_view_model.dart';
-import '../../learning-space/models/learning_space_model.dart';
 import '../constants/widget_keys.dart';
 import '../model/profile_model.dart';
 import '../view-model/profile_view_model.dart';
@@ -72,13 +69,16 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
   static Widget get _profilePhoto =>
       SelectorHelper<String?, ProfileViewModel>().builder(
         (_, ProfileViewModel model) => model.selectedImage,
-        (BuildContext context, String? path, __) {
+        (BuildContext context, String? selectedImage, __) {
           // ignore: unnecessary_cast
           ImageProvider imageProvider = const AssetImage(IconKeys.userProfile);
           late final CircleAvatar circleAvatar;
           try {
-            final File? file = path == null ? null : File(path);
-            if (file != null) imageProvider = FileImage(file);
+            if (selectedImage != null) {
+              final Image receivedImg =
+                  Image.memory(base64Decode(selectedImage));
+              imageProvider = receivedImg.image;
+            }
             circleAvatar = CircleAvatar(
               foregroundImage: imageProvider,
               radius: context.width * 12,
