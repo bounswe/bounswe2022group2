@@ -127,6 +127,10 @@
   "biography": "전기",
   "add_biography_hint": "자신을 간략하게 설명하십시오",
   "creator": "창조자",
+  "created": "만든",
+  "created_learning_spaces": "생성된 학습 공간",
+  "username_colon": "사용자 이름:",
+  "email_colon": "이메일:",
   "ok": "그래",
   "create_event_title_hint": "이벤트 제목 입력",
   "create_event_title_label": "이벤트 제목",
@@ -143,5 +147,6 @@
   "change_geolocation": "지리적 위치 변경",
   "add_comment": "주석",
   "add_comment_hint": "여기에 주석 삽입",
-  "view_comments": "모든 댓글 표시"
+  "view_comments": "모든 댓글 표시",
+  "biography_colon": "전기:"
 }

@@ -127,6 +127,10 @@
   "biography": "伝記",
   "add_biography_hint": "簡単に説明してください",
   "creator": "造物主",
+  "created": "作成",
+  "created_learning_spaces": "作成された学習スペース",
+  "username_colon": "ユーザー名:",
+  "email_colon": "電子メール：",
   "ok": "大丈夫です",
   "create_event_title_hint": "イベントのタイトルを入力する",
   "create_event_title_label": "イベントのタイトル",
@@ -143,5 +147,6 @@
   "change_geolocation": "지리적 위치 변경",
   "add_comment": "주석",
   "add_comment_hint": "여기에 주석 삽입",
-  "view_comments": "모든 댓글 표시"
+  "view_comments": "모든 댓글 표시",
+  "biography_colon": "伝記："
 }

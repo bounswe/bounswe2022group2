@@ -127,6 +127,10 @@
   "biography": "Biografía",
   "add_biography_hint": "Explícate brevemente",
   "creator": "Creador",
+  "created": "Creado",
+  "created_learning_spaces": "Espacios de aprendizaje creados",
+  "username_colon": "Nombre de usuario:",
+  "email_colon": "Correo electrónico:",
   "ok": "BIEN",
   "create_event_title_hint": "Introducir un título para un evento",
   "create_event_title_label": "Título del evento",
@@ -143,5 +147,6 @@
   "change_geolocation": "Cambiar la geolocalización",
   "add_comment": "Comentario",
   "add_comment_hint": "Insertar comentario aquí",
-  "view_comments": "Mostrar todos los comentarios"
+  "view_comments": "Mostrar todos los comentarios",
+  "biography_colon": "Biografía:"
 }
