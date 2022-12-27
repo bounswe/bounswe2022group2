@@ -64,7 +64,7 @@ export default function Post(props){
          type: "Annotation",
          body: textAnnotation.body[0].value,
          target: {
-           source: 'http://localhost:3000/' + lsid + '/' + postId,
+           source: 'http://3.76.176.35/' + lsid + '/' + postId,
            selector: textAnnotation.target.selector[1],
          }
        };
@@ -147,7 +147,7 @@ export default function Post(props){
         type: "Annotation",
         body: imageAnnotation.body[0].value,
         target: {
-          source: 'http://localhost:3000/' + lsid + '/' + postId,
+          source: 'http://3.76.176.35/' + lsid + '/' + postId,
           selector: null,
           type: "Image",
           id: images + "#" + imageAnnotation.target.selector.value,
