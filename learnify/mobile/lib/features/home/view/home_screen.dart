@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/base/view/base_view.dart';
+import '../../../../core/managers/navigation/navigation_manager.dart';
+import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/extensions/context/context_extensions.dart';
+import '../../../core/helpers/selector_helper.dart';
+import '../../../core/widgets/dialog/dialog_builder.dart';
+import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
+import '../../../product/language/language_keys.dart';
 import '../../../product/theme/dark_theme.dart';
-import '../model/course_model.dart';
+import '../../learning-space/models/learning_space_model.dart';
 import '../view-model/home_view_model.dart';
 
 part '../components/course_preview.dart';
@@ -16,55 +22,91 @@ class HomeScreen extends BaseView<HomeViewModel> {
           builder: _builder,
           scrollable: true,
           hasScaffold: false,
-          futureInit: (BuildContext context) =>
-              context.read<HomeViewModel>().fetchInitialCourses(),
+          futureInit: (BuildContext context) async =>
+              context.read<HomeViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
 
   static Widget _builder(BuildContext context) => Padding(
-        padding: EdgeInsets.all(context.width * 5),
+        padding: EdgeInsets.only(
+            left: context.width * 4,
+            top: context.height * 3,
+            bottom: context.height * 3,
+            right: context.width * 1),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-              height: 185,
-              child: _coursePreviewList(context, 'Taken Courses',
-                  context.read<HomeViewModel>().takenCourses),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.takenLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.takenLearningSpaces, list),
+              ),
             ),
             context.sizedH(3),
-            SizedBox(
-              height: 185,
-              child: _coursePreviewList(context, "Friends Courses",
-                  context.read<HomeViewModel>().friendCourses),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.topRatedLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.topRatedLearningSpaces, list),
+              ),
             ),
             context.sizedH(3),
-            SizedBox(
-                height: 185,
-                child: _coursePreviewList(context, 'Recommended Courses',
-                    context.read<HomeViewModel>().recommendedCourses)),
+            SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
+              (_, HomeViewModel model) => model.recommendedLearningSpaces,
+              (BuildContext context, List<LearningSpace> list, Widget? child) =>
+                  SizedBox(
+                height: context.height * 23,
+                child: _coursePreviewList(
+                    context, TextKeys.recommendedLearningSpaces, list),
+              ),
+            ),
           ],
         ),
       );
 
-  static Widget _coursePreviewList(
-          BuildContext context, String coursesType, List<Course> courseList) =>
+  static Widget _coursePreviewList(BuildContext context, String coursesType,
+          List<LearningSpace> courseList) =>
       Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(coursesType,
-              textAlign: TextAlign.left,
-              style: const TextStyle(fontWeight: FontWeight.bold)),
-          context.sizedH(2),
+          Row(children: <Widget>[
+            BaseText(coursesType,
+                style: const TextStyle(fontWeight: FontWeight.bold)),
+            context.sizedH(.8),
+            const Spacer(),
+            _viewAllButton(coursesType),
+          ]),
           Expanded(
             child: ListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
               scrollDirection: Axis.horizontal,
-              itemCount: courseList.length,
+              itemCount: courseList.length >= 8 ? 8 : courseList.length,
               shrinkWrap: true,
               separatorBuilder: (BuildContext context, _) =>
-                  SizedBox(width: context.width * 5),
-              itemBuilder: (BuildContext context, int index) => _CoursePreview(
-                  textKey: courseList[index].name ?? '',
-                  participantNumber: courseList[index].numParticipants ?? 0),
+                  SizedBox(width: context.width * 3),
+              itemBuilder: (BuildContext context, int index) => CoursePreview(
+                learningSpace: courseList[index],
+              ),
             ),
           )
         ],
       );
+
+  static Widget _viewAllButton(String coursesType) =>
+      SelectorHelper<bool, HomeViewModel>().builder(
+          (_, HomeViewModel model) => model.getViewAllStatus(coursesType),
+          (BuildContext context, bool takenViewAll, _) => BaseText(
+                TextKeys.viewAll,
+                fontWeight: FontWeight.w900,
+                onClick:
+                    context.read<HomeViewModel>().getViewAllStatus(coursesType)
+                        ? () async =>
+                            context.read<HomeViewModel>().viewAll(coursesType)
+                        : null,
+              ));
 }
