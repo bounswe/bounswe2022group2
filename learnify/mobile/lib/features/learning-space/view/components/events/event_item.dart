@@ -82,7 +82,12 @@ class EventItem extends StatelessWidget {
             context.sizedW(2),
             // ignore: avoid_dynamic_calls
             BaseText('${context.tr(TextKeys.creator)}: ${event.eventCreator}',
-                translated: false, style: context.bodySmall)
+                translated: false,
+                style: context.bodySmall,
+                onClick: () async => NavigationManager.instance.navigateToPage(
+                      path: NavigationConstants.othersProfile,
+                      data: <String, String?>{'username': event.eventCreator},
+                    ))
           ],
         ),
         context.sizedH(1),
@@ -110,7 +115,11 @@ class EventItem extends StatelessWidget {
                   final String? selectedUser = await DialogBuilder(context)
                       .singleSelectDialog<String>(
                           TextKeys.eventParticipants, event.participants, null);
-                  debugPrint(selectedUser);
+                  await NavigationManager.instance.navigateToPage(
+                      path: NavigationConstants.othersProfile,
+                      data: <String, String?>{
+                        'username': selectedUser,
+                      });
                 },
           child: _infoText(
             context,
