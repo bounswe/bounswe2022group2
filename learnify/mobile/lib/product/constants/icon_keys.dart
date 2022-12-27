@@ -10,9 +10,11 @@ class IconKeys {
   static IconKeys get instance => _instance;
 
   static const String logo = 'assets/images/logo-dblue.png';
+  static const String locationMarker = 'assets/images/marker.png';
   static const String learnIllustration =
       'assets/images/learn-illustration.png';
   static const String userProfile = 'assets/images/user-profile.png';
+  static const String person = 'assets/images/person.png';
 
   static const List<String> lsIcons = <String>[
     '',

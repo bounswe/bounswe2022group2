@@ -113,8 +113,8 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
           if (icon != null)
             icon!(context)
           else if (titleIcon != null)
-            BaseIcon(context, titleIcon!, color: context.lightActiveColor),
-          context.sizedW(2),
+            BaseIcon(context, titleIcon!, color: context.lightDarkActiveColor),
+          if (titleText == null) context.sizedW(2),
           if (titleText != null) Expanded(child: _titleTextWidget(context)),
           ...actionsList,
         ],

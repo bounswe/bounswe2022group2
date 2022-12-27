@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should render component layout correctly 1`] = `
+<nav
+  className="nav"
+  data-testid="navbar"
+>
+  <a
+    href="/home"
+  >
+    <img
+      alt="Learnify Logo Navbar"
+      height={60}
+      src="logo-dblue.png"
+    />
+  </a>
+  <ul>
+    <div
+      className="relative"
+    >
+      <input
+        className="search-input-field"
+        onChange={[Function]}
+        placeholder="Search learning spaces"
+        size={30}
+        type="text"
+        value=""
+      />
+      <div
+        className="search-results-container"
+      />
+    </div>
+    <li>
+      <a
+        className="navBarText"
+        href="/notifications"
+      >
+        <img
+          alt="Notifications Icon"
+          height={20}
+          src="notification-icon.svg"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="navBarText"
+        href="/home"
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        className="navBarText"
+        href="/categories"
+      >
+        Categories
+      </a>
+    </li>
+    <li>
+      <a
+        className="navBarText"
+        href="/about"
+      >
+        About
+      </a>
+    </li>
+    <li>
+      <a
+        className="navBarText"
+        href="/contact"
+      >
+        Contact
+      </a>
+    </li>
+    <li>
+      <a
+        className="navBarText"
+        href="/profile/null"
+      >
+        Profile
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

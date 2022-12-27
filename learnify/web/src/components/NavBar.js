@@ -3,46 +3,97 @@ import bell from '../images/notification-icon.svg'
 import React, {useState, useEffect } from 'react'
 import './component_styles.css';
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export default function NavBar(){
 
-    const [searchResults, setSearchResults] = useState([])
+    const [searchDecision, setSearchDecision] = useState(false);
 
-    const [searchInput, setSearchInput] = useState("");
+    const [searchLsResults, setSearchLsResults] = useState([])
+    const [searchUserResults, setSearchUserResults] = useState([])
 
-    const handleChange = (e) => {
+    const [searchLsInput, setSearchLsInput] = useState("");
+    const [searchUserInput, setSearchUserInput] = useState("");
+    
+    const currentUser = localStorage.getItem('username')
+
+    const handleSearchLsChange = (e) => {
         e.preventDefault();
-        setSearchInput(e.target.value);
+        setSearchLsInput(e.target.value);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.keyCode === 13) {
+          const getSearchLsResults = async () => {
+            const res = await axios.get(
+              `${process.env.REACT_APP_BACKEND_BASE_URL}learningspace?query=${searchLsInput}`
+            );
+            setSearchLsResults(res.data.learning_spaces);
+          };
+          getSearchLsResults();
+        }
+      };
+
+    const handleSearchUserChange = (e) => {
+        e.preventDefault();
+        setSearchUserInput(e.target.value);
     }
 
+    const toggle = () => {
+        setSearchDecision(!searchDecision);
+      };
+
     useEffect(() => {
-        const getSearchResults = async () => {
-            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace?query=${searchInput}`)
-            setSearchResults(res.data.learning_spaces)
+        const getSearchUserResults = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}user/search/${searchUserInput}`)
+            setSearchUserResults(res.data.users)
         }
-        getSearchResults()
-    }, [searchInput])
+        getSearchUserResults()
+    }, [searchUserInput])
 
-    console.log(searchResults)
+    console.log(searchLsResults)
+    console.log(searchUserResults)
 
-    return <nav className="nav">
-        <a href="/home"><img src={logo} alt="Learnify Logo" height={60} /></a>
+    return <nav className="nav" data-testid="navbar">
+        <a href="/home"><img src={logo} alt="Learnify Logo Navbar" height={60} /></a>
         <ul>
-            
-                <div className="relative">
-                    <input className='search-input-field' type="text" placeholder="Search learning spaces"  size={30} onChange={handleChange} value={searchInput}/>
+                <div className="search-decider-container" onClick={toggle}>
+                    <FontAwesomeIcon icon={solid('arrows-rotate')} size="2x" color="#1746A2"/>
+                </div>
+                {!searchDecision && <div className="ls-search">
+                    <input
+                        className='search-input-field'
+                        type="text"
+                        placeholder="Search learning spaces"
+                        size={30}
+                        onChange={handleSearchLsChange}
+                        onKeyDown={handleKeyDown}
+                        value={searchLsInput}
+                    />
 
                     <div className="search-results-container">
-                        {searchResults.map(result => (
+                        {searchLsResults.map(result => (
                             <ul>
                                 <li className='search-result-item'><a href={`/learningspace/${result.id}`}>{result.title}</a></li>
                             </ul>
                         ))}
                     </div>
-                </div>
+                </div>}
+                {searchDecision && <div className="user-search">
+                    <input className='search-input-field' type="text" placeholder="Search users"  size={30} onChange={handleSearchUserChange} value={searchUserInput}/>
+
+                    <div className="search-results-container">
+                        {searchUserResults.map(result => (
+                            <ul>
+                                <li className='search-result-item'><a href={`/profile/${result}`}>{result}</a></li>
+                            </ul>
+                        ))}
+                    </div>
+                </div>}
             
             <li>
-                <a href="/notifications" className='navBarText'><img src={bell} alt="Learnify Logo" height={20} /></a>
+                <a href="/notifications" className='navBarText'><img src={bell} alt="Notifications Icon" height={20} /></a>
             </li>
             <li>
                 <a href="/home" className='navBarText'>Home</a>
@@ -57,7 +108,7 @@ export default function NavBar(){
                 <a href="/contact" className='navBarText'>Contact</a>
             </li>
             <li>
-                <a href="/profile" className='navBarText'>Profile</a>
+                <a href={`/profile/${currentUser}`} className='navBarText'>Profile</a>
             </li>
         </ul>
     </nav>

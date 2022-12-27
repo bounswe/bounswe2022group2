@@ -15,7 +15,7 @@ class TextItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-        color: Colors.white,
+        color: context.isDark ? Colors.black54 : Colors.white,
         child: Padding(
           padding: EdgeInsets.symmetric(
               horizontal: context.width, vertical: context.height * 1.3),
@@ -36,11 +36,17 @@ class TextItem extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      creator,
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                    BaseText(creator,
+                        textAlign: TextAlign.left,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        translated: false,
+                        onClick: () async =>
+                            NavigationManager.instance.navigateToPage(
+                              path: NavigationConstants.othersProfile,
+                              data: <String, String?>{
+                                'username': creator,
+                              },
+                            )),
                     const Spacer(),
                     if (creator ==
                         LocalManager.instance

@@ -93,7 +93,7 @@ class AnnotatableText extends StatelessWidget {
 
   List<_AnnotatableTextItem> _mergeAnnotations(List<Annotation> annotations) {
     final SplayTreeSet<int> indexes =
-        SplayTreeSet<int>.from(<int>{0, content.length - 1});
+        SplayTreeSet<int>.from(<int>{0, content.length});
     for (final Annotation a in annotations) {
       indexes.addAll(<int>[a.startIndex, a.endIndex]);
     }
@@ -166,7 +166,7 @@ class AnnotatableText extends StatelessWidget {
     if (annotations.isEmpty) return;
     if (uniqueAnnotations.length == 1) {
       final Annotation annotation = annotations[0];
-      if (annotation.id == null) return;
+      if (annotation.body == null) return;
       final String annotatedText =
           content.substring(annotation.startIndex, annotation.endIndex);
       onAnnotationClick(annotations, annotatedText);

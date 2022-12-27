@@ -9,7 +9,8 @@ import '../../home/model/get_learning_spaces_response_model.dart';
 import '../../home/service/I_home_service.dart';
 import '../../home/service/home_service.dart';
 import '../../learning-space/models/learning_space_model.dart';
-import '../model/search_response_model.dart';
+import '../model/ls_search_response_model.dart';
+import '../model/user_search_response_model.dart';
 import '../service/i_search_service.dart';
 import '../service/search_service.dart';
 import '../view/search_screen.dart';
@@ -58,7 +59,7 @@ class SearchViewModel extends BaseViewModel {
   late List<UserPreview> _resultUsers = allUsers;
   List<UserPreview> get resultUsers => _resultUsers;
 
-  late bool didResultCome = false;
+  //late bool didResultCome = false;
 
   @override
   void initViewModel() {
@@ -78,6 +79,7 @@ class SearchViewModel extends BaseViewModel {
     _searchController.dispose();
     _resultLearningSpaces = <LearningSpace>[];
     _recommendedLearningSpaces = <LearningSpace>[];
+    //didResultCome = false;
     super.disposeView();
   }
 
@@ -85,6 +87,17 @@ class SearchViewModel extends BaseViewModel {
     _searchController.clear();
     _resultLearningSpaces = _recommendedLearningSpaces;
     _resultUsers = allUsers;
+    //didResultCome = false;
+    notifyListeners();
+  }
+
+  void clearUserResults() {
+    _resultUsers = allUsers;
+    notifyListeners();
+  }
+
+  void clearLearningSpaceResults() {
+    _resultLearningSpaces = _recommendedLearningSpaces;
     notifyListeners();
   }
 
@@ -103,7 +116,7 @@ class SearchViewModel extends BaseViewModel {
 
   Future<String?> _getRecommendedLearningSpacesRequest() async {
     final IResponseModel<GetLearningSpacesResponse> resp =
-        await _homeService.getLearningSpaces();
+        await _homeService.getRecommendedLearningSpaces();
     final GetLearningSpacesResponse? respData = resp.data;
     if (resp.hasError || respData == null) return resp.error?.errorMessage;
     _recommendedLearningSpaces = respData.learningSpaces;
@@ -124,39 +137,47 @@ class SearchViewModel extends BaseViewModel {
       clearResults();
       return null;
     }
-    final IResponseModel<SearchResponse> resp =
-        await _searchService.search(_searchController.text);
-    await _userSearchRequest(_searchController.text);
-    final SearchResponse? respData = resp.data;
-    if (resp.hasError || respData == null) {
+    final IResponseModel<LsSearchResponse> responseLS =
+        await _searchService.searchLs(_searchController.text);
+    final LsSearchResponse? respDataLS = responseLS.data;
+
+    final IResponseModel<UserSearchResponse> responseUser =
+        await _searchService.searchUser(_searchController.text);
+    final UserSearchResponse? respDataUser = responseUser.data;
+
+    if (responseLS.hasError || responseUser.hasError) {
       clearResults();
-      return resp.error?.errorMessage;
+      return responseLS.error?.errorMessage;
     }
-    if (respData.resultLearningSpaces.isEmpty) {
-      _resultLearningSpaces = _recommendedLearningSpaces;
+    if (respDataLS == null || respDataLS.resultLearningSpaces.isEmpty) {
+      clearLearningSpaceResults();
     } else {
-      _resultLearningSpaces = respData.resultLearningSpaces;
+      _resultLearningSpaces = respDataLS.resultLearningSpaces;
     }
+    if (respDataUser == null || respDataUser.users.isEmpty) {
+      clearUserResults();
+    } else {
+      _resultUsers = await _usernameToUserPreview(respDataUser.users);
+    }
+
     notifyListeners();
     return null;
   }
 
   void setDefault() {
-    _resultLearningSpaces = [];
-    didResultCome = false;
+    _resultLearningSpaces = <LearningSpace>[];
+    _resultUsers = <UserPreview>[];
+    //didResultCome = false;
   }
 
-  Future<UserPreview?> _userSearchRequest(String name) async {
+  Future<List<UserPreview>> _usernameToUserPreview(List<String> users) async {
     _resultUsers = allUsers;
-    final List<UserPreview> newResultUsers = <UserPreview>[];
-    for (final UserPreview user in allUsers) {
-      if (user.userName.toLowerCase().contains(name.toLowerCase())) {
-        newResultUsers.add(user);
-      }
+    final List<UserPreview> resultUsers = <UserPreview>[];
+    for (final String username in users) {
+      final UserPreview userPreview =
+          UserPreview(userName: username, profilePhoto: null);
+      resultUsers.add(userPreview);
     }
-    if (newResultUsers.isNotEmpty) {
-      _resultUsers = newResultUsers;
-    }
-    return null;
+    return resultUsers;
   }
 }

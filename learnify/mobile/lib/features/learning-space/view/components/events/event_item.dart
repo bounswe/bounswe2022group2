@@ -5,47 +5,43 @@ class EventItem extends StatelessWidget {
     required this.callback,
     required this.itemIndex,
     required this.expansionTileKey,
+    required this.event,
     Key? key,
   }) : super(key: key);
   final int itemIndex;
   final IndexCallback callback;
   final GlobalKey<CustomExpansionTileState> expansionTileKey;
+  final Event event;
 
   @override
-  Widget build(BuildContext context) {
-    final Event event = SelectorHelper<Event, LearningSpaceViewModel>()
-        .listenValue(
-            (LearningSpaceViewModel model) => model.events[itemIndex], context);
-    return Theme(
-      data: Theme.of(context).copyWith(
-        dividerColor: Colors.transparent,
-        highlightColor: context.primary.withOpacity(.15),
-        hoverColor: context.primary,
-      ),
-      child: ListTileTheme(
-        contentPadding: EdgeInsets.zero,
-        minLeadingWidth: 0,
-        minVerticalPadding: 0,
-        horizontalTitleGap: 0,
-        dense: true,
-        child: _expansionTile(context, event),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Theme(
+        data: Theme.of(context).copyWith(
+          dividerColor: Colors.transparent,
+          highlightColor: context.primary.withOpacity(.15),
+          hoverColor: context.primary,
+        ),
+        child: ListTileTheme(
+          contentPadding: EdgeInsets.zero,
+          minLeadingWidth: 0,
+          minVerticalPadding: 0,
+          horizontalTitleGap: 0,
+          dense: true,
+          child: _expansionTile(context, event),
+        ),
+      );
 
   Widget _expansionTile(BuildContext context, Event event) {
     final LearningSpaceViewModel viewModel =
         context.read<LearningSpaceViewModel>();
-    final List<Map<String, dynamic>> userList = context
-        .read<HomeViewModel>()
-        .randomUsers
-        .sublist(0, Random().nextInt(34) + 15);
-    final List<String> userPhotos = userList
-        // ignore: avoid_dynamic_calls
-        .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
-        .toList();
-    final Map<String, dynamic> userName = userList.last['name'];
-    final bool isPassed = event.date.isBefore(DateTime.now());
+    final User user =
+        LocalManager.instance.getModel(const User(), StorageKeys.user);
+    // final List<Map<String, dynamic>> userList =
+    //     HomeViewModel.randomUsers.sublist(0, 13 + 15);
+    // final List<String> userPhotos = userList
+    //     // ignore: avoid_dynamic_calls
+    //     .map((Map<String, dynamic> e) => e['picture']['medium'] as String)
+    //     .toList();
+    final bool isPassed = event.date?.isBefore(DateTime.now()) ?? false;
     return CustomExpansionTile(
       key: expansionTileKey,
       collapsedTextColor: context.inactiveTextColor,
@@ -60,13 +56,15 @@ class EventItem extends StatelessWidget {
             child:
                 BaseText('${itemIndex + 1}. ${event.title}', translated: false),
           ),
-          BaseText(DateFormat('dd MMM - kk:mm').format(event.date),
-              translated: false, style: context.bodyMedium),
+          BaseText(
+              DateFormat('dd MMM - kk:mm').format(event.date ?? DateTime.now()),
+              translated: false,
+              style: context.bodyMedium),
         ],
       ),
       collapsedBackgroundColor: isPassed ? Colors.red[300] : null,
       backgroundColor: isPassed ? Colors.red[300] : null,
-      expandedCrossAxisAlignment: CrossAxisAlignment.center,
+      expandedCrossAxisAlignment: CrossAxisAlignment.start,
       expandedAlignment: Alignment.centerLeft,
       iconColor: context.primary,
       onExpansionChanged: (bool val) {
@@ -75,40 +73,83 @@ class EventItem extends StatelessWidget {
         }
       },
       children: <Widget>[
-        Row(children: <Widget>[
-          CircleAvatar(
-              foregroundImage: NetworkImage(userPhotos.last), radius: 14),
-          context.sizedW(2),
-          // ignore: avoid_dynamic_calls
-          BaseText(userName['first'] + ' ' + userName['last'],
-              translated: false, style: context.bodySmall)
-        ]),
+        Row(
+          children: <Widget>[
+            const CircleAvatar(
+                foregroundColor: Colors.white,
+                foregroundImage: AssetImage(IconKeys.person),
+                radius: 12),
+            context.sizedW(2),
+            // ignore: avoid_dynamic_calls
+            BaseText('${context.tr(TextKeys.creator)}: ${event.eventCreator}',
+                translated: false,
+                style: context.bodySmall,
+                onClick: () async => NavigationManager.instance.navigateToPage(
+                      path: NavigationConstants.othersProfile,
+                      data: <String, String?>{'username': event.eventCreator},
+                    ))
+          ],
+        ),
         context.sizedH(1),
         MultiLineText(
           event.description ?? '',
           translated: false,
           maxLines: 1000,
+          textAlign: TextAlign.start,
           style: context.bodySmall,
         ),
         context.sizedH(1.2),
-        _infoText(context, TextKeys.eventDate,
-            DateFormat('dd MMMM yyyy - kk:mm').format(event.date)),
+        _infoText(
+            context,
+            TextKeys.eventDate,
+            DateFormat('dd MMMM yyyy - kk:mm')
+                .format(event.date ?? DateTime.now())),
         context.sizedH(.8),
         _infoText(
             context, TextKeys.eventDuration, '${event.duration?.minsToString}'),
         context.sizedH(.8),
-        _infoText(context, TextKeys.eventParticipants, '',
-            customWidget: _participantsRow(context, userPhotos),
+        GestureDetector(
+          onTap: event.participants.isEmpty
+              ? null
+              : () async {
+                  final String? selectedUser = await DialogBuilder(context)
+                      .singleSelectDialog<String>(
+                          TextKeys.eventParticipants, event.participants, null);
+                  await NavigationManager.instance.navigateToPage(
+                      path: NavigationConstants.othersProfile,
+                      data: <String, String?>{
+                        'username': selectedUser,
+                      });
+                },
+          child: _infoText(
+            context,
+            TextKeys.eventParticipants,
+            '',
+            customWidget: _participantsRow(context),
             lastChild: BaseText(
-              '${userPhotos.length}/${event.participationLimit}',
+              '${event.participants.length}/${event.participationLimit ?? '∞'}',
               translated: false,
               style: context.bodySmall,
-            )),
-        PostList.createEditButton(
-            context,
-            isPassed ? TextKeys.passedEvent : TextKeys.editEvent,
-            isPassed ? Icons.timer_off_outlined : Icons.edit_outlined,
-            isPassed ? null : viewModel.editEvent),
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: context.height * 1.8),
+          child: SizedBox(
+            height: context.height * 22,
+            child: EventMap(location: event.geoLocation ?? const GeoLocation()),
+          ),
+        ),
+        if (event.eventCreator != user.id)
+          PostList.createEditButton(
+              context,
+              isPassed ? TextKeys.passedEvent : TextKeys.attendEvent,
+              isPassed ? Icons.timer_off_outlined : Icons.join_inner_outlined,
+              isPassed
+                  ? null
+                  : () {
+                      viewModel.attendEvent(event.id ?? "");
+                    }),
       ],
     );
   }
@@ -140,8 +181,8 @@ class EventItem extends StatelessWidget {
         ],
       );
 
-  Widget _participantsRow(BuildContext context, List<String> userPhotos) {
-    final int numOfPhotos = min(5, userPhotos.length);
+  Widget _participantsRow(BuildContext context) {
+    final int numOfPhotos = min(event.participants.length, 5);
     return Padding(
       padding: EdgeInsets.only(left: context.width * 3),
       child: Row(
@@ -149,17 +190,12 @@ class EventItem extends StatelessWidget {
           numOfPhotos + 1,
           (int i) => Align(
             widthFactor: 0.8,
-            child: CircleAvatar(
-              backgroundColor: context.primary,
-              foregroundImage:
-                  i == numOfPhotos ? null : NetworkImage(userPhotos[i]),
-              radius: 14,
-              child: i == numOfPhotos
-                  ? BaseText('+${userPhotos.length - numOfPhotos}',
-                      translated: false,
-                      color: Colors.white,
-                      style: context.labelLarge)
-                  : null,
+            child: CircledText(
+              text: i == numOfPhotos
+                  ? '+${event.participants.length - numOfPhotos}'
+                  : event.participants[i][0],
+              textStyle: context.bodyMedium
+                  .copyWith(color: ColorHelpers.darkRandomColor),
             ),
           ),
         ),

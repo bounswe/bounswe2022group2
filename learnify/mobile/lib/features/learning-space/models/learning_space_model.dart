@@ -15,6 +15,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
     this.posts = const <Post>[],
     this.createdAt,
     this.updatedAt,
+    this.participants = const <String>[],
   });
 
   factory LearningSpace.dummy(int id) => LearningSpace(
@@ -26,7 +27,8 @@ class LearningSpace extends BaseModel<LearningSpace> {
         iconId: 5,
         categories: const <String>['music', 'string-instruments'],
         creator: id.toString(),
-        posts: [Post.dummy(0), Post.dummy(1)],
+        participants: <String>[id.toString(), 'creator'],
+        posts: <Post>[Post.dummy(0), Post.dummy(1)],
         createdAt: DateTime.now().subtract(const Duration(days: 3)),
         updatedAt: DateTime.now(),
       );
@@ -44,6 +46,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
             BaseModel.embeddedListFromJson<User>(json['admins'], const User()),
         posts:
             BaseModel.embeddedListFromJson<Post>(json['posts'], const Post()),
+        participants: BaseModel.getList<String>(json['participants']),
         createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
         updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
       );
@@ -57,6 +60,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
     String? creator,
     List<User>? admins,
     List<Post>? posts,
+    List<String>? participants,
   }) =>
       LearningSpace(
         id: id ?? id,
@@ -68,6 +72,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         creator: creator ?? this.creator,
         admins: admins ?? this.admins,
         posts: posts ?? this.posts,
+        participants: participants ?? this.participants,
         createdAt: createdAt,
         updatedAt: updatedAt,
       );
@@ -81,6 +86,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
   final List<User> admins;
   final List<Post> posts;
   final String? creator;
+  final List<String> participants;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
@@ -99,6 +105,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         'creator': creator,
         'admins': BaseModel.embeddedListToJson<User>(admins),
         'posts': BaseModel.embeddedListToJson<Post>(posts),
+        'participants': participants,
         'createdAt': BaseModel.primitiveToJson<DateTime>(createdAt),
         'updatedAt': BaseModel.primitiveToJson<DateTime>(updatedAt),
       };
@@ -115,6 +122,7 @@ class LearningSpace extends BaseModel<LearningSpace> {
         admins,
         posts,
         createdAt,
-        updatedAt
+        updatedAt,
+        participants,
       ];
 }

@@ -6,6 +6,7 @@ import '../../../../core/managers/navigation/navigation_manager.dart';
 import '../../../../product/constants/navigation_constants.dart';
 import '../../../core/extensions/context/context_extensions.dart';
 import '../../../core/helpers/selector_helper.dart';
+import '../../../core/widgets/dialog/dialog_builder.dart';
 import '../../../core/widgets/text/base_text.dart';
 import '../../../product/constants/icon_keys.dart';
 import '../../../product/language/language_keys.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends BaseView<HomeViewModel> {
           builder: _builder,
           scrollable: true,
           hasScaffold: false,
-          futureInit: (BuildContext context) =>
+          futureInit: (BuildContext context) async =>
               context.read<HomeViewModel>().fetchInitialLearningSpaces(),
           key: key,
         );
@@ -46,12 +47,12 @@ class HomeScreen extends BaseView<HomeViewModel> {
             ),
             context.sizedH(3),
             SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
-              (_, HomeViewModel model) => model.friendLearningSpaces,
+              (_, HomeViewModel model) => model.topRatedLearningSpaces,
               (BuildContext context, List<LearningSpace> list, Widget? child) =>
                   SizedBox(
                 height: context.height * 23,
                 child: _coursePreviewList(
-                    context, TextKeys.friendLearningSpaces, list),
+                    context, TextKeys.topRatedLearningSpaces, list),
               ),
             ),
             context.sizedH(3),

@@ -19,7 +19,7 @@ function CategoriesPage() {
                         </div>
                     </div>
                     <div>
-                    <img src={illustration} alt="Learnify Logo" height={400} />
+                    <img src={illustration} alt="Categories Page Illustration" height={400} />
                     </div>
                 </div>
                 <Categories/>

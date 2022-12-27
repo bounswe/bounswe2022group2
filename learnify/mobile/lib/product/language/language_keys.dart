@@ -30,6 +30,7 @@ class TextKeys {
   static const String chooseFromGallery = 'choose_from_gallery';
   static const String friends = 'friends';
   static const String enrolled = 'enrolled';
+  static const String enrolledLS = 'enrolled_ls';
   static const String contributed = 'contributed';
   static const String avg = 'avg';
   static const String mon = 'mon';
@@ -53,7 +54,7 @@ class TextKeys {
   static const String createPost = "create_post";
   static const String editPost = "edit_post";
   static const String takenLearningSpaces = "taken_learning spaces";
-  static const String friendLearningSpaces = "friend_learning spaces";
+  static const String topRatedLearningSpaces = "top_rated_learning spaces";
   static const String recommendedLearningSpaces = "recommended_learning spaces";
   static const String recommendedUsers = "recommended_users";
   static const String annotate = "annotate";
@@ -69,6 +70,7 @@ class TextKeys {
   static const String spaceDescriptionHint = "description_hint";
   static const String spaceDescriptionLabel = "description_label";
   static const String done = "done";
+  static const String ok = "ok";
   static const String participantLimit = "participant_limit";
   static const String categories = "categories";
   static const String createLearningSpacePageTitle = "create_space_page_title";
@@ -81,6 +83,7 @@ class TextKeys {
   static const String clickToSeeImageAnnotations = "click_image_annotations";
   static const String createEvent = "create_event";
   static const String editEvent = "edit_event";
+  static const String attendEvent = "attend_event";
   static const String eventDate = "event_date";
   static const String eventDuration = "event_duration";
   static const String eventParticipationLimit = "event_participation_limit";
@@ -96,4 +99,59 @@ class TextKeys {
   static const String addPostContentHint = "add_post_content_hint";
   static const String addPostContentLabel = "add_post_content_label";
   static const String enroll = "enroll";
+  static const String appInfo = "app_info";
+  static const String appInfoDescription1 = "app_info_description_1";
+  static const String appInfoDescription2 = "app_info_description_2";
+  static const String appInfoDescription3 = "app_info_description_3";
+  static const String appInfoDescription4 = "app_info_description_4";
+  static const String throughCollaboration = "through_collaboration";
+  static const String comment = "comment";
+  static const String notes = "notes";
+  static const String annotations = "annotations";
+  static const String learnify = "learnify";
+  static const String language = "language";
+  static const String theme = "theme";
+  static const String socialInfo = "social_info";
+  static const String languageSubtitle = "language_subtitle";
+  static const String appInfoSubtitle = "app_info_subtitle";
+  static const String socialInfoSubtitle = "social_info_subtitle";
+  static const String themeSubtitle = "theme_subtitle";
+  static const String settings = "settings";
+  static const String texts = "texts";
+  static const String images = "images";
+  static const String amazing = "amazing";
+  static const String coLearners = "co-learners";
+  static const String on = "on";
+  static const String off = "off";
+  static const String selectedLanguage = "selected_language";
+  static const String madeBy = "made_by";
+  static const String darkMode = "dark_mode";
+  static const String biography = "biography";
+  static const String addBiographyHint = "add_biography_hint";
+  static const String created = "created";
+  static const String createdLearningSpaces = "created_learning_spaces";
+  static const String usernameColon = "username_colon";
+  static const String emailColon = "email_colon";
+  static const String creator = "creator";
+  static const String createEventTitleHint = "create_event_title_hint";
+  static const String createEventTitleLabel = "create_event_title_label";
+  static const String createEventDescriptionHint =
+      "create_event_description_hint";
+  static const String createEventDescriptionLabel =
+      "create_event_description_label";
+  static const String createEventParticipationLimitHint =
+      "create_event_participation_limit_hint";
+  static const String createEventParticipationLimitLabel =
+      "create_event_participation_limit_label";
+  static const String createEventDurationHint = "create_event_duration_hint";
+  static const String createEventDurationLabel = "create_event_duration_label";
+  static const String selectDateTime = "select_date_time";
+  static const String currentLatitude = "current_latitude";
+  static const String currentLongitude = "current_longitude";
+  static const String currentAccuracy = "current_accuracy";
+  static const String changeGeolocation = "change_geolocation";
+  static const String addComment = "add_comment";
+  static const String addCommentHint = "add_comment_hint";
+  static const String viewComments = "view_comments";
+  static const String biographyColon = "biography_colon";
 }

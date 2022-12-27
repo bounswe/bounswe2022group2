@@ -1,86 +1,75 @@
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
 import '../../../../../core/base/model/base_model.dart';
+import '../../../../core/extensions/string/string_extensions.dart';
 import '../../../../core/helpers/color_helpers.dart';
 
 // ignore: must_be_immutable
 class Annotation extends BaseModel<Annotation> {
   Annotation({
     this.id,
-    this.courseId,
-    this.categoryId,
-    this.postId,
-    this.startIndex = 0,
-    this.endIndex = 0,
-    this.startOffset = Offset.zero,
-    this.endOffset = Offset.zero,
-    this.upVote,
-    this.content,
-    this.createdAt,
-    this.updatedAt,
-    this.isAnnotation = true,
-    this.isImage = false,
+    this.context = 'http://www.w3.org/ns/anno.jsonld',
+    this.type = 'Annotation',
+    this.body,
+    this.target,
     this.colorParam,
-    this.imageUrl,
     this.creator,
   });
 
-  factory Annotation.dummy(
-    int id, {
-    int? startIndex,
-    int? endIndex,
-    Offset? startOffset,
-    Offset? endOffset,
-    bool? isImage,
-    String? imageUrl,
-    String? creator,
-  }) =>
-      Annotation(
-        id: id.toString(),
-        courseId: id.toString(),
-        categoryId: id.toString(),
-        postId: id.toString(),
-        startIndex: startIndex ?? 12,
-        endIndex: endIndex ?? 26,
-        upVote: 2,
-        content:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        createdAt: DateTime.now().subtract(const Duration(days: 1)),
-        updatedAt: DateTime.now(),
-        startOffset: startOffset ?? const Offset(71.9, 258.2),
-        endOffset: endOffset ?? const Offset(284.5, 337.3),
-        isImage: isImage ?? false,
-        imageUrl: imageUrl ?? 'asd',
-        creator: creator ?? 'Bahrican',
+  factory Annotation.fromJson(Map<String, dynamic> json) => Annotation(
+        id: BaseModel.getByType<String>(json['id']),
+        context: BaseModel.getByType<String>(json['@context']),
+        type: BaseModel.getByType<String>(json['type']),
+        target: BaseModel.embeddedModelFromJson<AnnotationTarget>(
+            json['target'], const AnnotationTarget()),
+        body: BaseModel.getByType<String>(json['body']),
+        creator: BaseModel.getByType<String>(json['creator']),
       );
 
-  factory Annotation.fromJson(Map<String, dynamic> json) {
-    final bool containsTarget = json.containsKey('target');
-    bool isText = false;
-    int? startIndex;
-    int? endIndex;
-    if (containsTarget) {
-      Map<String, dynamic> mapVal = json['target'] as Map<String, dynamic>;
-      isText = mapVal.containsKey('selector');
-      if (isText) {
-        mapVal = (json['target'] as Map<String, dynamic>)['selector']
-            as Map<String, dynamic>;
-        startIndex = mapVal['start'];
-        endIndex = mapVal['end'];
-      }
-    }
+  final String? id;
+  final String? context;
+  final String? type;
+  final String? body;
+  final String? creator;
+  final AnnotationTarget? target;
+  Color? colorParam;
+
+  @override
+  Annotation fromJson(Map<String, dynamic> json) => Annotation.fromJson(json);
+
+  @override
+  Map<String, dynamic> get toJson => <String, dynamic>{
+        if (id != null) 'id': id,
+        '@context': context,
+        'type': type,
+        'body': body,
+        'target': BaseModel.embeddedModelToJson<AnnotationTarget>(target),
+        if (creator != null) 'creator': creator,
+      };
+
+  @override
+  List<Object?> get props =>
+      <Object?>[id, context, type, body, target, creator];
+
+  Color get color {
+    if (colorParam != null) return colorParam!;
+    return colorParam = ColorHelpers.lightRandomColor;
+  }
+
+  set color(Color newColor) => colorParam = newColor;
+
+  bool get isImage => target?.type?.compareWithoutCase('Image') ?? false;
+
+  Tuple2<Offset, Offset> get startEndOffsets {
     Offset? startOffset;
     Offset? endOffset;
-    String? exactImage;
-    if (containsTarget) {
-      final Map<String, dynamic> mapVal =
-          json['target'] as Map<String, dynamic>;
-      final String? imageUrl = mapVal['id'];
+    if (isImage) {
+      final String? imageUrl = target?.id;
       if (imageUrl != null) {
         final int hashIndex =
             !imageUrl.contains('#') ? 0 : imageUrl.indexOf('#');
         if (hashIndex > 0) {
-          exactImage = imageUrl.substring(0, hashIndex);
           String temp = imageUrl;
           int nextComma = temp.indexOf('#xywh=');
           if (nextComma < temp.length) {
@@ -103,134 +92,91 @@ class Annotation extends BaseModel<Annotation> {
         }
       }
     }
-    return Annotation(
-      id: BaseModel.getByType<String>(json['_id']) ??
-          BaseModel.getByType<String>(json['id']),
-      courseId: BaseModel.getByType<String>(json['course_id']),
-      categoryId: BaseModel.getByType<String>(json['category_id']),
-      postId: BaseModel.getByType<String>(json['post_id']),
-      content: BaseModel.getByType<String>(json['body']),
-      startIndex:
-          startIndex ?? BaseModel.getWithDefault<int>(json['start_index'], 0),
-      endIndex: endIndex ?? BaseModel.getWithDefault<int>(json['end_index'], 0),
-      upVote: BaseModel.getByType<int>(json['upvote']),
-      createdAt: BaseModel.getByType<DateTime>(json['createdAt']),
-      updatedAt: BaseModel.getByType<DateTime>(json['updatedAt']),
-      isAnnotation:
-          BaseModel.getWithDefault<bool>(json['is_annotation'], false),
-      isImage: !isText,
-      imageUrl: exactImage ?? BaseModel.getByType<String>(json['image_url']),
-      startOffset: startOffset ??
-          BaseModel.getWithDefault<Offset>(json['start_offset'], Offset.zero),
-      endOffset: endOffset ??
-          BaseModel.getWithDefault<Offset>(json['end_offset'], Offset.zero),
-      creator: BaseModel.getByType<String>(json['creator']),
-    );
+    return Tuple2<Offset, Offset>(
+        startOffset ?? Offset.zero, endOffset ?? Offset.zero);
   }
 
-  Annotation copyWith({
-    String? content,
-    int? startIndex,
-    int? endIndex,
-    int? upVote,
-    Color? colorParam,
-    bool? isAnnotation,
-    Offset? startOffset,
-    Offset? endOffset,
-    bool? isImage,
-    String? imageUrl,
-    String? creator,
-  }) {
-    final Annotation annotation = Annotation(
-      id: id,
-      courseId: courseId,
-      categoryId: categoryId,
-      postId: postId,
-      startIndex: startIndex ?? this.startIndex,
-      endIndex: endIndex ?? this.endIndex,
-      upVote: upVote ?? this.upVote,
-      content: content ?? this.content,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-      isAnnotation: isAnnotation ?? this.isAnnotation,
-      isImage: isImage ?? this.isImage,
-      startOffset: startOffset ?? this.startOffset,
-      endOffset: endOffset ?? this.endOffset,
-      imageUrl: imageUrl ?? this.imageUrl,
-      creator: creator ?? this.creator,
-    );
-    annotation.color = colorParam ?? annotation.color;
-    return annotation;
+  String? get imageUrl {
+    final int? hashIndex = target?.id?.indexOf('#');
+    if (hashIndex == -1 || hashIndex == null) return null;
+    return target?.id?.substring(0, hashIndex);
   }
 
-  final String? id;
-  final String? courseId;
-  final String? creator;
-  final String? categoryId;
-  final String? postId;
-  final String? content;
-  final int startIndex;
-  final int endIndex;
-  final int? upVote;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final bool isAnnotation;
-  final bool isImage;
-  final Offset startOffset;
-  final Offset endOffset;
-  Color? colorParam;
-  final String? imageUrl;
+  int get startIndex => target?.selector?.start ?? 0;
+  int get endIndex => target?.selector?.end ?? 0;
+}
+
+class AnnotationTarget extends BaseModel<AnnotationTarget> {
+  const AnnotationTarget({
+    this.source,
+    this.type,
+    this.id,
+    this.format,
+    this.selector,
+  });
+
+  factory AnnotationTarget.fromJson(Map<String, dynamic> json) =>
+      AnnotationTarget(
+        format: BaseModel.getByType<String>(json['format']),
+        type: BaseModel.getByType<String>(json['type']),
+        id: BaseModel.getByType<String>(json['id']),
+        source: BaseModel.getByType<String>(json['source']),
+        selector: BaseModel.embeddedModelFromJson<AnnotationSelector>(
+            json['selector'], const AnnotationSelector()),
+      );
 
   @override
-  Annotation fromJson(Map<String, dynamic> json) => Annotation.fromJson(json);
+  AnnotationTarget fromJson(Map<String, dynamic> json) =>
+      AnnotationTarget.fromJson(json);
+
+  final String? source;
+  final AnnotationSelector? selector;
+  final String? type;
+  final String? id;
+  final String? format;
 
   @override
   Map<String, dynamic> get toJson => <String, dynamic>{
-        '_id': id,
-        'course_id': courseId,
-        'category_id': categoryId,
-        'post_id': postId,
-        'body': content,
-        'start_index': startIndex,
-        'end_index': endIndex,
-        'upvote': upVote,
-        'createdAt': BaseModel.primitiveToJson<DateTime>(createdAt),
-        'updatedAt': BaseModel.primitiveToJson<DateTime>(updatedAt),
-        'is_annotation': BaseModel.getByType<bool>(isAnnotation),
-        'color': BaseModel.primitiveToJson<Color>(color),
-        'is_image': isImage,
-        'start_offset': startOffset,
-        'end_offset': endOffset,
-        'image_url': imageUrl,
-        'creator': creator,
+        'source': source,
+        'selector': BaseModel.embeddedModelToJson<AnnotationSelector>(selector),
+        'type': type,
+        'id': id,
+        'format': format,
       };
 
   @override
-  List<Object?> get props => <Object?>[
-        id,
-        courseId,
-        creator,
-        categoryId,
-        postId,
-        content,
-        startIndex,
-        endIndex,
-        upVote,
-        createdAt,
-        updatedAt,
-        isAnnotation,
-        color,
-        isImage,
-        startOffset,
-        endOffset,
-        imageUrl,
-        creator,
-      ];
+  List<Object?> get props => <Object?>[id, type, format, source, selector];
+}
 
-  Color get color {
-    if (colorParam != null) return colorParam!;
-    return colorParam = ColorHelpers.lightRandomColor;
-  }
+class AnnotationSelector extends BaseModel<AnnotationSelector> {
+  const AnnotationSelector({
+    this.type = "TextPositionSelector",
+    this.start,
+    this.end,
+  });
 
-  set color(Color newColor) => colorParam = newColor;
+  factory AnnotationSelector.fromJson(Map<String, dynamic> json) =>
+      AnnotationSelector(
+        type: BaseModel.getByType<String>(json['type']),
+        start: BaseModel.getByType<int>(json['start']),
+        end: BaseModel.getByType<int>(json['end']),
+      );
+
+  @override
+  AnnotationSelector fromJson(Map<String, dynamic> json) =>
+      AnnotationSelector.fromJson(json);
+
+  final String? type;
+  final int? start;
+  final int? end;
+
+  @override
+  Map<String, dynamic> get toJson => <String, dynamic>{
+        'type': type,
+        'start': start,
+        'end': end,
+      };
+
+  @override
+  List<Object?> get props => <Object?>[type, start, end];
 }

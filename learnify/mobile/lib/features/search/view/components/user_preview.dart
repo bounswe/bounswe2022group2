@@ -8,7 +8,7 @@ class UserPreview extends StatelessWidget {
   }) : super(key: key);
 
   final String userName;
-  final String profilePhoto;
+  final String? profilePhoto;
 
   @override
   Widget build(BuildContext context) => Material(
@@ -17,29 +17,35 @@ class UserPreview extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           splashColor: DarkAppTheme.lightBlue,
-          onTap: () {},
+          onTap: () async => NavigationManager.instance.navigateToPage(
+              path: NavigationConstants.othersProfile,
+              data: <String, String>{
+                'username': userName,
+              }),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                  padding: EdgeInsets.symmetric(horizontal: context.width * 4),
-                  child: Ink.image(
+              if (profilePhoto != null)
+                Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: context.width * 4),
-                    image: AssetImage(profilePhoto),
-                    height: context.height * 15,
-                    width: context.width * 30,
-                    fit: BoxFit.scaleDown,
-                  )),
+                    child: Ink.image(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: context.width * 4),
+                      image: AssetImage(profilePhoto!),
+                      height: context.height * 15,
+                      width: context.width * 30,
+                      fit: BoxFit.scaleDown,
+                    )),
               context.sizedH(.5),
-              _courseDescription(context),
+              _username(context),
             ],
           ),
         ),
       );
 
-  Widget _courseDescription(BuildContext context) => Container(
+  Widget _username(BuildContext context) => Container(
       padding: EdgeInsets.symmetric(horizontal: context.width * 3),
       width: context.width * 38,
       child: Row(

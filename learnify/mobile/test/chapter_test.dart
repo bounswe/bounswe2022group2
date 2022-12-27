@@ -4,9 +4,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
 import 'package:learnify/core/widgets/text/annotatable/annotatable_text.dart';
+import 'package:learnify/features/learning-space/models/annotation/annotation_model.dart';
 import 'package:learnify/features/learning-space/models/learning_space_model.dart';
+import 'package:learnify/features/learning-space/view-model/learning_space_view_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 import 'package:learnify/product/language/language_keys.dart';
+import 'package:provider/provider.dart';
 
 import 'test_helpers.dart';
 
@@ -17,7 +20,17 @@ void main() {
       final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen =
           LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
-      await tester.pumpWidget(TestHelpers.appWidget(detailScreen));
+      await tester.pumpWidget(
+        TestHelpers.appWidget(
+          detailScreen,
+          childCallback: (BuildContext c) {
+            final LearningSpaceViewModel viewModel =
+                c.read<LearningSpaceViewModel>();
+            viewModel.annotations['0'] = <Annotation>[];
+            viewModel.annotations['1'] = <Annotation>[];
+          },
+        ),
+      );
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);
@@ -54,12 +67,21 @@ void main() {
       expect(expansionTile.children.first.runtimeType, Center);
       expect(expansionTile.children[1].runtimeType, CarouselSlider);
       expect(expansionTile.children[4].runtimeType, AnnotatableText);
-      expect(expansionTile.children.last.runtimeType, Padding);
-      final Padding padding = expansionTile.children.last as Padding;
-      expect(padding.child.runtimeType, ActionButton);
-      final ActionButton? editButton = padding.child as ActionButton?;
+      expect(expansionTile.children[5].runtimeType, Row);
+      final Row row = expansionTile.children[5] as Row;
+      expect(row.children[0].runtimeType, Expanded);
+      expect(row.children[1].runtimeType, Expanded);
+
+      final Expanded? firstExpand = row.children[0] as Expanded?;
+      final ActionButton? editButton =
+          (firstExpand?.child as Padding).child as ActionButton?;
       expect(editButton?.isActive, true);
       expect(editButton?.text, TextKeys.editPost);
+      final Expanded? secondExpand = row.children[1] as Expanded?;
+      final ActionButton? commentButton =
+          (secondExpand?.child as Padding).child as ActionButton?;
+      expect(commentButton?.isActive, true);
+      expect(commentButton?.text, TextKeys.addComment);
     },
   );
 }
