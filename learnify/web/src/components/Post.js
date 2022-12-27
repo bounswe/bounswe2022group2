@@ -179,14 +179,13 @@ export default function Post(props){
   useEffect (() => {
     const getImageAnnotation = async () => {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/get/${lsid}/${postId}`);
-      console.log(response.data);
       const a = new Annotorious({
         image: document.getElementById("post-content-image" + postId),
         widgets: [ 'COMMENT' ],
         readOnly: false
       });
       response.data.annotations.map((item) => {
-        if(item.target.selector === null){
+        if(!item.target.selector){
           a.addAnnotation({
             '@context': 'http://www.w3.org/ns/anno.jsonld',
             type: 'Annotation',
@@ -201,8 +200,8 @@ export default function Post(props){
             target: {
               selector: [
                 {
-                  conformsTo: 'http://www.w3.org/TR/media-frags/',
                   type: 'FragmentSelector',
+                  conformsTo: 'http://www.w3.org/TR/media-frags/',
                   value: item.target.id.match(/#(.+)/)[1],
                 },
               ],
