@@ -47,12 +47,12 @@ class HomeScreen extends BaseView<HomeViewModel> {
             ),
             context.sizedH(3),
             SelectorHelper<List<LearningSpace>, HomeViewModel>().builder(
-              (_, HomeViewModel model) => model.friendLearningSpaces,
+              (_, HomeViewModel model) => model.topRatedLearningSpaces,
               (BuildContext context, List<LearningSpace> list, Widget? child) =>
                   SizedBox(
                 height: context.height * 23,
                 child: _coursePreviewList(
-                    context, TextKeys.friendLearningSpaces, list),
+                    context, TextKeys.topRatedLearningSpaces, list),
               ),
             ),
             context.sizedH(3),

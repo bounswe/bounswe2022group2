@@ -116,7 +116,7 @@ class SearchViewModel extends BaseViewModel {
 
   Future<String?> _getRecommendedLearningSpacesRequest() async {
     final IResponseModel<GetLearningSpacesResponse> resp =
-        await _homeService.getLearningSpaces();
+        await _homeService.getRecommendedLearningSpaces();
     final GetLearningSpacesResponse? respData = resp.data;
     if (resp.hasError || respData == null) return resp.error?.errorMessage;
     _recommendedLearningSpaces = respData.learningSpaces;

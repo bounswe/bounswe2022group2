@@ -7,4 +7,6 @@ abstract class IHomeService extends BaseService {
   /// Gets the courses
   Future<IResponseModel<GetLearningSpacesResponse>> getLearningSpaces();
   Future<IResponseModel<GetLearningSpacesResponse>> getTakenLearningSpaces();
+  Future<IResponseModel<GetLearningSpacesResponse>>
+      getRecommendedLearningSpaces();
 }

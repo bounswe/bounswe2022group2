@@ -54,7 +54,7 @@ class TextKeys {
   static const String createPost = "create_post";
   static const String editPost = "edit_post";
   static const String takenLearningSpaces = "taken_learning spaces";
-  static const String friendLearningSpaces = "friend_learning spaces";
+  static const String topRatedLearningSpaces = "top_rated_learning spaces";
   static const String recommendedLearningSpaces = "recommended_learning spaces";
   static const String recommendedUsers = "recommended_users";
   static const String annotate = "annotate";

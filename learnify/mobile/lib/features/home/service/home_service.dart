@@ -18,6 +18,8 @@ class HomeService extends IHomeService {
 
   static const String _learningspaces = '/learningspace';
   static const String _takenLearningSpaces = '/learningspace/user/participated';
+  static const String _recommendedLearningSpaces =
+      '/learningspace/user/recomended';
 
   @override
   Future<IResponseModel<GetLearningSpacesResponse>> getLearningSpaces() async =>
@@ -31,6 +33,15 @@ class HomeService extends IHomeService {
       getTakenLearningSpaces() async =>
           networkManager.send<AnyModel, GetLearningSpacesResponse>(
             _takenLearningSpaces,
+            parseModel: const GetLearningSpacesResponse(),
+            type: RequestTypes.get,
+          );
+
+  @override
+  Future<IResponseModel<GetLearningSpacesResponse>>
+      getRecommendedLearningSpaces() async =>
+          networkManager.send<AnyModel, GetLearningSpacesResponse>(
+            _recommendedLearningSpaces,
             parseModel: const GetLearningSpacesResponse(),
             type: RequestTypes.get,
           );
