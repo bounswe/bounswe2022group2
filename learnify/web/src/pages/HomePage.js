@@ -114,15 +114,10 @@ function HomePage() {
                     </label>
                     <div className='space-5'></div>
                     <div className='feed-list-box'>
-                        <FeedItem username="bahri" action="created a learning space about github templates."/>
-                        <FeedItem username="onur" action="joined a learning space about creating an endpoint at 06:48."/>
-                        <FeedItem username="batuhan" action="commented its not magic its years of engineering."/>
-                        <FeedItem username="egemen" action="followed ecenur"/>
-                        <FeedItem username="gokay" action="followed altay"/>
-                        <FeedItem username="ecenur" action="created a learning space about how to present."/>
-                        <FeedItem username="enes" action="followed koray."/>
-                        <FeedItem username="ezgi" action="joined a learning space about mobile development."/>
-                        <FeedItem username="hasancan" action="followed batuhan."/>
+                        <FeedItem username="ecenur.sezar" action="created a learning space about How to Score a Free Kick in Football."/>
+                        <FeedItem username="ezgidogu" action="commented on How to Swim."/>
+                        <FeedItem username="altay" action="created a learning space about Michelangelo."/>
+                        <FeedItem username="ecenur.sezar" action="commented on Music Theory."/>
                     </div>
                 </div>
             </div>
