@@ -814,17 +814,6 @@ h1 {
     outline: none;
 }
 
-.title-box-post:empty::before {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    padding: 8px;
-    background-color: transparent;
-    color: #1746A2;
-    outline: none;
-    content: attr(data-placeholder);
-}
-
 .home {
     max-width: 100%;
     align-content: center;
