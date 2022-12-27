@@ -1,23 +1,22 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
-import '../../../core/managers/network/models/any_model.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../../learning-space/models/learning_space_model.dart';
 import '../model/get_profile_response_model.dart';
 import '../model/profile_model.dart';
-import '../model/profile_without_lists_model.dart';
 import '../model/update_profile_request_model.dart';
 import '../model/update_profile_response_model.dart';
-import '../service/profile_service.dart';
 import '../service/i_profile_service.dart';
+import '../service/profile_service.dart';
 
 /// View model to manage the data on profile screen.
 class ProfileViewModel extends BaseViewModel {
@@ -41,9 +40,6 @@ class ProfileViewModel extends BaseViewModel {
 
   String? _selectedImage;
   String? get selectedImage => _selectedImage;
-
-  late GlobalKey<FormState> _userFormKey;
-  GlobalKey<FormState> get userFormKey => _userFormKey;
 
   late GlobalKey<FormState> _biographyFormKey;
   GlobalKey<FormState> get biographyFormKey => _biographyFormKey;
@@ -70,7 +66,6 @@ class ProfileViewModel extends BaseViewModel {
   @override
   void initView() {
     getProfile();
-    _userFormKey = GlobalKey<FormState>();
     _biographyFormKey = GlobalKey<FormState>();
     _selectedImage = localManager.getString(StorageKeys.profilePhoto);
     _biographyController = TextEditingController(text: _initialBiography);
@@ -81,6 +76,10 @@ class ProfileViewModel extends BaseViewModel {
   @override
   void disposeView() {
     _biographyController.dispose();
+    _profile = Profile(
+      username: "",
+      email: _user.email,
+    );
     _setDefault();
     super.disposeView();
   }
@@ -99,10 +98,10 @@ class ProfileViewModel extends BaseViewModel {
       final XFile? pickedFile = await _picker.pickImage(source: source);
       if (pickedFile == null || _selectedImage == pickedFile.path) return null;
       _canUpdate = true;
-      final Uint8List bytes = File(pickedFile.path).readAsBytesSync();
-      final String base64Image = "data:image/png;base64,${base64Encode(bytes)}";
-      print(base64Image);
-      print("AhahshaHDSHhsdhsahsdhdsDHSAhsd");
+      final File file = File(pickedFile.path);
+      final Uint8List bytes = file.readAsBytesSync();
+      final String base64Image = base64Encode(bytes);
+      _profile.copyWith(profilePicture: base64Image);
       _isImagePicked = true;
       _selectedImage = base64Image;
       notifyListeners();
@@ -135,30 +134,17 @@ class ProfileViewModel extends BaseViewModel {
     final UpdateProfileResponse? respData = response.data;
 
     if (response.hasError || respData == null) {
-      print("------------------");
-      print('error: ${response.error?.errorMessage}');
       return response.error?.errorMessage;
     }
 
-    final ProfileThatResponseOfUpdateProfile? responseProfile =
-        respData.profile;
-    if (responseProfile != null) {
-      _profile = Profile(
-        username: responseProfile.username,
-        email: _user.email,
-        bio: responseProfile.bio,
-        profilePicture: responseProfile.profilePicture,
-        participated: _profile.participated,
-        created: _profile.created,
-      );
-      notifyListeners();
-    }
+    _profile.copyWith(
+      bio: _biographyController.text,
+      profilePicture: _selectedImage,
+    );
+
+    notifyListeners();
+
     return null;
-/*
-    if (_selectedImage != null) {
-      await localManager.setString(StorageKeys.profilePhoto, _selectedImage!);
-    }
-*/
   }
 
   void _setDefault() {
@@ -182,6 +168,8 @@ class ProfileViewModel extends BaseViewModel {
       if (res.hasError || respData == null) {
         return res.error?.errorMessage;
       }
+      _initialBiography = respData.bio;
+      _selectedImage = respData.profilePicture;
       _profile = Profile(
         username: respData.username,
         email: _user.email,
@@ -190,17 +178,7 @@ class ProfileViewModel extends BaseViewModel {
         participated: respData.participated ?? <LearningSpace>[],
         created: respData.created ?? <LearningSpace>[],
       );
-      _canUpdate = false;
       notifyListeners();
-
-      //print(respData);
-      //_setUserData(respData);
-
-      //_profile = respData.profile;
-      //_selectedImage = base64.decode(_profile.profilePicture!);
-
-      //_enrolledLearningSpaces = _profile.participated;
-      //_createdLearningSpaces = _profile.created;
     }
     return null;
   }
