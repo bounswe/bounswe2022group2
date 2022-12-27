@@ -169,7 +169,7 @@ class CreateEventScreen extends BaseView<LearningSpaceViewModel> {
 
   static Widget _geolocationField(BuildContext context) => Container(
       width: context.maxPossibleWidth,
-      margin: EdgeInsets.symmetric(horizontal: context.width * 7),
+      margin: EdgeInsets.symmetric(horizontal: context.width * 3),
       child: Padding(
         padding: EdgeInsets.all(context.width * 2),
         child: SelectorHelper<GeoLocation, LearningSpaceViewModel>().builder(

@@ -126,6 +126,10 @@
   "dark_mode": "Dunkler Modus:",
   "biography": "Biographie",
   "add_biography_hint": "Erklären Sie sich kurz",
+  "created": "Erstellt",
+  "created_learning_spaces": "Geschaffene Lernräume",
+  "username_colon": "Nutzername:",
+  "email_colon": "E-Mail:",
   "creator": "Schöpfer",
   "ok": "OKAY",
   "create_event_title_hint": "Geben Sie einen Titel für ein Ereignis ein",
@@ -143,5 +147,6 @@
   "change_geolocation": "Geolocation ändern",
   "add_comment": "Kommentar",
   "add_comment_hint": "Kommentar hier einfügen",
-  "view_comments": "Alle Kommentare anzeigen"
+  "view_comments": "Alle Kommentare anzeigen",
+  "biography_colon": "Biographie:"
 }
