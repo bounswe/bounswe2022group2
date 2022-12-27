@@ -129,6 +129,89 @@ export default function Post(props){
     getTextAnnotation();
   }, [])
 
+  const [imageAnnotation, setImageAnnotation] = useState();
+  useEffect (() => {
+    const postImageAnnotation = async () => {
+      const a = new Annotorious({
+        image: document.getElementById("post-content-image" + postId),
+        widgets: [ 'COMMENT' ],
+        readOnly: false
+      });
+      a.on('createAnnotation', function(propsImageAnnotation) {
+        setImageAnnotation(propsImageAnnotation);
+      });
+      let data = {
+        '@context': "http://www.w3.org/ns/anno.jsonld",
+        type: "Annotation",
+        body: imageAnnotation.body[0].value,
+        target: {
+          source: 'http://localhost:3000/' + lsid + '/' + postId,
+          selector: null,
+          type: "Image",
+          id: images + "#" + imageAnnotation.target.selector.value,
+          format: "image/jpeg"
+        }
+      };
+      console.log(data);
+      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/create/${lsid}/${postId}`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            'Authorization': `${token}` ,
+        },
+      })
+        .then((response) => {
+            if (response.status === 200) {
+                console.log("successfull")
+                setMessage("Vote added successfully");
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+    };
+    postImageAnnotation();
+  }, [imageAnnotation])
+
+  useEffect (() => {
+    const getImageAnnotation = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/get/${lsid}/${postId}`);
+      console.log(response.data);
+      const a = new Annotorious({
+        image: document.getElementById("post-content-image" + postId),
+        widgets: [ 'COMMENT' ],
+        readOnly: false
+      });
+      response.data.annotations.map((item) => {
+        console.log(item.target.id.match(/^(.+?)#/)[1])
+        a.addAnnotation({
+          '@context': 'http://www.w3.org/ns/anno.jsonld',
+          type: 'Annotation',
+          id: item.id,
+          body: [
+            {
+              type: 'TextualBody',
+              value: item.body,
+              purpose: 'commenting',
+            },
+          ],
+          target: {
+            selector: [
+              {
+                conformsTo: 'http://www.w3.org/TR/media-frags/',
+                type: 'FragmentSelector',
+                value: item.target.id.match(/#(.+)/)[1],
+              },
+            ],
+            source: item.target.id.match(/^(.+?)#/)[1],
+          },
+        });
+      });
+    };
+    getImageAnnotation();
+  }, [])
+
   const increaseUp = () => {
       localStorage.setItem((postId+"upClicked"), true);
       console.log((postId+"Clicked"));
