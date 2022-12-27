@@ -19,6 +19,7 @@ import '../../../product/constants/icon_keys.dart';
 import '../../../product/constants/navigation_constants.dart';
 import '../../../product/theme/light_theme.dart';
 import '../../home/view/home_screen.dart';
+import '../../profile/view-model/profile_view_model.dart';
 import '../../profile/view/profile_screen.dart';
 import '../../search/view/search_screen.dart';
 import '../../view-learning-spaces/view/taken_ls_screen.dart';

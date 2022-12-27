@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
+import '../../../core/managers/local/local_manager.dart';
 import '../../../core/managers/network/models/l_response_model.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
@@ -58,6 +59,7 @@ class ProfileViewModel extends BaseViewModel {
   void initViewModel() {
     _profileService = ProfileService.instance;
     _picker = ImagePicker();
+    _user = LocalManager.instance.getModel(const User(), StorageKeys.user);
   }
 
   @override
@@ -90,9 +92,8 @@ class ProfileViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  Future<void> getUserName() async {
-    final User tempUser =
-        await localManager.getModel(const User(), StorageKeys.user);
+  void getUserName() {
+    final User tempUser = localManager.getModel(const User(), StorageKeys.user);
     _user = tempUser;
     _profile = Profile(username: _user?.username, email: _user?.email);
   }
