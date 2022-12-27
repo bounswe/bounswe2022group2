@@ -71,16 +71,9 @@ class ProviderList {
       lazy: true,
       create: (_) => OthersProfileViewModel(),
     ),
-    ChangeNotifierProxyProvider<HomeWrapperViewModel, ProfileViewModel>(
+    ChangeNotifierProvider<ProfileViewModel>(
       lazy: true,
-      create: (BuildContext context) =>
-          ProfileViewModel(context.read<HomeWrapperViewModel>().user),
-      update: (_, HomeWrapperViewModel viewModel,
-          ProfileViewModel? profileViewModel) {
-        final ProfileViewModel updatedModel =
-            profileViewModel ?? ProfileViewModel(viewModel.user);
-        return updatedModel;
-      },
+      create: (BuildContext context) => ProfileViewModel(),
     ),
     ChangeNotifierProvider<ForgetPasswordViewModel>(
       lazy: true,
