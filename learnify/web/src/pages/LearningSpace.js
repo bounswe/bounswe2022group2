@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import EventForm from '../components/CreateEventForm';
 import Event from '../components/Event';
+import Contributors from '../components/Contributors';
 
 function LearningSpace() {
 
@@ -322,7 +323,7 @@ function LearningSpace() {
                     </label>
                     <div className='space-5'></div>
                     {participants.map(participant =>	
-                                    <Participants participant = {participant} creator={lsCreator}/> )}
+                                    <Contributors participant = {participant} creator={lsCreator}/> )}
                 </div>
                 <EventForm lsid={lsid}/>
                 <div className='ls-box-org'>
