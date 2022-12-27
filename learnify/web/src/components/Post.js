@@ -31,6 +31,22 @@ function TextInterface({
 
 export default function Post(props){
 
+  const title = props.myPost.title;
+  const postId = props.myPost._id;
+  const creator = props.myPost.creator;
+  const content = props.myPost.content;
+  const images = props.myPost.images;
+  const commentArray = props.myPost.comments;
+  const upvotes = props.myPost.upvote;
+  const downvotes = props.myPost.downvote;
+  const lsid = props.my_lsid;
+  const profileLink = `/profile/${creator}`;
+
+  const [deletePost, setDeletePost] = useState(false);
+
+  const [postTitle, setPostTitle] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+
   const imgEl = useRef();
 
   const [textAnnotation, setTextAnnotation] = useState();
@@ -38,6 +54,7 @@ export default function Post(props){
     const postTextAnnotation = async () => {
       const r = new Recogito({
         content: document.getElementById("post-content-text" + postId),
+        widgets: [ 'COMMENT' ]
       });
       r.on('createAnnotation', function (propsTextAnnotation) {
         setTextAnnotation(propsTextAnnotation);
@@ -72,173 +89,6 @@ export default function Post(props){
     };
     postTextAnnotation();
   }, [textAnnotation]);
-  
-//   useEffect(() => {
-//     if(images[0] !== ""){
-//     let annotorious = null;
-
-//     if (imgEl.current) {
-//       // Init
-//       annotorious = new Annotorious({
-//         image: imgEl.current,
-//         widgets: [
-//           "COMMENT",
-//           { widget: "TAG", vocabulary: ["Animal", "Building", "Waterbody"] }
-//         ]
-//       });
-
-//       // Attach event handlers here
-//       // annotorious.on("createAnnotation", (annotation) => {
-//       //   setWatch((prev) => !prev);
-//       //   console.log("created", annotation, anno);
-//       // });
-
-//       annotorious.on("updateAnnotation", (annotation, previous) => {
-//         console.log("updated", annotation, previous);
-//       });
-
-//       annotorious.on("deleteAnnotation", (annotation) => {
-//         console.log("deleted", annotation);
-//       });
-
-//       annotorious.on("createSelection", function () {
-//         const defaultSuggestions =
-//           "<p>EasterEgg</p><p>Baklava</p><p>Netting</p><p>Altay</p><p>Enes</p><p>Gökay</p><p>Koray</p>";
-//         const commentWrapper = document.querySelector(".comment");
-//         const commentTextarea = document.querySelector(".comment > textarea");
-//         const commentSuggestion = document.createElement("div");
-//         commentSuggestion.classList.add("comment-suggestion");
-//         commentSuggestion.innerHTML = defaultSuggestions;
-//         commentSuggestion.style.display = "none";
-//         commentSuggestion.style.position = "absolute";
-//         commentSuggestion.style.left = "3px";
-//         commentSuggestion.style.backgroundColor = "#fff";
-//         commentSuggestion.style.padding = "2px 12px";
-//         commentSuggestion.style.boxShadow = "0 0 20px #00000040";
-//         commentSuggestion.style.border = "1px solid #d6d7d9";
-//         commentSuggestion.style.borderRadius = "3px";
-//         commentSuggestion.style.zIndex = "1";
-//         commentSuggestion.style.maxHeight = "100px";
-//         commentSuggestion.style.overflowY = "auto";
-
-//         if (commentTextarea) {
-//           commentTextarea.addEventListener("keyup", () => {
-//             let elements = [];
-//             commentSuggestion.innerHTML = defaultSuggestions;
-//             commentSuggestion.style.display = "block";
-
-//             document
-//               .querySelectorAll(".comment-suggestion > p")
-//               .forEach((item) => {
-//                 if (
-//                   item.innerText
-//                     .toLowerCase()
-//                     .includes(commentTextarea.value.toLowerCase())
-//                 ) {
-//                   elements.push(`<p>${item.innerText}</p>`);
-//                 }
-//               });
-
-//             if (commentTextarea.value.toLowerCase() === "") {
-//               commentSuggestion.innerHTML = defaultSuggestions;
-//             } else if (elements.length < 1) {
-//               commentSuggestion.style.display = "none";
-//             } else {
-//               commentSuggestion.innerHTML = elements.join("");
-//             }
-//           });
-//         }
-
-//         if (commentWrapper) {
-//           commentWrapper.addEventListener("click", () => {
-//             commentSuggestion.style.display = "block";
-//           });
-//           commentWrapper.style.position = "relative";
-//           commentWrapper.appendChild(commentSuggestion);
-//           document
-//             .querySelectorAll(".comment-suggestion > p")
-//             .forEach((item) => {
-//               item.addEventListener("click", (e) => {
-//                 commentTextarea.value = e.target.innerText;
-//                 commentSuggestion.style.display = "none";
-//               });
-//             });
-//         }
-
-//         document.querySelectorAll(".comment-suggestion > p").forEach((item) => {
-//           item.style.margin = "0 -12px";
-//           item.style.padding = "2px 12px";
-
-//           item.addEventListener("mouseover", () => {
-//             item.style.backgroundColor = "rgb(189, 228, 255)";
-//           });
-
-//           item.addEventListener("mouseleave", () => {
-//             item.style.backgroundColor = "#fff";
-//           });
-//         });
-//       });
-//     }
-
-//     // Keep current Annotorious instance in state
-//     // setAnno(annotorious);
-//     // console.log("bganno", anno, annotorious?.getImageSnippetById());
-
-//     // Cleanup: destroy current instance
-//     return ;
-// }}, []);
-
-  // useEffect(() => {
-  //   console.log("andso", anno?.getImageSnippetById());
-  // }, [watch]);
-
-  // const [i, setI] = useState(0);
-  // const [url, setUrl] = useState();
-  // const [classes, setClasses] = useState(["class1", "class2"]);
-
-  // const urlList = [
-  //   ""
-  // ];
-
-  // useEffect(() => {
-  //   setUrl(urlList[i]);
-  // }, [i]);
-
-  // const handleNext = () => {
-  //   setI((i + 1) % urlList.length);
-  // };
-
-  // const handleCreateAnnotation = async (annotation) => {
-  //   console.log("current URL", url);
-  //   console.log(annotation);
-  //   let data = {
-  //    '@context': "http://www.w3.org/ns/anno.jsonld",
-  //     type: "Annotation",
-  //     body: annotation.body[0].value,
-  //     target: {
-  //       source: 'http://localhost:3000/' + lsid + '/' + postId,
-  //       selector: annotation.target.selector[1],
-  //     }
-  //   };
-  //   console.log(data);
-  //   await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}annotations-service/create/${lsid}/${postId}`, {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //         'Content-type': 'application/json; charset=UTF-8',
-  //         'Authorization': `${token}` ,
-  //     },
-  // })
-  //     .then((response) => {
-  //         if (response.status === 200) {
-  //             console.log("successfull")
-  //             setMessage("Vote added successfully");
-  //         }
-  //     })
-  //     .catch((error) => {
-  //         console.error("Error:", error);
-  //     });
-  // };
 
   useEffect (() => {
     const getTextAnnotation = async () => {
@@ -246,11 +96,13 @@ export default function Post(props){
       console.log(response.data);
       const r = new Recogito({
         content: document.getElementById("post-content-text" + postId),
+        widgets: [ 'COMMENT' ]
       });
       response.data.annotations.map((item) => {
         r.addAnnotation({
           '@context': 'http://www.w3.org/ns/anno.jsonld',
           type: 'Annotation',
+          id: item.id,
           body: [
             {
               type: 'TextualBody',
@@ -276,22 +128,6 @@ export default function Post(props){
     };
     getTextAnnotation();
   }, [])
-
-  const title = props.myPost.title;
-  const postId = props.myPost._id;
-  const creator = props.myPost.creator;
-  const content = props.myPost.content;
-  const images = props.myPost.images;
-  const commentArray = props.myPost.comments;
-  const upvotes = props.myPost.upvote;
-  const downvotes = props.myPost.downvote;
-  const lsid = props.my_lsid;
-  const profileLink = `/profile/${creator}`;
-
-  const [deletePost, setDeletePost] = useState(false);
-
-  const [postTitle, setPostTitle] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
 
   const increaseUp = () => {
       localStorage.setItem((postId+"upClicked"), true);
@@ -456,6 +292,7 @@ useEffect(() => {
 
     return(
     <div>
+    <script src="/annotorious.min.js"></script>
         {!deletePost &&
         <div className='ls-box-mid'>
             <label className='feed-title'>
@@ -467,6 +304,7 @@ useEffect(() => {
                     ref={imgEl}
                     src={images}
                     alt="space"
+                    id={"post-content-image" + postId}
                     style = {{width: "893.5px",
                     height: "auto",
                     maxWidth: "100%",
