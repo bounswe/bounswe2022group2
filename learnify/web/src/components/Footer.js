@@ -5,6 +5,8 @@ export default function Footer() {
 
     const year = new Date().getFullYear();
 
+    const currentUser = localStorage.getItem('username')
+
     return (
         <div className='footer-parent-layout' data-testid="footer">
             <div className='footer-container'>
@@ -19,14 +21,14 @@ export default function Footer() {
                         <a href="/notifications" className='footer-item-bold'>Notifications</a>
                     </div>
                     <div className='footer-column-r'>
-                        <a href="/profile" className='footer-item-bold'>Profile</a>
+                        <a href={`/profile/${currentUser}`} className='footer-item-bold'>Profile</a>
                         <a href="/contact" className='footer-item-bold'>Contact</a>
                         <a href="/about" className='footer-item-bold'>About</a>
                     </div>
                     <div className='footer-column-r'>
-                        <a href="/user/learning-spaces" className='footer-item-bold'>My Learning Spaces</a>
-                        <a href="/popular-learning-spaces" className='footer-item-bold'>Popular Learning Spaces</a>
-                        <a href="/recommended-learning-spaces" className='footer-item-bold'>Recommended Learning Spaces</a>
+                        <a href={`/${currentUser}/learningspaces`} className='footer-item-bold'>My Learning Spaces</a>
+                        <a href="/popular" className='footer-item-bold'>Popular Learning Spaces</a>
+                        <a href="/recommended" className='footer-item-bold'>Recommended Learning Spaces</a>
                     </div>
                     <div className='footer-column-r'>
                         {year} © Learnify Team. All rights reserved.

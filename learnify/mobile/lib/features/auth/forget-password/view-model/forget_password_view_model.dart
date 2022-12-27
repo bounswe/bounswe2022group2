@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
@@ -66,9 +68,9 @@ class ForgetPasswordViewModel extends BaseViewModel {
       final IResponseModel<MessageResponse> resp =
           await _authService.sendVerification(requestModel);
       if (resp.hasError) return resp.error?.errorMessage;
-      await navigationManager.navigateToPage(
+      unawaited(navigationManager.navigateToPage(
           path: NavigationConstants.verify,
-          data: <String, dynamic>{'email': _emailController.text});
+          data: <String, dynamic>{'email': _emailController.text}));
     }
     return null;
   }

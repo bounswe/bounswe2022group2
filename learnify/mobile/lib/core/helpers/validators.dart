@@ -85,6 +85,13 @@ class Validators {
     return errorMessage;
   }
 
+  /// Validation for description, checks minimum length
+  static String? description(String? description) {
+    final String? errorMessage = lengthCheck(description, 6);
+    if (errorMessage != null) return '    $errorMessage';
+    return errorMessage;
+  }
+
   static String? _runValidations(String? text,
       [List<ValidatorCallback> validations = const <ValidatorCallback>[]]) {
     for (int i = 0; i < validations.length; i++) {

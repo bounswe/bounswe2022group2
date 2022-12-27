@@ -22,6 +22,7 @@ import AboutPage from './pages/AboutPage';
 import MyLearningSpacesPage from './pages/MyLearningSpacesPage';
 import PopularLearningSpacesPage from './pages/PopularLearningSpacesPage';
 import ContactPage from './pages/ContactPage';
+import RecommendedLearningSpacesPage from './pages/RecommendedLearningSpacesPage';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="/profile/:username" element={<PrivateRoutes> <ProfilePage /> </PrivateRoutes>}/>
           <Route path="/:username/learningspaces" element={<PrivateRoutes> <MyLearningSpacesPage /> </PrivateRoutes>}/>
           <Route path="/popular" element={<PrivateRoutes> <PopularLearningSpacesPage /> </PrivateRoutes>}/>
+          <Route path="/recommended" element={<PrivateRoutes> <RecommendedLearningSpacesPage /> </PrivateRoutes>}/>
           <Route path='*' element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
