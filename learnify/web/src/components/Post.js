@@ -99,31 +99,33 @@ export default function Post(props){
         widgets: [ 'COMMENT' ]
       });
       response.data.annotations.map((item) => {
-        r.addAnnotation({
-          '@context': 'http://www.w3.org/ns/anno.jsonld',
-          type: 'Annotation',
-          id: item.id,
-          body: [
-            {
-              type: 'TextualBody',
-              value: item.body,
-              purpose: 'commenting',
-            },
-          ],
-          target: {
-            selector: [
+        if(item.target.selector){
+          r.addAnnotation({
+            '@context': 'http://www.w3.org/ns/anno.jsonld',
+            type: 'Annotation',
+            id: item.id,
+            body: [
               {
-                type: 'TextQuoteSelector',
-                exact: item.body,
-              },
-              {
-                type: 'TextPositionSelector',
-                start: item.target.selector.start,
-                end: item.target.selector.end,
+                type: 'TextualBody',
+                value: item.body,
+                purpose: 'commenting',
               },
             ],
-          },
-        });
+            target: {
+              selector: [
+                {
+                  type: 'TextQuoteSelector',
+                  exact: item.body,
+                },
+                {
+                  type: 'TextPositionSelector',
+                  start: item.target.selector.start,
+                  end: item.target.selector.end,
+                },
+              ],
+            },
+          });
+        }
       });
     };
     getTextAnnotation();
@@ -184,29 +186,30 @@ export default function Post(props){
         readOnly: false
       });
       response.data.annotations.map((item) => {
-        console.log(item.target.id.match(/^(.+?)#/)[1])
-        a.addAnnotation({
-          '@context': 'http://www.w3.org/ns/anno.jsonld',
-          type: 'Annotation',
-          id: item.id,
-          body: [
-            {
-              type: 'TextualBody',
-              value: item.body,
-              purpose: 'commenting',
-            },
-          ],
-          target: {
-            selector: [
+        if(item.target.selector === null){
+          a.addAnnotation({
+            '@context': 'http://www.w3.org/ns/anno.jsonld',
+            type: 'Annotation',
+            id: item.id,
+            body: [
               {
-                conformsTo: 'http://www.w3.org/TR/media-frags/',
-                type: 'FragmentSelector',
-                value: item.target.id.match(/#(.+)/)[1],
+                type: 'TextualBody',
+                value: item.body,
+                purpose: 'commenting',
               },
             ],
-            source: item.target.id.match(/^(.+?)#/)[1],
-          },
-        });
+            target: {
+              selector: [
+                {
+                  conformsTo: 'http://www.w3.org/TR/media-frags/',
+                  type: 'FragmentSelector',
+                  value: item.target.id.match(/#(.+)/)[1],
+                },
+              ],
+              source: item.target.id.match(/^(.+?)#/)[1],
+            },
+          });
+      }
       });
     };
     getImageAnnotation();
