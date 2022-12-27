@@ -4,8 +4,8 @@ import 'dart:math';
 import 'package:async/async.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:tuple/tuple.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:tuple/tuple.dart';
 
 import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/extensions/string/string_extensions.dart';
@@ -306,6 +306,7 @@ class LearningSpaceViewModel extends BaseViewModel {
     final List<Event>? tempEventList = events[learningSpace?.id];
 
     if (tempEventList != null) {
+      // ignore: avoid_function_literals_in_foreach_calls
       tempEventList.forEach((Event element) async {
         if (element.id == eventId) {
           final User tempUser =
@@ -363,7 +364,7 @@ class LearningSpaceViewModel extends BaseViewModel {
       body: annotation,
       target: AnnotationTarget(
         selector: selector,
-        source: 'http://18.159.61.178/${_learningSpace?.id}${oldPost.id}',
+        source: 'http://3.76.176.35/${_learningSpace?.id}/${oldPost.id}',
       ),
     );
     final IResponseModel<CreateAnnotationResponse> res = await _lsService
@@ -403,7 +404,7 @@ class LearningSpaceViewModel extends BaseViewModel {
           start: startIndex,
           end: endIndex,
         ),
-        source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
+        source: 'http://3.76.176.35/${learningSpace?.id}/${post.id}',
       ),
     );
     final List<Annotation> oldAnnotations =
@@ -441,7 +442,7 @@ class LearningSpaceViewModel extends BaseViewModel {
         id: '$imageUrl#xywh=$x,$y,$w,$h',
         format: 'image/jpeg',
         type: 'Image',
-        source: 'http://18.159.61.178/${learningSpace?.id}${oldPost.id}');
+        source: 'http://3.76.176.35/${learningSpace?.id}/${oldPost.id}');
     final Annotation req = Annotation(body: annotation, target: target);
     final IResponseModel<CreateAnnotationResponse> res = await _lsService
         .createAnnotation(req, _learningSpace?.id ?? '', oldPost.id ?? '');
@@ -512,7 +513,7 @@ class LearningSpaceViewModel extends BaseViewModel {
       id: id,
       creator: creator,
       target: AnnotationTarget(
-          source: 'http://18.159.61.178/${learningSpace?.id}${post.id}',
+          source: 'http://3.76.176.35/${learningSpace?.id}/${post.id}',
           type: 'Image',
           id: '$imageUrl#xywh=${foundStart.dx},${foundStart.dy},${foundEnd.dx - foundStart.dx},${foundEnd.dy - foundStart.dy}'),
       colorParam: backgroundColor,
