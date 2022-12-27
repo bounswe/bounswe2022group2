@@ -153,4 +153,5 @@ class TextKeys {
   static const String addComment = "add_comment";
   static const String addCommentHint = "add_comment_hint";
   static const String viewComments = "view_comments";
+  static const String biographyColon = "biography_colon";
 }

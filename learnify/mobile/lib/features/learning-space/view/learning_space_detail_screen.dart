@@ -36,6 +36,7 @@ import '../../../product/constants/storage_keys.dart';
 import '../../../product/language/language_keys.dart';
 import '../../auth/verification/model/user_model.dart';
 import '../../home/view-model/home_view_model.dart';
+import '../../others-profile/view-model/others_profile_view_model.dart';
 import '../constants/learning_space_constants.dart';
 import '../models/annotation/annotation_model.dart';
 import '../models/comment/comment_model.dart';
@@ -275,7 +276,16 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                   textAlign: TextAlign.start,
                                   translated: false,
                                   style: const TextStyle(
-                                      overflow: TextOverflow.ellipsis),
+                                    overflow: TextOverflow.ellipsis,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  onClick: () async =>
+                                      NavigationManager.instance.navigateToPage(
+                                          path:
+                                              NavigationConstants.othersProfile,
+                                          data: <String, String?>{
+                                        'username': tempLearningSpace?.creator,
+                                      }),
                                 ),
                               ),
                               GestureDetector(
@@ -292,7 +302,13 @@ class _MySliverOverlayAbsorberState extends State<MySliverOverlayAbsorber> {
                                                   <String>[],
                                               null,
                                             );
-                                            debugPrint(selectedUser);
+                                            await NavigationManager.instance
+                                                .navigateToPage(
+                                                    path: NavigationConstants
+                                                        .othersProfile,
+                                                    data: <String, String?>{
+                                                  'username': selectedUser,
+                                                });
                                           },
                                 child: Row(
                                   children: <Widget>[

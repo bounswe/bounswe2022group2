@@ -147,5 +147,6 @@
   "change_geolocation": "Change Geolocation",
   "add_comment": "Comment",
   "add_comment_hint": "Insert Comment Here",
-  "view_comments": "View All Comments"
+  "view_comments": "View All Comments",
+  "biography_colon": "Biography:"
 }

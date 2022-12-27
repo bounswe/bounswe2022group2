@@ -13,6 +13,7 @@ import '../../../features/learning-space/view/components/chapter_image.dart';
 import '../../../features/learning-space/view/create_event_screen.dart';
 import '../../../features/learning-space/view/create_learning_space_screen.dart';
 import '../../../features/learning-space/view/learning_space_detail_screen.dart';
+import '../../../features/others-profile/view/others_profile_screen.dart';
 import '../../../features/settings/view/settings_screen.dart';
 import '../../../features/view-learning-spaces/view/view_all_screen.dart';
 import '../../../product/constants/navigation_constants.dart';
@@ -50,6 +51,12 @@ class NavigationRoute {
         return normalNavigate(HomeWrapper(initialIndex: 2), args);
       case NavigationConstants.profile:
         return normalNavigate(HomeWrapper(initialIndex: 3), args);
+      case NavigationConstants.othersProfile:
+        return normalNavigate(
+            OthersProfileScreen(
+              username: arguments['username'],
+            ),
+            args);
       case NavigationConstants.settings:
         return normalNavigate(const SettingsScreen(), args);
       case NavigationConstants.learningSpace:
