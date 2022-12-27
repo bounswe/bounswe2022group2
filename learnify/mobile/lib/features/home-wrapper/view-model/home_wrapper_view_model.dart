@@ -5,6 +5,7 @@ import '../../../../core/base/view-model/base_view_model.dart';
 import '../../../core/managers/local/local_manager.dart';
 import '../../../product/constants/storage_keys.dart';
 import '../../auth/verification/model/user_model.dart';
+import '../../profile/view-model/profile_view_model.dart';
 
 /// View model to manage the data on home wrapper screen.
 class HomeWrapperViewModel extends BaseViewModel {

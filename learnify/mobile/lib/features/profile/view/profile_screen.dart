@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -37,7 +36,7 @@ class ProfileScreen extends BaseView<ProfileViewModel> {
           builder: _builder,
           scrollable: true,
           hasScaffold: false,
-          futureInit: (BuildContext context) async =>
+          voidInit: (BuildContext context) =>
               context.read<ProfileViewModel>().getUserName(),
           key: key,
         );
