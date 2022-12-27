@@ -21,7 +21,19 @@ export default function NavBar(){
     const handleSearchLsChange = (e) => {
         e.preventDefault();
         setSearchLsInput(e.target.value);
-    }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.keyCode === 13) {
+          const getSearchLsResults = async () => {
+            const res = await axios.get(
+              `${process.env.REACT_APP_BACKEND_BASE_URL}learningspace?query=${searchLsInput}`
+            );
+            setSearchLsResults(res.data.learning_spaces);
+          };
+          getSearchLsResults();
+        }
+      };
 
     const handleSearchUserChange = (e) => {
         e.preventDefault();
@@ -31,14 +43,6 @@ export default function NavBar(){
     const toggle = () => {
         setSearchDecision(!searchDecision);
       };
-
-    useEffect(() => {
-        const getSearchLsResults = async () => {
-            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace?query=${searchLsInput}`)
-            setSearchLsResults(res.data.learning_spaces)
-        }
-        getSearchLsResults()
-    }, [searchLsInput])
 
     useEffect(() => {
         const getSearchUserResults = async () => {
@@ -58,7 +62,15 @@ export default function NavBar(){
                     <FontAwesomeIcon icon={solid('arrows-rotate')} size="2x" color="#1746A2"/>
                 </div>
                 {!searchDecision && <div className="ls-search">
-                    <input className='search-input-field' type="text" placeholder="Search learning spaces"  size={30} onChange={handleSearchLsChange} value={searchLsInput}/>
+                    <input
+                        className='search-input-field'
+                        type="text"
+                        placeholder="Search learning spaces"
+                        size={30}
+                        onChange={handleSearchLsChange}
+                        onKeyDown={handleKeyDown}
+                        value={searchLsInput}
+                    />
 
                     <div className="search-results-container">
                         {searchLsResults.map(result => (
