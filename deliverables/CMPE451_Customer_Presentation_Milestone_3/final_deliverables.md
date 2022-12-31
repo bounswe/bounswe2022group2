@@ -23,14 +23,14 @@
 
 ## 2. [Project Artifacts](#project-artifacts)
 
-  * 2.1.1 [Manuals](#manuals)
-    * 2.1.1.1 [User Manual](#user-manual)
-    * 2.1.1.2 [System Manual](#system-manual)
-  * 2.1.2 [Software Requirements Specification (SRS)](#software-requirements-specification-srs)
-  * 2.1.3 [Software Design Documents (UML)](#software-design-documents-uml)
-  * 2.1.4 [User Scenarios and Mockups](#user-scenarios-and-mockups)
-  * 2.1.5 [Project Plan](#project-plan)
-  * 2.1.6 [Unit Tests](#unit-tests)
+* 2.1.1 [Manuals](#manuals)
+  * 2.1.1.1 [User Manual](#user-manual)
+  * 2.1.1.2 [System Manual](#system-manual)
+* 2.1.2 [Software Requirements Specification (SRS)](#software-requirements-specification-srs)
+* 2.1.3 [Software Design Documents (UML)](#software-design-documents-uml)
+* 2.1.4 [User Scenarios and Mockups](#user-scenarios-and-mockups)
+* 2.1.5 [Project Plan](#project-plan)
+* 2.1.6 [Unit Tests](#unit-tests)
 
 ## 3. [Software Package](#software-package)
 
@@ -47,6 +47,57 @@
 ***
 
 ### Summary of the Project Status
+
+Learnify is an online platform that enables collaborative learning. We finished almost all portions of our project and deployed the web application, which can be accessed through a [public IP address](http://3.76.176.35/). The mobile application also can be installed using an apk file can be found [here](https://github.com/bounswe/bounswe2022group2/wiki/Learnify-Mobile-APK) or alternatively you can create an APK with the last version by following the guideline [here](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual). At the end of the term, we are happy with the position we are as the whole team. We have accomplished almost everything we wanted to do. We implemented the features we set as our aims and you mentioned as important since the beginning of the semester.
+
+The most important features we have in our app for both mobile and web are the followings:
+
+  1. Image annotation
+  2. Text annotation
+  3. Semantic Search
+  4. GeoLocation, event creation, attending an event
+
+These are also the features you have mentioned in our project description, in the lectures again and again. We are happy to write here that we have finished all of them successfully with full integration in the all teams (mobile, web, back-end).
+
+We believe that our application is ready to be used by real-users as an initial version. We have lots of functionalities in our app with nice UI/UX experiences. Apart from the functionalities, we also gave important to the usability and UX of the app. We also added multi-theme, multi-language support to our mobile app just because of this reason. We really did a great job!
+
+In short, we achieved all of our aims and accomplished all the responsibilities you gave successfully as the whole team. We also did great presentations in all demos including the final demo. Here are the general view of full functionalities we support in our app:
+
+1. Signup
+2. Login
+3. Email verification
+4. Forgot password
+5. Create/View/Edit profile screen
+6. View other users' profiles
+7. Create and view a learning space
+8. Contribute to all learning spaces
+9. Annotate texts
+10. Annotate images
+11. Semantic search for learning spaces
+12. User search
+13. Create events
+14. Attend events
+15. GeoLocation integration for location selection on map
+16. Comment on post contents
+17. View other users' text annotations
+18. View other users' image annotations
+19. Create/Edit/View posts under learning spaces
+20. View all comments for posts
+21. View participants of learning spaces
+22. Enroll learning spaces
+23. View enrolled, top-rated learning spaces
+24. View recommended learning spaces
+25. Multi-language feature with following language supports for mobile app:
+
+* İngilizce
+* Türkçe
+* Almanca
+* Fransızca
+* İspanyolca
+* Korece
+* Japonca
+
+26. Dark/Light theme support for mobile app
 
 ***
 
