@@ -262,219 +262,184 @@ As we said in the previous sections, we are generally satisfied with the progres
 ***
 
 ### Status of the Requirements
+Note: C stands for Complated, I stands for In Progress, N stands for Not Started. First term is status of Frontend team, the second term is the status of the backend team, and the third term is the status of the mobile team.
+
+For example, C/N/I means that the frontend team completed, the backend team is not started and the mobile team is still working on it.
+
 
 
 ## 1. Functional Requirements
 
 ### 1.1. 🧍 User Requirements
 
-<details><summary>1.1.1. 🔑 Authentication</summary><blockquote>
+1.1.1. 🔑 Authentication
 
-<details><summary>1.1.1.1. Signup</summary>
+1.1.1.1. Signup
 
-* 1.1.1.1.1. Guests shall enter an unused username, an unregistered email address, and a strong password to signup.
-* 1.1.1.1.2. Guests shall agree to the privacy policy and terms&conditions to signup.
+* 1.1.1.1.1. Guests shall enter an unused username, an unregistered email address, and a strong password to signup. C/C/C
+* 1.1.1.1.2. Guests shall agree to the privacy policy and terms&conditions to signup. C/C/C
 
-</details>
 
-<details><summary>1.1.1.2. Login</summary>
 
-* 1.1.1.2.1. Users shall provide their usernames and passwords to log in.
+1.1.1.2. Login
 
-</details>
+* 1.1.1.2.1. Users shall provide their usernames and passwords to log in. C/C/C
 
-<details><summary>1.1.1.3. Email Verification</summary>
 
-* 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.
-</details>
 
-<details><summary>1.1.1.4. Forgot Password</summary>
+1.1.1.3. Email Verification
 
-* 1.1.1.4.1. Users shall first enter the email addresses they signed up with and then the verification code they received.
-* 1.1.1.4.2. Users shall be authenticated after verification and be logged in.
-</details>
+* 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process. C/C/C
 
-<details><summary>1.1.1.5. Logout</summary>
 
-* 1.1.1.5.1. Users shall be able to log out.
+1.1.1.4. Forgot Password
 
-</details>
+* 1.1.1.4.1. Users shall first enter the email addresses they signed up with and then the verification code they received. C/C/C
+* 1.1.1.4.2. Users shall be authenticated after verification and be logged in. C/C/C
 
-<details><summary>1.1.1.6. Change Password</summary>
 
-* 1.1.1.6.1. Users shall be able to change their passwords from the settings screen.
+1.1.1.5. Logout
 
-</details>
+* 1.1.1.5.1. Users shall be able to log out. N/N/N
 
-</blockquote></details>
 
-<details><summary>1.1.2. 🗿 Profile Page</summary><blockquote>
+1.1.1.6. Change Password
 
-* 1.1.2.1. Users shall have a profile page.
-* 1.1.2.2. Users shall be able to edit their profile page.
-* 1.1.2.3. Users shall be abke to display their full name on their profile pages.
-* 1.1.2.4. Users shall have an avatar.
-* 1.1.2.5. Users shall be able to change their avatars.
-* 1.1.2.6. Users shall have a bio in their profile pages.
-* 1.1.2.7. Users shall have a "My Events" section on their profile pages.
-* 1.1.2.8. Users shall be able to determine their profile page visibility as public or private.
-* 1.1.2.9. Followers, Follows, My Events, Interest Areas, Achievements, Progress, Notes, and Annotations sections shall be hidden on private profiles.
+* 1.1.1.6.1. Users shall be able to change their passwords from the settings screen. C/N/N
 
-<details><summary>1.1.2.10. Interests and Knowledge</summary>
 
-* 1.1.2.10.1 Users shall identify their interest areas
-* 1.1.2.10.2 Users shall display their interest areas in their profile pages
 
-</details>
+1.1.2. 🗿 Profile Page
 
-<details><summary>1.1.2.11. Achievements</summary>
+* 1.1.2.1. Users shall have a profile page. C/C/C
+* 1.1.2.2. Users shall be able to edit their profile page. C/C/C
+* 1.1.2.3. Users shall be abLe to display their full name on their profile pages. N/N/N
+* 1.1.2.4. Users shall have a profile picture. C/C/C
+* 1.1.2.5. Users shall be able to change their profile pictures. C/C/C
+* 1.1.2.6. Users shall have a bio in their profile pages. C/C/C
+* 1.1.2.7. Users shall have a "My Events" section on their profile pages. N/N/N
+* 1.1.2.8. Users shall be able to determine their profile page visibility as public or private. N/N/N
+* 1.1.2.9. Followers, Follows, My Events, Interest Areas, Achievements, Progress, Notes, and Annotations sections shall be hidden on private profiles. N/N/N
 
-* 1.1.2.11.1. Users shall be able to earn achievements via the completion of a specific amount of Learning Spaces with related topics.
-* 1.1.2.11.2. Users shall view their achievements from the achievements section of their profile pages.
+1.1.2.10. Interests and Knowledge
 
-</details>
+* 1.1.2.10.1 Users shall identify their interest areas  N/N/N
+* 1.1.2.10.2 Users shall display their interest areas in their profile pages  C/N/N
 
 
-<details><summary>1.1.2.12. Progress Tracking</summary>
+1.1.2.11. Achievements
 
-* 1.1.2.12.1. Users shall be able to track their progress.
+* 1.1.2.11.1. Users shall be able to earn achievements via the completion of a specific amount of Learning Spaces with related topics. N/N/N
+* 1.1.2.11.2. Users shall view their achievements from the achievements section of their profile pages. N/N/N
 
-</details>
 
-<details><summary>1.1.2.13. Notes</summary>
 
-* 1.1.2.13.1. Users shall view their notes taken on a learning space in the notes section of their profile pages.
+1.1.2.12. Progress Tracking
 
-</details>
+* 1.1.2.12.1. Users shall be able to track their progress. N/N/N
 
-<details><summary>1.1.2.14. Annotations</summary>
 
-* 1.1.2.14.1. Users shall be able to annotate post images and texts in learning spaces.
-* 1.1.2.14.2. Users shall be able to view annotations made by other users.
-* 1.1.2.14.3. Users shall be able to browse annotations by category, by course, by history, and by upvotes they have received.
-* 1.1.2.14.4. Users shall access the annotations they have added for course material from the annotations section of their profile pages.
-</details>
 
+1.1.2.13. Notes
 
-<details><summary>1.1.2.15. Learning Spaces</summary>
+* 1.1.2.13.1. Users shall view their notes taken on a learning space in the notes section of their profile pages. N/N/N
 
-* 1.1.2.15.1. Users shall be able to see all learning spaces they created or enrolled in.
 
-</details>
+1.1.2.14. Annotations
 
-<details><summary>1.1.2.16. Reputation</summary>
+* 1.1.2.14.1. Users shall be able to annotate post images and texts in learning spaces. C/C/C 
+* 1.1.2.14.2. Users shall be able to view annotations made by other users. C/C/C 
+* 1.1.2.14.3. Users shall be able to browse annotations by category, by course, by history, and by upvotes they have received. N/N/N
+* 1.1.2.14.4. Users shall access the annotations they have added for course material from the annotations section of their profile pages. N/C/C
 
-* 1.1.2.16.1. Users shall be able to see the feedback they have received for their learning content contributions in the recommendations section.
 
-</details>
 
-</blockquote></details>
+1.1.2.15. Learning Spaces
 
-<details><summary>1.1.3 👩🏼‍💻 User Interaction</summary><blockquote>
+* 1.1.2.15.1. Users shall be able to see all learning spaces they created or enrolled in. C/C/C 
 
-<details><summary>1.1.3.1. User-User Interaction</summary>
 
-* 1.1.3.1.1. Users shall see each other's profiles. 
-* 1.1.3.1.2. Users shall be able to follow each other.
-* 1.1.3.1.3. Users shall see the information of people they follow; their achievements and activities.
-* 1.1.3.1.4. Users shall be able to share notes with each other.
-* 1.1.3.1.5. Users shall be able to block other users.
-* 1.1.3.1.6. Users could prevent other users to see their profile by blocking them.
 
+1.1.2.16. Reputation
 
-</details>
+* 1.1.2.16.1. Users shall be able to see the feedback they have received for their learning content contributions in the recommendations section. N/N/N
 
 
-<details><summary>1.1.3.2. User-Learning Space Interaction</summary>
 
-<blockquote>
+1.1.3 👩🏼‍💻 User Interaction
 
-<details><summary>1.1.3.2.1. Creating Learning Space & Content</summary>
+1.1.3.1. User-User Interaction
 
-* 1.1.3.2.1.1. Users shall enter a title and description and choose an icon and categories to create a lecture.
-* 1.1.3.2.1.2 Participants shall be able to add polls and notes as learning material.
-* 1.1.3.2.1.3 Participants shall organize learning material in chapters.
+* 1.1.3.1.1. Users shall see each other's profiles. C/C/C
+* 1.1.3.1.2. Users shall be able to follow each other. N/N/N
+* 1.1.3.1.3. Users shall see the information of people they follow; their achievements and activities. N/N/N
+* 1.1.3.1.4. Users shall be able to share notes with each other. N/N/N
+* 1.1.3.1.5. Users shall be able to block other users. N/N/N
+* 1.1.3.1.6. Users could prevent other users to see their profile by blocking them. N/N/N
 
-</details>
 
-<details><summary>1.1.3.2.2. Editing Learning Spaces</summary>
 
-* 1.1.3.2.2.1. Users shall be able to edit all material they provided.
-* 1.1.3.2.2.2. Users shall be able to delete learning spaces they created.
+1.1.3.2. User-Learning Space Interaction
 
-</details>
 
-<details><summary>1.1.3.2.3. Enrolling to Learning Spaces </summary>
+1.1.3.2.1. Creating Learning Space & Content
 
-* 1.1.3.2.3.1. Users shall see the content within sections.
-* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire.
-* 1.1.3.2.3.3. Users shall know the type of poll they are participating in beforehand.
-* 1.1.3.2.3.4. Users shall receive confirmation of their expertise on the topic upon completion of a lecture. 
-* 1.1.3.2.3.5. Users shall be able to review other users in terms of providing learning material by giving stars and optionally providing feedback.
-* 1.1.3.2.3.6. Users shall be able to report inappropriate comments in the discussion forum of the lecture.
+* 1.1.3.2.1.1. Users shall enter a title and description and choose an icon and categories to create a learning space. C/C/C
+ 
 
-</details>
+1.1.3.2.2. Editing Learning Spaces
 
-<details><summary>1.1.3.2.4. Notes and Annotation</summary>
+* 1.1.3.2.2.1. Users shall be able to edit all material they provided. C/C/C
+* 1.1.3.2.2.2. Users shall be able to delete learning spaces they created. N/N/N
 
-* 1.1.3.2.4.1. Each user shall have his/her notes section under each lecture.
-* 1.1.3.2.4.2. Users shall create and edit notes under the notes section via typing.
-* 1.1.3.2.4.3. Users shall be able to mention other notes from other learning spaces or/and other users in his/her.
-* 1.1.3.2.4.4. Users shall connect, annotate and tag notes.
 
-</details>
+1.1.3.2.3. Enrolling to Learning Spaces
 
-<details><summary>1.1.3.2.5. Community Events</summary>
+* 1.1.3.2.3.1. Users shall see the contents in the learning space. C/C/C
+* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire. C/C/C
+* 1.1.3.2.3.3. Users shall be able to review other users in terms of providing learning material by giving stars and optionally providing feedback. N/N/N
+* 1.1.3.2.3.4. Users shall be able to report inappropriate comments in the discussion forum of the learning space. N/N/N
 
-* 1.1.3.2.5.1. Participants shall be able to create community events for that learning space.
-* 1.1.3.2.5.2. Created events shall only be available to currently enrolled learners.
-* 1.1.3.2.5.3. Created events should have a specific date, duration, location and limit for the number of participants.
-* 1.1.3.2.5.4. The event creator can give a brief description of the topics of discussion for the event.
-* 1.1.3.2.5.5. Event creators shall be able to cancel events that they have created.
-* 1.1.3.2.5.6. Created events should be visible on the learning space info page along with the date, duration, location and number of participants.
-* 1.1.3.2.5.7. The number of learners who will join the event will be visible on the event information. 
 
-</details>
+1.1.3.2.4. Notes and Annotation
 
-<details><summary>1.1.3.2.6. Creating Polls</summary>
+* 1.1.3.2.4.1. Each user shall have his/her notes section under each lecture. C/N/N
+* 1.1.3.2.4.2. Users shall create and edit notes under the notes section via typing. C/N/N
+* 1.1.3.2.4.3. Users shall be able to mention other notes from other learning spaces or/and other users in his/her. N/N/N
+* 1.1.3.2.4.4. Users shall connect, annotate and tag notes. N/N/N
 
-* 1.1.3.2.6.1 Users shall be able to create anonymous polls, multiple answer polls, and quiz polls as part of learning space material.
 
-</details>
+1.1.3.2.5. Community Events
 
-<details><summary>1.1.3.2.7. Discussions Forum</summary>
+* 1.1.3.2.5.1. Participants shall be able to create community events for that learning space. C/C/C
+* 1.1.3.2.5.2. Created events shall only be available to currently enrolled learners. N/N/N
+* 1.1.3.2.5.3. Created events should have a specific date, duration, location and limit for the number of participants. C/C/C
+* 1.1.3.2.5.4. The event creator can give a brief description of the topics of discussion for the event. C/C/C
+* 1.1.3.2.5.5. Event creators shall be able to cancel events that they have created. N/N/N
+* 1.1.3.2.5.6. Created events should be visible on the learning space info page along with the date, duration, location and number of participants. C/C/C
+* 1.1.3.2.5.7. The number of learners who will join the event will be visible on the event information. C/C/C
 
-* 1.1.3.2.7.1. Participants of a learning space shall be able to create discussion posts.
-* 1.1.3.2.7.2. The discussion's theme should be detectable during the creation of a discussion also chapter-specific and lecture-specific options for context should be available.
 
-</details>
 
-</details>
+1.1.3.2.6. Discussions Forum
 
-</blockquote></details>
+* 1.1.3.2.7.1. Participants of a learning space shall be able to create discussion posts. C/N/N
 
-<details><summary>1.1.4 📝 Learning Space Structure</summary><blockquote>
 
-* 1.1.4.1. Participants shall deliver learning material in form of posts which contain text and images.
-* 1.1.4.4. Learning Space shall have the main page where users can see introduction, events, sections, notes, annotations, and polls.
-* 1.1.4.5. The creator of a learning space shall be able to add additional admins to the learning space.
-* 1.1.4.6. Every learning space shall have a general discussion forum.
-* 1.1.4.7. Every learning space shall have a discussion forum per chapter.
+1.1.4 📝 Learning Space Structure
 
+* 1.1.4.1. Participants shall deliver learning material in form of posts which contain text and images. C/C/C
+* 1.1.4.2. Learning Space shall have the main page where users can see introduction, events, sections, notes, annotations. C/C/C
 
-</details>
+ 
+ 
+1.1.5 🛂 Administration
 
-<details><summary>1.1.5 🛂 Administration</summary><blockquote>
+* 1.1.5.1. Admin shall evaluate reports and takes action accordingly. N/N/N
+* 1.1.5.2. Admin shall be able to ban users permanently and temporarily. N/N/N
+* 1.1.5.3. Admin shall be able to view all contents. N/N/N
+* 1.1.5.4. Admin shall be able to remove any content. N/N/N
 
-* 1.1.5.1. Admin shall evaluate reports and takes action accordingly.
-* 1.1.5.2. Admin shall be able to ban users permanently and temporarily.
-* 1.1.5.3. Admin shall be able to view all contents.
-* 1.1.5.4. Admin shall be able to remove any content.
-
-</details>
-
-</blockquote>
-</details>
 
 
 ### 1.2. 💻 System Requirements
