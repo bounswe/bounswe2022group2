@@ -308,7 +308,25 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  ||||
+  |Mobile: Map integration into the Event Item|[#752](https://github.com/bounswe/bounswe2022group2/pull/752)|2h 15m|
+  |Mobile: Event List and Preview Test|[#754](https://github.com/bounswe/bounswe2022group2/pull/754)|1h 45m|
+  |Mobile: BUGFIX - Update Marker Image|[#755](https://github.com/bounswe/bounswe2022group2/pull/755)|30m|
+  |Mobile: Tests Event Details|[#757](https://github.com/bounswe/bounswe2022group2/pull/757)|1h 30m|
+  |Mobile: Implementing Settings Screen|[#760](https://github.com/bounswe/bounswe2022group2/pull/760)|3h 15m|
+  |Mobile: Multi-Language Support - Settings|[#762](https://github.com/bounswe/bounswe2022group2/pull/762)|2h 30m|
+  |Mobile: Multi Theme Support - Settings|[#764](https://github.com/bounswe/bounswe2022group2/pull/764)|1h 30m|
+  |Mobile: Tests - Settings Screen|[#769](https://github.com/bounswe/bounswe2022group2/pull/769)|1h 30m|
+  |Mobile: Fix Annotation Model|[#770](https://github.com/bounswe/bounswe2022group2/pull/770)|3h 30m|
+  |Mobile: Back-end Connection of Get Events|[#833](https://github.com/bounswe/bounswe2022group2/pull/833)|3h|
+  |Mobile: Back-end Connection of Get Annotations|[#816](https://github.com/bounswe/bounswe2022group2/pull/816)|2h 30m|
+  |Mobile: Clickable Learning Space Participants|[#816](https://github.com/bounswe/bounswe2022group2/pull/834)|30m|
+  |Fix failing profile screen test due to a hotfix before the demo|[#933](https://github.com/bounswe/bounswe2022group2/pull/933)|15m|
+  |Mobile: Hotfix annotation source base url|[#25](https://github.com/bounswe/bounswe2022group2/pull/925)|10m|
+  |Mobile: Hotfix annotation tests carousel slider|[#910](https://github.com/bounswe/bounswe2022group2/pull/910)|20m|
+  |Mobile: HOTFIX Remove Default Images|[#905](https://github.com/bounswe/bounswe2022group2/pull/905)|20m|
+  |Final Milestone: Executive Summary - Bahrican Yesil|[#937](https://github.com/bounswe/bounswe2022group2/pull/937)|2h 15m|
+  |Final Milestone: Individual Contributions Report - Bahrican Yesil|[#941]<https://github.com/bounswe/bounswe2022group2/pull/941>)|3h|
+  |Final Milestone: Summary of Work Table - Bahrican Yesil|[#940](https://github.com/bounswe/bounswe2022group2/pull/940)|1h 30m|
   |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
   |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/pull/707)|3h 15m|
