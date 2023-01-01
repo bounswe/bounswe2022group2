@@ -828,13 +828,17 @@ NOTE: Hours before the final demo presentation, one of our team-mates did a HOTF
 8. Mobile: Tests Event Details [#757](https://github.com/bounswe/bounswe2022group2/pull/757)
 9. Mobile: Tests - Settings Screen [#769](https://github.com/bounswe/bounswe2022group2/pull/769)
 
-## *Additional Information:*  
+## *Additional Information:*
 
 **Final Milestone-3**
+
+Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively. I also took responsibility in the process that we prepare our mobile app into the demo-day. I solved critical bugs, checked and corrected the back-end connection, data update in the app. I also answered incoming questions in the demo day and helped to our presenter. I took the responsibility of the 2 most significant features we developed until the final milestone 2 on mobile side, which are the annotation and geo-location features.
 
 --------------------
 
 **Milestone-2**
+
+Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively. I also took responsibility in the process that we prepare our mobile app into the demo-day. I solved critical bugs, checked and corrected the back-end connection, data update in the app. I also answered incoming questions in the demo day and helped to our presenter. I took the responsibility of most significant feature we developed until the milestone 2 on mobile side, which is the annotation feature.
 
 --------------------
 
