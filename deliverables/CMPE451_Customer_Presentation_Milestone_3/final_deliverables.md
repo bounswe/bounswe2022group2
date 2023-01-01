@@ -755,9 +755,48 @@ management of our software project:
 
 **Milestone-2**
 
+1. Create a Pull Request Template [#480](https://github.com/bounswe/bounswe2022group2/pull/480)
+2. Milestone 1: Evaluation of Tools And Processes - Mobile [#484](https://github.com/bounswe/bounswe2022group2/pull/484)
+3. Mobile: Learning Space Chapter Section [#501](https://github.com/bounswe/bounswe2022group2/pull/501)
+4. Mobile: Annotatable Text Widget Implementation [#538](https://github.com/bounswe/bounswe2022group2/pull/538)
+5. Mobile: Highlighted/Annotated text widget [#539](https://github.com/bounswe/bounswe2022group2/pull/539)
+6. Mobile: Enhancement-Overlapped annotations [#547](https://github.com/bounswe/bounswe2022group2/pull/547)
+7. Mobile: Implementation of Multiple Annotation Selection Dialog [#550](https://github.com/bounswe/bounswe2022group2/pull/550)
+8. Mobile: Native Splash Screen [#553](https://github.com/bounswe/bounswe2022group2/pull/553)
+9. Creates GitHub Actions for Flutter [#555](https://github.com/bounswe/bounswe2022group2/pull/555)
+10. Mobile: Page Transition Animation [#559](https://github.com/bounswe/bounswe2022group2/pull/559)
+11. Mobile: Fix Selected Categories Issue Between Page Transitions [#580](https://github.com/bounswe/bounswe2022group2/pull/580)
+12. Mobile: Image Annotation [#581](https://github.com/bounswe/bounswe2022group2/pull/581)
+13. Integrate display logic for image annotations [#582](https://github.com/bounswe/bounswe2022group2/pull/582)
+14. Mobile: Create Annotation Back End Connection [#595](https://github.com/bounswe/bounswe2022group2/pull/595)
+15. Mobile: BugFix - Chapter Unit Tests [#599](https://github.com/bounswe/bounswe2022group2/pull/599)
+16. Mobile: Text Annotation Tests [#607](https://github.com/bounswe/bounswe2022group2/pull/607)
+17. Mobile: Image Annotation Tests [#612](https://github.com/bounswe/bounswe2022group2/pull/612)
+18. Mobile: Annotation Screen [#613](https://github.com/bounswe/bounswe2022group2/pull/613)
+19. Mobile: Bugfix/annotation model update [#653](https://github.com/bounswe/bounswe2022group2/pull/653)
+20. Mobile: Hotfix - Set Default Values and lots of Demo Bugs [#662](https://github.com/bounswe/bounswe2022group2/pull/662)
+21. Milestone 2: Individual Report of Bahrican [#707](https://github.com/bounswe/bounswe2022group2/pull/707)
+22. Milestone 2: Summary of Work - Bahrican [#708](https://github.com/bounswe/bounswe2022group2/pull/708)
+23. Milestone 2: Mobile UI/UX Section - Bahrican [#715](https://github.com/bounswe/bounswe2022group2/pull/715)
+24. Milestone 2: Mobile Related Additions to the Annotations Part [#734](https://github.com/bounswe/bounswe2022group2/pull/734)
+
 --------------------
 
 **Milestone-1**
+
+1. Initial app, MVVM design pattern and other helper functions [#354](https://github.com/bounswe/bounswe2022group2/pull/354)
+2. Implementation of the Navigation Manager [#360](https://github.com/bounswe/bounswe2022group2/pull/360)
+3. Base Setup for Multi Language and Multi Theme Support [#361](https://github.com/bounswe/bounswe2022group2/pull/361)
+4. Implementation of Sign Up Screen [#368](https://github.com/bounswe/bounswe2022group2/pull/368)
+5. Tests of the Sign Up Screen [#373](https://github.com/bounswe/bounswe2022group2/pull/373)
+6. Back-end Connection of the Sign Up Screen and Tests [#389](https://github.com/bounswe/bounswe2022group2/pull/389)
+7. Bottom Navigation and App Bar Widgets [#394](https://github.com/bounswe/bounswe2022group2/pull/394)
+8. Static Profile Screen [#400](https://github.com/bounswe/bounswe2022group2/pull/400)
+9. Profile Screen Tests [#404](https://github.com/bounswe/bounswe2022group2/pull/404)
+10. Configuring app icon as our logo [#402](https://github.com/bounswe/bounswe2022group2/pull/402)
+11. Creating milestone 1 deliverables and individual report [#410](https://github.com/bounswe/bounswe2022group2/pull/410)
+12. Update Issue Templates [#340](https://github.com/bounswe/bounswe2022group2/pull/340)
+13. Create the base folder structure and base files of the Flutter project [#342](https://github.com/bounswe/bounswe2022group2/pull/342)
 
 ## *Unit Tests:*
 
