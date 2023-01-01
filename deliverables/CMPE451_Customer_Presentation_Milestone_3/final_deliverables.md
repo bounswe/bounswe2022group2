@@ -554,10 +554,67 @@ Group: Group2 - Android/Mobile Team
 ## *Responsibilities:*
 
 **Final Milestone-3**
-  ------------
+
+  1. Finding a free, satisfactory solution/package to display event locations on a map
+  2. Integrating and implementing Open Street Map into the events
+  3. Writing tests for event list and event preview item
+  4. Writing tests for event details
+  5. Implementing GeoLocation and Event classes according to W3C standards
+  6. Determining the logic for displaying and selecting a point on a map (event locations)
+  7. Implementing settings screen
+  8. Writing app information details under the settings
+  9. Adding multi-language support and setting to mobile app
+  10. Adding multi-theme support and setting to mobile app
+  11. Fixing annotation model to exactly comply with the W3C standards (after back-end did changes), also update places using annotation model accordingly
+  12. Writing tests for settings screen
+  13. Back-end connection of get events endpoint  
+  14. Conducting research on Flutter packages, finding and integrating helpful and nice ones (like flutter map as I mentioned)
+  15. Reviewing the works done by the mobile team on a regular basis
+  16. Solving bugs, errors, problems encountered during the implementation of the mobile of our application regularly
+  17. Helping to teammates, answering their questions, solving critical bugs&errors before the demo day
+  18. Attending and participating general meetings regularly
+  19. Attending and participating mobile team meetings regularly
+
+------------;
 
 **Milestone-2**
-  ------------
+
+  1. Creating a pull request template to better organize pull requests among the whole team
+  2. Creating GitHub actions for Flutter & Android project, CI for Android project
+  3. Implementation of posts section under the learning space detail screen (with post model, post items and post list)
+  4. Writing tests of the chapter section of the learning space detail screen
+  5. Doing a detailed research on text annotations with Flutter and determining how to implement text annotations on mobile
+  6. Implementing annotatable text widget as a generic widget to use across the app and integrating it into posts section under the learning space detail screen
+  7. Doing a detailed research on how to display text annotations, and determining the way to follow (highlighted random light background color)
+  8. Doing a detailed research on how to solve the annotation overlapping problem for texts on mobile
+  9. Implementing annotated/highlighted and clickable text widget as a generic widget to use across the app
+  10. Implementing overlapped annotation support by mixing the colors and designing an algorithm to separate annotation parts
+  11. Implementing a generic single choose dialog for use across the app
+  12. Implementing multiple annotation selection dialog
+  13. Implementing native splash screen (for opening phase of the app)
+  14. Doing a detailed research on image annotations with Flutter and determining how to implement image annotations, discussion with Alper hoca and Suzan hoca regarding to the image annotations on mobile
+  15. Implementing annotatable image widget as a generic widget to use across the app and integrating it into posts section under the learning space detail screen
+  16. Doing a detailed research on how to display image annotations, and determining the way to follow, finding a solution for overlapped image annotations
+  17. Implementing annotated image display functionality with paint info, integration of its logic into annotatable image widget
+  18. Integration of the random user API to use while showing static content across the app
+  19. Implementing events section of the learning space detail screen as static
+  20. Back-end connection of the creating text annotation
+  21. Back-end connection of the creating image annotation
+  22. Writing tests for the text annotation feature
+  23. Writing tests for the image annotation feature
+  24. Implementing cropped image annotation preview for annotations screen
+  25. Implementation of basic structure of the learning space detail screen on mobile with base sliver view and tab bar view
+  26. Implementation of generic expandable item and list on mobile to use across the app (used in so many places)
+  27. Implementing page transition animations for screen changes with navigation
+  28. Documenting 2 mobile team meeting notes out of 5 notes
+  29. Conducting research on Flutter packages, finding and integrating helpful and nice ones (like page transition as I mentioned)
+  30. Reviewing the works done by the mobile team on a regular basis
+  31. Solving bugs, errors, problems encountered during the implementation of the mobile of our application regularly
+  32. Helping to teammates, answering their questions, solving critical bugs&errors before the demo day
+  33. Attending and participating general meetings regularly
+  34. Attending and participating mobile team meetings regularly
+
+------------;
 
 **Milestone-1**
 
