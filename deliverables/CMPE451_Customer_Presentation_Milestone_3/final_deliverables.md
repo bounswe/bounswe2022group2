@@ -751,6 +751,22 @@ management of our software project:
 
 **Final Milestone-3**
 
+1. Mobile: Map integration into the Event Item [#752](https://github.com/bounswe/bounswe2022group2/pull/752)
+2. Mobile: Event List and Preview Test [#754](https://github.com/bounswe/bounswe2022group2/pull/754)
+3. Mobile: BUGFIX - Update Marker Image [#755](https://github.com/bounswe/bounswe2022group2/pull/755)
+4. Mobile: Tests Event Details [#757](https://github.com/bounswe/bounswe2022group2/pull/757)
+5. Mobile: Implementing Settings Screen [#760](https://github.com/bounswe/bounswe2022group2/pull/760)
+6. Mobile: Multi-Language Support - Settings [#762](https://github.com/bounswe/bounswe2022group2/pull/762)
+7. Mobile: Multi Theme Support - Settings [#764](https://github.com/bounswe/bounswe2022group2/pull/764)
+8. Mobile: Tests - Settings Screen [#769](https://github.com/bounswe/bounswe2022group2/pull/769)
+9. Mobile: Fix Annotation Model [#770](https://github.com/bounswe/bounswe2022group2/pull/770)
+10. Mobile: Back-end Connection of Get Events [#833](https://github.com/bounswe/bounswe2022group2/pull/833)
+11. Mobile: Back-end Connection of Get Annotations [#816](https://github.com/bounswe/bounswe2022group2/pull/816)
+12. Mobile: Clickable Learning Space Participants [#834](https://github.com/bounswe/bounswe2022group2/pull/834)
+13. Final Milestone Report: Individual Report - Bahrican Yesil [#943](https://github.com/bounswe/bounswe2022group2/pull/943)
+14. Final Milestone Report: Executive Summary - Bahrican Yesil [#937](https://github.com/bounswe/bounswe2022group2/pull/937)
+15. Final Milestone Report: Summary of Work Table - Bahrican Yesil [#940](https://github.com/bounswe/bounswe2022group2/pull/940)
+
 --------------------
 
 **Milestone-2**
