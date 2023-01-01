@@ -575,7 +575,7 @@ Group: Group2 - Android/Mobile Team
   18. Attending and participating general meetings regularly
   19. Attending and participating mobile team meetings regularly
 
-------------;
+--------------------
 
 **Milestone-2**
 
@@ -614,7 +614,7 @@ Group: Group2 - Android/Mobile Team
   33. Attending and participating general meetings regularly
   34. Attending and participating mobile team meetings regularly
 
-------------;
+--------------------
 
 **Milestone-1**
 
@@ -633,17 +633,87 @@ Group: Group2 - Android/Mobile Team
 
 ## *Main Contributions:*
 
+**Final Milestone-3**
+
+--------------------
+
+**Milestone-2**
+I am a member of the mobile team for the development of our application which is Learnify. Therefore, most contributions were on the mobile side. However, I also did significant contributions to the general organization of our repository and the process of the team. I've created a project for our repository under the organization. I have created a pull request template to well-organize the PRs with explanatory descriptions, content details, and issue-closing information (just as I created issue templates in the previous term for CMPE352). I have also created GitHub actions for our Android/Mobile project since this is so important for continuous integration. I have mainly managed our mobile team meetings, I determined our situation and what we need to do before the mobile meetings. I helped to team with feature prioritization, scheduling, and sharing among the mobile team members.
+
+Apart from these management contributions, I mainly took the whole responsibility for the text & image annotations on mobile with their all details. I have both implemented and solved the bugs realized in the development phase. I have also communicated with the back-end team and helped to build the annotation model&endpoints to be compatible with W3C standards. I implemented designs, functionalities, back-end connections, and tests, in short everything for text and image annotations on mobile. So, my main contribution to mobile is annotations.
+
+Apart from the annotations, I implemented the posts section of the learning space detail screen which opened as the default tab view on the screen. I also implemented the event section as static by fetching user data from a 3rd party API temporarily until the back end is ready. I contributed with small but nice touches to the mobile app like page transition animations, a native splash screen, and so on. Other than these, I contributed to the mobile code base with lots of generic widgets used across the app on different screens.
+
+--------------------
+
+**Milestone-1**
+I played active and important role while designing the API definition and project architecture while keeping needs of front and backend in mind. I reviewed all works done by the mobile team, build the communication between back-end and mobile teams. I actively reported the problems, missing points to them and had discussion on the processes. I explained the flow we should follow for email verification to all team members in our weekly meeting. I also expressed my suggestions on the request and response bodies.
+
+I especially contributed to the mobile side with Flutter since I am a part of the mobile team. I have set up the base project, implemented the base managers (network, navigation, local), base widgets and logics which appear at almost every part of the app (like extensions, common widgets, helpers). I created the base structure to support multi-language and multi-theme features. I took the responsibility of the signup screen which was the first screen we developed on mobile. I developed various generic widgets while developing this screen like CustomFormField, ActionButton, and so on. I also created a base network manager to use across the app and built the back-end connection of the signup endpoint. I did a research on testing with Flutter and created the first tests of our app, wrote some examples and beneficial helpers. I also write both unit-widget tests and also the network request tests of the signup screen.
+
+I also took the responsibility of the profile screen. Since the back-end connection and content of this screen is not ready yet, I implemented it as static (by using some dynamic data from login/signup screens). I managed the navigation from authentication screen to the home screen and movement/update of the data of authentication screens. I also wrote unit-widget tests for the profile screen. Additionally, I implemented the bottom and top app bars for the home screen. Finally, I configured the required files for the app logo and name.
+
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+
+**Final Milestone-3**
+
+--------------------
+
+**Milestone-2**
+
+--------------------
+
+**Milestone-1**
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+
+--------------------
+
+**Milestone-2**
+
+--------------------
+
+**Milestone-1**
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+
+--------------------
+
+**Milestone-2**
+
+--------------------
+
+**Milestone-1**
 
 ## *Unit Tests:*
 
+**Final Milestone-3**
+
+--------------------
+
+**Milestone-2**
+
+--------------------
+
+**Milestone-1**
+
 ## *Additional Information:*  
+
+**Final Milestone-3**
+
+--------------------
+
+**Milestone-2**
+
+--------------------
+
+**Milestone-1**
 
 ---------------------------
 
