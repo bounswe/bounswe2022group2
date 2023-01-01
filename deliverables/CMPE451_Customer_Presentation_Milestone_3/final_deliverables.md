@@ -319,9 +319,9 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Mobile: Fix Annotation Model|[#770](https://github.com/bounswe/bounswe2022group2/pull/770)|3h 30m|
   |Mobile: Back-end Connection of Get Events|[#833](https://github.com/bounswe/bounswe2022group2/pull/833)|3h|
   |Mobile: Back-end Connection of Get Annotations|[#816](https://github.com/bounswe/bounswe2022group2/pull/816)|2h 30m|
-  |Mobile: Clickable Learning Space Participants|[#816](https://github.com/bounswe/bounswe2022group2/pull/834)|30m|
+  |Mobile: Clickable Learning Space Participants|[#834](https://github.com/bounswe/bounswe2022group2/pull/834)|30m|
   |Fix failing profile screen test due to a hotfix before the demo|[#933](https://github.com/bounswe/bounswe2022group2/pull/933)|15m|
-  |Mobile: Hotfix annotation source base url|[#25](https://github.com/bounswe/bounswe2022group2/pull/925)|10m|
+  |Mobile: Hotfix annotation source base url|[#925](https://github.com/bounswe/bounswe2022group2/pull/925)|10m|
   |Mobile: Hotfix annotation tests carousel slider|[#910](https://github.com/bounswe/bounswe2022group2/pull/910)|20m|
   |Mobile: HOTFIX Remove Default Images|[#905](https://github.com/bounswe/bounswe2022group2/pull/905)|20m|
   |Final Milestone: Executive Summary - Bahrican Yesil|[#937](https://github.com/bounswe/bounswe2022group2/pull/937)|2h 15m|
