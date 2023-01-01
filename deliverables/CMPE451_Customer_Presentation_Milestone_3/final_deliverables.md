@@ -245,7 +245,21 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |||
+  |Mobile: Integration of Open Street Map to the Events|[#750](https://github.com/bounswe/bounswe2022group2/issues/750)|2h 15m|
+  |Mobile: Research on Map Packages in Flutter|[#751](https://github.com/bounswe/bounswe2022group2/issues/751)|2h 45m|
+  |Mobile: Event List and Preview Test|[#753](https://github.com/bounswe/bounswe2022group2/issues/753)|1h 45m|
+  |Mobile: Tests for Event Details|[#756](https://github.com/bounswe/bounswe2022group2/issues/756)|1h 30m|
+  |Mobile: Implementing Settings Screen|[#758](https://github.com/bounswe/bounswe2022group2/issues/758)|3h 30m|
+  |Mobile: Multi-language Support and Settings|[#761](https://github.com/bounswe/bounswe2022group2/issues/761)|2h 30m|
+  |Mobile: Multi-Theme Support and Settings|[#763](https://github.com/bounswe/bounswe2022group2/issues/763)|1h 30m|
+  |Mobile: Fix Annotation Model|[#765](https://github.com/bounswe/bounswe2022group2/issues/765)|3h 30m|
+  |Mobile: Tests for Settings Screen|[#768](https://github.com/bounswe/bounswe2022group2/issues/768)|1h 30m|
+  |Mobile: Back-end Connection of Get Events|[#773](https://github.com/bounswe/bounswe2022group2/issues/773)|3h|
+  |Mobile: Back-end Connection of Get Annotations|[#813](https://github.com/bounswe/bounswe2022group2/issues/813)|2h 30m|
+  |Final Milestone: Filling Executive Summary Section|[#936](https://github.com/bounswe/bounswe2022group2/issues/936)|2h 15m|
+  |Final Milestone: Individual Contributions Report - Bahrican Yesil|[#938](https://github.com/bounswe/bounswe2022group2/issues/938)|3h|
+  |Final Milestone: Summary of Work Table - Bahrican Yesil|[#939](https://github.com/bounswe/bounswe2022group2/issues/939)|1h 30m|
+  |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
   |Milestone 2: Individual Report - Bahrican Yesil|[#701](https://github.com/bounswe/bounswe2022group2/issues/701)|4h|
   |Mobile: Image Annotation Cropped Preview - Annotations Screen|[#614](https://github.com/bounswe/bounswe2022group2/issues/614)|2h 30m|
@@ -269,6 +283,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Creating a Pull Request Template|[#476](https://github.com/bounswe/bounswe2022group2/issues/476)|45m|
   |Milestone 2: Annotations Part of the Report - Mobile|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|1h 10m|
   |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|2h 30m|
+  |--------------|--------------|--------------|
   |**Milestone 1**|-|-|
   |Implementation of MVVM Setup, Extensions and the Initial App Widget|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/350)|-|
   |Mobile: Implementing Sign Up Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/358)|-|
@@ -294,6 +309,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
   ||||
+  |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
   |Milestone 2: Individual Report of Bahrican|[#707](https://github.com/bounswe/bounswe2022group2/pull/707)|3h 15m|
   |Mobile: Hotfix - Set Default Values and lots of Demo Bugs|[#662](https://github.com/bounswe/bounswe2022group2/pull/662)|2h|
@@ -320,6 +336,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Milestone 2: Summary of Work - Bahrican|[#708](https://github.com/bounswe/bounswe2022group2/pull/708)|1h 15m|
   |Milestone 2: Mobile UI/UX Section - Bahrican|[#715](https://github.com/bounswe/bounswe2022group2/pull/715)|2h 30m|
   |Milestone 2: Mobile Related Additions to the Annotations Part|[#734](https://github.com/bounswe/bounswe2022group2/pull/734)|1h 10m|
+  |--------------|--------------|--------------|
   |**Milestone 1**|-|-|
   |Initial app, MVVM design pattern and other helper functions|[#354](https://github.com/bounswe/bounswe2022group2/pull/354)|-|
   |Implementation of the Navigation Manager|[#360](https://github.com/bounswe/bounswe2022group2/pull/360)|-|
