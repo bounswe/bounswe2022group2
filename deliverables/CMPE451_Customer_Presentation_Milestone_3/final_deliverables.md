@@ -717,6 +717,11 @@ management of our software project:
 
 **Final Milestone-3**
 
+  1. [Final Milestone: Individual Contributions Report - Bahrican Yesil](https://github.com/bounswe/bounswe2022group2/issues/938)
+  2. [Mobile: Research on Map Packages in Flutter](https://github.com/bounswe/bounswe2022group2/issues/751)
+  3. [Final Milestone: Filling Executive Summary Section](https://github.com/bounswe/bounswe2022group2/issues/936)
+  4. [Final Milestone: Summary of Work Table - Bahrican Yesil](https://github.com/bounswe/bounswe2022group2/issues/939)
+
 --------------------
 
 **Milestone-2**
