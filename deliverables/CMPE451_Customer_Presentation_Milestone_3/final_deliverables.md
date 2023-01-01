@@ -634,6 +634,7 @@ Group: Group2 - Android/Mobile Team
 ## *Main Contributions:*
 
 **Final Milestone-3**
+
 I am a member of the mobile team for the development of our application which is Learnify. Therefore, most contributions were on the mobile side. However, I also did significant contributions to the general organization of our repository and the process of the team. I found a free and satisfactory solution for displaying event locations on a map: Open Street Map. I researched and tried various solutions (like Google Maps, Yandex Maps) before deciding. I also did its integration to our mobile application, I configured and customized it according to our needs. Additionally, I determined the way we should follow to mark a point in the map while creating an event.
 
 Apart from the items above, I added multi-theme and multi-language supports to our app. These features were so critical while serving an app to real users. Since we aim to have global users from all around the world, we prioritized and added these features.
@@ -643,6 +644,7 @@ My last main contribution is to update annotation model on mobile side according
 --------------------
 
 **Milestone-2**
+
 I am a member of the mobile team for the development of our application which is Learnify. Therefore, most contributions were on the mobile side. However, I also did significant contributions to the general organization of our repository and the process of the team. I've created a project for our repository under the organization. I have created a pull request template to well-organize the PRs with explanatory descriptions, content details, and issue-closing information (just as I created issue templates in the previous term for CMPE352). I have also created GitHub actions for our Android/Mobile project since this is so important for continuous integration. I have mainly managed our mobile team meetings, I determined our situation and what we need to do before the mobile meetings. I helped to team with feature prioritization, scheduling, and sharing among the mobile team members.
 
 Apart from these management contributions, I mainly took the whole responsibility for the text & image annotations on mobile with their all details. I have both implemented and solved the bugs realized in the development phase. I have also communicated with the back-end team and helped to build the annotation model&endpoints to be compatible with W3C standards. I implemented designs, functionalities, back-end connections, and tests, in short everything for text and image annotations on mobile. So, my main contribution to mobile is annotations.
@@ -652,6 +654,7 @@ Apart from the annotations, I implemented the posts section of the learning spac
 --------------------
 
 **Milestone-1**
+
 I played active and important role while designing the API definition and project architecture while keeping needs of front and backend in mind. I reviewed all works done by the mobile team, build the communication between back-end and mobile teams. I actively reported the problems, missing points to them and had discussion on the processes. I explained the flow we should follow for email verification to all team members in our weekly meeting. I also expressed my suggestions on the request and response bodies.
 
 I especially contributed to the mobile side with Flutter since I am a part of the mobile team. I have set up the base project, implemented the base managers (network, navigation, local), base widgets and logics which appear at almost every part of the app (like extensions, common widgets, helpers). I created the base structure to support multi-language and multi-theme features. I took the responsibility of the signup screen which was the first screen we developed on mobile. I developed various generic widgets while developing this screen like CustomFormField, ActionButton, and so on. I also created a base network manager to use across the app and built the back-end connection of the signup endpoint. I did a research on testing with Flutter and created the first tests of our app, wrote some examples and beneficial helpers. I also write both unit-widget tests and also the network request tests of the signup screen.
@@ -667,9 +670,36 @@ demonstrated during the demo:
 
 **Milestone-2**
 
+  1. [Mobile: Implementing Annotatable Text Widget](https://github.com/bounswe/bounswe2022group2/issues/505)
+  2. [Mobile: Implementing Highlighted (Annotated) Text Widget](https://github.com/bounswe/bounswe2022group2/issues/517)
+  3. [Mobile: Implementing Overlapped Text Annotation Support](https://github.com/bounswe/bounswe2022group2/issues/545)
+  4. [Mobile: Implementation of the Image Annotation](https://github.com/bounswe/bounswe2022group2/issues/578)
+  5. [Mobile: Implementation of the Annotated Image Display Logic](https://github.com/bounswe/bounswe2022group2/issues/579)
+  6. [Mobile: Implementation of the Events Section](https://github.com/bounswe/bounswe2022group2/issues/583)
+  7. [Mobile: Back-end Connection of Creating Annotation](https://github.com/bounswe/bounswe2022group2/issues/594)
+  8. [Mobile: Writing Tests of the Text Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/606)
+  9. [Mobile: Writing Tests of the Image Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/608)
+  10. [Mobile: Image Annotation Cropped Preview - Annotations Screen](https://github.com/bounswe/bounswe2022group2/issues/614)
+  11. [Mobile: Writing Tests of the Text Annotation Feature](https://github.com/bounswe/bounswe2022group2/issues/606)
+  12. [Mobile: Implementing Learning Space Detail Chapter Section](https://github.com/bounswe/bounswe2022group2/issues/477)
+  13. [Mobile: Writing Tests of the Learning Space Detail Chapter Section](https://github.com/bounswe/bounswe2022group2/issues/478)
+  14. [Mobile: Implementing Page Transition Animation](https://github.com/bounswe/bounswe2022group2/issues/558)
+  15. [Mobile: Native Splash Screen](https://github.com/bounswe/bounswe2022group2/issues/552)
+
 --------------------
 
 **Milestone-1**
+
+  1. [Implementation of MVVM Setup, Extensions and the Initial App Widget](https://github.com/bounswe/bounswe2022group2/issues/350)
+  2. [Mobile: Implementing Sign Up Screen](https://github.com/bounswe/bounswe2022group2/issues/358)
+  3. [Mobile: Writing Tests for Sign Up Screen](https://github.com/bounswe/bounswe2022group2/issues/359)
+  4. [Mobile: Back-end Connection of Sign Up Endpoint](https://github.com/bounswe/bounswe2022group2/issues/369)
+  5. [Mobile: Implementing Static Profile Screen](https://github.com/bounswe/bounswe2022group2/issues/397)
+  6. [Mobile: Writing Tests of the Profile Screen](https://github.com/bounswe/bounswe2022group2/issues/403)
+  7. [Mobile: Implementing the Navigation Manager](https://github.com/bounswe/bounswe2022group2/issues/356)
+  8. [Mobile: Base Setup for Multi-Language and Multi-Theme Setup](https://github.com/bounswe/bounswe2022group2/issues/357)
+  9. [Mobile: Bottom Navigation and App Bar Widgets](https://github.com/bounswe/bounswe2022group2/issues/393)
+  10. [Mobile: Implement App Icon](https://github.com/bounswe/bounswe2022group2/issues/401)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
