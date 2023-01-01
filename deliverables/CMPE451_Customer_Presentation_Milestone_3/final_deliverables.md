@@ -666,6 +666,17 @@ demonstrated during the demo:
 
 **Final Milestone-3**
 
+  1. [Mobile: Integration of Open Street Map to the Events](https://github.com/bounswe/bounswe2022group2/issues/750)
+  2. [Mobile: Event List and Preview Test](https://github.com/bounswe/bounswe2022group2/issues/753)
+  3. [Mobile: Tests for Event Details](https://github.com/bounswe/bounswe2022group2/issues/756)
+  4. [Mobile: Implementing Settings Screen](https://github.com/bounswe/bounswe2022group2/issues/758)
+  5. [Mobile: Multi-language Support and Settings](https://github.com/bounswe/bounswe2022group2/issues/761)
+  6. [Mobile: Multi-Theme Support and Settings](https://github.com/bounswe/bounswe2022group2/issues/763)
+  7. [Mobile: Fix Annotation Model](https://github.com/bounswe/bounswe2022group2/issues/765)
+  8. [Mobile: Tests for Settings Screen](https://github.com/bounswe/bounswe2022group2/issues/768)
+  9. [Mobile: Back-end Connection of Get Events](https://github.com/bounswe/bounswe2022group2/issues/773)
+  10. [Mobile: Back-end Connection of Get Annotations](https://github.com/bounswe/bounswe2022group2/issues/813)
+  
 --------------------
 
 **Milestone-2**
