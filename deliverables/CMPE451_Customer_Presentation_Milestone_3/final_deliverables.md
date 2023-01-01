@@ -634,6 +634,11 @@ Group: Group2 - Android/Mobile Team
 ## *Main Contributions:*
 
 **Final Milestone-3**
+I am a member of the mobile team for the development of our application which is Learnify. Therefore, most contributions were on the mobile side. However, I also did significant contributions to the general organization of our repository and the process of the team. I found a free and satisfactory solution for displaying event locations on a map: Open Street Map. I researched and tried various solutions (like Google Maps, Yandex Maps) before deciding. I also did its integration to our mobile application, I configured and customized it according to our needs. Additionally, I determined the way we should follow to mark a point in the map while creating an event.
+
+Apart from the items above, I added multi-theme and multi-language supports to our app. These features were so critical while serving an app to real users. Since we aim to have global users from all around the world, we prioritized and added these features.
+
+My last main contribution is to update annotation model on mobile side according to the changes made by the back-end team (to exactly, %100, comply with W3C standards).
 
 --------------------
 
