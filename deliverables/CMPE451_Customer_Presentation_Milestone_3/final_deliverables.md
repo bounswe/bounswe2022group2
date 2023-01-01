@@ -244,11 +244,59 @@ As we said in the previous sections, we are generally satisfied with the progres
 * **Bahrican Yeşil:**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |||
+  |**Milestone 2**|-|-|
+  |Milestone 2: Individual Report - Bahrican Yesil|[#701](https://github.com/bounswe/bounswe2022group2/issues/701)|4h|
+  |Mobile: Image Annotation Cropped Preview - Annotations Screen|[#614](https://github.com/bounswe/bounswe2022group2/issues/614)|2h 30m|
+  |Mobile: Writing Tests of the Image Annotation Feature|[#608](https://github.com/bounswe/bounswe2022group2/issues/608)|1h 45m|
+  |Mobile: Writing Tests of the Text Annotation Feature|[#606](https://github.com/bounswe/bounswe2022group2/issues/606)|1h 15m|
+  |Mobile: Bug Fix for Chapter (Post) Tests|[#598](https://github.com/bounswe/bounswe2022group2/issues/598)|1h 15m|
+  |Mobile: Back-end Connection of Creating Annotation|[#594](https://github.com/bounswe/bounswe2022group2/issues/594)|2h 30m|
+  |Mobile: Implementation of the Events Section|[#583](https://github.com/bounswe/bounswe2022group2/issues/583)|6h|
+  |Mobile: Implementation of the Annotated Image Logic|[#579](https://github.com/bounswe/bounswe2022group2/issues/579)|2h 30m|
+  |Mobile: Implementation of the Image Annotation|[#578](https://github.com/bounswe/bounswe2022group2/issues/578)|5h 30m|
+  |Mobile: Implementing Page Transition Animation|[#558](https://github.com/bounswe/bounswe2022group2/issues/558)|1h 15m|
+  |Mobile: Create GitHub Actions for Flutter |[#554](https://github.com/bounswe/bounswe2022group2/issues/554)|1h 15m|
+  |Mobile: Native Splash Screen|[#552](https://github.com/bounswe/bounswe2022group2/issues/552)|30m|
+  |Mobile: Implementing Multiple Annotation Selection Dialog |[#546](https://github.com/bounswe/bounswe2022group2/issues/546)|3h 15m|
+  |Mobile: Implementing Overlapped Annotation Support|[#545](https://github.com/bounswe/bounswe2022group2/issues/545)|4h 15m|
+  |Mobile: Implementing Highlighted (Annotated) Text Widget|[#517](https://github.com/bounswe/bounswe2022group2/issues/517)|4h 15m|
+  |Mobile: Implementing Annotatable Text Widget|[#505](https://github.com/bounswe/bounswe2022group2/issues/505)|5h 15m|
+  |Documenting Meeting notes for Mobile Meeting #4|[#479](https://github.com/bounswe/bounswe2022group2/issues/479)|1h|
+  |Mobile: Writing Tests of the Course Detail Chapter Section|[#478](https://github.com/bounswe/bounswe2022group2/issues/478)|1h 15m|
+  |Mobile: Implementing Course Detail Chapter Section|[#477](https://github.com/bounswe/bounswe2022group2/issues/477)|5h 30m|
+  |Creating a Pull Request Template|[#476](https://github.com/bounswe/bounswe2022group2/issues/476)|45m|
+  |Milestone 2: Annotations Part of the Report - Mobile|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|1h 10m|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|2h 30m|
+  |**Milestone 1**|-|-|
+  |Implementation of MVVM Setup, Extensions and the Initial App Widget|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/350)|-|
+  |Mobile: Implementing Sign Up Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/358)|-|
+  |Mobile: Writing Tests for Sign Up Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/359)|-|
+  |Mobile: Back-end Connection of Sign Up Endpoint|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/369)|-|
+  |Mobile: Implementing Static Profile Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/397)|-|
+  |Mobile: Writing Tests of the Profile Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/403)|-|
+  |Mobile: Implementing the Navigation Manager|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/356)|-|
+  |Mobile: Base Setup for Multi-Language and Multi-Theme Setup|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/357)|-|
+  |Mobile: Bottom Navigation and App Bar Widgets|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/393)|-|
+  |Mobile: Implement App Icon|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/401)|-|
+  |Revising the Requirements: Authentication|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/331)|-|
+  |Revising the Diagrams based on Signup&Login|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/337)|-|
+  |Documenting Meeting Notes for the Meeting 3 of CMPE 451|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/348)|-|
+  |Documenting Meeting Notes for the Meeting 1 of Mobile Team|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/349)|-|
+  |Revising the Diagrams based on Signup&Login|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/337)|-|
+  |Preparing Milestone 1 - CMPE 451 Deliverables|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/409)|-|
+  |Updating Sidebar|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/313)|-|
+  |Revising Mockups|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/326)|-|
+  |Report and Research on Flutter|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/314)|-|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
+  |Final Milestone 3|-|-|
   ||||
+  |Milestone 2|-|-|
+  ||||
+  |Milestone 1|-|-|
   
 * **Mehmet Gökay Yıldız**
   |Issue Title|Link|Time Consumption|
