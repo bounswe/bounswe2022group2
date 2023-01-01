@@ -111,6 +111,26 @@ In short, we achieved all of our aims and accomplished all the responsibilities 
 
 ### Changes the Team Has Made or Planned Since Milestone 2 to Improve Development Process, and How Those Changes Have Impacted the Process
 
+Our management process and system were effective, so we didn't need to plan and make so many changes. We continued to regularly review our progress and sought ways to optimize our development process.However, we planned something regarding to the features of the app. Here is the list of the actions which we normally planned to take until the final milestone:
+
+1. Create a separate database and microservice for annotation feature
+2. Embed the exact W3C annotation model (we have already satisfy critical fields and information for this model and we are integrated with it) into the create annotation request on both mobile & web & backend for the new microservice
+3. Connect the back-end for both text and image annotation feature on web
+4. Create and integrate back-end for user search
+5. Public profiles and displaying other users’ profiles
+6. Following other people and displaying follower/following information
+7. Improve the learning space recommendation system
+8. Achievements for learning spaces
+9. Upvote, edit and delete functionalities for annotations
+10. Rating the learning spaces
+11. Create and integrate back-end of the events part (currently it’s static)
+12. Create and integrate back-end of the forum part (currently it’s static)
+13. Improve the profile page and create the back-end connection
+
+We can say that we successfully did the changes for items 1, 2, 3, 4, 5, 7, 11, 13. As you noticed, all of these are related to development, not management. Because, we already have issue templates (3 different templates), pull request template, github actions and well-followed meeting schedule/notes. Therefore, we didn't need so many changes related to the management, team communication, and so on.
+
+For the general changes we did (not only after the 2nd milestone), you can refer to previous milestone reports. They include changes related to pull request template, GitHub actions, general meeting schedule, planning, feature prioritization and so on. We didn't include them here to avoid repeating ourselves. We have a great system after the second milestone and therefore we didn't need to change so much thing.
+
 ***
 
 ### Reflections Related to the Final Milestone Demo Including Lessons Learned
