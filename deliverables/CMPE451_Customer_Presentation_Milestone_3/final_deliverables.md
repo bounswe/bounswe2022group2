@@ -721,9 +721,26 @@ management of our software project:
 
 **Milestone-2**
 
+  1. [Creating a Pull Request Template](https://github.com/bounswe/bounswe2022group2/issues/476)
+  2. [Documenting Meeting notes for Mobile Meeting #4](https://github.com/bounswe/bounswe2022group2/issues/479)
+  3. [Mobile: Create GitHub Actions for Flutter](https://github.com/bounswe/bounswe2022group2/issues/554)
+  4. [Milestone 2: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/701)
+  5. [Milestone 2: Annotations Part of the Report - Mobile](https://github.com/bounswe/bounswe2022group2/issues/719)
+  6. [Milestone 2: Fill User Interface Part for Mobile](https://github.com/bounswe/bounswe2022group2/issues/710)
+
 --------------------
 
 **Milestone-1**
+
+  1. [Revising the Requirements: Authentication](https://github.com/bounswe/bounswe2022group2/issues/331)
+  2. [Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
+  3. [Documenting Meeting Notes for the Meeting 3 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/348)
+  4. [Documenting Meeting Notes for the Meeting 1 of Mobile Team](https://github.com/bounswe/bounswe2022group2/issues/349)
+  5. [Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
+  6. [Preparing Milestone 1 - CMPE 451 Deliverables](https://github.com/bounswe/bounswe2022group2/issues/409)
+  7. [Updating Sidebar](https://github.com/bounswe/bounswe2022group2/issues/313)
+  8. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+  9. [Report and Research on Flutter](https://github.com/bounswe/bounswe2022group2/issues/314)
 
 ## *Pull Requests:*
 
