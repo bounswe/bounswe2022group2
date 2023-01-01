@@ -809,6 +809,7 @@ management of our software project:
 7. Bottom Navigation and App Bar Widgets [#394](https://github.com/bounswe/bounswe2022group2/pull/394)
 8. Static Profile Screen [#400](https://github.com/bounswe/bounswe2022group2/pull/400)
 9. Profile Screen Tests [#404](https://github.com/bounswe/bounswe2022group2/pull/404)
+NOTE: Hours before the final demo presentation, one of our team-mates did a HOTFIX on the updated profile screen. After this hotfix, the tests for the profile screen became failing. We didn't have enough time to fix this test since we were dealing with demo presentation. Therefore, I was able to fix the problem in the profile screen test evening of the demo day (after taken the tag). I also contacted with Suzan hoca and she said to me to note this issue in my report. So, please consider the lastly updated code version in the GitHub for the profile screen test. Recently updated version is working successfully, and all tests are passed.
 10. Configuring app icon as our logo [#402](https://github.com/bounswe/bounswe2022group2/pull/402)
 11. Creating milestone 1 deliverables and individual report [#410](https://github.com/bounswe/bounswe2022group2/pull/410)
 12. Update Issue Templates [#340](https://github.com/bounswe/bounswe2022group2/pull/340)
@@ -816,15 +817,16 @@ management of our software project:
 
 ## *Unit Tests:*
 
-**Final Milestone-3**
-
---------------------
-
-**Milestone-2**
-
---------------------
-
-**Milestone-1**
+1. Mobile: Image Annotation Tests [#612](https://github.com/bounswe/bounswe2022group2/pull/612)
+2. Mobile: Text Annotation Tests [#607](https://github.com/bounswe/bounswe2022group2/pull/607)
+3. Mobile: Chapter Section Tests under Learning Space Detail Screen [#502](https://github.com/bounswe/bounswe2022group2/pull/502)
+4. Mobile: Profile Screen Tests [#404](https://github.com/bounswe/bounswe2022group2/pull/404)
+NOTE: Hours before the final demo presentation, one of our team-mates did a HOTFIX on the updated profile screen. After this hotfix, the tests for the profile screen became failing. We didn't have enough time to fix this test since we were dealing with demo presentation. Therefore, I was able to fix the problem in the profile screen test evening of the demo day (after taken the tag). I also contacted with Suzan hoca and she said to me to note this issue in my report. So, please consider the lastly updated code version in the GitHub for the profile screen test. Recently updated version is working successfully, and all tests are passed.
+5. Mobile: Signup Screen Tests [#373](https://github.com/bounswe/bounswe2022group2/pull/373)
+6. Mobile: Sign Up Screen Back-end Connection Tests [#389](https://github.com/bounswe/bounswe2022group2/pull/389)
+7. Mobile: Event List and Preview Test [#754](https://github.com/bounswe/bounswe2022group2/pull/754)
+8. Mobile: Tests Event Details [#757](https://github.com/bounswe/bounswe2022group2/pull/757)
+9. Mobile: Tests - Settings Screen [#769](https://github.com/bounswe/bounswe2022group2/pull/769)
 
 ## *Additional Information:*  
 
@@ -837,6 +839,10 @@ management of our software project:
 --------------------
 
 **Milestone-1**
+
+I built the base file, folder structure on mobile project. We have decided to use MVVM design pattern while implementing the project and I created a base structure for it. I have informed my teammates about the user flow we should follow.
+
+I actively participated in and give suggestions about the endpoints we should have. I also give suggestions about the request and response bodies of the endpoints. I explained some concepts and real-life examples of the front designs both for web and mobile. I contributed to the logic we should implement in the authentication flow (signup-login-forgot password-email verification)
 
 ---------------------------
 
