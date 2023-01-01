@@ -325,7 +325,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Mobile: Hotfix annotation tests carousel slider|[#910](https://github.com/bounswe/bounswe2022group2/pull/910)|20m|
   |Mobile: HOTFIX Remove Default Images|[#905](https://github.com/bounswe/bounswe2022group2/pull/905)|20m|
   |Final Milestone: Executive Summary - Bahrican Yesil|[#937](https://github.com/bounswe/bounswe2022group2/pull/937)|2h 15m|
-  |Final Milestone: Individual Contributions Report - Bahrican Yesil|[#941]<<https://github.com/bounswe/bounswe2022group2/pull/943>)|3h|
+  |Final Milestone: Individual Contributions Report - Bahrican Yesil|[#943](https://github.com/bounswe/bounswe2022group2/pull/943)|3h|
   |Final Milestone: Summary of Work Table - Bahrican Yesil|[#940](https://github.com/bounswe/bounswe2022group2/pull/940)|1h 30m|
   |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
