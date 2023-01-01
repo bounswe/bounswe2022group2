@@ -553,6 +553,27 @@ Group: Group2 - Android/Mobile Team
 
 ## *Responsibilities:*
 
+**Final Milestone-3**
+  ------------
+
+**Milestone-2**
+  ------------
+
+**Milestone-1**
+
+  1. Building the main structure of the Flutter project
+  2. Implementing core managers: network, navigation, and local storage managers
+  3. Adding multi-theme and multi-language structure base.
+  4. Implementing sign up screen, making its back-end connection
+  5. Writing tests of the sign up screen
+  6. Implementing static profile screen
+  7. Writing tests of the profile screen
+  8. Make the app icon as our logo and configure the app name
+  9. Implementing bottom navigation and app bars
+  10. Reviewing all works done by the mobile teammates
+  11. Determination of the endpoints, request and response bodies
+  12. Implement app icon and app name to the required config files
+
 ## *Main Contributions:*
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
