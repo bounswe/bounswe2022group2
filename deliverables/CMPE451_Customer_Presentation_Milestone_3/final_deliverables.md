@@ -423,7 +423,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Mobile: My profile backend connection|[#915](https://github.com/bounswe/bounswe2022group2/issues/915)|
   |Mobile: Other users profile page and backend connection|[#921](https://github.com/bounswe/bounswe2022group2/issues/921)|
   |Mobile: Profile Update Major BugFix|[#923](https://github.com/bounswe/bounswe2022group2/issues/923)|
-  |Final Milestone: Project Plan|[#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes|
+  |Final Milestone: Project Plan|[#983](https://github.com/bounswe/bounswe2022group2/issues/983)|30 minutes|
   |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|
   |Final Milestone: Summary of Work Table for Onur Kömürcü|[#966](https://github.com/bounswe/bounswe2022group2/issues/966)|
   |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#982](https://github.com/bounswe/bounswe2022group2/issues/982)|
@@ -2583,7 +2583,7 @@ management of our software project:
   3. Mobile: My profile backend connection [#915](https://github.com/bounswe/bounswe2022group2/issues/915)
   4. Mobile: Other users profile page and backend connection [#921](https://github.com/bounswe/bounswe2022group2/issues/921)
   5. Mobile: Profile Update Major BugFix [#923](https://github.com/bounswe/bounswe2022group2/issues/923)
-  6. Final Milestone: Project Plan [#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes
+  6. Final Milestone: Project Plan [#983](https://github.com/bounswe/bounswe2022group2/issues/983)|30 minutes
   7. Final Milestone: Mobile App Scenario [#957](https://github.com/bounswe/bounswe2022group2/issues/957)
   8. Final Milestone: Summary of Work Table for Onur Kömürcü [#966](https://github.com/bounswe/bounswe2022group2/issues/966)
   9. Final Milestone: Individual Contributions Report for Onur Kömürcü [#959](https://github.com/bounswe/bounswe2022group2/issues/958)
