@@ -7,10 +7,10 @@ FROM node:18-alpine
 WORKDIR /app
 # Optimization
 COPY ./package.json .
-RUN npm i
+RUN npm i --force
 # ==== BUILD =====
 # Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
-RUN npm ci 
+RUN npm ci --force
 # Copy app files
 COPY . .
 # Build the app
