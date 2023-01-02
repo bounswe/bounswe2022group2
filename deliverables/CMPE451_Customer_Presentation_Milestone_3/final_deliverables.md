@@ -1372,6 +1372,290 @@ Please do check the annotation related APIs in API Documentation as a proof to W
 
 ### User Manual
 
+#### Signup Screen
+
+Before using our application, Learnify, our users should complete the signup process. This screen asks for a valid username(no other user use that username), an email address and a strong password(please check our glossary for our definition of "strong password"). Lastly, it asks for users to tick the box for accepting our General Terms and Privacy Policy. In this screen, we also have a button that navigates users to login screen.
+
+##### Mobile
+
+After all those steps are completed, signup button becomes active in our mobile application. Other than that, it is in deactivated mode.
+
+![signup_1](https://user-images.githubusercontent.com/100771925/210227773-c7cf2378-f1b3-4ff4-8979-f4d455b907f6.jpg)
+![signup_2](https://user-images.githubusercontent.com/100771925/210227779-5d9cbcb5-23e0-4565-98dd-47379f36e8dc.jpg)
+
+##### Web
+
+![signup_web](https://user-images.githubusercontent.com/68481602/206698399-4fee4340-0b19-4942-9ee5-ec57332809e6.png)
+
+***
+
+#### Verification Screen
+
+After pressing signup button, our users receive an email that contains a verification code and our application navigates them to verification screen. If a user tries to log in before completing the verification step, they are navigated to this screen after logging in. After verification step is completed succesfully, our mobile application navigates user to home page, and our web application navigates user to login page.
+
+##### Mobile
+
+In our mobile application, verify button is in deactivated mode by default. After filling all 4 code fields, it is activated. This screen also has a countdown timer, resend verification code button and back to previous page button in our mobile application.
+
+![verification_1](https://user-images.githubusercontent.com/100771925/210228634-ec44d2da-6b38-4cc3-86e1-e8e31075ca79.jpg)
+![verification_2](https://user-images.githubusercontent.com/100771925/210228639-6cff4864-f863-4359-bf72-c8950afaac4e.jpg)
+
+##### Web
+
+![verification_web_1](https://user-images.githubusercontent.com/74325266/206710871-d4251fd2-2b8d-43b2-8413-40efb89b2245.png)
+
+***
+
+#### Login Screen
+
+Users who completed signup and verification processes can enter our application by logging in. This screen asks users to enter their emails and passwords. This screen also have a button which navigates users to signup screen and a button which navigates users to forget password screen. If entered email address and password match after pressing log in button, our application navigates user to home page of our app.
+
+##### Mobile
+
+In our mobile application, log in button is in deactivated mode by default. After filling both email and password fields, it is activated. 
+
+![login](https://user-images.githubusercontent.com/100771925/210229240-f788dae1-3c10-4ffa-b6c9-5dead4378f22.jpg)
+
+##### Web
+
+![login_web](https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png)
+
+***
+
+#### Forget Password Screen
+
+Users who can't remember their password can press "forget password" button in login screen to reach forget password screen. In this screen, users are asked to enter their emails. Then, a verification code is sent to the entered email address and users are navigated to verification screen, again. 
+
+##### Mobile
+
+This screen also has a button which navigates users to login page in our mobile application.
+
+![forget_password](https://user-images.githubusercontent.com/100771925/210230015-3a8fd401-94f3-498e-9fc9-93f99963fce5.jpg)
+
+##### Web
+
+![forget_password_web](https://user-images.githubusercontent.com/42673110/206701007-f43b67cc-ff14-4b30-883d-43ff00b45853.png)
+
+***
+
+#### Home Screen
+
+In home screen, enrolled learning spaces of user, top rated learning spaces and recommended learning spaces for user are shown. 
+
+##### Mobile
+
+In our mobile application, there is a "view all" button for all three types of learning spaces(enrolled, top rated and recommended). That button is activated whenever there are at least 8 learning spaces in that type. By pressing that button, users are navigated to a screen where they can see all learning spaces in the selected type.
+
+![home](https://user-images.githubusercontent.com/100771925/210237221-02eb0f1a-388d-4954-b1d4-c6503b285528.jpg)
+![home_1](https://user-images.githubusercontent.com/100771925/210233088-a0f025a7-24fb-404c-85c9-e12ee0cafce1.jpg)
+
+##### Web
+
+![home_web](https://user-images.githubusercontent.com/68481602/206697988-72dce30f-f5e5-4874-b808-3e454a638c8c.png)
+
+***
+
+#### Search Screen
+
+This is the screen where you can find learning spaces you wish by entering the correct, related keywords to search bar. We use semantic search to find the learning spaces users aim to find.
+
+##### Mobile
+
+In our mobile application, when a user enters the search screen for the first time, they see recommended learning spaces by default. After typing some keywords to search bar and pressing the search button, learning spaces found with related to entered keywords are shown to users. We also have user search in the mobile application. Clicking the found users navigates current user to that user's profile page.
+
+![ls_search_1](https://user-images.githubusercontent.com/100771925/210233153-abf6bc23-3704-45a9-a7bc-d3a442ba05c2.jpg)
+![ls_search_2](https://user-images.githubusercontent.com/100771925/210233176-c297b422-9675-4b6e-9f36-e5639c6adc79.jpg)
+![user_search_1](https://user-images.githubusercontent.com/100771925/210233189-ae20bbb2-1ef2-4276-89de-be800354c2a2.jpg)
+
+##### Web
+
+***
+
+#### Profile Screen
+
+In profile screen, profile picture, username, email and biography of the user are present. Users can change their biography from this screen if they wish.
+
+##### Mobile
+
+In our mobile application, we also have two buttons named "Enrolled Learning Spaces" and "Created Learning Spaces". Clicking those buttons navigates user to a page where enrolled or created learning spaces are shown. We also have an indicator showing how many learning spaces the user created, enrolled in. There is also a setting button at the top, which will be detailed below. Finally, there is a log out button next to settings button, pressing that button logs the user out of our program.
+
+![profile_1](https://user-images.githubusercontent.com/100771925/210233243-6c3034b1-3af3-4911-bd27-42b923f39ca3.jpg)
+
+##### Web
+![profile_web](https://user-images.githubusercontent.com/74411541/210258026-29710641-a51c-44d1-a0dd-b8381f86605f.png)
+
+***
+
+#### My Learning Spaces Screen
+
+In this screen, only enrolled learning spaces are shown. Additionally, there is a button for creating a learning space. Pressing that button navigates user to learning space creation screen.
+
+##### Mobile
+![spaces](https://user-images.githubusercontent.com/100771925/210261584-e8ac451d-c215-4576-8a16-a4067d5750a5.jpg)
+
+##### Web
+![my_ls_web](https://user-images.githubusercontent.com/74411541/210257450-8abdafcb-df90-4d78-bf5f-e8d567139d26.png)
+
+***
+
+#### Create Learning Space Screen
+
+In this screen, users are asked to choose an image among predefined images, enter a title, a description, a participant limit and choose category related to the learning space. Pressing done button creates the learning space and navigates user to the previous page.
+
+##### Mobile
+
+In our mobile application, more than one category can be chosen and done button is activated after necessary fields are filled.
+
+![create_ls](https://user-images.githubusercontent.com/100771925/210261615-ec585c90-b4ca-49b0-aa67-13c9a6fb15fe.jpg)
+
+##### Web
+
+![create_ls_web](https://user-images.githubusercontent.com/42673110/206700987-81ed6668-6267-483c-b766-f93849c763f8.png)
+
+***
+
+#### Learning Space Detail Screen
+
+This screen includes detailed information about a learning space. In both mobile and web applications, description of the learning space, name of it, posts, events, discussion forum take place.
+
+##### Mobile
+
+In our mobile application, enroll button takes place. Once user presses this button, they enroll the learning space and button text turns to "enrolled". Category takes place under description of learning space. Posts, create post button, forum, events and create event button takes place in this screen. When participants icon is clicked, participants of the learning space are shown. Pressing creator of the learning space navigates user to profile page of course creator.
+
+![ls_detail_1](https://user-images.githubusercontent.com/100771925/210233382-e24aacbe-09ae-4a39-a0dc-e79abd7fde3c.jpg)
+![ls_detail_participants](https://user-images.githubusercontent.com/100771925/210235336-a2a51a12-2854-4725-8fd4-d61d9f41d629.jpg)
+![ls_detail_posts](https://user-images.githubusercontent.com/100771925/210235353-b71b6984-d883-43b0-b316-c5ce2380034a.jpg)
+![ls_detail_forum](https://user-images.githubusercontent.com/100771925/210235408-68fe044c-4872-4abb-962c-754ae570f2b6.jpg)
+![ls_detail_events](https://user-images.githubusercontent.com/100771925/210235426-715addea-8e00-440f-b379-db208fb91d5e.jpg)
+
+##### Web
+
+In our web application, contributors and events take place in the right side of the screen. Posts are shown one after another in the middle and add post button takes place above the posts.
+
+![ls_detail_web](https://user-images.githubusercontent.com/74411541/206706633-19b029c7-032d-4088-9215-8e6bc9e2e484.png)
+
+***
+
+#### Enroll Learning Space
+
+This is not a screen but a functionality. Users can enroll learning spaces in our application by triggering enroll functionality.
+
+##### Mobile
+
+In our mobile application, there is a button with text "enroll" in learning space detail screen. Once this button is pressed, its text turns to "enrolled" and user who just enrolled is added to participants list. Also, the newly enrolled learning space is added to enrolled learning spaces list in both home screen and spaces screen.
+
+![enroll_ls_1](https://user-images.githubusercontent.com/100771925/210233427-9a8128f9-d969-44a9-9e7f-debeefa8e026.jpg)
+![enroll_ls_2](https://user-images.githubusercontent.com/100771925/210233423-0ceaf5b1-e3a8-4a1b-a4c0-e39cfb5c5e55.jpg)
+
+##### Web
+
+***
+
+#### Add Post / Edit Post
+
+This components/screens are used to add or edit post/material to a learning space.
+
+##### Mobile
+
+In our mobile application, add post screen asks users to add a title and a content for the post to add. Done button is activated only when both input fields are filled. On the other hand, in edit post screen, title and content fields are filled with the texts to be edited by default. Making a change in those fields activates the done button.
+
+![add_post](https://user-images.githubusercontent.com/100771925/210233535-18eaa8e6-2305-4613-aeab-af0c1e868c14.jpg)
+![edit_post](https://user-images.githubusercontent.com/100771925/210233539-28e535a3-7dfb-452c-a8b2-200fee2ce558.jpg)
+
+##### Web
+
+***
+
+#### Add Comment
+
+This component is used to add comment to a learning space post/material.
+
+##### Mobile
+
+In our mobile application, comment button takes place right to edit post button and under the post content. A dialog pops up by clicking the comment button. After inserting the comment in that dialog, done button is activated and comment is made.
+
+![add_comment](https://user-images.githubusercontent.com/100771925/210255796-c4b0acc2-d579-4aed-b7ea-d780bfd6f729.jpeg)
+
+##### Web
+
+*** 
+
+#### Text Annotation
+
+Text annotation is one of the most important features in our application in both mobile and web. We have a fully functioning text annotation in both our mobile application and web application.
+
+##### Mobile
+
+In our mobile application, posts/materials of a learning space can be annotated. After a long press on a text, text selection functionality becomes active. Then, users can choose the part of the text they want to annotate. After desired part is selected, annotate button can be selected. Then, a dialog for entering the annotation is opened. After entering a text to that dialog, done button is activated and annotation is made. Then, users can view the annotations they have made. Overlapping annotations are available in our application. By clicking on annotated text, users are navigated to annotation view screen. If an overlapping are is clicked, firstly a annotation selection dialog is opened.
+
+![text_annotation1](https://user-images.githubusercontent.com/100771925/210260005-78695537-36c1-4d16-bd0d-75dacc301994.jpg)
+![text_annotation2](https://user-images.githubusercontent.com/100771925/210260007-244a8970-34ee-4efc-91c1-a6e070473714.jpg)
+![text_annotation3](https://user-images.githubusercontent.com/100771925/210260009-ef423158-4948-427e-a5f1-549afe684863.jpg)
+![text_annotation4](https://user-images.githubusercontent.com/100771925/210260013-1d408039-3bce-4920-9a0a-4dca986faac9.jpg)
+![text_annotation5](https://user-images.githubusercontent.com/100771925/210260016-905346a9-4ef3-4824-8a41-f59cab1a34b8.jpg)
+![text_annotation6](https://user-images.githubusercontent.com/100771925/210260019-9e50c26d-53af-4a6f-aec3-34c8c66f158a.jpg)
+
+##### Web
+
+***
+
+#### Image Annotation
+
+Image annotation is one of the most important features in our application in both mobile and web, as well. We have a fully functioning image annotation in both our mobile application and web application.
+
+##### Mobile
+
+In our mobile application, images in posts/materials of a learning space can be annotated. By clicking on an image, image view screen is opened. Then, by pressing on a region on the image, a selection rectangle is shown. Users can choose the part of the image they want to annotate with this selection rectangle. After that, a dialog opens again for users to enter the annotation text. After the text is entered, users can view the annotations they have made. Again, overlapping annotations are available in our mobile application. By clicking the annotated parts, users are navigated to annotation view screen. If an overlapping part is clicked both annotation text are shown in the annotation view screen.
+
+![image_annotation_1](https://user-images.githubusercontent.com/100771925/210260051-99be5c7e-6210-4ec6-b63d-5cfd5be18564.jpg)
+![image_annotation_2](https://user-images.githubusercontent.com/100771925/210260055-ef079cd6-8510-4b8b-b1cf-7bb0041743dd.jpg)
+![image_annotation_3](https://user-images.githubusercontent.com/100771925/210260058-8464e94a-4c6f-4d14-a36a-349b08b1cc9f.jpg)
+![image_annotation_4](https://user-images.githubusercontent.com/100771925/210260043-9226a3c8-726b-4c18-b875-b2a615364481.jpg)
+
+
+##### Web
+
+***
+
+#### Create Event
+
+Creating event by specifying geolocation is another important feature of our application. We have a fully functioning event creation feature both in our mobile app and web app.
+
+##### Mobile
+
+In our mobile application, create event screen can be reached by clicking "Create Event" button in events section of the learning space detail screen. In this screen, users are asked to enter title, description, participation limit and duration of event. Then, they are asked to enter a date for the event. By default, date selection starts from the current time, selecting a previous date is not allowed by the application(it is programmed that way). Next, there is a map, users can select the geolocation of the event from that map, below that latitude, longitude and accuracy of the selected geolocation is shown. By default, first geolocation is the current geolocation of the user. For using this feature location services of the phone must be open. After entering all fields, done button is activated. Pressing the done button creates the event. Attend event button takes place under information of event, pressing that button adds users to participants list. Creator of event is automatically added to that list.
+
+![create_event](https://user-images.githubusercontent.com/100771925/210235492-299f9d34-54c4-4487-a9d0-26a0f7bcdbbc.jpg)
+![create_event_2](https://user-images.githubusercontent.com/100771925/210235495-3c01351d-60ab-4724-90bd-8fe3156912f5.jpg)
+![create_event_3](https://user-images.githubusercontent.com/100771925/210235502-de0d5a38-971f-412c-9d3f-1b137644dc63.jpg)
+
+
+##### Web
+
+***
+
+#### Other Users' Profile
+
+Other users' profile screen is just like user's own profile screen. Only difference is that biography cannot be changed in this screen.
+
+##### Mobile
+![other_profile_1](https://user-images.githubusercontent.com/100771925/210235555-7cd578cc-f35c-422e-9114-51ac08fe39b7.jpg)
+![other_profile_2](https://user-images.githubusercontent.com/100771925/210235563-8e85fd0b-7fc5-405b-8d87-3ba7c9c9388e.jpg)
+![other_profile_3](https://user-images.githubusercontent.com/100771925/210235566-d4ea2281-913b-40a8-83ec-9dcfb40a46c2.jpg)
+
+##### Web
+
+***
+
+#### Settings
+
+This screen is only available on our mobile application. Users can reach this screen by pressing the setting button at the right top in profile screen. From this screen, theme and language can be changed. Users can also reach our app info and social account info from this screen.
+
+![settings_1](https://user-images.githubusercontent.com/100771925/210235612-43e8146c-25ad-487d-99d0-67542c1e39c1.jpg)
+![settings_2](https://user-images.githubusercontent.com/100771925/210235622-eb3eabc1-6b61-47e4-8a05-e9a22ade7ff2.jpg)
+![settings_3](https://user-images.githubusercontent.com/100771925/210235630-29e53216-178a-45e4-a442-f87d6d59c776.jpg)
+![settings_4](https://user-images.githubusercontent.com/100771925/210235640-c78a6c9b-60ca-4a0c-930d-5d2e4794c49a.jpg)
+
 ***
 
 ### System Manual
