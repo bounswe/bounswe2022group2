@@ -3558,7 +3558,7 @@ Group: Group2 - Frontend Team
   34. Providing support and guidance to team members as needed.
   35. Controlling the version control of the frontend codebase using Git.
   36. Implementing responsive design principles to ensure that the application is functional and visually appealing on various devices and screen sizes.
-  37. Reviewing and editing the final version of the milestone 2 report before submission.
+  37. Reviewing and editing the final version of the milestone 3 report before submission.
 
 --------------------
 
