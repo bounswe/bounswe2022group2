@@ -198,12 +198,37 @@ As we said in the previous sections, we are generally satisfied with the progres
   
 * **Hasan Can Erol**
   |Issue Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
-  ||||
+  |--------------|--------|--------|
+  |**Final Milestone 3**|-|-|
+  |Backend: Put edit comment endpoint|[#862](https://github.com/bounswe/bounswe2022group2/issues/862)|2h|
+  |Backend: Comment on Posts Endpoint and Unit Tests|[#779](https://github.com/bounswe/bounswe2022group2/issues/779)|8h|
+  |Documenting meting notes of Meeting 8 for CMPE451|[#759](https://github.com/bounswe/bounswe2022group2/issues/759)|30m|
+  |Final Milestone: Individual Contributions Report for Hasan Can Erol|[#963](https://github.com/bounswe/bounswe2022group2/issues/963)|1h|
+  |Final Milestone: Summary of Work Table for Hasan Can Erol|[#964](https://github.com/bounswe/bounswe2022group2/issues/964)|1h|
+  |--------------|--------|--------|
+  |**Milestone 2**| - | - |
+  |Milestone-2 Report: Executive Summary|[#704](https://github.com/bounswe/bounswe2022group2/issues/704)|-|
+  |--------------|--------|--------|
+  |**Milestone 1**| - | - |
+  |Backend: Implementation of Resend Email Verification|[#406](https://github.com/bounswe/bounswe2022group2/issues/406)|-|
+  |Revising the Requirements: Profile Page|[#345](https://github.com/bounswe/bounswe2022group2/issues/345)|-|
+  |Revisions About All the Diagrams|[#322](https://github.com/bounswe/bounswe2022group2/issues/322)|-|
+  |Reviewing the Updating Communication Plan|[#315](https://github.com/bounswe/bounswe2022group2/issues/315)|-|
+  |Reviewing the Revising the Requirements: Chat to forum Transformation|[#344](https://github.com/bounswe/bounswe2022group2/issues/344)|-|
   
   |Pull Request Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
-  ||||
+  |--------------|--------|--------|
+  |**Milestone 3**| - | - |
+  |Backend: Edit comment endpoint |[#863](https://github.com/bounswe/bounswe2022group2/pull/863)| 2h |
+  |Create comment endpoint minor bugfix|[#849](https://github.com/bounswe/bounswe2022group2/pull/849)| 15m |
+  |Backend: Create Comment endpoint and Unit Tests|[#784](https://github.com/bounswe/bounswe2022group2/pull/784)| 8h |
+  |--------------|--------|--------|
+  |**Milestone 2**| - | - |
+  |Executive Summary|[#703](https://github.com/bounswe/bounswe2022group2/pull/703)|-|
+  |--------------|--------|--------|
+  |**Milestone 1**| - | - |
+  |Backend: Implementing Resend The Verification Code|[#411](https://github.com/bounswe/bounswe2022group2/pull/411)|-|
+  |Adding Moving Forward|[#512](https://github.com/bounswe/bounswe2022group2/pull/512)|-|
   
 * **Onur Kömürcü:**
   |Issue Title|Link|Time Consumption|
@@ -1507,20 +1532,80 @@ Name: Hasan Can Erol
 Group: Group2 - Backend Team
 
 ## *Responsibilities:*
+ 
+ **Final Milestone 3**
+ 
+ 1. Attending and participating general meetings regularly
+ 2. Writing create comment enpoint for the posts
+ 3. Writing unit tests for the create comment endpoint
+ 4. Writing editing comment endpoint
+ 5. Providing postman examples for the mobile and frontend connection
+ 6. Reviewing the works done by the backend team and make sure all the endpoint working fine
+ 7. Taking and documenting General Meeting 8 notes to wiki page
+ 
+ **Milestone 2**
+ 
+ 1. Writing executive summary for Milestone-2 report
+ 2. Attending and participating general meetings regularly
+ 
+ **Milestone 1**
+ 
+ 1. Attending and participating general meetings regularly
+ 2. Implementing the resend verification email endpoint
+ 3. Reviewing and making sure all works done by each beackend team member are working properly
+ 4. Providing postman documentations for the frontend and mobile teams
+ 5. Doing research on technologies needed to use on backend development
 
 ## *Main Contributions:*
+ 
+ **Final Milestone 3**
+ 
+ I'm one of the 3 contributors of backend team for the Learnify app, so most parts of my contribution is on backend side. In this milestone, future plans are changed and we decided to go with the forum for the learning spaces. Therefore, I wrote the commenting on existing posts on learning spaces and editing these comments part of our application. Also, I provided the postman documentation and the unit tests for the mobile and frontend team to backend connections. In addition, I noted down the meeting notes for our 8th meeting this semester and documented it into wiki page. 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+ 
+ - [Backend: Comment on Posts Endpoint and Unit Tests](https://github.com/bounswe/bounswe2022group2/issues/779)
+ - [Backend: Put edit comment endpoint](https://github.com/bounswe/bounswe2022group2/issues/862)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+ 
+ - [Documenting meting notes of Meeting 8 for CMPE451](https://github.com/bounswe/bounswe2022group2/issues/759)
+ - [Final Milestone: Individual Contributions Report for Hasan Can Erol](https://github.com/bounswe/bounswe2022group2/issues/963)
+ - [Final Milestone: Summary of Work Table for Hasan Can Erol](https://github.com/bounswe/bounswe2022group2/issues/964)
+ 
+ **Milestone 1**
+ 
+  I'm one of the 3 contributors of backend team for the Learnify app. Firstly, we discuss about popular technologies on software development and decided on Node.js as a team. After that, we splitted the implementation of 4 endpoints which are decided to be developed for the milestone-1 demo. I implemented resend the verificaiton email for signup and forgot password pages. I was always on touch with my backend teammates via discord, whatsapp or on person. I tried the project on my local and made sure the whole backend demo works properly. I also added the moving forward part to our Milestone-1 report.
 
+ * *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+ 
+  - [Backend: Implementation of Resend Email Verification](https://github.com/bounswe/bounswe2022group2/issues/406)
+ 
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+ 
+  - [Revising the Requirements: Profile Page](https://github.com/bounswe/bounswe2022group2/issues/345)
+  - [Revisions About All the Diagrams](https://github.com/bounswe/bounswe2022group2/issues/322)
+  - [Reviewing the Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/315)
+  - [Reviewing the Revising the Requirements: Chat to forum Transformation](https://github.com/bounswe/bounswe2022group2/issues/344)
+ 
 ## *Pull Requests:*
 
+ - [Backend: Implementing Resend The Verification Code](https://github.com/bounswe/bounswe2022group2/pull/411)
+ - [Executive Summary](https://github.com/bounswe/bounswe2022group2/pull/703)
+ - [Backend: Create Comment endpoint and Unit Tests](https://github.com/bounswe/bounswe2022group2/pull/784)
+ - [Create comment endpoint minor bugfix](https://github.com/bounswe/bounswe2022group2/pull/849)
+ - [Backend: Edit comment endpoint](https://github.com/bounswe/bounswe2022group2/pull/863)
+ - [Summary of Individual Work for Hasan Can Erol](https://github.com/bounswe/bounswe2022group2/pull/511)
+ - [Adding Moving Forward](https://github.com/bounswe/bounswe2022group2/pull/512)
+ 
+ 
 ## *Unit Tests:*
-
-## *Additional Information:*  
+ 
+ - [Backend: Create Comment endpoint and Unit Tests](https://github.com/bounswe/bounswe2022group2/pull/784)
 
 ---------------
 
