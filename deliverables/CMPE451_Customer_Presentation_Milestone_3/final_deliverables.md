@@ -252,8 +252,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Frontend: User Search Component|[#881](https://github.com/bounswe/bounswe2022group2/pull/881)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |Frontend: Recommended Learning Spaces in Home Page|[#902](https://github.com/bounswe/bounswe2022group2/pull/902)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |Frontend: Recommended Learning Spaces Page|[#909](https://github.com/bounswe/bounswe2022group2/pull/909)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
-  |Frontend: Annotation BE Connection|[#767](https://github.com/bounswe/bounswe2022group2/pull/767)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
-  |Frontend: Learning Space Preview Box BE Connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Annotation BE Connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |**Milestone 2**|-|-|
   |--------------|--------------|--------------|
   |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
@@ -2356,20 +2355,243 @@ Name: Altay Acar
 Group: Group2 - Frontend Team
 
 ## *Responsibilities:*
+ 
+ **Final Milestone-3**
+ 
+ 1. Implementing the backend connection for learning space preview box component and making it compatible for various types of learning spaces components/pages.
+ 2. Implementing my learning spaces part of the home page and making it user-specific, dynamic, and API connected component.
+ 3. Implementing popular spaces part of the home page and making it user-specific, dynamic, and API connected component.
+ 4. Implementing a standalone page for each user's own learning spaces.
+ 5. Implementing a standalone page for popular learning spaces across the application.
+ 6. Researching on and finding date/time input components for event form.
+ 7. Researching on and finding map picker components for event form that will be competible with geolocation standards.
+ 8. Implementing a standalone React component of a map picker that is connected to Google Maps API and compatible for geolocation standards.
+ 9. Implementing a user search component.
+ 10. Adding toggling search functionality to navigation bar.
+ 11. Implementing recommended learning spaces part of the home page and making it user-specific, dynamic, and API connected component.
+ 12. Implementing a standalone page for recommended learning spaces adaptive for each user.
+ 13. Researching on annotation packages that is used in our web application.
+ 14. Revising annotation component to make it compatible with W3C standards and establish a backend connection regarding to it.
+ 15. Writing unit tests for each component I have developed.
+ 16. Reviewing the works done by the frontend team on a regular basis.
+ 17. Solving bugs, errors, problems encountered during the implementation of the our web application regularly.
+ 18. Helping to teammates, answering their questions, solving critical bugs&errors, and providing hotfixes before the demo.
+ 19. Attending and participating general meetings regularly.
+ 20. Attending and participating frontend team meetings regularly.
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. Providing and designing page and component layouts for better user interface and user experience.
+  2. Building the main structure and layout of home page.
+  3. Implementing the home page.
+  4. Providing component logic for our web application.
+  5. Implementing the footer component.
+  6. Implementing the categories page.
+  7. Implementing the backend connection between the categories page and our REST API.
+  8. Implementing learning spaces by category page.
+  9. Implementing the backend connection between the learning spaces by category page and our REST API.
+  10. Providing a method for dynamic page routing.
+  11. Implementing semantic search bar.
+  12. Implementing the backend connection between the semantic search bar and our REST API.
+  13. Implementing unit tests for categories page.
+  14. Implementing unit tests for learning spaces by category page.
+  15. Implementing unit tests for navigation bar and semantic search component.
+  16. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  17. Reviewing the works done by the frontend team.
+  18. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  19. Attending and participating general meetings regularly.
+  20. Attending and participating frontend team meetings regularly.
+ 
+--------------------
+
+**Milestone-1**
+ 
+  1. Designing the logo of our app and determining the typeface and color scheme that is used throughout the app.
+  2. Building the main structure and layout of authentication pages.
+  3. Implementing the sign up page.
+  4. Implementing the validation check for the sign up form.
+  5. Implementing the backend connection between the sign up page and our REST API.
+  6. Implementing unit tests for the sign up page.
+  7. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  8. Providing methods for validation.
+  9. Providing methods for backend connection.
+  10. Reviewing the works done by the frontend team.
 
 ## *Main Contributions:*
+ 
+ 
+**Final Milestone-3**
+ 
+I am a member of our frontend team for the development of our application, namely Learnify. As I did in the first and the second milestone, I continued to provide visual components of our web application according to the design guidelines we have determined together and in harmony with other components and pages of our web application. Before our weekly frontend team meetings I have regularly inspected our application's development's current state and provided necessary agenda for that week. I have also provided page layouts and visual components like icons, logos, or illustrations for our web application. I have provided flexible, dynamic, and compatible React components that can be used across our web application. I have finalized the home page with backend connection between the user-specific adaptive components and our REST API. I have implemented standalone pages for various learning space related categorical pages such as popular, recommended, user's own learning spaces. I have also added user search functionality to our web application and prvided a togglng search bar component, updating the navigation bar accordingly. I have implemented a form component for creating events that follows our design and theming guidelines as well as fitting the allocated space in the related part of our web application’s learning space page. I have also researched on tons of form input components especially for date/time pickers, map pickers, so that the event creation form would provide the best user experience while being compatible with geolocation standards. For that I have also developed a standalone map picker component that utilizes Google Maps API, with which users can select a location using a marker. I have also established backend connection for event form. Additionally, I have revised the annotation component and made it functioning according to W3C standards, while establishing its backend connection, especially for text annotations. I have also regularly provided css classes that satisfy our design guidelines for the components implemented by the whole frontend team. I have regularly helped my teammates to fix any erroneous part of their code, provided hotfixes, and tried to share them good practices that I have learned. Additionally, I have implemented unit tests for the components that I have created during the development of our web application’s frontend.
+
+--------------------
+
+**Milestone-2**
+ 
+I am a member of our frontend team for the development of our application, namely Learnify. As I did in the first milestone, I continued to provide visual components of our web application according to the design guidelines we have determined together and in harmony with other components and pages of our web application. Before our weekly frontend team meetings I have regularly inspected our application's development's current state and provided necessary agenda for that week. I have also provided page layouts and visual components like icons, logos, or illustrations for our web application. I have also researched on icon library that we can use (Fontawesome) and implemented it so that the performance and loading times for our screens increase significantly by not trying to render each png file when loading. I have also researched n dynamic routing in React and provided an easy-to-use and effective solution to one of our biggest issues: overcoming hardcoding each url path in App.js. I have also provided a component based page layouting logic so that we can eaily import components and use them without repeating lines of code and be able to pass specific parameters to display components. Besides, I have implemented categories page, learning spaces by category page and semantic search component in the navigation bar. For each, I have implemented separate components, established backend connection, established dynamic routing and passed parameters to display components according to the response acquired from the REST API. I have also regularly provided css classes that satisfy our design guidelines for the components implemented by the whole frontend team. I have regularly helped my teammates to fix any erroneous part of their code, provided hotfixes, and tried to share them good practices that I have learned. Additionally, I have implemented unit tests for the components that I have created during the development of our web application’s frontend.
+
+--------------------
+
+**Milestone-1**
+ 
+I am a member of our fronend team for the development of our application, namely Learnify. Generally, I took the responsibility of visual side of our web application. For that extent I have designed our logo, provided and appropriate typeface and color scheme using Adobe applications. Then, I have provided the general layout and structure of our authentication pages with appropriate theme. I was also responsible for the implementation of the sign up page from the scratch. Since any of us in the frontend team is not used to work with React,I have conducted very detailed research on how to connect pages, how to uses states, how to validate form inputs, how to handle API requests, and how to do unit testing. In the light of my findings I have implemented our sign up page: First the initial structure and layout, then the validation, then the backend connection, and last the unit testing. Additionaly I took care of the dockerization and the AWS deployment of our web application's frontend.
+ 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
+**Final Milestone-3**
+ 
+ 1. [Frontend: Learning Space Preview Box Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/766)
+ 2. [Frontend: Create Event Component](https://github.com/bounswe/bounswe2022group2/issues/772)
+ 3. [Frontend: Unit Tests for Learning Space Preview Box](https://github.com/bounswe/bounswe2022group2/issues/788)
+ 4. [Frontend: Home Page My Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/791)
+ 5. [Frontend: Home Page Popular Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/792)
+ 6. [Frontend: My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/802)
+ 7. [Frontend: Unit Tests for My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/806)
+ 8. [Frontend: Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/808)
+ 9. [Frontend: Unit Tests for Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/819)
+ 10. [Frontend: User Search Component](https://github.com/bounswe/bounswe2022group2/issues/870)
+ 11. [Frontend: Custom Map Picker Component](https://github.com/bounswe/bounswe2022group2/issues/892)
+ 12. [Frontend: Recommended Learning Spaces Part in Home Page](https://github.com/bounswe/bounswe2022group2/issues/900)
+ 13. [Frontend: Recommended Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/906)
+ 14. [Frontend: Text and Image Annotation Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/918)
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. [Frontend: Implementation of Home Page](https://github.com/bounswe/bounswe2022group2/issues/518)
+  2. [Frontend: Implementation of Categories Page](https://github.com/bounswe/bounswe2022group2/issues/544)
+  3. [Frontend: Implementation of Learning Spaces by Category Page](https://github.com/bounswe/bounswe2022group2/issues/605)
+  4. [Frontend: HOTFIX Learning Space Page Structural Overflow](https://github.com/bounswe/bounswe2022group2/issues/636)
+  5. [Frontend: Implementation of Semantic Search Bar](https://github.com/bounswe/bounswe2022group2/issues/652)
+  6. [Frontend: Unit Tests for Categories Page](https://github.com/bounswe/bounswe2022group2/issues/673)
+  7. [Frontend: Unit Tests for Learning Spaces by Categories Page](https://github.com/bounswe/bounswe2022group2/issues/679)
+  8. [Frontend: Unit Tests for Navigation Bar and Semantic Search Component](https://github.com/bounswe/bounswe2022group2/issues/682)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Designing the Logo and Determining Color Scheme, Typeface of the Project](https://github.com/bounswe/bounswe2022group2/issues/353)
+  2. [Frontend: Implementation of Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/376)
+  3. [Frontend: Backend Connection for the Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/405)
+  4. [Frontend: Adding Form Validations for Sign Up Form](https://github.com/bounswe/bounswe2022group2/issues/424)
+  5. [Frontend: Unit Tests for Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/451)
+  6. [Frontend: Dockerization of the Frontend](https://github.com/bounswe/bounswe2022group2/issues/412)
+  7. [AWS Deployment of the Web Application](https://github.com/bounswe/bounswe2022group2/issues/459)
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+ 
+ 1. [Final Milestone: Web Application Scenario](https://github.com/bounswe/bounswe2022group2/issues/955)
+ 2. [Final Milestone: Summary of Work Table for Altay Acar](https://github.com/bounswe/bounswe2022group2/issues/973)
+ 3. [Final Milestone: Individual Contributions Report of Altay Acar](https://github.com/bounswe/bounswe2022group2/issues/977)
+ 
+--------------------
+
+**Milestone-2**
+ 
+ 1. [Documenting the Meeting Notes for the Frontend Meeting 2](https://github.com/bounswe/bounswe2022group2/issues/518)
+ 2. [Milestone-2: Status of Deliverables of Milestone 2](https://github.com/bounswe/bounswe2022group2/issues/718)
+ 3. [Milestone-2: User Interfaces for Web Application](https://github.com/bounswe/bounswe2022group2/issues/723)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  3. [Documenting Meeting Notes for the Meeting 2 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/328)
+  4. [Revising the Requirements Specification: Notifications](https://github.com/bounswe/bounswe2022group2/issues/329)
+  5. [Milestone 1: Review the Milestone](https://github.com/bounswe/bounswe2022group2/issues/482)
+  6. [Milestone 1: Reviewing the Milestone - Progress](https://github.com/bounswe/bounswe2022group2/issues/489)
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+ 
+ 1. [Frontend: Learning Space Preview Box BE Connection](https://github.com/bounswe/bounswe2022group2/pull/767)
+ 2. [Frontend: Unit Tests for the Learning Space Preview Box Component](https://github.com/bounswe/bounswe2022group2/pull/790)
+ 3. [Frontend: Home Page My Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/pull/796)
+ 4. [Frontend: Home Page Popular Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/pull/801)
+ 5. [Frontend: My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/805)
+ 6. [Frontend: Unit Tests for My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/807)
+ 7. [Frontend: Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/817)
+ 8. [Frontend: Unit Tests for Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/839)
+ 9. [Frontend: Create Event Component](https://github.com/bounswe/bounswe2022group2/pull/767)
+ 10. [Frontend: User Search Component](https://github.com/bounswe/bounswe2022group2/pull/881)
+ 11. [Frontend: Recommended Learning Spaces in Home Page](https://github.com/bounswe/bounswe2022group2/pull/902)
+ 12. [Frontend: Recommended Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/909)
+ 13. [Frontend: Annotation BE Connection](https://github.com/bounswe/bounswe2022group2/pull/922)
+ 
+--------------------
+
+**Milestone-2**
+ 
+1. Frontend: Implementation of Home Page [#536](https://github.com/bounswe/bounswe2022group2/pull/536)
+2. Frontend: Implementation of Categories Page [#571](https://github.com/bounswe/bounswe2022group2/pull/571)
+3. Frontend: Learning Spaces by Category Pages Implementation [#633](https://github.com/bounswe/bounswe2022group2/pull/633)
+4. Frontend: HOTFIX Learning Space Page Structural Overflow [#637](https://github.com/bounswe/bounswe2022group2/pull/637)
+5. Frontend: Semantic Search Bar Implementation [#655](https://github.com/bounswe/bounswe2022group2/pull/655)
+6. Frontend: Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/pull/676)
+7. Frontend: Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/pull/680)
+8. Frontend: Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/pull/684)
+
+--------------------
+
+**Milestone-1**
+ 
+1. Frontend: Sign up page implementation [#387](https://github.com/bounswe/bounswe2022group2/pull/387)
+2. Dockerization of Frontend [#413](https://github.com/bounswe/bounswe2022group2/pull/413)
+3. Frontend: Sign Up Form Validation [#426](https://github.com/bounswe/bounswe2022group2/pull/426)
+4. Frontend: Backend connection for sign up page [#438](https://github.com/bounswe/bounswe2022group2/pull/438)
+5. Frontend: Unit tests for sign up page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
 
 ## *Unit Tests:*
 
+**Final Milestone-3**
+ 
+ 1. Unit Tests for the Learning Space Preview Box Component [#790](https://github.com/bounswe/bounswe2022group2/pull/790)
+ 2. Unit Tests for My Learning Spaces Page [#807](https://github.com/bounswe/bounswe2022group2/pull/807)
+ 3. Unit Tests for Popular Learning Spaces Page [#839](https://github.com/bounswe/bounswe2022group2/pull/839)
+ 
+--------------------
+
+**Milestone-2**
+
+1. Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/pull/676)
+2. Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/pull/680)
+3. Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/pull/684)
+
+--------------------
+
+**Milestone-1**
+
+1. Unit Tests for Sign Up Page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
+
 ## *Additional Information:*  
+ 
+**Final Milestone-3**
+ 
+ None
+ 
+--------------------
+
+**Milestone-2**
+ 
+ None
+
+--------------------
+
+**Milestone-1**
+ 
+ None
 
 ---------------
 
