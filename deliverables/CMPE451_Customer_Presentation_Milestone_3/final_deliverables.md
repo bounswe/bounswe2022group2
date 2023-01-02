@@ -1709,8 +1709,24 @@ Group: Group2 - Android/Mobile Team
 
 **Final Milestone-3**
 
-  1. 
-  2. 
+ 1. Attending and participating all general meetings
+ 2. Attending and participating all mobile team meetings
+ 3. Attending to all customer meetings and lectures
+ 4. Implementing backend connection of user search
+ 5. Updating my profile page
+ 6. Implementing backend connection of my profile screen
+ 7. Implementing others profile page
+ 8. Implementing backend connection of others profile page
+ 9. Implementing update profile page button and it's backend connection
+ 10. Updating profile page tests
+ 11. Documenting mobile meeting notes #6
+ 12. Reviewing the works done by the mobile team
+ 13. Reporting any bugs that is occurred in the progress of development
+ 14. Clarifying the objectives of the project with asking detailed questions about our project features to our TA
+ 15. Contributing to planning flow of the demo presentation and creating sample learning spaces and posts for demo
+ 16. Updating project plan for the final milestone report
+ 17. Writing mobile app scenario for the final milestone report
+ 18. Filling individual contribution of myself in milestone report.
 
 --------------------
 
@@ -1743,15 +1759,19 @@ Group: Group2 - Android/Mobile Team
 
 **Milestone-1**
 
-  1. 
-  2. 
+  1. Doing research on Flutter and Android Studio
+  2. Implementing login page
+  3. Setting up back end connection of login page
+  4. Writing tests for login page
+  5. Reviewing whole work that is done by mobile team
+  6. Contributing to project plan development
+  7. Transferring project plan from notion to ProjectLibre
 
 ## *Main Contributions:*
 
-
 **Final Milestone-3**
 
-
+I am a member of the mobile team also in the final period of the semester. As you can see below and above I contributed to lots of pages. When I was doing them, I researched about similar pages in other mobile applications. Requirements of the pages were also determined via discussing with our team members. Backend, frontend and mobile teams discussed about the features of the pages. I designed these pages according to these discussions. When the pages are initialized, I analyzed the backend side of the pages. I read the postman documentations. I implemented backend connection accordingly. I changed the profile page tests to prevent fail tests. Before the demo day, I try to fix the update profile bug. I mainly fixed that feature. Besides these, I attended all lectures, lab sessions, demo days and team/mobile meetings. It was a great journey to experience working with a relatively large group working.
 
 --------------------
 
@@ -1763,15 +1783,18 @@ I am member of the mobile team. I mainly contributed to the tasks that are relat
 
 **Milestone-1**
 
-  
+I am member of the mobile team. I mainly contribute to the tasks that are related to the mobile side of our project. At first, I contribute to planning the project for the whole term. After that, I contribute to the tasks that are related to updating and reviewing at the beginning of the term. When we started to implementation, I have responsibility to implement login page. I implement the login page and make the backend connection. Tested whole edge cases using emulator. Additionally, I write widget tests also. During this process, I analyze the backend responses and other structural objects in mobile. These ease my learning process of the Flutter. Reviewed almost whole features. Also, contributed to the clarification of some points for the whole project (contributor issue and annotation). 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
 **Final Milestone-3**
 
-  1. 
-  2. 
+  1. Mobile: Updating My Profile Page [#775](https://github.com/bounswe/bounswe2022group2/issues/775)
+  2. Mobile: Implementing Other User's Profile Page [#776](https://github.com/bounswe/bounswe2022group2/issues/776)
+  3. Mobile: User Search Backend Connection [#866](https://github.com/bounswe/bounswe2022group2/issues/866)
+  4. Mobile: Get and Update My Profile Backend Connection [#867](https://github.com/bounswe/bounswe2022group2/issues/867)
+  5. Mobile: Get Other Users Profile Backend Connection[#868](https://github.com/bounswe/bounswe2022group2/issues/868)
 
 --------------------
 
@@ -1788,16 +1811,20 @@ demonstrated during the demo:
 
 **Milestone-1**
 
-  1. 
-  2. 
+  1. [Mobile Team: Setting up development Environment](https://github.com/bounswe/bounswe2022group2/issues/372)
+  2. [Mobile - Implementing Login Page Including Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/396)
+  3. [Mobile: Writing Tests for Login Page](https://github.com/bounswe/bounswe2022group2/issues/447) (Ongoing)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
 **Final Milestone-3**
 
-  1. 
-  2. 
+  1. Final Milestone: Project Plan [#956](https://github.com/bounswe/bounswe2022group2/issues/956)
+  2. Final Milestone: Mobile App Scenario [#957](https://github.com/bounswe/bounswe2022group2/issues/957)
+  3. Final Milestone: Summary of Work Table for Onur Kömürcü [#958](https://github.com/bounswe/bounswe2022group2/issues/958)
+  4. Final Milestone: Individual Contributions Report for Onur Kömürcü [#959](https://github.com/bounswe/bounswe2022group2/issues/958)
+  5. Mobile: Documenting Meeting Notes #6 [#774](https://github.com/bounswe/bounswe2022group2/issues/774)
 
 --------------------
 
@@ -1810,15 +1837,28 @@ management of our software project:
 
 **Milestone-1**
 
-  1. 
-  2. 
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Update the Project plan for upcoming semester](https://github.com/bounswe/bounswe2022group2/issues/316)
+  3. [Milestone 1: Project Plan](https://github.com/bounswe/bounswe2022group2/issues/448)
+  4. [Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/377)
+  5. [Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
+  6. [Revising the Requirements: Achievements and Badges](https://github.com/bounswe/bounswe2022group2/issues/333)
+  7. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+
 
 ## *Pull Requests:*
 
 **Final Milestone-3**
 
-  1. 
-  2. 
+  1. Mobile: My Profile Screen Update [#783](https://github.com/bounswe/bounswe2022group2/issues/783)
+  2. Mobile: User search backend connection [#890](https://github.com/bounswe/bounswe2022group2/issues/890)
+  3. Mobile: My profile backend connection [#915](https://github.com/bounswe/bounswe2022group2/issues/915)
+  4. Mobile: Other users profile page and backend connection [#921](https://github.com/bounswe/bounswe2022group2/issues/921)
+  5. Mobile: Profile Update Major BugFix [#923](https://github.com/bounswe/bounswe2022group2/issues/923)
+  6. Final Milestone: Project Plan [#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes
+  7. Final Milestone: Mobile App Scenario [#957](https://github.com/bounswe/bounswe2022group2/issues/957)
+  8. Final Milestone: Summary of Work Table for Onur Kömürcü [#966](https://github.com/bounswe/bounswe2022group2/issues/966)
+  9. Final Milestone: Individual Contributions Report for Onur Kömürcü [#959](https://github.com/bounswe/bounswe2022group2/issues/958)
 
 --------------------
 
@@ -1835,15 +1875,14 @@ management of our software project:
 
 **Milestone-1**
 
-  1. 
-  2. 
+1. Mobile: Implementation of Login Screen Including Backend Connection [#398](https://github.com/bounswe/bounswe2022group2/pull/398)
+2. Mobile: Tests for Login Page [#485](https://github.com/bounswe/bounswe2022group2/pull/485)
 
 ## *Unit Tests:*
 
 **Final Milestone-3**
 
-  1. 
-  2. 
+  1. Mobile: My Profile Screen Update (Test update included) [#783](https://github.com/bounswe/bounswe2022group2/issues/783)
 
 --------------------
 
@@ -1855,24 +1894,11 @@ management of our software project:
 
 **Milestone-1**
 
-  1. 
-  2. 
+  1. Mobile: Tests for Login Page [#485](https://github.com/bounswe/bounswe2022group2/pull/485)
 
 ## *Additional Information:*  
 
-**Final Milestone-3**
-
-
---------------------
-
-**Milestone-2**
-
-None
-
---------------------
-
-**Milestone-1**
-
+I want to thank my every group members for their great contributions.
 
 --------------------
 
