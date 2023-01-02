@@ -685,18 +685,46 @@ As we said in the previous sections, we are generally satisfied with the progres
   |**Final Milestone 3**|-|-|
   |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)| 3hrs |
+  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)| 8 hrs |
+  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)| 30 hrs |
+  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)| 3 hrs |
+  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)| 2 hrs |
+  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)| 3 hrs |
+  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)| 2 hrs |
+  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)| 1 hrs |
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+    |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)| 3 hrs |
+    |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)| 3 hrs |
+    |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)| 3 hrs |
+    |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)| 3 hrs |
+    |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)| 3 hrs |
+    |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)| 3 hrs |
+    |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)| 3 hrs |
+    |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)| 3 hrs |
+    |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)| 3 hrs |
+    |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)| 3 hrs |
+    |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)| 3 hrs |
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
   |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)| 2 hrs |
+  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)| 3 hrs |
+  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)| 30 hrs |
+  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)| 3 hrs |
+  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)| 3 hrs |
+  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)| 30 min |
+  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)| 2 hrs |
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Initial pages created to present as an example|[#378](https://github.com/bounswe/bounswe2022group2/pull/378)| 3 hrs | 
+  |Frontend/forget password|[#419](https://github.com/bounswe/bounswe2022group2/pull/419)| 3 hrs | 
+  |Frontend: Backend connection to forget password|[#445](https://github.com/bounswe/bounswe2022group2/pull/445)| 3 hrs | 
+  |Frontend: Home page mock|[#461](https://github.com/bounswe/bounswe2022group2/pull/461)| 3 hrs | 
+  |Frontend/dev forget password unit tests|[#463](https://github.com/bounswe/bounswe2022group2/pull/463)| 3 hrs | 
+
   
 ***
 
