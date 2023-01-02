@@ -275,20 +275,69 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementing Create Event Screen|[#842](https://github.com/bounswe/bounswe2022group2/issues/842)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection For Create Event Screen|[#873](https://github.com/bounswe/bounswe2022group2/issues/873)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Implement geolocation selection screen|[#887](https://github.com/bounswe/bounswe2022group2/issues/887)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection for Attend Event|[#911](https://github.com/bounswe/bounswe2022group2/issues/911)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Revision in the Home Screen|[#916](https://github.com/bounswe/bounswe2022group2/issues/916)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Translate texts in the application to other languages|[#919](https://github.com/bounswe/bounswe2022group2/issues/919)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final Milestone: UML Diagrams, SRS, User Scenarios and Mockups|[#946](https://github.com/bounswe/bounswe2022group2/issues/946)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final Milestone: User Manual|[#951](https://github.com/bounswe/bounswe2022group2/issues/951)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final Milestone: Individual Contributions Report of Egemen Atik|[#988](https://github.com/bounswe/bounswe2022group2/issues/988)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementing Information Section of Learning Space Detail Screen|[#524](https://github.com/bounswe/bounswe2022group2/issues/524)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Enhancement on Learning Space Detail Screen|[#616](https://github.com/bounswe/bounswe2022group2/issues/616)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Implementing Add/Edit Post Screen|[#618](https://github.com/bounswe/bounswe2022group2/issues/618)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection For Taken Learning Spaces and Recommended Learning Spaces|[#634](https://github.com/bounswe/bounswe2022group2/issues/634)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection For Add/Edit Post|[#645](https://github.com/bounswe/bounswe2022group2/issues/645)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2 Report: Progress According To Requirements|[#705](https://github.com/bounswe/bounswe2022group2/issues/705)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2 Report: Individual Report|[#706](https://github.com/bounswe/bounswe2022group2/issues/706)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Update Personal Wiki Pages|[#324](https://github.com/bounswe/bounswe2022group2/issues/324)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Update Requirements Page|[#325](https://github.com/bounswe/bounswe2022group2/issues/325)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Revising the Requirements: Lecture Structure|[#341](https://github.com/bounswe/bounswe2022group2/issues/341)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Revising the Diagrams based on Lecture Structure|[#347](https://github.com/bounswe/bounswe2022group2/issues/347)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Implementing Verification Screen|[#395](https://github.com/bounswe/bounswe2022group2/issues/395)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Writing Tests for Verification Screen|[#417](https://github.com/bounswe/bounswe2022group2/issues/417)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Documenting Meeting Notes for the Meeting 4 of CMPE 451|[#425](https://github.com/bounswe/bounswe2022group2/issues/425)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Documenting Meeting Notes for the Meeting 2 of Mobile Team|[#427](https://github.com/bounswe/bounswe2022group2/issues/427)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Back-end Connection of Verification Screen|[#434](https://github.com/bounswe/bounswe2022group2/issues/434)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Writing Network Connection Tests for Verification Screen|[#454](https://github.com/bounswe/bounswe2022group2/issues/454)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Scrollable Horizontal Course List Widget For Home Screen|[#457](https://github.com/bounswe/bounswe2022group2/issues/457)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone 1: Reviewing Our First Milestone: Against Objectives and Customer Presentation Parts|[#481](https://github.com/bounswe/bounswe2022group2/issues/481)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone 1: Filling Individual Works and Responsibilities Parts of Group Review|[#483](https://github.com/bounswe/bounswe2022group2/issues/483)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Create event screen|[#869](https://github.com/bounswe/bounswe2022group2/pull/869)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Create event backend connection|[#880](https://github.com/bounswe/bounswe2022group2/pull/880)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Geolocation selection widget|[#897](https://github.com/bounswe/bounswe2022group2/pull/897)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Attend event backend connection|[#914](https://github.com/bounswe/bounswe2022group2/pull/914)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Home screen revision|[#917](https://github.com/bounswe/bounswe2022group2/pull/917)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Translate texts|[#920](https://github.com/bounswe/bounswe2022group2/pull/920)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Translate newly added words|[#926](https://github.com/bounswe/bounswe2022group2/pull/926)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final milestone: Add software requirements specification, UML diagrams, user scenarios and mockups to report|[#947](https://github.com/bounswe/bounswe2022group2/pull/947)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Add user manual|[#984](https://github.com/bounswe/bounswe2022group2/pull/984)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementation of learning space information section|[#528](https://github.com/bounswe/bounswe2022group2/pull/528)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/learning space detail enhancement|[#587](https://github.com/bounswe/bounswe2022group2/pull/587)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/post add edit screen|[#623](https://github.com/bounswe/bounswe2022group2/pull/623)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/taken recommended ls backend connection|[#642](https://github.com/bounswe/bounswe2022group2/pull/642)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/backend connection add edit post|[#649](https://github.com/bounswe/bounswe2022group2/pull/649)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Fix overflow error in enroll button and form fields in ls create/edit…|[#667](https://github.com/bounswe/bounswe2022group2/pull/667)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2: Egemen's individual report|[#709](https://github.com/bounswe/bounswe2022group2/pull/709)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Egemen's individual contribution table and report are added|[#721](https://github.com/bounswe/bounswe2022group2/pull/721)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2 : Progress according to to requirements|[#733](https://github.com/bounswe/bounswe2022group2/pull/733)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2: Mobile screens implemented by Egemen|[#738](https://github.com/bounswe/bounswe2022group2/pull/738)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile/verification screen|[#416](https://github.com/bounswe/bounswe2022group2/pull/416)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/verification screen tests|[#432](https://github.com/bounswe/bounswe2022group2/pull/432)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Back-End Connection of Verification Screen|[#435](https://github.com/bounswe/bounswe2022group2/pull/435)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Verification screen network tests|[#455](https://github.com/bounswe/bounswe2022group2/pull/455)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Scrollable horizontal course list widget for home screen|[#462](https://github.com/bounswe/bounswe2022group2/pull/462)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Add personal efforts of Egemen Atik|[#490](https://github.com/bounswe/bounswe2022group2/pull/490)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Add against objectives and customer presentation review parts|[#515](https://github.com/bounswe/bounswe2022group2/pull/515)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   
 * **Ezgi Aysel Batı**
   |Issue Title|Link|Time Consumption|
@@ -2936,20 +2985,222 @@ Name: Egemen Atik
 Group: Group2 - Android/Mobile Team
 
 ## *Responsibilities:*
+ 
+ **Final Milestone-3**
+ 
+ 1. Implementing create event screen
+ 2. Implementing date picker and time picker components of create event screen
+ 3. Implementing geolocation selector map component of create event screen
+ 4. Implementing backend conection for create event functionality
+ 5. Implementing backend connection for attend event functionality
+ 6. Implementing revision in home screen
+ 7. Implementing backend connection for getting top rated learning spaces
+ 8. Implementing backend connection for getting recommended learning spaces
+ 9. Translating texts in the application to a number of languages
+ 10. Preparing user manual for our mobile and web applications
+ 11. Adding software requirements specification to final milestone report
+ 12. Adding UML diagrams(use-case, class and sequence diagrams) to final milestone report
+ 13. Adding user scenarios and mockups to final milestone report
+ 14. Adding individual report to final milestone report
+ 15. Reviewing work done by mobile team members
+ 16. Solving bugs, errors, problems encountered during the implementation of the our mobile application regularly.
+ 17. Helping to teammates, answering their questions, solving critical bugs&errors, and providing hotfixes before the demo.
+ 18. Attending and participating general meetings regularly.
+ 19. Attending and participating mobile team meetings regularly.
+ 20. Creating realistic and logical learning spaces and posts for our demo presentation
+ 21. Controlling mobile application during mobile application presentation
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. Implementing information part of learning space detail screen.
+  2. Implementing add post screen.
+  3. Implementing edit post screen.
+  4. Implementing enroll button and back-end connection for enroll functionality.
+  5. Implementing back-end connection for add post functionality.
+  6. Implementing back-end connection for edit post functionality.
+  7. Implementing back-end connection for getting taken learning spaces.
+  8. Implementing back-end connection for getting all learning spaces.
+  9. Implementing dynamic sizing for learning space detail screen.
+  10. Implementing routing between create learning space and learning space detail screens.
+  11. Implementing post model and necessary request&response models for corresponding back-end connections.
+  12. Implementing argument passing to edit post screen so that title and content of the post to be edited is present in the edit post screen.
+  13. Implementing argument passing to learning space detail screen.
+  14. Conducting research on Flutter libraries and methodologies that will be used during our development process.
+  15. Reviewing the works done by the mobile team.
+  16. Solving bugs, errors, problems encountered during the implementation of the mobile part of our application regularly.
+  17. Attending and participating general meetings regularly.
+  18. Attending and participating mobile team meetings regularly.
+  19. Attending to customer meetings and lectures regularly.
+ 
+--------------------
+
+**Milestone-1**
+ 
+  1. Implementing verification screen for mobile application.
+  2. Implementing "resend code" functionality and countdown timer in verification screen.
+  3. Providing backend connection for verification screen.
+  4. Implementing verification screen tests and verification network tests.
+  5. Implementing horizontal scrollable course preview list widget for home screen.
+  6. Reviewing and testing work done by other mobile team members.
+  7. Revising Requirements & UML design related to Lecture Structure
+  8. Learning flutter, flutter testing. 
 
 ## *Main Contributions:*
+ 
+ 
+**Final Milestone-3**
+ 
+I am a part of our mobile development team for our application, namely Learnify. We did not have much time between second milestone and final milestone, but in this short period of time we managed to develop necessary features for our mobile application. We have already developed and presented very important features for our project like annotations, post creating/editing, annotation viewing, semantic search, searcinh users/learning spaces. For this milestone, we focused on correcting our annotation model and developing event creation feature. I mostly dealed with implementing create event screen. I implemented a form for title, description, participation limit and duration of event. Then, I implemented a date picker and a time picker. I made it start from the current date by default, I also made programmed it in a way that it does not accept already passed dates and/or times. Lastly, I implemented a geolocation selector map for users to specify a geolocation. I also implemented backend connection for create event and attend event functionalities. I implemented all necessary routings, dynamic data changing. Then, I prepared the user manual. Lastly, I tried to help my teammates all the time and tried to review the work done by them, tried toa attend sessions to fix bugs.
+
+--------------------
+
+**Milestone-2**
+ 
+I am a part of our mobile development team for our application, Learnify. Since the beginning of this semester, we are developing our application step by step. In our first milestone demo, we focused on authentication screens of our application and provided them. Since we had time left after implementing those screens, we started to work on our second milestone screens back then. For our second milestone, we decided to focus on annotations in our mobile application, mostly. So, we divided necessary tasks to our mobile team members and our most experienced member was assigned with annotations, I, on the other hand, was assigned with implementing learning space detail, add post and edit post screens. In summary, for our second milestone demo, I implemented informations part of learning space detail screen, add post screen, edit post screen(with title and content of the post to be edited is already present in corresponding input fields), enroll button and back-end connection for enroll functionality, back-end connection for add post functionality, back-end connection for edit post functionality, back-end connection for getting taken learning spaces, back-end connection for getting all learning spaces, dynamic sizing in learning space detail screen, routing between create learning space and learning space detail screens, post model and necessary request&response models for corresponding back-end connections. During this time, I also tried to solve bugs and review codes written by my teammates, regularly.
+
+--------------------
+
+**Milestone-1**
+ 
+I am one of the four members in our application's, Learnify, mobile development team. We chose using Flutter as our main technology in mobile development. Since I did not use Flutter prior to this, my first task was getting familiar with Flutter and Dart. I set up my environment and tried to understand the basics of Flutter, learn how to program effectively with Flutter. Later, as a team we all voted for our application's name, main theme(colors, fonts) and logo just before we started our implementations.
+
+Then, I have been assigned with implementing the verification screen of our mobile application. In verification screen; I implemented four input boxes for users to enter the verification code they received, a "verify" button to confirm the verification code(it gets activated when remaining time is bigger than 0 and all four input fields are filled), a countdown timer informing user about validity period of the code they received, a description for verification screen and a "request another code" button which resets the timer and sends another verification code to user. I also implemented correct navigation routes. Finally, I provided back-end connection, widget tests and network tests to our verification screen. While providing the back-end connection, I implemented necessary response and request models and functions like "VerifyEmailRequest" model, "VerifyEmailResponse" model. I also researched about testing in Flutter and implemented my tests.
+
+Then, I implemented a horizontal scrollable course preview list widget for our home page. It is not crucial for this demo session, since it only contains mock data for now; but in the next demo sessions, it will have a more important role.
+ 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
+**Final Milestone-3**
+ 
+ 1. [Mobile: Implementing Create Event Screen](https://github.com/bounswe/bounswe2022group2/issues/842)
+ 2. [Mobile: Backend Connection For Create Event Screen](https://github.com/bounswe/bounswe2022group2/issues/873)
+ 3. [Mobile: Implement geolocation selection screen](https://github.com/bounswe/bounswe2022group2/issues/887)
+ 4. [Mobile: Backend Connection for Attend Event](https://github.com/bounswe/bounswe2022group2/issues/911)
+ 5. [Mobile: Revision in the Home Screen](https://github.com/bounswe/bounswe2022group2/issues/916)
+ 6. [Mobile: Translate texts in the application to other languages](https://github.com/bounswe/bounswe2022group2/issues/919)
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. [Mobile: Implementing Information Section of Learning Space Detail Screen](https://github.com/bounswe/bounswe2022group2/issues/524)
+  2. [Mobile: Enhancement on Learning Space Detail Screen](https://github.com/bounswe/bounswe2022group2/issues/616)
+  3. [Mobile: Implementing Add/Edit Post Screen](https://github.com/bounswe/bounswe2022group2/issues/618)
+  4. [Mobile: Backend Connection For Taken Learning Spaces and Recommended Learning Spaces](https://github.com/bounswe/bounswe2022group2/issues/634)
+  5. [Mobile: Backend Connection For Add/Edit Post](https://github.com/bounswe/bounswe2022group2/issues/645)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Mobile: Implementing Verification Screen #395](https://github.com/bounswe/bounswe2022group2/issues/395)
+  2. [Mobile: Writing Tests for Verification Screen #417](https://github.com/bounswe/bounswe2022group2/issues/417)
+  3. [Mobile: Back-end Connection of Verification Endpoint #434](https://github.com/bounswe/bounswe2022group2/issues/434)
+  4. [Mobile: Writing Network Connection Tests for Verification Screen #454](https://github.com/bounswe/bounswe2022group2/issues/454)
+  5. [Mobile: Scrollable Horizontal Course List Widget For Home Screen #457](https://github.com/bounswe/bounswe2022group2/issues/457)
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+ 
+ 1. [Final Milestone: UML Diagrams, SRS, User Scenarios and Mockups](https://github.com/bounswe/bounswe2022group2/issues/946)
+ 2. [Final Milestone: User Manual](https://github.com/bounswe/bounswe2022group2/issues/951)
+ 3. [Final Milestone: Individual Contributions Report of Egemen Atik](https://github.com/bounswe/bounswe2022group2/issues/988)
+ 
+--------------------
+
+**Milestone-2**
+ 
+ 1. [Milestone-2 Report: Progress According To Requirements](https://github.com/bounswe/bounswe2022group2/issues/705)
+ 2. [Milestone-2 Report: Individual Report](https://github.com/bounswe/bounswe2022group2/issues/706)
+
+--------------------
+
+**Milestone-1**
+ 
+ 1. [Update Personal Wiki Pages #324](https://github.com/bounswe/bounswe2022group2/issues/324)
+ 2. [Update Requirements Page #325](https://github.com/bounswe/bounswe2022group2/issues/325)
+ 3. [Revising the Requirements: Lecture Structure #341](https://github.com/bounswe/bounswe2022group2/issues/341)
+ 4. [Revising the Diagrams based on Lecture Structure #347](https://github.com/bounswe/bounswe2022group2/issues/347)
+ 5. [Documenting Meeting Notes for the Meeting 4 of CMPE 451 #425](https://github.com/bounswe/bounswe2022group2/issues/425)
+ 6. [Documenting Meeting Notes for the Meeting 2 of Mobile Team #427](https://github.com/bounswe/bounswe2022group2/issues/427)
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+ 
+ 1. [Mobile: Create event screen](https://github.com/bounswe/bounswe2022group2/pull/869)
+ 2. [Mobile: Create event backend connection](https://github.com/bounswe/bounswe2022group2/pull/880)
+ 3. [Mobile: Geolocation selection widget](https://github.com/bounswe/bounswe2022group2/pull/897)
+ 4. [Mobile: Attend event backend connection](https://github.com/bounswe/bounswe2022group2/pull/914)
+ 5. [Mobile: Home screen revision](https://github.com/bounswe/bounswe2022group2/pull/917)
+ 6. [Mobile: Translate texts](https://github.com/bounswe/bounswe2022group2/pull/920)
+ 7. [Translate newly added words](https://github.com/bounswe/bounswe2022group2/pull/926)
+ 8. [Final milestone: Add software requirements specification, UML diagrams, user scenarios and mockups to report](https://github.com/bounswe/bounswe2022group2/pull/947)
+ 9. [Add user manual](https://github.com/bounswe/bounswe2022group2/pull/984)
+ 
+--------------------
+
+**Milestone-2**
+ 
+ 1. Mobile: Implementation of learning space information section [#528](https://github.com/bounswe/bounswe2022group2/pull/528)
+ 2. Mobile: Learning space detail enhancement [#587](https://github.com/bounswe/bounswe2022group2/pull/587)
+ 3. Mobile: Post add and edit screens [#623](https://github.com/bounswe/bounswe2022group2/pull/623)
+ 4. Mobile: Getting taken and recommended learning spaces backend connection [#642](https://github.com/bounswe/bounswe2022group2/pull/642)
+ 5. Mobile: Backend connection for add and edit post functionalities [#649](https://github.com/bounswe/bounswe2022group2/pull/649)
+ 6. Mobile: Fix overflow error in enroll button and form fields in ls create/edit and post add/edit [#667](https://github.com/bounswe/bounswe2022group2/pull/667)
+
+--------------------
+
+**Milestone-1**
+ 
+ 1. Mobile/verification screen [#416](https://github.com/bounswe/bounswe2022group2/pull/416)
+ 2. Mobile/verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
+ 3. Mobile: Back-End Connection of Verification Screen [#435](https://github.com/bounswe/bounswe2022group2/pull/435)
+ 4. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
+ 5. Mobile: Scrollable horizontal course list widget for home screen [#462](https://github.com/bounswe/bounswe2022group2/pull/462)
 
 ## *Unit Tests:*
 
-## *Additional Information:*
+**Final Milestone-3**
+ 
+None
+
+--------------------
+
+**Milestone-2**
+
+None
+
+--------------------
+
+**Milestone-1**
+
+ 1. Mobile: Verification screen tests [#432](https://github.com/bounswe/bounswe2022group2/pull/432)
+ 2. Mobile: Verification screen network tests [#455](https://github.com/bounswe/bounswe2022group2/pull/455)
+
+## *Additional Information:*  
+ 
+**Final Milestone-3**
+ 
+ I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of the semester. I also participated in our final milestone presentation, I controlled our application from my mobile phone during our mobile application presentation.
+ 
+--------------------
+
+**Milestone-2**
+ 
+ I attended all lecture hours, customer meetings(PS hours), general group meetings and mobile team meetings since the beginning of this semester.
+
+--------------------
+
+**Milestone-1**
+ 
+ I participated in all lecture hours, PS hours, general team meetings and mobile team meetings and shared my opinions in those gatherings to help building our application.
 
 ---------------
 
