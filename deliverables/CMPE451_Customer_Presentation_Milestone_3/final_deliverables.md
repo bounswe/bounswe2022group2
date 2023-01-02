@@ -800,6 +800,18 @@ As we said in the previous sections, we are generally satisfied with the progres
 
 ## Software Design Documents (UML)
 
+### Use Case Diagram
+Link: [Use Case Diagram](https://lucid.app/lucidchart/975d6056-2874-4fb9-8642-fc1a3a88aab4/edit?invitationId=inv_acc885f2-fa4a-491c-888a-b14b05e8aa09&page=0_0#) \
+![Use Case Diagram](https://user-images.githubusercontent.com/74411541/195986879-a1ec4b01-a0f4-4ced-9b93-ab9658aabcfa.png "use case")
+
+### Class Diagram
+Link: [Class Diagram](https://lucid.app/lucidchart/8688dac0-de02-48d2-bed7-f1ef8d62aba6/edit?invitationId=inv_26b91b21-bb1b-47cd-96e4-a1a28fc9b0ce&page=0_0#) \
+![Class Diagram](https://user-images.githubusercontent.com/74411541/195987280-940454c0-bef8-4322-b2dd-198f710fb97f.png "class")
+
+### Sequence Diagram
+Link: [Sequence Diagram](https://lucid.app/lucidchart/12990ace-9701-4be5-8ec5-cd83aebead91/edit?invitationId=inv_b9ba75d9-be43-49fd-9fcc-08c90d5c7fd8&page=0_0#) \
+![Sequence Diagram](https://user-images.githubusercontent.com/100771925/210212213-bd049344-06a3-4abf-b767-bb7f4f3b3793.png "sequence")
+
 ***
 
 ## User Scenarios and Mockups
