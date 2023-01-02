@@ -3520,21 +3520,259 @@ Group: Group2 - Frontend Team
 
 ## *Responsibilities:*
 
+**Final Milestone-3**
+
+  1. I have been instrumental in the construction of the primary structure and layout for the about page of our Learnify application.
+  2. I have successfully implemented the about page within the framework of our web application.
+  3. In collaboration with the other members of the frontend team, I have contributed to the design and layout of the learning space page and its components with the aim of enhancing the user interface and user experience for our users.
+  4. I have developed and implemented the necessary component logic for the learning space page of our web application.
+  5. I have designed and developed a functional event component for the learning space page.
+  6. I have created a comment component for the learning space page, which allows users to engage with and discuss the content posted on the platform.
+  7. I have implemented upvote and downvote features for posts on the learning space page, allowing users to express their approval or disapproval of content.
+  8. I have integrated various elements and icons into the learning space page to improve its aesthetics and functionality.
+  9. I have developed and implemented a feature for the creation of comments on the learning space page.
+  10. I have also implemented a feature for the editing of comments on the learning space page.
+  11. I have established a backend connection between our REST API and the learning space page post retrieval feature, enabling the retrieval of all relevant data from the database.
+  12. I have also created a backend connection between the REST API and the event retrieval feature of the learning space page.
+  13. Additionally, I have implemented a backend connection between the REST API and the comment retrieval feature of the learning space page.
+  14. I have established a backend connection between the REST API and the comment creation feature of the learning space page.
+  15. I have also implemented a backend connection between the REST API and the comment editing feature of the learning space page.
+  16. I have created a backend connection between the REST API and the upvoting and downvoting features of the learning space page, allowing for the accurate tracking and updating of user feedback.
+  17. In order to ensure the success of our project, I have conducted extensive research on the various React frameworks, libraries, and development approaches available to us.
+  18. I have also researched the W3C annotation standards and annotation implementation methods to ensure compliance with industry standards.
+  19. In addition, I have researched the W3C event standards and event implementation methods to ensure the smooth functioning of the event component on the learning space page.
+  20. Throughout the web application development process, I have been proactive in seeking out and utilizing new techniques and approaches to improve the efficiency and effectiveness of my work.
+  21. I have implemented unit tests for the about page to ensure its stability and reliability.
+  22. I have also implemented unit tests for the event component of the learning space page.
+  23. I have implemented unit tests for the comment component of the learning space page to ensure its proper functioning.
+  24. I have contributed to the creation of the general structure for the final milestone 3 report, which outlines the progress and achievements of our team.
+  25. I have also helped to create a list and status of the deliverables for the final milestone 3 report, providing a comprehensive overview of the tasks and objectives completed during this phase of the project.
+  26. I have participated in the review of the works completed by the frontend team to ensure that all deliverables meet the required standards and specifications.
+  27. I have addressed any bugs, mistakes, or problems that have arisen during the development process in a timely and effective manner.
+  28. I have consistently attended and participated in general team meetings, sharing my insights and ideas with my colleagues.
+  29. I have also consistently attended and participated in frontend team meetings, collaborating with my peers to ensure the smooth progression of our project.
+  30. Participating in regular code reviews to ensure the quality and compliance of the frontend development.
+  31. Collaborating with team members to identify and troubleshoot technical issues.
+  32. Developing and maintaining documentation for the frontend codebase and processes.
+  33. Participating in planning and estimation sessions for new features and enhancements.
+  34. Providing support and guidance to team members as needed.
+  35. Controlling the version control of the frontend codebase using Git.
+  36. Implementing responsive design principles to ensure that the application is functional and visually appealing on various devices and screen sizes.
+  37. Reviewing and editing the final version of the milestone 2 report before submission.
+
+--------------------
+
+**Milestone-2**
+
+  1. Constructing the not found page's primary structure and layout.
+  2. Putting the not found page in place.
+  3. Layout for learning space page and components are offered and designed to improve user interface and user experience.
+  4. Giving our web application some component logic on learning space page.
+  5. Developing the post component.
+  6. Putting into practice some of the learning space page's elements and icons.
+  7. Implementing post creation feature for learning space page.
+  8. Implementing post editing feature for learning space page.
+  9. Creating the backend connection between our REST API and the learning space page post creation feature.
+  10. Creating the backend connection between our REST API and the learning space page post editing feature.
+  11. Providing a method for private and protected routing.
+  12. Conducting research on the React frameworks, libraries, and development approaches we'll be using on our project.
+  13. Conducting research on the W3C annotation standards and annotation implementation methods we'll be using on our project.
+  14. Throughout the web application development process, looking for and utilizing new techniques.
+  15. Implementing text annotation feature for created learning space posts.
+  16. Implementing image annotation feature for created learning space posts.
+  17. Implementing unit tests for not found page.
+  18. Implementing unit tests for email verification page.
+  19. Documenting frontend team meeting notes #4.
+  20. Documenting general team meeting notes #6.
+  21. Creating the general structure for the milestone 2 report.
+  22. Creating the list and status of the deliverables table for milestone 2 report.
+  23. Reviewing the works done by the frontend team.
+  24. Fixing any bugs, mistakes, or problems that arose throughout the routine development of our application's front end.
+  25. Consistently participating in and attending general meetings.
+  26. Consistently participating in and attending frontend team meetings.
+
+--------------------
+
+**Milestone-1**
+
+  1. Implementing Email Verification page
+  2. Adding Form Validation for Email Verification Page
+  3. Providing validation methods
+  4. Implementing navigation from and to the Email Verification page
+  5. Testing the Email Verification page by writing unit tests
+  6. Setting up the Email Verification page's back-end connection
+  7. Providing methods for establishing back-end connection
+  8. Reviewing all frontend team members' work
+  9. Doing research on technologies needed to use on frontend development
+
 ## *Main Contributions:*
+
+**Final Milestone-3**
+
+As a highly dedicated and diligent member of the project team responsible for the frontend development of our Learnify application, I have made a sustained effort to actively contribute to the creation of various features that adhere to industry standards and best practices as outlined by our instructor in lectures. Specifically, I implemented the event component and established the backend connection for retrieving events, ensuring compliance with the W3C guidelines. In addition to this, I provided hotfixes and suggested improvements to parts of my team members' code, sharing any relevant information and insights I had acquired through my ongoing learning and research endeavors. Furthermore, I conducted comprehensive unit tests for the components I developed, including the about page and various parts of the learning space page, to ensure their reliable and robust performance and to catch any potential issues before they could impact the user experience. In accordance with the design principles determined by the frontend team and in alignment with the overall aesthetic of the application, I also contributed a range of visual components such as designs, icons, and buttons for this final milestone, working to create a cohesive and visually appealing user interface. To remain informed on the progress of the application's development and to effectively contribute to our weekly general and frontend team meetings, I consistently checked in and offered thoughtfully considered suggestions for the agenda based on my observations and recommendations, striving to provide valuable insights and ideas for improving the project. In an effort to optimize the efficiency of the learning space page and to enhance the user experience, I made a number of modifications to the visual elements, including the conversion of png images to svg icons for faster loading times and improved performance. I also provided page layouts and graphic elements such as icons, logos, and drawings with attractive designs that aligned with the established design principles and contributed to the overall cohesive look and feel of the application. Additionally, I implemented the upvote and downvote functionality, complete with the corresponding backend connections for creating and retrieving these features, which significantly enhanced user satisfaction by allowing them to express their preferences for posts and providing valuable feedback to the content creators. To facilitate the efficient importation and utilization of components, I created a component-based page layout logic for the comment and event features of the learning space page, enabling the passing of parameters through React props and reducing the risk of duplicated code, thereby streamlining the development process and improving maintainability. I also developed an about page with a visually appealing design and constructed the majority of the components and functionalities of the learning space page, ensuring that they were in line with the frontend team's development efforts and met the necessary specifications and requirements. In accordance with our design guidelines, I created a set of css classes that were implemented for the components developed by the entire frontend team, establishing the necessary backend connections and passing parameters to display components based on responses from the REST API. Overall, my contributions to the frontend development of the Learnify application have been made with a strong commitment to excellence and a dedication to creating a high-quality user experience.
+
+--------------------
+
+**Milestone-2**
+
+I work on the front end of our Learnify application, which is being developed collaboratively by all the members of group 2. I have implemented the text and image annotation features for the frontend part complying with the W3C standards as constantly requested by our teacher in the lectures. I have offered hotfixes, sugggested a few improvements for the parts in my coworkers' code, and attempted to pass along the related information I have discovered. In addition, for the components I developed while working on the front end of our online application like not found page and email verification page, I also performed unit tests to ensure that every component worked as expected. In keeping with the design principles we jointly decided with other frontend members upon and in consistency with other components and pages of our online application, I continued to offer some of the visual components like designs, icons, and buttons of our web application for this milestone 2. I frequently checked the progress of our application's development before our weekly general and frontend team meetings, and suggested some appropriate ideas for our agenda every week. For our frontend application, I have also altered some visual parts of the learning space page post creation and editing parts so as to improve efficiency of our learning space page in terms of the loading duration by changing some of the the png images to svg icons. For our frontend part of the application, I have also given some parts of the page layouts and graphic elements like icons, logos, and drawings along with some alluring designs to support these. In addition, I looked into React's page routing and came up with a simple but effective fix for one of our fundamental problems by implementing private and protected routing, which in essence was to prevent unauthorized users from accessing the internal parts of the application like home page, learning space page, etc. I have also created a component-based page layouting logic for the post feature of the learning space page in order to easily import components, utilize them without duplicating code segments, and be able to give certain parameters with React props to display components. In addition, I added a not found page with an eye-pleasing desgin and built majority of the components and functionalities of the learning space page. Finally, in line with our frontend development, I have created some css classes that comply with our design guidelines for the components implemented by the entire frontend team, as well as implemented separate components for each, established backend connections, established private page routing, and passed parameters to display components according to the response obtained from the REST API.
+
+--------------------
+
+**Milestone-1**
+
+I contributed mainly to the frontend side with React since I am a member of the frontend team of our application, Learnify. In general, I was given the task of building the web application's email verification page. To achieve this, I was in charge of creating the functions and components for the email verification page from scratch and putting it into operation. I did a research on testing with React and am also responsible for the tests of the Email Verification page I developed. We had to undertake thorough research on how to link pages, how to utilize states, how to validate form inputs, how to manage API calls, and how to do unit testing because none of us on the frontend team are accustomed to working with React. My conclusions have led me to implement our email verification page. Initial structure and layout were implemented initially, followed by validation, the backend connection, and finally, unit testing.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
+**Final Milestone-3**
+
+1. [Frontend: Unit Tests for Event Component of Learning Space](https://github.com/bounswe/bounswe2022group2/issues/912)
+2. [Frontend: Backend Connection for Joining Events on Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/907)
+3. [Frontend: Unit Tests for Comment Component of Learning Space Posts](https://github.com/bounswe/bounswe2022group2/issues/894)
+4. [Frontend: Unit Tests for About Page](https://github.com/bounswe/bounswe2022group2/issues/886)
+5. [Frontend: Backend Connection for Editing Comments of Learning Space Posts](https://github.com/bounswe/bounswe2022group2/issues/882)
+6. [Frontend: Backend Connection for Upvote and Downvote Functionality for Posts and Comments](https://github.com/bounswe/bounswe2022group2/issues/874)
+7. [Frontend: Backend Connection for Getting Events on Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/858)
+8. [Frontend: Backend Connection For Create and Get Comment](https://github.com/bounswe/bounswe2022group2/issues/852)
+9. [Frontend: Creating Event Component for Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/847)
+10. [Frontend: Implementation of About Page](https://github.com/bounswe/bounswe2022group2/issues/814)
+11. [Frontend: Create Comment Component for Learning Space Posts](https://github.com/bounswe/bounswe2022group2/issues/798)
+  
+--------------------
+
+**Milestone-2**
+
+  1. [Frontend: Implementation of Not Found Page](https://github.com/bounswe/bounswe2022group2/issues/520)
+  2. [Frontend: Implementation of Private Routes](https://github.com/bounswe/bounswe2022group2/issues/521)
+  3. [Frontend: Implementation of Components on Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/549)
+  4. [Frontend: Implementation of onClick Button Rendering](https://github.com/bounswe/bounswe2022group2/issues/630)
+  5. [Frontend: Backend Connection for the Create Post Part of Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/641)
+  6. [Frontend: Implementation of the Text Annotation](https://github.com/bounswe/bounswe2022group2/issues/650)
+  7. [Frontend: Implementation of the Image Annotation](https://github.com/bounswe/bounswe2022group2/issues/651)
+  8. [Frontend: Implementation of Edit Post Feature](https://github.com/bounswe/bounswe2022group2/issues/659)
+  9. [Frontend: Backend Connection For Edit Post](https://github.com/bounswe/bounswe2022group2/issues/660)
+  10. [Frontend: Unit Tests for Not Found Page](https://github.com/bounswe/bounswe2022group2/issues/681)
+  11. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453)
+
+--------------------
+
+**Milestone-1**
+
+  1. [Frontend: Implementation of Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/385)
+  2. [Frontend: Adding Form Validation for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/429)
+  3. [Frontend: Backend Connection for the Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/449)
+  4. [Frontend: Unit Tests for Email Verification Page](https://github.com/bounswe/bounswe2022group2/issues/453)
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+
+  1. [Final Milestone: Individual Contributions Report for Enes Sürmeli](https://github.com/bounswe/bounswe2022group2/issues/981)
+  2. [Final Milestone: Summary of Work Table for Enes Sürmeli](https://github.com/bounswe/bounswe2022group2/issues/980)
+  3. [Final Milestone Report: List and Status of Deliverables](https://github.com/bounswe/bounswe2022group2/issues/976)
+  4. [Milestone 3: Preparing Final Deliverables](https://github.com/bounswe/bounswe2022group2/issues/935)
+
+--------------------
+
+**Milestone-2**
+
+  1. [Documenting the Meeting Notes for the Frontend Meeting 4](https://github.com/bounswe/bounswe2022group2/issues/548)
+  2. [Documenting Meeting Notes for the Meeting 6 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/535)
+  3. [Preparing Milestone 2 - CMPE 451 Deliverables](https://github.com/bounswe/bounswe2022group2/issues/668)
+  4. [Milestone 2: Individual Report - Muhammed Enes Sürmeli](https://github.com/bounswe/bounswe2022group2/issues/711)
+  5. [Milestone-2 Report: List and Status of Deliverables](https://github.com/bounswe/bounswe2022group2/issues/712)
+  6. [Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts](https://github.com/bounswe/bounswe2022group2/issues/492)
+
+--------------------
+
+**Milestone-1**
+
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Conducting Research on React Router](https://github.com/bounswe/bounswe2022group2/issues/386)
+  3. [Revising the Requirements Specification: Notifications](https://github.com/bounswe/bounswe2022group2/issues/329)
+  4. [Revisions About All the Diagrams](https://github.com/bounswe/bounswe2022group2/issues/422)
+  5. [Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/315)
+  6. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  7. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+
+1. Final Milestone: Individual Contributions Report for Enes Sürmeli [#989](https://github.com/bounswe/bounswe2022group2/issues/989)
+2. Final Milestone: Summary of Work Table for Enes Sürmeli [#990](https://github.com/bounswe/bounswe2022group2/issues/990)
+3. Final Milestone Report: List and Status of Deliverables [#950](https://github.com/bounswe/bounswe2022group2/issues/976)
+4. Milestone 3: Preparing Final Deliverables [#935](https://github.com/bounswe/bounswe2022group2/issues/935)
+5. Dev to Master [#932](https://github.com/bounswe/bounswe2022group2/issues/932)
+6. Frontend: Backend Connection for Joining Events on Learning Space Page [#908](https://github.com/bounswe/bounswe2022group2/issues/908)
+7. Frontend: Backend Connection for Editing Comments of Learning Space Posts [#883](https://github.com/bounswe/bounswe2022group2/issues/883)
+8. Frontend: Fixing the Footer Navigation [#876](https://github.com/bounswe/bounswe2022group2/issues/876)
+9. Frontend: Backend Connection for Upvote and Downvote Functionality for Posts and Comments [#875](https://github.com/bounswe/bounswe2022group2/issues/875)
+10. Frontend: Backend Connection for Getting Events on Learning Space Page [#859](https://github.com/bounswe/bounswe2022group2/issues/859)
+11. Frontend: Backend Connection For Create and Get Comment [#853](https://github.com/bounswe/bounswe2022group2/issues/853)
+12. Frontend: Creating Event Component for Learning Space Page [#848](https://github.com/bounswe/bounswe2022group2/issues/848)
+13. Frontend: Implementation of About Page [#815](https://github.com/bounswe/bounswe2022group2/issues/815)
+14. Frontend: Create Comment Component for Learning Space Posts [#799](https://github.com/bounswe/bounswe2022group2/issues/799)
+
+--------------------
+
+**Milestone-2**
+
+1. Frontend: Implementation of Private Routes [#523](https://github.com/bounswe/bounswe2022group2/pull/523)
+2. Frontend: Implementation of Not Found Page [#525](https://github.com/bounswe/bounswe2022group2/pull/525)
+3. Frontend: Implementation of Components on Learning Space Page [#629](https://github.com/bounswe/bounswe2022group2/issues/629)
+4. Frontend: Implementation of onClick Button Rendering [#631](https://github.com/bounswe/bounswe2022group2/issues/631)
+5. Frontend: Create Post Feature of Learning Space Page [#643](https://github.com/bounswe/bounswe2022group2/issues/643)
+6. Frontend: Backend Connection for the Create Post Part of Learning Space Page [#643](https://github.com/bounswe/bounswe2022group2/issues/643)
+7. Frontend: Implementation of the Text Annotation [#658](https://github.com/bounswe/bounswe2022group2/pull/658)
+8. Frontend: Implementation of the Image Annotation [#658](https://github.com/bounswe/bounswe2022group2/pull/658)
+9. Frontend: Implementation For Edit Post Feature [#661](https://github.com/bounswe/bounswe2022group2/pull/661)
+10. Frontend: Backend Connection for the Edit Post Part [#661](https://github.com/bounswe/bounswe2022group2/pull/661)
+11. Milestone 2: Preparing Deliverables and Group Review [#672](https://github.com/bounswe/bounswe2022group2/pull/672)
+12. Milestone 1: What Went Well, What Did Not Go Well, and Individual Contribution Parts [#508](https://github.com/bounswe/bounswe2022group2/pull/508)
+13. Frontend: Unit Tests for Email Verification Page [#458](https://github.com/bounswe/bounswe2022group2/pull/458)
+14. Frontend: Unit Tests for Not Found Page [#683](https://github.com/bounswe/bounswe2022group2/pull/683)
+15. Updating the Dev Branch [#684](https://github.com/bounswe/bounswe2022group2/issues/684)
+
+--------------------
+
+**Milestone-1**
+
+1. Frontend: Email Verification Page Implementation [#392](https://github.com/bounswe/bounswe2022group2/pull/392)
+2. Frontend: Email Verification Form Validation [#431](https://github.com/bounswe/bounswe2022group2/pull/431)
+3. Frontend: Backend Connection for Email Verification Page [#450](https://github.com/bounswe/bounswe2022group2/pull/450)
+4. Frontend: Unit Tests for Email Verification Page [#453](https://github.com/bounswe/bounswe2022group2/pull/453)
 
 ## *Unit Tests:*
 
-## *Additional Information:*  
+1. Frontend: Unit Tests for Email Verification Page [#458](https://github.com/bounswe/bounswe2022group2/pull/458)
+2. Frontend: Unit Tests for Not Found Page [#683](https://github.com/bounswe/bounswe2022group2/pull/683)
+3. Frontend: Unit Tests for Event Component of Learning Space [#913](https://github.com/bounswe/bounswe2022group2/issues/913)
+4. Frontend: Unit Tests for Comment Component of Learning Space Posts [#895](https://github.com/bounswe/bounswe2022group2/issues/895)
+5. Frontend: Unit Tests for About Page [#891](https://github.com/bounswe/bounswe2022group2/issues/891)
+
+## *Additional Information:*
+
+**Final Milestone-3**
+
+As a dedicated member of the project team, I made a concerted effort to attend all academic lectures, collaborative problem-solving sessions, and team meetings, whether held in an online or in-person format. I consistently engaged with the material and my fellow team members, actively seeking to contribute my own ideas and perspectives during the planning and decision-making processes. It is worth highlighting that prior to this semester, I had no previous exposure to frontend development or the React framework. Despite this, I was determined to push beyond my comfort zone and continue learning in order to competently fulfill my responsibilities for this project milestone.
 
 --------------------
+
+**Milestone-2**
+
+I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I readily contributed and shared my ideas when it came to project planning and decision making with other team members. Lastly, I had no prior experience with frontend development or React before this semester, so, I had to step outside of my comfort zone to continue learning and understanding more about these topics for this milestone.
+
+--------------------
+
+**Milestone-1**
+
+I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I readily contributed and shared my ideas when it came to project planning and decision making with other team members. Lastly, I had no prior experience with frontend development or React, so, I had to step outside of my comfort zone to learn and understand more about these topics.
+
+---------------------------
 
 ## *Member:*  
 
