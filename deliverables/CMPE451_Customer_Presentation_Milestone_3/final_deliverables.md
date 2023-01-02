@@ -107,7 +107,31 @@ In short, we achieved all of our aims and accomplished all the responsibilities 
 
 ### Final Release Notes
 
-***
+Release: 0.9.0 Customer presentation 3
+
+What has changed?
+
+- Event functionality has added to our application. Users can create and participate in events using mobile app or the learnify webpage.
+- Annoration back-end is moved to its seperate server using new annotations microservice and now working completely independent of monolithic back-end server. 
+- Profile functionality has been added, users can search and see each others profiles, change their bios and profile pictures.
+- Semantic recomendations are added, using semantic encoding of learningspaces, semantic engine finds the most suitable learningspaces to recomend to a particular user.
+- Comment functionality is added, users now can comment on posts under learning spaces.
+- Users now can upvote and downwote posts to show their opinion about posts.
+- Multi-language feature addded to the mobile app.
+- About us sections are added to the web and mobile apps.
+- Our mobile app now supports dark mode to improve accesability.
+
+What is fixed?
+
+- Web application is connected to the new annotation server using W3 annotation model.
+- Annotation service is seperated from the back-end and now serves an API to allow other services to access our annotations.
+
+What will be fixed in next releases?
+
+- Semantic search treshold will be fine tuned.
+- Authentication will be improved with a new auth middleware. 
+- Learning space creators will be able to select learningspace header pictures and icons.
+- Notes functionality will be added.
 
 ### Changes the Team Has Made or Planned Since Milestone 2 to Improve Development Process, and How Those Changes Have Impacted the Process
 
