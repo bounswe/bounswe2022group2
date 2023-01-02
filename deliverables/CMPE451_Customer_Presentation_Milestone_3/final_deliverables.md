@@ -252,8 +252,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Frontend: User Search Component|[#881](https://github.com/bounswe/bounswe2022group2/pull/881)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |Frontend: Recommended Learning Spaces in Home Page|[#902](https://github.com/bounswe/bounswe2022group2/pull/902)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |Frontend: Recommended Learning Spaces Page|[#909](https://github.com/bounswe/bounswe2022group2/pull/909)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
-  |Frontend: Annotation BE Connection|[#767](https://github.com/bounswe/bounswe2022group2/pull/767)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
-  |Frontend: Learning Space Preview Box BE Connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Annotation BE Connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |**Milestone 2**|-|-|
   |--------------|--------------|--------------|
   |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
@@ -357,22 +356,37 @@ As we said in the previous sections, we are generally satisfied with the progres
   
 * **Hasan Can Erol**
   |Issue Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
+  |--------------|--------|--------|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Backend: Put edit comment endpoint|[#862](https://github.com/bounswe/bounswe2022group2/issues/862)|2h|
+  |Backend: Comment on Posts Endpoint and Unit Tests|[#779](https://github.com/bounswe/bounswe2022group2/issues/779)|8h|
+  |Documenting meting notes of Meeting 8 for CMPE451|[#759](https://github.com/bounswe/bounswe2022group2/issues/759)|30m|
+  |Final Milestone: Individual Contributions Report for Hasan Can Erol|[#963](https://github.com/bounswe/bounswe2022group2/issues/963)|1h|
+  |Final Milestone: Summary of Work Table for Hasan Can Erol|[#964](https://github.com/bounswe/bounswe2022group2/issues/964)|1h|
+  |--------------|--------|--------|
+  |**Milestone 2**| - | - |
+  |Milestone-2 Report: Executive Summary|[#704](https://github.com/bounswe/bounswe2022group2/issues/704)|-|
+  |--------------|--------|--------|
+  |**Milestone 1**| - | - |
+  |Backend: Implementation of Resend Email Verification|[#406](https://github.com/bounswe/bounswe2022group2/issues/406)|-|
+  |Revising the Requirements: Profile Page|[#345](https://github.com/bounswe/bounswe2022group2/issues/345)|-|
+  |Revisions About All the Diagrams|[#322](https://github.com/bounswe/bounswe2022group2/issues/322)|-|
+  |Reviewing the Updating Communication Plan|[#315](https://github.com/bounswe/bounswe2022group2/issues/315)|-|
+  |Reviewing the Revising the Requirements: Chat to forum Transformation|[#344](https://github.com/bounswe/bounswe2022group2/issues/344)|-|
   
   |Pull Request Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
-  |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |--------------|--------|--------|
+  |**Milestone 3**| - | - |
+  |Backend: Edit comment endpoint |[#863](https://github.com/bounswe/bounswe2022group2/pull/863)| 2h |
+  |Create comment endpoint minor bugfix|[#849](https://github.com/bounswe/bounswe2022group2/pull/849)| 15m |
+  |Backend: Create Comment endpoint and Unit Tests|[#784](https://github.com/bounswe/bounswe2022group2/pull/784)| 8h |
+  |--------------|--------|--------|
+  |**Milestone 2**| - | - |
+  |Executive Summary|[#703](https://github.com/bounswe/bounswe2022group2/pull/703)|-|
+  |--------------|--------|--------|
+  |**Milestone 1**| - | - |
+  |Backend: Implementing Resend The Verification Code|[#411](https://github.com/bounswe/bounswe2022group2/pull/411)|-|
+  |Adding Moving Forward|[#512](https://github.com/bounswe/bounswe2022group2/pull/512)|-|
   
 * **Onur Kömürcü:**
   |Issue Title|Link|Time Consumption|
@@ -387,7 +401,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Final Milestone: Project Plan|[#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes|
   |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|1h 40m|
   |Final Milestone: Summary of Work Table for Onur Kömürcü|[#958](https://github.com/bounswe/bounswe2022group2/issues/958)|2 hours|
-  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/958)|2 hours|
+  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/959)|2 hours|
   |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
   |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|20 hours|
@@ -414,7 +428,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Revising the Requirements: Achievements and Badges|[#333](https://github.com/bounswe/bounswe2022group2/issues/333)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
   |Revising Mockups|[#326](https://github.com/bounswe/bounswe2022group2/issues/326)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
 
-  Note: I didn't includ time tracking in PR's because issues covers all PR's.
+  Note: I didn't include time tracking in PR's because issues covers all PR's.
   |Pull Request Title|Link|
   |-----|:--------:|
   |**Final Milestone 3**|-|
@@ -423,9 +437,10 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Mobile: My profile backend connection|[#915](https://github.com/bounswe/bounswe2022group2/issues/915)|
   |Mobile: Other users profile page and backend connection|[#921](https://github.com/bounswe/bounswe2022group2/issues/921)|
   |Mobile: Profile Update Major BugFix|[#923](https://github.com/bounswe/bounswe2022group2/issues/923)|
+  |Final Milestone: Project Plan|[#983](https://github.com/bounswe/bounswe2022group2/issues/983)|30 minutes|
   |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|
-  |Final Milestone: Summary of Work Table for Onur Kömürcü|[#958](https://github.com/bounswe/bounswe2022group2/issues/958)|
-  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/958)|
+  |Final Milestone: Summary of Work Table for Onur Kömürcü|[#966](https://github.com/bounswe/bounswe2022group2/issues/966)|
+  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#982](https://github.com/bounswe/bounswe2022group2/issues/982)|
   |--------------|--------------|
   |**Milestone 2**|-|
   |Mobile: Implementing View All Screen|[#557](https://github.com/bounswe/bounswe2022group2/issues/557)|
@@ -728,20 +743,78 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Implementation Of Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/771)| 30 hrs |
+  |Frontend: Creating Profile Picture Component|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/795)| 8 hrs |
+  |Frontend: About-Bio Component in Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/824)| 5 hrs |
+  |Frontend: Backend connection for Bio and PP component|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/837)| 5 hrs |
+  |Frontend: Make profile links unique and accessible through ls's|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/844)| 4 hrs |
+  |Frontend: Show all ls's that are related to the user|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/884)| 1 hrs |
+  |Frontend: Add links to the usernames in the Posts|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/901)| 30 min |
+  |Frontend: Add links to the usernames in the Comments|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/903)| 30 min |
+  |Frontend: Text and Image Annotation backend connection|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/918)| 7 hrs |
+  |Frontent: Unit tests for AboutUser and ProfilePhoto components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/929)| 1 hrs |
+  |Final Milestone: Status of the Requirements|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/944)| 2 hrs |
+  |Documenting Meeting Notes #9|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/986)|  30 min |
+  |Final Milestone: Summary of Work Table for Gökay Yıldız|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/941)| 2 hrs |
+  |Final Milestone: Individual Contributions Report for Gökay Yıldız |[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/942)| 2 hrs |
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)| 3hrs |
+  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)| 8 hrs |
+  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)| 30 hrs |
+  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)| 3 hrs |
+  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)| 2 hrs |
+  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)| 3 hrs |
+  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)| 2 hrs |
+  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)| 1 hrs |
+  |Milestone 2 Report: Individual Report |[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/700)| 2 hrs |
+  |Milestone-2 Report: Progress According To Requirements|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/705)| 1 hrs |
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+    |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)| 1 hrs |
+    |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)| 3 hrs |
+    |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)| 3 hrs |
+    |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)| 3 hrs |
+    |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)| 5 hrs |
+    |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)| 2 hrs |
+    |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)| 3 hrs |
+    |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)| 8 hrs |
+    |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)| 3 hrs |
+    |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)| 3 hrs |
+    |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)| 30 min |
+    |Milestone 1: Evaluation of the Status of Deliverables|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/493)| 3 hrs |
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: profile photo component|[#800](https://github.com/bounswe/bounswe2022group2/pull/800)| - | 
+  |Frontend: Dev frontend profile page bio|[#835](https://github.com/bounswe/bounswe2022group2/pull/835)| - | 
+  |Frontend: connection of bio component|[#841](https://github.com/bounswe/bounswe2022group2/pull/841)| - | 
+  |Dev frontend profile page profile photo|[#843](https://github.com/bounswe/bounswe2022group2/pull/843)| - | 
+  |Frontend: profile page connections|[#850](https://github.com/bounswe/bounswe2022group2/pull/850)| - | 
+  |Dev frontend profile page general development|[#861](https://github.com/bounswe/bounswe2022group2/pull/861)| - | 
+  |Frontend: comment and post link added to user|[#904](https://github.com/bounswe/bounswe2022group2/pull/904)| - | 
+  |Frontend: Dev frontend annotation be connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)| - | 
+  |Frontend: unit test initialized for bio and profile picture|[#928](https://github.com/bounswe/bounswe2022group2/pull/928)| - | 
+  |Final milestone progress in requirements |[#945](https://github.com/bounswe/bounswe2022group2/pull/945)| - | 
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)| - | 
+  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)| - | 
+  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)| - | 
+  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)| - | 
+  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)| - | 
+  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)| - | 
+  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)| - | 
+  |Milestone2 gokay personal report|[#702](https://github.com/bounswe/bounswe2022group2/pull/702)| - | 
+  |Milestone-2: Web Application's UI Designs - Gökay|[#732](https://github.com/bounswe/bounswe2022group2/pull/732)| - | 
+  |Milestone-2 : Progress according to to requirements|[#733](https://github.com/bounswe/bounswe2022group2/pull/733)| - | 
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Initial pages created to present as an example|[#378](https://github.com/bounswe/bounswe2022group2/pull/378)| - |  
+  |Frontend/forget password|[#419](https://github.com/bounswe/bounswe2022group2/pull/419)| - | 
+  |Frontend: Backend connection to forget password|[#445](https://github.com/bounswe/bounswe2022group2/pull/445)| - | 
+  |Frontend: Home page mock|[#461](https://github.com/bounswe/bounswe2022group2/pull/461)| - | 
+  |Frontend/dev forget password unit tests|[#463](https://github.com/bounswe/bounswe2022group2/pull/463)| - | 
+  |responsibility and summary of work for Gokay |[#504](https://github.com/bounswe/bounswe2022group2/pull/504)| - | 
+  |update indv part and evaluate deliverables  |[#506](https://github.com/bounswe/bounswe2022group2/pull/506)| - | 
+
   
 ***
 
@@ -1416,9 +1489,398 @@ Please do check the annotation related APIs in API Documentation as a proof to W
 
 ### User Manual
 
+#### Signup Screen
+
+Before using our application, Learnify, our users should complete the signup process. This screen asks for a valid username(no other user use that username), an email address and a strong password(please check our glossary for our definition of "strong password"). Lastly, it asks for users to tick the box for accepting our General Terms and Privacy Policy. In this screen, we also have a button that navigates users to login screen.
+
+##### Mobile
+
+After all those steps are completed, signup button becomes active in our mobile application. Other than that, it is in deactivated mode.
+
+![signup_1](https://user-images.githubusercontent.com/100771925/210227773-c7cf2378-f1b3-4ff4-8979-f4d455b907f6.jpg)
+![signup_2](https://user-images.githubusercontent.com/100771925/210227779-5d9cbcb5-23e0-4565-98dd-47379f36e8dc.jpg)
+
+##### Web
+
+![signup_web](https://user-images.githubusercontent.com/68481602/206698399-4fee4340-0b19-4942-9ee5-ec57332809e6.png)
+
+***
+
+#### Verification Screen
+
+After pressing signup button, our users receive an email that contains a verification code and our application navigates them to verification screen. If a user tries to log in before completing the verification step, they are navigated to this screen after logging in. After verification step is completed succesfully, our mobile application navigates user to home page, and our web application navigates user to login page.
+
+##### Mobile
+
+In our mobile application, verify button is in deactivated mode by default. After filling all 4 code fields, it is activated. This screen also has a countdown timer, resend verification code button and back to previous page button in our mobile application.
+
+![verification_1](https://user-images.githubusercontent.com/100771925/210228634-ec44d2da-6b38-4cc3-86e1-e8e31075ca79.jpg)
+![verification_2](https://user-images.githubusercontent.com/100771925/210228639-6cff4864-f863-4359-bf72-c8950afaac4e.jpg)
+
+##### Web
+
+![verification_web_1](https://user-images.githubusercontent.com/74325266/206710871-d4251fd2-2b8d-43b2-8413-40efb89b2245.png)
+
+***
+
+#### Login Screen
+
+Users who completed signup and verification processes can enter our application by logging in. This screen asks users to enter their emails and passwords. This screen also have a button which navigates users to signup screen and a button which navigates users to forget password screen. If entered email address and password match after pressing log in button, our application navigates user to home page of our app.
+
+##### Mobile
+
+In our mobile application, log in button is in deactivated mode by default. After filling both email and password fields, it is activated. 
+
+![login](https://user-images.githubusercontent.com/100771925/210229240-f788dae1-3c10-4ffa-b6c9-5dead4378f22.jpg)
+
+##### Web
+
+![login_web](https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png)
+
+***
+
+#### Forget Password Screen
+
+Users who can't remember their password can press "forget password" button in login screen to reach forget password screen. In this screen, users are asked to enter their emails. Then, a verification code is sent to the entered email address and users are navigated to verification screen, again. 
+
+##### Mobile
+
+This screen also has a button which navigates users to login page in our mobile application.
+
+![forget_password](https://user-images.githubusercontent.com/100771925/210230015-3a8fd401-94f3-498e-9fc9-93f99963fce5.jpg)
+
+##### Web
+
+![forget_password_web](https://user-images.githubusercontent.com/42673110/206701007-f43b67cc-ff14-4b30-883d-43ff00b45853.png)
+
+***
+
+#### Home Screen
+
+In home screen, enrolled learning spaces of user, top rated learning spaces and recommended learning spaces for user are shown. 
+
+##### Mobile
+
+In our mobile application, there is a "view all" button for all three types of learning spaces(enrolled, top rated and recommended). That button is activated whenever there are at least 8 learning spaces in that type. By pressing that button, users are navigated to a screen where they can see all learning spaces in the selected type.
+
+![home](https://user-images.githubusercontent.com/100771925/210237221-02eb0f1a-388d-4954-b1d4-c6503b285528.jpg)
+![home_1](https://user-images.githubusercontent.com/100771925/210233088-a0f025a7-24fb-404c-85c9-e12ee0cafce1.jpg)
+
+##### Web
+
+![home_web](https://user-images.githubusercontent.com/68481602/206697988-72dce30f-f5e5-4874-b808-3e454a638c8c.png)
+
+***
+
+#### Search Screen
+
+This is the screen where you can find learning spaces you wish by entering the correct, related keywords to search bar. We use semantic search to find the learning spaces users aim to find.
+
+##### Mobile
+
+In our mobile application, when a user enters the search screen for the first time, they see recommended learning spaces by default. After typing some keywords to search bar and pressing the search button, learning spaces found with related to entered keywords are shown to users. We also have user search in the mobile application. Clicking the found users navigates current user to that user's profile page.
+
+![ls_search_1](https://user-images.githubusercontent.com/100771925/210233153-abf6bc23-3704-45a9-a7bc-d3a442ba05c2.jpg)
+![ls_search_2](https://user-images.githubusercontent.com/100771925/210233176-c297b422-9675-4b6e-9f36-e5639c6adc79.jpg)
+![user_search_1](https://user-images.githubusercontent.com/100771925/210233189-ae20bbb2-1ef2-4276-89de-be800354c2a2.jpg)
+
+##### Web
+
+***
+
+#### Profile Screen
+
+In profile screen, profile picture, username, email and biography of the user are present. Users can change their biography from this screen if they wish.
+
+##### Mobile
+
+In our mobile application, we also have two buttons named "Enrolled Learning Spaces" and "Created Learning Spaces". Clicking those buttons navigates user to a page where enrolled or created learning spaces are shown. We also have an indicator showing how many learning spaces the user created, enrolled in. There is also a setting button at the top, which will be detailed below. Finally, there is a log out button next to settings button, pressing that button logs the user out of our program.
+
+![profile_1](https://user-images.githubusercontent.com/100771925/210233243-6c3034b1-3af3-4911-bd27-42b923f39ca3.jpg)
+
+##### Web
+![profile_web](https://user-images.githubusercontent.com/74411541/210258026-29710641-a51c-44d1-a0dd-b8381f86605f.png)
+
+***
+
+#### My Learning Spaces Screen
+
+In this screen, only enrolled learning spaces are shown. Additionally, there is a button for creating a learning space. Pressing that button navigates user to learning space creation screen.
+
+##### Mobile
+![spaces](https://user-images.githubusercontent.com/100771925/210261584-e8ac451d-c215-4576-8a16-a4067d5750a5.jpg)
+
+##### Web
+![my_ls_web](https://user-images.githubusercontent.com/74411541/210257450-8abdafcb-df90-4d78-bf5f-e8d567139d26.png)
+
+***
+
+#### Create Learning Space Screen
+
+In this screen, users are asked to choose an image among predefined images, enter a title, a description, a participant limit and choose category related to the learning space. Pressing done button creates the learning space and navigates user to the previous page.
+
+##### Mobile
+
+In our mobile application, more than one category can be chosen and done button is activated after necessary fields are filled.
+
+![create_ls](https://user-images.githubusercontent.com/100771925/210261615-ec585c90-b4ca-49b0-aa67-13c9a6fb15fe.jpg)
+
+##### Web
+
+![create_ls_web](https://user-images.githubusercontent.com/42673110/206700987-81ed6668-6267-483c-b766-f93849c763f8.png)
+
+***
+
+#### Learning Space Detail Screen
+
+This screen includes detailed information about a learning space. In both mobile and web applications, description of the learning space, name of it, posts, events, discussion forum take place.
+
+##### Mobile
+
+In our mobile application, enroll button takes place. Once user presses this button, they enroll the learning space and button text turns to "enrolled". Category takes place under description of learning space. Posts, create post button, forum, events and create event button takes place in this screen. When participants icon is clicked, participants of the learning space are shown. Pressing creator of the learning space navigates user to profile page of course creator.
+
+![ls_detail_1](https://user-images.githubusercontent.com/100771925/210233382-e24aacbe-09ae-4a39-a0dc-e79abd7fde3c.jpg)
+![ls_detail_participants](https://user-images.githubusercontent.com/100771925/210235336-a2a51a12-2854-4725-8fd4-d61d9f41d629.jpg)
+![ls_detail_posts](https://user-images.githubusercontent.com/100771925/210235353-b71b6984-d883-43b0-b316-c5ce2380034a.jpg)
+![ls_detail_forum](https://user-images.githubusercontent.com/100771925/210235408-68fe044c-4872-4abb-962c-754ae570f2b6.jpg)
+![ls_detail_events](https://user-images.githubusercontent.com/100771925/210235426-715addea-8e00-440f-b379-db208fb91d5e.jpg)
+
+##### Web
+
+In our web application, contributors and events take place in the right side of the screen. Posts are shown one after another in the middle and add post button takes place above the posts.
+
+![ls_detail_web](https://user-images.githubusercontent.com/74411541/206706633-19b029c7-032d-4088-9215-8e6bc9e2e484.png)
+
+***
+
+#### Enroll Learning Space
+
+This is not a screen but a functionality. Users can enroll learning spaces in our application by triggering enroll functionality.
+
+##### Mobile
+
+In our mobile application, there is a button with text "enroll" in learning space detail screen. Once this button is pressed, its text turns to "enrolled" and user who just enrolled is added to participants list. Also, the newly enrolled learning space is added to enrolled learning spaces list in both home screen and spaces screen.
+
+![enroll_ls_1](https://user-images.githubusercontent.com/100771925/210233427-9a8128f9-d969-44a9-9e7f-debeefa8e026.jpg)
+![enroll_ls_2](https://user-images.githubusercontent.com/100771925/210233423-0ceaf5b1-e3a8-4a1b-a4c0-e39cfb5c5e55.jpg)
+
+##### Web
+
+***
+
+#### Add Post / Edit Post
+
+This components/screens are used to add or edit post/material to a learning space.
+
+##### Mobile
+
+In our mobile application, add post screen asks users to add a title and a content for the post to add. Done button is activated only when both input fields are filled. On the other hand, in edit post screen, title and content fields are filled with the texts to be edited by default. Making a change in those fields activates the done button.
+
+![add_post](https://user-images.githubusercontent.com/100771925/210233535-18eaa8e6-2305-4613-aeab-af0c1e868c14.jpg)
+![edit_post](https://user-images.githubusercontent.com/100771925/210233539-28e535a3-7dfb-452c-a8b2-200fee2ce558.jpg)
+
+##### Web
+
+***
+
+#### Add Comment
+
+This component is used to add comment to a learning space post/material.
+
+##### Mobile
+
+In our mobile application, comment button takes place right to edit post button and under the post content. A dialog pops up by clicking the comment button. After inserting the comment in that dialog, done button is activated and comment is made.
+
+![add_comment](https://user-images.githubusercontent.com/100771925/210255796-c4b0acc2-d579-4aed-b7ea-d780bfd6f729.jpeg)
+
+##### Web
+
+*** 
+
+#### Text Annotation
+
+Text annotation is one of the most important features in our application in both mobile and web. We have a fully functioning text annotation in both our mobile application and web application.
+
+##### Mobile
+
+In our mobile application, posts/materials of a learning space can be annotated. After a long press on a text, text selection functionality becomes active. Then, users can choose the part of the text they want to annotate. After desired part is selected, annotate button can be selected. Then, a dialog for entering the annotation is opened. After entering a text to that dialog, done button is activated and annotation is made. Then, users can view the annotations they have made. Overlapping annotations are available in our application. By clicking on annotated text, users are navigated to annotation view screen. If an overlapping are is clicked, firstly a annotation selection dialog is opened.
+
+![text_annotation1](https://user-images.githubusercontent.com/100771925/210260005-78695537-36c1-4d16-bd0d-75dacc301994.jpg)
+![text_annotation2](https://user-images.githubusercontent.com/100771925/210260007-244a8970-34ee-4efc-91c1-a6e070473714.jpg)
+![text_annotation3](https://user-images.githubusercontent.com/100771925/210260009-ef423158-4948-427e-a5f1-549afe684863.jpg)
+![text_annotation4](https://user-images.githubusercontent.com/100771925/210260013-1d408039-3bce-4920-9a0a-4dca986faac9.jpg)
+![text_annotation5](https://user-images.githubusercontent.com/100771925/210260016-905346a9-4ef3-4824-8a41-f59cab1a34b8.jpg)
+![text_annotation6](https://user-images.githubusercontent.com/100771925/210260019-9e50c26d-53af-4a6f-aec3-34c8c66f158a.jpg)
+
+##### Web
+
+***
+
+#### Image Annotation
+
+Image annotation is one of the most important features in our application in both mobile and web, as well. We have a fully functioning image annotation in both our mobile application and web application.
+
+##### Mobile
+
+In our mobile application, images in posts/materials of a learning space can be annotated. By clicking on an image, image view screen is opened. Then, by pressing on a region on the image, a selection rectangle is shown. Users can choose the part of the image they want to annotate with this selection rectangle. After that, a dialog opens again for users to enter the annotation text. After the text is entered, users can view the annotations they have made. Again, overlapping annotations are available in our mobile application. By clicking the annotated parts, users are navigated to annotation view screen. If an overlapping part is clicked both annotation text are shown in the annotation view screen.
+
+![image_annotation_1](https://user-images.githubusercontent.com/100771925/210260051-99be5c7e-6210-4ec6-b63d-5cfd5be18564.jpg)
+![image_annotation_2](https://user-images.githubusercontent.com/100771925/210260055-ef079cd6-8510-4b8b-b1cf-7bb0041743dd.jpg)
+![image_annotation_3](https://user-images.githubusercontent.com/100771925/210260058-8464e94a-4c6f-4d14-a36a-349b08b1cc9f.jpg)
+![image_annotation_4](https://user-images.githubusercontent.com/100771925/210260043-9226a3c8-726b-4c18-b875-b2a615364481.jpg)
+
+
+##### Web
+
+***
+
+#### Create Event
+
+Creating event by specifying geolocation is another important feature of our application. We have a fully functioning event creation feature both in our mobile app and web app.
+
+##### Mobile
+
+In our mobile application, create event screen can be reached by clicking "Create Event" button in events section of the learning space detail screen. In this screen, users are asked to enter title, description, participation limit and duration of event. Then, they are asked to enter a date for the event. By default, date selection starts from the current time, selecting a previous date is not allowed by the application(it is programmed that way). Next, there is a map, users can select the geolocation of the event from that map, below that latitude, longitude and accuracy of the selected geolocation is shown. By default, first geolocation is the current geolocation of the user. For using this feature location services of the phone must be open. After entering all fields, done button is activated. Pressing the done button creates the event. Attend event button takes place under information of event, pressing that button adds users to participants list. Creator of event is automatically added to that list.
+
+![create_event](https://user-images.githubusercontent.com/100771925/210235492-299f9d34-54c4-4487-a9d0-26a0f7bcdbbc.jpg)
+![create_event_2](https://user-images.githubusercontent.com/100771925/210235495-3c01351d-60ab-4724-90bd-8fe3156912f5.jpg)
+![create_event_3](https://user-images.githubusercontent.com/100771925/210235502-de0d5a38-971f-412c-9d3f-1b137644dc63.jpg)
+
+
+##### Web
+
+***
+
+#### Other Users' Profile
+
+Other users' profile screen is just like user's own profile screen. Only difference is that biography cannot be changed in this screen.
+
+##### Mobile
+![other_profile_1](https://user-images.githubusercontent.com/100771925/210235555-7cd578cc-f35c-422e-9114-51ac08fe39b7.jpg)
+![other_profile_2](https://user-images.githubusercontent.com/100771925/210235563-8e85fd0b-7fc5-405b-8d87-3ba7c9c9388e.jpg)
+![other_profile_3](https://user-images.githubusercontent.com/100771925/210235566-d4ea2281-913b-40a8-83ec-9dcfb40a46c2.jpg)
+
+##### Web
+
+***
+
+#### Settings
+
+This screen is only available on our mobile application. Users can reach this screen by pressing the setting button at the right top in profile screen. From this screen, theme and language can be changed. Users can also reach our app info and social account info from this screen.
+
+![settings_1](https://user-images.githubusercontent.com/100771925/210235612-43e8146c-25ad-487d-99d0-67542c1e39c1.jpg)
+![settings_2](https://user-images.githubusercontent.com/100771925/210235622-eb3eabc1-6b61-47e4-8a05-e9a22ade7ff2.jpg)
+![settings_3](https://user-images.githubusercontent.com/100771925/210235630-29e53216-178a-45e4-a442-f87d6d59c776.jpg)
+![settings_4](https://user-images.githubusercontent.com/100771925/210235640-c78a6c9b-60ca-4a0c-930d-5d2e4794c49a.jpg)
+
 ***
 
 ### System Manual
+
+The system manual is also available on our wiki [here](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual).
+
+#### Running Docker Compose Instructions
+
+##### Backend
+
+##### 1. Clone the project  
+```    
+git clone https://github.com/bounswe/bounswe2022group2.git 
+```
+
+##### 2. Navigate to the project  
+```
+    cd bounswe2022group2/learnify/
+```
+
+##### 3. Create a .env file
+Your .env file shall include:
+
+JWT_KEY: key to be used for jwt tokens generation.
+MAIL: mailaddress the API uses, currently only gmail is supported.
+MAIL_PASS: application password of MAIL, please refer to : https://support.google.com/mail/answer/185833?hl=en
+
+You can contact us for getting MAIL and MAIL_PASS used for our Milestone 1 presentation.
+
+#### Semantic server
+
+You should add API key used for semantic analysis API, please contact us for the required .env file.
+
+##### Frontend
+
+No environment files are required.
+
+### 1. Clone the project  
+```    
+git clone https://github.com/bounswe/bounswe2022group2.git 
+```
+
+##### 2. Navigate to the project  
+```
+    cd bounswe2022group2/learnify/
+```
+
+##### Getting the server up
+
+`docker compose up` command will get our frontend and backend clients up and running on your local.
+
+
+### Mobile
+
+#### Installing with a Pre-made APK
+1. Click the shared APK link on the device of your choice.
+2. Download the file to your device.
+3. Once the download is complete, click open file. The device will navigate you to installation.
+4. If you get a "potentially harmful" warning, kindly ignore. We promise we are not hackers :)
+5. Complete installation and the app will be installed just like all other apps.
+
+#### Requirements for Creating APK
+
+- Latest Stable version of Flutter
+- Android Studio
+- Android Device OR Android Emulator
+
+#### Creating APK
+##### 0. Check Requirements
+Run 
+```    flutter doctor ``` to ensure requirements are installed without a problem.
+
+##### 1. Clone the project  
+```    
+git clone https://github.com/bounswe/bounswe2022group2.git
+ ```
+
+##### 2. Navigate to the project  
+```
+    cd bounswe2022group2/learnify/mobile 
+```
+
+##### 3. Create APK
+```
+   flutter build apk –-split-per-abi
+```
+This command creates 3 APK files in the repository:
+> /build/app/outputs/apk/release/app-armeabi-v7a-release.apk  
+> /build/app/outputs/apk/release/app-arm64-v8a-release.apk  
+> /build/app/outputs/apk/release/app-x86_64-release.apk    
+
+Running the command without `–-split-per-abi` command results in one large APK, which is not recommended as it includes binaries not native to the device.
+
+##### 4. Prepare Device
+Plug in your android device or start an emulator from Android Studio. Run `flutter devices` and observe flutter sees your device of choice.
+
+##### 4. Install on Device
+```
+    flutter install
+```
+This may take a while. 
+
+
+
+-------
+Sources:
+1. https://www.geeksforgeeks.org/how-to-build-and-release-flutter-application-in-android-device/
+2. https://docs.flutter.dev/deployment/android
 
 ***
 
@@ -2094,6 +2556,12 @@ Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She h
 ***
 
 ## Project Plan
+![CmpE451_ProjectPlan_Milestone3_page-0001](https://user-images.githubusercontent.com/92719802/210265560-e3f79908-0bd1-4725-a64f-6cab4d189a61.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0002](https://user-images.githubusercontent.com/92719802/210265573-ae0e53a7-147a-431c-bf84-da36eacef2c6.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0003](https://user-images.githubusercontent.com/92719802/210265575-1a999302-26e3-42bd-b986-32334221d028.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0004](https://user-images.githubusercontent.com/92719802/210265576-04bd654a-be16-4624-9395-15269909f676.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0005](https://user-images.githubusercontent.com/92719802/210265581-751df42f-cef0-43f8-81a2-d72004ec41a5.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0006](https://user-images.githubusercontent.com/92719802/210265583-9e405884-c994-4e0f-aca9-a7cf1d239828.jpg)
 
 ***
 
@@ -2116,20 +2584,243 @@ Name: Altay Acar
 Group: Group2 - Frontend Team
 
 ## *Responsibilities:*
+ 
+ **Final Milestone-3**
+ 
+ 1. Implementing the backend connection for learning space preview box component and making it compatible for various types of learning spaces components/pages.
+ 2. Implementing my learning spaces part of the home page and making it user-specific, dynamic, and API connected component.
+ 3. Implementing popular spaces part of the home page and making it user-specific, dynamic, and API connected component.
+ 4. Implementing a standalone page for each user's own learning spaces.
+ 5. Implementing a standalone page for popular learning spaces across the application.
+ 6. Researching on and finding date/time input components for event form.
+ 7. Researching on and finding map picker components for event form that will be competible with geolocation standards.
+ 8. Implementing a standalone React component of a map picker that is connected to Google Maps API and compatible for geolocation standards.
+ 9. Implementing a user search component.
+ 10. Adding toggling search functionality to navigation bar.
+ 11. Implementing recommended learning spaces part of the home page and making it user-specific, dynamic, and API connected component.
+ 12. Implementing a standalone page for recommended learning spaces adaptive for each user.
+ 13. Researching on annotation packages that is used in our web application.
+ 14. Revising annotation component to make it compatible with W3C standards and establish a backend connection regarding to it.
+ 15. Writing unit tests for each component I have developed.
+ 16. Reviewing the works done by the frontend team on a regular basis.
+ 17. Solving bugs, errors, problems encountered during the implementation of the our web application regularly.
+ 18. Helping to teammates, answering their questions, solving critical bugs&errors, and providing hotfixes before the demo.
+ 19. Attending and participating general meetings regularly.
+ 20. Attending and participating frontend team meetings regularly.
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. Providing and designing page and component layouts for better user interface and user experience.
+  2. Building the main structure and layout of home page.
+  3. Implementing the home page.
+  4. Providing component logic for our web application.
+  5. Implementing the footer component.
+  6. Implementing the categories page.
+  7. Implementing the backend connection between the categories page and our REST API.
+  8. Implementing learning spaces by category page.
+  9. Implementing the backend connection between the learning spaces by category page and our REST API.
+  10. Providing a method for dynamic page routing.
+  11. Implementing semantic search bar.
+  12. Implementing the backend connection between the semantic search bar and our REST API.
+  13. Implementing unit tests for categories page.
+  14. Implementing unit tests for learning spaces by category page.
+  15. Implementing unit tests for navigation bar and semantic search component.
+  16. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  17. Reviewing the works done by the frontend team.
+  18. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  19. Attending and participating general meetings regularly.
+  20. Attending and participating frontend team meetings regularly.
+ 
+--------------------
+
+**Milestone-1**
+ 
+  1. Designing the logo of our app and determining the typeface and color scheme that is used throughout the app.
+  2. Building the main structure and layout of authentication pages.
+  3. Implementing the sign up page.
+  4. Implementing the validation check for the sign up form.
+  5. Implementing the backend connection between the sign up page and our REST API.
+  6. Implementing unit tests for the sign up page.
+  7. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  8. Providing methods for validation.
+  9. Providing methods for backend connection.
+  10. Reviewing the works done by the frontend team.
 
 ## *Main Contributions:*
+ 
+ 
+**Final Milestone-3**
+ 
+I am a member of our frontend team for the development of our application, namely Learnify. As I did in the first and the second milestone, I continued to provide visual components of our web application according to the design guidelines we have determined together and in harmony with other components and pages of our web application. Before our weekly frontend team meetings I have regularly inspected our application's development's current state and provided necessary agenda for that week. I have also provided page layouts and visual components like icons, logos, or illustrations for our web application. I have provided flexible, dynamic, and compatible React components that can be used across our web application. I have finalized the home page with backend connection between the user-specific adaptive components and our REST API. I have implemented standalone pages for various learning space related categorical pages such as popular, recommended, user's own learning spaces. I have also added user search functionality to our web application and prvided a togglng search bar component, updating the navigation bar accordingly. I have implemented a form component for creating events that follows our design and theming guidelines as well as fitting the allocated space in the related part of our web application’s learning space page. I have also researched on tons of form input components especially for date/time pickers, map pickers, so that the event creation form would provide the best user experience while being compatible with geolocation standards. For that I have also developed a standalone map picker component that utilizes Google Maps API, with which users can select a location using a marker. I have also established backend connection for event form. Additionally, I have revised the annotation component and made it functioning according to W3C standards, while establishing its backend connection, especially for text annotations. I have also regularly provided css classes that satisfy our design guidelines for the components implemented by the whole frontend team. I have regularly helped my teammates to fix any erroneous part of their code, provided hotfixes, and tried to share them good practices that I have learned. Additionally, I have implemented unit tests for the components that I have created during the development of our web application’s frontend.
+
+--------------------
+
+**Milestone-2**
+ 
+I am a member of our frontend team for the development of our application, namely Learnify. As I did in the first milestone, I continued to provide visual components of our web application according to the design guidelines we have determined together and in harmony with other components and pages of our web application. Before our weekly frontend team meetings I have regularly inspected our application's development's current state and provided necessary agenda for that week. I have also provided page layouts and visual components like icons, logos, or illustrations for our web application. I have also researched on icon library that we can use (Fontawesome) and implemented it so that the performance and loading times for our screens increase significantly by not trying to render each png file when loading. I have also researched n dynamic routing in React and provided an easy-to-use and effective solution to one of our biggest issues: overcoming hardcoding each url path in App.js. I have also provided a component based page layouting logic so that we can eaily import components and use them without repeating lines of code and be able to pass specific parameters to display components. Besides, I have implemented categories page, learning spaces by category page and semantic search component in the navigation bar. For each, I have implemented separate components, established backend connection, established dynamic routing and passed parameters to display components according to the response acquired from the REST API. I have also regularly provided css classes that satisfy our design guidelines for the components implemented by the whole frontend team. I have regularly helped my teammates to fix any erroneous part of their code, provided hotfixes, and tried to share them good practices that I have learned. Additionally, I have implemented unit tests for the components that I have created during the development of our web application’s frontend.
+
+--------------------
+
+**Milestone-1**
+ 
+I am a member of our fronend team for the development of our application, namely Learnify. Generally, I took the responsibility of visual side of our web application. For that extent I have designed our logo, provided and appropriate typeface and color scheme using Adobe applications. Then, I have provided the general layout and structure of our authentication pages with appropriate theme. I was also responsible for the implementation of the sign up page from the scratch. Since any of us in the frontend team is not used to work with React,I have conducted very detailed research on how to connect pages, how to uses states, how to validate form inputs, how to handle API requests, and how to do unit testing. In the light of my findings I have implemented our sign up page: First the initial structure and layout, then the validation, then the backend connection, and last the unit testing. Additionaly I took care of the dockerization and the AWS deployment of our web application's frontend.
+ 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
+**Final Milestone-3**
+ 
+ 1. [Frontend: Learning Space Preview Box Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/766)
+ 2. [Frontend: Create Event Component](https://github.com/bounswe/bounswe2022group2/issues/772)
+ 3. [Frontend: Unit Tests for Learning Space Preview Box](https://github.com/bounswe/bounswe2022group2/issues/788)
+ 4. [Frontend: Home Page My Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/791)
+ 5. [Frontend: Home Page Popular Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/792)
+ 6. [Frontend: My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/802)
+ 7. [Frontend: Unit Tests for My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/806)
+ 8. [Frontend: Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/808)
+ 9. [Frontend: Unit Tests for Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/819)
+ 10. [Frontend: User Search Component](https://github.com/bounswe/bounswe2022group2/issues/870)
+ 11. [Frontend: Custom Map Picker Component](https://github.com/bounswe/bounswe2022group2/issues/892)
+ 12. [Frontend: Recommended Learning Spaces Part in Home Page](https://github.com/bounswe/bounswe2022group2/issues/900)
+ 13. [Frontend: Recommended Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/issues/906)
+ 14. [Frontend: Text and Image Annotation Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/918)
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. [Frontend: Implementation of Home Page](https://github.com/bounswe/bounswe2022group2/issues/518)
+  2. [Frontend: Implementation of Categories Page](https://github.com/bounswe/bounswe2022group2/issues/544)
+  3. [Frontend: Implementation of Learning Spaces by Category Page](https://github.com/bounswe/bounswe2022group2/issues/605)
+  4. [Frontend: HOTFIX Learning Space Page Structural Overflow](https://github.com/bounswe/bounswe2022group2/issues/636)
+  5. [Frontend: Implementation of Semantic Search Bar](https://github.com/bounswe/bounswe2022group2/issues/652)
+  6. [Frontend: Unit Tests for Categories Page](https://github.com/bounswe/bounswe2022group2/issues/673)
+  7. [Frontend: Unit Tests for Learning Spaces by Categories Page](https://github.com/bounswe/bounswe2022group2/issues/679)
+  8. [Frontend: Unit Tests for Navigation Bar and Semantic Search Component](https://github.com/bounswe/bounswe2022group2/issues/682)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Designing the Logo and Determining Color Scheme, Typeface of the Project](https://github.com/bounswe/bounswe2022group2/issues/353)
+  2. [Frontend: Implementation of Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/376)
+  3. [Frontend: Backend Connection for the Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/405)
+  4. [Frontend: Adding Form Validations for Sign Up Form](https://github.com/bounswe/bounswe2022group2/issues/424)
+  5. [Frontend: Unit Tests for Sign Up Page](https://github.com/bounswe/bounswe2022group2/issues/451)
+  6. [Frontend: Dockerization of the Frontend](https://github.com/bounswe/bounswe2022group2/issues/412)
+  7. [AWS Deployment of the Web Application](https://github.com/bounswe/bounswe2022group2/issues/459)
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+ 
+ 1. [Final Milestone: Web Application Scenario](https://github.com/bounswe/bounswe2022group2/issues/955)
+ 2. [Final Milestone: Summary of Work Table for Altay Acar](https://github.com/bounswe/bounswe2022group2/issues/973)
+ 3. [Final Milestone: Individual Contributions Report of Altay Acar](https://github.com/bounswe/bounswe2022group2/issues/977)
+ 
+--------------------
+
+**Milestone-2**
+ 
+ 1. [Documenting the Meeting Notes for the Frontend Meeting 2](https://github.com/bounswe/bounswe2022group2/issues/518)
+ 2. [Milestone-2: Status of Deliverables of Milestone 2](https://github.com/bounswe/bounswe2022group2/issues/718)
+ 3. [Milestone-2: User Interfaces for Web Application](https://github.com/bounswe/bounswe2022group2/issues/723)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  3. [Documenting Meeting Notes for the Meeting 2 of CMPE 451](https://github.com/bounswe/bounswe2022group2/issues/328)
+  4. [Revising the Requirements Specification: Notifications](https://github.com/bounswe/bounswe2022group2/issues/329)
+  5. [Milestone 1: Review the Milestone](https://github.com/bounswe/bounswe2022group2/issues/482)
+  6. [Milestone 1: Reviewing the Milestone - Progress](https://github.com/bounswe/bounswe2022group2/issues/489)
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+ 
+ 1. [Frontend: Learning Space Preview Box BE Connection](https://github.com/bounswe/bounswe2022group2/pull/767)
+ 2. [Frontend: Unit Tests for the Learning Space Preview Box Component](https://github.com/bounswe/bounswe2022group2/pull/790)
+ 3. [Frontend: Home Page My Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/pull/796)
+ 4. [Frontend: Home Page Popular Learning Spaces Backend Connection](https://github.com/bounswe/bounswe2022group2/pull/801)
+ 5. [Frontend: My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/805)
+ 6. [Frontend: Unit Tests for My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/807)
+ 7. [Frontend: Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/817)
+ 8. [Frontend: Unit Tests for Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/839)
+ 9. [Frontend: Create Event Component](https://github.com/bounswe/bounswe2022group2/pull/767)
+ 10. [Frontend: User Search Component](https://github.com/bounswe/bounswe2022group2/pull/881)
+ 11. [Frontend: Recommended Learning Spaces in Home Page](https://github.com/bounswe/bounswe2022group2/pull/902)
+ 12. [Frontend: Recommended Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/pull/909)
+ 13. [Frontend: Annotation BE Connection](https://github.com/bounswe/bounswe2022group2/pull/922)
+ 
+--------------------
+
+**Milestone-2**
+ 
+1. Frontend: Implementation of Home Page [#536](https://github.com/bounswe/bounswe2022group2/pull/536)
+2. Frontend: Implementation of Categories Page [#571](https://github.com/bounswe/bounswe2022group2/pull/571)
+3. Frontend: Learning Spaces by Category Pages Implementation [#633](https://github.com/bounswe/bounswe2022group2/pull/633)
+4. Frontend: HOTFIX Learning Space Page Structural Overflow [#637](https://github.com/bounswe/bounswe2022group2/pull/637)
+5. Frontend: Semantic Search Bar Implementation [#655](https://github.com/bounswe/bounswe2022group2/pull/655)
+6. Frontend: Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/pull/676)
+7. Frontend: Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/pull/680)
+8. Frontend: Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/pull/684)
+
+--------------------
+
+**Milestone-1**
+ 
+1. Frontend: Sign up page implementation [#387](https://github.com/bounswe/bounswe2022group2/pull/387)
+2. Dockerization of Frontend [#413](https://github.com/bounswe/bounswe2022group2/pull/413)
+3. Frontend: Sign Up Form Validation [#426](https://github.com/bounswe/bounswe2022group2/pull/426)
+4. Frontend: Backend connection for sign up page [#438](https://github.com/bounswe/bounswe2022group2/pull/438)
+5. Frontend: Unit tests for sign up page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
 
 ## *Unit Tests:*
 
+**Final Milestone-3**
+ 
+ 1. Unit Tests for the Learning Space Preview Box Component [#790](https://github.com/bounswe/bounswe2022group2/pull/790)
+ 2. Unit Tests for My Learning Spaces Page [#807](https://github.com/bounswe/bounswe2022group2/pull/807)
+ 3. Unit Tests for Popular Learning Spaces Page [#839](https://github.com/bounswe/bounswe2022group2/pull/839)
+ 
+--------------------
+
+**Milestone-2**
+
+1. Unit Tests for Categories Page [#676](https://github.com/bounswe/bounswe2022group2/pull/676)
+2. Unit Tests for Learning Spaces by Category Page [#680](https://github.com/bounswe/bounswe2022group2/pull/680)
+3. Unit Tests for Navigation Bar and Semantic Search Component [#684](https://github.com/bounswe/bounswe2022group2/pull/684)
+
+--------------------
+
+**Milestone-1**
+
+1. Unit Tests for Sign Up Page [#456](https://github.com/bounswe/bounswe2022group2/pull/456)
+
 ## *Additional Information:*  
+ 
+**Final Milestone-3**
+ 
+ None
+ 
+--------------------
+
+**Milestone-2**
+ 
+ None
+
+--------------------
+
+**Milestone-1**
+ 
+ None
 
 ---------------
 
@@ -2448,20 +3139,80 @@ Name: Hasan Can Erol
 Group: Group2 - Backend Team
 
 ## *Responsibilities:*
+ 
+ **Final Milestone 3**
+ 
+ 1. Attending and participating general meetings regularly
+ 2. Writing create comment enpoint for the posts
+ 3. Writing unit tests for the create comment endpoint
+ 4. Writing editing comment endpoint
+ 5. Providing postman examples for the mobile and frontend connection
+ 6. Reviewing the works done by the backend team and make sure all the endpoint working fine
+ 7. Taking and documenting General Meeting 8 notes to wiki page
+ 
+ **Milestone 2**
+ 
+ 1. Writing executive summary for Milestone-2 report
+ 2. Attending and participating general meetings regularly
+ 
+ **Milestone 1**
+ 
+ 1. Attending and participating general meetings regularly
+ 2. Implementing the resend verification email endpoint
+ 3. Reviewing and making sure all works done by each beackend team member are working properly
+ 4. Providing postman documentations for the frontend and mobile teams
+ 5. Doing research on technologies needed to use on backend development
 
 ## *Main Contributions:*
+ 
+ **Final Milestone 3**
+ 
+ I'm one of the 3 contributors of backend team for the Learnify app, so most parts of my contribution is on backend side. In this milestone, future plans are changed and we decided to go with the forum for the learning spaces. Therefore, I wrote the commenting on existing posts on learning spaces and editing these comments part of our application. Also, I provided the postman documentation and the unit tests for the mobile and frontend team to backend connections. In addition, I noted down the meeting notes for our 8th meeting this semester and documented it into wiki page. 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+ 
+ - [Backend: Comment on Posts Endpoint and Unit Tests](https://github.com/bounswe/bounswe2022group2/issues/779)
+ - [Backend: Put edit comment endpoint](https://github.com/bounswe/bounswe2022group2/issues/862)
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+ 
+ - [Documenting meting notes of Meeting 8 for CMPE451](https://github.com/bounswe/bounswe2022group2/issues/759)
+ - [Final Milestone: Individual Contributions Report for Hasan Can Erol](https://github.com/bounswe/bounswe2022group2/issues/963)
+ - [Final Milestone: Summary of Work Table for Hasan Can Erol](https://github.com/bounswe/bounswe2022group2/issues/964)
+ 
+ **Milestone 1**
+ 
+  I'm one of the 3 contributors of backend team for the Learnify app. Firstly, we discuss about popular technologies on software development and decided on Node.js as a team. After that, we splitted the implementation of 4 endpoints which are decided to be developed for the milestone-1 demo. I implemented resend the verificaiton email for signup and forgot password pages. I was always on touch with my backend teammates via discord, whatsapp or on person. I tried the project on my local and made sure the whole backend demo works properly. I also added the moving forward part to our Milestone-1 report.
 
+ * *Code related significant issues:* My issues that contribute to the code base
+demonstrated during the demo:
+ 
+  - [Backend: Implementation of Resend Email Verification](https://github.com/bounswe/bounswe2022group2/issues/406)
+ 
+* *Management related significant issues:* My issues that contribute to the
+management of our software project:
+ 
+  - [Revising the Requirements: Profile Page](https://github.com/bounswe/bounswe2022group2/issues/345)
+  - [Revisions About All the Diagrams](https://github.com/bounswe/bounswe2022group2/issues/322)
+  - [Reviewing the Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/315)
+  - [Reviewing the Revising the Requirements: Chat to forum Transformation](https://github.com/bounswe/bounswe2022group2/issues/344)
+ 
 ## *Pull Requests:*
 
+ - [Backend: Implementing Resend The Verification Code](https://github.com/bounswe/bounswe2022group2/pull/411)
+ - [Executive Summary](https://github.com/bounswe/bounswe2022group2/pull/703)
+ - [Backend: Create Comment endpoint and Unit Tests](https://github.com/bounswe/bounswe2022group2/pull/784)
+ - [Create comment endpoint minor bugfix](https://github.com/bounswe/bounswe2022group2/pull/849)
+ - [Backend: Edit comment endpoint](https://github.com/bounswe/bounswe2022group2/pull/863)
+ - [Summary of Individual Work for Hasan Can Erol](https://github.com/bounswe/bounswe2022group2/pull/511)
+ - [Adding Moving Forward](https://github.com/bounswe/bounswe2022group2/pull/512)
+ 
+ 
 ## *Unit Tests:*
-
-## *Additional Information:*  
+ 
+ - [Backend: Create Comment endpoint and Unit Tests](https://github.com/bounswe/bounswe2022group2/pull/784)
 
 ---------------
 
@@ -2473,21 +3224,200 @@ Group: Group2 - Android/Mobile Team
 
 ## *Responsibilities:*
 
+**Final Milestone-3**
+
+ 1. Attending and participating all general meetings
+ 2. Attending and participating all mobile team meetings
+ 3. Attending to all customer meetings and lectures
+ 4. Implementing backend connection of user search
+ 5. Updating my profile page
+ 6. Implementing backend connection of my profile screen
+ 7. Implementing others profile page
+ 8. Implementing backend connection of others profile page
+ 9. Implementing update profile page button and it's backend connection
+ 10. Updating profile page tests
+ 11. Documenting mobile meeting notes #6
+ 12. Reviewing the works done by the mobile team
+ 13. Reporting any bugs that is occurred in the progress of development
+ 14. Clarifying the objectives of the project with asking detailed questions about our project features to our TA
+ 15. Contributing to planning flow of the demo presentation and creating sample learning spaces and posts for demo
+ 16. Updating project plan for the final milestone report
+ 17. Writing mobile app scenario for the final milestone report
+ 18. Filling individual contribution of myself in milestone report.
+
+--------------------
+
+**Milestone-2**
+
+ 1. Implementing view all screen
+ 2. Implementing data passing from home screen
+ 3. Implementing spaces screen
+ 4. Implementing search screen which contains learning spaces and users
+ 5. Implementing backend connection of the search screen
+ 6. Implementing user preview widget
+ 7. Implementing static user search
+ 8. Implementing tests for view all screen
+ 9. Implementing tests for spaces screen
+ 10. Research about how to implement search screen
+ 11. Research about how to pass data between pages
+ 12. Analyze the structure of the "SelectorHelper" which is implemented by Bahrican and used instead of stateful widget
+ 13. Changing the location of "create a learning space" button from home page to spaces page
+ 14. Reviewing the works done by the mobile team
+ 15. Reporting any bugs that is occurred in the progress of development
+ 16. Documenting one of the mobile team meeting
+ 17. Contributing to project management, focused on increasing the democracy among team members
+ 18. Clarifying the objectives of the project with asking detailed questions about our project features to our TA
+ 19. Contributing to planning flow of the demo presentation and creating sample learning spaces and posts for demo
+ 20. Attending and participating general meetings regularly.
+ 21. Attending and participating mobile team meetings regularly.
+ 22. Attending to customer meetings and lectures regularly.
+
+--------------------
+
+**Milestone-1**
+
+  1. Doing research on Flutter and Android Studio
+  2. Implementing login page
+  3. Setting up back end connection of login page
+  4. Writing tests for login page
+  5. Reviewing whole work that is done by mobile team
+  6. Contributing to project plan development
+  7. Transferring project plan from notion to ProjectLibre
+
 ## *Main Contributions:*
+
+**Final Milestone-3**
+
+I am a member of the mobile team also in the final period of the semester. As you can see below and above I contributed to lots of pages. When I was doing them, I researched about similar pages in other mobile applications. Requirements of the pages were also determined via discussing with our team members. Backend, frontend and mobile teams discussed about the features of the pages. I designed these pages according to these discussions. When the pages are initialized, I analyzed the backend side of the pages. I read the postman documentations. I implemented backend connection accordingly. I changed the profile page tests to prevent fail tests. Before the demo day, I try to fix the update profile bug. I mainly fixed that feature. Besides these, I attended all lectures, lab sessions, demo days and team/mobile meetings. It was a great journey to experience working with a relatively large group working.
+
+--------------------
+
+**Milestone-2**
+
+I am member of the mobile team. I mainly contributed to the tasks that are related to the mobile side of our project. I have implemented several pages that can be seen both above and below. Before implementing the pages, I did detailed research about these pages. I analyzed the example screens. When the widgets have done and endpoints were implemented by our backend team, I analyzed the related endpoints. After that, backend connections of the pages are done if needed. Some pages have to receive data from another pages. So, I do research about data passing in Flutter. I reviewed and tried to understand deeply the works that are done by other mobile team members. I stick with our project plan. Other than these, I have contributed to project management. I opened polls for clarifying our decisions with our team in various things. Also, contributed to some works for our demo like creating learning spaces and posts. Specification of the requirements has great importance of the project development. I asked my detailed questions about our features to our TA. The answers changed our way of thinking of that features in various aspects. Collaborative learning is an example of this. Additionally, I attended to mobile/general team meetings and lessons regularly to keep synchronized with our team and project.
+
+--------------------
+
+**Milestone-1**
+
+I am member of the mobile team. I mainly contribute to the tasks that are related to the mobile side of our project. At first, I contribute to planning the project for the whole term. After that, I contribute to the tasks that are related to updating and reviewing at the beginning of the term. When we started to implementation, I have responsibility to implement login page. I implement the login page and make the backend connection. Tested whole edge cases using emulator. Additionally, I write widget tests also. During this process, I analyze the backend responses and other structural objects in mobile. These ease my learning process of the Flutter. Reviewed almost whole features. Also, contributed to the clarification of some points for the whole project (contributor issue and annotation). 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
+**Final Milestone-3**
+
+  1. Mobile: Updating My Profile Page [#775](https://github.com/bounswe/bounswe2022group2/issues/775)
+  2. Mobile: Implementing Other User's Profile Page [#776](https://github.com/bounswe/bounswe2022group2/issues/776)
+  3. Mobile: User Search Backend Connection [#866](https://github.com/bounswe/bounswe2022group2/issues/866)
+  4. Mobile: Get and Update My Profile Backend Connection [#867](https://github.com/bounswe/bounswe2022group2/issues/867)
+  5. Mobile: Get Other Users Profile Backend Connection[#868](https://github.com/bounswe/bounswe2022group2/issues/868)
+
+--------------------
+
+**Milestone-2**
+
+ 1. Mobile: Implementing Search Page [#567](https://github.com/bounswe/bounswe2022group2/issues/567)
+ 2. Mobile: Implementing Learnifies Page [#568](https://github.com/bounswe/bounswe2022group2/issues/568)
+ 3. Mobile: Backend Connection for Search Page [#584](https://github.com/bounswe/bounswe2022group2/issues/584)
+ 4. Mobile: Implementing User Preview Widget [#593](https://github.com/bounswe/bounswe2022group2/issues/593)
+ 5. Mobile: Static User Search Implementation and Additional Improvements [#635](https://github.com/bounswe/bounswe2022group2/issues/635)
+ 6. Mobile: Tests for ViewAllScreen and TakenLsScreen [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
+
+--------------------
+
+**Milestone-1**
+
+  1. [Mobile Team: Setting up development Environment](https://github.com/bounswe/bounswe2022group2/issues/372)
+  2. [Mobile - Implementing Login Page Including Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/396)
+  3. [Mobile: Writing Tests for Login Page](https://github.com/bounswe/bounswe2022group2/issues/447) (Ongoing)
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+
+  1. Final Milestone: Project Plan [#956](https://github.com/bounswe/bounswe2022group2/issues/956)
+  2. Final Milestone: Mobile App Scenario [#957](https://github.com/bounswe/bounswe2022group2/issues/957)
+  3. Final Milestone: Summary of Work Table for Onur Kömürcü [#958](https://github.com/bounswe/bounswe2022group2/issues/958)
+  4. Final Milestone: Individual Contributions Report for Onur Kömürcü [#959](https://github.com/bounswe/bounswe2022group2/issues/958)
+  5. Mobile: Documenting Meeting Notes #6 [#774](https://github.com/bounswe/bounswe2022group2/issues/774)
+
+--------------------
+
+**Milestone-2**
+
+ 1. Documenting Meeting Notes of Meeting #5 of the Mobile Team [#527](https://github.com/bounswe/bounswe2022group2/issues/527)
+ 2. Milestone-2 Report: Updating Project Plan [#690](https://github.com/bounswe/bounswe2022group2/issues/690)
+
+--------------------
+
+**Milestone-1**
+
+  1. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  2. [Update the Project plan for upcoming semester](https://github.com/bounswe/bounswe2022group2/issues/316)
+  3. [Milestone 1: Project Plan](https://github.com/bounswe/bounswe2022group2/issues/448)
+  4. [Updating Communication Plan](https://github.com/bounswe/bounswe2022group2/issues/377)
+  5. [Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
+  6. [Revising the Requirements: Achievements and Badges](https://github.com/bounswe/bounswe2022group2/issues/333)
+  7. [Revising Mockups](https://github.com/bounswe/bounswe2022group2/issues/326)
+
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+
+  1. Mobile: My Profile Screen Update [#783](https://github.com/bounswe/bounswe2022group2/issues/783)
+  2. Mobile: User search backend connection [#890](https://github.com/bounswe/bounswe2022group2/issues/890)
+  3. Mobile: My profile backend connection [#915](https://github.com/bounswe/bounswe2022group2/issues/915)
+  4. Mobile: Other users profile page and backend connection [#921](https://github.com/bounswe/bounswe2022group2/issues/921)
+  5. Mobile: Profile Update Major BugFix [#923](https://github.com/bounswe/bounswe2022group2/issues/923)
+  6. Final Milestone: Project Plan [#983](https://github.com/bounswe/bounswe2022group2/issues/983)|30 minutes
+  7. Final Milestone: Mobile App Scenario [#957](https://github.com/bounswe/bounswe2022group2/issues/957)
+  8. Final Milestone: Summary of Work Table for Onur Kömürcü [#966](https://github.com/bounswe/bounswe2022group2/issues/966)
+  9. Final Milestone: Individual Contributions Report for Onur Kömürcü [#959](https://github.com/bounswe/bounswe2022group2/issues/958)
+
+--------------------
+
+**Milestone-2**
+
+ 1. Mobile: Implementing View All Screen [#557](https://github.com/bounswe/bounswe2022group2/issues/557)
+ 2. Mobile: Implementing Spaces Page [#569](https://github.com/bounswe/bounswe2022group2/issues/569)
+ 3. Mobile: Implemented Search Screen with Backend Connection [#632](https://github.com/bounswe/bounswe2022group2/issues/632)
+ 4. Mobile: User Preview Widget [#638](https://github.com/bounswe/bounswe2022group2/issues/638)
+ 5. Mobile: Static User Search and Recommended LS in Search Implemented [#644](https://github.com/bounswe/bounswe2022group2/issues/644)
+ 6. Mobile: Tests for Pages Which Use View All List [#647](https://github.com/bounswe/bounswe2022group2/issues/647)
+
+--------------------
+
+**Milestone-1**
+
+1. Mobile: Implementation of Login Screen Including Backend Connection [#398](https://github.com/bounswe/bounswe2022group2/pull/398)
+2. Mobile: Tests for Login Page [#485](https://github.com/bounswe/bounswe2022group2/pull/485)
 
 ## *Unit Tests:*
 
+**Final Milestone-3**
+
+  1. Mobile: My Profile Screen Update (Test update included) [#783](https://github.com/bounswe/bounswe2022group2/issues/783)
+
+--------------------
+
+**Milestone-2**
+
+ 1. Unit Tests for which use view all list widget [#646](https://github.com/bounswe/bounswe2022group2/issues/646)
+
+--------------------
+
+**Milestone-1**
+
+  1. Mobile: Tests for Login Page [#485](https://github.com/bounswe/bounswe2022group2/pull/485)
+
 ## *Additional Information:*  
 
----------------
+I want to thank my every group members for their great contributions.
+
+--------------------
 
 ## *Member:*  
 
@@ -2779,6 +3709,8 @@ Group: Group2 - Frontend Team
   12. Implementing navigation items from LoginForm(namely via forgot password redirector and login button).
   13. Implementing the Unit Tests related to the LoginForm.
 
+
+
 ## *Main Contributions:*
  
  **Final Milestone-3**
@@ -2808,6 +3740,8 @@ Group: Group2 - Frontend Team
    After a fast on-boarding our team was divided into sub-groups and I took part in the front-end team, had responsibility in research tasks such as "discovering the features of react applications", "how to initialize a react project", "implementation of unit tests in react projects", etc. Then in order to proceed faster the initial pages have been shared among the front-end team members, and accordingly I have created the design, structure items, and functional elements such as buttons and redirectors for the LoginForm. Then I have implemented the back-end connection of the LoginForm, and finally the unit tests also for LoginForm. For both of these tasks I had to do discovery research since I had no experience at this side of the coin, I mean the front-end.
  
  --------------------
+
+
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
@@ -2846,6 +3780,7 @@ demonstrated during the demo:
  
  --------------------
 
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
  
@@ -2873,6 +3808,8 @@ management of our software project:
   5. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
  
 
+
+
 ## *Pull Requests:*
  
  **Final Milestone-3**
@@ -2887,6 +3824,7 @@ management of our software project:
 9. Frontend: Dev frontend participated ls profile component unit tests [#899](https://github.com/bounswe/bounswe2022group2/pull/899)
 10. Frontend: Merge of Frontend Dvelopment to general Development [#927](https://github.com/bounswe/bounswe2022group2/pull/927)
 11. Frontend: UI/UX additions final milestone [#979](https://github.com/bounswe/bounswe2022group2/pull/979)
+
 
 --------------------
 
