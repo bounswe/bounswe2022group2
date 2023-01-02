@@ -1582,6 +1582,28 @@ He remembers the friend of his who suggested him Learnify. Thus, he wants to sea
 
 Finally, he clicks the categories button in the navigation bar to browse through categories. He sees that there are 18 categories and each of the has their own page containing learning spaces about that category and can view all of the learning spaces in a particular category by clicking on the category name. He reminds himself to check on gastronomy and culinary category later when the new furniture he has ordered for the kitchen for his new home arrives.
 
+#### Mobile Application Scenario
+
+Former student Jennifer, who used to learn so much things in her academic career wants to learn new things with people who enthusiast with learning. Because of that, she downloaded the Learnify mobile app. She preferred mobile app because she used to spend most of her time with phone.
+
+After she downloaded the app, she open the app. Splash screen welcomes herself. She signs up to use the application. Application sends a verification code to given email adress. She types the 4 digit code in 180 seconds. Also when she navigates through the login screens, she sees that forget password screen is active. She feels comfortable because she won't be worried if she forgets her password.
+
+When she logins to the app, she welcomed with home page. She sees enrolled, top and recommended learning spaces. Since she is a newcomer, enrolled learning spaces list is empty. She looks at the top learning spaces. Since there is more than 8 learning spaces for this category, view all button is active. She taps to view all button and look over the top learning spaces. She interests in Playing the Piano learning space that she sees from the list. She taps to that learning space to view details.
+
+Learning space detail is visible now. She welcomed with the learning space details upper part of the page. Learning space name, description, creator and number of participants can be seen here. She wants to look at to the creator who is Honor. She taps to the creator and another page comes. In this page, she sees profile photo, username, biography, taken learning spaces and created learning spaces of the Honor. She is impressed with the biography of the Honor. She is now more engaged with the learning space. She also taps to the participants and list of participants is visible. She knows someone in that list: Trump. She also looks his profile page. She also taps to the created learning spaces of Trump and she sees that Trump created social media management learning space. She doesn't interested in that learning space. So, she backs to the learning space: Playing the Piano and enrolled to this learning space.
+
+She see three sections in the learning space: Posts, Forum and Events. She looks at to the posts. She sees annotations in both text and image content. She loved that functionality. She thinks that even intersection of the annotations is working great. She tries the annotation functionality. She adds text and image annotation to some posts that she loved. She views all comments in that post. She adds a comment for that post also.
+
+She creates a post for the learning space itself. She give a title and content for the post. She sees some wrong in the content. She edits the post that she created.
+
+After these, she wants to look at to the events. She can attend the not passed events. She can see the participants and also see the location, event date, creator and duration. She doesn't satisfied with the events. She creates an event with giving the following informations: title, description, participation limit, duration, time and location of the event. At the end, she creates an event for that learning space.
+
+She explores the search page. She search "Blockchain" word. Since search is working in a semantic way, she can see every blockchain related learning spaces. She searches an user that she knows from college: Gökay. She types "gokayyıldız" and there are several gokay's using this app. She looks these users and find the Gökay she knows. She looks at his profile just like she did several times.
+
+After spending some time in the application, she tired of white color of the app because atmosphere getting darker. She goes to the profile page from navigation bar and sees the setting button up right corner. She taps to that button and she opens the dark mode. She also realizes some other languages are provided. She is impressed with that great functionality.
+
+She now feels comfortable. Lastly, she updates her profile photo and biography to be known by other users. She spent so much time compared with any other applications that she uses. Because of that, she logout from the application for security reasons and closes the application.
+
 ---------
 
 # Project Artifacts
