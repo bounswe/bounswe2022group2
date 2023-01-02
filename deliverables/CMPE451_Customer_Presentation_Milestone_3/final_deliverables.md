@@ -816,6 +816,280 @@ Link: [Sequence Diagram](https://lucid.app/lucidchart/12990ace-9701-4be5-8ec5-cd
 
 ## User Scenarios and Mockups
 
+### Registered Lecturer Scenario, Hasan Taşkıran
+
+#### Persona
+<img align="left" src="https://user-images.githubusercontent.com/60237280/159185638-b2a3171d-030c-4779-87a8-a9cb0379bade.jpg" width="310" > 
+
+<pre>
+- Hasan Taşkıran
+- 33 years old, male, lives in Levent, İstanbul
+- Personality
+    * Practical
+    * Social
+    * Helpful
+    * Busy, tense 
+- Full-time mobile app developer at Andrestan in Levent/Istanbul
+- Has more than 10 years of experience in the mobile app development area
+</pre>
+
+#### User Story
+Hasan is an experienced mobile app developer. He has various experiences in different companies previously and currently working in a company as a full time mobile app developer. Contrary to what is believed about software developers, he is an extrovert and social person. In time off from work, he wants to share his knowledge, some programming tips with junior developers. Since he has a busy business life, he wants to share what he knows in the easiest and fastest way without having to allocate so much time. He cannot allocate enough time to prepare, record, edit and share course videos. Just because of this, he cannot use some popular educational platforms that allow lecturers to share course videos and learners to watch them. He is using our application's website since he can easily collect his notes, tips, explanations in time and share them whenever they are ready with the learners as a course.
+
+#### Goals
+- He wants to create a course by providing required information for a course creation.
+- He wants to set a course name, indicates a topic, provides a description and define the pre-requirements for this course.
+- He wants to create separate sections for the course to have a learning progress step by step.
+- He wants to set the privacy status of some sections of the created course as private because those sections are not ready to publish yet and still under construction.
+
+#### Pre-Conditions
+- He has already signed up, has an account, and a filled profile.
+- He has logged in to the our web app so that the initial screen he saw is the home screen.
+- He has experience in most of the features like creating notes, courses, and so on.
+- He is actively using the app, he already has some courses, learners, and reputation from them. 
+
+
+#### Scenario
+1) To begin, he opens the application's website.
+3) The website navigates him to the home page after the launch.
+4) Then he clicks the "Add Course" button.
+5) He then is navigated to the "Course Creation Page".
+6) He fills the course information, including the name, description, requirements, and other elements.
+7) Finally, he creates the course.
+
+#### Acceptance Criteria
+* **Login**
+    * 1.1.1.2.1. Users shall provide their username and passwords to be able to login if they logged out or they are kicked out due to long inactivity.
+
+* **Lecture Creation**
+    * 1.1.3.2.1.1. Lectures shall be given a unique title during creation.
+    * 1.1.3.2.1.2. Lecturer shall state the lectures topic in a specified field for sake of categorization.
+
+* **Lecture Structure**
+    * 1.1.4.1. Lectures shall deliver lecture material in text, images, and embedded videos.
+    * 1.1.4.2. Lectures shall have an Introduction where the lecturer presents the lecture in a text.
+
+* **Lecture Privacy**
+    * 1.1.3.2.2.3. Lecturer should be able to set a part of the lecture as hidden to be able to edit in different times.
+
+#### Mock-up
+1. He has already created an account and logged in.<br/>
+2. In the home page, he clicks 'Add Course' link.<br/>
+![l1-click](https://user-images.githubusercontent.com/36857236/161304264-a3533bd9-7a57-4f70-b2f1-52cfaba81522.PNG)<br/>
+3. After seeing the initial 'Course Creating Page'...<br/>
+![l2](https://user-images.githubusercontent.com/36857236/159791942-a471b9bd-648c-472b-92db-59eb26a40231.PNG)<br/>
+3.(continued) ...he fills the page with desired information.<br/>
+![l3-click](https://user-images.githubusercontent.com/36857236/161304320-26da0e4c-9075-499a-95ad-6db1e1728fb7.png)<br/>
+4. After filling the page, he clicks on 'Create Course!' button. After the click, webpage feedbacks Hasan that the course creation process is successful via a pop-up.<br/>
+![l4](https://user-images.githubusercontent.com/36857236/159792646-0454b789-0ba3-466d-a85e-a177ae2ffa40.png)
+
+### Unregistered Learner Scenario, Ai Zheng
+
+#### Persona
+<img align="left" src="https://media.istockphoto.com/id/1344252956/tr/foto%C4%9Fraf/modern-young-woman-of-asian-ethnicity-e-learning-via-laptop-at-the-modern-and-cozy.jpg?s=612x612&w=0&k=20&c=SuExMG33lSq4nEuYjJeDT2rMaH6s9KzhMARiK5kltB4=" width="280" > 
+
+<pre>
+- Ai Zheng
+- 17 years old, female, lives in Hong Kong
+-Personality:
+    *Cheerful
+    *Curious
+    *Artistic
+    *Extroverted
+-High school student
+-Interested in video game art, especially 3D modelling.
+</pre>
+
+#### User Story
+Ai is a highschool student who has been going to golfing with her parents and admired how her parents golf. Her admiration became her inspiration and she got into golfing recently. While looking for sources to learn to drive a golf cart, she heard that Cosmo Kramer, one of actor worked in one of her favourite TV-series "Seinfeld". Interested in Kramer's lectures, Ai signs in to our application to check out Kramer's lecturer profile. While signing in, she decides to keep her profile private because she wants to avoid attention and she thinks a new learners profile won't help to anyone. After signing in, she searches Kramer's lectures and his profile. and sees that overall learner satisfaction from Kramer's courses are particularly high when it comes to the terms of golfing! Thus, she goes on to one of Kramer's lectures on driving a golf cart. After seeing interaction between learners, thinking about having fellow learners to talk about ideas and encouraging each other like people do in lecture's community, she enrolls. The first section after introduction is "An Electric Golf Cart: What Is It and Who’s It For?" where Kramer talks about the basics of an electric golf cart. Ai annotates some history about golf carts as an additional information for learners. At the end of first lecture, Kramer has set a quiz type poll to check learner's familiarity with the storage of golf carts. Ai completes the poll and she was successful enough to earn the lecture's first badge.
+
+#### Goals
+- Since she is not registered to the app yet, firstly she wants to create an account for herself.
+- She wants to look at lecturer profiles and view overall learner satisfaction from those lecturers' courses and take lectures about topics she is interested in from lecturers she choose.
+- Then, she intends to earn these lectures' achievements, earn badges after completing necessary tasks or quizzes and more importantly, learn from them.
+- While learning the lectures, she wants to create notes related to the learning material. Thus, she wants to connect, annotate, tag and share these notes.
+- This user cares about privacy, so she wants to be able to choose who can see her profile page, achievements, badges. Furthermore, she wants to be able to block other users if she wishes.
+
+
+#### Pre-Conditions
+- She does not have an account for the app, so she has not logged in to the app yet.
+- She tries to create her account, so that the initial screen she saw is the "Create A New Account" page.
+- After creating the account, she sees the page where she chooses the interests before navigating to the home screen.
+- She has experience in most of the features of the app like creating notes, taking lectures, earning badges, blocking other users.
+
+
+#### Scenario
+1. Initially, she opens the website.
+2. In the homepage, she clicks "Sign Up" button to create a new account.
+3. She fills the required information, makes her profile private and reads and accepts the privacy policy.
+4. The system sends a verification email to the given email address. 
+5. She verifies her email address and logins into her account.
+6. At the first login, she have to select one or more topic that she interests. System directs her to the home page.
+7. At the home page, she clicks the search button and types a lecturer name.
+8. She reads the learner feedbacks about the courses from the lecturer profile.
+9. She chooses and enrolls one of the courses which she is looking for.
+10. She accesses this course under the "Enrolled Courses" page.
+11. She starts to learn the topic from the course contents.
+12. During the learning progress, she takes notes and annotates them. 
+13. At the end of the first part of the course, she takes a quiz.
+14. She earns one badge from the lecturer because she finished the first part of the course.
+15. To see this badge, she clicks the "Profile" button.
+16. Finally, she can see her first badge here.
+
+#### Acceptance Criteria
+* **Signup**
+     * 1.1.1.1.1. Guests shall enter their username, email address and strong passwords to be able to signup. These are the required information that users have to provide to enter the app.
+     * 1.1.1.1.2. Guests shall check the checkbox which indicates the agreement text of the privacy policy and terms&conditions to be able to signup. It is a required action.
+
+* **Email Verification**
+     * 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.
+
+* **Searching and Browsing**
+     * 1.2.3.2 The system shall allow users to search for other users.
+          * 1.2.3.2.1 The system shall allow searching for users by their username.
+          * 1.2.3.2.2 The system should suggest users based on full name when search query gives no result for usernames.
+
+* **Recommendation**
+     * 1.1.2.13.2.1. Users shall be able to see the feedback they have received for the courses they provide teaching material in the recommendations section.
+     * 1.1.2.13.2.2. Users shall be able to view comment and star rating for each feedback, alongside the commentator’s name and first letter of their surname, a basic profile picture with their initials, and the name of the course.
+
+* **Taking Lectures**
+     * 1.1.3.2.3.1. Users shall see the content within sections as lecturer intended.
+     * 1.1.3.2.3.2. Users shall navigate in lecture material.
+     * 1.1.3.2.3.3. Users shall see which parts of the lecture they completed.
+     * 1.1.3.2.3.5. Users shall receive confirmation of their expertise on the topic upon completion of a lecture.
+     * 1.1.3.2.4.4. Users shall annotate lecture content by matching lecture content to notes.
+
+* **Notes and Annotation**
+     * 1.1.3.2.4.1. Each user shall have his/her notes section under each lecture.
+     * 1.1.3.2.4.2. User shall create and edit notes under notes section via typing.
+
+* **Achievements**
+     * 1.1.2.11.1. Users shall view the achievements they earned from the courses they have studied in the achievements section of their profile pages
+
+#### Mockup  
+1. She has already downloaded the app. Initially, she launches the app.
+2. In the homepage, she clicks "Sign Up" button to create a new account.
+<img width="793" alt="1" src="https://user-images.githubusercontent.com/68481602/159768813-a49e87ca-35cd-410e-a597-aebc94194fd2.png">
+
+3. She fills the required information, makes her profile private and reads and accepts the privacy policy.
+<img width="818" alt="2" src="https://user-images.githubusercontent.com/68481602/159774261-31a6bd1e-4483-4b9f-b03e-2459e9ea924e.png">
+<img width="818" alt="3" src="https://user-images.githubusercontent.com/68481602/159774287-0f3f0bee-8c75-430a-ab5d-e965f6a16dbb.png">
+
+4. The system sends a verification email to the given email address. 
+<img width="943" alt="4" src="https://user-images.githubusercontent.com/68481602/159769711-04f478ac-a54c-415f-ab8c-d74148b689b8.png">
+
+5. She verifies her email address and logins into her account.
+6. At the first login, she have to select one or more topic that she interests. System directs her to the home page.
+<img width="947" alt="5" src="https://user-images.githubusercontent.com/68481602/159769777-f25d28c5-e3aa-47e2-98f1-2462e4f6ce84.png">
+
+7. At the home page, she clicks the search button and types a lecturer name.
+<img width="943" alt="6" src="https://user-images.githubusercontent.com/68481602/159769825-c6c5bff8-2d31-4915-a4be-d8a341766aaa.png">
+<img width="944" alt="7" src="https://user-images.githubusercontent.com/68481602/159769856-cbf1f0d0-b422-4c5b-b03d-637c3b2b0474.png">
+
+8. She reads the learner feedbacks about the courses the lecturer profile.
+9. She chooses and enrolls one of the courses which she is looking for.
+<img width="943" alt="8" src="https://user-images.githubusercontent.com/68481602/159769997-6ba3d001-e643-41f4-866a-514a10b30ce1.png">
+
+10. She accesses this course under the "Enrolled Courses" page.
+<img width="945" alt="9" src="https://user-images.githubusercontent.com/68481602/159770073-3d14d6f8-9b31-47fc-9b58-b689402004fd.png">
+
+11. She starts to learn the topic from the course contents.
+<img width="944" alt="10" src="https://user-images.githubusercontent.com/68481602/159770134-d3b455ca-2807-4e12-81a3-9da0e37ebf1a.png">
+
+12. During the learning progress, she takes notes and annotates them. 
+<img width="955" alt="11" src="https://user-images.githubusercontent.com/68481602/159770159-f8fd4c7a-d05e-4520-9cec-7b7dccc533c0.png">
+
+13. At the end of the first part of the course, she takes a quiz.
+<img width="944" alt="12" src="https://user-images.githubusercontent.com/68481602/159770203-c12cbdc6-9510-48fd-8e92-cafdaf8ff88e.png">
+
+14. She earns one badge from the lecturer because she finished the first part of the course.
+<img width="944" alt="13" src="https://user-images.githubusercontent.com/68481602/159770269-c936d987-df7d-4a1b-a261-9eff4bdaea38.png">
+
+15. To see this badge, she clicks the "Profile" button.
+<img width="940" alt="14" src="https://user-images.githubusercontent.com/68481602/159770298-edc6a8ed-74df-4fb9-ae77-387bef2f7cf4.png">
+
+16. Finally, she can see her first badge here.
+<img width="948" alt="15" src="https://user-images.githubusercontent.com/68481602/159770321-d213a1b5-d4ad-444d-9638-910dd628bdb7.png">
+
+### Lecturer Creates Community Event Scenario, Ezgi Ece Smith
+
+#### Persona
+<img align="left" src="https://user-images.githubusercontent.com/56553280/159314799-6888ca70-3b33-4fc4-9165-79757e793ec9.jpg" width="200" > 
+
+<pre>
+- Ezgi Ece Smith
+- 46 years old, female, lives in Hisarüstü, İstanbul
+- Personality
+    * Impatient
+    * Strict
+    * Sarcastic
+    * Friendly
+- Works at AI Robotics Lab in Bogazici University.
+- Loves teaching so much want to do it even in her free time.
+</pre>
+
+  
+
+#### User Story
+Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She has graduated from ODTÜ and got her PhD from Harvard University on Artificial Intelligence. She loves teaching and interacting with students, and was very sad when she couldn't meet her students face to face due to the pandemic.  In her free time, she likes bird watching and taking long hikes. She likes to test out different methods to reach more students and teach more efficiently. She tried our app for this purpose and loved it so much started exploring different features. She shares lots of notes and sources with her students. 
+
+
+#### Goals
+- She wants to get to know her students better.
+- She thinks she can accomplish this by hosting a meeting event.
+- She wants to make sure the details for the meeting are shared by all students so that no one misses out.
+- She would like to answer her students' questions instantly.
+
+#### Pre-Conditions
+- She is signed up for the platform.  
+- She has created a course and the course has students enrolled.  
+- She has opened the website and logged in to her profile. 
+- She has accessed the course page for the course she is giving.
+
+
+#### Scenario
+1) She has already launched the website and has navigated to the course page.
+2) She clicks the chat button to view the chat for the course.
+3) She clicks the "Create Community Event" button.
+4) Application launches a dialog that asks for location, date, duration and participant limit.
+5) She fills in the fields with the relevant information and clicks "Create Event".
+6) The event is created and displayed on the course info page.
+
+
+#### Acceptance Criteria  
+* 1.1.1.2. Login  
+    * 1.1.1.2.1. Users shall provide their username and passwords to be able to login if they logged out or they are kicked out due to long inactivity.  
+* 1.1.3.2.5. Community Events  
+    * 1.1.3.2.5.1. Users who are qualified as lecturers shall create community events.
+
+    * 1.1.3.2.5.2. Created events shall include currently enrolled learners.
+
+    * 1.1.3.2.5.4. Events have a specific date, duration, and limit for the number of participants.
+
+    * 1.1.3.2.5.7. These events will be visible on the course info page along with the date, duration, and the number of participants.
+
+    * 1.1.3.2.5.9. The number of students who will join the event will be visible to both lecturers and students. 
+
+
+#### Mockup  
+1) She has already launched the website and has navigated to the course page.
+![ComEvent1](https://user-images.githubusercontent.com/74256913/161118819-4ca087d4-0944-4034-ab69-9536952d0474.png) 
+
+2) She clicks the chat button to view the chat for the course.
+![ComEvent2](https://user-images.githubusercontent.com/74256913/161118827-75b1bb82-f81d-444a-a078-f1bc57943b5b.png)
+
+3) She clicks the "Create Community Event" button.
+4) Application launches a dialog that asks for location, date, duration and participant limit.
+![ComEven3](https://user-images.githubusercontent.com/74256913/161118832-69cf2b52-6be4-43d0-8d1c-dcb5a65f017a.png)
+
+5) She fills in the fields with the relevant information and clicks "Create Event".
+![ComEven4](https://user-images.githubusercontent.com/74256913/161118836-71a9abd4-b96b-4c72-aa3f-7cf1abe4e687.png)
+
+6) The event is created and displayed on the course info page.
+![ComEvent5](https://user-images.githubusercontent.com/74256913/161118842-0c27412c-38e9-4835-be29-a7a9f522f7fc.png)
+![ComEvent6](https://user-images.githubusercontent.com/74256913/161118844-b900053d-abb1-47b9-ac29-831677bf1fe8.png)
+
 ***
 
 ## Project Plan
