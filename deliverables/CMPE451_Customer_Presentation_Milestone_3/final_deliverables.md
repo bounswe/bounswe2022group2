@@ -631,20 +631,65 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Implementation of Profile Page General Issue| [#771](https://github.com/bounswe/bounswe2022group2/issues/771)|12 hours|
+  |Frontend: Implementation of Profile Page Initial Layout|[#778](https://github.com/bounswe/bounswe2022group2/issues/778)|2.5 hours|
+  |Frontend: Implementation of Contact Page|[#822](https://github.com/bounswe/bounswe2022group2/issues/822)|5 hours|
+  |Frontend: Implementation of Profile Page User Name Component|[#836](https://github.com/bounswe/bounswe2022group2/issues/836)|2 hours|
+  |Frontend: Implementation of Participated LS Component and Backend Connection|[#851](https://github.com/bounswe/bounswe2022group2/issues/851)|4 hours|
+  |Frontend: Profile Page Design, Renamings and Component Refinements |[#856](https://github.com/bounswe/bounswe2022group2/issues/856)|1.5 hours|
+  |Frontend: Profile Page Edit Functionality|[#877](https://github.com/bounswe/bounswe2022group2/issues/877)|2 hours|
+  |Frontend: Contact Page Unit Tests|[#893](https://github.com/bounswe/bounswe2022group2/issues/893)|1 hour|
+  |Frontend: Participated LS's Component Unit Tests|[#898](https://github.com/bounswe/bounswe2022group2/issues/898)|1 hour|
+  |Frontend: UI/UX section for final milestone|[#975](https://github.com/bounswe/bounswe2022group2/issues/975)|1 hour|
+  |Final Milestone: Individual Contributions Report of Koray Tekin|[#981](https://github.com/bounswe/bounswe2022group2/issues/981)|3 hours|
+  |--------------|-------------|--------------|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Implementation of Static Navigation Bar| [#533](https://github.com/bounswe/bounswe2022group2/issues/533)|10 hours|
+  |Frontend: Implementation of Learning Space page layout and initial components|[#541](https://github.com/bounswe/bounswe2022group2/issues/541)|10 hours|
+  |Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space|[#624](https://github.com/bounswe/bounswe2022group2/issues/624)|2 hours|
+  |Frontend: Implementation of participants component of LS and providing the back-end connection|[#648](https://github.com/bounswe/bounswe2022group2/issues/648)|2 hours|
+  |Frontend: Unit Tests for Footer Component|[#686](https://github.com/bounswe/bounswe2022group2/issues/686)|1 hour|
+  |Frontend: Reserach on initializing the Annotation Implementation|[#526](https://github.com/bounswe/bounswe2022group2/issues/526)|2 hours|
+  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)|2 hours|
+  |--------------|-------------|--------------|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Implementation of LoginForm #390|[Issue](https://github.com/bounswe/bounswe2022group2/issues/390)| - |
+  |Frontend: Adding Form Validation and Back-end connection for LoginForm #441|[Issue](https://github.com/bounswe/bounswe2022group2/issues/441)| - |
+  |Frontend: Unit Tests Implementation for LoginForm #460|[Issue](https://github.com/bounswe/bounswe2022group2/issues/466)| - |
+  |Adding my personal wiki page #312|[Issue](https://github.com/bounswe/bounswe2022group2/issues/312)| - |
+  |Discovery and on-boarding for new members #320|[Issue](https://github.com/bounswe/bounswe2022group2/issues/320)| - |
+  |Revising the Requirements and the Diagrams related to conversion of chat/forum #344|[Issue](https://github.com/bounswe/bounswe2022group2/issues/344)| - |
+  |Documentation of meeting notes of first meeting(front-end team) #388|[Issue](https://github.com/bounswe/bounswe2022group2/issues/388)| - |
+  |Research & Report for Frontend Technologies (Frontend Team) #327|[Issue](https://github.com/bounswe/bounswe2022group2/issues/327)| - |
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
+  |Frontend: Dev frontend profile page initial layout| [#789](https://github.com/bounswe/bounswe2022group2/pull/789)|2.5 hours|
+  |Frontend: Dev frontend contact page| [#832](https://github.com/bounswe/bounswe2022group2/pull/832)|5 hours|
+  |Frontend: Dev frontend user name component| [#838](https://github.com/bounswe/bounswe2022group2/pull/838)|2 hours|
+  |Frontend: Dev frontend profile page ls component| [#854](https://github.com/bounswe/bounswe2022group2/pull/854)|4 hours|
+  |Frontend: Dev frontend update profile| [#857](https://github.com/bounswe/bounswe2022group2/pull/857)|1.5 hours|
+  |Frontend: Dev frontend profile page general development| [#861](https://github.com/bounswe/bounswe2022group2/pull/861)|12 hours|
+  |Frontend: Dev frontend profile page edit| [#879](https://github.com/bounswe/bounswe2022group2/pull/879)|2 hours|
+  |Frontend: Dev frontend contact page unit test| [#896](https://github.com/bounswe/bounswe2022group2/pull/896)|1 hour|
+  |Frontend: Dev frontend participated ls profile component unit tests| [#899](https://github.com/bounswe/bounswe2022group2/pull/899)|1 hour|
+  |Frontend: Merge of Frontend Development to general Development| [#927](https://github.com/bounswe/bounswe2022group2/pull/927)|1 hour|
+  |Frontend: UI/UX additions final milestone| [#979](https://github.com/bounswe/bounswe2022group2/pull/979)|1 hour|
   |--------------|--------------|--------------|
   |**Milestone 2**|-|-|
+  |Frontend: Implementation of Static Navigation Bar| [#534](https://github.com/bounswe/bounswe2022group2/pull/534)|10 hours|
+  |Frontend: Implementation of Learning Space initial Components/Layout|[#591](https://github.com/bounswe/bounswe2022group2/pull/591)|10 hours|
+  |Frontend: Learning Spaces providing back-end connection|[#626](https://github.com/bounswe/bounswe2022group2/pull/626)|2 hours|
+  |Frontend: HOTFIX Router Modularization|[#628](https://github.com/bounswe/bounswe2022group2/pull/628)|half an hour|
+  |Frontend: Participants component implementation for LS pages|[#654](https://github.com/bounswe/bounswe2022group2/pull/654)|2 hours|
+  |Frontend: Unit Tests for Static Footer Component|[#689](https://github.com/bounswe/bounswe2022group2/pull/689)|1 hour|
   |--------------|--------------|--------------|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: LoginForm Implementation|[#399](https://github.com/bounswe/bounswe2022group2/pull/399)| - |
+  |Frontend: LoginForm Validation and Back-end Connection|[#446](https://github.com/bounswe/bounswe2022group2/pull/446)| - |
+  |Frontend: Implementation of Unit tests for LoginForm|[#467](https://github.com/bounswe/bounswe2022group2/pull/467)| - |
+  
   
 * **Bahrican Yeşil:**
   |Issue Title|Link|Time Consumption|
@@ -3926,147 +3971,211 @@ Name: Koray Tekin
 Group: Group2 - Frontend Team
 
 ## *Responsibilities:*
-
-**Final Milestone-3**
-
-  1. 
-  2. 
+ 
+ **Final Milestone-3**
+ 
+  1. Searching for and using new methods throughout web-application development process.
+  2. Organizing the general layout and initializing the frame of the Profile Page.
+  3. Deciding on the components that are required in the Profile Page.
+  4. Providing component logics for our web application.
+  5. User Information component design and back-end connection on the Profile Page.
+  6. Participating Learning Spaces component design and back-end connection on the Profile Page. 
+  7. Deciding on the design and the related fields of Contact Page.
+  8. Implementation of design and functionality for the Contact Page. 
+  9. Deternining the general chronology for the implementation of the Profile Page and organizing parent-issue/sub-issue structure. 
+  10. Reviewing the works done by the frontend team.
+  11. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly (hot-fixes).
+  12. Implementing the Unit tests for the Contact Page and the Components on the Profile Page.
+  13. Deciding on the logic of the first person/ third person view differenes of the profile page and editting the functionalities accordingly.
+  14. Attending and participating general meetings regularly.
+  15. Attending and participating frontend team meetings regularly.
+  
+ 
 
 --------------------
 
 **Milestone-2**
 
-  1. 
-  2. 
-
+  1. Searching for and using new methods throughout web-application development process
+  2. Building the main layout for the Learning Space pages.
+  3. Providing the initial back-end connection for the Learning Space pages.
+  4. Providing component logic for our web application.
+  5. Implementing the Static Navigation Bar component.
+  6. Utilizing the components in the Learning Space page(modularization of the components via related end-points).
+  7. Implementing unit tests for the Static Footer component.
+  8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  9. Reviewing the works done by the frontend team.
+  10. Creating search issues for the easier implementation of our projects functionalities.
+  11. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  12. Attending and participating general meetings regularly.
+  13. Attending and participating frontend team meetings regularly.
+ 
 
 --------------------
 
 **Milestone-1**
+ 
+  1. Requirements and Diagrams revision and replacement of chat with forum.
+  2. Updating the group issue template.
+  3. Creating personal wiki page as a new member.
+  4. Implementing the functionality for the LoginForm for the web application.
+  6. Doing research on technologies needed to use on front-end development(mainly react).
+  7. Documenting front-end meeting notes.
+  8. Reviewing related issues and mentioned PR's of front-end team members'.
+  9. Providing methods for establishing back-end connection.
+  10. Setting up the LoginForm's back-end connection.
+  11. Adding Form Validation for LoginForm.
+  12. Implementing navigation items from LoginForm(namely via forgot password redirector and login button).
+  13. Implementing the Unit Tests related to the LoginForm.
 
-  1. 
-  2. 
+
 
 ## *Main Contributions:*
-
-
-**Final Milestone-3**
-
-
+ 
+ **Final Milestone-3**
+ 
+   I am one of the members of the front-end team. Since our application kept growing according to our pre-defined requirements as any side of our project, Frontend was also responsible with new designs and implementations. As a member who joins all of the group and team meetings I had possibility to share my ideas on those new requirements in terms of design, logic and integrability. After the second milestone, our web application was in need for a profile page. I was the assignee for most of this necessity, I started with creating a general issue that was used throughout the page implementation and also during the back-end connection of this page. Mainly I have created and implemented the general layout detecting the necessary components. Then I have continued with several components on this page, providing the design, back-end connection and the functionality logic. 
+ 
+  Also there was a need of Contact Page for our web application in order to maintain the optimal co-learning process and I began with searching for the possible options for this page. Then I have generated the design and continued with implementation. Last of all to inform the users accordingly for the purpose of this page I have created information boxes that would fit the general layout and the general theme. 
+ 
+   During all of these designs and implementations I gave priority and high attention to feed-back from the front-end team members and reshaped some of the designs over and over again. Also throughout the implementation process of both the pages that I was included in the implementation and also for the ones that I wasn't, I tried my best to contribute for the ideas of functionalities and logic underneath them.
 
 --------------------
 
 **Milestone-2**
 
-
+   I am one of the members of the front-end team of our application Learnify, as a team of 4 we are implementing the web-application side. Throughout this development process we try not to diverge from the path that we follow for; deciding on "What is next?", sharig the tasks equally among our team members, keeping in touch with the team during the implementation, conducting research when needed, reviewing and commenting on each others work regularly and, finally making sure that our application functions as expected. I have taken responsibiity for all of these development steps time to time. Regularly participated to weekly meetings of our team and shared my point of view for the further developments that can be conducted for our web-application, at the same time those meetings are the time that we share each weeks tasks, so I have shared my mind about load balancing each week and took significant tasks that have effected the development of our application. 
+ 
+   While keeping in touch with the other team members both for the design and functionality ideas, first of all I have implemented the "Static Navigation Bar" components layout and the functionalty, implemented the layout and several of the components for the Learning Space pages which is one of the main pages of our web-application(where learning and sharing takes place.), contributed to our codebase with several hot-fixes related to the REST API utilization and router modularization. And as I have mentioned above, testing the work we have come up with was one of the important points, as we have done always in our front-end team; we have shared the designs and functionalities that were added and implemented the unit tests for those, my responsibility was to test the Footer component and I did so. 
+ 
+   Our team was also aware of the importance of conducting research together and share our findings with each other, I have created a research team issue for finding out the annotation technologies and libraries that our team can benefit from and shared my own findings via examples and hyperlinks with my team.
 
 --------------------
 
 **Milestone-1**
 
-  
+   As one of the new members of the team the first subject I gave priority was to catch up with the requirements specification and the diagrams that my team has prepared in the last term. In order to manage that, I have been assigned several discovery tasks, and I also took responsibility in terms of contributing to the revision of both the requirements and the diagrams. I was the assignee for the replacement of the chat feature with the forum feature specific to lectures. 
+ 
+   After a fast on-boarding our team was divided into sub-groups and I took part in the front-end team, had responsibility in research tasks such as "discovering the features of react applications", "how to initialize a react project", "implementation of unit tests in react projects", etc. Then in order to proceed faster the initial pages have been shared among the front-end team members, and accordingly I have created the design, structure items, and functional elements such as buttons and redirectors for the LoginForm. Then I have implemented the back-end connection of the LoginForm, and finally the unit tests also for LoginForm. For both of these tasks I had to do discovery research since I had no experience at this side of the coin, I mean the front-end.
+ 
+ --------------------
+
+
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
-
+ 
+ 
 **Final Milestone-3**
 
-  1. 
-  2. 
+  1. [Frontend: Implementation of Profile Page General Issue](https://github.com/bounswe/bounswe2022group2/issues/771)
+  2. [Frontend: Implementation of Profile Page Initial Layout](https://github.com/bounswe/bounswe2022group2/issues/778)
+  3. [Frontend: Implementation of Contact Page](https://github.com/bounswe/bounswe2022group2/issues/822)
+  4. [Frontend: Implementation of Profile Page User Name Component](https://github.com/bounswe/bounswe2022group2/issues/836)
+  5. [Frontend: Implementation of Participated LS Component and Backend Connection](https://github.com/bounswe/bounswe2022group2/issues/851)
+  6. [Frontend: Profile Page Design, Renamings and Component Refinements ](https://github.com/bounswe/bounswe2022group2/issues/856)
+  7. [Frontend: Profile Page Edit Functionality](https://github.com/bounswe/bounswe2022group2/issues/877)
+  8. [Frontend: Contact Page Unit Tests](https://github.com/bounswe/bounswe2022group2/issues/893)
+  6. [Frontend: Participated LS's Component Unit Tests](https://github.com/bounswe/bounswe2022group2/issues/898)
 
+ 
 --------------------
 
 **Milestone-2**
-
-  1. 
-  2. 
+ 
+  1. [Frontend: Implementation of Static Navigation Bar](https://github.com/bounswe/bounswe2022group2/issues/533)
+  2. [Frontend: Implementation of Learning Space page layout and initial components](https://github.com/bounswe/bounswe2022group2/issues/541)
+  3. [Frontend: Implementation of back-end connection and dynamic modularization of the Learning Space](https://github.com/bounswe/bounswe2022group2/issues/624)
+  4. [Frontend: Implementation of participants component of LS and providing the back-end connection](https://github.com/bounswe/bounswe2022group2/issues/648)
+  5. [Frontend: Unit Tests for Footer Component](https://github.com/bounswe/bounswe2022group2/issues/686)
 
 --------------------
 
 **Milestone-1**
 
-  1. 
-  2. 
+  1. [Frontend: Implementation of LoginForm](https://github.com/bounswe/bounswe2022group2/issues/390)
+  2. [Frontend: Adding Form Validation and Back-end connection for LoginForm](https://github.com/bounswe/bounswe2022group2/issues/441)
+  3. [Frontend: Unit Tests Implementation for LoginForm](https://github.com/bounswe/bounswe2022group2/issues/466)
+ 
+ --------------------
+
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+ 
+ **Final Milestone-3**
 
-**Final Milestone-3**
+  1. [Frontend: UI/UX section for final milestone](https://github.com/bounswe/bounswe2022group2/issues/975)
+  2. [Final Milestone: Individual Contributions Report of Koray Tekin](https://github.com/bounswe/bounswe2022group2/issues/981)
 
-  1. 
-  2. 
 
 --------------------
 
 **Milestone-2**
 
-  1. 
-  2. 
+  1. [Frontend: Reserach on initializing the Annotation Implementation](https://github.com/bounswe/bounswe2022group2/issues/526)
+  2. [Requirements Revision](https://github.com/bounswe/bounswe2022group2/issues/678)
 
 --------------------
 
 **Milestone-1**
+ 
+  1. [Adding my personal wiki page](https://github.com/bounswe/bounswe2022group2/issues/312)
+  2. [Discovery and on-boarding for new members](https://github.com/bounswe/bounswe2022group2/issues/320)
+  3. [Revising the Requirements and the Diagrams related to conversion of chat/forum](https://github.com/bounswe/bounswe2022group2/issues/344)
+  4. [Documentation of meeting notes of first meeting(front-end team)](https://github.com/bounswe/bounswe2022group2/issues/388)
+  5. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+ 
 
-  1. 
-  2. 
+
 
 ## *Pull Requests:*
+ 
+ **Final Milestone-3**
+1. Frontend: Dev frontend profile page initial layout [#789](https://github.com/bounswe/bounswe2022group2/pull/789)
+2. Frontend: Dev frontend contact page [#832](https://github.com/bounswe/bounswe2022group2/pull/832)
+3. Frontend: Dev frontend user name component [#838](https://github.com/bounswe/bounswe2022group2/pull/838)
+4. Frontend: Dev frontend profile page ls component [#854](https://github.com/bounswe/bounswe2022group2/pull/854)
+5. Frontend: Dev frontend update profile [#857](https://github.com/bounswe/bounswe2022group2/pull/857)
+6. Frontend: Dev frontend profile page general development [#861](https://github.com/bounswe/bounswe2022group2/pull/861)
+7. Frontend: Dev frontend profile page edit [#879](https://github.com/bounswe/bounswe2022group2/pull/879)
+8. Frontend: Dev frontend contact page unit test [#896](https://github.com/bounswe/bounswe2022group2/pull/896)
+9. Frontend: Dev frontend participated ls profile component unit tests [#899](https://github.com/bounswe/bounswe2022group2/pull/899)
+10. Frontend: Merge of Frontend Dvelopment to general Development [#927](https://github.com/bounswe/bounswe2022group2/pull/927)
+11. Frontend: UI/UX additions final milestone [#979](https://github.com/bounswe/bounswe2022group2/pull/979)
 
-**Final Milestone-3**
-
-  1. 
-  2. 
 
 --------------------
 
 **Milestone-2**
 
-  1. 
-  2. 
+1. Frontend: Implementation of Static Navigation Bar [#534](https://github.com/bounswe/bounswe2022group2/pull/534)
+2. Frontend: Implementation of Learning Space initial Components/Layout [#591](https://github.com/bounswe/bounswe2022group2/pull/591)
+3. Frontend: Learning Spaces providing back-end connection [#626](https://github.com/bounswe/bounswe2022group2/pull/626)
+4. Frontend: HOTFIX Router Modularization [#628](https://github.com/bounswe/bounswe2022group2/pull/628)
+5. Frontend: Participants component implementation for LS pages [#654](https://github.com/bounswe/bounswe2022group2/pull/654)
+6. Frontend: Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
 
 --------------------
 
 **Milestone-1**
 
-  1. 
-  2. 
-
+1. Frontend: LoginForm Implementation [#399](https://github.com/bounswe/bounswe2022group2/pull/399)
+2. Frontend: LoginForm Validation and Back-end Connection [#446](https://github.com/bounswe/bounswe2022group2/pull/446)
+3. Frontend: Implementation of Unit tests for LoginForm [#467](https://github.com/bounswe/bounswe2022group2/pull/467)
+ 
+ --------------------
+ 
 ## *Unit Tests:*
+ 1. Unit Tests for Static Footer Component [#689](https://github.com/bounswe/bounswe2022group2/pull/689)
+ 2. Unit Tests for Login Page [#467](https://github.com/bounswe/bounswe2022group2/pull/467)
+ 3. Unit Tests for Participated LS's Component [#899](https://github.com/bounswe/bounswe2022group2/pull/899)
+ 4. Unit Tests for Contact Page [#896](https://github.com/bounswe/bounswe2022group2/pull/896)
 
-**Final Milestone-3**
-
-  1. 
-  2. 
-
---------------------
-
-**Milestone-2**
-
-  1. 
-  2. 
-
---------------------
-
-**Milestone-1**
-
-  1. 
-  2. 
-
-## *Additional Information:*  
-
-**Final Milestone-3**
-
-
---------------------
-
-**Milestone-2**
-
-
---------------------
-
-**Milestone-1**
-
-
+## *Additional Information:* 
+ 
+  Since the beginning of this term, I didn't miss any lecture/lab hours and participated in all of the team/sub-group meetings actively.
+ 
 --------------------
 
 ## *Member:*  
