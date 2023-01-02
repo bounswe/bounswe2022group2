@@ -830,7 +830,7 @@ Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022grou
 ##### Create Event Screen
 
 Responsible: Egemen Atik
-Link: [Code in the Repository]](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/create_event_screen.dart)
+Link: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/create_event_screen.dart)
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/210250733-90440a54-8e5f-4400-bf62-287d9ccf2054.jpeg">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_2" src="https://user-images.githubusercontent.com/56553280/210250741-d3ec6c45-62fb-41ef-8c75-5231848c6fd5.jpeg">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_3" src="https://user-images.githubusercontent.com/56553280/210250743-dc802378-9f64-41d2-81fc-b2d030ca6c53.jpeg">
 
@@ -876,6 +876,15 @@ Responsible: Ezgi Aysel Batı
 Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
 
 <img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206688618-b5d1c078-8d1b-4433-bf92-d5171ad53e28.jpg">&nbsp;&nbsp;&nbsp;<img width="300" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">
+
+#### Settings Screen
+Responsible: Bahrican Yesil
+
+Link: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/tree/milestone3-ui-mobile/learnify/mobile/lib/features/settings)
+
+
+<img width="374" alt="settings" src="https://user-images.githubusercontent.com/56553280/210254402-ab3bba1c-135b-4ce1-847a-1c53533c1a27.jpeg">
+
 
 ***
 
