@@ -1659,6 +1659,111 @@ This screen is only available on our mobile application. Users can reach this sc
 
 ### System Manual
 
+The system manual is also available on our wiki [here](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual).
+
+#### Running Docker Compose Instructions
+
+##### Backend
+
+##### 1. Clone the project  
+```    
+git clone https://github.com/bounswe/bounswe2022group2.git 
+```
+
+##### 2. Navigate to the project  
+```
+    cd bounswe2022group2/learnify/
+```
+
+##### 3. Create a .env file
+Your .env file shall include:
+
+JWT_KEY: key to be used for jwt tokens generation.
+MAIL: mailaddress the API uses, currently only gmail is supported.
+MAIL_PASS: application password of MAIL, please refer to : https://support.google.com/mail/answer/185833?hl=en
+
+You can contact us for getting MAIL and MAIL_PASS used for our Milestone 1 presentation.
+
+#### Semantic server
+
+You should add API key used for semantic analysis API, please contact us for the required .env file.
+
+##### Frontend
+
+No environment files are required.
+
+### 1. Clone the project  
+```    
+git clone https://github.com/bounswe/bounswe2022group2.git 
+```
+
+##### 2. Navigate to the project  
+```
+    cd bounswe2022group2/learnify/
+```
+
+##### Getting the server up
+
+`docker compose up` command will get our frontend and backend clients up and running on your local.
+
+
+### Mobile
+
+#### Installing with a Pre-made APK
+1. Click the shared APK link on the device of your choice.
+2. Download the file to your device.
+3. Once the download is complete, click open file. The device will navigate you to installation.
+4. If you get a "potentially harmful" warning, kindly ignore. We promise we are not hackers :)
+5. Complete installation and the app will be installed just like all other apps.
+
+#### Requirements for Creating APK
+
+- Latest Stable version of Flutter
+- Android Studio
+- Android Device OR Android Emulator
+
+#### Creating APK
+##### 0. Check Requirements
+Run 
+```    flutter doctor ``` to ensure requirements are installed without a problem.
+
+##### 1. Clone the project  
+```    
+git clone https://github.com/bounswe/bounswe2022group2.git
+ ```
+
+##### 2. Navigate to the project  
+```
+    cd bounswe2022group2/learnify/mobile 
+```
+
+##### 3. Create APK
+```
+   flutter build apk –-split-per-abi
+```
+This command creates 3 APK files in the repository:
+> /build/app/outputs/apk/release/app-armeabi-v7a-release.apk  
+> /build/app/outputs/apk/release/app-arm64-v8a-release.apk  
+> /build/app/outputs/apk/release/app-x86_64-release.apk    
+
+Running the command without `–-split-per-abi` command results in one large APK, which is not recommended as it includes binaries not native to the device.
+
+##### 4. Prepare Device
+Plug in your android device or start an emulator from Android Studio. Run `flutter devices` and observe flutter sees your device of choice.
+
+##### 4. Install on Device
+```
+    flutter install
+```
+This may take a while. 
+
+
+
+-------
+Sources:
+1. https://www.geeksforgeeks.org/how-to-build-and-release-flutter-application-in-android-device/
+2. https://docs.flutter.dev/deployment/android
+
 ***
 
 ## Software Requirements Specification (SRS)
