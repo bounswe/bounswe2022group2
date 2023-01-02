@@ -437,7 +437,7 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Mobile: My profile backend connection|[#915](https://github.com/bounswe/bounswe2022group2/issues/915)|
   |Mobile: Other users profile page and backend connection|[#921](https://github.com/bounswe/bounswe2022group2/issues/921)|
   |Mobile: Profile Update Major BugFix|[#923](https://github.com/bounswe/bounswe2022group2/issues/923)|
-  |Final Milestone: Project Plan|[#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes|
+  |Final Milestone: Project Plan|[#983](https://github.com/bounswe/bounswe2022group2/issues/983)|30 minutes|
   |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|
   |Final Milestone: Summary of Work Table for Onur Kömürcü|[#966](https://github.com/bounswe/bounswe2022group2/issues/966)|
   |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#982](https://github.com/bounswe/bounswe2022group2/issues/982)|
@@ -2511,6 +2511,12 @@ Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She h
 ***
 
 ## Project Plan
+![CmpE451_ProjectPlan_Milestone3_page-0001](https://user-images.githubusercontent.com/92719802/210265560-e3f79908-0bd1-4725-a64f-6cab4d189a61.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0002](https://user-images.githubusercontent.com/92719802/210265573-ae0e53a7-147a-431c-bf84-da36eacef2c6.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0003](https://user-images.githubusercontent.com/92719802/210265575-1a999302-26e3-42bd-b986-32334221d028.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0004](https://user-images.githubusercontent.com/92719802/210265576-04bd654a-be16-4624-9395-15269909f676.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0005](https://user-images.githubusercontent.com/92719802/210265581-751df42f-cef0-43f8-81a2-d72004ec41a5.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0006](https://user-images.githubusercontent.com/92719802/210265583-9e405884-c994-4e0f-aca9-a7cf1d239828.jpg)
 
 ***
 
@@ -3321,7 +3327,7 @@ management of our software project:
   3. Mobile: My profile backend connection [#915](https://github.com/bounswe/bounswe2022group2/issues/915)
   4. Mobile: Other users profile page and backend connection [#921](https://github.com/bounswe/bounswe2022group2/issues/921)
   5. Mobile: Profile Update Major BugFix [#923](https://github.com/bounswe/bounswe2022group2/issues/923)
-  6. Final Milestone: Project Plan [#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes
+  6. Final Milestone: Project Plan [#983](https://github.com/bounswe/bounswe2022group2/issues/983)|30 minutes
   7. Final Milestone: Mobile App Scenario [#957](https://github.com/bounswe/bounswe2022group2/issues/957)
   8. Final Milestone: Summary of Work Table for Onur Kömürcü [#966](https://github.com/bounswe/bounswe2022group2/issues/966)
   9. Final Milestone: Individual Contributions Report for Onur Kömürcü [#959](https://github.com/bounswe/bounswe2022group2/issues/958)
