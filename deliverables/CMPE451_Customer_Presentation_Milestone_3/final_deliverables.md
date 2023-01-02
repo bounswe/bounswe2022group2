@@ -102,6 +102,13 @@ In short, we achieved all of our aims and accomplished all the responsibilities 
 ***
 
 ### The Status of the Deliverables
+ 
+|Deliverable|Status|Date Delivered|
+|-----|:--------:|:------:|
+|[**Group Milestone Report**](#group-milestone-report)|Delivered|02/01/2023|
+|[**Project Artifacts**](#project-artifacts)<br><br><ul><li>[**Manuals**](#manuals)<br><ul><li>[**User Manual**](#user-manual)<li>[**System Manual**](#system-manual)</li></ul><li>[**Software Requirements Specification (SRS)**](#software-requirements-specification-srs)</li><li>[**Software Design Documents (UML)**](#software-design-documents-uml)</li><li>[**User Scenarios and Mockups**](#user-scenarios-and-mockups)</li><li>[**Project Plan**](#project-plan)</li><li>[**Unit Tests**](#unit-tests)</li></li></ul>|Delivered|02/01/2023|
+|[**Software Package**](#software-package)<br><br><ul><li>[**Deployed Software**](#software-package)<br></li><li>[**Final Release Version**](#software-package)<br></li><li>[**Instructions For Building (with Docker)**](#software-package)<br></li><li>[**Database Content**](#software-package)<br></li></ul>|Delivered|02/01/2023|
+|[**Individual Milestone Reports**](#individual-milestone-reports)|Delivered|02/01/2023|
 
 ***
 
