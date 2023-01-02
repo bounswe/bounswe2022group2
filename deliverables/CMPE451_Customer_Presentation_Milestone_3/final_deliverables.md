@@ -189,19 +189,79 @@ As we said in the previous sections, we are generally satisfied with the progres
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
   |--------------|--------------|--------------|
+  |Frontend: Learning Space Preview Box Backend Connection|[#766](https://github.com/bounswe/bounswe2022group2/issues/766)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Create Event Component|[#772](https://github.com/bounswe/bounswe2022group2/issues/772)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Learning Space Preview Box|[#788](https://github.com/bounswe/bounswe2022group2/issues/788)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Home Page My Learning Spaces Backend Connection|[#791](https://github.com/bounswe/bounswe2022group2/issues/791)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Home Page Popular Learning Spaces Backend Connection|[#792](https://github.com/bounswe/bounswe2022group2/issues/792)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: My Learning Spaces Page|[#802](https://github.com/bounswe/bounswe2022group2/issues/802)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for My Learning Spaces Page|[#806](https://github.com/bounswe/bounswe2022group2/issues/806)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Popular Learning Spaces Page|[#808](https://github.com/bounswe/bounswe2022group2/issues/808)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Popular Learning Spaces Page|[#819](https://github.com/bounswe/bounswe2022group2/issues/819)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: User Search Component|[#870](https://github.com/bounswe/bounswe2022group2/issues/870)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Custom Map Picker Component|[#892](https://github.com/bounswe/bounswe2022group2/issues/892)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Recommended Learning Spaces Part in Home Page|[#900](https://github.com/bounswe/bounswe2022group2/issues/900)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Recommended Learning Spaces Page|[#906](https://github.com/bounswe/bounswe2022group2/issues/906)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Text and Image Annotation Backend Connection|[#918](https://github.com/bounswe/bounswe2022group2/issues/918)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |**Milestone 2**|-|-|
   |--------------|--------------|--------------|
+  |Frontend: Implementation of Home Page|[#518](https://github.com/bounswe/bounswe2022group2/issues/518)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Implementation of Categories Page|[#544](https://github.com/bounswe/bounswe2022group2/issues/544)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Implementation of Learning Spaces by Category Page|[#605](https://github.com/bounswe/bounswe2022group2/issues/605)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#636](https://github.com/bounswe/bounswe2022group2/issues/636)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Implementation of Semantic Search Bar|[#652](https://github.com/bounswe/bounswe2022group2/issues/652)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Categories Page|[#673](https://github.com/bounswe/bounswe2022group2/issues/673)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Learning Spaces by Categories Page|[#679](https://github.com/bounswe/bounswe2022group2/issues/679)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#682](https://github.com/bounswe/bounswe2022group2/issues/682)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |**Milestone 1**|-|-|
   |--------------|--------------|--------------|
+  |Revising the Requirements Specification|[#323](https://github.com/bounswe/bounswe2022group2/issues/323)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Research & Report for Frontend Technologies (Frontend Team)|[#327](https://github.com/bounswe/bounswe2022group2/issues/327)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Documenting Meeting Notes for the Meeting 2 of CMPE 451|[#328](https://github.com/bounswe/bounswe2022group2/issues/328)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Revising the Requirements Specification: Notifications|[#329](https://github.com/bounswe/bounswe2022group2/issues/329)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Designing the Logo and Determining Color Scheme, Typeface of the Project|[#353](https://github.com/bounswe/bounswe2022group2/issues/353)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Implementation of Sign Up Page|[#376](https://github.com/bounswe/bounswe2022group2/issues/376)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Backend Connection for the Sign Up Page|[#405](https://github.com/bounswe/bounswe2022group2/issues/405)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Dockerization of the Frontend|[#412](https://github.com/bounswe/bounswe2022group2/issues/412)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Adding Form Validations for Sign Up Form|[#424](https://github.com/bounswe/bounswe2022group2/issues/424)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Sign Up Page|[#451](https://github.com/bounswe/bounswe2022group2/issues/451)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |AWS Deployment of the Web Application|[#459](https://github.com/bounswe/bounswe2022group2/issues/459)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
   |--------------|--------------|--------------|
+  |Frontend: Learning Space Preview Box BE Connection|[#767](https://github.com/bounswe/bounswe2022group2/pull/767)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for the Learning Space Preview Box Component|[#790](https://github.com/bounswe/bounswe2022group2/pull/790)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Home Page My Learning Spaces Backend Connection|[#796](https://github.com/bounswe/bounswe2022group2/pull/796)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Home Page Popular Learning Spaces Backend Connection|[#801](https://github.com/bounswe/bounswe2022group2/pull/801)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: My Learning Spaces Page|[#805](https://github.com/bounswe/bounswe2022group2/pull/805)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for My Learning Spaces Page|[#807](https://github.com/bounswe/bounswe2022group2/pull/807)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Popular Learning Spaces Page|[#817](https://github.com/bounswe/bounswe2022group2/pull/817)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Popular Learning Spaces Page|[#839](https://github.com/bounswe/bounswe2022group2/pull/839)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Create Event Component|[#860](https://github.com/bounswe/bounswe2022group2/pull/767)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: User Search Component|[#881](https://github.com/bounswe/bounswe2022group2/pull/881)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Recommended Learning Spaces in Home Page|[#902](https://github.com/bounswe/bounswe2022group2/pull/902)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Recommended Learning Spaces Page|[#909](https://github.com/bounswe/bounswe2022group2/pull/909)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Annotation BE Connection|[#767](https://github.com/bounswe/bounswe2022group2/pull/767)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Learning Space Preview Box BE Connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |**Milestone 2**|-|-|
   |--------------|--------------|--------------|
+  |Frontend: Implementation of Home Page|[#536](https://github.com/bounswe/bounswe2022group2/pull/536)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Implementation of Categories Page|[#571](https://github.com/bounswe/bounswe2022group2/pull/571)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Learning Spaces by Category Pages Implementation|[#633](https://github.com/bounswe/bounswe2022group2/pull/633)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: HOTFIX Learning Space Page Structural Overflow|[#637](https://github.com/bounswe/bounswe2022group2/pull/637)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Semantic Search Bar Implementation|[#655](https://github.com/bounswe/bounswe2022group2/pull/655)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Categories Page|[#676](https://github.com/bounswe/bounswe2022group2/pull/676)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Learning Spaces by Category Page|[#680](https://github.com/bounswe/bounswe2022group2/pull/680)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit Tests for Navigation Bar and Semantic Search Component|[#684](https://github.com/bounswe/bounswe2022group2/pull/684)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
   |**Milestone 1**|-|-|
   |--------------|--------------|--------------|
+  |Frontend: Sign up page implementation|[#387](https://github.com/bounswe/bounswe2022group2/pull/387)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Dockerization of Frontend|[#413](https://github.com/bounswe/bounswe2022group2/pull/413)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Sign Up Form Validation|[#426](https://github.com/bounswe/bounswe2022group2/pull/426)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Backend connection for sign up page|[#438](https://github.com/bounswe/bounswe2022group2/pull/438)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
+  |Frontend: Unit tests for sign up page|[#456](https://github.com/bounswe/bounswe2022group2/pull/456)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Altay-Acar)|
 
 * **Egemen Atik**
   |Issue Title|Link|Time Consumption|
