@@ -163,83 +163,223 @@ As we said in the previous sections, we are generally satisfied with the progres
 * **Altay Acar**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
 
 * **Egemen Atik**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Ezgi Aysel Batı**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
 
 * **Batuhan Çelik**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Hasan Can Erol**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Onur Kömürcü:**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
-  
-  |Pull Request Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |Mobile: Documenting Meeting Notes #6|[#774](https://github.com/bounswe/bounswe2022group2/issues/774)|40 minutes|
+  |Mobile: Updating My Profile Page|[#775](https://github.com/bounswe/bounswe2022group2/issues/775)|7 hours|
+  |Mobile: Implementing Other User's Profile Page|[#776](https://github.com/bounswe/bounswe2022group2/issues/776)|1h 30m|
+  |Mobile: User Search Backend Connection|[#866](https://github.com/bounswe/bounswe2022group2/issues/866)|2 hours|
+  |Mobile: Get and Update My Profile Backend Connection|[#867](https://github.com/bounswe/bounswe2022group2/issues/867)|10 hours|
+  |Mobile: Get Other Users Profile Backend Connection|[#868](https://github.com/bounswe/bounswe2022group2/issues/868)|3 hours|
+  |Final Milestone: Project Plan|[#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes|
+  |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|1h 40m|
+  |Final Milestone: Summary of Work Table for Onur Kömürcü|[#958](https://github.com/bounswe/bounswe2022group2/issues/958)|2 hours|
+  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/958)|2 hours|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|20 hours|
+  |Mobile: Implementing Learnifies Page|[#568](https://github.com/bounswe/bounswe2022group2/issues/568)|4 hours|
+  |Mobile: Backend Connection for Search Page|[#584](https://github.com/bounswe/bounswe2022group2/issues/584)|5 hours|
+  |Mobile: Implementing User Preview Widget|[#593](https://github.com/bounswe/bounswe2022group2/issues/593)|2 hours|
+  |Mobile: Static User Search Implementation and Additional Improvements|[#635](https://github.com/bounswe/bounswe2022group2/issues/635)|7 hours|
+  |Mobile: Tests for ViewAllScreen and TakenLsScreen|[#646](https://github.com/bounswe/bounswe2022group2/issues/646)|1h 30m|
+  |Documenting Meeting Notes of Meeting #5 of the Mobile Team|[#527](https://github.com/bounswe/bounswe2022group2/issues/527)|40 minutes|
+  |Milestone-2 Report: Updating Project Plan|[#690](https://github.com/bounswe/bounswe2022group2/issues/690)|1 hour|
+  |Milestone-2: Individual Report|[#714](https://github.com/bounswe/bounswe2022group2/issues/690)|1h 30m|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|50 minutes|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |Mobile Team: Setting up development Environment|[#372](https://github.com/bounswe/bounswe2022group2/issues/372)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Mobile - Implementing Login Page Including Backend Connection|[#396](https://github.com/bounswe/bounswe2022group2/issues/396)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Mobile: Writing Tests for Login Page|[#447](https://github.com/bounswe/bounswe2022group2/issues/447)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising the Requirements Specification|[#323](https://github.com/bounswe/bounswe2022group2/issues/323)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Update the Project plan for upcoming semester|[#316](https://github.com/bounswe/bounswe2022group2/issues/316)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Milestone 1: Project Plan|[#448](https://github.com/bounswe/bounswe2022group2/issues/448)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Milestone 1: Evaluation of the Status of Deliverables|[#491](https://github.com/bounswe/bounswe2022group2/issues/491)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Updating Communication Plan|[#377](https://github.com/bounswe/bounswe2022group2/issues/377)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising the Diagrams based on Achievements|[#346](https://github.com/bounswe/bounswe2022group2/issues/346)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising the Requirements: Achievements and Badges|[#333](https://github.com/bounswe/bounswe2022group2/issues/333)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising Mockups|[#326](https://github.com/bounswe/bounswe2022group2/issues/326)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+
+  Note: I didn't includ time tracking in PR's because issues covers all PR's.
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|-|
+  |Mobile: My Profile Screen Update|[#783](https://github.com/bounswe/bounswe2022group2/issues/783)|
+  |Mobile: User search backend connection|[#890](https://github.com/bounswe/bounswe2022group2/issues/890)|
+  |Mobile: My profile backend connection|[#915](https://github.com/bounswe/bounswe2022group2/issues/915)|
+  |Mobile: Other users profile page and backend connection|[#921](https://github.com/bounswe/bounswe2022group2/issues/921)|
+  |Mobile: Profile Update Major BugFix|[#923](https://github.com/bounswe/bounswe2022group2/issues/923)|
+  |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|
+  |Final Milestone: Summary of Work Table for Onur Kömürcü|[#958](https://github.com/bounswe/bounswe2022group2/issues/958)|
+  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/958)|
+  |--------------|--------------|
+  |**Milestone 2**|-|
+  |Mobile: Implementing View All Screen|[#557](https://github.com/bounswe/bounswe2022group2/issues/557)|
+  |Mobile: Implementing Spaces Page|[#569](https://github.com/bounswe/bounswe2022group2/issues/569)|
+  |Mobile: Implemented Search Screen with Backend Connection|[#632](https://github.com/bounswe/bounswe2022group2/issues/632)|
+  |Mobile: User Preview Widget|[#638](https://github.com/bounswe/bounswe2022group2/issues/638)|
+  |Mobile: Static User Search and Recommended LS in Search Implemented|[#644](https://github.com/bounswe/bounswe2022group2/issues/644)|
+  |Mobile: Tests for Pages Which Use View All List|[#647](https://github.com/bounswe/bounswe2022group2/issues/647)|
+  |Milestone-2: Contribution report - Onur|[#725](https://github.com/bounswe/bounswe2022group2/issues/725)|
+  |Milestone-2: Summary of work - Onur|[#731](https://github.com/bounswe/bounswe2022group2/issues/731)|
+  |Milestone-2: Mobile User Interface - Onur|[#737](https://github.com/bounswe/bounswe2022group2/issues/737)|
+  |--------------|--------------|
+  |**Milestone 1**|-|
+  |Mobile: Implementation of Login Screen Including Backend Connection|[#398](https://github.com/bounswe/bounswe2022group2/pull/398)|
+  |Evaluation of the Status of Deliverables|[#509](https://github.com/bounswe/bounswe2022group2/pull/509)|
+  |Milestone 1: Adding Personal Efforts of Onur Kömürcü|[#494](https://github.com/bounswe/bounswe2022group2/pull/494)|
   
 * **Ecenur Sezer**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
 
 * **Muhammed Enes Sürmeli:**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Koray Tekin**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Bahrican Yeşil:**
   |Issue Title|Link|Time Consumption|
@@ -373,11 +513,21 @@ As we said in the previous sections, we are generally satisfied with the progres
 * **Mehmet Gökay Yıldız**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 ***
 
