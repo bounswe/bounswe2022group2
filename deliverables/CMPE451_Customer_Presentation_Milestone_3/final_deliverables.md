@@ -865,9 +865,24 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### Annotations
 
+The app has text and image annotations for both the web and mobile versions. The text annotations allow users to add notes and comments to the posts of the learning spaces in the app, while the image annotations allow users to highlight and annotate specific areas of images within the posts. These annotations can be used to provide additional context, clarification, or feedback on the content. Users can see their own and other users' annotaions. On mobile version, annotations of the current user are shown on top of the screen, when "see annotations" section is activated. Text annotations are shown by highlights on related text, while image annotations have square shape identifiers on the image. Both the text and image annotations are available on both the web and mobile versions of the app, allowing users to access and utilize these features regardless of the platform they are using. Since there is full backend connection, annotations made by each platform can be accessed by each platform.
+
+  As mentioned in milestone 2 as a future improvement, the external annotation service is implemented and serves the Learnify application. The annotations created by Learnify users **do not kept in Learnify database**. Additionaly, annotations service is deployed in a different machine than Learnify server. In that context, annotation service and Learnify are two different applications. When application side of the Learnify sends a request for creating annotations, it uses it's own API to send the annotation model. In this API, another request to the annotation-service with its own parameters is sent. Then, the newly created annotation in saved in annotations service database. Similar scenario is present for accessing the annotations as well. When Learnify application sends a request to it's own server to get related annotations, another request is sent by axios library to the annotations service to return the related annotations which have the specified id. Overall, **Learnify application side does not have direct contact with annotations service.**
+  
+ Please check the documentation on [API Documentation](https://github.com/bounswe/bounswe2022group2/edit/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/final_deliverables.md#api-endpoints) section to see example requests for both annotations service and Learnify.
+ 
 ***
 
 ### Standards
+
+ To follow the W3C Annotation model standards, Learnify annotation related APIs both accept and send the given W3C annotation model. Similarly, annotation service APIs also accept and send same model. Please do see the annotations kept in annotation service DB below. 
+ 
+![image](https://user-images.githubusercontent.com/64018144/210228784-7992a698-72c3-473f-be99-2f7cff8f4d56.png)
+
+Although all APIs are documented in [API Documentation](https://github.com/bounswe/bounswe2022group2/edit/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/final_deliverables.md#api-endpoints), you can see in example below the **request sent to the annotation service.** It fully follows the W3C annotation model for both text and image annotations.
+![image](https://user-images.githubusercontent.com/64018144/210229112-847652f0-29a0-44bd-8e1e-d890aaddcc3f.png)
+
+Please do check the annotation related APIs in API Documentation as a proof to W3C Model Annotations are kept, saved and sent overall the application.
 
 ***
 
