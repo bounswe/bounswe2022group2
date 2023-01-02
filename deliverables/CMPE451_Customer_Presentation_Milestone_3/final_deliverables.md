@@ -970,6 +970,130 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 ***
 
 ### User Interface/User Experience
+#### Web
+
+Note: Almost all of the pages include sub-components and each sub-component has their own ui design. Since each sub-component can be tracked from the page file itself, we did not include sub-component's files below.
+
+#### Sign Up Page
+
+Responsible: Altay Acar \
+Link: [Sign Up Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/SignUpForm.js)
+
+<img width="1525" alt="signup-page" src="https://user-images.githubusercontent.com/68481602/206698399-4fee4340-0b19-4942-9ee5-ec57332809e6.png">
+
+#### Login Page
+
+Responsible: Koray Tekin \
+Link: [Login Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LoginForm.js)
+
+<img width="1501" alt="Screen Shot 2022-12-09 at 15 48 30" src="https://user-images.githubusercontent.com/74411541/206706012-fb7af1ca-ce30-472a-b88b-d759324f63ef.png">
+  
+#### Email Verification Page
+
+Responsible: Muhammed Enes Sürmeli \
+Link: [Email Verification Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/EmailVerificationPage.js)
+
+<img width="1728" alt="Screenshot 2022-12-09 at 16 15 26" src="https://user-images.githubusercontent.com/74325266/206710871-d4251fd2-2b8d-43b2-8413-40efb89b2245.png">
+  
+#### Not Found Page
+
+Responsible: Muhammed Enes Sürmeli \
+Link: [Not Found Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/NotFoundPage.js)
+
+<img width="1728" alt="Screenshot 2022-12-09 at 16 15 07" src="https://user-images.githubusercontent.com/74325266/206711106-cae9db4e-afd1-4b56-83f1-935824ff84a8.png">
+
+#### Home Page
+
+Responsible: Altay Acar \
+Link: [Home Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/HomePage.js)
+
+<img width="1527" alt="home-page" src="https://user-images.githubusercontent.com/68481602/206697988-72dce30f-f5e5-4874-b808-3e454a638c8c.png">
+
+#### Categories Page
+
+Responsible: Altay Acar \
+Link: [Categories Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/CategoriesPage.js)
+
+<img width="1111" alt="categries-page" src="https://user-images.githubusercontent.com/68481602/206698747-da901a07-7a53-40f2-99c1-07a807a01842.png">
+
+#### Learning Spaces by Category Page
+
+Responsible: Altay Acar \
+Link: [Learning Spaces by Category Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LSbyCategoryPage.js)
+
+<img width="1528" alt="ls-by-category-page" src="https://user-images.githubusercontent.com/68481602/206698781-54bc12fb-efe5-40b9-84bf-3a2c6f2ea4d6.png">
+
+#### Forget Password Page
+
+Responsible: Mehmet Gökay Yıldız \
+Link: [Forget Password Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/ForgetPassword.js)
+
+<img width="1527" alt="forget-password-page" src="https://user-images.githubusercontent.com/42673110/206701007-f43b67cc-ff14-4b30-883d-43ff00b45853.png">
+
+#### Change Password Page
+
+Responsible: Mehmet Gökay Yıldız \
+Link: [Change Password Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/ChangePassword.js)
+
+<img width="1111" alt="change-password-page" src="https://user-images.githubusercontent.com/42673110/206701019-f76a57e1-31e6-41c1-8015-254bc205f91d.png">
+
+#### Create Learning Space Page
+
+Responsible: Mehmet Gökay Yıldız \
+Link: [Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/CreateLS.js)
+
+<img width="1528" alt="create-ls-page" src="https://user-images.githubusercontent.com/42673110/206700987-81ed6668-6267-483c-b766-f93849c763f8.png">
+
+#### Learning Space Specific Page
+
+Responsible: Koray Tekin \
+Link: [Learning Space Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/LearningSpace.js)
+
+<img width="1501" alt="Screen Shot 2022-12-09 at 15 51 56" src="https://user-images.githubusercontent.com/74411541/206706633-19b029c7-032d-4088-9215-8e6bc9e2e484.png">
+
+#### About Page
+
+Responsible: Muhammed Enes Sürmeli \
+Link: [About Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/AboutPage.js)
+
+<img width="1491" alt="Screen Shot 2023-01-02 at 18 59 41" src="https://user-images.githubusercontent.com/74411541/210254849-3eaf7ce0-4f00-4392-856c-98356c086171.png">
+
+#### Contact Page
+
+Responsible: Koray Tekin\
+Link: [Contact Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/ContactPage.js)
+
+<img width="1491" alt="Screen Shot 2023-01-02 at 19 01 46" src="https://user-images.githubusercontent.com/74411541/210255080-887faa19-b537-424f-a8ee-d59fa892c030.png">
+
+#### My Learning Spaces Page
+
+Responsible: Altay Acar\
+Link: [My Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/MyLearningSpacesPage.js)
+
+<img width="1504" alt="Screen Shot 2023-01-02 at 19 25 57" src="https://user-images.githubusercontent.com/74411541/210257450-8abdafcb-df90-4d78-bf5f-e8d567139d26.png">
+
+#### Popular Learning Spaces Page
+
+Responsible: Altay Acar\
+Link: [Popular Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/PopularLearningSpacesPage.js)
+
+<img width="1499" alt="Screen Shot 2023-01-02 at 19 27 55" src="https://user-images.githubusercontent.com/74411541/210257647-4086260e-ca3c-4bd6-b654-971234f1e850.png">
+
+#### Recommended Learning Spaces Page
+
+Responsible: Altay Acar\
+Link: [Recommended Learning Spaces Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/RecommendedLearningSpacesPage.js)
+
+<img width="1506" alt="Screen Shot 2023-01-02 at 19 29 35" src="https://user-images.githubusercontent.com/74411541/210257809-f4984815-7231-497a-a9b8-c8a3e45b3ba6.png">
+
+
+
+#### Profile Page
+
+Responsible: Koray Tekin, Mehmet Gökay Yıldız\
+Link: [Profile Page](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/web/src/pages/ProfilePage.js)
+
+<img width="1495" alt="Screen Shot 2023-01-02 at 19 32 11" src="https://user-images.githubusercontent.com/74411541/210258026-29710641-a51c-44d1-a0dd-b8381f86605f.png">
 
 ***
 
