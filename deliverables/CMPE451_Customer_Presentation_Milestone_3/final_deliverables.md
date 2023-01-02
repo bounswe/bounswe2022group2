@@ -275,20 +275,69 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementing Create Event Screen|[#842](https://github.com/bounswe/bounswe2022group2/issues/842)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection For Create Event Screen|[#873](https://github.com/bounswe/bounswe2022group2/issues/873)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Implement geolocation selection screen|[#887](https://github.com/bounswe/bounswe2022group2/issues/887)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection for Attend Event|[#911](https://github.com/bounswe/bounswe2022group2/issues/911)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Revision in the Home Screen|[#916](https://github.com/bounswe/bounswe2022group2/issues/916)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Translate texts in the application to other languages|[#919](https://github.com/bounswe/bounswe2022group2/issues/919)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final Milestone: UML Diagrams, SRS, User Scenarios and Mockups|[#946](https://github.com/bounswe/bounswe2022group2/issues/946)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final Milestone: User Manual|[#951](https://github.com/bounswe/bounswe2022group2/issues/951)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final Milestone: Individual Contributions Report of Egemen Atik|[#988](https://github.com/bounswe/bounswe2022group2/issues/988)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementing Information Section of Learning Space Detail Screen|[#524](https://github.com/bounswe/bounswe2022group2/issues/524)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Enhancement on Learning Space Detail Screen|[#616](https://github.com/bounswe/bounswe2022group2/issues/616)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Implementing Add/Edit Post Screen|[#618](https://github.com/bounswe/bounswe2022group2/issues/618)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection For Taken Learning Spaces and Recommended Learning Spaces|[#634](https://github.com/bounswe/bounswe2022group2/issues/634)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Backend Connection For Add/Edit Post|[#645](https://github.com/bounswe/bounswe2022group2/issues/645)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2 Report: Progress According To Requirements|[#705](https://github.com/bounswe/bounswe2022group2/issues/705)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2 Report: Individual Report|[#706](https://github.com/bounswe/bounswe2022group2/issues/706)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Update Personal Wiki Pages|[#324](https://github.com/bounswe/bounswe2022group2/issues/324)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Update Requirements Page|[#325](https://github.com/bounswe/bounswe2022group2/issues/325)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Revising the Requirements: Lecture Structure|[#341](https://github.com/bounswe/bounswe2022group2/issues/341)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Revising the Diagrams based on Lecture Structure|[#347](https://github.com/bounswe/bounswe2022group2/issues/347)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Implementing Verification Screen|[#395](https://github.com/bounswe/bounswe2022group2/issues/395)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Writing Tests for Verification Screen|[#417](https://github.com/bounswe/bounswe2022group2/issues/417)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Documenting Meeting Notes for the Meeting 4 of CMPE 451|[#425](https://github.com/bounswe/bounswe2022group2/issues/425)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Documenting Meeting Notes for the Meeting 2 of Mobile Team|[#427](https://github.com/bounswe/bounswe2022group2/issues/427)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Back-end Connection of Verification Screen|[#434](https://github.com/bounswe/bounswe2022group2/issues/434)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Writing Network Connection Tests for Verification Screen|[#454](https://github.com/bounswe/bounswe2022group2/issues/454)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Scrollable Horizontal Course List Widget For Home Screen|[#457](https://github.com/bounswe/bounswe2022group2/issues/457)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone 1: Reviewing Our First Milestone: Against Objectives and Customer Presentation Parts|[#481](https://github.com/bounswe/bounswe2022group2/issues/481)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone 1: Filling Individual Works and Responsibilities Parts of Group Review|[#483](https://github.com/bounswe/bounswe2022group2/issues/483)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Create event screen|[#869](https://github.com/bounswe/bounswe2022group2/pull/869)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Create event backend connection|[#880](https://github.com/bounswe/bounswe2022group2/pull/880)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Geolocation selection widget|[#897](https://github.com/bounswe/bounswe2022group2/pull/897)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Attend event backend connection|[#914](https://github.com/bounswe/bounswe2022group2/pull/914)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Home screen revision|[#917](https://github.com/bounswe/bounswe2022group2/pull/917)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Translate texts|[#920](https://github.com/bounswe/bounswe2022group2/pull/920)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Translate newly added words|[#926](https://github.com/bounswe/bounswe2022group2/pull/926)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Final milestone: Add software requirements specification, UML diagrams, user scenarios and mockups to report|[#947](https://github.com/bounswe/bounswe2022group2/pull/947)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Add user manual|[#984](https://github.com/bounswe/bounswe2022group2/pull/984)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementation of learning space information section|[#528](https://github.com/bounswe/bounswe2022group2/pull/528)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/learning space detail enhancement|[#587](https://github.com/bounswe/bounswe2022group2/pull/587)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/post add edit screen|[#623](https://github.com/bounswe/bounswe2022group2/pull/623)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/taken recommended ls backend connection|[#642](https://github.com/bounswe/bounswe2022group2/pull/642)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/backend connection add edit post|[#649](https://github.com/bounswe/bounswe2022group2/pull/649)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Fix overflow error in enroll button and form fields in ls create/edit…|[#667](https://github.com/bounswe/bounswe2022group2/pull/667)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2: Egemen's individual report|[#709](https://github.com/bounswe/bounswe2022group2/pull/709)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Egemen's individual contribution table and report are added|[#721](https://github.com/bounswe/bounswe2022group2/pull/721)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2 : Progress according to to requirements|[#733](https://github.com/bounswe/bounswe2022group2/pull/733)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Milestone-2: Mobile screens implemented by Egemen|[#738](https://github.com/bounswe/bounswe2022group2/pull/738)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile/verification screen|[#416](https://github.com/bounswe/bounswe2022group2/pull/416)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile/verification screen tests|[#432](https://github.com/bounswe/bounswe2022group2/pull/432)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Back-End Connection of Verification Screen|[#435](https://github.com/bounswe/bounswe2022group2/pull/435)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Verification screen network tests|[#455](https://github.com/bounswe/bounswe2022group2/pull/455)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Mobile: Scrollable horizontal course list widget for home screen|[#462](https://github.com/bounswe/bounswe2022group2/pull/462)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Add personal efforts of Egemen Atik|[#490](https://github.com/bounswe/bounswe2022group2/pull/490)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
+  |Add against objectives and customer presentation review parts|[#515](https://github.com/bounswe/bounswe2022group2/pull/515)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Egemen-Atik)|
   
 * **Ezgi Aysel Batı**
   |Issue Title|Link|Time Consumption|
