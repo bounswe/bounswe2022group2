@@ -103,6 +103,15 @@ In short, we achieved all of our aims and accomplished all the responsibilities 
 
 ### The Status of the Deliverables
 
+As we approach the end of our software development course, we are pleased to announce the successful completion of all deliverables for our Learnify online learning platform project, a collaborative effort that has been a central aspect of our educational program. The fulfillment of this project represents a major achievement for our team, one that reflects the dedication, commitment, and intellectual curiosity that we have brought to bear throughout the course of its development. It is with a sense of pride and accomplishment that we reflect upon the knowledge and skills gained through this highly enriching experience, and we look forward to applying these foundations as we continue to pursue our professional development as software developers. We are grateful for the opportunity to have participated in this project and look forward to building upon the skills and knowledge acquired throughout this journey as we embark upon the next phase of our careers.
+ 
+|Deliverable|Status|Date Delivered|
+|-----|:--------:|:------:|
+|[**Group Milestone Report**](#group-milestone-report)|Delivered|02/01/2023|
+|[**Project Artifacts**](#project-artifacts)<br><br><ul><li>[**Manuals**](#manuals)<br><ul><li>[**User Manual**](#user-manual)<li>[**System Manual**](#system-manual)</li></ul><li>[**Software Requirements Specification (SRS)**](#software-requirements-specification-srs)</li><li>[**Software Design Documents (UML)**](#software-design-documents-uml)</li><li>[**User Scenarios and Mockups**](#user-scenarios-and-mockups)</li><li>[**Project Plan**](#project-plan)</li><li>[**Unit Tests**](#unit-tests)</li></li></ul>|Delivered|02/01/2023|
+|[**Software Package**](#software-package)<br><br><ul><li>[**Deployed Software**](#software-package)<br></li><li>[**Final Release Version**](#software-package)<br></li><li>[**Instructions For Building (with Docker)**](#software-package)<br></li><li>[**Database Content**](#software-package)<br></li></ul>|Delivered|02/01/2023|
+|[**Individual Milestone Reports**](#individual-milestone-reports)|Delivered|02/01/2023|
+
 ***
 
 ### Final Release Notes
