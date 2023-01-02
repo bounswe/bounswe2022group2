@@ -1672,18 +1672,177 @@ Name: Mehmet Batuhan Çelik
 Group: Group2 - Backend Team
 
 ## *Responsibilities:*
+ 
+**Milestone-3**
+ 1. Perform research about W3 gelolocation model, design an API endpoint using this model and verify its satisfying customer requirements during meetings w/ customer Alper Ahmetoglu.
+2. Implement the designed API endpoint.
+3. Implement semantic recommendations using our semantic engine, serve the results from our back-end using a proxy endpoint.
+4. Annotations dockerization and deployment, working with Ecenur.
+5. Design of API interface regarding profile pages.
+6. Implementation of the designed profile page endpoints.
+7. Testing the implemented endpoints.
+8. Maintaining and updating the previously implemented tests.
+9. Server maintanence for frontend and backend servers.
+10. Solving bugs, errors, problems encountered during the implementation of backend and create hotfixes when needed.
+11. Attending and participating general meetings regularly.
+12. Organising, attending and participating backend team meetings regularly.
 
+**Milestone-2**
+ 
+1. Perform research about semantic search methods, find a computationally feasible method to add sementic search functionality to our project, implement the semantic search microservice, dockerize the microservice and finally create an endpoint on main app to serve the results.
+2. Understand the W3 annotation model and contribute to the system design of the annotations.
+3. Find a cost efficient way to deploy our application, since frontend container is huge, free tier EC2 instances were not sufficient to deploy them, so I had to create a multi instance architecture and set up docker-hub for our team.
+4. Communicate with the front and backend teams to design the API according to their needs.
+5. Implement the API specification determined with the other team members.
+6. Database management, add, delete elements and run migrations when requested by other members.
+7. Reviewing the works done by the backend team.
+8. Solving bugs, errors, problems encountered during the implementation of backend and create hotfixes when needed.
+9. Attending and participating general meetings regularly.
+10. Organising, attending and participating backend team meetings regularly.
+ 
+ 
+**Milestone-1**
+ 
+  1. Building the main structure of the Node Js project.
+  2. Implementing core components: Mongoose loader, Express loader, in-memory database for testing.
+  3. Preparing detailed action plan for project 1.
+  4. Implementing sign up endpoint.
+  5. Writing tests of the sign up endpoint.
+  6. Creating the api definition for auth endpoints.
+  7. Dockerizing the Backend.
+  8. Connecting a docker-compose file to serve the backend container with a MongoDB container alongside.
+  9. Overvising the frontend dockerization and integration to project docker-compose structure.
+  10. Deploying the project to the AWS using EC2 and maintaining it.
+  11. Reviewing work of backend team members. 
+ 
+ 
 ## *Main Contributions:*
+ 
+ **Milestone-3**
+ 
+ During milestone 2, I was focused on researching and high complexity implementation of semantic search engine, during this milestone, as a team we shifted our focus to complete simpler functioanlities. I supported that effort by implementing back-end side of 2 functionalities: envets and profile pages. I researched a cost effective method for profile pages instead of the general S3 buckets implementations and introduced base64 encoded images to the team. At the events side, I understood the W3 geolocation format and designed the endpoint accordingly. 
+ 
+On top of those, some hotfixes rendered some of our tests deprecated, I gone over them and made the necessary updates.
+ 
+Finally, I created a recommendation logic in the semantic search engine using the BERT encodings of the learning spaces and created a proxy endpoint to serve the reccomendation functionality in our API.
+ 
+ During this process, I keep the strong communication with the front and mobile teams and tried to answer their needs to my full capabilities. 
+ 
+ At some point, I was not sufficient the only server maintainer of the team so I teached Ece the dev-ops operations of our API. We deployed the annotation service together, starting from creating an instance and all the way up to managing the database from mongosh. Then, we seperated the server maintanence responsibilities. 
+ 
+ **Milestone-2**
+ 
+ As a member of backend team, I established a strong communication with the frontend and backend teams to design an API specification statisfying their needs and complying with the backend development conventions. Of course I took part in implementation of that API.
+
+Most of this milestone went by researching. I had to put in lots of hours to understand different semantic search algorithms and find methods to implement them in our application. I learned about semantic search databases and found some open source implementations (Open semantic search was the most remarkable one), then, deployed them in docker containers just to see the smallest one required at least 4 GBs of memory. Accepting defeat, I looked for an API that would provide BERT encodings to me. Those types of APIs are not frequent since most companies provided whole data processing APIs instead of giving just encodings. This business model is fine for companies but getting this service free is out of question since it is a costly operation. In the end I tried 8 different services to find a solution we can integrate to our application easily.
+
+Besides semantic search, even though I did not contributed code to the annotations part of our application, I gone through the annotation model doccumentation with Ecenur and made sure our interface complied with the model. While ecenur was sick, I was taking care of the annotations part, during this duration, I found some open source implementations to get inspiration from. In the end I contributed to the annotations part with my understanding of the model.
+
+When everything was implemented, we found out that our frontend was too resource hungry to be deployed on a free tier EC2. In addition to that we now had a semantic search microservice. In the end, our system architecture had to be revised. I made those revisions and deployed the new architecture without problems.
+ 
+  **Milestone-1**
+ 
+ I took an active part in team management: came up with the project plan, talked with the customer personally to create a feasible plan, designed API definition and project architecture with Bahrican while keeping needs of front and backend in mind. I created the server implementation structure editing the practice-app's structure. I set up the connecting to database process such that it recognizes when it should use docker network, connect to and actual server and create a in-memory volatile database for testing purposes. After creating the development environment for backend, I implemented the signup endpoint with its tests. After it is implemented I used it as a base case to implement the docker file for the backend and optimized it for fast building. Then created a docker compose file to connect my container to a MongoDB container using docker network. After the dockerization of backend is complete, working with Altay, I took part in dockerization of the frontend. Then, set up the EC2 instance with Ellastic IP and required security settings. Since we do not have github actions, I became the github actions myself via being online and taking action whenever a hardfix is needed. After those ended, I implemented a migration and mock courses endpoint to add mockup data to the database and from provide dataflow  from database to mocking pages.
+ 
+ On top of that, I was active in all of the meetings and PSes.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+ 
+ **Milestone-3**
+ 
+ |Issue Title|Link| Time consumption|
+ |-----|:--------:|:--------:|
+ |Learning space recomendation endpoint|[888](https://github.com/bounswe/bounswe2022group2/issues/888)|2 hours|
+ |Event Participation functionality for backend|[828](https://github.com/bounswe/bounswe2022group2/issues/828)|1 hours|
+ |Implementation of profile page for backend|[797](https://github.com/bounswe/bounswe2022group2/issues/797)|3 hours|
+  |Event Enpoints implementation|[780](https://github.com/bounswe/bounswe2022group2/issues/780)|4 hours|
+
+ 
+ **Milestone-2**
+ 
+  |Issue Title|Link| Time consumption|
+  |-----|:--------:|:--------:|
+  |POST /learningspace endpint implementation|[532](https://github.com/bounswe/bounswe2022group2/issues/532)|4 hours|
+  |GET /categories endpoint implementation|[551](https://github.com/bounswe/bounswe2022group2/issues/551)|2 hours|
+  |Semantic search implementation for backend|[566](https://github.com/bounswe/bounswe2022group2/issues/566)|30 hours|
+  |Getters for the learningspace|[574](https://github.com/bounswe/bounswe2022group2/issues/574)|2 hours|
+  |Getters for learningspaces : random ls getter for main page.|[615](https://github.com/bounswe/bounswe2022group2/issues/615)|1 hour|
+  |GET learning spaces using user information|[619](https://github.com/bounswe/bounswe2022group2/issues/619)|2 hours|
+ 
+  **Milestone-1**
+ 
+  |Issue Title|Link| Time consumption|
+  |-----|:--------:|:--------:|
+  |Documentation of meeting notes 1 of CMPE451 #309|[Issue](https://github.com/bounswe/bounswe2022group2/issues/309)|1 hours|
+  |Update Project plan for upcoming semester #316|[Issue](https://github.com/bounswe/bounswe2022group2/issues/316)|4 hours|
+  |Revising non functional requirements #339|[Issue](https://github.com/bounswe/bounswe2022group2/issues/339)|1 hour|
+  |Backend: Initialization of backend project #351|[Issue](https://github.com/bounswe/bounswe2022group2/issues/351)|1 hour|
+  |Backend: Dockerization of the API #355|[Issue](https://github.com/bounswe/bounswe2022group2/issues/355)|1 hour|
+  |Backend: Sign up endpoint #365|[Issue](https://github.com/bounswe/bounswe2022group2/issues/365)|3 hours|
+  |Backend: AWS deployment of backend #423|[Issue](https://github.com/bounswe/bounswe2022group2/issues/423)|1 hour|
+  |Backend: GET /courses(mock endpoint) #437|[Issue](https://github.com/bounswe/bounswe2022group2/issues/437)|1 hour|
+ 
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+ 
+  **Milestone-2**
+ 
+   1. [Milestone 2 release documentation](https://github.com/bounswe/bounswe2022group2/issues/713)
+ 
+ **Milestone-1**
+ 
+  1. [Update the project plan for the semester](https://github.com/bounswe/bounswe2022group2/issues/316)
+  2. [Documentation of the meeting notes for Meeting 1](https://github.com/bounswe/bounswe2022group2/issues/309)
+  3. [Revising non functional requirements](https://github.com/bounswe/bounswe2022group2/issues/339)
+  4. [Research and Report Backend Technologies](https://github.com/bounswe/bounswe2022group2/issues/321)
+  5. [Update the project plan for milestone 1](https://github.com/bounswe/bounswe2022group2/issues/448)
+  6. [Dockerization of the frontend](https://github.com/bounswe/bounswe2022group2/issues/412)
+ 
+  Even though I am not the assignee of this one, I helped Altay greatly with docker issues at 6.
 
 ## *Pull Requests:*
+ 
+ **Milestone-3**
+ 
+ |Pull Request Title|Link|Time consumption|
+ |-----|:--------:|:-----:|
+ |learning space recommendation endpoint|[889](https://github.com/bounswe/bounswe2022group2/issues/889)|2 hours|
+  |Revision of tests : POST /auth/signup , POST /learningspace, POST /events, POST /events/participate/:eventId|[878](https://github.com/bounswe/bounswe2022group2/issues/878)|5 hours|
+  |Event participation functionality for backend|[829](https://github.com/bounswe/bounswe2022group2/issues/829)|1 hours|
+ |implementation of profile page for the backend|[820](https://github.com/bounswe/bounswe2022group2/issues/820)|3 hours|
+ |Event endpoints implementation: Create event and getters|[794](https://github.com/bounswe/bounswe2022group2/issues/794)|3 hours|
+ 
+ 
+  **Milestone-2**
+ 
+  |Pull Request Title|Link|Time consumption|
+  |-----|:--------:|:-----:|
+  |POST /learningspace implementation|[540](https://github.com/bounswe/bounswe2022group2/issues/540)|4 hours|
+  |get categories endpoint implementation and categories logic in learning spaces|[556](https://github.com/bounswe/bounswe2022group2/issues/556)|4 hours|
+  |Semantic search implementation for backend|[573](https://github.com/bounswe/bounswe2022group2/issues/573)|30 hours|
+  |Getters for the learning spaces|[575](https://github.com/bounswe/bounswe2022group2/issues/575)|2 hours|
+  |615 getters for learningspaces: get most participated learning spaces if a query is not given|[617](https://github.com/bounswe/bounswe2022group2/issues/617)|1 hours|
+  |GET endpoints regarding user and learningspace relation|[621](https://github.com/bounswe/bounswe2022group2/issues/621)|2 hours|
+  |Milestone 2: Merge dev to master(Getting release)|[670](https://github.com/bounswe/bounswe2022group2/issues/670)|1 hour|
+ 
+ **Milestone-1**
+ 
+  |Pull Request Title|Link|Time consumption|
+  |-----|:--------:|:-----:|
+  |351 initialization of the backend project |[#352](https://github.com/bounswe/bounswe2022group2/pull/352)|1 hour|
+  |365 sign up endpoint |[#366](https://github.com/bounswe/bounswe2022group2/pull/366) [#391](https://github.com/bounswe/bounswe2022group2/pull/391)|[#428](https://github.com/bounswe/bounswe2022group2/pull/428)|3 hours|
+  |355 dockerization of the api |[#367](https://github.com/bounswe/bounswe2022group2/pull/367)|1 hour|
+  |hotfix: usermodel update|[#436](https://github.com/bounswe/bounswe2022group2/pull/436)|30 minutes|
+  |return mock course data|[#443](https://github.com/bounswe/bounswe2022group2/pull/443)|1 hour|
+  |create readme.md for learnify folder with setup instructions|[#472](https://github.com/bounswe/bounswe2022group2/pull/472)|1 hour|
+  |adding AWS, Docker, Gmail and NodeJS to tools evaluation|[#488](https://github.com/bounswe/bounswe2022group2/pull/488)|1.5 hours|
+  |GET /courses|[#437](https://github.com/bounswe/bounswe2022group2/pull/437)|1 hour|
 
 ## *Unit Tests:*
+ 
+ Pushed alongside the endpoints.
 
 ## *Additional Information:*  
 
