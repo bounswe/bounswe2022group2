@@ -2050,6 +2050,12 @@ Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She h
 ***
 
 ## Project Plan
+![CmpE451_ProjectPlan_Milestone3_page-0001](https://user-images.githubusercontent.com/92719802/210265560-e3f79908-0bd1-4725-a64f-6cab4d189a61.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0002](https://user-images.githubusercontent.com/92719802/210265573-ae0e53a7-147a-431c-bf84-da36eacef2c6.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0003](https://user-images.githubusercontent.com/92719802/210265575-1a999302-26e3-42bd-b986-32334221d028.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0004](https://user-images.githubusercontent.com/92719802/210265576-04bd654a-be16-4624-9395-15269909f676.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0005](https://user-images.githubusercontent.com/92719802/210265581-751df42f-cef0-43f8-81a2-d72004ec41a5.jpg)
+![CmpE451_ProjectPlan_Milestone3_page-0006](https://user-images.githubusercontent.com/92719802/210265583-9e405884-c994-4e0f-aca9-a7cf1d239828.jpg)
 
 ***
 
