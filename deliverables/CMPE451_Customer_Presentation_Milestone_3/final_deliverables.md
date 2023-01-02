@@ -423,13 +423,672 @@ As we said in the previous sections, we are generally satisfied with the progres
 
 ## Software Requirements Specification (SRS)
 
+# Glossary
+* **Achievement:** _Earnable success token that displays the completion of a course or other general accomplishments._
+* **Activity:** _User behavior including creating on enrolling in learning spaces. Displayed on user profile for the other users._
+* **Administrator:** _User with additional privileges in a course, the course admin is the course creator by default. Additional admins can be determined by the course creator optionally._
+* **Annotate:** _To supply with critical or explanatory notes; comment upon in notes._
+* **Authentication:** _The steps of establishing identity and verifying permission to access the platform._
+* **Avatar:** _A static image that acts as a visual representation for the user._
+* **Bio:** _A short text field edited by the user that is displayed on the user profile page._ 
+* **Comment:** _A text of feedback provided with the rating when responding to an entry in the learning space._
+* **Learning-Space:** _A co-learning platform instance where users can share various materials, on a specified subject._
+* **Event:** _In-person meetings organized by the lecturer of a course, displayed on the course page. Includes geolocation, date, duration and person capacity._
+* **Filter:** _An algorithm that categorizes, sorts, prioritizes, or blocks data through rule-based protocols._
+* **Follow:** _Establish contact with another user in order to get in touch more easily and view their activities._
+* **Forum:** _Communication platform provided within the course in order for the learners and the lecturer to interact._
+* **Highlight:** _To emphasize or make prominent._
+* **Inactivity:** _Lack of app use or interaction for a continuous amount of time._
+* **Incomplete:** _A temporary grade indicating that a learner has not fulfilled one or more of the essential requirements for a course._
+* **Interface:** _Graphic display of the application that makes it easier for use._
+* **Knowledge base:** _A store of information or data that is available to draw on._
+* **Co-learner:** _User enrolled in a learning space._
+* **Message:** _A piece of information that is sent through Forum which contains letters and emojis._
+* **Milestone:** _A significant point of progress that is reached in a course._
+* **Note:** _A text of comment or explanation created by the user._
+* **Poll:** _List of questions with options to choose from and no correct answer._
+* **Private:** _A piece of information that can only be seen by chosen users._
+* **Profile Page:** _Special page created for each user that contains their information._
+* **Public:** _A piece of information that can be seen by all users._
+* **Quiz:** _A special type of poll containing questions with a determined correct answer._
+* **Reputation:** _Overall representation of how well a user's learning spaces have been rated._
+* **Semantic Search:** _Semantic search is an alternative to the lexical search where contextual meaning is used to improve the accuracy of the results._
+* **Strong password:** _A password whose length is at least 8 and which contains at least one number, one upper and one lower case letter._
+* **Tag:** _Label used to categorize or identify content._
+* **Typeface:** _Design of the lettering that can include variation in size, weight, slope, width, etc._
+* **User:** _A person utilizing the application._
+
+# Requirements
+
+## 1. Functional Requirements
+
+### 1.1. 🧍 User Requirements
+
+<details><summary>1.1.1. 🔑 Authentication</summary><blockquote>
+
+<details><summary>1.1.1.1. Signup</summary>
+
+* 1.1.1.1.1. Guests shall enter an unused username, an unregistered email address, and a strong password to signup.
+* 1.1.1.1.2. Guests shall agree to the privacy policy and terms&conditions to signup.
+
+</details>
+
+<details><summary>1.1.1.2. Login</summary>
+
+* 1.1.1.2.1. Users shall provide their usernames and passwords to log in.
+
+</details>
+
+<details><summary>1.1.1.3. Email Verification</summary>
+
+* 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.
+</details>
+
+<details><summary>1.1.1.4. Forgot Password</summary>
+
+* 1.1.1.4.1. Users shall first enter the email addresses they signed up with and then the verification code they received.
+* 1.1.1.4.2. Users shall be authenticated after verification and be logged in.
+</details>
+
+<details><summary>1.1.1.5. Logout</summary>
+
+* 1.1.1.5.1. Users shall be able to log out.
+
+</details>
+
+<details><summary>1.1.1.6. Change Password</summary>
+
+* 1.1.1.6.1. Users shall be able to change their passwords from the settings screen.
+
+</details>
+
+</blockquote></details>
+
+<details><summary>1.1.2. 🗿 Profile Page</summary><blockquote>
+
+* 1.1.2.1. Users shall have a profile page.
+* 1.1.2.2. Users shall be able to edit their profile page.
+* 1.1.2.3. Users shall be able to display their full name on their profile pages.
+* 1.1.2.4. Users shall have a profile picture.
+* 1.1.2.5. Users shall be able to change their profile picture.
+* 1.1.2.6. Users shall have a bio in their profile pages.
+* 1.1.2.7. Users shall have a "My Events" section on their profile pages.
+* 1.1.2.8. Users shall be able to determine their profile page visibility as public or private.
+* 1.1.2.9. Followers, Follows, My Events, Interest Areas, Achievements, Progress, Notes, and Annotations sections shall be hidden on private profiles.
+
+<details><summary>1.1.2.10. Interests and Knowledge</summary>
+
+* 1.1.2.10.1 Users shall identify their interest areas
+* 1.1.2.10.2 Users shall display their interest areas in their profile pages
+
+</details>
+
+<details><summary>1.1.2.11. Achievements</summary>
+
+* 1.1.2.11.1. Users shall be able to earn achievements via the completion of a specific amount of Learning Spaces with related topics.
+* 1.1.2.11.2. Users shall view their achievements from the achievements section of their profile pages.
+
+</details>
+
+
+<details><summary>1.1.2.12. Progress Tracking</summary>
+
+* 1.1.2.12.1. Users shall be able to track their progress.
+
+</details>
+
+<details><summary>1.1.2.13. Notes</summary>
+
+* 1.1.2.13.1. Users shall view their notes taken on a learning space in the notes section of their profile pages.
+
+</details>
+
+<details><summary>1.1.2.14. Annotations</summary>
+
+* 1.1.2.14.1. Users shall be able to annotate post images and texts in learning spaces.
+* 1.1.2.14.2. Users shall be able to view annotations made by other users.
+* 1.1.2.14.3. Users shall be able to browse annotations by category, by course, by history, and by upvotes they have received.
+* 1.1.2.14.4. Users shall access the annotations they have added for course material from the annotations section of their profile pages.
+</details>
+
+
+<details><summary>1.1.2.15. Learning Spaces</summary>
+
+* 1.1.2.15.1. Users shall be able to see all learning spaces they created or enrolled in.
+
+</details>
+
+<details><summary>1.1.2.16. Reputation</summary>
+
+* 1.1.2.16.1. Users shall be able to see the feedback they have received for their learning content contributions in the recommendations section.
+
+</details>
+
+</blockquote></details>
+
+<details><summary>1.1.3 👩🏼‍💻 User Interaction</summary><blockquote>
+
+<details><summary>1.1.3.1. User-User Interaction</summary>
+
+* 1.1.3.1.1. Users shall see each other's profiles. 
+* 1.1.3.1.2. Users shall be able to follow each other.
+* 1.1.3.1.3. Users shall see the information of people they follow; their achievements and activities.
+* 1.1.3.1.4. Users shall be able to share notes with each other.
+* 1.1.3.1.5. Users shall be able to block other users.
+* 1.1.3.1.6. Users could prevent other users to see their profile by blocking them.
+
+
+</details>
+
+
+<details><summary>1.1.3.2. User-Learning Space Interaction</summary>
+
+<blockquote>
+
+<details><summary>1.1.3.2.1. Creating Learning Space & Content</summary>
+
+* 1.1.3.2.1.1. Users shall enter a title and description and choose an icon and categories to create a learning space.
+
+
+</details>
+
+<details><summary>1.1.3.2.2. Editing Learning Spaces</summary>
+
+* 1.1.3.2.2.1. Users shall be able to edit all material they provided.
+* 1.1.3.2.2.2. Users shall be able to delete learning spaces they created.
+
+</details>
+
+<details><summary>1.1.3.2.3. Enrolling to Learning Spaces </summary>
+
+* 1.1.3.2.3.1. Users shall see the contents in the learning space.
+* 1.1.3.2.3.2. Users shall be able to navigate learning material in the order they desire.
+* 1.1.3.2.3.3. Users shall be able to review other users in terms of providing learning material by giving stars and optionally providing feedback.
+* 1.1.3.2.3.4. Users shall be able to report inappropriate comments in the discussion forum of the learning space.
+
+</details>
+
+<details><summary>1.1.3.2.4. Notes and Annotation</summary>
+
+* 1.1.3.2.4.1. Each user shall have his/her notes section under each lecture.
+* 1.1.3.2.4.2. Users shall create and edit notes under the notes section via typing.
+* 1.1.3.2.4.3. Users shall be able to mention other notes from other learning spaces or/and other users in his/her.
+* 1.1.3.2.4.4. Users shall connect, annotate and tag notes.
+
+</details>
+
+<details><summary>1.1.3.2.5. Community Events</summary>
+
+* 1.1.3.2.5.1. Participants shall be able to create community events for that learning space.
+* 1.1.3.2.5.2. Created events shall only be available to currently enrolled learners.
+* 1.1.3.2.5.3. Created events should have a specific date, duration, location and limit for the number of participants.
+* 1.1.3.2.5.4. The event creator can give a brief description of the topics of discussion for the event.
+* 1.1.3.2.5.5. Event creators shall be able to cancel events that they have created.
+* 1.1.3.2.5.6. Created events should be visible on the learning space info page along with the date, duration, location and number of participants.
+* 1.1.3.2.5.7. The number of learners who will join the event will be visible on the event information. 
+
+</details>
+
+
+<details><summary>1.1.3.2.6. Discussions Forum</summary>
+
+* 1.1.3.2.7.1. Participants of a learning space shall be able to create discussion posts.
+
+</details>
+
+</details>
+
+</blockquote></details>
+
+<details><summary>1.1.4 📝 Learning Space Structure</summary><blockquote>
+
+* 1.1.4.1. Participants shall deliver learning material in form of posts which contain text and images.
+* 1.1.4.2. Learning Space shall have the main page where users can see introduction, events, sections, notes, annotations.
+* 1.1.4.3. The creator of a learning space shall be able to add additional admins to the learning space.
+
+
+</details>
+
+<details><summary>1.1.5 🛂 Administration</summary><blockquote>
+
+* 1.1.5.1. Admin shall evaluate reports and takes action accordingly.
+* 1.1.5.2. Admin shall be able to ban users permanently and temporarily.
+* 1.1.5.3. Admin shall be able to view all contents.
+* 1.1.5.4. Admin shall be able to remove any content.
+
+</details>
+
+</blockquote>
+</details>
+
+
+### 1.2. 💻 System Requirements
+
+<details><summary>1.2.1. 💡 Recommendations </summary><blockquote>
+
+* 1.2.1.1. Users will get various learning spaces as recommendations.
+* 1.2.1.2. These recommendations will be based on users' preferences about the topics of learning space. Learning spaces that have similar topics will be chosen to recommend.
+* 1.2.1.3. The recommendations will be displayed on the home page.
+
+</blockquote></details>
+
+<details><summary>1.2.2. 🔔 Notifications</summary><blockquote>
+
+  * 1.2.2.1 Users shall get notifications from the system.
+  * 1.2.2.2 The system shall notify users who did not complete almost done section of the registration.
+  * 1.2.2.3 The system shall notify users regarding any posts on the discussion forum of the lectures they take or give.
+  * 1.2.2.4 The system shall notify users when other users share notes with them.
+  * 1.2.2.5 The system shall notify users when they earn an achievement.
+  * 1.2.2.6 The system shall notify users to give feedback after each completed lecture.
+  * 1.2.2.7 The system shall notify lecturers when a user provides feedback on one of their courses.
+  * 1.2.2.8 The system shall notify users when an event is created for a lecture they are taking or giving.
+  * 1.2.2.9 The system shall notify users when a poll is created in a lecture they are taking.
+  * 1.2.2.10 The system shall notify users when they do not use the application for more than one day.
+  * 1.2.2.11 Users shall be able to turn their notifications on or off.
+  * 1.2.2.12 The system shall notify users when other users follow them.
+
+</blockquote></details>
+
+<details><summary>1.2.3. 🔎 Searching and Browsing </summary><blockquote>
+
+  * 1.2.3.1 The system shall implement semantic searching.
+  * 1.2.3.2 The system shall allow users to search for other users.
+     * 1.2.3.2.1 The system shall allow searching for users by their username.
+  * 1.2.3.3 The system shall allow users to search for courses.
+  * 1.2.3.4 The system shall offer filters for search results.
+     * 1.2.3.4.1 The system shall allow users to filter search results as only users or only courses.
+  * 1.2.3.5 The system shall allow users to browse for recommended courses.
+  * 1.2.3.6 The system shall allow users to browse for learning spaces created or joined by a user's from his/her profile page.
+  * 1.2.3.7 The system shall allow users to browse their notes.
+  * 1.2.3.8 The system shall allow users to browse for notes filtered by their tags.
+  * 1.2.3.9 The system shall allow users to browse the activities and achievements of users they follow on the user's profile page.
+</blockquote></details>
+
+<details><summary>1.2.5. 💬 Forum/Discussion </summary><blockquote>
+
+* 1.2.5.1. The forum features should be unique to the learning space. There is also a discussion section for the learning space.
+* 1.2.5.2. The discussion contents should be stored.
+* 1.2.5.3. The forum should include a timestamp for each entry and the sender's name should be at top of the each entry.
+* 1.2.5.4. The discussion entry creator's name should direct any user to his/her profile page.
+
+</blockquote>
+</details>
+
+<details><summary>1.2.6. 🏁 Almost Done </summary><blockquote>
+
+* 1.2.6.1. System shall allow users to optionally provide additional information about their full names, birth date, state of education, gender just after the signup stage.
+* 1.2.6.2. System should allow users to select educational topics, and titles which they are interested in in the almost done stage.
+
+</blockquote>
+</details>
+
+<details><summary>1.2.7. 🗑️ Delete Account </summary><blockquote>
+
+* 1.2.7.1. System shall allow users to delete their accounts.
+* 1.2.7.2. All personalized information about the deleted users have to be anonymized or completely deleted according to the privacy policy that will be determined later on.
+
+</blockquote>
+</details>
+
+<details><summary>1.2.8. 🗒️ Annotations </summary><blockquote>
+
+* 1.2.8.1. Users shall be able to create annotations.
+* 1.2.8.2. Annotations should comply to the [W3 Web Annotation Data Model](https://github.com/bounswe/bounswe2022group2/wiki/W3-Web-Annotation-Data-Model).
+* 1.2.8.3. Owner of the annotations shall be able to set annotations as public or private.
+* 1.2.8.4. Created annotations shall be reachable from both profile page and relevant target resource(s).
+* 1.2.8.5. Annotations may have a body attribute.
+* 1.2.8.6. Annotations shall have a target attribute.
+* 1.2.8.7. Annotations may have more than one body attribute and one target attribute.
+* 1.2.8.8. Annotations with public visibility should be listed on that annotation's creator's profile page.
+
+</blockquote>
+
+</details>
+
+## 2. Non-Functional Requirements
+
+<details><summary>2.1. 🔓 Availability and Accessibility</summary><blockquote>
+
+
+* 2.1.1. System should have a Website interface that provides an web specific user experience.
+* 2.1.2. System should have a Android application interface that provides an mobile specific user experience.
+* 2.1.3. System should support [UTF-8](https://developer.mozilla.org/en-US/docs/Glossary/UTF-8) character encoding.
+* 2.1.4. System should support English language.
+
+</details>
+
+<details><summary>2.2. 🔏 Privacy</summary><blockquote>
+
+ 
+* 2.2.1. Ethical concerns must be considered, so system must follow the rules defined by [GDPR](https://tr.wikipedia.org/wiki/Genel_Veri_Koruma_Y%C3%B6netmeli%C4%9Fi)/[KVKK](https://tr.wikipedia.org/wiki/Ki%C5%9Fisel_Verileri_Koruma_Kurumu).
+     * 2.2.1.1 A well-defined explanation about how users data will be used must be given to users.
+     * 2.2.1.2 Users must agree to the Privacy Policy and User Agreement.
+     * 2.2.1.3 If any change happens in the policy, users must be notified about it. 
+* 2.2.2. Learning Spaces can be private or public. If a LS is private, its content should not be visible to every user in the app.
+</details>
+
+<details><summary>2.3.  🛡️ Security</summary><blockquote>
+
+ 
+* 2.3.1 All sensitive data shall be encrypted before storing.
+* 2.3.2 The system shall block the account if any security issue is observed. 
+</details>
+
+<details><summary>2.4.  🔧 Performance and Reliability</summary><blockquote>
+
+ 
+* 2.4.1 The system should be able to handle at least 10.000 users and 500 user actions simultaneously. 
+* 2.4.2 The system should have a response time of at most 2.0 seconds excluding network based delay.
+</details>
+
+<details><summary>2.5. 🧩 Usability </summary><blockquote>
+
+ 
+* 2.5.1 The system should provide a user-friendly interface. It should contain a basic site map and should not contain a confusing linking system.
+* 2.5.2 The system should provide a direct feedback mechanism. Upon interaction, user shall be informed about success or failure of their action. 
+* 2.5.3 The system should have a well-chosen typeface that should be readable and clean.
+</details>
+
+<details><summary>2.6. 🌋 Disaster Recovery </summary><blockquote>
+
+* 2.6.1 The system should get backups and send them off-site at regular intervals for the possibility of disasters.
+* 2.6.2 System shall be able to reinitialize itself and continue functioning in case of an unexpected shutdown.
+* 2.6.3 System shall keep logs regarding the unexpected shutdown. 
+</details>
+
 ***
 
 ## Software Design Documents (UML)
 
+### Use Case Diagram
+Link: [Use Case Diagram](https://lucid.app/lucidchart/975d6056-2874-4fb9-8642-fc1a3a88aab4/edit?invitationId=inv_acc885f2-fa4a-491c-888a-b14b05e8aa09&page=0_0#) \
+![Use Case Diagram](https://user-images.githubusercontent.com/74411541/195986879-a1ec4b01-a0f4-4ced-9b93-ab9658aabcfa.png "use case")
+
+### Class Diagram
+Link: [Class Diagram](https://lucid.app/lucidchart/8688dac0-de02-48d2-bed7-f1ef8d62aba6/edit?invitationId=inv_26b91b21-bb1b-47cd-96e4-a1a28fc9b0ce&page=0_0#) \
+![Class Diagram](https://user-images.githubusercontent.com/74411541/195987280-940454c0-bef8-4322-b2dd-198f710fb97f.png "class")
+
+### Sequence Diagram
+Link: [Sequence Diagram](https://lucid.app/lucidchart/12990ace-9701-4be5-8ec5-cd83aebead91/edit?invitationId=inv_b9ba75d9-be43-49fd-9fcc-08c90d5c7fd8&page=0_0#) \
+![Sequence Diagram](https://user-images.githubusercontent.com/100771925/210212213-bd049344-06a3-4abf-b767-bb7f4f3b3793.png "sequence")
+
 ***
 
 ## User Scenarios and Mockups
+
+### Registered Lecturer Scenario, Hasan Taşkıran
+
+#### Persona
+<img align="left" src="https://user-images.githubusercontent.com/60237280/159185638-b2a3171d-030c-4779-87a8-a9cb0379bade.jpg" width="310" > 
+
+<pre>
+- Hasan Taşkıran
+- 33 years old, male, lives in Levent, İstanbul
+- Personality
+    * Practical
+    * Social
+    * Helpful
+    * Busy, tense 
+- Full-time mobile app developer at Andrestan in Levent/Istanbul
+- Has more than 10 years of experience in the mobile app development area
+</pre>
+
+#### User Story
+Hasan is an experienced mobile app developer. He has various experiences in different companies previously and currently working in a company as a full time mobile app developer. Contrary to what is believed about software developers, he is an extrovert and social person. In time off from work, he wants to share his knowledge, some programming tips with junior developers. Since he has a busy business life, he wants to share what he knows in the easiest and fastest way without having to allocate so much time. He cannot allocate enough time to prepare, record, edit and share course videos. Just because of this, he cannot use some popular educational platforms that allow lecturers to share course videos and learners to watch them. He is using our application's website since he can easily collect his notes, tips, explanations in time and share them whenever they are ready with the learners as a course.
+
+#### Goals
+- He wants to create a course by providing required information for a course creation.
+- He wants to set a course name, indicates a topic, provides a description and define the pre-requirements for this course.
+- He wants to create separate sections for the course to have a learning progress step by step.
+- He wants to set the privacy status of some sections of the created course as private because those sections are not ready to publish yet and still under construction.
+
+#### Pre-Conditions
+- He has already signed up, has an account, and a filled profile.
+- He has logged in to the our web app so that the initial screen he saw is the home screen.
+- He has experience in most of the features like creating notes, courses, and so on.
+- He is actively using the app, he already has some courses, learners, and reputation from them. 
+
+
+#### Scenario
+1) To begin, he opens the application's website.
+3) The website navigates him to the home page after the launch.
+4) Then he clicks the "Add Course" button.
+5) He then is navigated to the "Course Creation Page".
+6) He fills the course information, including the name, description, requirements, and other elements.
+7) Finally, he creates the course.
+
+#### Acceptance Criteria
+* **Login**
+    * 1.1.1.2.1. Users shall provide their username and passwords to be able to login if they logged out or they are kicked out due to long inactivity.
+
+* **Lecture Creation**
+    * 1.1.3.2.1.1. Lectures shall be given a unique title during creation.
+    * 1.1.3.2.1.2. Lecturer shall state the lectures topic in a specified field for sake of categorization.
+
+* **Lecture Structure**
+    * 1.1.4.1. Lectures shall deliver lecture material in text, images, and embedded videos.
+    * 1.1.4.2. Lectures shall have an Introduction where the lecturer presents the lecture in a text.
+
+* **Lecture Privacy**
+    * 1.1.3.2.2.3. Lecturer should be able to set a part of the lecture as hidden to be able to edit in different times.
+
+#### Mock-up
+1. He has already created an account and logged in.<br/>
+2. In the home page, he clicks 'Add Course' link.<br/>
+![l1-click](https://user-images.githubusercontent.com/36857236/161304264-a3533bd9-7a57-4f70-b2f1-52cfaba81522.PNG)<br/>
+3. After seeing the initial 'Course Creating Page'...<br/>
+![l2](https://user-images.githubusercontent.com/36857236/159791942-a471b9bd-648c-472b-92db-59eb26a40231.PNG)<br/>
+3.(continued) ...he fills the page with desired information.<br/>
+![l3-click](https://user-images.githubusercontent.com/36857236/161304320-26da0e4c-9075-499a-95ad-6db1e1728fb7.png)<br/>
+4. After filling the page, he clicks on 'Create Course!' button. After the click, webpage feedbacks Hasan that the course creation process is successful via a pop-up.<br/>
+![l4](https://user-images.githubusercontent.com/36857236/159792646-0454b789-0ba3-466d-a85e-a177ae2ffa40.png)
+
+### Unregistered Learner Scenario, Ai Zheng
+
+#### Persona
+<img align="left" src="https://media.istockphoto.com/id/1344252956/tr/foto%C4%9Fraf/modern-young-woman-of-asian-ethnicity-e-learning-via-laptop-at-the-modern-and-cozy.jpg?s=612x612&w=0&k=20&c=SuExMG33lSq4nEuYjJeDT2rMaH6s9KzhMARiK5kltB4=" width="280" > 
+
+<pre>
+- Ai Zheng
+- 17 years old, female, lives in Hong Kong
+-Personality:
+    *Cheerful
+    *Curious
+    *Artistic
+    *Extroverted
+-High school student
+-Interested in video game art, especially 3D modelling.
+</pre>
+
+#### User Story
+Ai is a highschool student who has been going to golfing with her parents and admired how her parents golf. Her admiration became her inspiration and she got into golfing recently. While looking for sources to learn to drive a golf cart, she heard that Cosmo Kramer, one of actor worked in one of her favourite TV-series "Seinfeld". Interested in Kramer's lectures, Ai signs in to our application to check out Kramer's lecturer profile. While signing in, she decides to keep her profile private because she wants to avoid attention and she thinks a new learners profile won't help to anyone. After signing in, she searches Kramer's lectures and his profile. and sees that overall learner satisfaction from Kramer's courses are particularly high when it comes to the terms of golfing! Thus, she goes on to one of Kramer's lectures on driving a golf cart. After seeing interaction between learners, thinking about having fellow learners to talk about ideas and encouraging each other like people do in lecture's community, she enrolls. The first section after introduction is "An Electric Golf Cart: What Is It and Who’s It For?" where Kramer talks about the basics of an electric golf cart. Ai annotates some history about golf carts as an additional information for learners. At the end of first lecture, Kramer has set a quiz type poll to check learner's familiarity with the storage of golf carts. Ai completes the poll and she was successful enough to earn the lecture's first badge.
+
+#### Goals
+- Since she is not registered to the app yet, firstly she wants to create an account for herself.
+- She wants to look at lecturer profiles and view overall learner satisfaction from those lecturers' courses and take lectures about topics she is interested in from lecturers she choose.
+- Then, she intends to earn these lectures' achievements, earn badges after completing necessary tasks or quizzes and more importantly, learn from them.
+- While learning the lectures, she wants to create notes related to the learning material. Thus, she wants to connect, annotate, tag and share these notes.
+- This user cares about privacy, so she wants to be able to choose who can see her profile page, achievements, badges. Furthermore, she wants to be able to block other users if she wishes.
+
+
+#### Pre-Conditions
+- She does not have an account for the app, so she has not logged in to the app yet.
+- She tries to create her account, so that the initial screen she saw is the "Create A New Account" page.
+- After creating the account, she sees the page where she chooses the interests before navigating to the home screen.
+- She has experience in most of the features of the app like creating notes, taking lectures, earning badges, blocking other users.
+
+
+#### Scenario
+1. Initially, she opens the website.
+2. In the homepage, she clicks "Sign Up" button to create a new account.
+3. She fills the required information, makes her profile private and reads and accepts the privacy policy.
+4. The system sends a verification email to the given email address. 
+5. She verifies her email address and logins into her account.
+6. At the first login, she have to select one or more topic that she interests. System directs her to the home page.
+7. At the home page, she clicks the search button and types a lecturer name.
+8. She reads the learner feedbacks about the courses from the lecturer profile.
+9. She chooses and enrolls one of the courses which she is looking for.
+10. She accesses this course under the "Enrolled Courses" page.
+11. She starts to learn the topic from the course contents.
+12. During the learning progress, she takes notes and annotates them. 
+13. At the end of the first part of the course, she takes a quiz.
+14. She earns one badge from the lecturer because she finished the first part of the course.
+15. To see this badge, she clicks the "Profile" button.
+16. Finally, she can see her first badge here.
+
+#### Acceptance Criteria
+* **Signup**
+     * 1.1.1.1.1. Guests shall enter their username, email address and strong passwords to be able to signup. These are the required information that users have to provide to enter the app.
+     * 1.1.1.1.2. Guests shall check the checkbox which indicates the agreement text of the privacy policy and terms&conditions to be able to signup. It is a required action.
+
+* **Email Verification**
+     * 1.1.1.3.1. Users shall enter the received verification codes (via their registered email addresses) to complete the email verification process.
+
+* **Searching and Browsing**
+     * 1.2.3.2 The system shall allow users to search for other users.
+          * 1.2.3.2.1 The system shall allow searching for users by their username.
+          * 1.2.3.2.2 The system should suggest users based on full name when search query gives no result for usernames.
+
+* **Recommendation**
+     * 1.1.2.13.2.1. Users shall be able to see the feedback they have received for the courses they provide teaching material in the recommendations section.
+     * 1.1.2.13.2.2. Users shall be able to view comment and star rating for each feedback, alongside the commentator’s name and first letter of their surname, a basic profile picture with their initials, and the name of the course.
+
+* **Taking Lectures**
+     * 1.1.3.2.3.1. Users shall see the content within sections as lecturer intended.
+     * 1.1.3.2.3.2. Users shall navigate in lecture material.
+     * 1.1.3.2.3.3. Users shall see which parts of the lecture they completed.
+     * 1.1.3.2.3.5. Users shall receive confirmation of their expertise on the topic upon completion of a lecture.
+     * 1.1.3.2.4.4. Users shall annotate lecture content by matching lecture content to notes.
+
+* **Notes and Annotation**
+     * 1.1.3.2.4.1. Each user shall have his/her notes section under each lecture.
+     * 1.1.3.2.4.2. User shall create and edit notes under notes section via typing.
+
+* **Achievements**
+     * 1.1.2.11.1. Users shall view the achievements they earned from the courses they have studied in the achievements section of their profile pages
+
+#### Mockup  
+1. She has already downloaded the app. Initially, she launches the app.
+2. In the homepage, she clicks "Sign Up" button to create a new account.
+<img width="793" alt="1" src="https://user-images.githubusercontent.com/68481602/159768813-a49e87ca-35cd-410e-a597-aebc94194fd2.png">
+
+3. She fills the required information, makes her profile private and reads and accepts the privacy policy.
+<img width="818" alt="2" src="https://user-images.githubusercontent.com/68481602/159774261-31a6bd1e-4483-4b9f-b03e-2459e9ea924e.png">
+<img width="818" alt="3" src="https://user-images.githubusercontent.com/68481602/159774287-0f3f0bee-8c75-430a-ab5d-e965f6a16dbb.png">
+
+4. The system sends a verification email to the given email address. 
+<img width="943" alt="4" src="https://user-images.githubusercontent.com/68481602/159769711-04f478ac-a54c-415f-ab8c-d74148b689b8.png">
+
+5. She verifies her email address and logins into her account.
+6. At the first login, she have to select one or more topic that she interests. System directs her to the home page.
+<img width="947" alt="5" src="https://user-images.githubusercontent.com/68481602/159769777-f25d28c5-e3aa-47e2-98f1-2462e4f6ce84.png">
+
+7. At the home page, she clicks the search button and types a lecturer name.
+<img width="943" alt="6" src="https://user-images.githubusercontent.com/68481602/159769825-c6c5bff8-2d31-4915-a4be-d8a341766aaa.png">
+<img width="944" alt="7" src="https://user-images.githubusercontent.com/68481602/159769856-cbf1f0d0-b422-4c5b-b03d-637c3b2b0474.png">
+
+8. She reads the learner feedbacks about the courses the lecturer profile.
+9. She chooses and enrolls one of the courses which she is looking for.
+<img width="943" alt="8" src="https://user-images.githubusercontent.com/68481602/159769997-6ba3d001-e643-41f4-866a-514a10b30ce1.png">
+
+10. She accesses this course under the "Enrolled Courses" page.
+<img width="945" alt="9" src="https://user-images.githubusercontent.com/68481602/159770073-3d14d6f8-9b31-47fc-9b58-b689402004fd.png">
+
+11. She starts to learn the topic from the course contents.
+<img width="944" alt="10" src="https://user-images.githubusercontent.com/68481602/159770134-d3b455ca-2807-4e12-81a3-9da0e37ebf1a.png">
+
+12. During the learning progress, she takes notes and annotates them. 
+<img width="955" alt="11" src="https://user-images.githubusercontent.com/68481602/159770159-f8fd4c7a-d05e-4520-9cec-7b7dccc533c0.png">
+
+13. At the end of the first part of the course, she takes a quiz.
+<img width="944" alt="12" src="https://user-images.githubusercontent.com/68481602/159770203-c12cbdc6-9510-48fd-8e92-cafdaf8ff88e.png">
+
+14. She earns one badge from the lecturer because she finished the first part of the course.
+<img width="944" alt="13" src="https://user-images.githubusercontent.com/68481602/159770269-c936d987-df7d-4a1b-a261-9eff4bdaea38.png">
+
+15. To see this badge, she clicks the "Profile" button.
+<img width="940" alt="14" src="https://user-images.githubusercontent.com/68481602/159770298-edc6a8ed-74df-4fb9-ae77-387bef2f7cf4.png">
+
+16. Finally, she can see her first badge here.
+<img width="948" alt="15" src="https://user-images.githubusercontent.com/68481602/159770321-d213a1b5-d4ad-444d-9638-910dd628bdb7.png">
+
+### Lecturer Creates Community Event Scenario, Ezgi Ece Smith
+
+#### Persona
+<img align="left" src="https://user-images.githubusercontent.com/56553280/159314799-6888ca70-3b33-4fc4-9165-79757e793ec9.jpg" width="200" > 
+
+<pre>
+- Ezgi Ece Smith
+- 46 years old, female, lives in Hisarüstü, İstanbul
+- Personality
+    * Impatient
+    * Strict
+    * Sarcastic
+    * Friendly
+- Works at AI Robotics Lab in Bogazici University.
+- Loves teaching so much want to do it even in her free time.
+</pre>
+
+  
+
+#### User Story
+Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She has graduated from ODTÜ and got her PhD from Harvard University on Artificial Intelligence. She loves teaching and interacting with students, and was very sad when she couldn't meet her students face to face due to the pandemic.  In her free time, she likes bird watching and taking long hikes. She likes to test out different methods to reach more students and teach more efficiently. She tried our app for this purpose and loved it so much started exploring different features. She shares lots of notes and sources with her students. 
+
+
+#### Goals
+- She wants to get to know her students better.
+- She thinks she can accomplish this by hosting a meeting event.
+- She wants to make sure the details for the meeting are shared by all students so that no one misses out.
+- She would like to answer her students' questions instantly.
+
+#### Pre-Conditions
+- She is signed up for the platform.  
+- She has created a course and the course has students enrolled.  
+- She has opened the website and logged in to her profile. 
+- She has accessed the course page for the course she is giving.
+
+
+#### Scenario
+1) She has already launched the website and has navigated to the course page.
+2) She clicks the chat button to view the chat for the course.
+3) She clicks the "Create Community Event" button.
+4) Application launches a dialog that asks for location, date, duration and participant limit.
+5) She fills in the fields with the relevant information and clicks "Create Event".
+6) The event is created and displayed on the course info page.
+
+
+#### Acceptance Criteria  
+* 1.1.1.2. Login  
+    * 1.1.1.2.1. Users shall provide their username and passwords to be able to login if they logged out or they are kicked out due to long inactivity.  
+* 1.1.3.2.5. Community Events  
+    * 1.1.3.2.5.1. Users who are qualified as lecturers shall create community events.
+
+    * 1.1.3.2.5.2. Created events shall include currently enrolled learners.
+
+    * 1.1.3.2.5.4. Events have a specific date, duration, and limit for the number of participants.
+
+    * 1.1.3.2.5.7. These events will be visible on the course info page along with the date, duration, and the number of participants.
+
+    * 1.1.3.2.5.9. The number of students who will join the event will be visible to both lecturers and students. 
+
+
+#### Mockup  
+1) She has already launched the website and has navigated to the course page.
+![ComEvent1](https://user-images.githubusercontent.com/74256913/161118819-4ca087d4-0944-4034-ab69-9536952d0474.png) 
+
+2) She clicks the chat button to view the chat for the course.
+![ComEvent2](https://user-images.githubusercontent.com/74256913/161118827-75b1bb82-f81d-444a-a078-f1bc57943b5b.png)
+
+3) She clicks the "Create Community Event" button.
+4) Application launches a dialog that asks for location, date, duration and participant limit.
+![ComEven3](https://user-images.githubusercontent.com/74256913/161118832-69cf2b52-6be4-43d0-8d1c-dcb5a65f017a.png)
+
+5) She fills in the fields with the relevant information and clicks "Create Event".
+![ComEven4](https://user-images.githubusercontent.com/74256913/161118836-71a9abd4-b96b-4c72-aa3f-7cf1abe4e687.png)
+
+6) The event is created and displayed on the course info page.
+![ComEvent5](https://user-images.githubusercontent.com/74256913/161118842-0c27412c-38e9-4835-be29-a7a9f522f7fc.png)
+![ComEvent6](https://user-images.githubusercontent.com/74256913/161118844-b900053d-abb1-47b9-ac29-831677bf1fe8.png)
 
 ***
 
