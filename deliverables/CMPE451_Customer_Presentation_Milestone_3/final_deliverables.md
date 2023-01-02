@@ -531,20 +531,101 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Final Milestone: Individual Contributions Report for Enes Sürmeli|[#948](https://github.com/bounswe/bounswe2022group2/issues/948)|3 hours|-|
+  |Final Milestone: Summary of Work Table for Enes Sürmeli|[#949](https://github.com/bounswe/bounswe2022group2/issues/949)|1 hour and 45 minutes|-|
+  |Final Milestone Report: List and Status of Deliverables|[#950](https://github.com/bounswe/bounswe2022group2/issues/950)|2 hours and 30 minutes|-|
+  |Preparing Milestone 3 - CMPE 451 Final Deliverables|[#934](https://github.com/bounswe/bounswe2022group2/issues/934)|3 hours and 30 minutes|-|
+  |Frontend: Unit Tests for Event Component of Learning Space|[#912](https://github.com/bounswe/bounswe2022group2/issues/912)|1 hour and 45 minutes|-|
+  |Frontend: Backend Connection for Joining Events on Learning Space Page|[#907](https://github.com/bounswe/bounswe2022group2/issues/907)|2 hours and 15 minutes|-|
+  |Frontend: Unit Tests for Comment Component of Learning Space Posts|[#894](https://github.com/bounswe/bounswe2022group2/issues/894)|2 hours|-|
+  |Frontend: Unit Tests for About Page|[#886](https://github.com/bounswe/bounswe2022group2/issues/886)|2 hours|-|
+  |Frontend: Backend Connection for Editing Comments of Learning Space Posts|[#882](https://github.com/bounswe/bounswe2022group2/issues/882)|2 hours and 30 minutes|-|
+  |Frontend: Backend Connection for Upvote and Downvote Functionality for Posts and Comments|[#874](https://github.com/bounswe/bounswe2022group2/issues/874)|3 hours|-|
+  |Frontend: Backend Connection for Getting Events on Learning Space Page|[#858](https://github.com/bounswe/bounswe2022group2/issues/858)|3 hours|-|
+  |Frontend: Backend Connection For Create and Get Comment|[#852](https://github.com/bounswe/bounswe2022group2/issues/852)|2 hours and 30 minutes|-|
+  |Frontend: Creating Event Component for Learning Space Page|[#847](https://github.com/bounswe/bounswe2022group2/issues/847)|5 hours|-|
+  |Frontend: Implementation of About Page|[#814](https://github.com/bounswe/bounswe2022group2/issues/814)|4 hours|-|
+  |Frontend: Create Comment Component for Learning Space Posts|[#798](https://github.com/bounswe/bounswe2022group2/issues/798)|4 hours and 30 minutes|-|
+  |--------------|-|--------------|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Milestone 2: Individual Report - Muhammed Enes Sürmeli|[#727](https://github.com/bounswe/bounswe2022group2/issues/727)|3 hours|-|
+  |Milestone-2 Report: List and Status of Deliverables|[#724](https://github.com/bounswe/bounswe2022group2/issues/724)|2 hours|-|
+  |Preparing Milestone 2 - CMPE 451 Deliverables|[#668](https://github.com/bounswe/bounswe2022group2/issues/668)|3 hours and 30 minutes|-|
+  |Frontend: Implementation of Not Found Page|[#520](https://github.com/bounswe/bounswe2022group2/issues/520)|6 hours|-|
+  |Frontend: Implementation of Private Routes|[#521](https://github.com/bounswe/bounswe2022group2/issues/521)|5 hours|-|
+  |Frontend: Implementation of Components on Learning Space Page|[#549](https://github.com/bounswe/bounswe2022group2/issues/549)|2 hours and 15 minutes|-|
+  |Frontend: Implementation of onClick Button Rendering|[#630](https://github.com/bounswe/bounswe2022group2/issues/630)|2 hours|-|
+  |Frontend: Backend Connection for the Create Post Part of Learning Space Page|[#641](https://github.com/bounswe/bounswe2022group2/issues/641)|5 hours and 45 minutes|-|
+  |Frontend: Implementation of the Text Annotation|[#650](https://github.com/bounswe/bounswe2022group2/issues/650)|5 hours|-|
+  |Frontend: Implementation of the Image Annotation|[#651](https://github.com/bounswe/bounswe2022group2/issues/651)|6 hours and 30 minutes|-|
+  |Frontend: Implementation of Edit Post Feature|[#659](https://github.com/bounswe/bounswe2022group2/issues/659)|4 hours and 15 minutes|-|
+  |Frontend: Backend Connection For Edit Post|[#660](https://github.com/bounswe/bounswe2022group2/issues/660)|1 hour|-|
+  |Frontend: Unit Tests for Not Found Page|[#681](https://github.com/bounswe/bounswe2022group2/issues/681)|1 hour|-|
+  |Frontend: Unit Tests for Email Verification Page|[#453](https://github.com/bounswe/bounswe2022group2/issues/453)|1 hour and 15 minutes|-|
+  |Milestone 1: Reviewing the Milestone - What Went Well and What Did Not Go Well Parts|[#492](https://github.com/bounswe/bounswe2022group2/issues/492)|4 hours|-|
+  |Documenting the Meeting Notes for the Frontend Meeting 4|[#548](https://github.com/bounswe/bounswe2022group2/issues/548)|3 hours and 30 minutes|-|
+  |Documenting Meeting Notes for the Meeting 6 of CMPE 451|[#535](https://github.com/bounswe/bounswe2022group2/issues/535)|2 hours and 30 minutes|-|
+  |Milestone-2: User Interfaces for Web Application|[#723](https://github.com/bounswe/bounswe2022group2/issues/723)|30 minutes|-|
+  |--------------|-|--------------|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Implementation of Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/385)|5 hours|
+  |Frontend: Adding Form Validation for Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/429)|1 hour|
+  |Frontend: Backend Connection for the Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/449)|1 hour|
+  |Frontend: Unit Tests for Email Verification Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/453)|1 hour and 15 minutes|
+  |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)|30 minutes|
+  |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)|2 hours and 15 minutes|
+  |Revising the Requirements Specification: Notifications|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/329)|2 hours and 30 minutes|
+  |Revisions About All the Diagrams|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/422)|45 minutes|
+  |Updating Communication Plan|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/315)|30 minutes|
+  |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)|1 hour|
+  |Revising Mockups|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/326)|30 minutes|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Final Milestone: Individual Contributions Report for Enes Sürmeli|[#989](https://github.com/bounswe/bounswe2022group2/issues/989)|3 hours|-|
+  |Final Milestone: Summary of Work Table for Enes Sürmeli|[#990](https://github.com/bounswe/bounswe2022group2/issues/990)|1 hour and 45 minutes|-|
+  |Final Milestone Report: List and Status of Deliverables|[#950](https://github.com/bounswe/bounswe2022group2/issues/976)|2 hours and 30 minutes|-|
+  |Milestone 3: Preparing Final Deliverables|[#935](https://github.com/bounswe/bounswe2022group2/issues/935)|3 hours and 30 minutes|-|
+  |Dev to Master|[#932](https://github.com/bounswe/bounswe2022group2/issues/932)|30 minutes|-|
+  |Frontend: Unit Tests for Event Component of Learning Space|[#913](https://github.com/bounswe/bounswe2022group2/issues/913)|1 hour and 45 minutes|-|
+  |Frontend: Backend Connection for Joining Events on Learning Space Page|[#908](https://github.com/bounswe/bounswe2022group2/issues/908)|2 hours and 15 minutes|-|
+  |Frontend: Unit Tests for Comment Component of Learning Space Posts|[#895](https://github.com/bounswe/bounswe2022group2/issues/895)|2 hours|-|
+  |Frontend: Unit Tests for About Page|[#891](https://github.com/bounswe/bounswe2022group2/issues/891)|2 hours|-|
+  |Frontend: Backend Connection for Editing Comments of Learning Space Posts|[#883](https://github.com/bounswe/bounswe2022group2/issues/883)|2 hours and 30 minutes|-|
+  |Frontend: Fixing the Footer Navigation|[#876](https://github.com/bounswe/bounswe2022group2/issues/876)|1 hour and 30 minutes|-|
+  |Frontend: Backend Connection for Upvote and Downvote Functionality for Posts and Comments|[#875](https://github.com/bounswe/bounswe2022group2/issues/875)|3 hours|-|
+  |Frontend: Backend Connection for Getting Events on Learning Space Page|[#859](https://github.com/bounswe/bounswe2022group2/issues/859)|3 hours|-|
+  |Frontend: Backend Connection For Create and Get Comment|[#853](https://github.com/bounswe/bounswe2022group2/issues/853)|2 hours and 30 minutes|-|
+  |Frontend: Creating Event Component for Learning Space Page|[#848](https://github.com/bounswe/bounswe2022group2/issues/848)|5 hours|-|
+  |Frontend: Implementation of About Page|[#815](https://github.com/bounswe/bounswe2022group2/issues/815)|4 hours|-|
+  |Frontend: Create Comment Component for Learning Space Posts|[#799](https://github.com/bounswe/bounswe2022group2/issues/799)|4 hours and 30 minutes|-|
+  |--------------|-|--------------|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Milestone 2: Individual Report - Muhammed Enes Sürmeli|[#719](https://github.com/bounswe/bounswe2022group2/issues/719)|3 hours and 15 minutes|-|
+  |Milestone-2 Report: List and Status of Deliverables|[#718](https://github.com/bounswe/bounswe2022group2/issues/718)|2 hours|-|
+  |Milestone 2: Preparing Deliverables and Group Review|[#672](https://github.com/bounswe/bounswe2022group2/issues/672)|3 hours and 30 minutes|-|
+  |Frontend: Implementation For Edit Post Feature|[#661](https://github.com/bounswe/bounswe2022group2/issues/661)|4 hours and 15 minutes|-|
+  |Frontend: Backend Connection for the Edit Post Part|[#661](https://github.com/bounswe/bounswe2022group2/issues/661)|1 hour|-|
+  |Frontend: Implementation of Private Routes|[#523](https://github.com/bounswe/bounswe2022group2/issues/523)|5 hours|-|
+  |Frontend: Implementation of Not Found Page|[#525](https://github.com/bounswe/bounswe2022group2/issues/525)|6 hours|-|
+  |Frontend: Implementation of Components on Learning Space Page|[#629](https://github.com/bounswe/bounswe2022group2/issues/629)|2 hours and 15 minutes|-|
+  |Frontend: Implementation of onClick Button Rendering|[#631](https://github.com/bounswe/bounswe2022group2/issues/631)|2 hours|-|
+  |Frontend: Create Post Feature of Learning Space Page|[#643](https://github.com/bounswe/bounswe2022group2/issues/643)|3 hours|-|
+  |Frontend: Backend Connection for the Create Post Part of Learning Space Page|[#643](https://github.com/bounswe/bounswe2022group2/issues/643)|2 hours and 45 minutes|-|
+  |Frontend: Implementation of the Text Annotation|[#658](https://github.com/bounswe/bounswe2022group2/issues/658)|5 hours|-|
+  |Frontend: Implementation of the Image Annotation|[#658](https://github.com/bounswe/bounswe2022group2/issues/658)|6 hours and 30 minutes|-|
+  |Milestone 1: What Went Well, What Did Not Go Well, and Individual Contribution Parts|[#508](https://github.com/bounswe/bounswe2022group2/issues/508)|4 hours|-|
+  |Frontend: Unit Tests for Email Verification Page|[#458](https://github.com/bounswe/bounswe2022group2/issues/458)|1 hour and 15 minutes|-|
+  |Frontend: Unit Tests for Not Found Page|[#683](https://github.com/bounswe/bounswe2022group2/issues/683)|1 hour|-|
+  |Milestone-2: Web Application's UI Designs - Enes|[#744](https://github.com/bounswe/bounswe2022group2/issues/744)|30 minutes|-|
+  |Updating the Dev Branch|[#684](https://github.com/bounswe/bounswe2022group2/issues/684)|15 minutes|-|
+  |--------------|-|--------------|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Email Verification Page Implementation |[#392](https://github.com/bounswe/bounswe2022group2/pull/392)|5 hours|
+  |Frontend: Email Verification Form Validation |[#431](https://github.com/bounswe/bounswe2022group2/pull/431)|1 hour|
+  |Frontend: Backend Connection for Email Verification Page |[#450](https://github.com/bounswe/bounswe2022group2/pull/450)|1 hour|
+  |Frontend: Unit Tests for Email Verification Page |[#453](https://github.com/bounswe/bounswe2022group2/pull/453)|1 hour and 15 minutes|
   
 * **Koray Tekin**
   |Issue Title|Link|Time Consumption|
