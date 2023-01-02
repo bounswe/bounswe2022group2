@@ -107,7 +107,31 @@ In short, we achieved all of our aims and accomplished all the responsibilities 
 
 ### Final Release Notes
 
-***
+Release: 0.9.0 Customer presentation 3
+
+What has changed?
+
+- Event functionality has added to our application. Users can create and participate in events using mobile app or the learnify webpage.
+- Annoration back-end is moved to its seperate server using new annotations microservice and now working completely independent of monolithic back-end server. 
+- Profile functionality has been added, users can search and see each others profiles, change their bios and profile pictures.
+- Semantic recomendations are added, using semantic encoding of learningspaces, semantic engine finds the most suitable learningspaces to recomend to a particular user.
+- Comment functionality is added, users now can comment on posts under learning spaces.
+- Users now can upvote and downwote posts to show their opinion about posts.
+- Multi-language feature addded to the mobile app.
+- About us sections are added to the web and mobile apps.
+- Our mobile app now supports dark mode to improve accesability.
+
+What is fixed?
+
+- Web application is connected to the new annotation server using W3 annotation model.
+- Annotation service is seperated from the back-end and now serves an API to allow other services to access our annotations.
+
+What will be fixed in next releases?
+
+- Semantic search treshold will be fine tuned.
+- Authentication will be improved with a new auth middleware. 
+- Learning space creators will be able to select learningspace header pictures and icons.
+- Notes functionality will be added.
 
 ### Changes the Team Has Made or Planned Since Milestone 2 to Improve Development Process, and How Those Changes Have Impacted the Process
 
@@ -163,56 +187,166 @@ As we said in the previous sections, we are generally satisfied with the progres
 * **Altay Acar**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
 
 * **Egemen Atik**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Ezgi Aysel Batı**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
 
 * **Batuhan Çelik**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Hasan Can Erol**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Onur Kömürcü:**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
-  
-  |Pull Request Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |Mobile: Documenting Meeting Notes #6|[#774](https://github.com/bounswe/bounswe2022group2/issues/774)|40 minutes|
+  |Mobile: Updating My Profile Page|[#775](https://github.com/bounswe/bounswe2022group2/issues/775)|7 hours|
+  |Mobile: Implementing Other User's Profile Page|[#776](https://github.com/bounswe/bounswe2022group2/issues/776)|1h 30m|
+  |Mobile: User Search Backend Connection|[#866](https://github.com/bounswe/bounswe2022group2/issues/866)|2 hours|
+  |Mobile: Get and Update My Profile Backend Connection|[#867](https://github.com/bounswe/bounswe2022group2/issues/867)|10 hours|
+  |Mobile: Get Other Users Profile Backend Connection|[#868](https://github.com/bounswe/bounswe2022group2/issues/868)|3 hours|
+  |Final Milestone: Project Plan|[#956](https://github.com/bounswe/bounswe2022group2/issues/956)|30 minutes|
+  |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|1h 40m|
+  |Final Milestone: Summary of Work Table for Onur Kömürcü|[#958](https://github.com/bounswe/bounswe2022group2/issues/958)|2 hours|
+  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/958)|2 hours|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |Mobile: Implementing Search Page|[#567](https://github.com/bounswe/bounswe2022group2/issues/567)|20 hours|
+  |Mobile: Implementing Learnifies Page|[#568](https://github.com/bounswe/bounswe2022group2/issues/568)|4 hours|
+  |Mobile: Backend Connection for Search Page|[#584](https://github.com/bounswe/bounswe2022group2/issues/584)|5 hours|
+  |Mobile: Implementing User Preview Widget|[#593](https://github.com/bounswe/bounswe2022group2/issues/593)|2 hours|
+  |Mobile: Static User Search Implementation and Additional Improvements|[#635](https://github.com/bounswe/bounswe2022group2/issues/635)|7 hours|
+  |Mobile: Tests for ViewAllScreen and TakenLsScreen|[#646](https://github.com/bounswe/bounswe2022group2/issues/646)|1h 30m|
+  |Documenting Meeting Notes of Meeting #5 of the Mobile Team|[#527](https://github.com/bounswe/bounswe2022group2/issues/527)|40 minutes|
+  |Milestone-2 Report: Updating Project Plan|[#690](https://github.com/bounswe/bounswe2022group2/issues/690)|1 hour|
+  |Milestone-2: Individual Report|[#714](https://github.com/bounswe/bounswe2022group2/issues/690)|1h 30m|
+  |Milestone 2: Fill User Interface Part for Mobile|[#710](https://github.com/bounswe/bounswe2022group2/issues/710)|50 minutes|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |Mobile Team: Setting up development Environment|[#372](https://github.com/bounswe/bounswe2022group2/issues/372)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Mobile - Implementing Login Page Including Backend Connection|[#396](https://github.com/bounswe/bounswe2022group2/issues/396)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Mobile: Writing Tests for Login Page|[#447](https://github.com/bounswe/bounswe2022group2/issues/447)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising the Requirements Specification|[#323](https://github.com/bounswe/bounswe2022group2/issues/323)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Update the Project plan for upcoming semester|[#316](https://github.com/bounswe/bounswe2022group2/issues/316)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Milestone 1: Project Plan|[#448](https://github.com/bounswe/bounswe2022group2/issues/448)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Milestone 1: Evaluation of the Status of Deliverables|[#491](https://github.com/bounswe/bounswe2022group2/issues/491)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Updating Communication Plan|[#377](https://github.com/bounswe/bounswe2022group2/issues/377)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising the Diagrams based on Achievements|[#346](https://github.com/bounswe/bounswe2022group2/issues/346)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising the Requirements: Achievements and Badges|[#333](https://github.com/bounswe/bounswe2022group2/issues/333)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+  |Revising Mockups|[#326](https://github.com/bounswe/bounswe2022group2/issues/326)|[in personal wiki page](https://github.com/bounswe/bounswe2022group2/wiki/Onur-Kömürcü)|
+
+  Note: I didn't includ time tracking in PR's because issues covers all PR's.
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|-|
+  |Mobile: My Profile Screen Update|[#783](https://github.com/bounswe/bounswe2022group2/issues/783)|
+  |Mobile: User search backend connection|[#890](https://github.com/bounswe/bounswe2022group2/issues/890)|
+  |Mobile: My profile backend connection|[#915](https://github.com/bounswe/bounswe2022group2/issues/915)|
+  |Mobile: Other users profile page and backend connection|[#921](https://github.com/bounswe/bounswe2022group2/issues/921)|
+  |Mobile: Profile Update Major BugFix|[#923](https://github.com/bounswe/bounswe2022group2/issues/923)|
+  |Final Milestone: Mobile App Scenario|[#957](https://github.com/bounswe/bounswe2022group2/issues/957)|
+  |Final Milestone: Summary of Work Table for Onur Kömürcü|[#958](https://github.com/bounswe/bounswe2022group2/issues/958)|
+  |Final Milestone: Individual Contributions Report for Onur Kömürcü|[#959](https://github.com/bounswe/bounswe2022group2/issues/958)|
+  |--------------|--------------|
+  |**Milestone 2**|-|
+  |Mobile: Implementing View All Screen|[#557](https://github.com/bounswe/bounswe2022group2/issues/557)|
+  |Mobile: Implementing Spaces Page|[#569](https://github.com/bounswe/bounswe2022group2/issues/569)|
+  |Mobile: Implemented Search Screen with Backend Connection|[#632](https://github.com/bounswe/bounswe2022group2/issues/632)|
+  |Mobile: User Preview Widget|[#638](https://github.com/bounswe/bounswe2022group2/issues/638)|
+  |Mobile: Static User Search and Recommended LS in Search Implemented|[#644](https://github.com/bounswe/bounswe2022group2/issues/644)|
+  |Mobile: Tests for Pages Which Use View All List|[#647](https://github.com/bounswe/bounswe2022group2/issues/647)|
+  |Milestone-2: Contribution report - Onur|[#725](https://github.com/bounswe/bounswe2022group2/issues/725)|
+  |Milestone-2: Summary of work - Onur|[#731](https://github.com/bounswe/bounswe2022group2/issues/731)|
+  |Milestone-2: Mobile User Interface - Onur|[#737](https://github.com/bounswe/bounswe2022group2/issues/737)|
+  |--------------|--------------|
+  |**Milestone 1**|-|
+  |Mobile: Implementation of Login Screen Including Backend Connection|[#398](https://github.com/bounswe/bounswe2022group2/pull/398)|
+  |Evaluation of the Status of Deliverables|[#509](https://github.com/bounswe/bounswe2022group2/pull/509)|
+  |Milestone 1: Adding Personal Efforts of Onur Kömürcü|[#494](https://github.com/bounswe/bounswe2022group2/pull/494)|
   
 * **Ecenur Sezer**
   |Issue Title|Link|Time Consumption|
@@ -282,24 +416,44 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Backend: Implementing and Bug Fixing Unit Tests|[#864](https://github.com/bounswe/bounswe2022group2/pull/864)|2 hrs|
   |Final Milestone: Update Annotations and Standards Section|[#954](https://github.com/bounswe/bounswe2022group2/pull/954)|2 hrs|
   |BUGFIX: Annotation Service Elastic IP taken and changed with old IP|[#965](https://github.com/bounswe/bounswe2022group2/pull/965)| 2.5 hrs|
-
+  
 * **Muhammed Enes Sürmeli:**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Koray Tekin**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 * **Bahrican Yeşil:**
   |Issue Title|Link|Time Consumption|
@@ -433,11 +587,21 @@ As we said in the previous sections, we are generally satisfied with the progres
 * **Mehmet Gökay Yıldız**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  ||||
+  |**Final Milestone 3**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 2**|-|-|
+  |--------------|--------------|--------------|
+  |**Milestone 1**|-|-|
+  |--------------|--------------|--------------|
   
 ***
 
@@ -751,9 +915,24 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### Annotations
 
+The app has text and image annotations for both the web and mobile versions. The text annotations allow users to add notes and comments to the posts of the learning spaces in the app, while the image annotations allow users to highlight and annotate specific areas of images within the posts. These annotations can be used to provide additional context, clarification, or feedback on the content. Users can see their own and other users' annotaions. On mobile version, annotations of the current user are shown on top of the screen, when "see annotations" section is activated. Text annotations are shown by highlights on related text, while image annotations have square shape identifiers on the image. Both the text and image annotations are available on both the web and mobile versions of the app, allowing users to access and utilize these features regardless of the platform they are using. Since there is full backend connection, annotations made by each platform can be accessed by each platform.
+
+  As mentioned in milestone 2 as a future improvement, the external annotation service is implemented and serves the Learnify application. The annotations created by Learnify users **do not kept in Learnify database**. Additionaly, annotations service is deployed in a different machine than Learnify server. In that context, annotation service and Learnify are two different applications. When application side of the Learnify sends a request for creating annotations, it uses it's own API to send the annotation model. In this API, another request to the annotation-service with its own parameters is sent. Then, the newly created annotation in saved in annotations service database. Similar scenario is present for accessing the annotations as well. When Learnify application sends a request to it's own server to get related annotations, another request is sent by axios library to the annotations service to return the related annotations which have the specified id. Overall, **Learnify application side does not have direct contact with annotations service.**
+  
+ Please check the documentation on [API Documentation](https://github.com/bounswe/bounswe2022group2/edit/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/final_deliverables.md#api-endpoints) section to see example requests for both annotations service and Learnify.
+ 
 ***
 
 ### Standards
+
+ To follow the W3C Annotation model standards, Learnify annotation related APIs both accept and send the given W3C annotation model. Similarly, annotation service APIs also accept and send same model. Please do see the annotations kept in annotation service DB below. 
+ 
+![image](https://user-images.githubusercontent.com/64018144/210228784-7992a698-72c3-473f-be99-2f7cff8f4d56.png)
+
+Although all APIs are documented in [API Documentation](https://github.com/bounswe/bounswe2022group2/edit/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/final_deliverables.md#api-endpoints), you can see in example below the **request sent to the annotation service.** It fully follows the W3C annotation model for both text and image annotations.
+![image](https://user-images.githubusercontent.com/64018144/210229112-847652f0-29a0-44bd-8e1e-d890aaddcc3f.png)
+
+Please do check the annotation related APIs in API Documentation as a proof to W3C Model Annotations are kept, saved and sent overall the application.
 
 ***
 
