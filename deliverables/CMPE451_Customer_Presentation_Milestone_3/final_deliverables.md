@@ -295,20 +295,46 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Add Comments to a Post | [#821](https://github.com/bounswe/bounswe2022group2/issues/821) | 6 hr |
+  |Documenting Meeting Notes for the Meeting 7 of CMPE 451| [#698](https://github.com/bounswe/bounswe2022group2/issues/698) | 30 min |
+  |Mobile: View All Comments| [#885](https://github.com/bounswe/bounswe2022group2/issues/885)| 2 hr|
+  |Final Milestone: User Interface / User Experience|[#962](https://github.com/bounswe/bounswe2022group2/issues/962)|1.5 hr|
+  |Final Milestone: System Manual|[#961](https://github.com/bounswe/bounswe2022group2/issues/961)| 15 min |
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile: Implementing Create/Edit Learning Space Screen|[#510](https://github.com/bounswe/bounswe2022group2/issues/510)| 6 hr | 
+  |Mobile: Implementing Annotation Screen|[#560](https://github.com/bounswe/bounswe2022group2/issues/560)| 2.5 hr |  
+  |Mobile: Backend Connection of Create Learning Space|[#570](https://github.com/bounswe/bounswe2022group2/issues/570)| 2 hr |  
+  |Mobile: Get Categories from Backend|[#586](https://github.com/bounswe/bounswe2022group2/issues/586)| 1 hr |  
+  |Mobile: Forum/Discussion Screen|[#620](https://github.com/bounswe/bounswe2022group2/issues/620)| 1 hr | 
+  |Mobile: Icon Selector for Create LS Screen|[#639](https://github.com/bounswe/bounswe2022group2/issues/639)| 4.5 hr |
+  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)| 2 hr |
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Mobile Team: Setting up development Environment #372|[Issue](https://github.com/bounswe/bounswe2022group2/issues/372)| 45 min |
+  |Mobile: Implementing Forget Password Screen #375|[Issue](https://github.com/bounswe/bounswe2022group2/issues/375)| 4 hr |
+  |Mobile: Writing Tests for Forget Password Screen #383|[Issue](https://github.com/bounswe/bounswe2022group2/issues/383)| 1 hr |
+  |Mobile: Back-end Connection of Forget Password/Verify Email Endpoint #384|[Issue](https://github.com/bounswe/bounswe2022group2/issues/384)| 1 hr|
+  |Mobile: Custom Widget For Course Preview #408|[Issue](https://github.com/bounswe/bounswe2022group2/issues/408)| 5 hr|
+  |Revising the Requirements: User-Lecture Interaction #330|[Issue](https://github.com/bounswe/bounswe2022group2/issues/330)| 1 hr|
+  |Updating ReadMe #317|[Issue](https://github.com/bounswe/bounswe2022group2/issues/317)| 20 min |
+  |Revising the Diagrams based on User - Lecture Interaction #343|[Issue](https://github.com/bounswe/bounswe2022group2/issues/343)| 20 min |
+  |Writing System Manual For Mobile #407|[Issue](https://github.com/bounswe/bounswe2022group2/issues/407)| 20 min |
   
-  |Pull Request Title|Link|Time Consumption|
-  |-----|:--------:|:--------:|
-  |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|-|
+  |Mobile: post comments |https://github.com/bounswe/bounswe2022group2/pull/826|
+  |hotfix - fix profile username |https://github.com/bounswe/bounswe2022group2/pull/930|
+  |**Milestone 2**|-|
+  |Mobile: create edit Learning Space screen|[#565](https://github.com/bounswe/bounswe2022group2/pull/565)|  
+  |Mobile/create ls backend | [#585](https://github.com/bounswe/bounswe2022group2/pull/585)|  
+  |Mobile: Annotation Screen - 560 | [#613](https://github.com/bounswe/bounswe2022group2/pull/613)|
+  |Mobile: LS Forum | [#622](https://github.com/bounswe/bounswe2022group2/pull/622)|  
+  |Mobile: create ls image selection | [#640](https://github.com/bounswe/bounswe2022group2/pull/640) |
+  |**Milestone 1**|-|
+  |Mobile/forget password screen|[#382](https://github.com/bounswe/bounswe2022group2/pull/382)|
+  |Mobile: course preview widget |[#430](https://github.com/bounswe/bounswe2022group2/pull/430)|
+  |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
+  |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
 
 * **Batuhan Çelik**
   |Issue Title|Link|Time Consumption|
@@ -2093,20 +2119,97 @@ Name: Ezgi Aysel Batı
 Group: Group2 - Android/Mobile Team
 
 ## *Responsibilities:*
+### Final Milestone
+ 1. Implementing View All Comments Screen
+ 2. Implementing add comment to post feature
+ 3. Implementing comment model and all related backend connections
+ 4. Providing realistic content for the application
+ 5. Reviewing and testing the works done by the mobile team.
+ 6. Helping mobile members with bugs they encounter and parts they struggle to implement via additional discord meetings.
+ 7. Helping demo preparations and scenario outline 
+ 8. Attending and participating general meetings regularly.
+ 9. Attending and participating in mobile team meetings regularly.
+### Milestone 2  
+1. Implementing Create Learning Space screen
+2. Implementing Discussions Screen
+3. Implementing Annotations Screen (the screen that displays all annotations when you click on the highlighted part)
+4. Implementing Learning Space model
+5. Implementing text item widget.
+6. Implementing service for Learning Space related requests.
+7. Implementing the backend connection between the create learning space screen and our REST API.
+8. Implementing Learning Space Forum screen
+9. Providing mock data for discussion forum and randomizing it for realistic usage view
+10. Integrating LS Icons of Frontend to mobile as assets
+11. Reviewing the works done by the mobile team.
+12. Helping mobile members with bugs they encounter and parts they struggle to implement via discord meetings.
+13. Presenting mobile section of the demo
+14. Attending and participating general meetings regularly.
+15. Attending and participating in mobile team meetings regularly.
+16. Implementing the backend connection to get category options from our REST API.
+17. Additional to meetings communicated with some backend and frontend members to make sure our development process is aligned.
+ ### Milestone 1
+1. Implementing forget password screen and backend connection for mobile.
+2. Implementing Course Preview widget which is the main component of mobile home page.
+3. Implementing unit & widget tests.
+4. Reviewing and testing work done by other mobile team members.
+5. Revising Requirements & UML design related to User-Lecture interactions
+6. Writing System Manual for Mobile.
+7. Learning flutter, flutter testing.
 
 ## *Main Contributions:*
+ As a member of mobile team, I have developed several screens, models, a service and tests. I worked on implementing the forgot password screen, its connection to the backend endpoint send verification code and also unit/widget tests. I also worked on creating a custom part that displays a preview of courses, which is the main part of home page as well as the main component of search results. Similarly I have implemented Create Learning Space screen, comments screen, comment creation feature, annotations screen, (static due to time restrictions) discussions part and all backend connections related to these. I have created the initial models for Learning Space and Comment on mobile, and the LS service.  I had no prior knowledge of flutter or mobile development, so all my implementation comes with additional research and learning efforts. I attended most lectures, ps'es, mobile & general team meetings. I participated actively especially regarding future planning. I have also reviewed and tested my teammates' works both in terms of code correctness and functionality. Held bug fix sessions with other new learning mobile members to solve parts we struggle to develop or test for bugs. I also did lots of research about unit testing in flutter as I came across a special case problem. I presented the mobile parts in the first two customer demos, and helped with scenario preparations and content creation for the final presentation.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+ 
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |**Final Milestone 3**|-|-|
+  |Mobile: Add Comments to a Post | [#821](https://github.com/bounswe/bounswe2022group2/issues/821) | 6 hr |
+  |Mobile: View All Comments| [#885](https://github.com/bounswe/bounswe2022group2/issues/885)| 2 hr|
+  |Mobile: Implementing Create/Edit Learning Space Screen|[#510](https://github.com/bounswe/bounswe2022group2/issues/510)| 6 hr | 
+  |Mobile: Implementing Annotation Screen|[#560](https://github.com/bounswe/bounswe2022group2/issues/560)| 2.5 hr |  
+  |Mobile: Backend Connection of Create Learning Space|[#570](https://github.com/bounswe/bounswe2022group2/issues/570)| 2 hr |  
+  |Mobile: Get Categories from Backend|[#586](https://github.com/bounswe/bounswe2022group2/issues/586)| 1 hr |  
+  |Mobile: Implementing Forget Password Screen #375|[Issue](https://github.com/bounswe/bounswe2022group2/issues/375)| 4 hr |
+  |Mobile: Custom Widget For Course Preview #408|[Issue](https://github.com/bounswe/bounswe2022group2/issues/408)| 5 hr|
+
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+  |Issue Title|Link|Time Consumption|
+  |-----|:--------:|:--------:|
+  |**Final Milestone 3**|-|-|
+  |Documenting Meeting Notes for the Meeting 7 of CMPE 451| [#698](https://github.com/bounswe/bounswe2022group2/issues/698) | 30 min |
+  |Final Milestone: User Interface / User Experience|[#962](https://github.com/bounswe/bounswe2022group2/issues/962)|1.5 hr|
+  |Final Milestone: System Manual|[#961](https://github.com/bounswe/bounswe2022group2/issues/961)| 15 min |
+  |Requirements Revision|[#678](https://github.com/bounswe/bounswe2022group2/issues/678)| 2 hr |
+  |Updating ReadMe #317|[Issue](https://github.com/bounswe/bounswe2022group2/issues/317)| 20 min |
+  |Revising the Diagrams based on User - Lecture Interaction #343|[Issue](https://github.com/bounswe/bounswe2022group2/issues/343)| 20 min |
+  |Writing System Manual For Mobile #407|[Issue](https://github.com/bounswe/bounswe2022group2/issues/407)| 20 min |
 
-## *Pull Requests:*
+## *Pull Requests:*  
+  |Pull Request Title|Link|
+  |-----|:--------:|
+  |**Final Milestone 3**|-|
+  |Mobile: post comments |https://github.com/bounswe/bounswe2022group2/pull/826|
+  |hotfix - fix profile username |https://github.com/bounswe/bounswe2022group2/pull/930|
+  |**Milestone 2**|-|
+  |Mobile: create edit Learning Space screen|[#565](https://github.com/bounswe/bounswe2022group2/pull/565)|  
+  |Mobile/create ls backend | [#585](https://github.com/bounswe/bounswe2022group2/pull/585)|  
+  |Mobile: Annotation Screen - 560 | [#613](https://github.com/bounswe/bounswe2022group2/pull/613)|
+  |Mobile: LS Forum | [#622](https://github.com/bounswe/bounswe2022group2/pull/622)|  
+  |Mobile: create ls image selection | [#640](https://github.com/bounswe/bounswe2022group2/pull/640) |
+  |**Milestone 1**|-|
+  |Mobile/forget password screen|[#382](https://github.com/bounswe/bounswe2022group2/pull/382)|
+  |Mobile: course preview widget |[#430](https://github.com/bounswe/bounswe2022group2/pull/430)|
+  |Mobile: forget password backend|[#433](https://github.com/bounswe/bounswe2022group2/pull/433)|
+  |Mobile: implement tests for forget password|[#442](https://github.com/bounswe/bounswe2022group2/pull/442)|
 
 ## *Unit Tests:*
-
-## *Additional Information:*  
+ Widget and Network tests for forget password screen: #442
+ Widget tests for Create LS Screen: https://github.com/bounswe/bounswe2022group2/blob/mobile/create-ls-tests/learnify/mobile/test/create_ls_test.dart
+ Create LS Screen tests have not been merged to the master branch as the futureInit() function used in this screen causes automated tests to fail. After 7-8 hours and 300+ lines of bug fixing attempts I gave up on it. The screen works and the tests are written properly. They just fail automated testing.
 
 ---------------
 
