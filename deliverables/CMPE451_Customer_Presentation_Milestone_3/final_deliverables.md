@@ -715,6 +715,8 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### System Manual
 
+The system manual is available on our wiki [here](https://github.com/bounswe/bounswe2022group2/wiki/System-Manual).
+
 ***
 
 ## Software Requirements Specification (SRS)
