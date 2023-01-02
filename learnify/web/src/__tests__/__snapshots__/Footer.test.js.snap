@@ -54,7 +54,7 @@ exports[`Footer should render component layout correctly 1`] = `
       >
         <a
           className="footer-item-bold"
-          href="/profile"
+          href="/profile/null"
         >
           Profile
         </a>
@@ -76,19 +76,19 @@ exports[`Footer should render component layout correctly 1`] = `
       >
         <a
           className="footer-item-bold"
-          href="/user/learning-spaces"
+          href="/null/learningspaces"
         >
           My Learning Spaces
         </a>
         <a
           className="footer-item-bold"
-          href="/popular-learning-spaces"
+          href="/popular"
         >
           Popular Learning Spaces
         </a>
         <a
           className="footer-item-bold"
-          href="/recommended-learning-spaces"
+          href="/recommended"
         >
           Recommended Learning Spaces
         </a>
@@ -96,7 +96,7 @@ exports[`Footer should render component layout correctly 1`] = `
       <div
         className="footer-column-r"
       >
-        2022
+        2023
          © Learnify Team. All rights reserved.
       </div>
     </div>
