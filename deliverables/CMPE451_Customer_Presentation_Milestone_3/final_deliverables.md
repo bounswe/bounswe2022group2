@@ -698,20 +698,78 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Implementation Of Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/771)| 30 hrs |
+  |Frontend: Creating Profile Picture Component|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/795)| 8 hrs |
+  |Frontend: About-Bio Component in Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/824)| 5 hrs |
+  |Frontend: Backend connection for Bio and PP component|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/837)| 5 hrs |
+  |Frontend: Make profile links unique and accessible through ls's|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/844)| 4 hrs |
+  |Frontend: Show all ls's that are related to the user|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/884)| 1 hrs |
+  |Frontend: Add links to the usernames in the Posts|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/901)| 30 min |
+  |Frontend: Add links to the usernames in the Comments|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/903)| 30 min |
+  |Frontend: Text and Image Annotation backend connection|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/918)| 7 hrs |
+  |Frontent: Unit tests for AboutUser and ProfilePhoto components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/929)| 1 hrs |
+  |Final Milestone: Status of the Requirements|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/944)| 2 hrs |
+  |Documenting Meeting Notes #9|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/986)|  30 min |
+  |Final Milestone: Summary of Work Table for Gökay Yıldız|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/941)| 2 hrs |
+  |Final Milestone: Individual Contributions Report for Gökay Yıldız |[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/942)| 2 hrs |
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: .env file and using environment variables in the code|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/529)| 3hrs |
+  |Frontend: Change Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/530)| 8 hrs |
+  |Frontend: Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/543)| 30 hrs |
+  |Frontend: Backend connection of Create Learning Space Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/576)| 3 hrs |
+  |Frontend: Connection of create ls page with created ls page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/625)| 2 hrs |
+  |Frontend: Join Learning Space|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/656)| 3 hrs |
+  |Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/695)| 2 hrs |
+  |Documenting the Meeting Notes for the Frontend Meeting 3|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/542)| 1 hrs |
+  |Milestone 2 Report: Individual Report |[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/700)| 2 hrs |
+  |Milestone-2 Report: Progress According To Requirements|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/705)| 1 hrs |
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+    |Personal Wiki Page: Gokay Yildiz|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/311)| 1 hrs |
+    |Discovery and Questions about Project for New Members|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/320)| 3 hrs |
+    |Revising the Requirements Specification|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/323)| 3 hrs |
+    |Research & Report for Frontend Technologies (Frontend Team)|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/327)| 3 hrs |
+    |Revising the Requirements: Profile Page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/345)| 5 hrs |
+    |Conducting Research on React Router|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/386)| 2 hrs |
+    |Initialization of the frontend project|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/371)| 3 hrs |
+    |Frontend: Implementing Forgot Password Screen|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/379)| 8 hrs |
+    |Frontend: Backend connection for the Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/444)| 3 hrs |
+    |Frontend: Unit Tests for Forget Password page|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/464)| 3 hrs |
+    |Frontend: Creating mock home page and adding to the repository|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/465)| 30 min |
+    |Milestone 1: Evaluation of the Status of Deliverables|[Issue Link](https://github.com/bounswe/bounswe2022group2/issues/493)| 3 hrs |
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: profile photo component|[#800](https://github.com/bounswe/bounswe2022group2/pull/800)| - | 
+  |Frontend: Dev frontend profile page bio|[#835](https://github.com/bounswe/bounswe2022group2/pull/835)| - | 
+  |Frontend: connection of bio component|[#841](https://github.com/bounswe/bounswe2022group2/pull/841)| - | 
+  |Dev frontend profile page profile photo|[#843](https://github.com/bounswe/bounswe2022group2/pull/843)| - | 
+  |Frontend: profile page connections|[#850](https://github.com/bounswe/bounswe2022group2/pull/850)| - | 
+  |Dev frontend profile page general development|[#861](https://github.com/bounswe/bounswe2022group2/pull/861)| - | 
+  |Frontend: comment and post link added to user|[#904](https://github.com/bounswe/bounswe2022group2/pull/904)| - | 
+  |Frontend: Dev frontend annotation be connection|[#922](https://github.com/bounswe/bounswe2022group2/pull/922)| - | 
+  |Frontend: unit test initialized for bio and profile picture|[#928](https://github.com/bounswe/bounswe2022group2/pull/928)| - | 
+  |Final milestone progress in requirements |[#945](https://github.com/bounswe/bounswe2022group2/pull/945)| - | 
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: the urls connected to .env|[#531](https://github.com/bounswe/bounswe2022group2/pull/531)| - | 
+  |Dev frontend change password|[#537](https://github.com/bounswe/bounswe2022group2/pull/537)| - | 
+  |Dev frontend create ls|[#572](https://github.com/bounswe/bounswe2022group2/pull/572)| - | 
+  |Frontend: interconnection between the create ls and ls page is done|[#627](https://github.com/bounswe/bounswe2022group2/pull/627)| - | 
+  |Frontend: Join Learning Space|[#657](https://github.com/bounswe/bounswe2022group2/pull/657)| - | 
+  |HOTFIX HOMEPAGE|[#671](https://github.com/bounswe/bounswe2022group2/pull/671)| - | 
+  |Frontend: unit tests for three components initialized|[#694](https://github.com/bounswe/bounswe2022group2/pull/694)| - | 
+  |Milestone2 gokay personal report|[#702](https://github.com/bounswe/bounswe2022group2/pull/702)| - | 
+  |Milestone-2: Web Application's UI Designs - Gökay|[#732](https://github.com/bounswe/bounswe2022group2/pull/732)| - | 
+  |Milestone-2 : Progress according to to requirements|[#733](https://github.com/bounswe/bounswe2022group2/pull/733)| - | 
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Frontend: Initial pages created to present as an example|[#378](https://github.com/bounswe/bounswe2022group2/pull/378)| - |  
+  |Frontend/forget password|[#419](https://github.com/bounswe/bounswe2022group2/pull/419)| - | 
+  |Frontend: Backend connection to forget password|[#445](https://github.com/bounswe/bounswe2022group2/pull/445)| - | 
+  |Frontend: Home page mock|[#461](https://github.com/bounswe/bounswe2022group2/pull/461)| - | 
+  |Frontend/dev forget password unit tests|[#463](https://github.com/bounswe/bounswe2022group2/pull/463)| - | 
+  |responsibility and summary of work for Gokay |[#504](https://github.com/bounswe/bounswe2022group2/pull/504)| - | 
+  |update indv part and evaluate deliverables  |[#506](https://github.com/bounswe/bounswe2022group2/pull/506)| - | 
+
   
 ***
 
