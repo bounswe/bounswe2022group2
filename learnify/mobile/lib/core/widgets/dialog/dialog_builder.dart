@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tuple/tuple.dart';
 
+import '../../../features/learning-space/models/annotation/annotation_model.dart';
 import '../../../product/language/language_keys.dart';
 import '../../../product/theme/general_theme.dart';
 import '../../constants/main_type_definitions.dart';
 import '../../extensions/context/context_extensions.dart';
 import '../../extensions/context/theme_extensions.dart';
+import '../../helpers/color_helpers.dart';
 import '../buttons/action_button.dart';
 import '../indicators/custom_loading_indicator.dart';
 import '../text-field/custom_text_form_field.dart';
@@ -55,12 +58,21 @@ class DialogBuilder {
       );
 
   /// Annotate dialog
-  Future<void> annotateDialog(int startIndex, int endIndex, String? chapterId,
-      AnnotateCallback callback) async {
+  Future<Annotation?> annotateDialog(
+    String? postId, {
+    AnnotateTextDialogCallback? textCallback,
+    AnnotateImageDialogCallback? imageCallback,
+    int? startIndex,
+    int? endIndex,
+    Offset? startOffset,
+    Offset? endOffset,
+    Color? color,
+    String? imageUrl,
+  }) async {
     String annotationText = '';
-    await showDialog(
+    final Annotation? res = await showDialog(
       context: context,
-      barrierDismissible: false,
+      // barrierDismissible: false,
       builder: (BuildContext context) => StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) => AlertDialog(
           title: BaseText(TextKeys.annotateText, style: context.titleLarge),
@@ -90,17 +102,70 @@ class DialogBuilder {
           actions: <Widget>[
             _dialogActionButton(
               TextKeys.cancel,
-              callback: () => Navigator.of(context).pop(),
+              callback: () => Navigator.of(context).pop(null),
             ),
             _dialogActionButton(
               TextKeys.annotate,
-              asyncCallback: () async =>
-                  callback(startIndex, endIndex, annotationText, chapterId),
+              asyncCallback: () async {
+                final NavigatorState navigator = Navigator.of(context);
+                if (textCallback != null) {
+                  final Tuple2<Annotation?, String?> res = await textCallback(
+                      startIndex ?? 0, endIndex ?? 0, annotationText, postId);
+                  navigator.pop(res.item1);
+                  return res.item2;
+                } else if (imageCallback != null && imageUrl != null) {
+                  final Tuple2<Annotation?, String?> res = await imageCallback(
+                    startOffset ?? Offset.zero,
+                    endOffset ?? Offset.zero,
+                    annotationText,
+                    postId,
+                    color ?? Colors.white,
+                    imageUrl,
+                  );
+                  navigator.pop(res.item1);
+                  return res.item2;
+                }
+                navigator.pop(null);
+                return null;
+              },
               isAction: true,
               isActive: annotationText.length > 3,
             ),
           ],
         ),
+      ),
+    );
+    return res;
+  }
+
+  /// Participants dialog
+  Future<void> participantsDialog(List<String> participants) async {
+    await showDialog(
+      context: context,
+      // barrierDismissible: false,
+      builder: (BuildContext context) => AlertDialog(
+        title: BaseText(TextKeys.eventParticipants, style: context.titleLarge),
+        titlePadding: EdgeInsets.symmetric(vertical: context.height * 3),
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: context.width * 2, vertical: context.height * 0),
+        content: SizedBox(
+          width: double.maxFinite,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: participants.length,
+            itemBuilder: (BuildContext context, int i) => ColoredBox(
+                color: ColorHelpers.lightRandomColor,
+                child: BaseText(participants[i], translated: false)),
+          ),
+        ),
+        actionsAlignment: MainAxisAlignment.end,
+        actionsPadding: _actionsPadding(context),
+        actions: <Widget>[
+          _dialogActionButton(
+            TextKeys.ok,
+            callback: () => Navigator.of(context).pop(null),
+          ),
+        ],
       ),
     );
   }
@@ -115,17 +180,15 @@ class DialogBuilder {
       isAction
           ? ActionButton(
               onPressedError: () async {
-                final NavigatorState navigator = Navigator.of(context);
                 final String? res =
                     asyncCallback == null ? null : await asyncCallback();
-                navigator.pop();
                 return res;
               },
               isActive: isActive,
               onPressed: callback,
               text: text,
-              textStyle:
-                  context.labelLarge.copyWith(color: context.lightActiveColor),
+              textStyle: context.labelLarge
+                  .copyWith(color: context.lightDarkActiveColor),
               padding: EdgeInsets.symmetric(
                   horizontal: context.width * 2.5,
                   vertical: context.height * .3),
@@ -147,9 +210,9 @@ class DialogBuilder {
 
   EdgeInsets _actionsPadding(BuildContext context) => EdgeInsets.only(
       top: context.height * .1,
-      left: context.width * 4,
-      right: context.width * 4,
-      bottom: context.height * 1);
+      left: context.width * 3,
+      right: context.width * 3,
+      bottom: context.height * .3);
 
   /// Shows a dialog with single selection option.
   Future<T?> singleSelectDialog<T>(

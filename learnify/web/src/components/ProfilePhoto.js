@@ -4,8 +4,14 @@ function ProfilePhoto(props) {
   const [photo, setPhoto] = useState(props.profilePicture);
   
   const [loading, setLoading] = useState(false);
-
+  const [username, setUsername] = useState(localStorage.getItem('username'));
+  console.log(username)
+  console.log(props.userviewed)
   const handleFileChange = async (event) => {
+    // Only allow the user to change the photo if they are viewing their own profile
+    if (username !== props.userviewed) {
+      return;
+      }
     setLoading(true);
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -33,15 +39,16 @@ function ProfilePhoto(props) {
   };
 
   return (
+    (props.userviewed === username)?(
     <div className="profile-frame">
       <div className="profile-photo">
         {props.profilePicture ? (
           <div>
             <img src={`data:image/jpeg;base64,${props.profilePicture}`} alt="Profile" />
+            
             <label htmlFor="photo-input">
               <span>Change profile photo</span>
             </label>
-            
             <input
               type="file"
               id="photo-input"
@@ -73,6 +80,29 @@ function ProfilePhoto(props) {
         )}
       </div>
     </div>
+    ):(
+    <div className="profile-frame">
+      <div className="profile-photo">
+        {props.profilePicture ? (
+          <div>
+            <img src={`data:image/jpeg;base64,${props.profilePicture}`} alt="Profile" />
+          </div>
+        ) : (
+          <div>
+            {loading ? (
+              <div className="default-photo">
+                <i className="fas fa-spinner fa-spin" />
+              </div>
+            ) : (
+              <div className="default-photo">
+                <i className="fas fa-user-circle" />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+    )
   );
 }
 

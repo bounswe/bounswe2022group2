@@ -3,25 +3,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:learnify/core/widgets/buttons/action_button.dart';
 import 'package:learnify/core/widgets/list/custom_expansion_tile.dart';
-import 'package:learnify/features/home-wrapper/view/home_wrapper_screen.dart';
+import 'package:learnify/core/widgets/text/annotatable/annotatable_text.dart';
+import 'package:learnify/features/learning-space/models/annotation/annotation_model.dart';
+import 'package:learnify/features/learning-space/models/learning_space_model.dart';
+import 'package:learnify/features/learning-space/view-model/learning_space_view_model.dart';
 import 'package:learnify/features/learning-space/view/learning_space_detail_screen.dart';
 import 'package:learnify/product/language/language_keys.dart';
+import 'package:provider/provider.dart';
 
 import 'test_helpers.dart';
 
 void main() {
   testWidgets(
-    "Test chapter list and item widgets.",
+    "Test post list and item widgets.",
     (WidgetTester tester) async {
-      final HomeWrapper homeWrapper = HomeWrapper(initialIndex: 2);
-      await tester.pumpWidget(TestHelpers.appWidget(homeWrapper));
-
-      final Finder detailFinder = find.descendant(
-          of: find.byWidget(homeWrapper),
-          matching: find.byType(LearningSpaceDetailScreen));
+      final LearningSpace dummyLearningSpace = LearningSpace.dummy(1);
       final LearningSpaceDetailScreen detailScreen =
-          tester.widget(detailFinder) as LearningSpaceDetailScreen;
-      expect(detailFinder, findsOneWidget);
+          LearningSpaceDetailScreen(learningSpace: dummyLearningSpace);
+      await tester.pumpWidget(
+        TestHelpers.appWidget(
+          detailScreen,
+          childCallback: (BuildContext c) {
+            final LearningSpaceViewModel viewModel =
+                c.read<LearningSpaceViewModel>();
+            viewModel.annotations['0'] = <Annotation>[];
+            viewModel.annotations['1'] = <Annotation>[];
+          },
+        ),
+      );
 
       final Finder tabFinder =
           TestHelpers.descendantFinder(detailScreen, DefaultTabController);
@@ -30,43 +39,49 @@ void main() {
           tester.widget(tabFinder) as DefaultTabController;
       expect(tabController.initialIndex, 0);
 
-      final Finder chapterListFinder =
-          TestHelpers.descendantFinder(detailScreen, ChapterList);
-      expect(chapterListFinder, findsOneWidget);
+      final Finder postListFinder =
+          TestHelpers.descendantFinder(detailScreen, PostList);
+      expect(postListFinder, findsOneWidget);
 
       final Finder listFinder =
           TestHelpers.descendantFinder(detailScreen, SliverList);
       expect(listFinder, findsOneWidget);
-      final SliverList sliverList = tester.widget(listFinder) as SliverList;
-      final SliverChildBuilderDelegate delegate =
-          sliverList.delegate as SliverChildBuilderDelegate;
-      expect(delegate.childCount, 21);
 
       final Finder buttonFinder =
           TestHelpers.descendantFinder(detailScreen, ActionButton);
       expect(buttonFinder, findsOneWidget);
       final ActionButton button = tester.widget(buttonFinder) as ActionButton;
       expect(button.isActive, true);
-      expect(button.text, TextKeys.createChapter);
+      expect(button.text, TextKeys.createPost);
 
-      final Finder chapterFinder =
-          TestHelpers.descendantFinder(detailScreen, ChapterItem);
-      final ChapterItem firstChapter =
-          tester.widget(chapterFinder.first) as ChapterItem;
-      expect(firstChapter.itemIndex, 0);
+      final Finder postFinder =
+          TestHelpers.descendantFinder(detailScreen, PostItem);
+      final PostItem firstPost = tester.widget(postFinder.first) as PostItem;
+      expect(firstPost.itemIndex, 0);
 
       final Finder expansionTileFinder =
-          TestHelpers.descendantFinder(firstChapter, CustomExpansionTile);
+          TestHelpers.descendantFinder(firstPost, CustomExpansionTile);
       expect(expansionTileFinder, findsOneWidget);
       final CustomExpansionTile expansionTile =
           tester.widget(expansionTileFinder) as CustomExpansionTile;
-      expect(expansionTile.children.first.runtimeType, CarouselSlider);
-      expect(expansionTile.children.last.runtimeType, Padding);
-      final Padding padding = expansionTile.children.last as Padding;
-      expect(padding.child.runtimeType, ActionButton);
-      final ActionButton? editButton = padding.child as ActionButton?;
+      expect(expansionTile.children.first.runtimeType, Center);
+      expect(expansionTile.children[1].runtimeType, CarouselSlider);
+      expect(expansionTile.children[4].runtimeType, AnnotatableText);
+      expect(expansionTile.children[5].runtimeType, Row);
+      final Row row = expansionTile.children[5] as Row;
+      expect(row.children[0].runtimeType, Expanded);
+      expect(row.children[1].runtimeType, Expanded);
+
+      final Expanded? firstExpand = row.children[0] as Expanded?;
+      final ActionButton? editButton =
+          (firstExpand?.child as Padding).child as ActionButton?;
       expect(editButton?.isActive, true);
-      expect(editButton?.text, TextKeys.editChapter);
+      expect(editButton?.text, TextKeys.editPost);
+      final Expanded? secondExpand = row.children[1] as Expanded?;
+      final ActionButton? commentButton =
+          (secondExpand?.child as Padding).child as ActionButton?;
+      expect(commentButton?.isActive, true);
+      expect(commentButton?.text, TextKeys.addComment);
     },
   );
 }

@@ -38,6 +38,13 @@ class NavigationManager implements INavigationManager {
         ?.pushNamedAndRemoveUntil(path, removeAllOldRoutes, arguments: data);
   }
 
+  Future<void> navigateToPageAndRemove({
+    String path = '/',
+    Map<String, dynamic> data = const <String, dynamic>{},
+  }) async {
+    await navigatorKey.currentState?.popAndPushNamed(path, arguments: data);
+  }
+
   @override
   void pop() => navigatorKey.currentState?.pop();
 }

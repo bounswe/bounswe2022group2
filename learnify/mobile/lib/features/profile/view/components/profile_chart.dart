@@ -115,7 +115,13 @@ class __ProfileChartState extends State<_ProfileChart> {
               child: BaseText(
                 TextKeys.avg,
                 style: context.bodySmall,
-                color: showAvg ? Colors.white.withOpacity(0.6) : Colors.white,
+                color: showAvg
+                    ? context.isDark
+                        ? Colors.black54
+                        : Colors.white54
+                    : context.isDark
+                        ? Colors.black
+                        : Colors.white,
               ),
             ),
           ),
@@ -123,8 +129,9 @@ class __ProfileChartState extends State<_ProfileChart> {
       );
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
-    final TextStyle style = context.labelSmall
-        .copyWith(color: Colors.white54, fontWeight: FontWeight.bold);
+    final TextStyle style = context.labelSmall.copyWith(
+        color: context.isDark ? Colors.black54 : Colors.white54,
+        fontWeight: FontWeight.bold);
     Widget text;
     switch (value.toInt()) {
       case 0:
@@ -156,8 +163,9 @@ class __ProfileChartState extends State<_ProfileChart> {
   }
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
-    final TextStyle style = context.labelLarge
-        .copyWith(color: Colors.white54, fontWeight: FontWeight.bold);
+    final TextStyle style = context.labelLarge.copyWith(
+        color: context.isDark ? Colors.black54 : Colors.white54,
+        fontWeight: FontWeight.bold);
     String text;
     switch (value.toInt()) {
       case 1:

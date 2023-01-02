@@ -1,17 +1,12 @@
 part of '../view/home_screen.dart';
 
-class _CoursePreview extends StatelessWidget {
-  const _CoursePreview({
-    required this.textKey,
-    required this.participantNumber,
-    // ignore: unused_element
-    this.courseImage = IconKeys.learnIllustration,
+class CoursePreview extends StatelessWidget {
+  const CoursePreview({
+    required this.learningSpace,
     Key? key,
   }) : super(key: key);
 
-  final String textKey;
-  final int participantNumber;
-  final String courseImage;
+  final LearningSpace? learningSpace;
 
   @override
   Widget build(BuildContext context) => Material(
@@ -20,24 +15,26 @@ class _CoursePreview extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           splashColor: DarkAppTheme.lightBlue,
-          onTap: () {},
+          onTap: () async => NavigationManager.instance.navigateToPage(
+              path: NavigationConstants.learningSpace,
+              data: {'learningSpace': learningSpace}),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const SizedBox(height: 6),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: context.width * 4),
                   child: Ink.image(
                     padding:
                         EdgeInsets.symmetric(horizontal: context.width * 4),
-                    image: AssetImage(courseImage),
-                    height: context.height * 10,
+                    image: AssetImage(
+                        IconKeys.lsIcons[learningSpace?.iconId ?? 0]),
+                    height: context.height * 12,
                     width: context.width * 30,
                     fit: BoxFit.cover,
                   )),
               context.sizedH(.5),
               _courseDescription(context),
-              context.sizedH(.3)
             ],
           ),
         ),
@@ -45,20 +42,21 @@ class _CoursePreview extends StatelessWidget {
 
   Widget _courseDescription(BuildContext context) => Container(
       padding: EdgeInsets.symmetric(horizontal: context.width * 3),
-      width: context.width * 40,
+      width: context.width * 38,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Expanded(
             flex: 10,
-            child: Text(textKey,
+            child: Text(learningSpace?.title ?? "",
                 textAlign: TextAlign.left,
                 style: const TextStyle(fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis),
           ),
           const Spacer(),
           const Icon(Icons.people_alt_outlined, size: 15),
-          Text(participantNumber.toString(), textAlign: TextAlign.right)
+          Text(learningSpace?.participants.length.toString() ?? "",
+              textAlign: TextAlign.right)
         ],
       ));
 }
