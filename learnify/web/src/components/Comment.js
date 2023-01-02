@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import MDEditor from "@uiw/react-md-editor";
+
 
 export default function Comment(props){
 
@@ -9,18 +11,32 @@ export default function Comment(props){
   const creator = props.myComment.creator;
   const content = props.myComment.content;
   const images = props.myComment.images;
+  const postId = props.my_postId;
+  const profileLink = `/profile/${creator}`;
 
-  const [upCounter, setUpCounter] = useState(0);
-  const [downCounter, setDownCounter] = useState(0);
   const [deleteComment, setDeleteComment] = useState(false);
 
   const [imageUrl, setImageUrl] = useState("");
 
+  useEffect(()=>{
+        if(localStorage.getItem(commentId+"upCounter") === null)
+            localStorage.setItem(commentId+"upCounter", 0);
+
+        if(localStorage.getItem(commentId+"downCounter") === null)
+            localStorage.setItem(commentId+"downCounter", 0);
+  })
+
   const increaseUp = () => {
-      setUpCounter(count => count + 1);
+      localStorage.setItem((commentId+"upClicked"), true);
+      localStorage.setItem(commentId+"upCounter", (1+parseInt(localStorage.getItem(commentId+"upCounter"))));
+      localStorage.setItem("commentClicked", true);
+      window.location.reload();
   };
   const increaseDown = () => {
-      setDownCounter(count => count + 1);
+      localStorage.setItem((commentId+"downClicked"), true);
+      localStorage.setItem(commentId+"downCounter", (1+parseInt(localStorage.getItem(commentId+"downCounter"))));
+      localStorage.setItem("commentClicked", true);
+      window.location.reload();
   };
   const deleteTheComment = () => {
       setDeleteComment(current => !current);
@@ -42,52 +58,42 @@ export default function Comment(props){
   const lsid = props.my_lsid;
   
   const handleSubmitEdit  = () => {
-     // editExComment(lsid, commentId, commentTitle, value, imageUrl);
+        localStorage.setItem("commentClicked", true);
+        editExComment(lsid, postId, commentId, value, imageUrl);
   }
-  /*
-  const editExComment = async (lsid, commentId, commentTitle, final, imageUrl) => {
-      console.log(lsid)
-      console.log(commentId)
-      console.log(commentTitle)
-      console.log(final)
-      console.log(imageUrl)
-      await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/comment`, {
-          method: "PUT",
-          body: JSON.stringify({
-              ls_id: lsid,
-              comment_id: commentId,
-              title: commentTitle,
-              content: final,
-              images: [imageUrl],
-          }),
-          headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-              'Authorization': `${token}` , 
-          },
-      })
-          .then((response) => {
-              if (response.status === 200) {
-                  console.log("successfull")
-                  
-                  response.json().then( json => {
-                      console.log(json.learningSpace.id)
-                  });
-                  console.log("Learning Space Comment edited successfully!");
-                  window.location.reload();
-              } else {
-                  setMessage("Comment could not be edited!");
-                  response.json().then( json => {
-                      console.log(json.resultMessage);
-                  });
-              }
-          }
-          )
-          .catch((error) => {
-              console.log(error);
-          }
-          );
-  };
-  */
+
+  const editExComment = async (lsid, postId, commentId, final, imageUrl) => {
+        console.log(lsid)
+        console.log(postId)
+        console.log(commentId)
+        console.log(final)
+        console.log(imageUrl)
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/edit/comment`, {
+            method: "PUT",
+            body: JSON.stringify({
+                ls_id: lsid,
+                post_id: postId,
+                comment_id: commentId,
+                content: final,
+                images: [imageUrl],
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `${token}` ,
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log("success")
+                    window.location.reload();
+                } else {
+                    console.log("fail")
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     return(
     <div>
@@ -117,29 +123,19 @@ export default function Comment(props){
                 <div className='post-box-left'>
                     <div className='ls-button-container2'>
                         <button className='post-upvote-button' data-testid="upvote-button">
-                            <FontAwesomeIcon icon={solid('caret-up')} color="green" onClick={increaseUp}/>
+                            <FontAwesomeIcon icon={solid('caret-up')} color={localStorage.getItem((commentId+"upClicked")) ? "green": "black"} onClick={(localStorage.getItem((commentId+"upClicked")) || localStorage.getItem((commentId+"downClicked"))) ? console.log('onclick..') : increaseUp}/>
                         </button>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{upCounter}</label>
+                        <label className="counter__output">{localStorage.getItem(commentId+"upCounter")}</label>
                     </div>
                     <div className='ls-button-container2'>
                         <button className='post-downvote-button' data-testid="downvote-button">
-                            <FontAwesomeIcon icon={solid('caret-down')} color="red" onClick={increaseDown}/>
+                            <FontAwesomeIcon icon={solid('caret-down')} color={localStorage.getItem((commentId+"downClicked")) ? "red": "black"} onClick={(localStorage.getItem((commentId+"upClicked")) || localStorage.getItem((commentId+"downClicked"))) ? console.log('onclick..') : increaseDown}/>
                         </button>
                     </div>
                     <div className='post-container-display-item'>
-                        <label className="counter__output">{downCounter}</label>
-                    </div>
-                    <div className='ls-button-container2'>
-                        <div className='post-comment-button'>
-                            <a href="/reply">
-                                <FontAwesomeIcon icon={regular('comment')} color="black"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='post-container-display-item'>
-                        <label className="counter__output">{0}</label>
+                        <label className="counter__output">{localStorage.getItem(commentId+"downCounter")}</label>
                     </div>
                 </div>
                 <div className='comment-box-right'>
@@ -149,7 +145,9 @@ export default function Comment(props){
                         </label>
                     </div>
                     <div className='post-owner-display-item'>
-                        {creator}
+                    <Link to={profileLink} className='commentsText'>
+                    {creator}
+                    </Link>
                     </div>
                     <div className='ls-button-container-alt2'>
                         <button className='post-edit-icon-container' data-testid="edit-button">

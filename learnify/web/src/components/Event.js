@@ -5,7 +5,7 @@ import Participants from './Participants';
 
 export default function Event(props){
 
-  const eventId = props.myEvent.id;
+  const eventId = props.myEvent._id;
   const eventCreator = props.myEvent.eventCreator;
   const date = props.myEvent.date;
   const description = props.myEvent.description;
@@ -20,6 +20,8 @@ export default function Event(props){
 
   const d = new Date(date);
 
+  const username = localStorage.getItem('username');
+
   const dformat = [d.getDate(),
                     d.getMonth()+1,
                     d.getFullYear()].join('/')+' '+
@@ -33,6 +35,7 @@ export default function Event(props){
         const ifameData=document.getElementById("iframeId")
         const lat=latitude;
         const lon=longitude;
+        console.log(eventId);
         ifameData.src=`https://maps.google.com/maps?q=${lat},${lon}&hl=es;&output=embed`
     }
     })
@@ -64,6 +67,7 @@ export default function Event(props){
   };
 
   const joinEvent = () => {
+    joinTheEvent(eventId);
     setIsJoined(current => !current);
   };
 
@@ -72,6 +76,38 @@ export default function Event(props){
   const [message, setMessage] = useState("");
 
   const lsid = props.my_lsid;
+
+    const joinTheEvent = async (eventId) => {
+        console.log("Joining event with id: " + eventId);
+        await fetch(`${process.env.REACT_APP_BACKEND_BASE_URL}events/participate/${eventId}`, { 
+            method: 'POST',
+            body: JSON.stringify({
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}` , 
+          },
+        })
+        .then((response) => {
+            console.log(response.status);
+            if (response.status === 200) {
+                console.log("successfull")
+                response.json().then( json => {
+                    console.log(json)
+                });
+                console.log("You joined the Event successfully!");
+                window.location.reload();
+            } else {
+                setMessage("Event could not be joined!");
+                
+            }
+        }
+        )
+        .catch((error) => {
+            console.log(error);
+        }
+        );
+    }; 
 
     return(
     <div>
@@ -92,7 +128,7 @@ export default function Event(props){
               </div>
               <div className='space-5'></div>
               <div className='event-box-right'>
-                {!isJoined ? <button className="btn-white2" disabled>Joined</button> : <button className="btn-orange" onClick={joinEvent}>Join</button>}
+                {participantsArray.includes(username) ? <button className="btn-white2" disabled>Joined</button> : <button className="btn-orange" onClick={joinEvent}>Join</button>}
                 <FontAwesomeIcon icon={solid('people-group')} onClick={showTheParticipants} color="#000000" style={{backgroundColor: "transparent",
                     alignSelf: "center",
                     marginLeft: "auto",

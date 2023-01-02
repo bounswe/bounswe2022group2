@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutUser should render page layout correctly 1`] = `
+<div
+  className="about-user-container"
+>
+  <div
+    className="about-user-frame"
+  >
+    <label
+      className="navBarText2"
+    >
+      Biography
+    </label>
+    <div
+      className="space-3"
+    />
+    <label
+      className="about-text"
+    />
+    <div
+      className="space-3"
+    />
+  </div>
+</div>
+`;

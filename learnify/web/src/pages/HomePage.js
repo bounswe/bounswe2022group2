@@ -7,13 +7,6 @@ import CreateLearningSpaceButton from '../components/CreateLearningSpaceButton';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import axios from 'axios';
-import lslogo_13 from '../images/ls_icons/ls-icon-13.svg'
-import lslogo_6 from '../images/ls_icons/ls-icon-6.svg'
-import lslogo_20 from '../images/ls_icons/ls-icon-20.svg'
-import lslogo_19 from '../images/ls_icons/ls-icon-19.svg'
-import lslogo_18 from '../images/ls_icons/ls-icon-18.svg'
-import lslogo_17 from '../images/ls_icons/ls-icon-17.svg'
-import lslogo_16 from '../images/ls_icons/ls-icon-16.svg'
 
 
 function HomePage() {
@@ -23,6 +16,7 @@ function HomePage() {
 
     const [myLearningSpaces, setMyLearningSpaces] = React.useState([]);
     const [popularLearningSpaces, setPopularLearningSpaces] = React.useState([]);
+    const [recommendedLearningSpaces, setRecommendedLearningSpaces] = React.useState([]);
 
     useEffect(() => {
         const getOwnLearningSpaces = async () => {
@@ -56,11 +50,28 @@ function HomePage() {
         getPopularLearningSpaces();
     }, []);
 
-    console.log(popularLearningSpaces.slice(0, 10))
-
     const popularLearningSpacesList = popularLearningSpaces.slice(0, 10).map(ls => (
         <div className='lsprev-container'>
             <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls._id} />
+        </div>
+    ));
+
+    useEffect(() => {
+        const getRecommendedLearningSpaces = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}learningspace/user/recomended`, {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    'Authorization': `${token}`,
+                }
+            });
+            setRecommendedLearningSpaces(res.data.learning_spaces);
+        }
+        getRecommendedLearningSpaces();
+    }, []);
+
+    const recommendedLearningSpacesList = recommendedLearningSpaces.map(ls => (
+        <div className='lsprev-container'>
+            <LearningSpacePrev title={ls.title} icon_id={ls.icon_id} url={ls.id} />
         </div>
     ));
 
@@ -145,18 +156,18 @@ function HomePage() {
                                 Recommended Learning Spaces
                             </label>
                         </div>
-                        <button className='ls-box-button'>
+                        <button className='ls-box-button' onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href=`/recommended`;
+                            }}>
                             view all
                         </button>
                     </div>
                     <div className='space-12'></div>
                     <div>
-                        <ul role="list" className="ls-prev-list-4">
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_19} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_18} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_17} />
-                            <LearningSpacePrev name="Lorem Ipsum Dolor Sit Amet" icon={lslogo_16} />
-                        </ul>
+                        <div className="ls-prev-list-4">
+                            {recommendedLearningSpacesList}
+                        </div>
                     </div>
                 </div>
             </div>

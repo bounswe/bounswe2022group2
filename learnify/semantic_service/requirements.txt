@@ -1,0 +1,5 @@
+fastapi[all]
+pymongo[srv]
+python-dotenv
+numpy
+clip_client>=0.6.1

@@ -4,7 +4,8 @@ import './component_styles.css';
 function AboutUser(props) {
   const [aboutText, setAboutText] = useState(props.bio);
   const [isEditing, setIsEditing] = useState(false);
-
+  const [username, setUsername] = useState(localStorage.getItem("username"));
+  
   function handleEditButtonClick() {
     setIsEditing(true);
   }
@@ -32,11 +33,12 @@ function AboutUser(props) {
   }
 
   function EditButton({ onClick }) {
+    if(props.userviewed === username){
     return (
       <button className="edit-button" onClick={onClick}>
         Edit
       </button>
-    );
+    );}
   }
 
   return (
