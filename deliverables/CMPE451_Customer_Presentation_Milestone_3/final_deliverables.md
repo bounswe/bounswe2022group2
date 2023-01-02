@@ -351,22 +351,72 @@ As we said in the previous sections, we are generally satisfied with the progres
 * **Ecenur Sezer**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Milestone - 1| - | - |
+  |Backend: Implementing Unit Tests for Login Endpoint|[Issue](https://github.com/bounswe/bounswe2022group2/issues/421)| 3 hrs |
+  |Backend: Writing Tests for Verify Email Endpoint|[Issue](https://github.com/bounswe/bounswe2022group2/issues/418)| 2 hrs |
+  |Backend: Implementation of Login API|[Issue](https://github.com/bounswe/bounswe2022group2/issues/380)| 3 hrs |
+  |Backend: Email Verification API|[Issue](https://github.com/bounswe/bounswe2022group2/issues/364)| 4 hrs |
+  |Research & Report for Backend Technologies (Backend Team)|[Issue](https://github.com/bounswe/bounswe2022group2/issues/321)|2 hrs|
+  |Revising the Requirements : User - User Interaction|[Issue](https://github.com/bounswe/bounswe2022group2/issues/334)|2.5 hrs|
+  |Revising the Requirements : Glossary|[Issue](https://github.com/bounswe/bounswe2022group2/issues/335)|1 hrs|
+  |Prepaing the Slide for our First Demo|[Issue](https://github.com/bounswe/bounswe2022group2/issues/460)|1 hrs|
+  |Milestone - 2| - | - |
+  |Backend: POST Learning Space Enroll Endpoint| [#561](https://github.com/bounswe/bounswe2022group2/issues/561) | 3 hrs |
+  |Backend: Implementing Unit Tests for Enrolling Learning Space|[#563](https://github.com/bounswe/bounswe2022group2/issues/563)| 2 hrs |
+  |Backend: Create Annotation Endpoint|[#577](https://github.com/bounswe/bounswe2022group2/issues/577)|5 hrs|
+  |Backend: Create Post Endpoint|[#589](https://github.com/bounswe/bounswe2022group2/issues/589)|3 hrs|
+  |Backend: Edit Post Endpoint|[#600](https://github.com/bounswe/bounswe2022group2/issues/600)|2 hrs|
+  |Backend: Edit Annotation Endpoint|[#602](https://github.com/bounswe/bounswe2022group2/issues/602)| 4 hrs |
+  |Backend: Unit Tests for Create Post Endpoint|[#663](https://github.com/bounswe/bounswe2022group2/issues/663)|2 hrs|
+  |Backend: Unit Tests for Edit Post Endpoint|[#665](https://github.com/bounswe/bounswe2022group2/issues/665)|2 hrs|
+  |Milestone-2 Report: Annotations|[#675](https://github.com/bounswe/bounswe2022group2/issues/675)|2 hrs|
+  |Milestone-2 Report: API Documentation|[#677](https://github.com/bounswe/bounswe2022group2/issues/677)|2.5 hrs|
+  |Milestone-2 Report: Individual Report|[#691](https://github.com/bounswe/bounswe2022group2/issues/691)|1 hrs|
+  |Final Milestone| - | - |
+  |Backend: Create Annotations Service and POST Create Annotations Endpoint for Annotation Service| [#781](https://github.com/bounswe/bounswe2022group2/issues/781) |4 hrs |
+  |Backend: GET Annotations by Learning Space and Post ID for Annotations Service|[#782](https://github.com/bounswe/bounswe2022group2/issues/782)| 3 hrs |
+  |Backend: Create Annotations for Learnify App|[#786](https://github.com/bounswe/bounswe2022group2/issues/786)|4 hrs|
+  |Backend: Get Annotations by Learning Space and Post ID for Learnify|[#810](https://github.com/bounswe/bounswe2022group2/issues/810)|3.5 hrs|
+  |Backend: Documenting Endpoints that are related to Annotation-Service|[#812](https://github.com/bounswe/bounswe2022group2/issues/812)|2 hrs|
+  |Backend: Give full functionality to Annotations Service|[#823](https://github.com/bounswe/bounswe2022group2/issues/823)| 4 hrs |
+  |Backend: Upvote/Downvote Posts API|[#830](https://github.com/bounswe/bounswe2022group2/issues/830)|2.5 hrs|
+  |Backend: User Search API|[#845](https://github.com/bounswe/bounswe2022group2/issues/845)|1 hrs|
+  |Backend: Implement and Fix Unit Tests |[#865](https://github.com/bounswe/bounswe2022group2/issues/865)|5 hrs|
+  |Final Milestone: Annotations & Standards|[#952](https://github.com/bounswe/bounswe2022group2/issues/952)|3.5 hrs|
+  |Final Milestone: Individual Report|[#960](https://github.com/bounswe/bounswe2022group2/issues/960)|4 hrs|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
-  |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
-  |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
-
+  |Milestone - 1| - | - |
+  |Backend: Implementing Unit Tests for Login endpoint |[#422](https://github.com/bounswe/bounswe2022group2/pull/422)| 2 hrs|
+  |Backend: Implementing Tests for Verify Email Endpoint|[#420](https://github.com/bounswe/bounswe2022group2/pull/420)| 2 hrs|
+  |380 implementation of login api|[#380](https://github.com/bounswe/bounswe2022group2/pull/380)| 3 hrs | 
+  |Verify email endpoint|[#374](https://github.com/bounswe/bounswe2022group2/pull/374)| 3 hrs |
+  | Milestone - 2| - |
+  |561 backend post learning space join endpoint| [#562](https://github.com/bounswe/bounswe2022group2/pull/562)|3 hrs|
+  |563 backend implementing unit tests for enrolling learning space|[#564](https://github.com/bounswe/bounswe2022group2/pull/564)| 2 hrs |
+  |Backend: Create Annotation Endpoint|[#588](https://github.com/bounswe/bounswe2022group2/pull/588)| 5 hrs|
+  |Backend: Create post endpoint implemented|[#590](https://github.com/bounswe/bounswe2022group2/pull/590)|3 hrs|
+  |Backend: Annotation Endpoint Creator and LS IDs|[#597](https://github.com/bounswe/bounswe2022group2/pull/597)|2 hrs|
+  |Backend: Edit Post Endpoint|[#601](https://github.com/bounswe/bounswe2022group2/pull/601)| 4 hrs |
+  |Backend: Edit Annotations Endpoint|[#603](https://github.com/bounswe/bounswe2022group2/pull/603)|2 hrs|
+  |Backend: Create Post endpoint Unit Test|[#664](https://github.com/bounswe/bounswe2022group2/pull/664)|2 hrs|
+  |Backend: Unit Tests for Edit Post Endpoint|[#666](https://github.com/bounswe/bounswe2022group2/pull/666)|2 hrs|
+  |Milestone-2 Report: Annotations|[#674](https://github.com/bounswe/bounswe2022group2/pull/674)|2 hrs|
+  |Milestone-2 Report: API Documentation|[#685](https://github.com/bounswe/bounswe2022group2/pull/685)| 2.5 hrs|
+  |Final Milestone| - | - |
+  |Backend: POST Create Annotations for Annotation Service| [#785](https://github.com/bounswe/bounswe2022group2/pull/785)|3 hrs|
+  |Backend: Create Annotation Endpoint for Learnify |[#803](https://github.com/bounswe/bounswe2022group2/pull/803)| 2 hrs |
+  |Backend FIX: Annotation ID will hold LS and Post ID|[#804](https://github.com/bounswe/bounswe2022group2/pull/804)| 1 hrs|
+  |Backend: Get Annotations by Id for Annotations Service|[#809](https://github.com/bounswe/bounswe2022group2/pull/809)|3 hrs|
+  |Backend: Get Annotations by Learning Space and Post ID for Learnify Server|[#811](https://github.com/bounswe/bounswe2022group2/pull/811)|4 hrs|
+  |BUGFIX: Duplicate Annotation IDs on Annotation Service POST Create Endpoint |[#818](https://github.com/bounswe/bounswe2022group2/pull/818)| 2 hrs |
+  |Backend: Upvote/Downvote Post API|[#831](https://github.com/bounswe/bounswe2022group2/pull/831)|2 hrs|
+  |Backend: User Search API |[#846](https://github.com/bounswe/bounswe2022group2/pull/846)|2 hrs|
+  |Backend: Implementing and Bug Fixing Unit Tests|[#864](https://github.com/bounswe/bounswe2022group2/pull/864)|2 hrs|
+  |Final Milestone: Update Annotations and Standards Section|[#954](https://github.com/bounswe/bounswe2022group2/pull/954)|2 hrs|
+  |BUGFIX: Annotation Service Elastic IP taken and changed with old IP|[#965](https://github.com/bounswe/bounswe2022group2/pull/965)| 2.5 hrs|
+  
 * **Muhammed Enes Sürmeli:**
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
@@ -1904,19 +1954,197 @@ Group: Group2 - Backend Team
 
 ## *Responsibilities:*
 
+ **Milestone - 1:**
+ 
+  1. Implementing the login endpoint
+  2. Implementing the verify email endpoint
+  3. Testing and documenting both endpoints
+  4. Implementing unit tests for both endpoints
+  5. Reviewing all works done by backend teammates  
+  6. Doing research on technologies needed to use on backend development
+ 
+ ----------
+ 
+ **Milestone - 2:**
+ 
+   1. Creating enroll to Learning Space Endpoint.
+  2. Implementing unit tests for enroll to learning space endpoint.
+  3. Creating post.js model.
+  4. Creating Create Post endpoint.
+  5. Implementing the unit tests for Create Post Endpoint.
+  6. Creating Edit Post Endpoint.
+  7. Implementing the unit tests for Edit Post Endpoint.
+  8. Research about W3C models and standarts to prepare backend implementation.
+  9. Creating annotation.js model.
+  10. Creating Create Annotation endpoint.
+  11. Creating Edit Annotations endpoint.
+  12. Reviewing the works done by the backend team.
+  13. Solving bugs, errors, problems encountered during the implementation of the database connection regularly.
+  14. Attending and participating general meetings regularly.
+  15. Attending and participating frontend team meetings regularly.
+  16. Deploying the new version of dev branch when requested.
+  17. Creating Postman documentation with examples for newly implemented endpoints.
+ 
+ ----------
+ 
+ **Milestone - 3:**
+  1. Initializing annotation service external application
+  2. Initializing Docker containers for the annotation service
+  3. Writing dockerfile of annotation service
+  4. Creating an AWS instance to keep annotation service
+  5. Deploy the annotation service application
+  6. Implement GET Annotations by ID endpoint for annotation service
+  7. Implement POST Create Annotations endpoint for annotation service
+  8. Implement GET Annotations by ID endpoint for Learnify, to provide connection to annotation service
+  9. Implement POST Create Annotations by ID endpoint for Learnify, to provide connection to annotation service
+  10. Implement Vote Post endpoint
+  11. Write unit tests for Vote Post endpoint
+  12. Implement user search API
+  13. Solving bugs, errors, problems encountered during the implementation of the database connection regularly.
+  14. Attending and participating general meetings regularly.
+  15. Attending and participating frontend team meetings regularly.
+  16. Deploying the new version of dev branch when requested.
+  17. Creating Postman documentation with examples for newly implemented endpoints.
+ 
+ -------------
+ 
+
 ## *Main Contributions:*
+
+   I am a member of our small backend team of two in Learnify project. Throughout the term I would generalize my responsibilities as 
+Developing and maintaining the server-side of the web application, including the implementation of server-side logic, databases, and APIs.
+Collaborating with the front-end developers to ensure that the user interface is properly integrated with the backend.
+Working with the team to design and implement features for the platform, such as the ability for users to create and annotate posts in learning spaces.
+Ensuring the security and scalability of the application by implementing appropriate measures such as input validation, secure coding practices, and performance optimization.
+Troubleshooting and debugging issues as they arise, and collaborating with the team to find and implement solutions.
+Participating in code reviews and contributing to the overall development process by sharing knowledge and best practices with the team.
+Staying up-to-date with the latest technologies and industry trends, and incorporating them into the platform as appropriate.
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
+ 
+ **Milestone - 1:**
+ 
+  1. [Backend: Implementing Unit Tests for Login Endpoint](https://github.com/bounswe/bounswe2022group2/issues/421)
+  2. [Backend: Writing Tests for Verify Email Endpoint](https://github.com/bounswe/bounswe2022group2/issues/418)
+  3. [Backend: Implementation of Login API](https://github.com/bounswe/bounswe2022group2/issues/380)
+  4. [Backend: Email Verification API](https://github.com/bounswe/bounswe2022group2/issues/364)
+ 
+ -----------
+ 
+**Milestone - 2:**
+ 
+  1. [Backend: POST Learning Space Enroll Endpoint](https://github.com/bounswe/bounswe2022group2/issues/561)
+  2. [Backend: Implementing Unit Tests for Enrolling Learning Space](https://github.com/bounswe/bounswe2022group2/issues/563)
+  3. [Backend: Create Annotation Endpoint](https://github.com/bounswe/bounswe2022group2/issues/577)
+  4. [Backend: Create Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/589)
+  5. [Backend: Edit Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/600)
+  7. [Backend: Edit Annotation Endpoint](https://github.com/bounswe/bounswe2022group2/issues/602)
+  8. [Backend: Unit Tests for Create Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/663)
+  9. [Backend: Unit Tests for Edit Post Endpoint](https://github.com/bounswe/bounswe2022group2/issues/665)
+ ---------------
+ 
+ **Milestone - 3:**
+ 
+  1. [Backend: Create Annotations Service and POST Create Annotations Endpoint for Annotation Service](https://github.com/bounswe/bounswe2022group2/issues/781)
+  2. [Backend: GET Annotations by Learning Space and Post ID for Annotations Service](https://github.com/bounswe/bounswe2022group2/issues/782)
+  3. [Backend: Create Annotation for Learnify App](https://github.com/bounswe/bounswe2022group2/issues/786)
+  4. [Backend: GET Annotations by Learning Space and Post ID for Learnify](https://github.com/bounswe/bounswe2022group2/issues/810)
+  5. [Backend: Give full functionality to Annotations Service](https://github.com/bounswe/bounswe2022group2/issues/823)
+  7. [Backend: Upvote/Downvote Posts API](https://github.com/bounswe/bounswe2022group2/issues/830)
+  8. [Backend: User Search API](https://github.com/bounswe/bounswe2022group2/issues/845)
+  9. [Backend: Implement and Fix Unit Tests](https://github.com/bounswe/bounswe2022group2/issues/865)
+ 
+ 
+ ----------------
 
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
+ 
+ **Milestone - 1:**
+ 
+  1. [Research & Report for Backend Technologies (Backend Team)](https://github.com/bounswe/bounswe2022group2/issues/321)
+  2. [Revising the Requirements : User - User Interaction](https://github.com/bounswe/bounswe2022group2/issues/334)
+  3. [Revising the Requirements : Glossary](https://github.com/bounswe/bounswe2022group2/issues/335)
+  4. [Revising the Diagrams based on User - User Interaction](https://github.com/bounswe/bounswe2022group2/issues/336)
+  5. [Reviewing the Revising the Requirements: Achievements and Badges](https://github.com/bounswe/bounswe2022group2/issues/333)
+  6. [Reviewing the Revising the Diagrams based on Signup&Login](https://github.com/bounswe/bounswe2022group2/issues/337)
+  7. [Reviewing the Revising the Diagrams based on Achievements](https://github.com/bounswe/bounswe2022group2/issues/346)
+  8. [Reviewing the Dockerization of the API](https://github.com/bounswe/bounswe2022group2/issues/355)
+  9. [Prepaing the Slide for our First Demo](https://github.com/bounswe/bounswe2022group2/issues/460)
+ --------------
+ 
+ **Milestone - 2:**
+  
+ 1. [Milestone-2 Report: Annotations](https://github.com/bounswe/bounswe2022group2/issues/675)
+  2. [Milestone-2 Report: API Documentation](https://github.com/bounswe/bounswe2022group2/issues/677)
+  3. [Milestone-2 Report:Indiviual Report](https://github.com/bounswe/bounswe2022group2/issues/691)
+ 
+ --------------
+ 
+ **Milestone - 3:**
+  
+ 1. [Backend: Documenting Endpoints that are related to Annotation-Service](https://github.com/bounswe/bounswe2022group2/issues/812)
+  2. [Final Milestone: Annotations & Standards](https://github.com/bounswe/bounswe2022group2/issues/952)
+  3. [Final Milestone: API Documentation](https://github.com/bounswe/bounswe2022group2/issues/953)
+  3. [Final Milestone: Indiviual Report](https://github.com/bounswe/bounswe2022group2/issues/960)
+ ----------------
+ 
 
 ## *Pull Requests:*
+ 
+ **Milestone - 1:**
+ 
+ 1. Backend: Implementing Unit Tests for Login endpoint  [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
+  2. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/420)
+  3. 380 implementation of login api [#380](https://github.com/bounswe/bounswe2022group2/pull/380)
+  4. Verify email endpoint [#374](https://github.com/bounswe/bounswe2022group2/pull/374)
+
+ --------------
+ 
+ **Milestone - 2:**
+  
+ 1. 561 backend post learning space join endpoint [#562](https://github.com/bounswe/bounswe2022group2/pull/562)
+   2. 563 backend implementing unit tests for enrolling learning space  [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
+   3. Backend: Create Annotation Endpoint [#588](https://github.com/bounswe/bounswe2022group2/pull/588)
+   4. Backend: Create post endpoint implemented [#590](https://github.com/bounswe/bounswe2022group2/pull/590)
+   5. Backend: Annotation Endpoint Creator and LS IDs [#597](https://github.com/bounswe/bounswe2022group2/pull/597)
+   6.Backend: Edit Post Endpoint [#601](https://github.com/bounswe/bounswe2022group2/pull/601)
+   7. Backend: Edit Annotations Endpoint [#603](https://github.com/bounswe/bounswe2022group2/pull/603)
+   8. Backend: Create Post endpoint Unit Test [#664](https://github.com/bounswe/bounswe2022group2/pull/664)
+   9. Backend: Unit Tests for Edit Post Endpoint [#666](https://github.com/bounswe/bounswe2022group2/pull/666)
+   10. Milestone-2 Report: Annotations [#674](https://github.com/bounswe/bounswe2022group2/pull/674)
+   11. Milestone-2 Report: API Documentation [#685](https://github.com/bounswe/bounswe2022group2/pull/685)
+ 
+ --------------
+ 
+ **Milestone - 3:**
+ 
+  1. Backend: POST Create Annotations for Annotation Service [#785](https://github.com/bounswe/bounswe2022group2/pull/785)
+   2. Backend: Create Annotation Endpoint for Learnify  [#803](https://github.com/bounswe/bounswe2022group2/pull/803)
+   3. Backend FIX: Annotation ID will hold LS and Post ID [#804](https://github.com/bounswe/bounswe2022group2/pull/804)
+   4. Backend: Get Annotations by Id for Annotations Service [#809](https://github.com/bounswe/bounswe2022group2/pull/809)
+   5. Backend: Get Annotations by Learning Space and Post ID for Learnify Server [#811](https://github.com/bounswe/bounswe2022group2/pull/811)
+   6. BUGFIX: Duplicate Annotation IDs on Annotation Service POST Create Endpointt [#818](https://github.com/bounswe/bounswe2022group2/pull/818)
+   7. Backend: Upvote/Downvote Post API [#831](https://github.com/bounswe/bounswe2022group2/pull/831)
+   8. Backend: User Search API [#846](https://github.com/bounswe/bounswe2022group2/pull/664)
+   9. Backend: Implementing and Bug Fixing Unit Tests [#864](https://github.com/bounswe/bounswe2022group2/pull/864)
+   10. Final Milestone: Update Annotations and Standards Section [#954](https://github.com/bounswe/bounswe2022group2/pull/954)
+ 
+ ----------------
 
 ## *Unit Tests:*
+  
+ 1. Backend: Implementing Tests for Verify Email Endpoint [#420](https://github.com/bounswe/bounswe2022group2/pull/676)
+  2. Backend: Implementing Unit Tests for Login endpoint [#422](https://github.com/bounswe/bounswe2022group2/pull/422)
+  3. 563 backend implementing unit tests for enrolling learning space [#564](https://github.com/bounswe/bounswe2022group2/pull/564)
+  4. Backend: Create Post endpoint Unit Test [#664](https://github.com/bounswe/bounswe2022group2/pull/664)
+  5. Backend: Unit Tests for Edit Post Endpoint [#666](https://github.com/bounswe/bounswe2022group2/pull/666)
+  6. Backend: Implementing and Bug Fixing Unit Tests [#864](https://github.com/bounswe/bounswe2022group2/pull/864)
 
 ## *Additional Information:*  
+ 
+   None
 
 --------------------
 
