@@ -687,6 +687,199 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### User Interface/User Experience
 
+#### Web
+
+#### Mobile
+
+Note: We structured our folders in a way that they can be managed easily. Therefore, we're giving the link of the folder related to the code part you requested. Please analyze and review them carefully. You can also see the import statements at the beginning of each file and so that you can find the implementations of sub-components in a screen. Please traverse all files included in the directory and also the imported ones and the sub-folders (such as view, model, view-model, constants, and so on) to see our implementations on the code side.
+
+##### Signup Screen
+
+Responsible: Bahrican Yeşil \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/signup)
+
+<img width="300" alt="signup" src="https://user-images.githubusercontent.com/60237280/206682554-5439005e-8336-43b3-9b99-cec9c870b6e3.png">
+
+##### Login Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/login)
+
+<img width="300" alt="login" src="https://user-images.githubusercontent.com/92719802/206705437-1bb131c0-693f-42aa-b6ad-5b4523d416aa.png">
+
+##### Forget Password Screen
+
+Responsible: Ezgi Aysel Batı  
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/forget-password)
+
+<img width="300" alt="forget-password" src="https://user-images.githubusercontent.com/56553280/206687548-af6db5ec-b28f-497a-a0b1-0e2af19175ed.jpg">
+
+##### Verification Screen
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/auth/verification)
+
+<img width="300" alt="verification" src="https://user-images.githubusercontent.com/100771925/206706051-b31c6c98-41ea-453a-b393-7e28ec308cd7.png">
+
+##### App Bar and Bottom Navigation Bar
+
+Responsible: Bahrican Yeşil \
+Link - App Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/app-bar/default_app_bar.dart) \
+Link - Bottom Navigation Bar: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home-wrapper/view/components/bottom_navigation_bar.dart)
+
+<img width="300" alt="app_and_bottom_nav_bar" src="https://user-images.githubusercontent.com/60237280/206682705-eeae485d-aa33-4e54-8598-408f4da6787a.png">
+
+##### Home Screen
+
+Responsibles: Ezgi Aysel Batı -> Course Preview Widget / Egemen Atik -> Horizontal Scrollable Course Preview Widget List \
+Updated By: Egemen Atik
+Link - Course Preview Widget : [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home/components/course_preview.dart) \
+Link - Horizontal Scrollable Course Preview Widget List : [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/home/view/home_screen.dart)
+
+<img width="300" alt="home_screen" src="https://user-images.githubusercontent.com/56553280/210247084-543da78f-4498-4782-8249-471ac922a8b7.jpeg">
+
+
+##### View All Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/view-learning-spaces/view)
+
+<img width="300" alt="view_all_screen" src="https://user-images.githubusercontent.com/92719802/206706143-853b3e5d-4395-4163-8a6d-498b50a1e107.png">
+
+##### Search Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/search)
+
+<img width="300" alt="ls_search_screen" src="https://user-images.githubusercontent.com/92719802/206706771-81ec2ef5-bac4-4d09-bf9f-5e71fcec35c7.png">&nbsp;&nbsp;&nbsp;<img width="300" alt="user_search_screen" src="https://user-images.githubusercontent.com/92719802/206707067-7a6dba90-84ad-4d5f-8b2e-15cc1a33e31c.png">
+
+##### Spaces Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/view-learning-spaces/view)
+
+<img width="300" alt="spaces_screen" src="https://user-images.githubusercontent.com/92719802/206706395-58b9a6b6-3b54-4bd5-a302-62fa169ca566.png">
+
+##### Profile Screen
+
+Responsible: Onur Kömürcü \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/profile)
+
+<img width="300" alt="profile_up" src="https://user-images.githubusercontent.com/56553280/210247610-029e23e7-615f-4c87-b8ee-864128ca4b02.jpeg">&nbsp;&nbsp;&nbsp;<img width="300" alt="profile_down" src="https://user-images.githubusercontent.com/56553280/210247615-c711455f-8daf-4896-abf0-dd1a472b1930.jpeg">
+
+##### Create Learning Space Screen
+
+Responsible: Ezgi Aysel Batı \
+Link:  [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/create_learning_space_screen.dart)
+
+<img width="300" alt="profile" src="https://user-images.githubusercontent.com/56553280/206690749-8983b19b-1c8a-4ec3-9166-c8ec6af0acbf.jpg">
+
+Note: Link only contains static "screen" implementation. For model and backend connections refer to pr's regarding this screen.  
+
+##### Posts Section
+
+Responsible: Bahrican Yeşil \
+Updated By: Ezgi Aysel Batı
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/post)
+
+<img width="300" alt="post_section" src="https://user-images.githubusercontent.com/56553280/210249260-c2e5676c-e209-4d43-91c1-3f535e85f5ca.jpeg">
+
+##### Events Section
+
+Responsible: Egemen Atik
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/features/learning-space/view/components/events)
+
+<img width="300" alt="post_section" src="https://user-images.githubusercontent.com/56553280/210250206-da8582aa-54c9-4ec3-af12-62679a4a5f41.jpeg">
+
+
+##### Forum Section
+
+Responsible: Ezgi Aysel Batı
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/forum_list.dart)
+
+<img width="300" alt="forum_section" src="https://user-images.githubusercontent.com/56553280/206689133-fea41c35-81bf-4151-ba51-12e7720b1843.jpg">
+
+##### Comments 
+Responsible: Ezgi Aysel Batı
+Link: [Code in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/comments_screen.dart)
+
+
+<img width="300" alt="comments_up" src="https://user-images.githubusercontent.com/56553280/210250064-a647ed97-56df-46ac-a2ca-02418289cff8.jpeg">&nbsp;&nbsp;&nbsp;<img width="300" alt="comments_down" src="https://user-images.githubusercontent.com/56553280/210250067-3a6dc57c-933f-4de3-a1f9-3e52ef7cba72.jpeg">
+
+##### Learning Space Detail Screen: Information Part
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/learning_space_detail_screen.dart)
+
+<img width="300" alt="ls_detail_information" src="https://user-images.githubusercontent.com/100771925/206707954-ca555c86-9bcd-499e-bde4-6af705946292.png">
+
+##### Add Post Screen
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/add_post_screen.dart)
+
+<img width="300" alt="add_post" src="https://user-images.githubusercontent.com/100771925/206708112-87a73f59-b0a5-459e-baeb-d88cec46d32b.png">
+
+##### Edit Post Screen
+
+Responsible: Egemen Atik \
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/add_post_screen.dart)
+
+<img width="300" alt="edit_post" src="https://user-images.githubusercontent.com/100771925/206708184-30ac0460-e9cd-4e8f-865b-6672fe485132.png">
+
+##### Create Event Screen
+
+Responsible: Egemen Atik
+Link: [Code in the Repository]](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/create_event_screen.dart)
+
+<img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/210250733-90440a54-8e5f-4400-bf62-287d9ccf2054.jpeg">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_2" src="https://user-images.githubusercontent.com/56553280/210250741-d3ec6c45-62fb-41ef-8c75-5231848c6fd5.jpeg">&nbsp;&nbsp;&nbsp;<img width="300" alt="events_section_3" src="https://user-images.githubusercontent.com/56553280/210250743-dc802378-9f64-41d2-81fc-b2d030ca6c53.jpeg">
+
+
+##### Annotating an Image
+
+Note: We implemented annotating image functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package. We just got help from a repository which includes manipulation and edit feature on images. However, it doesn't have any annotation-related feature. We just benefit from it for image edit feature (drawing rectangles on an image). We also gave a link to that repository at the beginning of related files. \
+
+Responsible: Bahrican Yeşil \
+Annotated Post Image: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/components/chapter_image.dart) \
+Annotatable Image: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/image/annotatable_image.dart) \
+All Image Manipulation Components: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/core/widgets/image) \
+Cropped Image Preview on Annotations Screen: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
+
+<img width="372" alt="image_annotation_1" src="https://user-images.githubusercontent.com/60237280/206683909-6ee47924-e307-4cb2-9735-6383aa673d84.png">&nbsp;&nbsp;&nbsp;<img width="372" alt="image_annotation_2" src="https://user-images.githubusercontent.com/60237280/206683918-1b6b21b7-81ef-401f-a499-4bd11fa8c753.png">
+
+<img width="372" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations 2" src="https://user-images.githubusercontent.com/60237280/206683926-9bbd585d-5192-4e30-a52f-e329c9aabbe2.png">
+
+##### Annotating a Text
+
+Note: We implemented annotating text functionality ourselves without using any package or ready-to-use code. We have full control on our code since we didn't use any package. \
+
+Responsible: Bahrican Yeşil \
+Annotatable Text: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/text/annotatable/annotatable_text.dart) \
+All Text Manipulation Components for Annotation: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/lib/core/widgets/text/annotatable)
+
+<img width="374" alt="text_annotation_1" src="https://user-images.githubusercontent.com/60237280/206684119-95232a18-8132-4cc9-8903-13dddd51f38e.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="text_annotation_2" src="https://user-images.githubusercontent.com/60237280/206684123-9c659a42-9479-48f9-ab8b-fdbe32d2fc79.png">
+
+<img width="372" alt="text_annotation_3" src="https://user-images.githubusercontent.com/60237280/206684131-b7f182f1-aab3-4bb2-87b5-b67b79683edb.png">&nbsp;&nbsp;&nbsp;<img width="370" alt="multiple_image_and_text_annotations" src="https://user-images.githubusercontent.com/60237280/206684133-41dd4e29-9789-4dae-a0b9-c36bdf34d1bb.png">
+
+##### Annotation Selection Dialog
+
+Responsible: Bahrican Yeşil \
+Annotation Selection Dialog: [Code File in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/core/widgets/dialog/single_choose_dialog.dart)
+
+<img width="374" alt="annotation_selection_dialog" src="https://user-images.githubusercontent.com/60237280/206684280-6440588f-c7d6-4d97-9ee1-10e8efecd307.png">
+
+#### Annotation Details Screen
+
+Responsible: Ezgi Aysel Batı  
+
+* Only for the image annotation, the preview of annotated image part was implemented by Bahrican.
+Link: [Code Folder in the Repository](https://github.com/bounswe/bounswe2022group2/blob/master/learnify/mobile/lib/features/learning-space/view/annotations_screen.dart)
+
+<img width="300" alt="events_section_1" src="https://user-images.githubusercontent.com/56553280/206688618-b5d1c078-8d1b-4433-bf92-d5171ad53e28.jpg">&nbsp;&nbsp;&nbsp;<img width="300" alt="image_annotation_3" src="https://user-images.githubusercontent.com/60237280/206683923-3e85c6c2-160c-44ca-8f1f-0e76b7a52cc4.png">
+
+***
+
+
 ***
 
 ### Annotations
