@@ -4053,20 +4053,226 @@ I actively participated in and give suggestions about the endpoints we should ha
 
 Name: Mehmet Gökay Yıldız
 
-Group: Group2 - Frontend Team
-
 ## *Responsibilities:*
+ 
+ **Final Milestone-3**
+ 
+ 1. Determining the design of the profile page.
+ 2. Determining the required components for the profile page.
+ 3. Implementing the profile photo component.
+ 4. Implementing the about user component.
+ 5. Implementing the connections between backend and the profile page.
+ 6. Implementing the connections between learning space pages and user profiles.
+ 7. Implementing unique url strategy for different profiles and make them accesible for other users.
+ 8. Researching on annotation packages that is used in our web application.
+ 9. Revising annotation component to make it compatible with W3C standards.
+ 10. Implementing the backend connection for annotations both text and image.
+ 11. Creating unit tests for the components that I have developed.
+ 12. Reviewing the works done by the frontend team on a regular basis.
+ 13. Regularly troubleshooting and fixing issues that arise during the development of our web application.
+ 14. Assisting teammates by answering their questions, addressing pressing issues such as debugging and errors, and implementing quick fixes in advance of presentations or demonstrations.
+ 15. Attending and participating general meetings regularly.
+ 16. Attending and participating frontend team meetings regularly.
+ 
+--------------------
+
+**Milestone-2**
+
+  1. Provide an .env file to use in further development
+  2. Implementing the change password page.
+  3. Implementing the create learning space page.
+  4. Implementing the component logic for already created change password page.
+  5. Implementing the dropdown component to use in create learning space page.
+  6. Implementing the image selection grid component.
+  7. Implementing the backend connection between the create learning space page and our REST API.
+  8. Providing logic for the communcation of child component with parent component.
+  9. Implementing Join Learning Space button.
+  10. Implementing Join Learning Space button functionality with backend connection.
+  11. Implementing unit tests for Dropdown component.
+  12. Implementing unit tests for SelectIconGrid component.
+  13. Implementing unit tests for JoinLSButton component.
+  14. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  15. Reviewing the works done by the frontend team.
+  16. Solving bugs, errors, problems encountered during the implementation of the frontend of our application regularly.
+  17. Attending and participating general meetings regularly.
+  27. Attending and participating frontend team meetings regularly.
+ 
+--------------------
+
+**Milestone-1**
+ 
+  1. Initializing the project.
+  2. Creating the initial sign up and login forms.
+  3. Implementing the forget password page.
+  4. Implementing the validation check for the forget password form.
+  5. Implementing the backend connection between the forget password page and our REST API.
+  6. Implementing unit tests for the forget password page.
+  7. Integrating mockup home screen to the project.
+  8. Conducting research on React libraries, frameworks, and methodologies that will be used during our development process.
+  9. Implementing methods for validation.
+  10. Implementing methods for backend connection.
+  11. Reviewing the works done by the frontend team.
 
 ## *Main Contributions:*
+ 
+ 
+**Final Milestone-3**
+ 
+As a member of the front-end team for Learnify, I have consistently worked closely with my teammates to meet deadlines and achieve our goals. During this milestone, I designed and implemented a part of the profile page, including determining the required components and creating connections to the backend and other learning space pages. I also researched and revised the annotation component to ensure compatibility with W3C standards, and implemented connections to the backend for text and image annotations. In addition, I wrote unit tests for the components I developed, reviewed the work of the frontend team on a regular basis, and assisted my teammates with their questions and provided hotfixes as needed. I also attended and participated in general and frontend team meetings on a regular basis. Overall, my efforts played a significant role in the successful development and maintenance of the web application.
+
+--------------------
+
+**Milestone-2**
+ 
+I am a member of the front-end team of our application Learnify. As a member of the frontend team, I am proud to say that we have a strong team mentality that is focused on collaboration and communication. Over the past Milestone, I have personally contributed to this team mentality by consistently working closely with my teammates to ensure that we are catching the deadlines and the goals that we have set. During this milestone, first thing that I did is carrying static backend links to an .env file to make it more flexible for any change since the number of backend calls will increase while the application is developing so we need to save it as a variable to use at the different parts of the code. Then to complete authentication related issues, I have created the change password component so we are ready for the feature. Then, we have started the Learning spaces and I took the part where we create the learning spaces. After discussions with backend on what to send from the frontend to create a learning space, I have started from implementing a dropdown list and select component and image selection component. To use these components from the create learning space page, I have worked on the function callback from parent to child components. Then after we complete the design of the page, we have worked on both the connections between the frontend and the backend and connections between the pages that we have implemented. At the end, all of the team and I are focused more on the functionality on the learning space page and offering the contents in the learning space page. I have worked closely with the team members during this process and find ways to show the content that we have from the backend. I have watched out our frontend code base during each pull request and did continious testing during and after each merge and make sure that the system is working in a reliable manner. Also, I have implemented unit tests to the components that I have created.
+
+--------------------
+
+**Milestone-1**
+ 
+I am a part of the frontend team of our project. Took part at the naming of the project and the final decision, Learnify is one of my suggestions. After deciding the essentials and seperating into teams, I initialize the frontend project and created initial pages to make colaborative work possible. We decided branch naming conventions to follow each others work easily as frontend team. After that, I was also responsible for the implementation of the forget password page by the design perspective that our team follows. Since we do not have a detailed experience on React, I have go over the basics of React for subjects like; connecting pages, routing, using states, input forms and validations, handling API requests, and unit testing. After my research, individual trials and discussions in the team, I have implemented our forget password page. After that the backend connection, input verification and unit testing. Additionaly, I took part of each of the pull requests by the front end team, review and give feedback to all.
+ 
 
 * *Code Related Significant Issues:* My issues that contribute to the code base
 demonstrated during the demo:
 
+**Final Milestone-3**
+ 
+ 1. [Frontend: Implementation Of Profile Page](https://github.com/bounswe/bounswe2022group2/issues/771)
+ 2. [Frontend: Creating Profile Picture Component](https://github.com/bounswe/bounswe2022group2/issues/795)
+ 3. [Frontend: About-Bio Component in Profile Page](https://github.com/bounswe/bounswe2022group2/issues/824)
+ 4. [Frontend: Backend connection for Bio and PP component](https://github.com/bounswe/bounswe2022group2/issues/837)
+ 5. [Frontend: Make profile links unique and accessible through ls's](https://github.com/bounswe/bounswe2022group2/issues/844)
+ 6. [Frontend: Show all ls's that are related to the user](https://github.com/bounswe/bounswe2022group2/issues/884)
+ 7. [Frontend: Add links to the usernames in the Posts](https://github.com/bounswe/bounswe2022group2/issues/901)
+ 8. [Frontend: Add links to the usernames in the Comments](https://github.com/bounswe/bounswe2022group2/issues/903)
+ 9. [Frontend: Text and Image Annotation backend connection](https://github.com/bounswe/bounswe2022group2/issues/918)
+ 10. [Frontent: Unit tests for AboutUser and ProfilePhoto components](https://github.com/bounswe/bounswe2022group2/issues/929)
+
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. [Frontend: .env file and using environment variables in the code](https://github.com/bounswe/bounswe2022group2/issues/529)
+  2. [Frontend: Change Password Screen](https://github.com/bounswe/bounswe2022group2/issues/530)
+  3. [Frontend: Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/543)
+  4. [Frontend: Backend connection of Create Learning Space Page](https://github.com/bounswe/bounswe2022group2/issues/576)
+  5. [Frontend: Connection of create ls page with created ls page](https://github.com/bounswe/bounswe2022group2/issues/625)
+  6. [Frontend: Join Learning Space](https://github.com/bounswe/bounswe2022group2/issues/656)
+  7. [Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components](https://github.com/bounswe/bounswe2022group2/issues/695)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Initialization of the frontend project](https://github.com/bounswe/bounswe2022group2/issues/371)
+  2. [Frontend: Implementing Forgot Password Screen](https://github.com/bounswe/bounswe2022group2/issues/379)
+  3. [Frontend: Backend connection for the Forget Password page](https://github.com/bounswe/bounswe2022group2/issues/444)
+  4. [Frontend: Unit Tests for Forget Password page](https://github.com/bounswe/bounswe2022group2/issues/464)
+  5. [Frontend: Creating mock home page and adding to the repository](https://github.com/bounswe/bounswe2022group2/issues/465)
+
 * *Management Related Significant Issues:* My issues that contribute to the
 management of our software project:
 
+**Final Milestone-3**
+ 
+ 1. [Final Milestone: Status of the Requirements](https://github.com/bounswe/bounswe2022group2/issues/944)
+ 2. [Final Milestone: Summary of Work Table for Gökay Yıldız](https://github.com/bounswe/bounswe2022group2/issues/941)
+ 3. [Final Milestone: Individual Contributions Report of Gökay Yıldız](https://github.com/bounswe/bounswe2022group2/issues/942)
+ 4. [Documenting Meeting Notes #9](https://github.com/bounswe/bounswe2022group2/issues/986)
+ 
+--------------------
+
+**Milestone-2**
+ 
+  1. [Documenting the Meeting Notes for the Frontend Meeting 3](https://github.com/bounswe/bounswe2022group2/issues/542)
+
+--------------------
+
+**Milestone-1**
+ 
+  1. [Personal Wiki Page: Gokay Yildiz](https://github.com/bounswe/bounswe2022group2/issues/311)
+  2. [Discovery and Questions about Project for New Members](https://github.com/bounswe/bounswe2022group2/issues/320)
+  3. [Revising the Requirements Specification](https://github.com/bounswe/bounswe2022group2/issues/323)
+  4. [Research & Report for Frontend Technologies (Frontend Team)](https://github.com/bounswe/bounswe2022group2/issues/327)
+  5. [Revising the Requirements: Profile Page](https://github.com/bounswe/bounswe2022group2/issues/345)
+  6. [Conducting Research on React Router](https://github.com/bounswe/bounswe2022group2/issues/386)
+
 ## *Pull Requests:*
+
+**Final Milestone-3**
+ 
+ 1. [Frontend: profile photo component](https://github.com/bounswe/bounswe2022group2/pull/800)
+ 2. [Frontend: Dev frontend profile page bio](https://github.com/bounswe/bounswe2022group2/pull/835)
+ 3. [Frontend: connection of bio component](https://github.com/bounswe/bounswe2022group2/pull/841)
+ 4. [Dev frontend profile page profile photo](https://github.com/bounswe/bounswe2022group2/pull/843)
+ 5. [Frontend: profile page connections](https://github.com/bounswe/bounswe2022group2/pull/850)
+ 6. [Dev frontend profile page general development](https://github.com/bounswe/bounswe2022group2/pull/861)
+ 7. [Frontend: comment and post link added to user](https://github.com/bounswe/bounswe2022group2/pull/904)
+ 8. [Frontend: Dev frontend annotation be connection](https://github.com/bounswe/bounswe2022group2/pull/922)
+ 9. [Frontend: unit test initialized for bio and profile picture](https://github.com/bounswe/bounswe2022group2/pull/928)
+ 10. [Final milestone progress in requirements](https://github.com/bounswe/bounswe2022group2/pull/945)
+
+ 
+--------------------
+
+**Milestone-2**
+
+1. Frontend: the urls connected to .env [#531](https://github.com/bounswe/bounswe2022group2/pull/531)
+2. Dev frontend change password [#537](https://github.com/bounswe/bounswe2022group2/pull/537)
+3. Dev frontend create ls  [#572](https://github.com/bounswe/bounswe2022group2/pull/572)
+4. Frontend: interconnection between the create ls and ls page is done [#627](https://github.com/bounswe/bounswe2022group2/pull/627)
+5. Frontend: Join Learning Space [#657](https://github.com/bounswe/bounswe2022group2/pull/657)
+6. HOTFIX HOMEPAGE [#671](https://github.com/bounswe/bounswe2022group2/pull/671)
+7. Frontend: unit tests for three components initialized [#694](https://github.com/bounswe/bounswe2022group2/pull/694)
+
+--------------------
+
+**Milestone-1**
+ 
+1. Frontend: Initial pages created to present as an example [#378](https://github.com/bounswe/bounswe2022group2/pull/378)
+2. Frontend/forget password [#419](https://github.com/bounswe/bounswe2022group2/pull/419)
+3. Frontend: Backend connection to forget password [#445](https://github.com/bounswe/bounswe2022group2/pull/445)
+4. Frontend: Frontend/dev to dev [#452](https://github.com/bounswe/bounswe2022group2/pull/452)
+5. Frontend: Home page mock [#461](https://github.com/bounswe/bounswe2022group2/pull/461)
+6. Frontend/dev forget password unit tests [#463](https://github.com/bounswe/bounswe2022group2/pull/463)
 
 ## *Unit Tests:*
 
+**Final Milestone-3**
+ 
+ 1. Frontend: unit test initialized for bio and profile picture [#928](https://github.com/bounswe/bounswe2022group2/pull/928)
+
+ 
+--------------------
+
+**Milestone-2**
+
+
+1. Frontend: Unit Testing Initialization for Dropdown, SelectionGrid, JoinLSButton Components  [#695](https://github.com/bounswe/bounswe2022group2/issues/695)
+
+--------------------
+
+**Milestone-1**
+
+1. [Frontend: Unit Tests for Forget Password page](https://github.com/bounswe/bounswe2022group2/issues/464)
+
 ## *Additional Information:*  
+ 
+**Final Milestone-3**
+ 
+ None
+ 
+--------------------
+
+**Milestone-2**
+ 
+I did not miss any lecture or lab time. Actively participated in all team meetings, demo ideas and demos.
+
+--------------------
+
+**Milestone-1**
+ 
+As a new team member, I have tried to actively participated in the discussions and give suggestions about project. Even though it is hard to catch up the ideas on the project by the team members since they have been dealing with this project for half a year more than me, I managed to be an active member on meetings. I have been there for all lectures, problem sessions, frontend meetings, and general team meetings some of which were held online and some of which were held in person. I shared all information that I know and I learn during the course of development by discord, whatsapp and github issues with the frontend team. 
+
