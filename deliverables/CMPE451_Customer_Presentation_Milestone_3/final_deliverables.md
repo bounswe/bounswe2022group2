@@ -1284,6 +1284,8 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### API Endpoints
 
+Detailed explanations and request/response examples are present in the documentation over Postman. Please click [here](https://documenter.getpostman.com/view/16983185/2s8Yt1tADd) to view.
+
 ***
 
 ### User Interface/User Experience
@@ -1622,7 +1624,7 @@ The app has text and image annotations for both the web and mobile versions. The
 
   As mentioned in milestone 2 as a future improvement, the external annotation service is implemented and serves the Learnify application. The annotations created by Learnify users **do not kept in Learnify database**. Additionaly, annotations service is deployed in a different machine than Learnify server. In that context, annotation service and Learnify are two different applications. When application side of the Learnify sends a request for creating annotations, it uses it's own API to send the annotation model. In this API, another request to the annotation-service with its own parameters is sent. Then, the newly created annotation in saved in annotations service database. Similar scenario is present for accessing the annotations as well. When Learnify application sends a request to it's own server to get related annotations, another request is sent by axios library to the annotations service to return the related annotations which have the specified id. Overall, **Learnify application side does not have direct contact with annotations service.**
   
- Please check the documentation on [API Documentation](https://github.com/bounswe/bounswe2022group2/edit/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/final_deliverables.md#api-endpoints) section to see example requests for both annotations service and Learnify.
+ Please check the documentation on [API Documentation](#api-endpoints) section to see example requests for both annotations service and Learnify.
  
 ***
 
@@ -1632,7 +1634,7 @@ The app has text and image annotations for both the web and mobile versions. The
  
 ![image](https://user-images.githubusercontent.com/64018144/210228784-7992a698-72c3-473f-be99-2f7cff8f4d56.png)
 
-Although all APIs are documented in [API Documentation](https://github.com/bounswe/bounswe2022group2/edit/master/deliverables/CMPE451_Customer_Presentation_Milestone_3/final_deliverables.md#api-endpoints), you can see in example below the **request sent to the annotation service.** It fully follows the W3C annotation model for both text and image annotations.
+Although all APIs are documented in [API Documentation](#api-endpoints), you can see in example below the **request sent to the annotation service.** It fully follows the W3C annotation model for both text and image annotations.
 ![image](https://user-images.githubusercontent.com/64018144/210229112-847652f0-29a0-44bd-8e1e-d890aaddcc3f.png)
 
 Please do check the annotation related APIs in API Documentation as a proof to W3C Model Annotations are kept, saved and sent overall the application.
@@ -2776,10 +2778,22 @@ Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She h
 ***
 
 ## Unit Tests
+ 
+* All the units tests implemented by the Frontend Team can be found from [here](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/web/src/__tests__)
+ 
+* All the units tests implemented by the Android/Mobile Team can be found from [here](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/test)
+
+* All the units tests implemented by the Backend Team can be found from [here](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/backend/test)
 
 ---------
 
 # Software Package
+ 
+As outlined in the project requirements, our software package for Learnify has undergone successful deployment and is now available for utilization. The final release version, identified as Release Name: 0.9.0 and Release Description: Group 2 Cmpe451 2022 Fall Final Release, can be accessed via this [link](https://github.com/bounswe/bounswe2022group2/releases/tag/customer-presentation-3) on our team's [GitHub repository](https://github.com/bounswe/bounswe2022group2).
+
+To facilitate the building process, [comprehensive instructions](https://github.com/bounswe/bounswe2022group2/tree/master/learnify) utilizing Docker have been included in the [repository](https://github.com/bounswe/bounswe2022group2), along with all necessary files and [dependencies](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/backend).
+
+In accordance with the project specifications, the database content for the software includes realistic posts and learning spaces, ensuring a highly realistic and functional user experience. We are confident that all requirements outlined in the project guidelines have been satisfactorily met and can be verified through examination of the materials provided in the [GitHub repository](https://github.com/bounswe/bounswe2022group2) for our software package. Please also check the [update release](https://github.com/bounswe/bounswe2022group2/releases/tag/customer-presentation-3.0.1) for the latest updates after the final release.
 
 ---------
 
