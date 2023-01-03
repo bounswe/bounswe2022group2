@@ -2744,6 +2744,12 @@ Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She h
 ***
 
 ## Unit Tests
+ 
+* All the units tests implemented by the Frontend Team can be found from [here](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/web/src/__tests__)
+ 
+* All the units tests implemented by the Android/Mobile Team can be found from [here](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/mobile/test)
+
+* All the units tests implemented by the Backend Team can be found from [here](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/backend/test)
 
 ---------
 
