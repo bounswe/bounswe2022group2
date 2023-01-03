@@ -2754,6 +2754,12 @@ Ezgi Ece has been a lecturer for the last 20 years at Bogazici University. She h
 ---------
 
 # Software Package
+ 
+As outlined in the project requirements, our software package for Learnify has undergone successful deployment and is now available for utilization. The final release version, identified as Release Name: 0.9.0 and Release Description: Group 2 Cmpe451 2022 Fall Final Release, can be accessed via this [link](https://github.com/bounswe/bounswe2022group2/releases/tag/customer-presentation-3) on our team's [GitHub repository](https://github.com/bounswe/bounswe2022group2).
+
+To facilitate the building process, [comprehensive instructions](https://github.com/bounswe/bounswe2022group2/tree/master/learnify) utilizing Docker have been included in the [repository](https://github.com/bounswe/bounswe2022group2), along with all necessary files and [dependencies](https://github.com/bounswe/bounswe2022group2/tree/master/learnify/backend).
+
+In accordance with the project specifications, the database content for the software includes realistic posts and learning spaces, ensuring a highly realistic and functional user experience. We are confident that all requirements outlined in the project guidelines have been satisfactorily met and can be verified through examination of the materials provided in the [GitHub repository](https://github.com/bounswe/bounswe2022group2) for our software package. Please also check the [update release](https://github.com/bounswe/bounswe2022group2/releases/tag/customer-presentation-3.0.1) for the latest updates after the final release.
 
 ---------
 
