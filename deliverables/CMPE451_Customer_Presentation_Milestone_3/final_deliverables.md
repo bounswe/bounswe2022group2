@@ -388,20 +388,54 @@ As we said in the previous sections, we are generally satisfied with the progres
   |Issue Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |-----|:--------:|:--------:|
+  |Learning space recomendation endpoint|[888](https://github.com/bounswe/bounswe2022group2/issues/888)|2 hours|
+  |Event Participation functionality for backend|[828](https://github.com/bounswe/bounswe2022group2/issues/828)|1 hours|
+  |Implementation of profile page for backend|[797](https://github.com/bounswe/bounswe2022group2/issues/797)|3 hours|
+  |Event Enpoints implementation|[780](https://github.com/bounswe/bounswe2022group2/issues/780)|4 hours|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |POST /learningspace endpint implementation|[532](https://github.com/bounswe/bounswe2022group2/issues/532)|4 hours|
+  |GET /categories endpoint implementation|[551](https://github.com/bounswe/bounswe2022group2/issues/551)|2 hours|
+  |Semantic search implementation for backend|[566](https://github.com/bounswe/bounswe2022group2/issues/566)|30 hours|
+  |Getters for the learningspace|[574](https://github.com/bounswe/bounswe2022group2/issues/574)|2 hours|
+  |Getters for learningspaces : random ls getter for main page.|[615](https://github.com/bounswe/bounswe2022group2/issues/615)|1 hour|
+  |GET learning spaces using user information|[619](https://github.com/bounswe/bounswe2022group2/issues/619)|2 hours|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |Documentation of meeting notes 1 of CMPE451 #309|[Issue](https://github.com/bounswe/bounswe2022group2/issues/309)|1 hours|
+  |Update Project plan for upcoming semester #316|[Issue](https://github.com/bounswe/bounswe2022group2/issues/316)|4 hours|
+  |Revising non functional requirements #339|[Issue](https://github.com/bounswe/bounswe2022group2/issues/339)|1 hour|
+  |Backend: Initialization of backend project #351|[Issue](https://github.com/bounswe/bounswe2022group2/issues/351)|1 hour|
+  |Backend: Dockerization of the API #355|[Issue](https://github.com/bounswe/bounswe2022group2/issues/355)|1 hour|
+  |Backend: Sign up endpoint #365|[Issue](https://github.com/bounswe/bounswe2022group2/issues/365)|3 hours|
+  |Backend: AWS deployment of backend #423|[Issue](https://github.com/bounswe/bounswe2022group2/issues/423)|1 hour|
+  |Backend: GET /courses(mock endpoint) #437|[Issue](https://github.com/bounswe/bounswe2022group2/issues/437)|1 hour|
   
   |Pull Request Title|Link|Time Consumption|
   |-----|:--------:|:--------:|
   |**Final Milestone 3**|-|-|
-  |--------------|--------------|--------------|
+  |-----|:--------:|:-----:|
+  |learning space recommendation endpoint|[889](https://github.com/bounswe/bounswe2022group2/issues/889)|2 hours|
+  |Revision of tests : POST /auth/signup , POST /learningspace, POST /events, POST /events/participate/:eventId|[878](https://github.com/bounswe/bounswe2022group2/issues/878)|5 hours|
+  |Event participation functionality for backend|[829](https://github.com/bounswe/bounswe2022group2/issues/829)|1 hours|
+  |implementation of profile page for the backend|[820](https://github.com/bounswe/bounswe2022group2/issues/820)|3 hours|
+  |Event endpoints implementation: Create event and getters|[794](https://github.com/bounswe/bounswe2022group2/issues/794)|3 hours|
   |**Milestone 2**|-|-|
-  |--------------|--------------|--------------|
+  |POST /learningspace implementation|[540](https://github.com/bounswe/bounswe2022group2/issues/540)|4 hours|
+  |get categories endpoint implementation and categories logic in learning spaces|[556](https://github.com/bounswe/bounswe2022group2/issues/556)|4 hours|
+  |Semantic search implementation for backend|[573](https://github.com/bounswe/bounswe2022group2/issues/573)|30 hours|
+  |Getters for the learning spaces|[575](https://github.com/bounswe/bounswe2022group2/issues/575)|2 hours|
+  |615 getters for learningspaces: get most participated learning spaces if a query is not given|[617](https://github.com/bounswe/bounswe2022group2/issues/617)|1 hours|
+  |GET endpoints regarding user and learningspace relation|[621](https://github.com/bounswe/bounswe2022group2/issues/621)|2 hours|
+  |Milestone 2: Merge dev to master(Getting release)|[670](https://github.com/bounswe/bounswe2022group2/issues/670)|1 hour|
   |**Milestone 1**|-|-|
-  |--------------|--------------|--------------|
+  |351 initialization of the backend project |[#352](https://github.com/bounswe/bounswe2022group2/pull/352)|1 hour|
+  |365 sign up endpoint |[#366](https://github.com/bounswe/bounswe2022group2/pull/366) [#391](https://github.com/bounswe/bounswe2022group2/pull/391)|[#428](https://github.com/bounswe/bounswe2022group2/pull/428)|3 hours|
+  |355 dockerization of the api |[#367](https://github.com/bounswe/bounswe2022group2/pull/367)|1 hour|
+  |hotfix: usermodel update|[#436](https://github.com/bounswe/bounswe2022group2/pull/436)|30 minutes|
+  |return mock course data|[#443](https://github.com/bounswe/bounswe2022group2/pull/443)|1 hour|
+  |create readme.md for learnify folder with setup instructions|[#472](https://github.com/bounswe/bounswe2022group2/pull/472)|1 hour|
+  |adding AWS, Docker, Gmail and NodeJS to tools evaluation|[#488](https://github.com/bounswe/bounswe2022group2/pull/488)|1.5 hours|
+  |GET /courses|[#437](https://github.com/bounswe/bounswe2022group2/pull/437)|1 hour|
   
 * **Hasan Can Erol**
   |Issue Title|Link|Time Consumption|
