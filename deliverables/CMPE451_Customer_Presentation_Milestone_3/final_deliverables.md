@@ -1250,6 +1250,8 @@ For example, C/N/I means that the frontend team completed, the backend team is n
 
 ### API Endpoints
 
+Detailed explanations and request/response examples are present in the documentation over Postman. Please click [here](https://documenter.getpostman.com/view/16983185/2s8Yt1tADd) to view.
+
 ***
 
 ### User Interface/User Experience
